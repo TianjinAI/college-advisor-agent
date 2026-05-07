@@ -1,0 +1,101 @@
+{
+  "id": "massachusetts-institute-of-technology",
+  "name": "Massachusetts Institute of Technology",
+  "shortName": "MIT",
+  "location": {
+    "city": "Cambridge",
+    "state": "MA",
+    "region": "northeast"
+  },
+  "type": "institute-of-technology",
+  "tier": "elite",
+  "control": "private",
+  "website": "web.mit.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Computer Science",
+      "Engineering",
+      "Physics",
+      "Mathematics",
+      "Biology",
+      "Economics",
+      "Artificial Intelligence",
+      "Aerospace Engineering",
+      "Materials Science",
+      "Linguistics",
+      "Neuroscience",
+      "Urban Studies and Planning"
+    ],
+    "signaturePrograms": [
+      "UROP (Undergraduate Research Opportunities Program)",
+      "Independent Activities Period (IAP)",
+      "Maker Spaces",
+      "Media Lab",
+      "MIT Sandbox Innovation Fund",
+      "Course 6-7 (Computer Science and Molecular Biology)",
+      "MIT Energy Initiative",
+      "Battlecode (annual programming competition)"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "elite",
+    "averageClassSize": "15-20"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0455,
+    "satRange": {
+      "25th": 1480,
+      "75th": 1640
+    },
+    "actRange": null,
+    "earlyActionRate": 0.079,
+    "regularRate": 0.038,
+    "waitlistAcceptRate": 0.05,
+    "internationalAcceptRate": 0.03,
+    "applicationType": "EA",
+    "deadlines": {
+      "earlyDecision": null,
+      "earlyAction": "November 1",
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 62396.0,
+    "roomAndBoard": 20280.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 131633.0,
+    "medianEarnings10Year": 143372.0,
+    "averageDebtAtGraduation": 14768.0
+  },
+  "students": {
+    "totalUndergrad": 4535.0,
+    "genderBreakdown": {
+      "male": 0.5184,
+      "female": 0.4816
+    },
+    "pellGrantPercent": 0.1932,
+    "firstGenPercent": 0.2585139319
+  },
+  "scorecardId": 166683.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in Cambridge, MA, along the Charles River",
+    "culture": "Intensely intellectual, quirky, and genuinely collaborative. 'Hack culture' is real—students pull all-nighters for fun, not just studying. The motto 'mens et manus' (mind and hand) means everyone builds things. There's a proud nerd identity and a tradition of elaborate pranks (hacks) on the Great Dome. Despite the rigor, the culture is famously non-competitive: students share problem sets and celebrate each other's creations.",
+    "distinctiveTraits": "The world's premier STEM institution. UROP lets every undergrad do paid research from day one. The Independent Activities Period (January) lets students take anything from glassblowing to quantum computing. The Maker Spaces are legendary.",
+    "whatTheyLookFor": "MIT values raw intellectual ability, creative problem-solving, and collaborative spirit. They want students who love STEM for its own sake, not just for careers. The admissions blog emphasizes 'fit with MIT's culture'—can you handle the intensity and weirdness? Officers look for evidence of hands-on creation: projects, research, competitions, or inventions. They specifically seek students who will contribute to the 'hacker' ethos of building and exploring.",
+    "applicationTips": "The Maker Portfolio is critical if you build things—submit it. The essays should show your problem-solving process, not just outcomes. MIT cares about 'impact on community'—show how you've helped others learn or build. Interview strongly recommended. In the 'What do you do for fun?' essay, be genuinely quirky—MIT admissions officers remember the student who wrote about collecting vacuum tubes or optimizing Rubik's cube algorithms."
+  }
+}

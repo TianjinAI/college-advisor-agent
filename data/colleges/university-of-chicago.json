@@ -1,0 +1,105 @@
+{
+  "id": "university-of-chicago",
+  "name": "University of Chicago",
+  "shortName": "UChicago",
+  "location": {
+    "city": "Chicago",
+    "state": "IL",
+    "region": "midwest"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "www.uchicago.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Economics",
+      "Mathematics",
+      "Core Curriculum",
+      "Political Science",
+      "Sociology",
+      "Physics",
+      "Law, Letters, and Society (interdisciplinary)",
+      "Molecular Engineering",
+      "South Asian Languages and Civilizations",
+      "Classics",
+      "Computational and Applied Mathematics",
+      "Philosophy"
+    ],
+    "signaturePrograms": [
+      "Core Curriculum",
+      "Chicago Economics (Nobel laureate factory)",
+      "Maroon Tribune",
+      "Institute of Politics",
+      "Molecular Engineering (Pritzker School)",
+      "Chicago Careers in Business (CCIB)",
+      "Chicago Careers in Science and Technology (CCIST)",
+      "Stamps Scholars Program"
+    ],
+    "curriculumStyle": "Core Curriculum",
+    "stemStrength": "strong",
+    "averageClassSize": "15-20"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0448,
+    "satRange": {
+      "25th": 1474,
+      "75th": 1634
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyDecisionRate": 0.2,
+    "earlyActionRate": 0.18,
+    "regularRate": 0.05,
+    "waitlistAcceptRate": 0.04,
+    "internationalAcceptRate": 0.038,
+    "applicationType": "ED+EA",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": "November 1",
+      "regularDecision": "January 2",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 70662.0,
+    "roomAndBoard": 20109.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 80870.0,
+    "medianEarnings10Year": 91885.0,
+    "averageDebtAtGraduation": 15000.0
+  },
+  "students": {
+    "totalUndergrad": 7569.0,
+    "genderBreakdown": {
+      "male": 0.5423,
+      "female": 0.4577
+    },
+    "pellGrantPercent": 0.1526,
+    "firstGenPercent": 0.202435312
+  },
+  "scorecardId": 144050.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in Hyde Park, Chicago, IL",
+    "culture": "Intellectually intense, quirky, and unapologetically academic. 'The life of the mind' is real here—students read Plato for fun and debate economics at 2 AM in the dorm common room. The Scav Hunt is the largest in the world and a defining cultural event. It's not pre-professional; it's pre-intellectual. The culture rewards students who ask 'why?' five times in a row and genuinely enjoy the answer. Despite the rigor, there's a strong sense of humor and self-awareness.",
+    "distinctiveTraits": "The Core Curriculum is legendary—students read the same canonical texts across disciplines. The Chicago School of Economics shaped modern economic thought. The Scavenger Hunt is a multi-day, campus-wide absurdity. Not a sports school; a thinking school.",
+    "whatTheyLookFor": "UChicago values intellectual curiosity above all else. They want students who will embrace the Core and contribute to the 'life of the mind.' The unconventional essay prompts are filters for creative thinkers. They prioritize academic fit over achievements. Admissions officers specifically seek students who show 'intellectual playfulness'—the ability to take ideas seriously without taking themselves too seriously. They care deeply about whether applicants will engage with the Core's demanding texts and discussions.",
+    "applicationTips": "The UChicago essay prompts are famous for being weird—lean into it. Show you can think creatively and write with intellectual playfulness. The 'Why UChicago?' should reference specific Core sequences (Humanities, Social Sciences, Natural Sciences) or professors. Demonstrate you understand UChicago is not for the faint of heart. If you have an alumni interview, prepare to discuss a book or idea that genuinely perplexes you. UChicago values 'intellectual risk-taking'—propose a bold, unconventional argument in your essays, then defend it rigorously."
+  }
+}

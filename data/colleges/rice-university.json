@@ -1,0 +1,104 @@
+{
+  "id": "rice-university",
+  "name": "Rice University",
+  "shortName": "Rice",
+  "location": {
+    "city": "Houston",
+    "state": "TX",
+    "region": "southwest"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "www.rice.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Engineering",
+      "Architecture",
+      "Music",
+      "Economics",
+      "Biology",
+      "Computer Science",
+      "Sport Management",
+      "Materials Science",
+      "Cognitive Science",
+      "Earth Science",
+      "Kinesiology",
+      "Philosophy"
+    ],
+    "signaturePrograms": [
+      "George R. Brown School of Engineering",
+      "Architecture School",
+      "Shepherd School of Music",
+      "Residential College System",
+      "Rice 360° Institute for Global Health",
+      "Baker Institute for Public Policy",
+      "Rice Center for Engineering Leadership (RCEL)",
+      "Oshman Engineering Design Kitchen (OEDK)"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "14-16"
+  },
+  "admissions": {
+    "acceptanceRate": 0.08,
+    "satRange": {
+      "25th": 1473,
+      "75th": 1633
+    },
+    "actRange": {
+      "25th": 32.0,
+      "75th": 38.0
+    },
+    "earlyDecisionRate": 0.2,
+    "regularRate": 0.08,
+    "waitlistAcceptRate": 0.05,
+    "internationalAcceptRate": 0.05,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 64144.0,
+    "roomAndBoard": 18100.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 79751.0,
+    "medianEarnings10Year": 89718.0,
+    "averageDebtAtGraduation": 11000.0
+  },
+  "students": {
+    "totalUndergrad": 4776.0,
+    "genderBreakdown": {
+      "male": 0.5042,
+      "female": 0.4958
+    },
+    "pellGrantPercent": 0.1703,
+    "firstGenPercent": 0.1447587354
+  },
+  "scorecardId": 227757.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in Houston, TX, with a tree-filled, intimate setting",
+    "culture": "Collaborative, quirky, and remarkably tight-knit. The residential college system (11 colleges) creates instant family—students are randomly assigned and stay for four years, developing deep loyalty to their college. Students are friendly and less competitive than at peer schools; it's common to share notes and celebrate each other's successes. Houston provides internships in energy, medicine, and tech. The weather is warm year-round, and the campus feels like a botanical garden.",
+    "distinctiveTraits": "The residential college system is the social heart—students are randomly assigned and stay for four years. Rice has the best student-faculty ratio (6:1) among top research universities. The 'Rice Coffeehouse' and 'Beer Bike' are beloved traditions. Houston's diversity is a huge asset.",
+    "whatTheyLookFor": "Rice values intellectual curiosity, collaboration, and community engagement. They want students who will contribute to the residential college culture. The 'Why Rice?' should show you understand the college system and Houston's opportunities. Admissions officers specifically seek students who demonstrate 'unconventional excellence'—those who have pursued unique interests or built community in unexpected ways. They care deeply about whether applicants will embrace the collaborative, non-competitive culture.",
+    "applicationTips": "The 'Why Rice?' essay must mention the residential colleges specifically—show you want that tight community. The 'Rice Box' (upload an image) is a chance to show personality; choose something meaningful, not just impressive. If applying to Architecture or Shepherd School, the portfolio/audition is as important as academics. Mention specific Houston opportunities (Texas Medical Center, energy sector internships, NASA Johnson Space Center). The alumni interview is common—prepare to discuss how you've built community in your current school."
+  }
+}

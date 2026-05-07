@@ -1,0 +1,94 @@
+{
+  "id": "hamilton-college",
+  "name": "Hamilton College",
+  "shortName": "Hamilton",
+  "location": {
+    "city": "Clinton",
+    "state": "NY",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "https://www.hamilton.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Economics",
+      "Government",
+      "Creative Writing",
+      "Biology",
+      "Mathematics",
+      "History"
+    ],
+    "signaturePrograms": [
+      "Open Curriculum",
+      "Writing Center",
+      "Adirondack Program",
+      "NY City Program"
+    ],
+    "curriculumStyle": "Open Curriculum",
+    "stemStrength": "strong",
+    "averageClassSize": "14-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1362,
+    "satRange": {
+      "25th": 1426,
+      "75th": 1586
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyDecisionRate": 0.35,
+    "regularRate": 0.14,
+    "waitlistAcceptRate": 0.08,
+    "internationalAcceptRate": 0.085,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 68960.0,
+    "roomAndBoard": 17510.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 60082.0,
+    "medianEarnings10Year": 78411.0,
+    "averageDebtAtGraduation": 17000.0
+  },
+  "students": {
+    "totalUndergrad": 2030.0,
+    "genderBreakdown": {
+      "male": 0.4443,
+      "female": 0.5557
+    },
+    "pellGrantPercent": 0.1772,
+    "firstGenPercent": 0.1328502415
+  },
+  "scorecardId": 191515.0,
+  "lastUpdated": "2026-05-07T18:44:52.628505Z",
+  "campus": {
+    "setting": "Rural campus in Clinton, NY, near the Adirondack Mountains",
+    "culture": "Intellectually curious, collaborative, and outdoorsy. The Open Curriculum attracts self-directed learners. Students are friendly and less competitive than peer schools. The 'Hamilton Serves' program emphasizes community engagement. The Adirondacks provide outdoor recreation.",
+    "distinctiveTraits": "The Open Curriculum is genuine\u2014students design their own concentrations with advisor guidance. The Writing Center is one of the best in the nation. The NY City program provides semester-long urban immersion. The 'Continentals' community is tight-knit.",
+    "whatTheyLookFor": "Hamilton values intellectual independence, writing ability, and community contribution. They want students who will use the Open Curriculum and the writing resources. The 'Why Hamilton?' should mention the curriculum, writing, or the Adirondack location.",
+    "applicationTips": "The Open Curriculum essay should show how you'd design your education. The writing sample is critical\u2014show analytical depth. The 'community' essay should demonstrate collaborative spirit. Show you've thought about the rural New York setting."
+  }
+}

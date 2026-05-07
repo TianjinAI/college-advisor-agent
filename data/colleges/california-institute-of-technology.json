@@ -1,0 +1,98 @@
+{
+  "id": "california-institute-of-technology",
+  "name": "California Institute of Technology",
+  "shortName": "Caltech",
+  "location": {
+    "city": "Pasadena",
+    "state": "CA",
+    "region": "pacific"
+  },
+  "type": "institute-of-technology",
+  "tier": "elite",
+  "control": "private",
+  "website": "www.caltech.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Physics",
+      "Engineering",
+      "Computer Science",
+      "Mathematics",
+      "Chemistry",
+      "Biology",
+      "Planetary Science",
+      "Bioinformatics",
+      "Applied and Computational Mathematics",
+      "Materials Science",
+      "Astrophysics",
+      "Geology"
+    ],
+    "signaturePrograms": [
+      "SURF (Summer Undergraduate Research Fellowships)",
+      "House System",
+      "Caltech Y",
+      "Jet Propulsion Lab (JPL) partnership",
+      "LIGO (Laser Interferometer Gravitational-Wave Observatory) research",
+      "Beckman Institute",
+      "Caltech Entrepreneur in Residence program",
+      "Flintridge Scholarship Program"
+    ],
+    "curriculumStyle": "Core Curriculum",
+    "stemStrength": "elite",
+    "averageClassSize": "8-12"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0257,
+    "satRange": null,
+    "actRange": null,
+    "earlyActionRate": 0.098,
+    "regularRate": 0.035,
+    "waitlistAcceptRate": 0.04,
+    "internationalAcceptRate": 0.028,
+    "applicationType": "EA",
+    "deadlines": {
+      "earlyDecision": null,
+      "earlyAction": "November 1",
+      "regularDecision": "January 3",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 65898.0,
+    "roomAndBoard": 20283.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 132140.0,
+    "medianEarnings10Year": 128566.0,
+    "averageDebtAtGraduation": null
+  },
+  "students": {
+    "totalUndergrad": 987.0,
+    "genderBreakdown": {
+      "male": 0.5481,
+      "female": 0.4519
+    },
+    "pellGrantPercent": 0.1799,
+    "firstGenPercent": null
+  },
+  "scorecardId": 110404.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Suburban campus in Pasadena, CA, near Los Angeles",
+    "culture": "Intensely STEM-focused, small, and genuinely collaborative. With only ~900 undergrads, everyone knows everyone. The House system (like Hogwarts) creates tight communities—each House has its own traditions, dining hall, and social events. Students are brilliant, quirky, and passionate about science. Pranks are an art form (the Fleming cannon heist is legendary). The culture is famously non-competitive: students share problem sets and celebrate each other's research breakthroughs.",
+    "distinctiveTraits": "The smallest elite STEM school (~900 undergrads). Faculty-to-student ratio is 3:1—unmatched access to Nobel laureates. The Honor Code lets students take exams unsupervised. JPL (NASA's lab) is next door and hires Caltech students heavily.",
+    "whatTheyLookFor": "Caltech seeks students with extraordinary STEM aptitude and genuine scientific curiosity. They value research experience, math competition success, and the ability to collaborate in small, intense communities. The 'fit' is about loving science deeply—not just wanting a prestigious degree. Admissions officers specifically look for evidence of hands-on research, independent projects, or competition success (USAMO, ISEF, etc.). They care deeply about whether applicants will thrive in the House system and contribute to the collaborative culture.",
+    "applicationTips": "The STEM-focused essays should show your research process and scientific curiosity—describe a problem you couldn't solve and what you learned from trying. Math/science teacher recommendations are weighted heavily. The 'fun' question is serious—show you have interests beyond STEM (music, hiking, cooking). If you've done research, describe it technically and mention specific Caltech labs or professors you'd like to work with. The House system is central to life—research the Houses and mention which one appeals to you."
+  }
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { ChangeEvent } from 'react';
 import type { StudentProfile } from '../types';
 
 interface ProfileCardProps {
@@ -24,19 +25,28 @@ export default function ProfileCard({ profile, onProfileChange }: ProfileCardPro
 
   return (
     <div className="profile-card">
-      <div className="profile-header" onClick={() => setIsExpanded(!isExpanded)}>
-        <h3>📋 Student Profile</h3>
-        <span className="toggle-icon">{isExpanded ? '▲' : '▼'}</span>
-      </div>
+      <button
+        type="button"
+        className="profile-header"
+        onClick={() => setIsExpanded(!isExpanded)}
+        aria-expanded={isExpanded}
+      >
+        <div>
+          <p className="profile-kicker">Student profile</p>
+          <h3>Preferences and constraints</h3>
+        </div>
+        <span className="toggle-icon" aria-hidden="true">{isExpanded ? '−' : '+'}</span>
+      </button>
       {isExpanded && (
         <div className="profile-form">
           {fields.map(({ key, label, placeholder }) => (
             <div key={key} className="profile-field">
-              <label>{label}</label>
+              <label htmlFor={`profile-${key}`}>{label}</label>
               <input
+                id={`profile-${key}`}
                 type="text"
                 value={profile[key]}
-                onChange={(e) => handleChange(key, e.target.value)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(key, e.target.value)}
                 placeholder={placeholder}
               />
             </div>

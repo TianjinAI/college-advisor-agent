@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import type { Dispatch, KeyboardEvent, SetStateAction } from 'react';
 import { useWebSocket } from '../hooks/useWebSocket';
 import MessageBubble from './MessageBubble';
 import type { ChatMessage, StudentProfile } from '../types';
@@ -12,10 +13,37 @@ const SUGGESTIONS = [
 
 interface ChatPanelProps {
   messages: ChatMessage[];
-  setMessages: React.Dispatch<React.SetStateAction<ChatMessage[]>>;
+  setMessages: Dispatch<SetStateAction<ChatMessage[]>>;
   profile: StudentProfile;
   isStreaming: boolean;
-  setIsStreaming: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsStreaming: Dispatch<SetStateAction<boolean>>;
+}
+
+type MessageSource = ChatMessage['source'];
+
+function normalizeMessageSource(raw: unknown): MessageSource {
+  if (typeof raw !== 'string') return undefined;
+
+  const value = raw.toLowerCase();
+  const hasWeb = /web|search|tavily|internet/.test(value);
+  const hasKb = /kb|knowledge|context|school|insight/.test(value);
+
+  if (hasWeb && hasKb) return 'hybrid';
+  if (hasWeb) return 'web';
+  if (hasKb) return 'kb';
+  return undefined;
+}
+
+function inferResponseSource(prompt: string): Exclude<MessageSource, undefined> {
+  const normalized = prompt.toLowerCase();
+  const needsWeb = /(latest|current|today|recent|deadline|deadlines|ranking|rankings|tuition|acceptance rate|news|202[6-9]|202\d|费用|截止|最新|排名|学费|录取率)/.test(normalized);
+  return needsWeb ? 'web' : 'kb';
+}
+
+function mergeSources(current: MessageSource, next: MessageSource): MessageSource {
+  if (!current) return next;
+  if (!next || current === next) return current;
+  return 'hybrid';
 }
 
 export default function ChatPanel({
@@ -26,8 +54,11 @@ export default function ChatPanel({
   setIsStreaming,
 }: ChatPanelProps) {
   const [input, setInput] = useState('');
+  const [inlineError, setInlineError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const handlersRegistered = useRef(false);
+  const pendingSourceRef = useRef<Exclude<MessageSource, undefined>>('kb');
   const { isConnected, on, send } = useWebSocket('/ws');
 
   // Keep refs to stable callbacks
@@ -41,33 +72,48 @@ export default function ChatPanel({
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  useEffect(() => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    textarea.style.height = '0px';
+    textarea.style.height = `${Math.min(textarea.scrollHeight, 168)}px`;
+  }, [input]);
+
   // Register WebSocket message handlers — only once
   useEffect(() => {
     if (handlersRegistered.current) return;
     handlersRegistered.current = true;
 
     const handleTextStart = (data: Record<string, unknown>) => {
-      const payload = data.payload as { messageId: string };
-      setMessagesRef.current((prev) => [
+      const payload = data.payload as { messageId: string; source?: string };
+      setMessagesRef.current((prev: ChatMessage[]) => [
         ...prev,
         {
           id: payload?.messageId || `assistant-${Date.now()}`,
           role: 'assistant',
           content: '',
           timestamp: Date.now(),
+          source: normalizeMessageSource(payload?.source) ?? pendingSourceRef.current,
         },
       ]);
+      setInlineError(null);
       setIsStreamingRef.current(true);
     };
 
     const handleTextDelta = (data: Record<string, unknown>) => {
-      const payload = data.payload as { text: string; done: boolean; messageId: string };
-      setMessagesRef.current((prev) => {
+      const payload = data.payload as { text: string; done: boolean; messageId: string; source?: string };
+      setMessagesRef.current((prev: ChatMessage[]) => {
         const last = prev[prev.length - 1];
         if (last?.role === 'assistant') {
-          return prev.map((msg, i) =>
+          const nextSource = mergeSources(
+            last.source,
+            normalizeMessageSource(payload?.source) ??
+              ((payload?.text || '').includes('http://') || (payload?.text || '').includes('https://') ? 'web' : undefined)
+          );
+          return prev.map((msg: ChatMessage, i: number) =>
             i === prev.length - 1
-              ? { ...msg, content: msg.content + (payload?.text || '') }
+              ? { ...msg, content: msg.content + (payload?.text || ''), source: nextSource }
               : msg
           );
         }
@@ -81,12 +127,13 @@ export default function ChatPanel({
 
     const handleError = (data: Record<string, unknown>) => {
       const payload = data.payload as { text: string };
-      setMessagesRef.current((prev) => [
+      setInlineError(payload?.text || 'Unable to generate a reply right now.');
+      setMessagesRef.current((prev: ChatMessage[]) => [
         ...prev,
         {
           id: `error-${Date.now()}`,
           role: 'assistant',
-          content: `❌ Error: ${payload?.text || 'Unknown error'}`,
+          content: `Error: ${payload?.text || 'Unknown error'}`,
           timestamp: Date.now(),
         },
       ]);
@@ -109,8 +156,10 @@ export default function ChatPanel({
       timestamp: Date.now(),
     };
 
-    setMessages((prev) => [...prev, userMessage]);
+    setMessages((prev: ChatMessage[]) => [...prev, userMessage]);
     setInput('');
+    setInlineError(null);
+    pendingSourceRef.current = inferResponseSource(text);
 
     send({
       type: 'send_message',
@@ -121,7 +170,7 @@ export default function ChatPanel({
     });
   }, [input, isStreaming, profile, send, setMessages]);
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSend();
@@ -130,32 +179,52 @@ export default function ChatPanel({
 
   const handleSuggestionClick = (text: string) => {
     setInput(text);
+    textareaRef.current?.focus();
   };
 
   return (
     <div className="chat-panel">
       <div className="connection-status">
         <span className={`status-dot ${isConnected ? 'connected' : 'disconnected'}`} />
-        {isConnected ? 'Connected' : 'Reconnecting...'}
+        <span>{isConnected ? 'Connected to advisor session' : 'Reconnecting to advisor session...'}</span>
+        <span className="connection-divider" aria-hidden="true">•</span>
+        <span className="connection-mode">{isConnected ? 'KB-ready' : 'Waiting for socket'}</span>
       </div>
 
       <div className="messages-container">
         {messages.length === 0 && (
           <div className="welcome-screen">
-            <div className="welcome-icon">🎓</div>
-            <h2>Welcome to College Advisor!</h2>
-            <p>I can help you find the best US universities based on your profile.</p>
-            <p>Fill in your student profile on the left, then ask me anything!</p>
-            <div className="suggestions">
-              {SUGGESTIONS.map((s, i) => (
-                <button
-                  key={i}
-                  className="suggestion-chip"
-                  onClick={() => handleSuggestionClick(s)}
-                >
-                  {s}
-                </button>
-              ))}
+            <div className="welcome-copy">
+              <p className="eyebrow">Start with a realistic question</p>
+              <h2>Ask for recommendations, tradeoffs, or a shortlist tied to your profile.</h2>
+              <p>
+                The advisor already has school profiles and admissions insights loaded. Use the chat to narrow
+                fit, compare options, or pressure-test an application strategy.
+              </p>
+            </div>
+            <div className="welcome-grid">
+              <div className="welcome-card">
+                <p className="welcome-card-label">Good first prompts</p>
+                <div className="suggestions">
+                  {SUGGESTIONS.map((s, i) => (
+                    <button
+                      key={i}
+                      className="suggestion-chip"
+                      onClick={() => handleSuggestionClick(s)}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="welcome-card welcome-card-muted">
+                <p className="welcome-card-label">What improves the answer</p>
+                <ul className="welcome-list">
+                  <li>Academic range: GPA, testing, intended major</li>
+                  <li>Constraints: budget, states, reach versus match balance</li>
+                  <li>Context: extracurricular depth and any unusual priorities</li>
+                </ul>
+              </div>
             </div>
           </div>
         )}
@@ -167,30 +236,44 @@ export default function ChatPanel({
           />
         ))}
         {isStreaming && messages[messages.length - 1]?.role !== 'assistant' && (
-          <div className="typing-indicator">
-            <span></span><span></span><span></span>
+          <div className="typing-indicator" aria-hidden="true">
+            <div className="typing-indicator-avatar" />
+            <div className="typing-indicator-content">
+              <span className="typing-line typing-line-wide"></span>
+              <span className="typing-line"></span>
+              <span className="typing-line typing-line-short"></span>
+            </div>
           </div>
         )}
         <div ref={messagesEndRef} />
       </div>
 
-      <div className="input-container">
-        <textarea
-          className="chat-input"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="Ask about universities, admissions, rankings..."
-          rows={1}
-          disabled={isStreaming}
-        />
-        <button
-          className="send-button"
-          onClick={handleSend}
-          disabled={!input.trim() || isStreaming}
-        >
-          {isStreaming ? '⏳' : '➤'}
-        </button>
+      <div className="composer-shell">
+        {inlineError && (
+          <div className="inline-error" role="status">
+            {inlineError}
+          </div>
+        )}
+        <div className="input-container">
+          <textarea
+            ref={textareaRef}
+            className="chat-input"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Ask about fit, admissions strategy, program strengths, rankings, or affordability..."
+            rows={1}
+            disabled={isStreaming}
+          />
+          <button
+            className="send-button"
+            onClick={handleSend}
+            disabled={!input.trim() || isStreaming}
+            aria-label={isStreaming ? 'Waiting for response' : 'Send message'}
+          >
+            {isStreaming ? '...' : 'Send'}
+          </button>
+        </div>
       </div>
     </div>
   );

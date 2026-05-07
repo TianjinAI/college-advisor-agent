@@ -1,0 +1,87 @@
+{
+  "id": "university-of-california-los-angeles",
+  "name": "University of California-Los Angeles",
+  "shortName": "UCLA",
+  "location": {
+    "city": "Los Angeles",
+    "state": "CA",
+    "region": "pacific"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "www.ucla.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Film",
+      "Psychology",
+      "Economics",
+      "Biology",
+      "Engineering",
+      "Political Science",
+      "Sociology",
+      "Communications",
+      "Neuroscience",
+      "Computer Science",
+      "Nursing",
+      "Art History"
+    ],
+    "signaturePrograms": [
+      "School of Theater, Film and Television (TFT)",
+      "UCLA Medical School pipeline",
+      "UCLA Anderson School of Management",
+      "UCLA Research",
+      "UCLA Honors Program",
+      "UCLA Community Programs Office",
+      "UCLA Institute of the Environment and Sustainability",
+      "UCLA Luskin School of Public Affairs"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "25-40"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0897,
+    "satRange": null,
+    "actRange": null
+  },
+  "cost": {
+    "tuitionAndFees": 15203.0,
+    "roomAndBoard": 18369.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 59063.0,
+    "medianEarnings10Year": 82511.0,
+    "averageDebtAtGraduation": 14000.0
+  },
+  "students": {
+    "totalUndergrad": 33475.0,
+    "genderBreakdown": {
+      "male": 0.3964,
+      "female": 0.6036
+    },
+    "pellGrantPercent": 0.2824,
+    "firstGenPercent": 0.3808913934
+  },
+  "scorecardId": 110662.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in Westwood, Los Angeles, CA",
+    "culture": "Diverse, ambitious, and relentlessly energetic. The most applied-to university in the US (140,000+ apps), yet students find their niche quickly. The culture is competitive but collaborative—students form study groups, produce films together, and collaborate on research. Westwood is a perfect college neighborhood with restaurants, theaters, and the famous Diddy Riese cookies. The film school is legendary, and the 'Bruin' spirit is strong in sports, academics, and activism.",
+    "distinctiveTraits": "The most applied-to university in America (140,000+ apps). The film school is top-5 globally. The medical school is top-10. The campus is beautiful with a botanical garden. The 'Westwood' location provides LA access without the chaos.",
+    "whatTheyLookFor": "UCLA values academic excellence, diversity, and community contribution. They want students who will use the LA resources and contribute to the campus. The UC application essays should show resilience and leadership. Admissions officers specifically seek students who have overcome challenges and used their experiences to help others. They care deeply about the 'personal insight questions'—generic answers hurt more than specific stories help.",
+    "applicationTips": "The UC essays are shared across all campuses—make UCLA-specific references in the 'campus' or 'major' sections. If applying to the film school (TFT), the portfolio is critical and should show storytelling ability, not just technical skill. The 'leadership' essay should show impact on your community, not just titles held. The 'challenge' essay should demonstrate resilience and growth. Mention specific LA resources (Getty Center, internships in entertainment or tech, community organizations) you plan to use."
+  }
+}

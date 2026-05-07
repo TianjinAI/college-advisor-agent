@@ -1,0 +1,104 @@
+{
+  "id": "vanderbilt-university",
+  "name": "Vanderbilt University",
+  "shortName": "Vanderbilt",
+  "location": {
+    "city": "Nashville",
+    "state": "TN",
+    "region": "southeast"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "www.vanderbilt.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Education",
+      "Engineering",
+      "Music",
+      "Economics",
+      "Medicine",
+      "Political Science",
+      "Human and Organizational Development (HOD)",
+      "Neuroscience",
+      "Chemical Engineering",
+      "Latin American Studies",
+      "Cinema and Media Arts",
+      "Biomedical Engineering"
+    ],
+    "signaturePrograms": [
+      "Peabody College of Education and Human Development",
+      "Blair School of Music",
+      "Vanderbilt University Medical Center",
+      "Ingram Scholarship Program",
+      "Immersion Vanderbilt (undergraduate research requirement)",
+      "Vanderbilt Institute of Nanoscale Science and Engineering",
+      "Curb Center for Art, Enterprise, and Public Policy",
+      "Vanderbilt-Ingram Cancer Center"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "15-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0586,
+    "satRange": {
+      "25th": 1469,
+      "75th": 1629
+    },
+    "actRange": {
+      "25th": 32.0,
+      "75th": 38.0
+    },
+    "earlyDecisionRate": 0.22,
+    "regularRate": 0.07,
+    "waitlistAcceptRate": 0.06,
+    "internationalAcceptRate": 0.048,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "March 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 67498.0,
+    "roomAndBoard": 22054.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 73909.0,
+    "medianEarnings10Year": 91565.0,
+    "averageDebtAtGraduation": 14000.0
+  },
+  "students": {
+    "totalUndergrad": 7208.0,
+    "genderBreakdown": {
+      "male": 0.4752,
+      "female": 0.5248
+    },
+    "pellGrantPercent": 0.2022,
+    "firstGenPercent": 0.1222570533
+  },
+  "scorecardId": 221999.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in Nashville, TN, with a park-like setting",
+    "culture": "Friendly, balanced, and Southern-charming. Students are happy and collaborative, not cutthroat—Vanderbilt consistently ranks among the 'happiest' top-20 schools. Nashville provides music, food, and internship opportunities without overwhelming the campus. The Commons system creates strong first-year community. Greek life is present but not overwhelming, and the culture emphasizes inclusivity. Students often describe the vibe as 'work hard, be kind.'",
+    "distinctiveTraits": "The 'happiest' top-20 school by student satisfaction surveys. Peabody College is the #1 education school in the US. The Ingram Scholarship program funds students committed to community service. Nashville's music scene is a huge draw for arts-interested students.",
+    "whatTheyLookFor": "Vanderbilt values community contribution and intellectual curiosity. They heavily weight demonstrated interest (visit, interview, early application). They want students who will be engaged campus citizens, not just brilliant recluses. The 'fit' is about balance. Admissions officers specifically seek students who show 'kindness and competence'—those who excel academically while genuinely caring about others. They care deeply about whether applicants will contribute to the positive, supportive culture.",
+    "applicationTips": "The 'Why Vanderbilt?' essay should mention the Commons, Nashville, or specific academic programs. Show you've visited or done virtual engagement. The optional video can help if you're naturally warm and engaging. If applying to Blair, the music supplement is critical. For Peabody applicants, show experience working with children or communities. Mention specific Nashville opportunities (music industry internships, Vanderbilt Medical Center shadowing, Teach For America partnerships) that align with your goals."
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "id": "cornell-university",
+  "name": "Cornell University",
+  "shortName": "Cornell",
+  "location": {
+    "city": "Ithaca",
+    "state": "NY",
+    "region": "northeast"
+  },
+  "type": "national-university",
+  "tier": "ivy",
+  "control": "private",
+  "website": "www.cornell.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Engineering",
+      "Hotel Administration",
+      "Architecture",
+      "Agriculture",
+      "Computer Science",
+      "Biology",
+      "Operations Research and Information Engineering",
+      "Industrial and Labor Relations",
+      "Food Science",
+      "Veterinary Medicine (pre-vet pipeline)",
+      "Aerospace Engineering",
+      "Landscape Architecture"
+    ],
+    "signaturePrograms": [
+      "Cornell Engineering",
+      "Hotel School (SHA)",
+      "Architecture (AAP)",
+      "Dyson School of Applied Economics and Management",
+      "ILR School (Industrial and Labor Relations)",
+      "Cornell Tech (NYC campus)",
+      "Cornell in Washington",
+      "Weill Cornell Medicine pipeline"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "elite",
+    "averageClassSize": "18-25"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0876,
+    "satRange": {
+      "25th": 1455,
+      "75th": 1615
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyDecisionRate": 0.194,
+    "regularRate": 0.069,
+    "waitlistAcceptRate": 0.05,
+    "internationalAcceptRate": 0.055,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 2",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 69314.0,
+    "roomAndBoard": 19428.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 87830.0,
+    "medianEarnings10Year": 104043.0,
+    "averageDebtAtGraduation": 14000.0
+  },
+  "students": {
+    "totalUndergrad": 15995.0,
+    "genderBreakdown": {
+      "male": 0.4544,
+      "female": 0.5456
+    },
+    "pellGrantPercent": 0.1841,
+    "firstGenPercent": 0.1541640178
+  },
+  "scorecardId": 190415.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Rural campus in Ithaca, NY, with gorges and waterfalls",
+    "culture": "Work-hard, play-hard in a stunning natural setting. Cornell is the most diverse Ivy in terms of academic interests—engineers, hotelies, architects, and farmers coexist and collaborate. The gorges are iconic (and dangerous if you ignore the signs). Winters are harsh but students embrace the cold with hockey, hot chocolate, and the famous Cornell Dairy ice cream. The culture is notably unpretentious: students wear Carhartt to class and genuinely care about their fields.",
+    "distinctiveTraits": "The only Ivy with land-grant roots, offering unique programs like Hotel Administration, Animal Science, and Viticulture. Also the largest undergraduate population in the Ivy League (~15,000). The gorges and waterfalls create one of the most beautiful campuses in America.",
+    "whatTheyLookFor": "Cornell values academic fit with your chosen college (Engineering, Arts & Sciences, Dyson, etc.). They want students who have explored their field beyond the classroom. Each college has its own admissions committee—tailor your application to the specific school. Admissions officers specifically seek evidence of 'field-specific curiosity': engineering applicants should show projects, SHA applicants should show hospitality/service experience, and AAP applicants should demonstrate design thinking.",
+    "applicationTips": "The college-specific essays are critical. For Engineering, show project experience and mention specific Cornell labs (e.g., Cornell Lab of Ornithology if relevant). For SHA, demonstrate hospitality/service experience and knowledge of the Statler Hotel. For AAP, the portfolio is everything—quality over quantity. Cornell admits by college, not just by university—know your college's culture and requirements. If applying to ILR, show interest in workplace dynamics, labor policy, or human resources."
+  }
+}

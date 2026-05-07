@@ -1,0 +1,104 @@
+{
+  "id": "stanford-university",
+  "name": "Stanford University",
+  "shortName": "Stanford",
+  "location": {
+    "city": "Stanford",
+    "state": "CA",
+    "region": "pacific"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "www.stanford.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Computer Science",
+      "Engineering",
+      "Entrepreneurship",
+      "Biology",
+      "Economics",
+      "Psychology",
+      "Symbolic Systems (interdisciplinary)",
+      "Product Design",
+      "Earth Systems",
+      "Bioengineering",
+      "Human-Centered AI",
+      "Stanford Law School pipeline"
+    ],
+    "signaturePrograms": [
+      "Stanford d.school",
+      "StartX accelerator",
+      "Bing Overseas Studies",
+      "CS + X",
+      "Symbolic Systems (cognitive science + CS + philosophy)",
+      "Stanford Bio-X (interdisciplinary biosciences)",
+      "Knight-Hennessy Scholars pipeline",
+      "Stanford Technology Ventures Program (STVP)"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "elite",
+    "averageClassSize": "15-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0361,
+    "satRange": {
+      "25th": 1473,
+      "75th": 1633
+    },
+    "actRange": {
+      "25th": 32.0,
+      "75th": 38.0
+    },
+    "earlyRestrictiveActionRate": 0.089,
+    "regularRate": 0.038,
+    "waitlistAcceptRate": 0.03,
+    "internationalAcceptRate": 0.028,
+    "applicationType": "REA",
+    "deadlines": {
+      "earlyAction": "November 1",
+      "earlyDecision": null,
+      "regularDecision": "January 2",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 65910.0,
+    "roomAndBoard": 21315.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 102887.0,
+    "medianEarnings10Year": 124080.0,
+    "averageDebtAtGraduation": 12000.0
+  },
+  "students": {
+    "totalUndergrad": 7554.0,
+    "genderBreakdown": {
+      "male": 0.4837,
+      "female": 0.5163
+    },
+    "pellGrantPercent": 0.1916,
+    "firstGenPercent": 0.3033854167
+  },
+  "scorecardId": 243744.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Suburban campus in Stanford, CA, on the San Francisco Peninsula",
+    "culture": "Entrepreneurial, optimistic, and deeply collaborative. 'The duck syndrome'—calm on the surface, paddling furiously underneath—is real, but students genuinely support each other. The culture blends academic rigor with West Coast chill: students start companies, join VC-backed projects, and still find time for hiking in the foothills. The weather is perfect, and the campus feels like a resort with a purpose.",
+    "distinctiveTraits": "The heart of Silicon Valley—Stanford is the #1 feeder to tech startups and VC firms. The d.school (design thinking) and StartX accelerator are legendary. Also known for the largest contiguous campus in the US and the 'Stanford Duck' culture.",
+    "whatTheyLookFor": "Stanford values intellectual vitality, entrepreneurial spirit, and genuine curiosity. They want students who will 'make a dent in the universe' (Jobs' quote). The admissions team looks for 'spikes'—exceptional depth in one area—and character above achievements. Officers specifically seek 'intellectual vitality' evidenced by independent projects, research, or learning beyond the classroom. They care deeply about whether applicants will contribute to the collaborative, innovative culture.",
+    "applicationTips": "The 'What matters to you, and why?' essay is Stanford's soul-searching prompt—be vulnerable and authentic, not impressive. Show intellectual vitality by describing what you learn FOR FUN. If you're a tech applicant, show more than coding—show impact and creativity. The roommate essay is a hidden personality test: be specific, quirky, and real. Mention specific Bing overseas campuses or d.school workshops if relevant."
+  }
+}

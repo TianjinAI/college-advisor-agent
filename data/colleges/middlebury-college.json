@@ -1,0 +1,94 @@
+{
+  "id": "middlebury-college",
+  "name": "Middlebury College",
+  "shortName": "Middlebury",
+  "location": {
+    "city": "Middlebury",
+    "state": "VT",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "https://www.middlebury.edu/college/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Languages",
+      "Environmental Studies",
+      "International Studies",
+      "Economics",
+      "Political Science",
+      "Literature"
+    ],
+    "signaturePrograms": [
+      "Language Schools",
+      "Environmental Studies",
+      "Middlebury Institute",
+      "Feb Program"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "moderate",
+    "averageClassSize": "14-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1075,
+    "satRange": {
+      "25th": 1428,
+      "75th": 1588
+    },
+    "actRange": {
+      "25th": 30.0,
+      "75th": 36.0
+    },
+    "earlyDecisionRate": 0.38,
+    "regularRate": 0.14,
+    "waitlistAcceptRate": 0.1,
+    "internationalAcceptRate": 0.08,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 67600.0,
+    "roomAndBoard": 19250.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 57291.0,
+    "medianEarnings10Year": 76310.0,
+    "averageDebtAtGraduation": 13857.0
+  },
+  "students": {
+    "totalUndergrad": 2738.0,
+    "genderBreakdown": {
+      "male": 0.4649,
+      "female": 0.5351
+    },
+    "pellGrantPercent": 0.1589,
+    "firstGenPercent": 0.2157258065
+  },
+  "scorecardId": 230959.0,
+  "lastUpdated": "2026-05-07T18:44:52.630269Z",
+  "campus": {
+    "setting": "Rural campus in Middlebury, VT, surrounded by mountains",
+    "culture": "Globally minded, environmentally conscious, and outdoorsy. The Language Schools are legendary (students pledge to speak only their target language). The 'Feb' program lets students start in February. Students are progressive, athletic, and love Vermont's natural beauty.",
+    "distinctiveTraits": "The Language Schools (summer immersion) are the best in the world\u2014students sign a language pledge. The Feb program (February start) is unique. The Bread Loaf Writers' Conference is the oldest in America. The Snow Bowl (college-owned ski area) is a huge perk.",
+    "whatTheyLookFor": "Middlebury values global perspective, environmental consciousness, and language aptitude. They want students who will use the Language Schools and the rural Vermont setting. The 'Why Middlebury?' should mention languages, the environment, or the Feb program.",
+    "applicationTips": "If you've studied languages, emphasize your commitment. The environmental studies essay should show specific interest (not just 'I like nature'). The Feb program requires explaining why a non-traditional start appeals to you. Show you've thought about the rural location."
+  }
+}

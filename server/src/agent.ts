@@ -2,6 +2,7 @@ import OpenAI from 'openai';
 import { tavily as createTavilyClient } from '@tavily/core';
 import type { TavilyClient } from '@tavily/core';
 import type { StudentProfile } from './types';
+import retriever from './knowledge/retriever.js';
 
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -19,6 +20,26 @@ const TAVILY_API_KEY = process.env.TAVILY_API_KEY || '';
 // Init clients
 let openaiClient: OpenAI | null = null;
 let tavilyClient: TavilyClient | null = null;
+let retrieverLoaded = false;
+
+async function ensureRetriever(): Promise<void> {
+  if (retrieverLoaded) return;
+  const dataDir = path.resolve(__dirname, '../../data');
+  await retriever.load(dataDir);
+  retrieverLoaded = true;
+  console.log('[KB] Retriever loaded:', JSON.stringify(retriever.getStats()));
+}
+
+function searchKB(userMessage: string): string {
+  if (!retrieverLoaded) return '';
+  const ctx = retriever.buildContext(userMessage, 3, 3);
+  if (ctx) {
+    console.log('[KB] Found context for query');
+  } else {
+    console.log('[KB] No matches for query');
+  }
+  return ctx;
+}
 
 function getOpenAI(): OpenAI {
   if (!openaiClient) {
@@ -73,6 +94,7 @@ const SYSTEM_PROMPT = `You are a professional US college admissions advisor, ded
 - Do NOT guarantee admission to any school
 - Encourage students to apply to a balanced list (reach, match, safety schools)
 - Remind users to verify critical info on official college websites
+- When college profile data is provided from the knowledge base below, use it as your primary source. Supplement with web search only for time-sensitive data.
 - Be sensitive to the stress of college applications; offer emotional support`;
 
 /**
@@ -146,7 +168,16 @@ function needsSearch(query: string): boolean {
     'GPA', 'average', '平均',
   ];
   const lower = query.toLowerCase();
-  return searchKeywords.some(kw => lower.includes(kw));
+  if (!searchKeywords.some(kw => lower.includes(kw))) {
+    return false;
+  }
+
+  // If KB is loaded and found results, skip web search unless time-sensitive
+  if (retrieverLoaded && searchKB(query).length > 0) {
+    const timeKws = ['deadline', 'ranking', '2025', '2026', 'latest', 'new', 'updated', 'announced'];
+    if (!timeKws.some(kw => lower.includes(kw))) return false;
+  }
+  return true;
 }
 
 export interface AgentStream {
@@ -164,9 +195,16 @@ export async function createAgentStream(
   const prompt = buildPrompt(userMessage, profile);
   let aborted = false;
 
+  // KB lookup first
+  await ensureRetriever();
+  const kbContext = searchKB(userMessage);
+  
+  // If KB has strong matches, reduce reliance on web search
+  const hasTimeKeywords = /\b(deadline|ranking|2025|2026|latest|new|updated|tuition 202|announced)\b/i.test(userMessage);
+
   // Step 1: Web search if needed
   let searchContext = '';
-  if (needsSearch(userMessage)) {
+  if (needsSearch(userMessage) && (!kbContext || hasTimeKeywords)) {
     const searchQuery = userMessage
       .replace(/推荐|recommend/gi, 'best')
       .replace(/对比|compare/gi, 'compare')
@@ -180,9 +218,11 @@ export async function createAgentStream(
     { role: 'system', content: SYSTEM_PROMPT },
   ];
 
-  const userContent = searchContext
-    ? `[Web Search Results]\n${searchContext}\n\n---\n\n[User Question]\n${prompt}`
-    : prompt;
+  const userContent = [
+    kbContext ? `[Knowledge Base Results]\n${kbContext}` : '',
+    searchContext ? `[Web Search Results]\n${searchContext}` : '',
+    `[User Question]\n${prompt}`
+  ].filter(Boolean).join('\n\n---\n\n');
 
   messages.push({ role: 'user', content: userContent });
 

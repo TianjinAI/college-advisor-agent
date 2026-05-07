@@ -1,0 +1,94 @@
+{
+  "id": "vassar-college",
+  "name": "Vassar College",
+  "shortName": "Vassar",
+  "location": {
+    "city": "Poughkeepsie",
+    "state": "NY",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "www.vassar.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "English",
+      "Art History",
+      "Biology",
+      "Political Science",
+      "Drama",
+      "Economics"
+    ],
+    "signaturePrograms": [
+      "Open Curriculum",
+      "Art Museum",
+      "Urban Studies",
+      "Research"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "14-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1857,
+    "satRange": {
+      "25th": 1414,
+      "75th": 1574
+    },
+    "actRange": {
+      "25th": 30.0,
+      "75th": 36.0
+    },
+    "earlyDecisionRate": 0.4,
+    "regularRate": 0.19,
+    "waitlistAcceptRate": 0.1,
+    "internationalAcceptRate": 0.09,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 71030.0,
+    "roomAndBoard": 18240.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 49177.0,
+    "medianEarnings10Year": 71366.0,
+    "averageDebtAtGraduation": 18625.0
+  },
+  "students": {
+    "totalUndergrad": 2444.0,
+    "genderBreakdown": {
+      "male": 0.383,
+      "female": 0.617
+    },
+    "pellGrantPercent": 0.1924,
+    "firstGenPercent": 0.1418439716
+  },
+  "scorecardId": 197133.0,
+  "lastUpdated": "2026-05-07T18:44:52.634742Z",
+  "campus": {
+    "setting": "Small-city campus in Poughkeepsie, NY, on the Hudson River",
+    "culture": "Intellectually free, artistic, and progressive. The open curriculum and strong arts programs attract creative thinkers. Students are socially conscious and academically driven. The Hudson Valley provides natural beauty. The 'Vassar' community is tight-knit.",
+    "distinctiveTraits": "The first of the Seven Sisters to go co-ed. The Frances Lehman Loeb Art Center has 21,000+ works. The Urban Studies program uses NYC as a classroom. The 'Vassar' identity is artsy, progressive, and intellectually curious.",
+    "whatTheyLookFor": "Vassar values intellectual curiosity, artistic talent, and social consciousness. They want students who will use the open curriculum and the arts resources. The 'Why Vassar?' should mention the art museum, urban studies, or the Hudson Valley.",
+    "applicationTips": "The arts essay should show genuine creative passion. The open curriculum essay should explain how you'd use the freedom. The 'community' essay should demonstrate collaborative spirit. Show you've thought about the Poughkeepsie location."
+  }
+}

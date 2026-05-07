@@ -1,0 +1,101 @@
+{
+  "id": "williams-college",
+  "name": "Williams College",
+  "shortName": "Williams",
+  "location": {
+    "city": "Williamstown",
+    "state": "MA",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "https://www.williams.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Economics",
+      "History",
+      "English",
+      "Political Science",
+      "Art History",
+      "Mathematics",
+      "Biology",
+      "Chemistry",
+      "Geosciences",
+      "Performance Studies",
+      "Comparative Literature",
+      "Statistics"
+    ],
+    "signaturePrograms": [
+      "Oxford-style tutorials (2 students + 1 professor)",
+      "Winter Study (January term)",
+      "Williams-Mystic (semester at sea)",
+      "Center for Development Economics",
+      "Williams-Exeter Programme at Oxford",
+      "Clark Art Institute partnership",
+      "Center for Environmental Studies",
+      "Sawyer Library Special Collections research"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "8-12"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0825,
+    "satRange": {
+      "25th": 1453,
+      "75th": 1613
+    },
+    "actRange": null,
+    "earlyDecisionRate": 0.33,
+    "regularRate": 0.1,
+    "waitlistAcceptRate": 0.1,
+    "internationalAcceptRate": 0.07,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 68560.0,
+    "roomAndBoard": 17260.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 71754.0,
+    "medianEarnings10Year": 88665.0,
+    "averageDebtAtGraduation": 12761.0
+  },
+  "students": {
+    "totalUndergrad": 2076.0,
+    "genderBreakdown": {
+      "male": 0.4754,
+      "female": 0.5246
+    },
+    "pellGrantPercent": 0.1761,
+    "firstGenPercent": 0.215496368
+  },
+  "scorecardId": 168342.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Rural campus in Williamstown, MA, in the Berkshire Mountains",
+    "culture": "Intellectually intense, outdoorsy, and remarkably tight-knit. The tutorial system (2 students + 1 professor) creates deep, personal relationships with faculty. Students are collaborative, not competitive—it's common to find economics majors helping each other with problem sets at 2 AM. Winter Study in January lets students explore anything from skiing to internships to random passions (cheese-making, anyone?). The mountains are beautiful but remote, which creates a bubble where students genuinely get to know everyone.",
+    "distinctiveTraits": "The Oxford-style tutorial system is unique in the US—every junior takes at least one tutorial with just one other student and a professor. Williams-Mystic is a semester at sea program. The 'Eph' community is fiercely loyal. The Clark Art Institute is next door.",
+    "whatTheyLookFor": "Williams values intellectual curiosity, collaboration, and love of learning. They want students who will thrive in small seminars and tutorials. The 'Why Williams?' should mention the tutorial system and the rural setting. They prioritize academic fit over achievements. Admissions officers specifically seek students who demonstrate 'intellectual generosity'—those who share ideas, help peers, and contribute to the collaborative culture. They care deeply about whether applicants will embrace the tutorial's demanding, intimate format.",
+    "applicationTips": "The tutorial system essay should show you understand what it entails (weekly essays, intense discussion with a professor and one peer). Show you've thought about Winter Study—name a specific course or project you'd pursue. The rural location is real—demonstrate you're okay with a small town and value close community. The alumni interview is important—prepare to discuss a book or idea that genuinely excites you and how you'd explore it at Williams. Mention the Clark Art Institute or Williams-Mystic if relevant to your interests."
+  }
+}

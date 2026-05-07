@@ -1,0 +1,104 @@
+{
+  "id": "duke-university",
+  "name": "Duke University",
+  "shortName": "Duke",
+  "location": {
+    "city": "Durham",
+    "state": "NC",
+    "region": "southeast"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "www.duke.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Public Policy",
+      "Economics",
+      "Engineering",
+      "Biology",
+      "Computer Science",
+      "Political Science",
+      "Global Health",
+      "Neuroscience",
+      "Documentary Studies",
+      "Statistical Science",
+      "African and African American Studies",
+      "Environmental Sciences"
+    ],
+    "signaturePrograms": [
+      "Focus Program (first-year interdisciplinary clusters)",
+      "DukeEngage (fully funded summer service)",
+      "Pratt School of Engineering",
+      "Sanford School of Public Policy",
+      "Duke Global Health Institute",
+      "Duke Marine Lab",
+      "Bass Connections (interdisciplinary research teams)",
+      "Duke Innovation and Entrepreneurship Initiative"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "15-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0571,
+    "satRange": {
+      "25th": 1468,
+      "75th": 1628
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyDecisionRate": 0.178,
+    "regularRate": 0.054,
+    "waitlistAcceptRate": 0.05,
+    "internationalAcceptRate": 0.042,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 2",
+      "finaidPriority": "March 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 68758.0,
+    "roomAndBoard": 18128.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 85792.0,
+    "medianEarnings10Year": 97800.0,
+    "averageDebtAtGraduation": 13000.0
+  },
+  "students": {
+    "totalUndergrad": 6442.0,
+    "genderBreakdown": {
+      "male": 0.4632,
+      "female": 0.5368
+    },
+    "pellGrantPercent": 0.1403,
+    "firstGenPercent": 0.1345885635
+  },
+  "scorecardId": 198419.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Suburban campus in Durham, NC, with Gothic architecture and forests",
+    "culture": "Work hard, play hard with genuine Southern hospitality. Students are ambitious but friendly—it's common to study together for organic chemistry and then tailgate for a basketball game. Basketball is a religion (Cameron Crazies). Greek life is prominent but not dominant. The Research Triangle provides internship and research opportunities, while the Gothic Wonderland campus feels like a storybook. The culture balances high achievement with a strong sense of community.",
+    "distinctiveTraits": "The 'Gothic Wonderland' campus is stunning. DukeEngage funds every student's summer service project anywhere in the world. The Focus Program lets first-years live and learn in interdisciplinary clusters. Cameron Indoor Stadium is the most intense college basketball venue.",
+    "whatTheyLookFor": "Duke values intellectual curiosity, leadership, and community engagement. They want students who will take advantage of DukeEngage and interdisciplinary programs. The 'Why Duke?' essay should show you understand the balance of academics and school spirit. Admissions officers specifically seek students who demonstrate 'impact beyond self'—service, mentorship, or community building. They care about whether applicants will contribute to the collaborative, spirited culture rather than just competing individually.",
+    "applicationTips": "The 'Why Duke?' essay should mention specific programs (DukeEngage, Focus, Pratt) and the community feel. If you're a STEM applicant, mention the Pratt School specifically and any Bass Connections teams that interest you. The optional alumni interview is valuable—prepare to discuss your impact on communities. For the 'community' essay, be specific about how you've built or strengthened communities. Duke values school spirit—mentioning Cameron Crazies or a specific Duke tradition shows you understand the culture."
+  }
+}

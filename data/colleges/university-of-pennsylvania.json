@@ -1,0 +1,104 @@
+{
+  "id": "university-of-pennsylvania",
+  "name": "University of Pennsylvania",
+  "shortName": "Penn",
+  "location": {
+    "city": "Philadelphia",
+    "state": "PA",
+    "region": "northeast"
+  },
+  "type": "national-university",
+  "tier": "ivy",
+  "control": "private",
+  "website": "www.upenn.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Business (Wharton)",
+      "Finance",
+      "Nursing",
+      "Engineering",
+      "Political Science",
+      "Biology",
+      "Behavioral Economics",
+      "Health and Societies",
+      "Cognitive Science",
+      "Real Estate (Wharton)",
+      "International Relations",
+      "Computer Science"
+    ],
+    "signaturePrograms": [
+      "Wharton School of Business",
+      "Integrated Product Design",
+      "Penn Medicine pipeline",
+      "Huntsman Program (International Studies and Business)",
+      "Vagelos Integrated Program in Energy Research (VIPER)",
+      "Penn World Scholars",
+      "Netter Center for Community Partnerships",
+      "M&T (Management and Technology dual degree)"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "18-22"
+  },
+  "admissions": {
+    "acceptanceRate": 0.054,
+    "satRange": {
+      "25th": 1473,
+      "75th": 1633
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyDecisionRate": 0.162,
+    "regularRate": 0.058,
+    "waitlistAcceptRate": 0.04,
+    "internationalAcceptRate": 0.042,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 5",
+      "finaidPriority": "March 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 68686.0,
+    "roomAndBoard": 19174.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 90555.0,
+    "medianEarnings10Year": 111371.0,
+    "averageDebtAtGraduation": 15715.0
+  },
+  "students": {
+    "totalUndergrad": 10650.0,
+    "genderBreakdown": {
+      "male": 0.4499,
+      "female": 0.5501
+    },
+    "pellGrantPercent": 0.1653,
+    "firstGenPercent": 0.1876351059
+  },
+  "scorecardId": 215062.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in University City, Philadelphia",
+    "culture": "Pre-professional, ambitious, and entrepreneurial. Penn students are focused on outcomes—internships, startups, and grad school placement—but they also know how to have fun. The social scene is active (Greek life + city life). There's a 'work hard, play hard' ethos that permeates everything from Wharton case competitions to Spring Fling. The culture is notably interdisciplinary: it's common to meet a student majoring in neuroscience and minoring in marketing.",
+    "distinctiveTraits": "Wharton is the premier undergraduate business school in the world. Penn also pioneered interdisciplinary education with programs like Vagelos LSM (Life Science + Business). The 'One University' policy lets students take classes across all four undergraduate schools.",
+    "whatTheyLookFor": "Penn values initiative and impact. They want students who have already started something—a business, a nonprofit, a research project. The 'fit' question matters: can you articulate specific Penn resources that match your goals? Admissions officers look for evidence of 'practical idealism'—students who want to do well AND do good. Wharton applicants should show quantitative aptitude and business intuition; Nursing applicants should show compassion and clinical exposure.",
+    "applicationTips": "The 'Thank You Note' essay is Penn's personality test—be warm, specific, and show you've done your research. If applying to Wharton, demonstrate quantitative aptitude and business intuition. For dual-degree programs (M&T, Huntsman, LSM), explain the intersection clearly and show you've already explored both fields. Mention specific professors, Wharton research centers, or Penn Medicine labs. The alumni interview is common—prepare to discuss how you would use Philadelphia as a resource."
+  }
+}

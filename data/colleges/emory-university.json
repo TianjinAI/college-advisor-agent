@@ -1,0 +1,104 @@
+{
+  "id": "emory-university",
+  "name": "Emory University",
+  "shortName": "Emory",
+  "location": {
+    "city": "Atlanta",
+    "state": "GA",
+    "region": "southeast"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "www.emory.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Pre-Med",
+      "Business",
+      "Nursing",
+      "Public Health",
+      "Religion",
+      "Psychology",
+      "Creative Writing",
+      "Neuroscience",
+      "Environmental Sciences",
+      "International Studies",
+      "Quantitative Theory and Methods",
+      "Film and Media Studies"
+    ],
+    "signaturePrograms": [
+      "Emory Healthcare system",
+      "Goizueta Business School",
+      "Oxford College (2-year liberal arts campus)",
+      "Candler School of Theology",
+      "Emory Scholars Program",
+      "Center for the Study of Human Health",
+      "Emory Vaccine Center",
+      "Rollins School of Public Health pipeline"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "18-22"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1065,
+    "satRange": {
+      "25th": 1440,
+      "75th": 1600
+    },
+    "actRange": {
+      "25th": 30.0,
+      "75th": 36.0
+    },
+    "earlyDecisionRate": 0.24,
+    "regularRate": 0.12,
+    "waitlistAcceptRate": 0.08,
+    "internationalAcceptRate": 0.08,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "March 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 64280.0,
+    "roomAndBoard": 20220.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 74980.0,
+    "medianEarnings10Year": 80137.0,
+    "averageDebtAtGraduation": 18250.0
+  },
+  "students": {
+    "totalUndergrad": 7298.0,
+    "genderBreakdown": {
+      "male": 0.4316,
+      "female": 0.5684
+    },
+    "pellGrantPercent": 0.1821,
+    "firstGenPercent": 0.1638702461
+  },
+  "scorecardId": 139658.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Suburban campus in Atlanta, GA, with a separate Oxford College campus",
+    "culture": "Pre-professional, friendly, and distinctly Southern. Atlanta provides internship opportunities in business, healthcare, and media, but the 'Emory Bubble' is real—students often stay on campus. Oxford College (2-year liberal arts campus) is a unique entry point that creates tight-knit first- and second-year communities. Students are collaborative and career-focused, with a strong pre-med culture. The campus is beautiful, with a dense tree canopy and the famous Lullwater Preserve.",
+    "distinctiveTraits": "Oxford College offers a small liberal arts experience for the first two years before transitioning to the Atlanta campus. The Emory Hospital system is top-ranked. Goizueta Business School offers undergraduate business with Atlanta corporate connections. The 'Emory Bubble' is real but Atlanta breaks it.",
+    "whatTheyLookFor": "Emory values intellectual curiosity and professional ambition. They want students who will engage with Atlanta's opportunities. The Oxford vs. main campus choice matters—show you understand the difference. Pre-med applicants should show clinical exposure. Admissions officers specifically seek students who demonstrate 'intellectual kindness'—those who excel academically while supporting peers. They care about whether applicants will contribute to the collaborative, service-oriented culture.",
+    "applicationTips": "If applying to Oxford, explain why you want the small-college start and how you'll transition to Atlanta. The 'Why Emory?' should mention Atlanta specifically (CDC, CNN, Coca-Cola, Carter Center). Pre-med applicants should demonstrate patient interaction, not just shadowing—volunteer at a clinic or hospital. The business school requires a separate application; show quantitative aptitude and leadership. The Emory Scholars Program is highly competitive—apply if you have exceptional academic and service records."
+  }
+}

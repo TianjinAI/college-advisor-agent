@@ -23,6 +23,14 @@ export default function App() {
       <Header />
       <div className="app-body">
         <aside className="sidebar">
+          <div className="sidebar-copy">
+            <p className="eyebrow">Student Snapshot</p>
+            <h2>Give the advisor enough context to filter for fit, affordability, and admissions odds.</h2>
+            <p>
+              Keep this lightweight. Even partial inputs help the recommendations lean on the loaded school
+              profiles and admissions insights.
+            </p>
+          </div>
           <ProfileCard profile={profile} onProfileChange={setProfile} />
         </aside>
         <main className="main-content">

@@ -1,0 +1,94 @@
+{
+  "id": "colby-college",
+  "name": "Colby College",
+  "shortName": "Colby",
+  "location": {
+    "city": "Waterville",
+    "state": "ME",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "www.colby.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Economics",
+      "Government",
+      "Biology",
+      "Environmental Science",
+      "English",
+      "History"
+    ],
+    "signaturePrograms": [
+      "Jan Plan",
+      "Environmental Studies",
+      "DavisConnects",
+      "Off-Campus Study"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "14-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0709,
+    "satRange": {
+      "25th": 1421,
+      "75th": 1581
+    },
+    "actRange": {
+      "25th": 30.0,
+      "75th": 36.0
+    },
+    "earlyDecisionRate": 0.4,
+    "regularRate": 0.12,
+    "waitlistAcceptRate": 0.08,
+    "internationalAcceptRate": 0.08,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 69600.0,
+    "roomAndBoard": 17890.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 60052.0,
+    "medianEarnings10Year": 80490.0,
+    "averageDebtAtGraduation": 19157.0
+  },
+  "students": {
+    "totalUndergrad": 2407.0,
+    "genderBreakdown": {
+      "male": 0.4882,
+      "female": 0.5118
+    },
+    "pellGrantPercent": 0.1432,
+    "firstGenPercent": 0.108974359
+  },
+  "scorecardId": 161086.0,
+  "lastUpdated": "2026-05-07T18:44:52.625744Z",
+  "campus": {
+    "setting": "Small-town campus in Waterville, ME, with a new downtown integration",
+    "culture": "Intellectually engaged, outdoorsy, and community-minded. The Jan Plan (January term) lets students explore one course intensively. DavisConnects funds every student's internship or research. The new downtown campus expansion connects students to the community.",
+    "distinctiveTraits": "DavisConnects guarantees funding for every student's internship, research, or global experience. The Jan Plan is a month-long deep dive into one subject. The downtown Waterville revitalization is a unique college-town partnership. The 'Mule' community is loyal and tight-knit.",
+    "whatTheyLookFor": "Colby values intellectual curiosity, community engagement, and outdoor enthusiasm. They want students who will use DavisConnects and Jan Plan. The 'Why Colby?' should mention specific internship goals or Jan Plan ideas.",
+    "applicationTips": "The DavisConnects essay should show you have specific internship or research goals. The Jan Plan essay should explain what you'd explore in a month. Show you've thought about the Maine location. The downtown revitalization is a new angle\u2014mention it if you're interested in community development."
+  }
+}

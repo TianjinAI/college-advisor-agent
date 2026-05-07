@@ -1,0 +1,185 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "College Advisor Knowledge Base Schema",
+  "description": "Schema for the college advisor agent's knowledge base",
+
+  "CollegeProfile": {
+    "type": "object",
+    "required": ["id", "name", "location", "type", "tier"],
+    "properties": {
+      "id": { "type": "string", "description": "kebab-case identifier, e.g. 'harvard-university'" },
+      "name": { "type": "string", "description": "Full official name" },
+      "shortName": { "type": "string", "description": "Common short name, e.g. 'Harvard'" },
+      "location": {
+        "type": "object",
+        "properties": {
+          "city": { "type": "string" },
+          "state": { "type": "string" },
+          "region": { "type": "string", "enum": ["northeast", "southeast", "midwest", "southwest", "west", "pacific"] }
+        }
+      },
+      "type": { "type": "string", "enum": ["national-university", "liberal-arts-college", "institute-of-technology", "specialized"] },
+      "tier": { "type": "string", "enum": ["ivy", "elite", "top-lac", "top-stem", "strong-public"] },
+      "control": { "type": "string", "enum": ["private", "public"] },
+      "website": { "type": "string", "format": "uri" },
+
+      "academics": {
+        "type": "object",
+        "properties": {
+          "strengths": { "type": "array", "items": { "type": "string" }, "description": "Top academic strengths, e.g. ['Economics', 'Computer Science']" },
+          "signaturePrograms": { "type": "array", "items": { "type": "string" }, "description": "Unique or standout programs" },
+          "curriculumStyle": { "type": "string", "description": "e.g. 'Core Curriculum', 'Open Curriculum', 'Distribution Requirements'" },
+          "studentFacultyRatio": { "type": "number" },
+          "averageClassSize": { "type": "string" },
+          "stemStrength": { "type": "string", "enum": ["elite", "strong", "moderate", "developing"], "description": "STEM program strength rating" }
+        }
+      },
+
+      "campus": {
+        "type": "object",
+        "properties": {
+          "setting": { "type": "string", "description": "e.g. 'Urban campus in Cambridge', 'Rural campus in Ithaca'" },
+          "culture": { "type": "string", "description": "2-3 sentence campus culture description" },
+          "distinctive": { "type": "string", "description": "What makes this school unique (1-2 sentences)" },
+          "studentLife": { "type": "string", "description": "Social scene, traditions, athletics" }
+        }
+      },
+
+      "admissions": {
+        "type": "object",
+        "properties": {
+          "acceptanceRate": { "type": "number", "description": "Overall acceptance rate (0-1)" },
+          "earlyDecisionRate": { "type": "number", "description": "ED acceptance rate if available" },
+          "earlyActionRate": { "type": "number", "description": "EA acceptance rate if available" },
+          "regularRate": { "type": "number", "description": "Regular decision rate" },
+          "waitlistAcceptRate": { "type": "number", "description": "Waitlist acceptance rate" },
+          "internationalAcceptRate": { "type": "number" },
+          "satRange": {
+            "type": "object",
+            "properties": {
+              "25th": { "type": "number" },
+              "75th": { "type": "number" }
+            }
+          },
+          "actRange": {
+            "type": "object",
+            "properties": {
+              "25th": { "type": "number" },
+              "75th": { "type": "number" }
+            }
+          },
+          "gpaRange": { "type": "string", "description": "e.g. '3.9-4.0 weighted'" },
+          "applicationTips": { "type": "string", "description": "School-specific application advice (2-3 sentences)" },
+          "whatTheyLookFor": { "type": "string", "description": "What admissions officers prioritize at this school" },
+          "deadlines": {
+            "type": "object",
+            "properties": {
+              "earlyDecision": { "type": "string", "description": "e.g. 'November 1'" },
+              "earlyAction": { "type": "string" },
+              "regularDecision": { "type": "string" },
+              "finaidPriority": { "type": "string" }
+            }
+          }
+        }
+      },
+
+      "cost": {
+        "type": "object",
+        "properties": {
+          "tuitionAndFees": { "type": "number" },
+          "roomAndBoard": { "type": "number" },
+          "totalCostOfAttendance": { "type": "number" },
+          "averageNetPrice": { "type": "number", "description": "Average net price after aid" },
+          "netPriceByIncome": {
+            "type": "object",
+            "properties": {
+              "0-30k": { "type": "number" },
+              "30-48k": { "type": "number" },
+              "48-75k": { "type": "number" },
+              "75-110k": { "type": "number" },
+              "110k-plus": { "type": "number" }
+            }
+          },
+          "percentReceivingAid": { "type": "number" },
+          "needBlind": { "type": "boolean", "description": "Need-blind admissions for domestic students" },
+          "meetsFullNeed": { "type": "boolean", "description": "Meets 100% of demonstrated financial need" },
+          "financialAidNotes": { "type": "string" }
+        }
+      },
+
+      "outcomes": {
+        "type": "object",
+        "properties": {
+          "graduationRate4Year": { "type": "number" },
+          "graduationRate6Year": { "type": "number" },
+          "retentionRate": { "type": "number", "description": "First-year to second-year retention" },
+          "medianEarnings6Year": { "type": "number", "description": "Median earnings 6 years after entry" },
+          "medianEarnings10Year": { "type": "number" },
+          "percentEmployed": { "type": "number" },
+          "percentGradSchool": { "type": "number" },
+          "averageDebtAtGraduation": { "type": "number" }
+        }
+      },
+
+      "students": {
+        "type": "object",
+        "properties": {
+          "totalUndergrad": { "type": "number" },
+          "genderBreakdown": {
+            "type": "object",
+            "properties": {
+              "male": { "type": "number" },
+              "female": { "type": "number" }
+            }
+          },
+          "internationalPercent": { "type": "number" },
+          "firstGenPercent": { "type": "number" },
+          "pellGrantPercent": { "type": "number" },
+          "diversityNotes": { "type": "string" }
+        }
+      },
+
+      "scorecardId": { "type": "number", "description": "College Scorecard school ID for API lookups" },
+      "lastUpdated": { "type": "string", "format": "date-time" }
+    }
+  },
+
+  "ExpertInsight": {
+    "type": "object",
+    "required": ["category", "title", "content"],
+    "properties": {
+      "id": { "type": "string" },
+      "category": { "type": "string", "enum": ["admissions", "essays", "extracurriculars", "financial-aid", "strategy", "timeline", "interviews", "general"] },
+      "title": { "type": "string" },
+      "content": { "type": "string" },
+      "targetTier": { "type": "string", "enum": ["ivy", "elite", "top-lac", "any"], "description": "Which college tier this applies to" },
+      "source": { "type": "string", "description": "e.g. 'Former Harvard AO', 'MIT Admissions Blog'" }
+    }
+  },
+
+  "AdmissionCaseStudy": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "string" },
+      "studentProfile": {
+        "type": "object",
+        "properties": {
+          "gpa": { "type": "string" },
+          "satAct": { "type": "string" },
+          "extracurriculars": { "type": "string" },
+          "essays": { "type": "string" },
+          "demographics": { "type": "string" }
+        }
+      },
+      "results": {
+        "type": "object",
+        "properties": {
+          "accepted": { "type": "array", "items": { "type": "string" } },
+          "rejected": { "type": "array", "items": { "type": "string" } },
+          "waitlisted": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "analysis": { "type": "string", "description": "Why this profile succeeded/failed" }
+    }
+  }
+}

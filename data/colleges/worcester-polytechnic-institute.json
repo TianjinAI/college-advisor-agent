@@ -1,0 +1,77 @@
+{
+  "id": "worcester-polytechnic-institute",
+  "name": "Worcester Polytechnic Institute",
+  "shortName": "WPI",
+  "location": {
+    "city": "Worcester",
+    "state": "MA",
+    "region": "northeast"
+  },
+  "type": "institute-of-technology",
+  "tier": "top-stem",
+  "control": "private",
+  "website": "https://www.wpi.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Engineering",
+      "Computer Science",
+      "Robotics",
+      "Business",
+      "Humanities",
+      "Mathematics"
+    ],
+    "signaturePrograms": [
+      "Project-Based Learning",
+      "IQP",
+      "MQP",
+      "Global Projects"
+    ],
+    "curriculumStyle": "Project-Based",
+    "stemStrength": "elite",
+    "averageClassSize": "18-24"
+  },
+  "admissions": {
+    "acceptanceRate": 0.6016,
+    "satRange": null,
+    "actRange": null
+  },
+  "cost": {
+    "tuitionAndFees": 60965.0,
+    "roomAndBoard": 18386.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 85038.0,
+    "medianEarnings10Year": 103470.0,
+    "averageDebtAtGraduation": 27000.0
+  },
+  "students": {
+    "totalUndergrad": 5447.0,
+    "genderBreakdown": {
+      "male": 0.6745,
+      "female": 0.3255
+    },
+    "pellGrantPercent": 0.1188,
+    "firstGenPercent": 0.1337719298
+  },
+  "scorecardId": 168421.0,
+  "lastUpdated": "2026-05-07T18:44:52.636017Z",
+  "campus": {
+    "setting": "Urban campus in Worcester, MA",
+    "culture": "Project-focused, innovative, and globally minded. The project-based curriculum means students solve real problems from day one. The IQP (Interactive Qualifying Project) sends students around the world. Students are hands-on, collaborative, and entrepreneurial.",
+    "distinctiveTraits": "The project-based curriculum is unique\u2014no traditional semesters, just 7-week terms with intense projects. The IQP sends students to work on global issues (water, energy, education). The MQP (Major Qualifying Project) is a senior capstone. The 'WPI Plan' is revolutionary.",
+    "whatTheyLookFor": "WPI values problem-solving ability, collaborative spirit, and global perspective. They want students who will embrace the project-based curriculum. The 'Why WPI?' should mention the IQP, MQP, or the 7-week terms.",
+    "applicationTips": "The project-based essay should show you've worked on team projects. The global perspective essay should mention specific IQP interests. The 'Why WPI?' must explain why the 7-week term system appeals to you. Show you've thought about the Worcester location."
+  }
+}

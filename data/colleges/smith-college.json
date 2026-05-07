@@ -1,0 +1,94 @@
+{
+  "id": "smith-college",
+  "name": "Smith College",
+  "shortName": "Smith",
+  "location": {
+    "city": "Northampton",
+    "state": "MA",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "www.smith.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Engineering",
+      "Art History",
+      "Economics",
+      "Biology",
+      "Government",
+      "Psychology"
+    ],
+    "signaturePrograms": [
+      "Engineering at a women's college",
+      "Five College Consortium",
+      "Praxis",
+      "Study Abroad"
+    ],
+    "curriculumStyle": "Open Curriculum",
+    "stemStrength": "strong",
+    "averageClassSize": "14-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.21,
+    "satRange": {
+      "25th": 1420,
+      "75th": 1580
+    },
+    "actRange": {
+      "25th": 30.0,
+      "75th": 36.0
+    },
+    "earlyDecisionRate": 0.5,
+    "regularRate": 0.3,
+    "waitlistAcceptRate": 0.12,
+    "internationalAcceptRate": 0.13,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 15",
+      "earlyAction": null,
+      "regularDecision": "January 15",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 65178.0,
+    "roomAndBoard": 22570.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 45731.0,
+    "medianEarnings10Year": 64027.0,
+    "averageDebtAtGraduation": 17550.0
+  },
+  "students": {
+    "totalUndergrad": 2544.0,
+    "genderBreakdown": {
+      "male": 0.0004,
+      "female": 0.9996
+    },
+    "pellGrantPercent": 0.1788,
+    "firstGenPercent": 0.1850828729
+  },
+  "scorecardId": 167835.0,
+  "lastUpdated": "2026-05-07T18:44:52.632547Z",
+  "campus": {
+    "setting": "Small-city campus in Northampton, MA, in the Pioneer Valley",
+    "culture": "Intellectually ambitious, socially progressive, and empowering. The Open Curriculum attracts independent thinkers. The Five College Consortium expands opportunities. Students are outspoken, creative, and engaged in social justice. Northampton is a funky, artsy town.",
+    "distinctiveTraits": "The only women's college with an ABET-accredited engineering program. The Open Curriculum is genuine\u2014no requirements. The Five College Consortium gives access to 5,000+ courses. The 'Smithie' identity is confident and community-oriented. The Northampton food scene is excellent.",
+    "whatTheyLookFor": "Smith values intellectual independence, leadership, and commitment to women's advancement. They want students who will use the Open Curriculum and the Five College resources. The 'Why Smith?' should mention the engineering program, the Open Curriculum, or the consortium.",
+    "applicationTips": "The Open Curriculum essay should explain how you'd use the freedom. If interested in engineering, explain why at a women's college. The 'community' essay should show collaborative leadership. The Northampton location is a selling point\u2014mention specific town opportunities."
+  }
+}

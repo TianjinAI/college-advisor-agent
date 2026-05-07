@@ -32,5 +32,9 @@ npm-debug.log*
 # Vite
 client/.vite/
 
+# Codex
+.codex/
+client/.codex/
+
 # Docker
 .docker/

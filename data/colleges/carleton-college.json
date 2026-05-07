@@ -1,0 +1,94 @@
+{
+  "id": "carleton-college",
+  "name": "Carleton College",
+  "shortName": "Carleton",
+  "location": {
+    "city": "Northfield",
+    "state": "MN",
+    "region": "midwest"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "https://www.carleton.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Mathematics",
+      "Computer Science",
+      "Biology",
+      "Chemistry",
+      "English",
+      "History"
+    ],
+    "signaturePrograms": [
+      "Trimester System",
+      "Comps (Senior Thesis)",
+      "Off-Campus Studies",
+      "Science Complex"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "14-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.2041,
+    "satRange": {
+      "25th": 1437,
+      "75th": 1597
+    },
+    "actRange": {
+      "25th": 30.0,
+      "75th": 36.0
+    },
+    "earlyDecisionRate": 0.28,
+    "regularRate": 0.15,
+    "waitlistAcceptRate": 0.08,
+    "internationalAcceptRate": 0.08,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 15",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 68892.0,
+    "roomAndBoard": 17586.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 53989.0,
+    "medianEarnings10Year": 75525.0,
+    "averageDebtAtGraduation": 16750.0
+  },
+  "students": {
+    "totalUndergrad": 2086.0,
+    "genderBreakdown": {
+      "male": 0.4966,
+      "female": 0.5034
+    },
+    "pellGrantPercent": 0.1653,
+    "firstGenPercent": 0.1568123393
+  },
+  "scorecardId": 173258.0,
+  "lastUpdated": "2026-05-07T18:44:52.625015Z",
+  "campus": {
+    "setting": "Small-town campus in Northfield, MN, with two campuses (Carleton + St. Olaf)",
+    "culture": "Intellectually playful, quirky, and collaborative. The trimester system is fast-paced (3 terms per year). Students are genuinely passionate about learning. 'Comps' (comprehensive exams) are a rite of passage. The 'Arb' (arboretum) is a beloved 880-acre natural space.",
+    "distinctiveTraits": "The trimester system lets students focus on just 3 classes at a time, deeply. The 'Comps' (senior comprehensive projects) are required for every major. The Off-Campus Studies office sends 70%+ students abroad. The 'Arb' is one of the largest college arboreta in the US.",
+    "whatTheyLookFor": "Carleton values intellectual playfulness, collaboration, and academic depth. They want students who will thrive in the trimester system and embrace the small-town Minnesota setting. The 'Why Carleton?' should mention the trimesters or the Arb.",
+    "applicationTips": "The 'Why Carleton?' essay should explain why the trimester system appeals to you (deep focus vs. broad sampling). Show you've looked at the Off-Campus Studies options. The 'unusual' essay prompt is a chance to show quirkiness. The Arb is a real selling point for outdoorsy students."
+  }
+}

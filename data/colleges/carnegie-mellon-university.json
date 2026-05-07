@@ -1,0 +1,104 @@
+{
+  "id": "carnegie-mellon-university",
+  "name": "Carnegie Mellon University",
+  "shortName": "CMU",
+  "location": {
+    "city": "Pittsburgh",
+    "state": "PA",
+    "region": "northeast"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "www.cmu.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Computer Science",
+      "Drama",
+      "Art",
+      "Engineering",
+      "Music",
+      "Robotics",
+      "Human-Computer Interaction",
+      "Computational Biology",
+      "Information Systems",
+      "Design",
+      "Machine Learning",
+      "Software Engineering"
+    ],
+    "signaturePrograms": [
+      "School of Computer Science (SCS)",
+      "School of Drama",
+      "School of Art",
+      "Robotics Institute",
+      "BXA Intercollege Degree Programs (arts + sciences)",
+      "Human-Computer Interaction Institute (HCII)",
+      "Entertainment Technology Center (ETC)",
+      "Carnegie Mellon AI (CMU AI)"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "elite",
+    "averageClassSize": "15-20"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1166,
+    "satRange": {
+      "25th": 1466,
+      "75th": 1626
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyDecisionRate": 0.22,
+    "regularRate": 0.11,
+    "waitlistAcceptRate": 0.06,
+    "internationalAcceptRate": 0.085,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 3",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 66246.0,
+    "roomAndBoard": 18166.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 105360.0,
+    "medianEarnings10Year": 114862.0,
+    "averageDebtAtGraduation": 21750.0
+  },
+  "students": {
+    "totalUndergrad": 7304.0,
+    "genderBreakdown": {
+      "male": 0.5086,
+      "female": 0.4914
+    },
+    "pellGrantPercent": 0.1604,
+    "firstGenPercent": 0.0995024876
+  },
+  "scorecardId": 211440.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in Pittsburgh, PA, with a modern, tech-focused feel",
+    "culture": "Intense, quirky, and unapologetically interdisciplinary. The 'CS + Drama' or 'Art + Robotics' combinations are common and celebrated. Students work hard and embrace their nerdy passions—it's normal to see a robotics student performing in a musical or a drama major taking machine learning. Pittsburgh is affordable and has a growing tech scene. The fence in the middle of campus is a painting tradition that captures the playful, creative spirit.",
+    "distinctiveTraits": "The only top school where computer science, drama, and art are all world-class. The Robotics Institute is the largest in the world. The BXA programs let students combine arts and sciences. The 'Painting the Fence' tradition is the oldest in America.",
+    "whatTheyLookFor": "CMU values intellectual intensity and creative problem-solving. They want students who will push boundaries between disciplines. The school-specific essays should show deep knowledge of the program (SCS, Drama, Art, etc.). Admissions officers specifically seek students with 'interdisciplinary curiosity'—those who can excel in one field while drawing from another. They care deeply about portfolio/audition quality for arts applicants and project depth for CS applicants.",
+    "applicationTips": "School-specific applications are separate and equally important. For SCS, show coding projects beyond coursework—GitHub repos, hackathon wins, or open-source contributions. For Drama, the prescreen audition is make-or-break. For Art, the portfolio is everything. The 'Why CMU?' should reference specific interdisciplinary opportunities (BXA, ETC, HCII). If applying to multiple schools, explain the intersection clearly. Mention Pittsburgh's affordability and growing tech scene as assets."
+  }
+}

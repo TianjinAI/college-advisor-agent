@@ -1,0 +1,104 @@
+{
+  "id": "yale-university",
+  "name": "Yale University",
+  "shortName": "Yale",
+  "location": {
+    "city": "New Haven",
+    "state": "CT",
+    "region": "northeast"
+  },
+  "type": "national-university",
+  "tier": "ivy",
+  "control": "private",
+  "website": "https://www.yale.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "English",
+      "History",
+      "Political Science",
+      "Economics",
+      "Music",
+      "Drama",
+      "Biology",
+      "Ethics, Politics, and Economics (EPE)",
+      "Molecular, Cellular, and Developmental Biology",
+      "Classics",
+      "Cognitive Science",
+      "Global Affairs"
+    ],
+    "signaturePrograms": [
+      "Yale Dramatic Association",
+      "Residential Colleges",
+      "Yale Political Union",
+      "Grand Strategy Program",
+      "Ethics, Politics, and Economics (EPE)",
+      "Yale Jackson School of Global Affairs pipeline",
+      "Yale Scientific Research Institutes (SRIs)",
+      "Yale College First-Year Seminar Program"
+    ],
+    "curriculumStyle": "Distribution Requirements (no core)",
+    "stemStrength": "strong",
+    "averageClassSize": "15-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0421,
+    "satRange": {
+      "25th": 1473,
+      "75th": 1633
+    },
+    "actRange": {
+      "25th": 32.0,
+      "75th": 38.0
+    },
+    "earlyRestrictiveActionRate": 0.099,
+    "regularRate": 0.048,
+    "waitlistAcceptRate": 0.03,
+    "internationalAcceptRate": 0.04,
+    "applicationType": "REA",
+    "deadlines": {
+      "earlyAction": "November 1",
+      "earlyDecision": null,
+      "regularDecision": "January 2",
+      "finaidPriority": "March 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 67250.0,
+    "roomAndBoard": 19900.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 81765.0,
+    "medianEarnings10Year": 100533.0,
+    "averageDebtAtGraduation": 12975.0
+  },
+  "students": {
+    "totalUndergrad": 6758.0,
+    "genderBreakdown": {
+      "male": 0.4851,
+      "female": 0.5149
+    },
+    "pellGrantPercent": 0.2039,
+    "firstGenPercent": 0.25
+  },
+  "scorecardId": 130794.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in New Haven, CT, with a distinct college-town feel",
+    "culture": "Intellectual, artistic, and socially engaged. Yale students love ideas and aren't afraid to debate them at 2 AM in a residential college common room. The residential college system creates instant community—each of the 14 colleges has its own dining hall, library, intramural teams, and traditions. There's a strong tradition of a cappella (Whiffenpoofs), theater, and political activism. The culture celebrates 'and' over 'or': scholar AND musician, scientist AND poet.",
+    "distinctiveTraits": "The residential college system (14 colleges, each with its own dining hall, library, and culture). Yale also has the oldest collegiate a cappella tradition and one of the finest art museums in any university.",
+    "whatTheyLookFor": "Yale looks for students who will take full advantage of the residential college system—engaged community members, not just brilliant isolates. They value intellectual vitality, artistic talent, and demonstrated leadership in any form. Admissions officers specifically seek students who will contribute to the 'life of the college'—the informal teaching that happens in dining halls and common rooms. They care deeply about character and how applicants have used their talents to benefit others.",
+    "applicationTips": "The 'Why Yale?' essay should reference specific professors, residential college traditions, or programs. Show that you understand Yale's culture of 'and' (scholar AND musician, scientist AND poet). The optional video can help if you're naturally expressive. If you have an alumni interview, ask about the residential college system and be ready to discuss how you would contribute to college life. Yale's admissions team values intellectual playfulness—don't be afraid to show curiosity about unexpected topics."
+  }
+}

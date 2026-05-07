@@ -1,0 +1,91 @@
+{
+  "id": "bowdoin-college",
+  "name": "Bowdoin College",
+  "shortName": "Bowdoin",
+  "location": {
+    "city": "Brunswick",
+    "state": "ME",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "https://www.bowdoin.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Government",
+      "Economics",
+      "Biology",
+      "English",
+      "Environmental Studies",
+      "Neuroscience"
+    ],
+    "signaturePrograms": [
+      "No Loans Policy",
+      "Coastal Studies Center",
+      "Common Good",
+      "Arctic Studies"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "12-16"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0713,
+    "satRange": {
+      "25th": 1440,
+      "75th": 1600
+    },
+    "actRange": null,
+    "earlyDecisionRate": 0.3,
+    "regularRate": 0.09,
+    "waitlistAcceptRate": 0.07,
+    "internationalAcceptRate": 0.06,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 67832.0,
+    "roomAndBoard": 18488.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 61692.0,
+    "medianEarnings10Year": 82735.0,
+    "averageDebtAtGraduation": 18500.0
+  },
+  "students": {
+    "totalUndergrad": 1873.0,
+    "genderBreakdown": {
+      "male": 0.4794,
+      "female": 0.5206
+    },
+    "pellGrantPercent": 0.1735,
+    "firstGenPercent": 0.1883561644
+  },
+  "scorecardId": 161004.0,
+  "lastUpdated": "2026-05-07T18:44:52.623980Z",
+  "campus": {
+    "setting": "Coastal campus in Brunswick, ME, near the ocean",
+    "culture": "Friendly, outdoorsy, and intellectually engaged. The 'Common Good' ethos emphasizes service. Students are collaborative and genuinely nice. Maine's coast provides stunning natural beauty. The Outing Club is huge. Winter is long but embraced.",
+    "distinctiveTraits": "The 'No Loans' financial aid policy (all aid is grants) is rare and generous. The Coastal Studies Center on Orr's Island is a marine biology gem. The Arctic Museum is unique. The 'Polar Bear' community is tight-knit and loyal. Food is famously excellent.",
+    "whatTheyLookFor": "Bowdoin values intellectual curiosity, community contribution, and resilience. They want students who will embrace Maine's outdoors and the Common Good ethos. The 'Why Bowdoin?' should mention the Coastal Studies Center, the no-loans policy, or the food.",
+    "applicationTips": "The 'Common Good' essay should show authentic service commitment, not just volunteering. The 'Why Bowdoin?' should mention specific outdoor or coastal opportunities. If you're from a warm climate, explain why you're excited about Maine winters (or at least okay with them)."
+  }
+}

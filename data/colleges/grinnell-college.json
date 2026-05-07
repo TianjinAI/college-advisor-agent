@@ -1,0 +1,94 @@
+{
+  "id": "grinnell-college",
+  "name": "Grinnell College",
+  "shortName": "Grinnell",
+  "location": {
+    "city": "Grinnell",
+    "state": "IA",
+    "region": "midwest"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "www.grinnell.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Open Curriculum",
+      "Biology",
+      "Economics",
+      "Political Science",
+      "Computer Science",
+      "History"
+    ],
+    "signaturePrograms": [
+      "Open Curriculum",
+      "Social Justice",
+      "Mentored Research",
+      "Grinnell Corps"
+    ],
+    "curriculumStyle": "Open Curriculum",
+    "stemStrength": "strong",
+    "averageClassSize": "12-16"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1451,
+    "satRange": {
+      "25th": 1406,
+      "75th": 1566
+    },
+    "actRange": {
+      "25th": 29.0,
+      "75th": 35.0
+    },
+    "earlyDecisionRate": 0.5,
+    "regularRate": 0.25,
+    "waitlistAcceptRate": 0.1,
+    "internationalAcceptRate": 0.12,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 68106.0,
+    "roomAndBoard": 16842.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 49004.0,
+    "medianEarnings10Year": 62830.0,
+    "averageDebtAtGraduation": 17500.0
+  },
+  "students": {
+    "totalUndergrad": 1729.0,
+    "genderBreakdown": {
+      "male": 0.4563,
+      "female": 0.5437
+    },
+    "pellGrantPercent": 0.1786,
+    "firstGenPercent": 0.1756097561
+  },
+  "scorecardId": 153384.0,
+  "lastUpdated": "2026-05-07T18:44:52.628156Z",
+  "campus": {
+    "setting": "Small-town campus in Grinnell, IA, in rural Iowa",
+    "culture": "Intellectually intense, socially conscious, and quirky. The Open Curriculum attracts self-directed learners. Students are passionate about social justice and academic exploration. The town is small but supportive. The 'Scarlet and Black' community is tight-knit.",
+    "distinctiveTraits": "The Open Curriculum is one of the most flexible in the nation. The Social Justice concentration is unique. The Grinnell Corps places graduates in service positions worldwide. The 'Self-Governance' system gives students unusual responsibility. The rural Iowa setting is peaceful but remote.",
+    "whatTheyLookFor": "Grinnell values intellectual curiosity, social conscience, and self-direction. They want students who will thrive in the Open Curriculum and embrace the rural setting. The 'Why Grinnell?' should mention the curriculum, social justice, or self-governance.",
+    "applicationTips": "The Open Curriculum essay should show you've thought about how to use the freedom. The social justice angle should be authentic. Show you've considered the rural Iowa location. The self-governance essay should demonstrate maturity and responsibility."
+  }
+}

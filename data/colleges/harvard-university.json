@@ -1,0 +1,103 @@
+{
+  "id": "harvard-university",
+  "name": "Harvard University",
+  "shortName": "Harvard",
+  "location": {
+    "city": "Cambridge",
+    "state": "MA",
+    "region": "northeast"
+  },
+  "type": "national-university",
+  "tier": "ivy",
+  "control": "private",
+  "website": "www.harvard.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Economics",
+      "Government",
+      "Computer Science",
+      "History",
+      "Biology",
+      "Psychology",
+      "English",
+      "Social Studies (interdisciplinary)",
+      "African and African American Studies",
+      "Biomedical Engineering",
+      "Philosophy",
+      "Statistics"
+    ],
+    "signaturePrograms": [
+      "Freshman Seminars (small-group courses with senior faculty)",
+      "Harvard Innovation Labs (i-lab and Launch Lab)",
+      "Harvard-MIT Division of Health Sciences and Technology (HST)",
+      "Social Studies (tutorial-based interdisciplinary honors major)",
+      "Harvard College Research Program (HCRP)",
+      "Mind Brain Behavior (MBB) Interdisciplinary Initiative",
+      "General Education Program"
+    ],
+    "curriculumStyle": "General Education + Distribution Requirements + Concentration",
+    "stemStrength": "elite",
+    "averageClassSize": "12-15 (seminar-level; introductory lecture courses are typically larger)"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0365,
+    "satRange": {
+      "25th": 1473,
+      "75th": 1633
+    },
+    "actRange": {
+      "25th": 32.0,
+      "75th": 38.0
+    },
+    "earlyRestrictiveActionRate": 0.053,
+    "regularRate": 0.031,
+    "waitlistAcceptRate": 0.04,
+    "internationalAcceptRate": 0.025,
+    "applicationType": "REA",
+    "deadlines": {
+      "earlyAction": "November 1",
+      "earlyDecision": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 61676.0,
+    "roomAndBoard": 21190.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 99572.0,
+    "medianEarnings10Year": 101817.0,
+    "averageDebtAtGraduation": 14000.0
+  },
+  "students": {
+    "totalUndergrad": 7601.0,
+    "genderBreakdown": {
+      "male": 0.4623,
+      "female": 0.5377
+    },
+    "pellGrantPercent": 0.1643,
+    "firstGenPercent": 0.25708061
+  },
+  "scorecardId": 166027.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in Cambridge, MA, across the Charles River from Boston",
+    "culture": "Intense, ambitious, and globally minded. Students are driven but surprisingly collaborative. The House system creates tight-knit communities within the larger university—each House has its own dining hall, library, and traditions. Expect intellectual debate everywhere, from Annenberg Hall to the Harvard Square coffee shops. The culture rewards depth: students often become genuine experts in niche fields by senior year.",
+    "distinctiveTraits": "Unmatched global brand, massive endowment enabling generous financial aid, and the House system (think Hogwarts) that gives every student a home base for four years.",
+    "whatTheyLookFor": "Harvard looks for students who demonstrate intellectual curiosity, leadership potential, and a track record of making meaningful contributions to their communities. The admissions committee asks: 'What will this student bring to the Harvard community that no one else will?' They value sustained commitment to a few activities over scattered involvement in many — evidence of depth, not just breadth. Admissions officers also look for students who can articulate why Harvard specifically is the right place for their next chapter. The ideal applicant shows both academic excellence and a genuine passion that goes beyond the classroom.",
+    "applicationTips": "Use Harvard's short-response questions to reveal specific intellectual passions and how you think, not just what you've achieved. For prompts like 'Your intellectual life may extend beyond the academic requirements of your particular school,' show genuine curiosity — describe a book, idea, or project that genuinely excites you, not what you think admissions wants to hear. If you have an alumni interview, prepare thoughtful questions about House life, advising, and the undergraduate community. Show evidence of sustained commitment to a few activities rather than listing scattered achievements. Above all, let your personality come through — Harvard's prompts are designed to see who you are, not just what you've done."
+  }
+}

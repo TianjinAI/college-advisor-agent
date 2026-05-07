@@ -1,0 +1,104 @@
+{
+  "id": "university-of-notre-dame",
+  "name": "University of Notre Dame",
+  "shortName": "Notre Dame",
+  "location": {
+    "city": "Notre Dame",
+    "state": "IN",
+    "region": "midwest"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "www.nd.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Business (Mendoza)",
+      "Engineering",
+      "Political Science",
+      "Economics",
+      "Theology",
+      "Science",
+      "Accountancy",
+      "Computer Science",
+      "Irish Language and Literature",
+      "Peace Studies",
+      "Aerospace Engineering",
+      "Neuroscience"
+    ],
+    "signaturePrograms": [
+      "Mendoza College of Business",
+      "Grotto of Our Lady of Lourdes",
+      "Notre Dame Vision (faith formation)",
+      "Center for Social Concerns",
+      "Notre Dame International (study abroad)",
+      "Institute for Educational Initiatives",
+      "Notre Dame Law School pipeline",
+      "Flatley Center for Undergraduate Scholarly Engagement"
+    ],
+    "curriculumStyle": "Core Curriculum",
+    "stemStrength": "strong",
+    "averageClassSize": "16-20"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1127,
+    "satRange": {
+      "25th": 1440,
+      "75th": 1600
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyRestrictiveActionRate": 0.2,
+    "regularRate": 0.12,
+    "waitlistAcceptRate": 0.05,
+    "internationalAcceptRate": 0.08,
+    "applicationType": "REA",
+    "deadlines": {
+      "earlyAction": "November 1",
+      "earlyDecision": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "March 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 65025.0,
+    "roomAndBoard": 17900.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 86210.0,
+    "medianEarnings10Year": 99980.0,
+    "averageDebtAtGraduation": 19000.0
+  },
+  "students": {
+    "totalUndergrad": 8818.0,
+    "genderBreakdown": {
+      "male": 0.5127,
+      "female": 0.4873
+    },
+    "pellGrantPercent": 0.1374,
+    "firstGenPercent": 0.1023765996
+  },
+  "scorecardId": 152080.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Suburban campus in Notre Dame, IN, with iconic golden dome",
+    "culture": "Faith-informed, service-oriented, and fiercely loyal. The Catholic identity is present but not oppressive—students of all faiths are welcome and find community. Students are genuinely nice (the 'Notre Dame nice' stereotype is real). Football Saturdays are religious experiences: the campus empties into the stadium, and the 'Play Like a Champion Today' sign is touched by every player. Alumni network is legendary; 'ND Nation' is a global community that opens doors decades after graduation.",
+    "distinctiveTraits": "The Catholic intellectual tradition shapes the Core (2 theology, 2 philosophy required). The alumni network is the most loyal in the world ('ND Nation'). The Grotto is a spiritual center for all faiths. Football Saturdays with the 'Play Like a Champion' sign are iconic.",
+    "whatTheyLookFor": "Notre Dame values character, service, and community contribution. They want students who will embrace the 'whole person' education—mind, body, spirit. The faith requirement is real but inclusive of all backgrounds. Show you've thought about service and values. Admissions officers specifically seek students who demonstrate 'servant leadership'—those who have led by serving others. They care deeply about whether applicants will contribute to the unique culture of faith, service, and excellence.",
+    "applicationTips": "The faith essay (if applicable) should be thoughtful, not performative. Show you understand Notre Dame's mission beyond football. The 'Why Notre Dame?' should mention specific service programs (Center for Social Concerns), Mendoza if business, or the Core's philosophy/theology requirement. If you're not Catholic, explain how you'll engage with the faith community respectfully. The alumni interview is important—prepare to discuss a time you served others and what you learned. Mention specific Notre Dame traditions (Dome Dance, Keenan Revue, Bookstore Basketball) that show you understand the culture."
+  }
+}

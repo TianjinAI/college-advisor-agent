@@ -1,0 +1,83 @@
+{
+  "id": "rensselaer-polytechnic-institute",
+  "name": "Rensselaer Polytechnic Institute",
+  "shortName": "RPI",
+  "location": {
+    "city": "Troy",
+    "state": "NY",
+    "region": "northeast"
+  },
+  "type": "institute-of-technology",
+  "tier": "top-stem",
+  "control": "private",
+  "website": "www.rpi.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Engineering",
+      "Computer Science",
+      "Architecture",
+      "Business",
+      "Science",
+      "Humanities"
+    ],
+    "signaturePrograms": [
+      "Arch + Design",
+      "Co-term",
+      "Research",
+      "Entrepreneurship"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "elite",
+    "averageClassSize": "18-24"
+  },
+  "admissions": {
+    "acceptanceRate": 0.6347,
+    "satRange": {
+      "25th": 1376,
+      "75th": 1536
+    },
+    "actRange": {
+      "25th": 30.0,
+      "75th": 36.0
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 64081.0,
+    "roomAndBoard": 18120.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 83054.0,
+    "medianEarnings10Year": 102051.0,
+    "averageDebtAtGraduation": 23750.0
+  },
+  "students": {
+    "totalUndergrad": 5714.0,
+    "genderBreakdown": {
+      "male": 0.6887,
+      "female": 0.3113
+    },
+    "pellGrantPercent": 0.1992,
+    "firstGenPercent": 0.1374501992
+  },
+  "scorecardId": 194824.0,
+  "lastUpdated": "2026-05-07T18:44:52.631757Z",
+  "campus": {
+    "setting": "Urban campus in Troy, NY, overlooking the Hudson River",
+    "culture": "Innovative, entrepreneurial, and technically focused. The 'Why not change the world?' motto drives the culture. Students are problem-solvers and makers. The Hudson Valley provides a historic backdrop. The co-term program lets students get a master's in 5 years.",
+    "distinctiveTraits": "The oldest technological university in the English-speaking world (founded 1824). The co-term program lets students earn a BS + MS in 5 years. The EMPAC arts center is a stunning architectural landmark. The 'Rensselaer Plan' emphasizes research and innovation.",
+    "whatTheyLookFor": "RPI values technical aptitude, innovation, and entrepreneurial spirit. They want students who will use the co-term program and the research resources. The 'Why RPI?' should mention the co-term, the Arch program, or specific research labs.",
+    "applicationTips": "The 'change the world' essay should show ambitious problem-solving. The co-term program is a great angle if you're considering grad school. The Arch (Architecture + Design) portfolio is critical if applying. Show you've thought about the Troy location."
+  }
+}

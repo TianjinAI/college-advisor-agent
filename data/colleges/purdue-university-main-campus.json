@@ -1,0 +1,93 @@
+{
+  "id": "purdue-university-main-campus",
+  "name": "Purdue University-Main Campus",
+  "shortName": "Purdue",
+  "location": {
+    "city": "West Lafayette",
+    "state": "IN",
+    "region": "midwest"
+  },
+  "type": "national-university",
+  "tier": "top-stem",
+  "control": "private",
+  "website": "https://www.purdue.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Engineering",
+      "Aviation",
+      "Agriculture",
+      "Computer Science",
+      "Pharmacy",
+      "Business",
+      "Aerospace Engineering",
+      "Mechanical Engineering",
+      "Nuclear Engineering",
+      "Industrial Engineering",
+      "Veterinary Medicine (pre-vet pipeline)",
+      "Data Science"
+    ],
+    "signaturePrograms": [
+      "Purdue Engineering (largest in US)",
+      "Aviation Program (working airport on campus)",
+      "Co-op Program",
+      "Purdue Research Park",
+      "Purdue Polytechnic Institute",
+      "Neil Armstrong Hall of Engineering",
+      "Zucrow Labs (propulsion research)",
+      "Purdue Online (world-renowned distance learning)"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "elite",
+    "averageClassSize": "25-35"
+  },
+  "admissions": {
+    "acceptanceRate": 0.4987,
+    "satRange": {
+      "25th": 1284,
+      "75th": 1444
+    },
+    "actRange": {
+      "25th": 27.0,
+      "75th": 33.0
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 9992.0,
+    "roomAndBoard": 12820.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 60838.0,
+    "medianEarnings10Year": 72424.0,
+    "averageDebtAtGraduation": 19500.0
+  },
+  "students": {
+    "totalUndergrad": 44503.0,
+    "genderBreakdown": {
+      "male": 0.5901,
+      "female": 0.4099
+    },
+    "pellGrantPercent": 0.1298,
+    "firstGenPercent": 0.1853810686
+  },
+  "scorecardId": 243780.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Small-city campus in West Lafayette, IN",
+    "culture": "Practical, hardworking, and Boilermaker-proud. Purdue produces more astronauts than any public university (25+ grads have been to space). Students are technically skilled and career-focused, with a culture that values grit over glamour. The 'Cradle of Astronauts' legacy is real—Neil Armstrong is an alum, and his name graces the engineering hall. The campus is flat but the engineering is world-class. Students here don't just study engineering; they build race cars, design satellites, and launch rockets.",
+    "distinctiveTraits": "The 'Cradle of Astronauts'—25+ Purdue grads have been to space. The aviation program includes a working airport on campus. The engineering program is one of the largest and most respected. The 'World's Largest Drum' is a marching band tradition.",
+    "whatTheyLookFor": "Purdue values technical aptitude, work ethic, and practical ambition. They want students who will use the co-op program and the aviation/engineering resources. The 'Why Purdue?' should mention specific engineering programs or the aviation school. Admissions officers specifically seek students with 'hands-on technical experience'—projects, competitions, or internships. They care deeply about whether applicants understand Purdue's culture of practical problem-solving.",
+    "applicationTips": "The engineering essay should show project experience and technical depth—mention specific labs or competitions (Solar Car, Baja SAE, etc.). If interested in aviation, mention the airport campus and flight training opportunities. The co-op program is a strong angle—show you understand the work-study alternation and how it fits your career goals. The 'Boilermaker' spirit is about grit—show yours through stories of perseverance. If applying to the Polytechnic Institute, explain how you prefer applied, hands-on learning over pure theory."
+  }
+}

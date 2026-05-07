@@ -1,0 +1,83 @@
+{
+  "id": "colgate-university",
+  "name": "Colgate University",
+  "shortName": "Colgate",
+  "location": {
+    "city": "Hamilton",
+    "state": "NY",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "https://www.colgate.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Economics",
+      "Political Science",
+      "History",
+      "English",
+      "Biology",
+      "Environmental Studies"
+    ],
+    "signaturePrograms": [
+      "Core Curriculum",
+      "Off-Campus Study",
+      "Thought Into Action",
+      "Upstate Institute"
+    ],
+    "curriculumStyle": "Core Curriculum",
+    "stemStrength": "strong",
+    "averageClassSize": "16-20"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1388,
+    "satRange": {
+      "25th": 1428,
+      "75th": 1588
+    },
+    "actRange": {
+      "25th": 30.0,
+      "75th": 36.0
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 70306.0,
+    "roomAndBoard": 17610.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 64949.0,
+    "medianEarnings10Year": 85139.0,
+    "averageDebtAtGraduation": 15000.0
+  },
+  "students": {
+    "totalUndergrad": 3180.0,
+    "genderBreakdown": {
+      "male": 0.4321,
+      "female": 0.5679
+    },
+    "pellGrantPercent": 0.1252,
+    "firstGenPercent": 0.1807511737
+  },
+  "scorecardId": 190099.0,
+  "lastUpdated": "2026-05-07T18:44:52.625977Z",
+  "campus": {
+    "setting": "Rural campus in Hamilton, NY, on a hill with a lake",
+    "culture": "Intellectually engaged, outdoorsy, and tight-knit. The Core Curriculum creates shared intellectual foundations. Students are friendly, ambitious, and love the natural beauty. The lake and hiking trails are central to campus life. The 'Gate' community is loyal.",
+    "distinctiveTraits": "The Core Curriculum includes a legendary 'Western Traditions' sequence. The Off-Campus Study program sends 60%+ students abroad. The Upstate Institute connects students to Central NY community needs. The campus sits on a hill with stunning views.",
+    "whatTheyLookFor": "Colgate values intellectual curiosity, community engagement, and resilience. They want students who will embrace the Core and the rural setting. The 'Why Colgate?' should mention the Core, off-campus study, or the Upstate Institute.",
+    "applicationTips": "The Core Curriculum essay should show you value broad intellectual foundations. The off-campus study essay should mention specific programs. Show you've thought about the rural location. The 'community' essay should demonstrate collaborative spirit."
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "id": "columbia-university-in-the-city-of-new-york",
+  "name": "Columbia University in the City of New York",
+  "shortName": "Columbia",
+  "location": {
+    "city": "New York",
+    "state": "NY",
+    "region": "northeast"
+  },
+  "type": "national-university",
+  "tier": "ivy",
+  "control": "private",
+  "website": "www.columbia.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Core Curriculum",
+      "Urban Studies",
+      "Journalism",
+      "Economics",
+      "Engineering",
+      "International Relations",
+      "Sustainable Development",
+      "Middle Eastern, South Asian, and African Studies",
+      "Creative Writing",
+      "Data Science",
+      "Political Science",
+      "Biomedical Engineering"
+    ],
+    "signaturePrograms": [
+      "Core Curriculum (required)",
+      "Barnard College partnership",
+      "Columbia Journalism School",
+      "SEAS Engineering",
+      "Sustainable Development (major)",
+      "Columbia-Juilliard Exchange",
+      "Columbia Double Discovery Center (community tutoring)",
+      "Presidential Global Fellows"
+    ],
+    "curriculumStyle": "Core Curriculum (required)",
+    "stemStrength": "strong",
+    "averageClassSize": "15-20"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0399,
+    "satRange": {
+      "25th": 1473,
+      "75th": 1633
+    },
+    "actRange": {
+      "25th": 32.0,
+      "75th": 38.0
+    },
+    "earlyDecisionRate": 0.153,
+    "regularRate": 0.052,
+    "waitlistAcceptRate": 0.05,
+    "internationalAcceptRate": 0.045,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "March 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 71845.0,
+    "roomAndBoard": 17580.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 88535.0,
+    "medianEarnings10Year": 102491.0,
+    "averageDebtAtGraduation": 21500.0
+  },
+  "students": {
+    "totalUndergrad": 8973.0,
+    "genderBreakdown": {
+      "male": 0.502,
+      "female": 0.498
+    },
+    "pellGrantPercent": 0.2271,
+    "firstGenPercent": 0.2504905167
+  },
+  "scorecardId": 190150.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in Upper Manhattan, New York City",
+    "culture": "Intellectually rigorous, diverse, and unapologetically urban. The Core Curriculum creates a shared intellectual foundation—everyone debates Plato and Virgil in their first year. Students are politically aware, culturally diverse, and ambitious. NYC is your campus: museums, internships, and Broadway are subway rides away. The culture rewards students who can handle both intense academics and the chaos of the city.",
+    "distinctiveTraits": "The Core Curriculum (Literature Humanities, Contemporary Civilization, Art Humanities, Music Humanities) is the defining feature—every student reads the same canonical texts. Also unique for being in Manhattan with a subway stop on campus.",
+    "whatTheyLookFor": "Columbia seeks students who will thrive in the Core's intellectual intensity and engage with NYC's diversity. They value global perspectives, intellectual fearlessness, and students who can handle both Plato and the subway at 2 AM. Admissions officers look for evidence that applicants understand what the Core actually entails—not just the name. They specifically seek students who will use New York as a laboratory for learning, not just a backdrop.",
+    "applicationTips": "The 'Why Columbia?' essay must reference the Core specifically—show you understand what it entails and why it excites you. The 'List' questions (books, concerts, etc.) are filters for genuine intellectual curiosity. Be specific about NYC opportunities you plan to pursue. If applying to SEAS, show how you bridge humanities and engineering. The alumni interview is common—prepare to discuss a Core text you've already read or a NYC experience that shaped you."
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "harvey-mudd-college",
+  "name": "Harvey Mudd College",
+  "shortName": "Harvey Mudd",
+  "location": {
+    "city": "Claremont",
+    "state": "CA",
+    "region": "pacific"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "https://www.hmc.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Engineering",
+      "Computer Science",
+      "Mathematics",
+      "Physics",
+      "Biology",
+      "Chemistry"
+    ],
+    "signaturePrograms": [
+      "Clinic Program",
+      "5C Consortium",
+      "Research",
+      "STEM Focus"
+    ],
+    "curriculumStyle": "Core Curriculum",
+    "stemStrength": "elite",
+    "averageClassSize": "10-14"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1266,
+    "satRange": {
+      "25th": 1465,
+      "75th": 1625
+    },
+    "actRange": {
+      "25th": 32.0,
+      "75th": 38.0
+    },
+    "earlyDecisionRate": 0.28,
+    "regularRate": 0.13,
+    "waitlistAcceptRate": 0.06,
+    "internationalAcceptRate": 0.07,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 68613.0,
+    "roomAndBoard": 22318.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 115107.0,
+    "medianEarnings10Year": 138687.0,
+    "averageDebtAtGraduation": 25000.0
+  },
+  "students": {
+    "totalUndergrad": 921.0,
+    "genderBreakdown": {
+      "male": 0.4929,
+      "female": 0.5071
+    },
+    "pellGrantPercent": 0.1517,
+    "firstGenPercent": null
+  },
+  "scorecardId": 115409.0,
+  "lastUpdated": "2026-05-07T18:44:52.629098Z",
+  "campus": {
+    "setting": "Suburban campus in Claremont, CA, part of the Claremont Consortium",
+    "culture": "Intensely STEM-focused, collaborative, and quirky. The Clinic Program (real-world client projects) is the capstone for all students. The 5C consortium expands social and academic opportunities. Students are brilliant, work hard, and have fun. The 'Mudd' culture is proud and nerdy.",
+    "distinctiveTraits": "The Clinic Program is unique\u2014every senior works on a real project for a company or lab. The Core is rigorous (lots of math, science, humanities). The 5C consortium means Mudd students take classes at Pomona, Scripps, CMC, and Pitzer. The 'Honor Code' creates trust.",
+    "whatTheyLookFor": "Harvey Mudd values exceptional STEM aptitude, collaborative spirit, and intellectual curiosity. They want students who will thrive in the intense Core and embrace the Clinic. The 'Why Mudd?' should mention the Clinic, the Core, or the 5C consortium.",
+    "applicationTips": "The STEM essay should show depth beyond coursework\u2014research, competitions, projects. The 'Why Mudd?' must mention the Clinic Program specifically. Show you understand the intense Core (it's real). The 5C essay should explain why the consortium matters to you."
+  }
+}

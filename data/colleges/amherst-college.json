@@ -1,0 +1,104 @@
+{
+  "id": "amherst-college",
+  "name": "Amherst College",
+  "shortName": "Amherst",
+  "location": {
+    "city": "Amherst",
+    "state": "MA",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "www.amherst.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Open Curriculum",
+      "Economics",
+      "Law",
+      "Political Science",
+      "English",
+      "History",
+      "Environmental Studies",
+      "Mathematics",
+      "Neuroscience",
+      "Black Studies",
+      "Law, Jurisprudence, and Social Thought",
+      "Sexuality, Women's and Gender Studies"
+    ],
+    "signaturePrograms": [
+      "Open Curriculum (no requirements)",
+      "Five College Consortium",
+      "Lawrence Fellowships",
+      "Center for Community Engagement",
+      "Mellon Mays Undergraduate Fellowship",
+      "Schuler Education Initiative",
+      "Loeb Center for Career Exploration and Planning",
+      "Center for Humanistic Inquiry"
+    ],
+    "curriculumStyle": "Open Curriculum",
+    "stemStrength": "strong",
+    "averageClassSize": "12-16"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0901,
+    "satRange": {
+      "25th": 1453,
+      "75th": 1613
+    },
+    "actRange": {
+      "25th": 30.0,
+      "75th": 36.0
+    },
+    "earlyDecisionRate": 0.3,
+    "regularRate": 0.09,
+    "waitlistAcceptRate": 0.08,
+    "internationalAcceptRate": 0.065,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 70480.0,
+    "roomAndBoard": 18390.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 62537.0,
+    "medianEarnings10Year": 77644.0,
+    "averageDebtAtGraduation": 13740.0
+  },
+  "students": {
+    "totalUndergrad": 1911.0,
+    "genderBreakdown": {
+      "male": 0.4505,
+      "female": 0.5495
+    },
+    "pellGrantPercent": 0.1984,
+    "firstGenPercent": 0.2084592145
+  },
+  "scorecardId": 164465.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Rural campus in Amherst, MA, in the Pioneer Valley",
+    "culture": "Intellectually free, diverse, and deeply engaged. The Open Curriculum attracts independent thinkers who design their own academic path. The Five College Consortium (Amherst, Hampshire, Mount Holyoke, Smith, UMass) multiplies opportunities—students take classes, join clubs, and attend events across five campuses. Students are passionate about social justice, academic exploration, and building genuine community. The culture is notably non-competitive: students share notes, collaborate on research, and celebrate each other's achievements.",
+    "distinctiveTraits": "The Open Curriculum is genuine—no requirements at all. The Five College Consortium gives access to 5,000+ courses. Amherst is need-blind and meets full need for all students (including international). The 'Lord Jeffs' mascot was replaced by the Mammoths.",
+    "whatTheyLookFor": "Amherst values intellectual independence, diversity of background and thought, and community engagement. They want students who will use the Open Curriculum wisely and contribute to the community. The 'Why Amherst?' should mention the Five Colleges or the curriculum. Admissions officers specifically seek students who demonstrate 'intellectual generosity'—those who share ideas, mentor peers, or build inclusive spaces. They care deeply about whether applicants will thrive in a community that values collaboration over competition.",
+    "applicationTips": "The Open Curriculum essay is critical—explain how you'd use the freedom (specific course combinations across the Five Colleges). Show you've explored the Five College course catalog and can name specific classes or professors. The diversity essay should be thoughtful and personal, not performative. Amherst is need-blind—financial need doesn't hurt admission. If you have an alumni interview, prepare to discuss a book or idea that changed your perspective and how you'd share it with the Amherst community."
+  }
+}

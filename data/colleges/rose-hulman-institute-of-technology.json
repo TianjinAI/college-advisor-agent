@@ -1,0 +1,94 @@
+{
+  "id": "rose-hulman-institute-of-technology",
+  "name": "Rose-Hulman Institute of Technology",
+  "shortName": "Rose-Hulman",
+  "location": {
+    "city": "Terre Haute",
+    "state": "IN",
+    "region": "midwest"
+  },
+  "type": "institute-of-technology",
+  "tier": "top-stem",
+  "control": "private",
+  "website": "https://www.rose-hulman.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Engineering",
+      "Computer Science",
+      "Mathematics",
+      "Chemistry",
+      "Physics",
+      "Economics"
+    ],
+    "signaturePrograms": [
+      "Hands-on Engineering",
+      "Research",
+      "Career Services",
+      "Small Classes"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "elite",
+    "averageClassSize": "14-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.7686,
+    "satRange": {
+      "25th": 1347,
+      "75th": 1507
+    },
+    "actRange": {
+      "25th": 28.0,
+      "75th": 34.0
+    },
+    "earlyActionRate": 0.7,
+    "regularRate": 0.6,
+    "waitlistAcceptRate": 0.15,
+    "internationalAcceptRate": 0.5,
+    "applicationType": "EA",
+    "deadlines": {
+      "earlyDecision": null,
+      "earlyAction": "December 1",
+      "regularDecision": "February 1",
+      "finaidPriority": "March 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 58649.0,
+    "roomAndBoard": 17727.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 85935.0,
+    "medianEarnings10Year": 101253.0,
+    "averageDebtAtGraduation": 25000.0
+  },
+  "students": {
+    "totalUndergrad": 2309.0,
+    "genderBreakdown": {
+      "male": 0.7557,
+      "female": 0.2443
+    },
+    "pellGrantPercent": 0.1181,
+    "firstGenPercent": 0.1438016529
+  },
+  "scorecardId": 152318.0,
+  "lastUpdated": "2026-05-07T18:44:52.632221Z",
+  "campus": {
+    "setting": "Small-town campus in Terre Haute, IN",
+    "culture": "Intensely STEM-focused, supportive, and practical. The small size means personalized attention. Students are collaborative, not competitive. The hands-on labs start freshman year. The 'RHIT' community is tight-knit and loyal.",
+    "distinctiveTraits": "The #1 undergraduate engineering school in the US (no graduate students, so all research is for undergrads). The small size (2,000 students) creates a family feel. The hands-on philosophy means students build and test from day one. The 'Fightin' Engineers' are proud.",
+    "whatTheyLookFor": "Rose-Hulman values technical aptitude, collaborative spirit, and hands-on enthusiasm. They want students who will use the small class sizes and the research opportunities. The 'Why Rose-Hulman?' should mention the no-grad-students policy or the hands-on labs.",
+    "applicationTips": "The hands-on essay should show you've built or designed things. The small size is a selling point\u2014show you want personalized attention. The research essay should mention specific labs or projects. Show you've thought about the Terre Haute location."
+  }
+}

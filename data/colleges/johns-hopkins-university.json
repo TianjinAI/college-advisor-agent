@@ -1,0 +1,101 @@
+{
+  "id": "johns-hopkins-university",
+  "name": "Johns Hopkins University",
+  "shortName": "JHU",
+  "location": {
+    "city": "Baltimore",
+    "state": "MD",
+    "region": "southeast"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "www.jhu.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Pre-Med",
+      "Public Health",
+      "Biomedical Engineering",
+      "International Relations",
+      "Writing",
+      "Neuroscience",
+      "Computer Science",
+      "Applied Mathematics and Statistics",
+      "Molecular and Cellular Biology",
+      "Global Environmental Change and Sustainability",
+      "East Asian Studies",
+      "Film and Media Studies"
+    ],
+    "signaturePrograms": [
+      "Johns Hopkins Hospital pipeline",
+      "BME (Biomedical Engineering)",
+      "SAIS (School of Advanced International Studies)",
+      "Woodrow Wilson Fellowship",
+      "Hopkins inAction (community service)",
+      "Baltimore Scholars Program",
+      "Peabody Conservatory dual degree",
+      "Hopkins Undergrad Research Symposium"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "elite",
+    "averageClassSize": "18-22"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0644,
+    "satRange": {
+      "25th": 1473,
+      "75th": 1633
+    },
+    "actRange": null,
+    "earlyDecisionRate": 0.2,
+    "regularRate": 0.06,
+    "waitlistAcceptRate": 0.05,
+    "internationalAcceptRate": 0.048,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 2",
+      "finaidPriority": "March 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 65230.0,
+    "roomAndBoard": 20150.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 86306.0,
+    "medianEarnings10Year": 87555.0,
+    "averageDebtAtGraduation": 10250.0
+  },
+  "students": {
+    "totalUndergrad": 5693.0,
+    "genderBreakdown": {
+      "male": 0.4506,
+      "female": 0.5494
+    },
+    "pellGrantPercent": 0.1949,
+    "firstGenPercent": 0.1312714777
+  },
+  "scorecardId": 162928.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in Baltimore, MD, with a separate Peabody Conservatory campus",
+    "culture": "Pre-med and research-focused, but increasingly diverse and interdisciplinary. The BME program is the best in the nation. Students are serious about academics but Baltimore offers a gritty, real-world context that shapes their perspective. The Peabody partnership adds arts energy. The culture is evolving: Hopkins has actively worked to shed its 'cutthroat pre-med' reputation and now emphasizes collaboration, mentorship, and community engagement.",
+    "distinctiveTraits": "The #1 hospital in America (Johns Hopkins Hospital) is next door—premeds shadow doctors as freshmen. The BME program is consistently ranked #1. The Woodrow Wilson Fellowship funds independent research for all students. Also home to the oldest creative writing program.",
+    "whatTheyLookFor": "Hopkins values research aptitude and intellectual ambition. They want students who will use Baltimore as a laboratory for learning. The 'Why Hopkins?' should mention specific research labs, BME design teams, or public health initiatives. Admissions officers specifically seek students who have already engaged in research or clinical exposure—not just 'I want to be a doctor.' They care deeply about whether applicants will contribute to the collaborative, inquiry-driven culture.",
+    "applicationTips": "If pre-med, show you've explored medicine beyond shadowing (research, volunteering, EMT certification). The BME program is highly selective—show engineering projects and mention specific BME labs. The Peabody dual-degree is a hidden gem for musicians—prepare a strong portfolio and explain the intersection. Demonstrate you know Hopkins is more than 'the pre-med school' by referencing humanities programs, the SAIS pipeline, or the Writing Seminars. If you have an alumni interview, prepare to discuss a research question that genuinely fascinates you."
+  }
+}

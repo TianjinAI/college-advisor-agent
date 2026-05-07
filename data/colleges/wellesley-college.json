@@ -1,0 +1,94 @@
+{
+  "id": "wellesley-college",
+  "name": "Wellesley College",
+  "shortName": "Wellesley",
+  "location": {
+    "city": "Wellesley",
+    "state": "MA",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "www.wellesley.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Economics",
+      "Political Science",
+      "Computer Science",
+      "Biology",
+      "History",
+      "Psychology"
+    ],
+    "signaturePrograms": [
+      "Women's Leadership",
+      "MIT Cross-Registration",
+      "Wellesley Effect",
+      "Alumnae Network"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "12-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1405,
+    "satRange": {
+      "25th": 1440,
+      "75th": 1600
+    },
+    "actRange": {
+      "25th": 30.0,
+      "75th": 36.0
+    },
+    "earlyDecisionRate": 0.4,
+    "regularRate": 0.16,
+    "waitlistAcceptRate": 0.08,
+    "internationalAcceptRate": 0.1,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 67176.0,
+    "roomAndBoard": 21024.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 65961.0,
+    "medianEarnings10Year": 84803.0,
+    "averageDebtAtGraduation": 10000.0
+  },
+  "students": {
+    "totalUndergrad": 2300.0,
+    "genderBreakdown": {
+      "male": 0.0013,
+      "female": 0.9987
+    },
+    "pellGrantPercent": 0.2113,
+    "firstGenPercent": 0.1717791411
+  },
+  "scorecardId": 168218.0,
+  "lastUpdated": "2026-05-07T18:44:52.635455Z",
+  "campus": {
+    "setting": "Suburban campus in Wellesley, MA, near Boston",
+    "culture": "Intellectually ambitious, supportive, and empowering. The women's college environment fosters leadership and confidence. Students are outspoken, politically engaged, and academically driven. Boston is accessible for internships and culture. The alumnae network is legendary.",
+    "distinctiveTraits": "The premier women's college in the US with the most powerful alumnae network (Madeleine Albright, Hillary Clinton). Cross-registration with MIT, Babson, and Olin expands STEM opportunities. The 'Wellesley Effect' describes the confidence and leadership alumnae gain.",
+    "whatTheyLookFor": "Wellesley values intellectual ambition, leadership potential, and commitment to women's advancement. They want students who will thrive in a women-centered environment and use the Boston proximity. The 'Why Wellesley?' should mention the alumnae network or MIT cross-registration.",
+    "applicationTips": "The 'Why Wellesley?' essay should articulate why a women's college specifically (not just 'it's a good school'). Show you've thought about the alumnae network's value. If STEM-interested, mention MIT cross-registration. The 'community' essay should show collaborative leadership."
+  }
+}

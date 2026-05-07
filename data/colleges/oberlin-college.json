@@ -1,0 +1,94 @@
+{
+  "id": "oberlin-college",
+  "name": "Oberlin College",
+  "shortName": "Oberlin",
+  "location": {
+    "city": "Oberlin",
+    "state": "OH",
+    "region": "midwest"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "www.oberlin.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Music",
+      "Politics",
+      "Biology",
+      "Environmental Studies",
+      "Creative Writing",
+      "Art"
+    ],
+    "signaturePrograms": [
+      "Conservatory of Music",
+      "Environmental Studies",
+      "Winter Term",
+      "Co-ops"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "moderate",
+    "averageClassSize": "14-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.3418,
+    "satRange": {
+      "25th": 1367,
+      "75th": 1527
+    },
+    "actRange": {
+      "25th": 29.0,
+      "75th": 35.0
+    },
+    "earlyDecisionRate": 0.4,
+    "regularRate": 0.25,
+    "waitlistAcceptRate": 0.12,
+    "internationalAcceptRate": 0.12,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 15",
+      "earlyAction": null,
+      "regularDecision": "January 15",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 67366.0,
+    "roomAndBoard": 19510.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 38871.0,
+    "medianEarnings10Year": 58343.0,
+    "averageDebtAtGraduation": 26000.0
+  },
+  "students": {
+    "totalUndergrad": 2887.0,
+    "genderBreakdown": {
+      "male": 0.4098,
+      "female": 0.5902
+    },
+    "pellGrantPercent": 0.0964,
+    "firstGenPercent": 0.0886699507
+  },
+  "scorecardId": 204501.0,
+  "lastUpdated": "2026-05-07T18:44:52.630851Z",
+  "campus": {
+    "setting": "Small-town campus in Oberlin, OH, with a progressive town",
+    "culture": "Artistic, progressive, and fiercely independent. The Conservatory of Music is world-class. Students are socially conscious, creative, and often quirky. The co-op housing system is unique. The town is small but culturally rich. Winter Term lets students design their own projects.",
+    "distinctiveTraits": "The Conservatory of Music is one of the best in the world, and conservatory students live alongside liberal arts students. The co-op system lets students run their own housing and dining. Winter Term is a month of self-designed projects. Oberlin was the first college to admit women and Black students.",
+    "whatTheyLookFor": "Oberlin values artistic talent, social consciousness, and intellectual independence. They want students who will use the Conservatory, co-ops, or Winter Term. The 'Why Oberlin?' should mention the conservatory, co-ops, or progressive history.",
+    "applicationTips": "If applying to the Conservatory, the audition is everything. The co-op essay should show you understand communal living. The Winter Term essay should propose a specific project. Show you've thought about the small Ohio town. The progressive history is a selling point\u2014mention it if relevant."
+  }
+}

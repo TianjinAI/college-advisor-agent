@@ -1,0 +1,104 @@
+{
+  "id": "northwestern-university",
+  "name": "Northwestern University",
+  "shortName": "Northwestern",
+  "location": {
+    "city": "Evanston",
+    "state": "IL",
+    "region": "midwest"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "www.northwestern.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Journalism (Medill)",
+      "Theater",
+      "Engineering",
+      "Economics",
+      "Communication",
+      "Music",
+      "Integrated Science Program (ISP)",
+      "Mathematical Methods in the Social Sciences (MMSS)",
+      "Legal Studies",
+      "Cognitive Science",
+      "Materials Science",
+      "Radio/Television/Film"
+    ],
+    "signaturePrograms": [
+      "Medill School of Journalism",
+      "Bienen School of Music",
+      "Kellogg certificate programs",
+      "Chicago proximity",
+      "Integrated Science Program (ISP)",
+      "Mathematical Methods in the Social Sciences (MMSS)",
+      "Northwestern Institute on Complex Systems (NICO)",
+      "Global Health Studies"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "15-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0769,
+    "satRange": {
+      "25th": 1453,
+      "75th": 1613
+    },
+    "actRange": {
+      "25th": 32.0,
+      "75th": 38.0
+    },
+    "earlyDecisionRate": 0.24,
+    "regularRate": 0.055,
+    "waitlistAcceptRate": 0.04,
+    "internationalAcceptRate": 0.04,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 2",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 68322.0,
+    "roomAndBoard": 21126.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 76844.0,
+    "medianEarnings10Year": 89363.0,
+    "averageDebtAtGraduation": 15000.0
+  },
+  "students": {
+    "totalUndergrad": 9201.0,
+    "genderBreakdown": {
+      "male": 0.4568,
+      "female": 0.5432
+    },
+    "pellGrantPercent": 0.1855,
+    "firstGenPercent": 0.1515711645
+  },
+  "scorecardId": 147767.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Suburban campus in Evanston, IL, on Lake Michigan, with Chicago access",
+    "culture": "Balanced, ambitious, and Midwestern-friendly. Students excel in multiple areas (theater + engineering, journalism + music). The quarter system is fast-paced but students adapt quickly. Lake Michigan provides a stunning backdrop for runs, sailing, and sunset watching. Chicago is a train ride away for internships, shows, and dining. The culture is notably collaborative: Medill students edit Bienen students' concert reviews, and engineers partner with theater designers on set construction.",
+    "distinctiveTraits": "The only top school with world-class journalism (Medill), music (Bienen), and engineering (McCormick) at the same institution. The quarter system lets students take more classes. The lakefront location is unbeatable. Strong pre-professional culture with liberal arts breadth.",
+    "whatTheyLookFor": "Northwestern values intellectual breadth and professional ambition. They want students who will use both the academic rigor and the Chicago proximity. The 'Why Northwestern?' should mention specific schools (Medill, Bienen, McCormick) and how they intersect. Admissions officers specifically seek 'dual passion' students—those who can excel in a pre-professional program while maintaining intellectual curiosity in unrelated areas. They care about whether applicants will contribute to the collaborative, interdisciplinary culture.",
+    "applicationTips": "School-specific essays are critical—tailor each to the program (Medill has different prompts than Weinberg). Show you've researched the quarter system and can handle the pace. If applying to Bienen, the music supplement is as important as the academic application. For Medill, submit strong journalism samples or show evidence of storytelling ability. Mention specific Chicago opportunities (Museum of Broadcast Communications, Second City, etc.) that align with your interests."
+  }
+}

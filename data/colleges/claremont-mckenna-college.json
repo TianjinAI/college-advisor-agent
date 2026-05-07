@@ -1,0 +1,94 @@
+{
+  "id": "claremont-mckenna-college",
+  "name": "Claremont McKenna College",
+  "shortName": "CMC",
+  "location": {
+    "city": "Claremont",
+    "state": "CA",
+    "region": "pacific"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "www.cmc.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Economics",
+      "Government",
+      "International Relations",
+      "Finance",
+      "Philosophy",
+      "History"
+    ],
+    "signaturePrograms": [
+      "Munger Graduate Center",
+      "Silicon Valley Program",
+      "Atheneum",
+      "5C Consortium"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "moderate",
+    "averageClassSize": "14-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0959,
+    "satRange": {
+      "25th": 1447,
+      "75th": 1607
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyDecisionRate": 0.3,
+    "regularRate": 0.1,
+    "waitlistAcceptRate": 0.08,
+    "internationalAcceptRate": 0.07,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 67980.0,
+    "roomAndBoard": 20830.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 87603.0,
+    "medianEarnings10Year": 104736.0,
+    "averageDebtAtGraduation": 13500.0
+  },
+  "students": {
+    "totalUndergrad": 1388.0,
+    "genderBreakdown": {
+      "male": 0.5007,
+      "female": 0.4993
+    },
+    "pellGrantPercent": 0.181,
+    "firstGenPercent": null
+  },
+  "scorecardId": 112260.0,
+  "lastUpdated": "2026-05-07T18:44:52.625507Z",
+  "campus": {
+    "setting": "Suburban campus in Claremont, CA, near Los Angeles",
+    "culture": "Pre-professional, ambitious, and politically engaged. CMC is the most 'career-focused' of the 5Cs. Students are confident, articulate, and networking-oriented. The Atheneum brings speakers like Supreme Court justices and CEOs. The 'CMC ethos' is leadership and free-market thinking.",
+    "distinctiveTraits": "The Atheneum dinner series brings world leaders to campus weekly. The Silicon Valley Program provides semester-long internships. The Marian Miner Cook Atheneum is the social and intellectual heart. CMC is the most conservative of the 5Cs but still broadly diverse.",
+    "whatTheyLookFor": "CMC values leadership, intellectual ambition, and professional drive. They want students who will use the Atheneum and the LA proximity. The 'Why CMC?' should mention the Atheneum, Silicon Valley Program, or specific career goals.",
+    "applicationTips": "The 'Why CMC?' essay should reference the Atheneum specifically\u2014show you understand it's a unique resource. If you're interested in finance/consulting, mention the career services. The leadership essay should show initiative, not just titles. Show you've thought about the 5C dynamics."
+  }
+}

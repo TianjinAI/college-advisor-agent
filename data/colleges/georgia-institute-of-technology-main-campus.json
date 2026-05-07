@@ -1,0 +1,105 @@
+{
+  "id": "georgia-institute-of-technology-main-campus",
+  "name": "Georgia Institute of Technology-Main Campus",
+  "shortName": "Georgia Tech",
+  "location": {
+    "city": "Atlanta",
+    "state": "GA",
+    "region": "southeast"
+  },
+  "type": "institute-of-technology",
+  "tier": "top-stem",
+  "control": "private",
+  "website": "www.gatech.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Engineering",
+      "Computer Science",
+      "Industrial Design",
+      "Architecture",
+      "Business",
+      "Mathematics",
+      "Aerospace Engineering",
+      "Biomedical Engineering",
+      "Cybersecurity",
+      "Environmental Engineering",
+      "Music Technology",
+      "Public Policy"
+    ],
+    "signaturePrograms": [
+      "Co-op Program (one of the oldest and largest)",
+      "InVenture Prize",
+      "Grand Challenges Living Learning Community",
+      "CREATE-X (startup launchpad)",
+      "Georgia Tech Research Institute (GTRI)",
+      "Advanced Technology Development Center (ATDC)",
+      "Serve-Learn-Sustain",
+      "Stamps President's Scholars Program"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "elite",
+    "averageClassSize": "25-35"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1407,
+    "satRange": {
+      "25th": 1400,
+      "75th": 1560
+    },
+    "actRange": {
+      "25th": 29.0,
+      "75th": 35.0
+    },
+    "earlyDecisionRate": 0.4,
+    "earlyActionRate": 0.35,
+    "regularRate": 0.17,
+    "waitlistAcceptRate": 0.12,
+    "internationalAcceptRate": 0.15,
+    "applicationType": "ED+EA",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": "October 16",
+      "regularDecision": "January 4",
+      "finaidPriority": "March 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 12058.0,
+    "roomAndBoard": 13608.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 89432.0,
+    "medianEarnings10Year": 102772.0,
+    "averageDebtAtGraduation": 21672.0
+  },
+  "students": {
+    "totalUndergrad": 18785.0,
+    "genderBreakdown": {
+      "male": 0.5963,
+      "female": 0.4037
+    },
+    "pellGrantPercent": 0.139,
+    "firstGenPercent": 0.1491513182
+  },
+  "scorecardId": 139755.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in Atlanta, GA, in Midtown",
+    "culture": "Intensely STEM-focused, genuinely collaborative, and deeply practical. The co-op program lets students alternate work and study, so juniors and seniors often have real industry experience. Students are problem-solvers, not just theorists—it's common to see engineering students building prototypes in the Invention Studio. Atlanta provides Fortune 500 internships (Coca-Cola, Delta, Home Depot). The 'Ramblin' Wreck' spirit is proud and quirky: the fight song is played at every event, and the 1930 Ford Model A mascot is a campus celebrity.",
+    "distinctiveTraits": "The largest engineering school in the US. The co-op program is one of the oldest and largest (40% of students do it). CREATE-X lets students launch startups for credit. The InVenture Prize is a Shark Tank-style competition. The 'Ramblin' Wreck' is a 1930 Ford Model A mascot.",
+    "whatTheyLookFor": "Georgia Tech values problem-solving ability, collaborative spirit, and practical impact. They want students who will use the co-op program and Atlanta's opportunities. The 'Why Georgia Tech?' should mention specific engineering programs or the co-op. Admissions officers specifically seek students with 'hands-on STEM experience'—projects, competitions, or internships. They care deeply about whether applicants will contribute to the collaborative, maker culture.",
+    "applicationTips": "The 'Why Georgia Tech?' essay should mention specific engineering majors or the co-op program. Show project experience beyond coursework—GitHub repos, robotics competitions, or maker fair entries. The InVenture Prize or CREATE-X are great angles if you're entrepreneurial. The 'challenge' essay should show resilience in STEM, not just academic struggle. If you have an alumni interview, prepare to discuss a technical problem you've solved and how you collaborated with others. Mention specific Atlanta companies or Georgia Tech research labs that interest you."
+  }
+}

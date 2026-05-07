@@ -1,0 +1,91 @@
+{
+  "id": "bates-college",
+  "name": "Bates College",
+  "shortName": "Bates",
+  "location": {
+    "city": "Lewiston",
+    "state": "ME",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "www.bates.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Economics",
+      "Politics",
+      "Psychology",
+      "Biology",
+      "Environmental Studies",
+      "History"
+    ],
+    "signaturePrograms": [
+      "Short Term",
+      "Purposeful Work",
+      "Bonner Leaders",
+      "Community Engagement"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "14-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1332,
+    "satRange": {
+      "25th": 1388,
+      "75th": 1548
+    },
+    "actRange": null,
+    "earlyDecisionRate": 0.42,
+    "regularRate": 0.18,
+    "waitlistAcceptRate": 0.08,
+    "internationalAcceptRate": 0.09,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 15",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 66590.0,
+    "roomAndBoard": 18780.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 59202.0,
+    "medianEarnings10Year": 69498.0,
+    "averageDebtAtGraduation": 14275.0
+  },
+  "students": {
+    "totalUndergrad": 1760.0,
+    "genderBreakdown": {
+      "male": 0.4818,
+      "female": 0.5182
+    },
+    "pellGrantPercent": 0.1152,
+    "firstGenPercent": 0.150877193
+  },
+  "scorecardId": 160977.0,
+  "lastUpdated": "2026-05-07T18:44:52.623709Z",
+  "campus": {
+    "setting": "Small-city campus in Lewiston, ME, with a working-class town context",
+    "culture": "Intellectually curious, socially engaged, and unpretentious. The 'Purposeful Work' program connects academics to careers. Students are collaborative and genuinely nice. The Short Term (5-week spring semester) lets students explore intensively. The community engagement is authentic.",
+    "distinctiveTraits": "The Short Term is unique\u2014a 5-week intensive semester in spring with one course, often including travel. Purposeful Work is a four-year career development program. The Bonner Leader program funds service-focused students. Bates is test-optional and has been for decades.",
+    "whatTheyLookFor": "Bates values intellectual curiosity, community engagement, and purposeful ambition. They want students who will use the Short Term and Purposeful Work programs. The 'Why Bates?' should mention specific Short Term courses or career goals.",
+    "applicationTips": "The Short Term essay should show you've looked at specific courses (many include travel). The Purposeful Work essay should connect your academic interests to career goals. Bates has been test-optional since 1984\u2014don't submit scores unless they're strong. Show authentic community engagement."
+  }
+}

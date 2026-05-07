@@ -1,0 +1,104 @@
+{
+  "id": "swarthmore-college",
+  "name": "Swarthmore College",
+  "shortName": "Swarthmore",
+  "location": {
+    "city": "Swarthmore",
+    "state": "PA",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "www.swarthmore.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Engineering",
+      "Political Science",
+      "Economics",
+      "Biology",
+      "Computer Science",
+      "Philosophy",
+      "Peace and Conflict Studies",
+      "Linguistics",
+      "Music",
+      "Dance",
+      "Environmental Studies",
+      "Sociology and Anthropology"
+    ],
+    "signaturePrograms": [
+      "Engineering at a Liberal Arts College (ABET-accredited)",
+      "Honors Program (external examiners)",
+      "Lang Center for Civic and Social Responsibility",
+      "Peace and Conflict Studies",
+      "Swarthmore Summer Scholars Program",
+      "List Gallery (student-curated exhibitions)",
+      "Scott Arboretum research",
+      "Tri-Co Consortium (with Bryn Mawr and Haverford)"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "10-14"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0746,
+    "satRange": {
+      "25th": 1454,
+      "75th": 1614
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyDecisionRate": 0.3,
+    "regularRate": 0.08,
+    "waitlistAcceptRate": 0.08,
+    "internationalAcceptRate": 0.06,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 65494.0,
+    "roomAndBoard": 20308.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 56211.0,
+    "medianEarnings10Year": 80257.0,
+    "averageDebtAtGraduation": 17500.0
+  },
+  "students": {
+    "totalUndergrad": 1613.0,
+    "genderBreakdown": {
+      "male": 0.4792,
+      "female": 0.5208
+    },
+    "pellGrantPercent": 0.1948,
+    "firstGenPercent": 0.2687747036
+  },
+  "scorecardId": 216287.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Suburban campus in Swarthmore, PA, near Philadelphia",
+    "culture": "Intellectually intense, socially conscious, and deeply collaborative. Students are passionate about social justice and academics in equal measure. The 'Swat' culture is work-hard, discuss-hard—seminars often continue in the dining hall or dorm common room. The arboretum campus is beautiful, with the Crum Woods providing a natural escape. Philadelphia is accessible for internships and culture, but many students find everything they need in the tight-knit community. The culture is notably non-competitive: students share notes, collaborate on research, and support each other's activism.",
+    "distinctiveTraits": "The only top LAC with a full ABET-accredited engineering program. The Honors Program involves external examiners (like Oxford/Cambridge). The Lang Center for Civic and Social Responsibility funds every student's service project. The 'Garnet' community is tight-knit.",
+    "whatTheyLookFor": "Swarthmore values intellectual intensity, social conscience, and collaborative spirit. They want students who will engage deeply with ideas and with the world. The 'Why Swarthmore?' should mention the Honors Program, engineering, or social justice focus. Admissions officers specifically seek students who demonstrate 'intellectual passion with purpose'—those who pursue rigorous academics while caring about social impact. They care deeply about whether applicants will contribute to the collaborative, activist culture.",
+    "applicationTips": "The Honors Program essay should show you understand the external examination system (written and oral exams assessed by outside scholars). If interested in engineering, explain why at a LAC—mention the ABET accreditation and small class sizes. The social justice angle should be authentic, not performative—show sustained commitment, not just one-time volunteering. Show you've thought about the intensity—Swarthmore is academically rigorous and expects students to embrace it. The Tri-Co Consortium (Bryn Mawr and Haverford) is a resource—mention specific courses or opportunities you'd pursue across the three campuses."
+  }
+}

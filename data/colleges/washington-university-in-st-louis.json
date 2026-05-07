@@ -1,0 +1,104 @@
+{
+  "id": "washington-university-in-st-louis",
+  "name": "Washington University in St Louis",
+  "shortName": "WashU",
+  "location": {
+    "city": "St. Louis",
+    "state": "MO",
+    "region": "midwest"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "https://washu.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Medicine",
+      "Business",
+      "Law",
+      "Social Work",
+      "Engineering",
+      "Arts",
+      "Biomedical Engineering",
+      "Psychology",
+      "Economics",
+      "Architecture",
+      "Philosophy-Neuroscience-Psychology (PNP)",
+      "Environmental Studies"
+    ],
+    "signaturePrograms": [
+      "Washington University School of Medicine",
+      "Olin Business School",
+      "School of Law",
+      "Sam Fox School of Design and Visual Arts",
+      "Philosophy-Neuroscience-Psychology (PNP)",
+      "Beyond Boundaries (interdisciplinary program)",
+      "WashU Pipeline Program (diversity in STEM)",
+      "Gephardt Institute for Civic and Community Engagement"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "18-24"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1206,
+    "satRange": {
+      "25th": 1450,
+      "75th": 1610
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyDecisionRate": 0.28,
+    "regularRate": 0.11,
+    "waitlistAcceptRate": 0.08,
+    "internationalAcceptRate": 0.075,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 2",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 65790.0,
+    "roomAndBoard": 21854.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 78073.0,
+    "medianEarnings10Year": 86182.0,
+    "averageDebtAtGraduation": 17500.0
+  },
+  "students": {
+    "totalUndergrad": 7857.0,
+    "genderBreakdown": {
+      "male": 0.4551,
+      "female": 0.5449
+    },
+    "pellGrantPercent": 0.1775,
+    "firstGenPercent": 0.114071607
+  },
+  "scorecardId": 179867.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Suburban campus in St. Louis, MO, with a park-like setting",
+    "culture": "Academically excellent, pre-professional, and Midwestern-friendly. The medical school and hospital are top-ranked, creating a strong health sciences culture. Students are ambitious but notably collaborative—study groups are the norm, not the exception. The 'Danforth' campus is beautiful with Gothic architecture and modern facilities. St. Louis provides internship and cultural opportunities, and the campus feels like an oasis. The culture emphasizes service: students volunteer at local hospitals, schools, and nonprofits regularly.",
+    "distinctiveTraits": "The medical school is consistently top-10. The Olin Business School is highly ranked for undergraduates. The Sam Fox School of Design and Visual Arts is exceptional. The 'Bear' community is proud and service-oriented.",
+    "whatTheyLookFor": "WashU values academic excellence, service, and intellectual curiosity. They want students who will use the medical and business resources while contributing to the community. The 'Why WashU?' should mention specific schools (Olin, Med, Sam Fox) and programs. Admissions officers specifically seek students with 'service orientation'—those who have demonstrated commitment to helping others. They care deeply about whether applicants will engage with the St. Louis community, not just the campus bubble.",
+    "applicationTips": "School-specific applications are important—Olin and Sam Fox have separate requirements. The pre-med essay should show clinical exposure and mention specific WashU Medicine resources. The 'community' essay should demonstrate service orientation with specific examples. Show you've thought about the St. Louis location and how you'd use it. If applying to Beyond Boundaries, explain your interdisciplinary interests clearly. The alumni interview is common—prepare to discuss how you've balanced academic rigor with community engagement."
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "id": "brown-university",
+  "name": "Brown University",
+  "shortName": "Brown",
+  "location": {
+    "city": "Providence",
+    "state": "RI",
+    "region": "northeast"
+  },
+  "type": "national-university",
+  "tier": "ivy",
+  "control": "private",
+  "website": "www.brown.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Open Curriculum",
+      "Computer Science",
+      "Biology",
+      "English",
+      "History",
+      "Visual Arts",
+      "Development Studies",
+      "Neuroscience",
+      "Applied Mathematics",
+      "Modern Culture and Media",
+      "Public Policy",
+      "Cognitive Neuroscience"
+    ],
+    "signaturePrograms": [
+      "Open Curriculum (no requirements)",
+      "PLME (Program in Liberal Medical Education)",
+      "RISD Dual Degree",
+      "Watson Institute for International and Public Affairs",
+      "Brown-RISD Dual Degree Program",
+      "Brown Environmental Leadership Lab (BELL)",
+      "Swearer Center for Public Service",
+      "Undergraduate Teaching and Research Awards (UTRA)"
+    ],
+    "curriculumStyle": "Open Curriculum",
+    "stemStrength": "strong",
+    "averageClassSize": "15-18"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0539,
+    "satRange": {
+      "25th": 1466,
+      "75th": 1626
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyDecisionRate": 0.182,
+    "regularRate": 0.055,
+    "waitlistAcceptRate": 0.05,
+    "internationalAcceptRate": 0.048,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 5",
+      "finaidPriority": "March 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 71412.0,
+    "roomAndBoard": 17444.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 79131.0,
+    "medianEarnings10Year": 93487.0,
+    "averageDebtAtGraduation": 11428.0
+  },
+  "students": {
+    "totalUndergrad": 7226.0,
+    "genderBreakdown": {
+      "male": 0.4997,
+      "female": 0.5003
+    },
+    "pellGrantPercent": 0.1384,
+    "firstGenPercent": 0.1704035874
+  },
+  "scorecardId": 217156.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus on College Hill, Providence, RI",
+    "culture": "Intellectually free, creative, and deeply collaborative. The Open Curriculum attracts students who love learning for its own sake—it's common to find a physics major taking a poetry workshop 'just because.' There's a strong arts scene, progressive politics, and a laid-back vibe. Students design their own concentrations, which fosters a culture of intellectual risk-taking. The campus feels intimate despite the urban setting, with the Van Wickle Gates and the Green as central gathering spots.",
+    "distinctiveTraits": "The Open Curriculum is truly unique—no required core, no distribution requirements, just 30+ courses in your chosen concentration. Also home to the PLME (8-year med program) and the RISD dual-degree option for arts+academics.",
+    "whatTheyLookFor": "Brown seeks self-directed learners who will thrive without external structure. They value creativity, intellectual risk-taking, and students who can articulate WHY they want the Open Curriculum. Quirkiness and authenticity are assets. Admissions officers specifically look for evidence that applicants have already pursued interdisciplinary interests—students who have combined unexpected fields or designed their own projects. They care deeply about 'fit' with Brown's non-competitive, collaborative culture.",
+    "applicationTips": "The Open Curriculum essay is make-or-break: explain specifically how you'd use the freedom (e.g., 'I want to combine medieval history with machine learning'). Show you've thought beyond 'no requirements = easy.' The PLME essay requires demonstrated medical commitment—shadowing, volunteering, or research. If you're interested in the RISD dual degree, prepare a strong portfolio and explain how the two disciplines intersect. Brown's admissions team values intellectual playfulness—don't be afraid to propose an unconventional concentration."
+  }
+}

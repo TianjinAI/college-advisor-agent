@@ -1,0 +1,104 @@
+{
+  "id": "pomona-college",
+  "name": "Pomona College",
+  "shortName": "Pomona",
+  "location": {
+    "city": "Claremont",
+    "state": "CA",
+    "region": "pacific"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "www.pomona.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Economics",
+      "Computer Science",
+      "Mathematics",
+      "International Relations",
+      "Media Studies",
+      "Neuroscience",
+      "Molecular Biology",
+      "Chicana/o-Latina/o Studies",
+      "Philosophy",
+      "Physics",
+      "Environmental Analysis",
+      "Public Policy"
+    ],
+    "signaturePrograms": [
+      "Claremont Consortium (5Cs)",
+      "Pomona College Orchestra",
+      "Draper Center for Community Partnerships",
+      "Study Abroad (50% of students)",
+      "Pomona College Academy for Youth Success (PAYS)",
+      "Sagehen Outdoor Program",
+      "Pomona College Humanities Studio",
+      "Pacific Basin Institute"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "12-15"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0709,
+    "satRange": {
+      "25th": 1454,
+      "75th": 1614
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyDecisionRate": 0.25,
+    "regularRate": 0.08,
+    "waitlistAcceptRate": 0.06,
+    "internationalAcceptRate": 0.055,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 65420.0,
+    "roomAndBoard": 21394.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 60850.0,
+    "medianEarnings10Year": 77779.0,
+    "averageDebtAtGraduation": 11782.0
+  },
+  "students": {
+    "totalUndergrad": 1666.0,
+    "genderBreakdown": {
+      "male": 0.4478,
+      "female": 0.5522
+    },
+    "pellGrantPercent": 0.1953,
+    "firstGenPercent": 0.2991803279
+  },
+  "scorecardId": 121345.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Suburban campus in Claremont, CA, near Los Angeles",
+    "culture": "Intellectually curious, laid-back, and deeply collaborative. The Claremont Consortium gives Pomona the resources of a mid-size university with the intimacy of a small college. Students take classes at 5 colleges, eat at 7 dining halls, and enjoy Southern California weather. The culture is notably supportive: students share notes, collaborate on research, and celebrate each other's successes. The 'Sagehen' spirit is quirky and proud—expect to see students in Pomona gear at every 5C event.",
+    "distinctiveTraits": "The Claremont Consortium (5Cs) is unique—Pomona students take classes at Scripps, Claremont McKenna, Harvey Mudd, and Pitzer. The '7 dining halls' meme is real. The Draper Center for Community Partnership connects students to LA-area service. The weather is perfect year-round.",
+    "whatTheyLookFor": "Pomona values intellectual curiosity, collaboration, and community engagement. They want students who will take advantage of the 5C resources. The 'Why Pomona?' should mention specific consortium opportunities and the Southern California location. Admissions officers specifically seek students who demonstrate 'intellectual playfulness'—those who pursue diverse interests and connect them in unexpected ways. They care deeply about whether applicants will contribute to the collaborative, inclusive 5C culture.",
+    "applicationTips": "The 'Why Pomona?' essay must mention the Claremont Consortium specifically—show you understand you can take classes at the other 4 colleges and name specific departments or professors you'd explore. The 'community engagement' essay should be specific about LA-area opportunities (Draper Center partnerships, internships, etc.). Show you've thought about the 5C social dynamics—how you'll engage with students from other colleges. If you're interested in study abroad, mention Pomona's high participation rate (50%) and specific programs. The alumni interview is common—prepare to discuss how you've collaborated with people different from yourself."
+  }
+}

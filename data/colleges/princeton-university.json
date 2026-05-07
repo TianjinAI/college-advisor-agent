@@ -1,0 +1,104 @@
+{
+  "id": "princeton-university",
+  "name": "Princeton University",
+  "shortName": "Princeton",
+  "location": {
+    "city": "Princeton",
+    "state": "NJ",
+    "region": "northeast"
+  },
+  "type": "national-university",
+  "tier": "ivy",
+  "control": "private",
+  "website": "www.princeton.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Mathematics",
+      "Physics",
+      "Economics",
+      "Public Policy",
+      "History",
+      "Engineering",
+      "Operations Research and Financial Engineering (ORFE)",
+      "Molecular Biology",
+      "Classics",
+      "Philosophy",
+      "Computer Science",
+      "Creative Writing"
+    ],
+    "signaturePrograms": [
+      "Junior Independent Work",
+      "Senior Thesis (required)",
+      "Woodrow Wilson School of Public and International Affairs",
+      "Princeton Engineering",
+      "Operations Research and Financial Engineering (ORFE)",
+      "Princeton Neuroscience Institute",
+      "Princeton Environmental Institute",
+      "Bridge Year Program (service abroad before freshman year)"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "elite",
+    "averageClassSize": "12-15"
+  },
+  "admissions": {
+    "acceptanceRate": 0.0438,
+    "satRange": {
+      "25th": 1473,
+      "75th": 1633
+    },
+    "actRange": {
+      "25th": 32.0,
+      "75th": 38.0
+    },
+    "earlyRestrictiveActionRate": 0.138,
+    "regularRate": 0.054,
+    "waitlistAcceptRate": 0.05,
+    "internationalAcceptRate": 0.038,
+    "applicationType": "REA",
+    "deadlines": {
+      "earlyAction": "November 1",
+      "earlyDecision": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 62688.0,
+    "roomAndBoard": 20250.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 87815.0,
+    "medianEarnings10Year": 110066.0,
+    "averageDebtAtGraduation": 10320.0
+  },
+  "students": {
+    "totalUndergrad": 5709.0,
+    "genderBreakdown": {
+      "male": 0.4962,
+      "female": 0.5038
+    },
+    "pellGrantPercent": 0.1924,
+    "firstGenPercent": 0.2773972603
+  },
+  "scorecardId": 186131.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Suburban campus in Princeton, NJ, surrounded by affluent town",
+    "culture": "Academically intense with a fierce focus on undergraduate teaching. The eating clubs create a unique social scene that blends formality with fun. Students are preppy, ambitious, and deeply engaged in their independent work. There's a strong honor code culture—take-home exams are the norm. The campus feels like an intellectual oasis: Gothic architecture, quiet carrels, and the hum of serious study.",
+    "distinctiveTraits": "The only Ivy requiring a senior thesis from all students. Also known for the highest per-student endowment, exceptional undergraduate focus (no law/medical school to distract resources), and iconic Gothic architecture.",
+    "whatTheyLookFor": "Princeton prioritizes academic excellence and intellectual curiosity above all. They want students who will thrive in the rigorous independent work culture (Junior Papers + Senior Thesis). Leadership and character matter, but academic depth is paramount. Admissions officers look for evidence of sustained intellectual engagement—research, deep reading, or independent projects. They specifically value students who will contribute to the undergraduate-focused culture rather than treating Princeton as a stepping stone.",
+    "applicationTips": "Emphasize your capacity for independent research and deep intellectual engagement. The graded written paper requirement shows they care about your analytical writing—make sure it's polished. Demonstrate how you'll contribute to the eating club or residential college community. If you have an alumni interview, prepare to discuss a book or idea that genuinely changed your thinking. Princeton values intellectual seriousness—show you can handle sustained, self-directed work."
+  }
+}

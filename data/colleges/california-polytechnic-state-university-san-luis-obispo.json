@@ -1,0 +1,76 @@
+{
+  "id": "california-polytechnic-state-university-san-luis-obispo",
+  "name": "California Polytechnic State University-San Luis Obispo",
+  "shortName": "Cal Poly SLO",
+  "location": {
+    "city": "San Luis Obispo",
+    "state": "CA",
+    "region": "pacific"
+  },
+  "type": "national-university",
+  "tier": "top-stem",
+  "control": "private",
+  "website": "calpoly.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Engineering",
+      "Architecture",
+      "Agriculture",
+      "Business",
+      "Learn by Doing"
+    ],
+    "signaturePrograms": [
+      "Learn by Doing",
+      "Architecture",
+      "Engineering",
+      "CalPolyPomona"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "25-35"
+  },
+  "admissions": {
+    "acceptanceRate": 0.3132,
+    "satRange": null,
+    "actRange": null
+  },
+  "cost": {
+    "tuitionAndFees": 13596.0,
+    "roomAndBoard": 18792.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 72358.0,
+    "medianEarnings10Year": 90768.0,
+    "averageDebtAtGraduation": 18500.0
+  },
+  "students": {
+    "totalUndergrad": 21996.0,
+    "genderBreakdown": {
+      "male": 0.4919,
+      "female": 0.5081
+    },
+    "pellGrantPercent": 0.1924,
+    "firstGenPercent": 0.2480620155
+  },
+  "scorecardId": 110422.0,
+  "lastUpdated": "2026-05-07T18:44:52.624730Z",
+  "campus": {
+    "setting": "Suburban campus in San Luis Obispo, CA, near the coast",
+    "culture": "Hands-on, practical, and collaborative. The 'Learn by Doing' philosophy means students build, design, and create from day one. The campus is beautiful with a farm and vineyards. Students are down-to-earth and career-focused. The weather is perfect.",
+    "distinctiveTraits": "The 'Learn by Doing' philosophy is genuine\u2014students don't just study engineering, they build race cars and concrete canoes. The campus has a working farm, creamery, and vineyard. The 'SLO' location is one of the happiest cities in America. The 'Mustang' spirit is proud and practical.",
+    "whatTheyLookFor": "Cal Poly values hands-on aptitude, collaborative spirit, and practical ambition. They want students who will embrace the 'Learn by Doing' culture. The 'Why Cal Poly?' should mention specific project-based programs or the SLO location.",
+    "applicationTips": "The 'Learn by Doing' essay should show you've built, designed, or created something tangible. The hands-on philosophy is real\u2014show project experience. The SLO location is a selling point. If applying to Architecture, the portfolio is critical. Show you've thought about the practical focus."
+  }
+}

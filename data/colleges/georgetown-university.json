@@ -1,0 +1,104 @@
+{
+  "id": "georgetown-university",
+  "name": "Georgetown University",
+  "shortName": "Georgetown",
+  "location": {
+    "city": "Washington",
+    "state": "DC",
+    "region": "southeast"
+  },
+  "type": "national-university",
+  "tier": "elite",
+  "control": "private",
+  "website": "https://www.georgetown.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "International Relations (SFS)",
+      "Government",
+      "Economics",
+      "Law",
+      "Arabic",
+      "Theology",
+      "Regional and Comparative Studies",
+      "Science, Technology, and International Affairs",
+      "Philosophy",
+      "History",
+      "Nursing and Health Studies",
+      "Business (McDonough)"
+    ],
+    "signaturePrograms": [
+      "School of Foreign Service (SFS)",
+      "Law Center",
+      "Arabic and Islamic Studies",
+      "D.C. internships",
+      "Georgetown Security Studies Program",
+      "Georgetown Institute for the Study of Markets and Ethics",
+      "McDonough School of Business",
+      "Nursing and Health Studies (NHS)"
+    ],
+    "curriculumStyle": "Core Curriculum",
+    "stemStrength": "moderate",
+    "averageClassSize": "18-22"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1291,
+    "satRange": {
+      "25th": 1407,
+      "75th": 1567
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyActionRate": 0.12,
+    "regularRate": 0.13,
+    "waitlistAcceptRate": 0.15,
+    "internationalAcceptRate": 0.1,
+    "applicationType": "EA",
+    "deadlines": {
+      "earlyDecision": null,
+      "earlyAction": "November 1",
+      "regularDecision": "January 10",
+      "finaidPriority": "March 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 68017.0,
+    "roomAndBoard": 20596.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 83222.0,
+    "medianEarnings10Year": 103494.0,
+    "averageDebtAtGraduation": 15500.0
+  },
+  "students": {
+    "totalUndergrad": 7569.0,
+    "genderBreakdown": {
+      "male": 0.4104,
+      "female": 0.5896
+    },
+    "pellGrantPercent": 0.1012,
+    "firstGenPercent": 0.1606456572
+  },
+  "scorecardId": 131496.0,
+  "lastUpdated": "2026-05-08T03:02:00Z",
+  "campus": {
+    "setting": "Urban campus in Georgetown, Washington, D.C.",
+    "culture": "Politically engaged, internationally minded, and ambitious. Students intern on Capitol Hill, at embassies, and at NGOs as a matter of course. The Jesuit identity emphasizes service and ethics without being preachy. The neighborhood is historic and affluent, with brick sidewalks and waterfront parks. Politics is the default dinner conversation, but students also debate philosophy, theology, and economics with equal passion.",
+    "distinctiveTraits": "The School of Foreign Service (SFS) is the premier undergraduate international relations program. Being in D.C. means internships at the State Department, White House, and World Bank are routine. The Jesuit tradition emphasizes 'women and men for others.'",
+    "whatTheyLookFor": "Georgetown values global perspective, political awareness, and service ethic. They want students who will use D.C. as a classroom. The SFS has its own admissions committee—tailor your application to international affairs if applying there. Admissions officers specifically seek students who demonstrate 'principled leadership'—those who have taken stands on issues and acted on their values. They care deeply about whether applicants understand the Jesuit commitment to service.",
+    "applicationTips": "The SFS essay should show genuine international interest (language study, travel, Model UN, or policy research). The 'Why Georgetown?' must mention D.C. opportunities specifically—name agencies, think tanks, or organizations you want to intern with. The theology/philosophy core requirement should be acknowledged positively, not treated as a burden. Show you understand the Jesuit values. If applying to McDonough, demonstrate business acumen and ethical reasoning. The alumni interview is common—prepare to discuss a current global issue and your perspective on it."
+  }
+}

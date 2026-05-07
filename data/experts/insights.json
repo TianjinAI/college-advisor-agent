@@ -1,0 +1,462 @@
+{
+  "lastUpdated": "2026-05-08T04:05:00Z",
+  "reviewedBy": "Codex review pass — factual qualification, deduplication, and category tightening",
+  "insights": [
+  {
+    "id": "adm-001",
+    "category": "admissions",
+    "title": "Holistic Review Matters More at Ivy and Elite Schools",
+    "content": "At Ivy League and elite universities, admissions officers practice holistic review — meaning no single factor guarantees acceptance or rejection. A 4.0 GPA and perfect SAT/ACT alone won't get you in, and a slightly lower GPA won't automatically disqualify you. These schools evaluate your entire narrative: intellectual curiosity, personal character, resilience, and potential to contribute to campus life. Your application should tell a coherent story that goes beyond numbers.",
+    "targetTier": "ivy",
+    "source": "Former Ivy admissions officer guidance"
+  },
+  {
+    "id": "adm-002",
+    "category": "admissions",
+    "title": "Demonstrated Interest at Non-Ivy Elites",
+    "content": "Schools like Vanderbilt, Emory, Georgetown, and many top LACs track demonstrated interest — campus visits, email opens, info session attendance, and early application choices. Showing genuine interest can meaningfully boost your chances. Register for campus tours, attend virtual events, reach out to admissions counselors, and mention specific programs in your 'Why Us?' essays. This is less critical at Ivy League schools where interest tracking is minimal.",
+    "targetTier": "elite",
+    "source": "NACAC admissions research"
+  },
+  {
+    "id": "adm-003",
+    "category": "admissions",
+    "title": "Top LACs Value Intellectual Curiosity Over Résumé Padding",
+    "content": "Liberal arts colleges like Williams, Amherst, Pomona, and Swarthmore look for genuine intellectual engagement rather than impressive-looking activities. They want students who read for fun, ask probing questions in class, and pursue ideas for their own sake. A student who wrote an independent research paper on climate economics will stand out more than someone with a generic list of clubs. Show depth, not breadth.",
+    "targetTier": "top-lac",
+    "source": "College admissions best practices"
+  },
+  {
+    "id": "adm-004",
+    "category": "admissions",
+    "title": "The Common App Activities List: Quality Over Quantity",
+    "content": "List your activities in order of importance and impact, not chronologically. Admissions officers spend 1-3 minutes per application — make every word count. Use action verbs and quantifiable achievements: 'Founded coding club; grew membership from 5 to 40 students; organized city-wide hackathon with 200 participants.' You have 10 activity slots — depth in 4-5 activities with leadership roles outweighs surface-level participation in 10.",
+    "targetTier": "any",
+    "source": "Common Application guidance"
+  },
+  {
+    "id": "adm-005",
+    "category": "admissions",
+    "title": "The 'Spike' Strategy: Depth Over Well-Roundedness",
+    "content": "Elite admissions favors the 'spiky' student — someone with deep, demonstrated excellence in a focused area — over the 'well-rounded' student who participates in many activities at a moderate level. Top schools build well-rounded classes from spiky individuals. To develop a spike: identify what genuinely excites you and pursue it to an exceptional level over several years. Build your application narrative around this distinctive area of depth so that everything — essays, activities, recommendations — reinforces a coherent through-line. A national-level competitor, published researcher, or founder of a meaningful initiative will stand out more than a student with superficial involvement in eight clubs. Start early, commit deeply, and aim for tangible impact. Note: a spike doesn't mean being one-dimensional; it means having a clear area of excellence while still showing genuine intellectual range.",
+    "targetTier": "ivy",
+    "source": "College admissions research"
+  },
+  {
+    "id": "adm-006",
+    "category": "admissions",
+    "title": "Legacy Status: Advantages and Limitations",
+    "content": "Having a parent or grandparent who attended a school can provide an admissions boost, but it is not a guarantee. At Harvard, legacy status has been shown to roughly double admission rates, but legacy applicants still need strong academics and extracurriculars. After the 2023 Supreme Court affirmative action ruling, some schools have re-examined legacy preferences. Check each school's current policy — some have reduced or eliminated legacy considerations.",
+    "targetTier": "ivy",
+    "source": "Harvard admissions data analysis"
+  },
+  {
+    "id": "adm-007",
+    "category": "admissions",
+    "title": "Understanding Yield Protection",
+    "content": "Some elite schools practice yield protection — waitlisting or rejecting students they believe are overqualified and will attend a higher-ranked school instead. If you're an Ivy-level applicant targeting a top LAC or mid-tier elite school, consider writing a compelling 'Why Us?' essay that shows genuine enthusiasm. Sending a Letter of Continued Interest after a waitlist can also signal commitment.",
+    "targetTier": "elite",
+    "source": "Admissions strategy analysis"
+  },
+  {
+    "id": "adm-008",
+    "category": "admissions",
+    "title": "Community College Transfer Pathway",
+    "content": "Transfer admission rates at elite schools can be higher than freshman rates. Schools like Cornell, Penn, and Columbia actively recruit community college transfers. Complete your associate degree or 60+ transferable credits with a 3.7+ GPA, engage deeply in campus leadership, and secure strong faculty recommendations. The transfer pathway is particularly strong for students who overcame financial or personal barriers after high school.",
+    "targetTier": "elite",
+    "source": "Transfer admissions data"
+  },
+  {
+    "id": "essays-001",
+    "category": "essays",
+    "title": "The Common App Personal Statement: Show, Don't Tell",
+    "content": "The most effective personal statements use vivid, specific storytelling rather than abstract claims. Instead of writing 'I'm passionate about social justice,' describe the moment you organized your school's first voter registration drive and what you learned about civic engagement. Admissions officers read thousands of essays — the ones that use concrete details, sensory language, and genuine emotion are the ones that are remembered. Start with a compelling hook in the first two sentences.",
+    "targetTier": "any",
+    "source": "Essay coaching best practices"
+  },
+  {
+    "id": "essays-002",
+    "category": "essays",
+    "title": "The 'Why Us?' Essay: Do Your Research",
+    "content": "A strong 'Why Us?' essay references specific programs, courses, professors, traditions, or campus resources that genuinely excite you. Go beyond the website's landing page — mention a specific research lab, a particular interdisciplinary program, a unique campus tradition, or a professor whose work interests you. Show that you can envision yourself thriving at their specific campus, not just any prestigious school. Admissions officers can instantly tell when an essay could apply to any school.",
+    "targetTier": "any",
+    "source": "Admissions essay best practices"
+  },
+  {
+    "id": "essays-003",
+    "category": "essays",
+    "title": "Supplemental Essays: Every Word Counts",
+    "content": "Supplemental essays (Why Major, Community, Challenge, etc.) are your chance to show fit and depth. Answer each question specifically — don't reuse generic paragraphs. For the 'Why Major' essay, trace your intellectual journey: what sparked your interest, how you've explored it, and why this school's program is the right next step. For the 'Community' essay, show how you contribute to communities, not just benefit from them.",
+    "targetTier": "ivy",
+    "source": "Ivy admissions officer feedback"
+  },
+  {
+    "id": "essays-004",
+    "category": "essays",
+    "title": "Vulnerability in Essays: The Balance",
+    "content": "The best essays often involve vulnerability — discussing a failure, a challenge, or a moment of growth. However, the key is to show what you learned and how you changed, not to seek sympathy. Admissions officers want resilience, self-awareness, and maturity. A successful vulnerability essay transforms a difficult experience into a story of growth. Avoid trauma dumping or using hardship as a substitute for genuine reflection.",
+    "targetTier": "any",
+    "source": "College essay coaching"
+  },
+  {
+    "id": "essays-005",
+    "category": "essays",
+    "title": "Activity List Descriptions: Active Voice and Impact",
+    "content": "Transform passive activity descriptions into impact statements. Instead of 'Member of debate team,' write 'Competed in 12 tournaments; qualified for state championships; mentored 5 junior team members.' Each description should convey what you did, what impact you made, and what skills you developed. Use specific numbers and outcomes wherever possible. This transforms your activities list from a passive resume into a compelling narrative of engagement.",
+    "targetTier": "any",
+    "source": "Common App optimization guide"
+  },
+  {
+    "id": "essays-006",
+    "category": "essays",
+    "title": "Writing About Your Intellectual Spark",
+    "content": "Top schools want students who love learning. Write about an idea, book, experiment, or conversation that genuinely excited you intellectually. Don't just say you love science — describe the moment a particular concept clicked for you, or the experiment that made you question everything you thought you knew. Intellectual passion essays work because they show how your mind works, not just what you've done. This is especially valued at Ivy and top LAC schools.",
+    "targetTier": "ivy",
+    "source": "Admissions essay strategy"
+  },
+  {
+    "id": "essays-007",
+    "category": "essays",
+    "title": "Avoid These Essay Clichés",
+    "content": "Common essay clichés that admissions officers see repeatedly: the 'mission trip that changed my life' (especially problematic if written about helping less fortunate communities), the 'sports loss taught me about perseverance' (unless truly unique), the 'I learned about my cultural heritage at a heritage camp,' and the 'I realized I'm privileged when I visited a developing country.' These aren't automatically bad, but they require an exceptionally fresh perspective to stand out.",
+    "targetTier": "any",
+    "source": "College admissions counseling"
+  },
+  {
+    "id": "essays-008",
+    "category": "essays",
+    "title": "The Short Answer: Concise and Memorable",
+    "content": "Short answer prompts (50-250 words) require precision. Every sentence must earn its place. Lead with your most interesting detail, use specific language, and avoid restating what's already in your activities list or transcript. Think of short answers as trailers for your application — they should make the reader want to know more about you. Use humor judiciously and ensure it reflects your genuine personality.",
+    "targetTier": "any",
+    "source": "Essay workshop feedback"
+  },
+  {
+    "id": "extra-002",
+    "category": "extracurriculars",
+    "title": "Creating Your Own Opportunities",
+    "content": "Starting your own club, organization, research project, or initiative demonstrates initiative, leadership, and genuine passion. Schools love self-starters. If there's no coding club at your school, start one. If you can't find a summer research program, reach out to local professors directly. If you see a community need, create a project to address it. These self-directed pursuits are significantly more impressive than participation in existing programs.",
+    "targetTier": "ivy",
+    "source": "Admissions strategy research"
+  },
+  {
+    "id": "extra-003",
+    "category": "extracurriculars",
+    "title": "Research Experience for High School Students",
+    "content": "Securing genuine research experience can significantly strengthen your application for STEM-oriented schools. Start by emailing professors at local universities with specific, thoughtful inquiries about their work and how you might contribute. Look into formal programs like RSI, SSRP, and university summer research internships. Even independent literature reviews or computational projects demonstrate research thinking. Document your findings and, if possible, present or publish your work.",
+    "targetTier": "elite",
+    "source": "STEM admissions guidance"
+  },
+  {
+    "id": "extra-004",
+    "category": "extracurriculars",
+    "title": "Community Service: Impact, Not Hours",
+    "content": "Admissions officers value community engagement that shows genuine commitment and measurable impact over impressive hour counts. Rather than logging 200 hours of generic volunteering, focus on sustained involvement in a cause you care about. Leading a tutoring program for 3 years and showing that students' grades improved by one letter grade is far more compelling than one-off volunteer events. Quality and consistency beat quantity every time.",
+    "targetTier": "any",
+    "source": "NACAC guidance"
+  },
+  {
+    "id": "extra-005",
+    "category": "extracurriculars",
+    "title": "Athletic Recruitment: Start Early",
+    "content": "If you're a competitive athlete targeting college athletics, begin the recruitment process in sophomore year. Create athletic highlight reels, register with the NCAA Eligibility Center, attend college prospect camps, and reach out directly to coaches. Academic eligibility (GPA and test scores) matters as much as athletic ability. DI and DII schools have specific academic requirements, and coaches have limited recruiting budgets — making early, proactive outreach essential.",
+    "targetTier": "any",
+    "source": "NCAA recruitment guidelines"
+  },
+  {
+    "id": "extra-006",
+    "category": "extracurriculars",
+    "title": "Summer Programs: Quality Matters",
+    "content": "Selective summer programs (RSI, TASP, Clark Scholars, COSMOS) are highly prestigious but extremely competitive. If you don't get into a selective program, don't panic — self-directed projects can be equally impressive. A student who spent summer coding an app that solves a real problem, or doing independent historical research, can demonstrate equal or greater intellectual initiative. Admissions officers value what you do with your time, not the name on the program.",
+    "targetTier": "ivy",
+    "source": "College admissions strategy"
+  },
+  {
+    "id": "extra-007",
+    "category": "extracurriculars",
+    "title": "Leadership: Real Roles, Not Title Hunting",
+    "content": "Admissions officers can distinguish between genuine leadership and title-hunting. Being elected president of a club matters less than the concrete changes you made as a leader. Did you restructure a struggling organization? Increase membership by 200%? Launch a new initiative that served the community? Focus on the narrative of impact rather than the prestige of titles. Authentic leadership stories resonate far more than a list of officer positions.",
+    "targetTier": "ivy",
+    "source": "Admissions holistic review insights"
+  },
+  {
+    "id": "extra-008",
+    "category": "extracurriculars",
+    "title": "Online Presence and Digital Portfolios",
+    "content": "Building a professional online presence can strengthen your application. Create a personal website showcasing projects, research, or creative work. Maintain a GitHub portfolio if you code. Start a blog writing about your intellectual interests. Share thoughtful content on LinkedIn. These digital footprints provide evidence of your passions beyond what fits in the Common App and can be referenced in your essays or additional information sections.",
+    "targetTier": "any",
+    "source": "Modern admissions strategy"
+  },
+  {
+    "id": "fa-001",
+    "category": "financial-aid",
+    "title": "Need-Blind vs. Need-Aware: Know the Difference",
+    "content": "Need-blind schools (Harvard, Yale, Princeton, MIT, Amherst, Bowdoin, etc.) do not consider your ability to pay when making admissions decisions. Need-aware schools may factor in financial need, especially for borderline applicants. If you need significant aid, prioritize need-blind schools in your list. Many of the most selective private colleges — including the Ivy League and top liberal arts colleges — meet 100% of demonstrated need for domestic students, but this is not universal across all highly-ranked schools. Always verify each school's specific financial aid policy: the difference between need-blind and need-aware can affect your admission chances.",
+    "targetTier": "ivy",
+    "source": "Financial aid policy research"
+  },
+  {
+    "id": "fa-002",
+    "category": "financial-aid",
+    "title": "The FAFSA and CSS Profile: File Early",
+    "content": "File the FAFSA as soon as it opens (typically October 1 for the upcoming academic year, though the exact date can vary — check studentaid.gov for the current year's opening date) and the CSS Profile for schools that require it. Many schools award financial aid on a rolling basis — filing early can mean more aid available. The FAFSA uses prior-prior year tax returns, so your family's financial situation may differ from the most recent return. If there's been a significant income change, submit a special circumstances appeal with your financial aid office.",
+    "targetTier": "any",
+    "source": "Financial aid filing guide"
+  },
+  {
+    "id": "fa-003",
+    "category": "financial-aid",
+    "title": "Merit Aid at Top LACs and Elite Schools",
+    "content": "While Ivy League schools generally do not offer merit aid (they focus on need-based aid), many top LACs and elite schools outside the Ivies offer generous merit scholarships. Schools like Vanderbilt (Institutional Merit), Rice, Emory, and many top LACs offer merit awards that can cover full tuition. These are competitive — typically requiring 99th percentile test scores, exceptional GPA, and distinctive extracurriculars. Apply for these scholarships explicitly.",
+    "targetTier": "top-lac",
+    "source": "Merit aid research"
+  },
+  {
+    "id": "fa-004",
+    "category": "financial-aid",
+    "title": "Negotiating Your Financial Aid Package",
+    "content": "Financial aid packages can sometimes be negotiated, especially if you have a competing offer from a peer institution. Contact the financial aid office directly, explain your situation, and provide documentation of competing offers or changed financial circumstances. Be polite, specific, and factual. Many schools have a formal appeal process. This works best at schools that practice need-blind admissions and have flexible aid budgets.",
+    "targetTier": "any",
+    "source": "Financial aid negotiation strategies"
+  },
+  {
+    "id": "fa-005",
+    "category": "financial-aid",
+    "title": "Net Price Calculators: Your Best Friend",
+    "content": "Every college is required to provide a Net Price Calculator on their website. Use these tools to get a personalized estimate of what you'll actually pay after grants and scholarships. Compare net prices across your school list — the sticker price is often misleading. A $80,000 school that meets full demonstrated need may cost less than a $40,000 school that offers limited aid. Always look at net price, not sticker price.",
+    "targetTier": "any",
+    "source": "College affordability research"
+  },
+  {
+    "id": "fa-006",
+    "category": "financial-aid",
+    "title": "Outside Scholarships: Strategic Searching",
+    "content": "Apply for outside scholarships strategically. Focus on local scholarships (community foundations, local businesses, civic organizations) which have fewer applicants and higher win rates than national competitions. Use scholarship search engines like Fastweb, Scholarships.com, and the College Board's scholarship search. Treat scholarship applications like admissions applications — tailor each essay, proofread carefully, and meet all deadlines. Even $500-$1,000 awards add up.",
+    "targetTier": "any",
+    "source": "Scholarship strategy guide"
+  },
+  {
+    "id": "fa-007",
+    "category": "financial-aid",
+    "title": "Student Loans: Borrow Strategically",
+    "content": "If you must borrow, federal student loans (subsidized first, then unsubsidized) offer the best terms — fixed low interest rates, income-driven repayment plans, and forgiveness programs. Avoid private loans when possible. The total student loan debt at graduation should ideally not exceed your expected first-year salary. For most fields, keep total borrowing under $30,000. Use the College Scorecard's debt data to compare schools.",
+    "targetTier": "any",
+    "source": "Student loan guidance"
+  },
+  {
+    "id": "strategy-001",
+    "category": "strategy",
+    "title": "Building a Balanced College List",
+    "content": "Your college list should have three tiers: reach schools (admission rate below 15% or where you're below the median GPA/test score), target schools (where your stats match the middle 50%), and likely schools (where you exceed the 75th percentile). Apply to 8-12 schools total. A balanced list ensures you'll have great options regardless of how the most competitive schools play out. Don't apply only to Ivies — include strong matches and likely admits.",
+    "targetTier": "any",
+    "source": "College admissions strategy"
+  },
+  {
+    "id": "strategy-002",
+    "category": "strategy",
+    "title": "Early Decision vs. Early Action: Strategic Use",
+    "content": "Early Decision (ED) is binding and often correlates with higher acceptance rates — ED rates can appear 2-3x higher than regular decision at some schools. However, these raw numbers can be misleading: ED pools often include recruited athletes, legacy applicants, and highly self-selected candidates who would be strong applicants regardless. The ED advantage is real but typically smaller than the headline numbers suggest. Use ED strategically if you have a clear first-choice school and don't need to compare financial aid offers. Early Action (EA) is non-binding and offers a more modest advantage while keeping your options open. Restrictive Early Action (REA) at schools like Harvard, Yale, and Stanford allows you to apply early to one school without committing.",
+    "targetTier": "ivy",
+    "source": "Admissions timing strategy"
+  },
+  {
+    "id": "strategy-004",
+    "category": "strategy",
+    "title": "Reaching Out to Admissions Officers",
+    "content": "Building a relationship with your regional admissions officer can help you stand out. Attend their school visits, ask thoughtful questions at info sessions, and send a brief, genuine email after meaningful interactions. Don't pester them with frequent emails, but a well-crafted note after a campus visit or interview can leave a positive impression. This is especially valuable at smaller schools and LACs where admissions officers review applications personally.",
+    "targetTier": "top-lac",
+    "source": "Admissions relationship building"
+  },
+  {
+    "id": "strategy-005",
+    "category": "strategy",
+    "title": "Transfer Admissions: An Underutilized Path",
+    "content": "Transfer admission rates at many elite schools are higher than freshman admission rates. Cornell, Penn, Columbia, and Duke all have robust transfer programs. If you're at a school that isn't your top choice, perform exceptionally well (3.7+ GPA), engage in leadership, and apply as a sophomore or junior transfer. The transfer pathway is especially valuable for students who faced financial, personal, or academic challenges in their freshman year.",
+    "targetTier": "elite",
+    "source": "Transfer admissions data"
+  },
+  {
+    "id": "strategy-006",
+    "category": "strategy",
+    "title": "The Additional Information Section: Use It",
+    "content": "The Common App's Additional Information section is an underutilized tool. Use it to explain: grade dips due to personal circumstances, gaps in your academic record, context for unusual course selections, or anything else that might raise questions. Don't repeat information from your activities or essays. Keep it concise (250 words max) and factual. This section lets you control the narrative around potential red flags in your application.",
+    "targetTier": "any",
+    "source": "Application strategy guide"
+  },
+  {
+    "id": "strategy-007",
+    "category": "strategy",
+    "title": "Letters of Recommendation: Build Relationships Early",
+    "content": "Strong recommendation letters come from teachers who know you well — not just your highest grade. Choose teachers from junior year or sophomore year who can speak to your intellectual curiosity, class participation, and character. Give them a 'brag sheet' with specific anecdotes, your college list, and your personal statement draft. Ask at least 3-4 weeks before the deadline. A personal, specific letter from a teacher who truly knows you is far more impactful than a generic letter from a famous teacher.",
+    "targetTier": "any",
+    "source": "Recommendation letter guidance"
+  },
+  {
+    "id": "strategy-008",
+    "category": "strategy",
+    "title": "Waitlist Strategy: How to Get Off",
+    "content": "If waitlisted, send a Letter of Continued Interest (LOCI) within 1-2 weeks. Reaffirm your commitment, update the school with any new achievements (awards, grades, activities), and explain specifically why this school remains your top choice. Keep it concise (one page). Continue performing well academically — spring semester grades matter. If the school allows additional materials, submit a brief update. Most importantly, move on mentally and commit to a school that said yes.",
+    "targetTier": "any",
+    "source": "Waitlist management strategy"
+  },
+  {
+    "id": "timeline-001",
+    "category": "timeline",
+    "title": "Freshman Year: Build Foundations",
+    "content": "Freshman year is for exploration and foundation-building. Take challenging courses (honors or AP if available and manageable), explore extracurriculars widely to find your passions, and build strong relationships with teachers. Don't worry about college admissions yet — focus on developing genuine interests and maintaining strong grades. Start thinking about what subjects excite you most. Your transcript starts now, so maintain a strong GPA from day one.",
+    "targetTier": "any",
+    "source": "College planning timeline"
+  },
+  {
+    "id": "timeline-002",
+    "category": "timeline",
+    "title": "Sophomore Year: Deepen and Test",
+    "content": "Sophomore year is for deepening your involvement in chosen activities and taking your first standardized test (PSAT in October). This PSAT is just practice — the junior year PSAT counts for National Merit. Continue building academic depth with challenging courses. Consider starting a passion project or independent study. Begin exploring colleges casually — attend local college fairs, but don't stress about finalizing your list yet.",
+    "targetTier": "any",
+    "source": "College readiness timeline"
+  },
+  {
+    "id": "timeline-003",
+    "category": "timeline",
+    "title": "Junior Year: The Critical Year",
+    "content": "Junior year is the most important year for admissions. Your grades, course rigor, and test scores from this year matter most. Take the SAT/ACT in winter or spring and again in fall if needed. Take the PSAT in October for National Merit consideration. Begin visiting colleges during breaks. Start drafting essays in spring. Build your college list by winter break. Secure recommendation letter requests from teachers by spring. Junior year spring grades are often the last ones colleges see before a decision.",
+    "targetTier": "any",
+    "source": "Critical admissions timeline"
+  },
+  {
+    "id": "timeline-004",
+    "category": "timeline",
+    "title": "Senior Year Fall: Application Season",
+    "content": "September-December of senior year is peak application season. Finalize your college list (8-12 schools), complete all applications, and meet Early Decision/Early Action deadlines (typically November 1-15). Finalize essays with multiple rounds of editing. Ensure recommendation letters are submitted. Submit the FAFSA and CSS Profile as soon as possible after October 1. Stay organized with a spreadsheet tracking deadlines, requirements, and submission statuses for each school.",
+    "targetTier": "any",
+    "source": "Application season management"
+  },
+  {
+    "id": "timeline-005",
+    "category": "timeline",
+    "title": "Senior Year Spring: Decisions and Deposits",
+    "content": "March-May of senior year brings decisions. Compare financial aid packages carefully — don't just look at the school name. Visit admitted student events. Commit by May 1 (National Decision Day). If waitlisted, send a LOCI. If you need to appeal a financial aid decision, do it promptly and professionally. Continue performing well academically — colleges can and do rescind admissions offers for significant grade drops.",
+    "targetTier": "any",
+    "source": "Decision management timeline"
+  },
+  {
+    "id": "interview-001",
+    "category": "interviews",
+    "title": "Preparing for Alumni Interviews",
+    "content": "Most alumni interviews are conversational, not interrogational. Prepare by knowing your application inside and out, having thoughtful questions about the school, and being ready to discuss your interests genuinely. Research your interviewer if possible (LinkedIn, school directory). Practice articulating why you're interested in the school without sounding rehearsed. The best interviews feel like a genuine conversation between two people who share a connection to the school.",
+    "targetTier": "any",
+    "source": "Interview preparation guide"
+  },
+  {
+    "id": "interview-002",
+    "category": "interviews",
+    "title": "Questions to Ask Your Interviewer",
+    "content": "Prepare 3-5 thoughtful questions that show you've done research and are genuinely curious. Good questions: 'What surprised you most about your experience at [school]?' 'How did your major shape your career?' 'What's a tradition or experience that you think every student should have?' Avoid questions easily answered on the website (acceptance rate, average GPA) or questions about financial aid. The best questions reveal your values and intellectual curiosity.",
+    "targetTier": "any",
+    "source": "Interview strategy"
+  },
+  {
+    "id": "interview-003",
+    "category": "interviews",
+    "title": "Virtual Interview Best Practices",
+    "content": "For virtual interviews: test your technology 30 minutes early, use a clean and professional background, ensure good lighting (face a window), and minimize distractions. Look at the camera (not the screen) to simulate eye contact. Dress as you would for an in-person interview. Have a glass of water nearby. Send a thank-you email within 24 hours. Treat virtual interviews with the same formality and preparation as in-person ones.",
+    "targetTier": "any",
+    "source": "Virtual interview etiquette"
+  },
+  {
+    "id": "interview-004",
+    "category": "interviews",
+    "title": "The 'Why This School?' Interview Answer",
+    "content": "When asked why you're interested in a specific school, be specific and personal. Reference a particular program, professor, research opportunity, campus culture element, or personal experience that drew you to the school. Avoid generic praise ('it's prestigious,' 'great reputation'). Connect your specific interests and goals to the school's specific offerings. This answer is your chance to demonstrate genuine fit and enthusiasm.",
+    "targetTier": "ivy",
+    "source": "Interview coaching"
+  },
+  {
+    "id": "interview-005",
+    "category": "interviews",
+    "title": "Handling Behavioral Interview Questions",
+    "content": "Prepare for behavioral questions using the STAR method: Situation, Task, Action, Result. Common questions include: 'Tell me about a challenge you faced,' 'Describe a time you failed,' 'How do you handle disagreements?' Have 3-4 stories from your experiences ready. Each story should demonstrate a different quality: leadership, resilience, collaboration, or intellectual curiosity. Practice telling each story in 2-3 minutes.",
+    "targetTier": "any",
+    "source": "Behavioral interview preparation"
+  },
+  {
+    "id": "general-001",
+    "category": "general",
+    "title": "Test-Optional Schools: Should You Submit Scores?",
+    "content": "Many schools remain test-optional after COVID-19. The general guidance: submit scores if they're at or above the school's median (check the 25th-75th percentile range). If your scores are below the 25th percentile, consider not submitting unless you have other compelling reasons. Test-optional doesn't mean test-indifferent — schools still value strong scores. If you're applying to STEM programs, strong math scores can be particularly valuable regardless of the policy.",
+    "targetTier": "any",
+    "source": "Test-optional policy analysis"
+  },
+  {
+    "id": "general-002",
+    "category": "general",
+    "title": "International Student Considerations",
+    "content": "International students face unique challenges: demonstrating English proficiency (TOEFL/IELTS), navigating financial aid (many schools don't meet full need for internationals), and understanding cultural differences in the application. Need-aware schools may consider your ability to pay. Focus on need-blind schools (mostly Ivies and some LACs) if you need significant aid. Your international perspective can be a strength — emphasize unique cultural insights and global awareness in your application.",
+    "targetTier": "ivy",
+    "source": "International admissions guidance"
+  },
+  {
+    "id": "general-003",
+    "category": "general",
+    "title": "First-Generation College Student Resources",
+    "content": "First-generation students should leverage specialized resources: QuestBridge (full-ride scholarships for high-achieving, low-income students), the College Advising Corps, Posse Foundation, and college-specific first-gen programs. Many elite schools have robust first-gen support communities. Don't hesitate to reach out to admissions offices — many have counselors specifically dedicated to first-gen applicants. Your unique perspective and resilience are assets in the admissions process.",
+    "targetTier": "any",
+    "source": "First-gen student resources"
+  },
+  {
+    "id": "general-004",
+    "category": "general",
+    "title": "Gap Year: When and How",
+    "content": "A gap year can be valuable for personal growth, especially if you have a clear plan. Harvard, Princeton, and many schools encourage gap years. Apply and get accepted first, then defer enrollment. Structure your gap year with purpose: work, travel, volunteer, or pursue a specific project. Avoid an unstructured year that doesn't contribute to your growth. Document your experiences — gap year activities can strengthen your college application and interview conversations.",
+    "targetTier": "ivy",
+    "source": "Gap year planning guide"
+  },
+  {
+    "id": "general-005",
+    "category": "general",
+    "title": "Mental Health During College Admissions",
+    "content": "College admissions can be incredibly stressful. Remember: your worth is not determined by where you attend college. The system is imperfect, and even qualified students get rejected from schools they love. Maintain perspective, lean on your support system, and seek help if anxiety or depression becomes overwhelming. Many schools have counselors specifically trained for admissions-related stress. The best college for you is one where you'll thrive — and there are many great options beyond the most selective schools.",
+    "targetTier": "any",
+    "source": "Student wellbeing research"
+  },
+  {
+    "id": "adm-009",
+    "category": "admissions",
+    "title": "Understanding Yield and Enrollment Management",
+    "content": "Colleges manage their enrollment carefully — they need to predict how many admitted students will actually enroll. This is why waitlists, deferrals, and yield protection exist. Understanding this helps you strategize: applying ED signals strong commitment (boosting your value in their enrollment model), while applying to many reaches may lead to yield protection at mid-tier schools. When writing a LOCI, explicitly state the school is your first choice — this directly addresses their yield concerns.",
+    "targetTier": "any",
+    "source": "Enrollment management research"
+  },
+  {
+    "id": "strategy-009",
+    "category": "strategy",
+    "title": "Geographic Diversity in Admissions",
+    "content": "Some schools actively seek geographic diversity. Coming from an underrepresented state or region can be an advantage. Research shows that schools like Cornell, Dartmouth, and many LACs value geographic spread in their classes. If you're from a state with few applicants to elite schools, this can work in your favor. Conversely, if you're from a heavily represented area (suburban Northeast or Bay Area), you'll need to distinguish yourself more from the applicant pool.",
+    "targetTier": "ivy",
+    "source": "Admissions diversity research"
+  },
+  {
+    "id": "timeline-006",
+    "category": "timeline",
+    "title": "Summer Before Senior Year: Final Preparation",
+    "content": "Use the summer before senior year strategically. Finalize your college list, draft all major essays (Common App personal statement and 'Why Us?' essays for each school), and request recommendation letters. Take final SAT/ACT in August or September if needed. Visit your top-choice schools if possible. This summer is the last chance to add a meaningful activity or achievement to your application. Don't waste it — but also don't burn out before the application marathon.",
+    "targetTier": "any",
+    "source": "Pre-application preparation"
+  },
+  {
+    "id": "essays-009",
+    "category": "essays",
+    "title": "The Additional Information Essay: Context Matters",
+    "content": "Use the Additional Information section to provide context for circumstances that affected your academic performance — family illness, financial hardship, school resource limitations, or learning differences. Frame these explanations factually and briefly. Don't make excuses; provide context. Admissions officers want to understand the circumstances behind your application. This section can be especially important for students from under-resourced schools or challenging personal situations.",
+    "targetTier": "any",
+    "source": "Application context guidance"
+  },
+  {
+    "id": "extra-009",
+    "category": "extracurriculars",
+    "title": "Competitions and Awards: Strategic Pursuit",
+    "content": "National competitions and awards carry significant weight in admissions. Target competitions aligned with your interests: science olympiad, math competitions (AMC/AIME/USAMO), debate (NSDA), Model UN, science fairs (ISEF, Regeneron STS), essay contests, and music competitions. National-level recognition in any field makes you a standout applicant. Start at the regional level and work your way up. Even placing at the state level demonstrates exceptional ability.",
+    "targetTier": "ivy",
+    "source": "Competitive admissions strategy"
+  }
+  ]
+}

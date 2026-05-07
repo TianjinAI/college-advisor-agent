@@ -1,0 +1,94 @@
+{
+  "id": "haverford-college",
+  "name": "Haverford College",
+  "shortName": "Haverford",
+  "location": {
+    "city": "Haverford",
+    "state": "PA",
+    "region": "northeast"
+  },
+  "type": "liberal-arts-college",
+  "tier": "top-lac",
+  "control": "private",
+  "website": "https://www.haverford.edu/",
+  "academics": {
+    "studentFacultyRatio": null,
+    "strengths": [
+      "Biology",
+      "Chemistry",
+      "English",
+      "History",
+      "Political Science",
+      "Psychology"
+    ],
+    "signaturePrograms": [
+      "Honor Code",
+      "Bi-Co with Bryn Mawr",
+      "Customs (Orientation)",
+      "360\u00b0 Courses"
+    ],
+    "curriculumStyle": "Distribution Requirements",
+    "stemStrength": "strong",
+    "averageClassSize": "12-16"
+  },
+  "admissions": {
+    "acceptanceRate": 0.1237,
+    "satRange": {
+      "25th": 1433,
+      "75th": 1593
+    },
+    "actRange": {
+      "25th": 31.0,
+      "75th": 37.0
+    },
+    "earlyDecisionRate": 0.3,
+    "regularRate": 0.15,
+    "waitlistAcceptRate": 0.08,
+    "internationalAcceptRate": 0.08,
+    "applicationType": "ED",
+    "deadlines": {
+      "earlyDecision": "November 1",
+      "earlyAction": null,
+      "regularDecision": "January 1",
+      "finaidPriority": "February 1"
+    }
+  },
+  "cost": {
+    "tuitionAndFees": 70688.0,
+    "roomAndBoard": 19548.0,
+    "totalCostOfAttendance": null,
+    "netPriceByIncome": {
+      "0-30k": null,
+      "30-48k": null,
+      "48-75k": null,
+      "75-110k": null,
+      "110k-plus": null
+    },
+    "percentReceivingAid": null
+  },
+  "outcomes": {
+    "graduationRate4Year": null,
+    "retentionRate": null,
+    "medianEarnings6Year": 53353.0,
+    "medianEarnings10Year": 79966.0,
+    "averageDebtAtGraduation": 13621.0
+  },
+  "students": {
+    "totalUndergrad": 1430.0,
+    "genderBreakdown": {
+      "male": 0.4308,
+      "female": 0.5692
+    },
+    "pellGrantPercent": 0.1545,
+    "firstGenPercent": 0.162055336
+  },
+  "scorecardId": 212911.0,
+  "lastUpdated": "2026-05-07T18:44:52.629341Z",
+  "campus": {
+    "setting": "Suburban campus in Haverford, PA, near Philadelphia",
+    "culture": "Intellectually intense, ethically grounded, and collaborative. The Honor Code governs everything\u2014from exams to dorm life. Students are trusting and self-directed. The Bi-Co relationship with Bryn Mawr expands opportunities. The 'Customs' orientation creates instant community.",
+    "distinctiveTraits": "The Honor Code is the defining feature\u2014students take exams unsupervised, and dorm doors are often unlocked. The Bi-Co with Bryn Mawr means students can live at one and take classes at the other. The 'Customs' program pairs every first-year with a team of upperclassmen mentors.",
+    "whatTheyLookFor": "Haverford values integrity, intellectual curiosity, and community responsibility. They want students who will embrace the Honor Code and contribute to the community. The 'Why Haverford?' should mention the Honor Code, Bi-Co, or Customs specifically.",
+    "applicationTips": "The Honor Code essay should show you understand what it means (self-governance, trust, responsibility). If interested in Bryn Mawr cross-registration, explain why both schools appeal. The 'community' essay should demonstrate collaborative spirit. Show you've thought about the small size."
+  }
+}
