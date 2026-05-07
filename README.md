@@ -151,7 +151,69 @@ college-advisor-agent/
 - [ ] College comparison tool with data visualization
 - [ ] Application timeline / deadline tracker
 - [ ] Essay review and feedback
-- [ ] Docker deployment for easy hosting
+- [x] Docker deployment for easy hosting
+
+## Deployment (Docker)
+
+The easiest way to share this app with others (e.g. your son) is to deploy it on a server. Your API keys stay on the server — users only need a browser.
+
+### Quick Deploy
+
+```bash
+# 1. Clone the repo on your server
+git clone https://github.com/TianjinAI/college-advisor-agent.git
+cd college-advisor-agent
+
+# 2. Create the env file with your API keys
+cd server
+cp .env.example .env
+# Edit .env — fill in LLM_API_KEY and TAVILY_API_KEY
+cd ..
+
+# 3. Build and run
+docker compose up -d --build
+
+# 4. Open in browser
+# http://your-server-ip:5181
+```
+
+### How It Works
+
+In production mode:
+- The backend serves the pre-built React frontend as static files
+- WebSocket and API routes are handled on the same port (3001 inside container, mapped to 5181 outside)
+- API keys are injected via `server/.env` — **never exposed to the browser**
+- Users connect via browser and get a full chat experience
+
+### Share With Others
+
+Simply give them the URL (`http://your-server:5181`). No installation, no API keys needed on their end.
+
+### Without Docker (Manual Deploy)
+
+```bash
+# Install dependencies
+npm install
+
+# Build client
+cd client && npm run build && cd ..
+
+# Build server
+cd server && npm run build && cd ..
+
+# Set environment
+export NODE_ENV=production
+cd server && node dist/index.js
+```
+
+### Environment Variables for Deployment
+
+| Variable | Production Value |
+|----------|-----------------|
+| `NODE_ENV` | `production` |
+| `LLM_API_KEY` | Your API key |
+| `TAVILY_API_KEY` | Your Tavily key |
+| `PORT` | `3001` (inside container) |
 
 ## License
 
