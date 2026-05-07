@@ -49,9 +49,8 @@ class KnowledgeRetriever {
 
     const insightsPath = path.join(dataDir, 'experts', 'insights.json');
     if (fs.existsSync(insightsPath)) {
-      const insights: ExpertInsight[] = JSON.parse(
-        fs.readFileSync(insightsPath, 'utf-8')
-      );
+      const raw = JSON.parse(fs.readFileSync(insightsPath, 'utf-8'));
+      const insights: ExpertInsight[] = Array.isArray(raw) ? raw : (raw.insights || raw.entries || []);
       for (const ins of insights) {
         const searchText = [
           ins.title, ins.category, ins.content, ins.source || ''

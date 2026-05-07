@@ -2,7 +2,8 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import type { Dispatch, KeyboardEvent, SetStateAction } from 'react';
 import { useWebSocket } from '../hooks/useWebSocket';
 import MessageBubble from './MessageBubble';
-import type { ChatMessage, StudentProfile } from '../types';
+import ModelSwitcher from './ModelSwitcher';
+import type { ChatMessage, SchoolSelection, StudentProfile } from '../types';
 
 const SUGGESTIONS = [
   '推荐 10 所适合我的大学',
@@ -17,6 +18,11 @@ interface ChatPanelProps {
   profile: StudentProfile;
   isStreaming: boolean;
   setIsStreaming: Dispatch<SetStateAction<boolean>>;
+  selectedSchool: SchoolSelection | null;
+  availableModels: string[];
+  currentModel: string;
+  onModelChange: (model: string) => void;
+  isLoadingModels: boolean;
 }
 
 type MessageSource = ChatMessage['source'];
@@ -52,6 +58,11 @@ export default function ChatPanel({
   profile,
   isStreaming,
   setIsStreaming,
+  selectedSchool,
+  availableModels,
+  currentModel,
+  onModelChange,
+  isLoadingModels,
 }: ChatPanelProps) {
   const [input, setInput] = useState('');
   const [inlineError, setInlineError] = useState<string | null>(null);
@@ -79,6 +90,20 @@ export default function ChatPanel({
     textarea.style.height = '0px';
     textarea.style.height = `${Math.min(textarea.scrollHeight, 168)}px`;
   }, [input]);
+
+  useEffect(() => {
+    if (!selectedSchool) return;
+    setInput(selectedSchool.name);
+    textareaRef.current?.focus();
+  }, [selectedSchool]);
+
+  useEffect(() => {
+    if (!currentModel || !isConnected) return;
+    send({
+      type: 'set_model',
+      payload: { model: currentModel },
+    });
+  }, [currentModel, isConnected, send]);
 
   // Register WebSocket message handlers — only once
   useEffect(() => {
@@ -182,6 +207,33 @@ export default function ChatPanel({
     textareaRef.current?.focus();
   };
 
+  const handleExport = () => {
+    const lastAssistantMessage = [...messages].reverse().find((message) => message.role === 'assistant' && message.content.trim());
+    if (!lastAssistantMessage) {
+      setInlineError('No assistant markdown is available to export yet.');
+      return;
+    }
+
+    const exportedAt = new Date();
+    const header = [
+      '# College Advisor Export',
+      '',
+      `Exported: ${exportedAt.toLocaleString()}`,
+      '',
+      '---',
+      '',
+    ].join('\n');
+
+    const blob = new Blob([`${header}${lastAssistantMessage.content}\n`], { type: 'text/markdown;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `college-advisor-${exportedAt.toISOString().replace(/[:.]/g, '-')}.md`;
+    link.click();
+    URL.revokeObjectURL(url);
+    setInlineError(null);
+  };
+
   return (
     <div className="chat-panel">
       <div className="connection-status">
@@ -254,6 +306,17 @@ export default function ChatPanel({
             {inlineError}
           </div>
         )}
+        <div className="composer-toolbar">
+          <button
+            type="button"
+            className="export-button"
+            onClick={handleExport}
+            disabled={!messages.some((message) => message.role === 'assistant' && message.content.trim())}
+          >
+            <span aria-hidden="true">↓</span>
+            <span>Export</span>
+          </button>
+        </div>
         <div className="input-container">
           <textarea
             ref={textareaRef}
@@ -273,6 +336,15 @@ export default function ChatPanel({
           >
             {isStreaming ? '...' : 'Send'}
           </button>
+        </div>
+        <div className="chat-footer">
+          <div className="model-endpoint">Endpoint: `/api/models`</div>
+          <ModelSwitcher
+            availableModels={availableModels}
+            currentModel={currentModel}
+            onChange={onModelChange}
+            isLoading={isLoadingModels}
+          />
         </div>
       </div>
     </div>

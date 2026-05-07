@@ -18,6 +18,27 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Health check (must be before static middleware + catch-all)
+app.get('/health', (_req, res) => {
+  res.json({ status: 'ok', service: 'college-advisor-agent', env: IS_PROD ? 'production' : 'development' });
+});
+
+// Available models endpoint
+app.get('/api/models', async (_req, res) => {
+  try {
+    const fetch = (await import('node-fetch')).default;
+    const resp = await fetch(`${process.env.LLM_BASE_URL || 'https://opencode.ai/zen/go/v1'}/models`, {
+      headers: { 'Authorization': `Bearer ${process.env.LLM_API_KEY || ''}` }
+    });
+    if (!resp.ok) throw new Error(`Upstream ${resp.status}`);
+    const data = await resp.json() as any;
+    const models: string[] = (data.data || []).map((m: any) => m.id);
+    res.json({ models, default: process.env.LLM_MODEL || 'deepseek-v4-flash' });
+  } catch (e: any) {
+    res.json({ models: ['deepseek-v4-flash'], default: 'deepseek-v4-flash', error: e.message });
+  }
+});
+
 // In production, serve the client build as static files
 if (IS_PROD) {
   const clientDist = path.resolve(__dirname, '../../client/dist');
@@ -27,11 +48,6 @@ if (IS_PROD) {
     res.sendFile(path.join(clientDist, 'index.html'));
   });
 }
-
-// Health check
-app.get('/health', (_req, res) => {
-  res.json({ status: 'ok', service: 'college-advisor-agent', env: IS_PROD ? 'production' : 'development' });
-});
 
 const server = createServer(app);
 const wss = new WebSocketServer({ server });
@@ -56,6 +72,13 @@ wss.on('connection', (ws) => {
         case 'abort': {
           const stream = activeStreams.get(ws);
           if (stream) await stream.abort();
+          break;
+        }
+        case 'set_model': {
+          // Client wants to switch models — acknowledge
+          const { model } = msg.payload as { model: string };
+          console.log(`[WS] Model switch: ${model}`);
+          ws.send(JSON.stringify({ type: 'model_set', payload: { model } }));
           break;
         }
         default:

@@ -1,22 +1,72 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import ProfileCard from './components/ProfileCard';
 import ChatPanel from './components/ChatPanel';
-import type { StudentProfile, ChatMessage } from './types';
+import SchoolDirectory from './components/SchoolDirectory';
+import type { StudentProfile, ChatMessage, SchoolSelection } from './types';
 
 const defaultProfile: StudentProfile = {
   gpa: '',
-  sat_act: '',
+  gpa_scale: 'Weighted',
+  ap_ib_classes: '',
+  sat_score: '',
+  act_score: '',
+  class_rank: '',
   interests: '',
+  intended_majors: '',
   budget: '',
   target_states: '',
   extracurriculars: '',
+  awards_honors: '',
+  hooks: [],
+  school_type: '',
 };
 
 export default function App() {
   const [profile, setProfile] = useState<StudentProfile>(defaultProfile);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isStreaming, setIsStreaming] = useState(false);
+  const [selectedSchool, setSelectedSchool] = useState<SchoolSelection | null>(null);
+  const [availableModels, setAvailableModels] = useState<string[]>([]);
+  const [currentModel, setCurrentModel] = useState('');
+  const [isLoadingModels, setIsLoadingModels] = useState(true);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadModels = async () => {
+      try {
+        const response = await fetch('/api/models');
+        if (!response.ok) {
+          throw new Error(`Failed to load models: ${response.status}`);
+        }
+
+        const data = (await response.json()) as { models?: string[]; default?: string };
+        const models = data.models?.length ? data.models : [];
+        const selected = data.default || models[0] || '';
+
+        if (!isMounted) return;
+
+        setAvailableModels(models);
+        setCurrentModel(selected);
+      } catch (error) {
+        console.error('[Models] Failed to load:', error);
+        if (!isMounted) return;
+        setAvailableModels([]);
+        setCurrentModel('');
+      } finally {
+        if (isMounted) {
+          setIsLoadingModels(false);
+        }
+      }
+    };
+
+    loadModels();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <div className="app-container">
@@ -40,8 +90,16 @@ export default function App() {
             profile={profile}
             isStreaming={isStreaming}
             setIsStreaming={setIsStreaming}
+            selectedSchool={selectedSchool}
+            availableModels={availableModels}
+            currentModel={currentModel}
+            onModelChange={setCurrentModel}
+            isLoadingModels={isLoadingModels}
           />
         </main>
+        <SchoolDirectory
+          onSelectSchool={(name) => setSelectedSchool({ name, nonce: Date.now() })}
+        />
       </div>
     </div>
   );

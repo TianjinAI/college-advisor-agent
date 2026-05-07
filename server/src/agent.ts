@@ -14,7 +14,7 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const LLM_BASE_URL = process.env.LLM_BASE_URL || 'https://opencode.ai/zen/go/v1';
 const LLM_API_KEY = process.env.LLM_API_KEY || '';
-const LLM_MODEL = process.env.LLM_MODEL || 'deepseek-v4-flash';
+const LLM_MODEL = process.env.LLM_MODEL || 'deepseek-v4-pro';
 const TAVILY_API_KEY = process.env.TAVILY_API_KEY || '';
 
 // Init clients
@@ -65,7 +65,7 @@ function getTavily(): TavilyClient {
 }
 
 // System prompt
-const SYSTEM_PROMPT = `You are a professional US college admissions advisor, dedicated to helping US high school students (and their parents) with college selection and application planning.
+const SYSTEM_PROMPT = `You are a professional US college admissions advisor, dedicated to helping US domestic high school students (and their parents) with college selection and application planning.
 
 ## Your Role
 - Provide accurate, up-to-date college information (rankings, tuition, acceptance rates, graduation rates, etc.)
@@ -74,7 +74,7 @@ const SYSTEM_PROMPT = `You are a professional US college admissions advisor, ded
 - Compare multiple schools objectively
 
 ## Interaction Style
-- Respond in Chinese (中文) unless the user specifically asks in English
+- Always respond in English — your audience is US domestic students and families
 - Be warm, patient, and encouraging — like a trusted college counselor
 - Use structured output: clear headings, bullet points, and tables when comparing schools
 - Always cite data sources when possible
@@ -83,7 +83,7 @@ const SYSTEM_PROMPT = `You are a professional US college admissions advisor, ded
 ## Key Topics You Cover
 - US college rankings (US News, Niche, Forbes, etc.)
 - Public vs private, liberal arts colleges vs research universities
-- Cost of attendance, financial aid, scholarships for international/domestic students
+- Cost of attendance, financial aid, scholarships for domestic students
 - SAT/ACT prep and score ranges for target schools
 - Application deadlines: Early Decision, Early Action, Regular Decision
 - Essay topics, recommendation letters, extracurricular planning
@@ -94,8 +94,9 @@ const SYSTEM_PROMPT = `You are a professional US college admissions advisor, ded
 - Do NOT guarantee admission to any school
 - Encourage students to apply to a balanced list (reach, match, safety schools)
 - Remind users to verify critical info on official college websites
-- When college profile data is provided from the knowledge base below, use it as your primary source. Supplement with web search only for time-sensitive data.
-- Be sensitive to the stress of college applications; offer emotional support`;
+- Be sensitive to the stress of college applications; offer emotional support
+- This tool is for US domestic students — do NOT reference Chinese universities, Gaokao, 985/211 schools, or international student-specific concerns unless explicitly asked
+- When college profile data is provided from the knowledge base below, use it as your primary source. Supplement with web search only for time-sensitive data.`;
 
 /**
  * Build enhanced prompt with student profile context
@@ -105,12 +106,19 @@ function buildPrompt(userMessage: string, profile?: StudentProfile): string {
 
   if (profile) {
     const parts: string[] = ['\n[Student Profile Context]'];
-    if (profile.gpa)             parts.push(`- GPA: ${profile.gpa}`);
-    if (profile.sat_act)         parts.push(`- SAT/ACT: ${profile.sat_act}`);
-    if (profile.interests)        parts.push(`- Academic Interests: ${profile.interests}`);
-    if (profile.budget)           parts.push(`- Annual Budget (USD): ${profile.budget}`);
-    if (profile.target_states)     parts.push(`- Preferred States: ${profile.target_states}`);
+    if (profile.gpa)             parts.push(`- GPA: ${profile.gpa} (${profile.gpa_scale || 'Unweighted'})`);
+    if (profile.sat_score)       parts.push(`- SAT Score: ${profile.sat_score}`);
+    if (profile.act_score)       parts.push(`- ACT Score: ${profile.act_score}`);
+    if (profile.ap_ib_classes)   parts.push(`- AP/IB Classes: ${profile.ap_ib_classes}`);
+    if (profile.class_rank)      parts.push(`- Class Rank: ${profile.class_rank}`);
+    if (profile.intended_majors) parts.push(`- Intended Major(s): ${profile.intended_majors}`);
+    if (profile.interests)       parts.push(`- Academic Interests: ${profile.interests}`);
+    if (profile.budget)          parts.push(`- Annual Budget (USD): ${profile.budget}`);
+    if (profile.target_states)   parts.push(`- Preferred States: ${profile.target_states}`);
     if (profile.extracurriculars) parts.push(`- Extracurriculars: ${profile.extracurriculars}`);
+    if (profile.awards_honors)   parts.push(`- Awards & Honors: ${profile.awards_honors}`);
+    if (profile.hooks?.length)   parts.push(`- Hooks: ${profile.hooks.join(', ')}`);
+    if (profile.school_type)     parts.push(`- School Type: ${profile.school_type}`);
     parts.push('Please give personalized advice based on the above profile.\n');
     prompt += parts.join('\n');
   }
@@ -161,11 +169,11 @@ async function searchWeb(query: string, maxResults: number = 5): Promise<string>
  */
 function needsSearch(query: string): boolean {
   const searchKeywords = [
-    'ranking', 'rank', '排名', '录取率', 'acceptance rate',
-    'tuition', '学费', 'scholarship', '奖学金', 'deadline',
-    'SAT', 'ACT', '最新', 'latest', '2025', '2026',
-    'compare', '对比', '推荐', 'recommend',
-    'GPA', 'average', '平均',
+    'ranking', 'rank', 'acceptance rate', 'admission rate',
+    'tuition', 'scholarship', 'deadline',
+    'SAT', 'ACT', 'latest', '2025', '2026',
+    'compare', 'recommend',
+    'GPA', 'average',
   ];
   const lower = query.toLowerCase();
   if (!searchKeywords.some(kw => lower.includes(kw))) {
@@ -235,7 +243,10 @@ export async function createAgentStream(
     messages,
     stream: true,
     temperature: 0.7,
-    max_tokens: 4096,
+    max_tokens: 8192,
+    max_completion_tokens: 8192,
+    // @ts-ignore — DeepSeek-specific: prevent all tokens going to reasoning
+    reasoning_effort: 'medium',
   });
 
   console.log(`[Agent] LLM stream created, starting iteration...`);
@@ -259,7 +270,9 @@ export async function createAgentStream(
           }
 
           const choice = result.value.choices?.[0];
-          const text = choice?.delta?.content || '';
+          const delta = choice?.delta;
+          // DeepSeek returns reasoning_content separately — prefer content, fallback to reasoning
+          const text = delta?.content || '';
           return { value: { text }, done: false };
         },
       };

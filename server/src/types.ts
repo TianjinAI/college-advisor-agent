@@ -39,11 +39,19 @@ export interface ResultPayload {
 // 学生 Profile
 export interface StudentProfile {
   gpa?: string;
-  sat_act?: string;     // 标化成绩
-  interests?: string;    // 感兴趣专业/方向
-  budget?: string;       // 预算范围（年）
-  target_states?: string;// 目标州（ comma separated）
+  gpa_scale?: 'Weighted' | 'Unweighted';
+  ap_ib_classes?: string;
+  sat_score?: string;
+  act_score?: string;
+  class_rank?: string;
+  interests?: string;
+  intended_majors?: string;
+  budget?: string;
+  target_states?: string;
   extracurriculars?: string;
+  awards_honors?: string;
+  hooks?: string[];
+  school_type?: string;
   [key: string]: unknown;
 }
 
