@@ -2,8 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import { createServer } from 'http';
 import { WebSocketServer, WebSocket } from 'ws';
-import { createAgentStream } from './agent';
-import type { SendMessagePayload, TextDeltaPayload, ErrorPayload, StudentProfile } from './types';
+import { createAgentStream, extractDossierFacts, dossierManager } from './agent';
+import type { SendMessagePayload, TextDeltaPayload, ErrorPayload, StudentProfile, SessionChatMessage } from './types';
+import sessionsRouter from './routes/sessions.js';
 
 // Load env
 import path from 'path';
@@ -17,6 +18,7 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(sessionsRouter);
 
 // Health check (must be before static middleware + catch-all)
 app.get('/health', (_req, res) => {
@@ -65,8 +67,8 @@ wss.on('connection', (ws) => {
 
       switch (msg.type) {
         case 'send_message': {
-          const { content, profile } = msg.payload as SendMessagePayload;
-          await handleAgentQuery(ws, content, profile);
+          const { content, profile, history, userId, sessionId } = msg.payload as SendMessagePayload;
+          await handleAgentQuery(ws, content, profile, history, userId, sessionId);
           break;
         }
         case 'abort': {
@@ -104,6 +106,9 @@ async function handleAgentQuery(
   ws: WebSocket,
   content: string,
   profile?: StudentProfile,
+  history?: Array<{ role: 'user' | 'assistant'; content: string }>,
+  userId?: string,
+  sessionId?: string,
 ): Promise<void> {
   const messageId = `msg_${Date.now()}`;
 
@@ -114,10 +119,11 @@ async function handleAgentQuery(
   }));
 
   try {
-    const agentStream = await createAgentStream(content, profile);
+    const agentStream = await createAgentStream(content, profile, history, userId, sessionId);
     activeStreams.set(ws, { abort: () => agentStream.abort() });
 
     let hasText = false;
+    let fullResponse = '';
 
     for await (const message of agentStream) {
       if (ws.readyState !== WebSocket.OPEN) break;
@@ -130,6 +136,7 @@ async function handleAgentQuery(
         };
         ws.send(JSON.stringify({ type: 'text_delta', payload }));
         hasText = true;
+        fullResponse += message.text;
       }
     }
 
@@ -144,6 +151,39 @@ async function handleAgentQuery(
         messageId,
       };
       ws.send(JSON.stringify({ type: 'text_delta', payload: noContent }));
+    } else {
+      extractDossierFacts(content, fullResponse, userId, profile).catch(err => {
+        console.error('[Dossier] Async extraction failed:', err?.message || err);
+      });
+      // Log the conversation for cumulative knowledge
+      if (userId && fullResponse) {
+        // Use first 500 chars of response as summary
+        const summary = fullResponse.substring(0, 500).replace(/\n/g, ' ').trim();
+        dossierManager.appendConversation(userId, content, summary).catch(err => {
+          console.error('[Conversation] Log failed:', err?.message || err);
+        });
+      }
+      if (userId && sessionId) {
+        const existingMessages = await dossierManager.loadMessages(userId, sessionId);
+        const sessionMessages: SessionChatMessage[] = [
+          ...existingMessages,
+          {
+            id: `user-${messageId}`,
+            role: 'user',
+            content,
+            timestamp: Date.now(),
+            userId,
+          },
+          {
+            id: messageId,
+            role: 'assistant',
+            content: fullResponse,
+            timestamp: Date.now(),
+            userId,
+          },
+        ];
+        await dossierManager.saveMessages(userId, sessionId, sessionMessages);
+      }
     }
   } catch (err: any) {
     console.error('[Agent] Error:', err);

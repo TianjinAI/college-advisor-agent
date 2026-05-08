@@ -13,6 +13,7 @@ export interface StudentProfile {
   awards_honors: string;
   hooks: string[];
   school_type: 'Public' | 'Private' | 'Charter' | 'Homeschool' | '';
+  userId?: string;
 }
 
 export interface ChatMessage {
@@ -21,6 +22,7 @@ export interface ChatMessage {
   content: string;
   timestamp: number;
   source?: 'kb' | 'web' | 'hybrid';
+  userId?: string;
 }
 
 export interface SchoolCategory {
@@ -31,4 +33,12 @@ export interface SchoolCategory {
 export interface SchoolSelection {
   name: string;
   nonce: number;
+}
+
+export interface SessionMetadata {
+  id: string;
+  name: string;
+  purpose?: string;
+  created_at: string;
+  updated_at: string;
 }

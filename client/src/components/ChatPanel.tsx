@@ -16,6 +16,8 @@ interface ChatPanelProps {
   messages: ChatMessage[];
   setMessages: Dispatch<SetStateAction<ChatMessage[]>>;
   profile: StudentProfile;
+  userId: string;
+  sessionId: string | null;
   isStreaming: boolean;
   setIsStreaming: Dispatch<SetStateAction<boolean>>;
   selectedSchool: SchoolSelection | null;
@@ -23,6 +25,7 @@ interface ChatPanelProps {
   currentModel: string;
   onModelChange: (model: string) => void;
   isLoadingModels: boolean;
+  isLoadingMessages?: boolean;
 }
 
 type MessageSource = ChatMessage['source'];
@@ -56,6 +59,8 @@ export default function ChatPanel({
   messages,
   setMessages,
   profile,
+  userId,
+  sessionId,
   isStreaming,
   setIsStreaming,
   selectedSchool,
@@ -63,6 +68,7 @@ export default function ChatPanel({
   currentModel,
   onModelChange,
   isLoadingModels,
+  isLoadingMessages,
 }: ChatPanelProps) {
   const [input, setInput] = useState('');
   const [inlineError, setInlineError] = useState<string | null>(null);
@@ -120,6 +126,7 @@ export default function ChatPanel({
           content: '',
           timestamp: Date.now(),
           source: normalizeMessageSource(payload?.source) ?? pendingSourceRef.current,
+          userId,
         },
       ]);
       setInlineError(null);
@@ -160,6 +167,7 @@ export default function ChatPanel({
           role: 'assistant',
           content: `Error: ${payload?.text || 'Unknown error'}`,
           timestamp: Date.now(),
+          userId,
         },
       ]);
       setIsStreamingRef.current(false);
@@ -168,7 +176,7 @@ export default function ChatPanel({
     on('text_start', handleTextStart);
     on('text_delta', handleTextDelta);
     on('error', handleError);
-  }, [on]);
+  }, [on, userId]);
 
   const handleSend = useCallback(() => {
     const text = input.trim();
@@ -179,6 +187,7 @@ export default function ChatPanel({
       role: 'user',
       content: text,
       timestamp: Date.now(),
+      userId,
     };
 
     setMessages((prev: ChatMessage[]) => [...prev, userMessage]);
@@ -186,14 +195,20 @@ export default function ChatPanel({
     setInlineError(null);
     pendingSourceRef.current = inferResponseSource(text);
 
+    // Build conversation history (last 12 messages, excluding current)
+    const history = messages.slice(-12).map(m => ({ role: m.role, content: m.content }));
+
     send({
       type: 'send_message',
       payload: {
         content: text,
         profile,
+        history,
+        userId,
+        sessionId,
       },
     });
-  }, [input, isStreaming, profile, send, setMessages]);
+  }, [input, isStreaming, messages, profile, send, setMessages, userId, sessionId]);
 
   const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -240,11 +255,17 @@ export default function ChatPanel({
         <span className={`status-dot ${isConnected ? 'connected' : 'disconnected'}`} />
         <span>{isConnected ? 'Connected to advisor session' : 'Reconnecting to advisor session...'}</span>
         <span className="connection-divider" aria-hidden="true">•</span>
-        <span className="connection-mode">{isConnected ? 'KB-ready' : 'Waiting for socket'}</span>
+        <span className="connection-mode">{isConnected ? (sessionId ? 'Session active' : 'No session') : 'Waiting for socket'}</span>
+        {isLoadingMessages && (
+          <>
+            <span className="connection-divider" aria-hidden="true">•</span>
+            <span className="connection-mode">Loading messages...</span>
+          </>
+        )}
       </div>
 
       <div className="messages-container">
-        {messages.length === 0 && (
+        {messages.length === 0 && !isLoadingMessages && (
           <div className="welcome-screen">
             <div className="welcome-copy">
               <p className="eyebrow">Start with a realistic question</p>
@@ -278,6 +299,12 @@ export default function ChatPanel({
                 </ul>
               </div>
             </div>
+          </div>
+        )}
+        {isLoadingMessages && messages.length === 0 && (
+          <div className="loading-session">
+            <div className="loading-session-spinner" />
+            <p>Loading session messages...</p>
           </div>
         )}
         {messages.map((msg) => (

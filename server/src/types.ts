@@ -9,6 +9,9 @@ export interface WSMessage {
 export interface SendMessagePayload {
   content: string;
   profile?: StudentProfile;
+  history?: Array<{ role: 'user' | 'assistant'; content: string }>;
+  userId?: string;
+  sessionId?: string;
 }
 
 export interface UpdateProfilePayload {
@@ -58,4 +61,21 @@ export interface StudentProfile {
 // 连接初始化
 export interface InitPayload {
   sessionId?: string;
+}
+
+export interface SessionChatMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: number;
+  source?: 'kb' | 'web' | 'hybrid';
+  userId?: string;
+}
+
+export interface SessionMetadata {
+  id: string;
+  name: string;
+  purpose?: string;
+  created_at: string;
+  updated_at: string;
 }
