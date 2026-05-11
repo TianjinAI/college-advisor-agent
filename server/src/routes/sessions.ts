@@ -76,23 +76,40 @@ router.get('/api/user/profile', async (req, res) => {
   }
 
   try {
-    const displayName = await dossierManager.getDisplayName(userId);
-    res.json({ userId, displayName });
+    const [displayName, studentProfile] = await Promise.all([
+      dossierManager.getDisplayName(userId),
+      dossierManager.getStudentProfile(userId),
+    ]);
+    res.json({ userId, displayName, studentProfile });
   } catch (error: any) {
     res.status(500).json({ error: error?.message || 'Failed to load profile' });
   }
 });
 
 router.put('/api/user/profile', async (req, res) => {
-  const { userId, displayName } = req.body as { userId?: string; displayName?: string };
-  if (!userId || !displayName?.trim()) {
-    res.status(400).json({ error: 'userId and displayName are required' });
+  const { userId, displayName, studentProfile } = req.body as {
+    userId?: string;
+    displayName?: string;
+    studentProfile?: import('../types.js').StudentProfile;
+  };
+
+  if (!userId || (!displayName?.trim() && !studentProfile)) {
+    res.status(400).json({ error: 'userId and at least one profile field are required' });
     return;
   }
 
   try {
-    await dossierManager.setDisplayName(userId, displayName.trim());
-    res.json({ userId, displayName: displayName.trim() });
+    if (displayName?.trim()) {
+      await dossierManager.setDisplayName(userId, displayName.trim());
+    }
+    if (studentProfile) {
+      await dossierManager.setStudentProfile(userId, studentProfile);
+    }
+    const [savedDisplayName, savedStudentProfile] = await Promise.all([
+      dossierManager.getDisplayName(userId),
+      dossierManager.getStudentProfile(userId),
+    ]);
+    res.json({ userId, displayName: savedDisplayName, studentProfile: savedStudentProfile });
   } catch (error: any) {
     res.status(500).json({ error: error?.message || 'Failed to save profile' });
   }

@@ -9,7 +9,12 @@ data/users/{userId}/
     {sessionId}/
       chat.json                 ← this session's messages
       metadata.json             ← { name, created_at, purpose }
+  essays/
+    {essayId}.json              ← EssaySubmission (independent of sessions)
+    {essayId}-review.json       ← EssayReview (written after stream completes)
 ```
+
+> **Essay submissions are independent of chat sessions.** Students can submit essays for review from any session — the essay review workspace is a separate workflow from the advisor chat. Essays are stored per user, not per session.
 
 ## User Flow
 1. First visit: generate userId, create default "General Advising" session

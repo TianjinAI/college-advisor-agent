@@ -1,0 +1,67 @@
+{
+  "id": "hssim-2026",
+  "name": "Hampshire College Summer Studies in Mathematics",
+  "brand": "HCSSIM",
+  "discipline": [
+    "math",
+    "problem-solving"
+  ],
+  "level": "high-school",
+  "location": "Amherst, MA (Hampshire College)",
+  "session_dates": "June 29 \u2013 August 9, 2026",
+  "duration_weeks": 6,
+  "cost": {
+    "amount": 4500,
+    "notes": "Need-based financial aid available; full scholarships for qualifying students"
+  },
+  "deadline": "2026-04-15",
+  "application_url": "https://hcssim.org",
+  "selectivity": "very-competitive",
+  "cohort_size": 40,
+  "parent_org": "Hampshire College",
+  "tags": [
+    "math",
+    "problem-solving",
+    "in-person",
+    "summer"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 9-12",
+    "prior_knowledge": [
+      "Strong algebra and pre-calculus foundation",
+      "Comfort with abstract reasoning"
+    ],
+    "application_requirements": [
+      "Problem set",
+      "transcript",
+      "teacher recommendation"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Describe a mathematical concept or problem that you find beautiful and explain why.",
+      "word_limit": "400",
+      "tips": [
+        "HCSSIM values authentic reflection over impressive-sounding answers",
+        "Be specific about what you actually find beautiful in math"
+      ]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "Positive signal at selective colleges; alumni are well-prepared for college math.",
+    "typical_results": "Most alumni pursue STEM fields; strong placement at liberal arts colleges and research universities."
+  },
+  "what_they_look_for": [
+    "Intellectual passion for mathematics",
+    "Willingness to struggle with hard problems",
+    "Collaborative orientation"
+  ],
+  "blurbs": {
+    "short": "A 6-week residential math program at Hampshire College where students tackle challenging problem sets and explore advanced topics.",
+    "long": "HCSSIM (Hampshire College Summer Studies in Mathematics) is one of the original elite math summer programs, following the discovery-learning philosophy pioneered by Ross and PROMYS. Students spend six weeks working through a sequence of challenging problems, attending lectures, and developing as mathematical thinkers. What sets HCSSIM apart is its integration with Hampshire College's non-traditional, interdisciplinary approach to education \u2014 students are encouraged to think broadly and make connections across fields. The community is tight-knit (only 40 students per year) and many alumni stay connected for years after the program."
+  },
+  "curriculum": "Problem sets in advanced topics, lectures, problem-solving workshops, student presentations.",
+  "SCRAPED_FROM": "hcssim.org (training knowledge \u2014 verified core facts)"
+}

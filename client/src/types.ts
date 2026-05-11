@@ -10,10 +10,21 @@ export interface StudentProfile {
   budget: string;
   target_states: string;
   extracurriculars: string;
+  summer_camps: string;
   awards_honors: string;
-  hooks: string[];
-  school_type: 'Public' | 'Private' | 'Charter' | 'Homeschool' | '';
+  ethnic_group: string;
+  sex: string;
+  school_type: 'Public' | 'Private' | 'Both' | '';
+  documents: UploadedDocument[];
   userId?: string;
+}
+
+export interface UploadedDocument {
+  id: string;
+  filename: string;
+  type: 'resume' | 'essay' | 'other';
+  uploadedAt: number;
+  size: number;
 }
 
 export interface ChatMessage {
@@ -41,4 +52,27 @@ export interface SessionMetadata {
   purpose?: string;
   created_at: string;
   updated_at: string;
+}
+
+// Essay review types
+export interface EssaySubmission {
+  id: string;
+  userId: string;
+  promptId: string;
+  promptLabel: string;
+  draftText: string;
+  wordCount: number;
+  submittedAt: number;
+  revisionOf?: string; // parent essay ID for revisions
+}
+
+export interface EssayReview {
+  id: string;
+  essayId: string;
+  content: string; // streaming markdown
+  completedAt: number;
+}
+
+export interface EssayEntry extends EssaySubmission {
+  review?: EssayReview;
 }

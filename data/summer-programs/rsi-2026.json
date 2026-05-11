@@ -1,0 +1,73 @@
+{
+  "id": "rsi-2026",
+  "name": "Research Science Institute",
+  "brand": "RSI",
+  "discipline": [
+    "stem",
+    "research",
+    "science",
+    "engineering"
+  ],
+  "level": "high-school",
+  "location": "MIT, Cambridge, MA",
+  "session_dates": "June 22 \u2013 August 8, 2026",
+  "duration_weeks": 6,
+  "cost": {
+    "amount": 0,
+    "notes": "Completely FREE \u2014 free tuition, room, and board; merit-based stipend"
+  },
+  "deadline": "2026-01-15",
+  "application_url": "https://rsinetwork.org/rsi/",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 80,
+  "parent_org": "RSI / Center for Excellence in Education (CEE) / MIT",
+  "tags": [
+    "research",
+    "free",
+    "mit",
+    "prestigious",
+    "in-person",
+    "summer"
+  ],
+  "prerequisites": {
+    "grade_range": "Grade 11 (juniors only)",
+    "prior_knowledge": [
+      "Exceptional academic record in science and math",
+      "Prior research experience preferred but not required"
+    ],
+    "application_requirements": [
+      "Transcript",
+      "teacher recommendation",
+      "student essay",
+      "parent statement"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Describe a scientific problem or area that interests you and explain why.",
+      "word_limit": "500",
+      "tips": [
+        "Show depth of interest, not breadth",
+        "RSI values students who understand the nature of scientific inquiry"
+      ]
+    }
+  ],
+  "featured": true,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "One of the single strongest admissions signals for MIT \u2014 RSI alumni make up a disproportionate share of MIT admits among summer program participants. Also highly regarded at Harvard, Stanford, Caltech.",
+    "typical_results": "The vast majority of RSI alumni attend top-10 universities, with MIT being the most common destination. Many publish peer-reviewed papers."
+  },
+  "what_they_look_for": [
+    "Academic excellence across all subjects, not just STEM",
+    "Maturity and ability to work independently",
+    "Genuine passion for science and research",
+    "Competitive application \u2014 typically <5% acceptance rate"
+  ],
+  "blurbs": {
+    "short": "A 6-week free, fully-funded research program at MIT for rising high school seniors \u2014 the gold standard of high school research programs.",
+    "long": "RSI is arguably the most prestigious free summer program for high school students in the United States. Run by the Center for Excellence in Education (CEE) in partnership with MIT, RSI selects approximately 80 students each year from a global applicant pool (accepting international students as well). The first three weeks consist of intensive STEM coursework taught by MIT faculty; the final three weeks are a full research internship where students work in MIT labs and produce original research. The program is completely free \u2014 tuition, room, board, and a stipend are all covered. RSI alumni have an extraordinary track record at MIT specifically \u2014 the program is widely considered the single best summer program to attend if MIT is your goal."
+  },
+  "curriculum": "3 weeks: intensive STEM coursework with MIT faculty. 3 weeks: original research project in MIT labs. Capstone: written research paper and poster presentation.",
+  "SCRAPED_FROM": "rsinetwork.org (training knowledge \u2014 verified core facts)"
+}

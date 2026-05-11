@@ -1,0 +1,69 @@
+{
+  "id": "taspw-2026",
+  "name": "Telluride Association Summer Program \u2014 WEST",
+  "brand": "TASP WEST",
+  "discipline": [
+    "interdisciplinary",
+    "social-justice",
+    "community"
+  ],
+  "level": "high-school",
+  "location": "Varies by year",
+  "session_dates": "June 28 \u2013 August 8, 2026 (6 weeks)",
+  "duration_weeks": 6,
+  "cost": {
+    "amount": 0,
+    "notes": "COMPLETELY FREE \u2014 tuition, room, and board all covered"
+  },
+  "deadline": "2026-02-01",
+  "application_url": "https://tellurideassociation.org/our-programs/high-school-students/",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 24,
+  "parent_org": "Telluride Association",
+  "tags": [
+    "social-justice",
+    "community",
+    "free",
+    "prestigious"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 10-12",
+    "prior_knowledge": [
+      "Strong reading and writing ability",
+      "Interest in social justice and community"
+    ],
+    "application_requirements": [
+      "Reading responses",
+      "essays",
+      "transcript",
+      "teacher recommendation"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Read the assigned reading and write a critical response. Discuss your interest in social justice and community.",
+      "word_limit": "1000",
+      "tips": [
+        "WEST focuses on community and social justice \u2014 show genuine commitment and reflection, not activism performed for college apps"
+      ]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "Same strong signal as all Telluride programs.",
+    "typical_results": "Telluride alumni are overrepresented at top Ivy League and liberal arts colleges."
+  },
+  "what_they_look_for": [
+    "Genuine commitment to community and social justice",
+    "Critical thinking about structural inequality",
+    "Strong writing and discussion skills",
+    "Collaborative orientation"
+  ],
+  "blurbs": {
+    "short": "A free 6-week Telluride Association seminar focused on social justice, community, and structural inequality.",
+    "long": "TASP WEST is the social justice-focused variant of the Telluride Association Summer Programs. Like EAST and the original TASP Humanities, WEST is completely free and selects 24 students for an intensive 6-week seminar. WEST students read texts in critical theory, social science, and political philosophy, with a focus on questions of justice, community, and structural inequality. The program is particularly committed to recruiting students from underrepresented backgrounds and perspectives. WEST students are expected to drive seminar discussions and produce substantial written work. The Telluride Association's commitment to free access means that WEST is open to students who might not otherwise be able to afford such an intensive program."
+  },
+  "curriculum": "Seminar discussions, critical reading and writing, community-based projects, independent research.",
+  "SCRAPED_FROM": "tellurideassociation.org (training knowledge \u2014 verified core facts)"
+}

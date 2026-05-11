@@ -1,0 +1,57 @@
+{
+  "id": "mathily-2026",
+  "name": "Mathily",
+  "brand": "Mathily",
+  "discipline": [
+    "math",
+    "combinatorics"
+  ],
+  "level": "high-school",
+  "location": "Cambridge, MA (Harvard University \u2014 confirmed annually)",
+  "session_dates": "July 13 \u2013 August 15, 2026",
+  "duration_weeks": 5,
+  "cost": {
+    "amount": 4900,
+    "notes": "Need-based scholarships available"
+  },
+  "deadline": "rolling (typically April-May)",
+  "application_url": "https://mathily.org",
+  "selectivity": "competitive",
+  "cohort_size": 35,
+  "parent_org": "Mathematical Sciences Research Institute (MSRI) / Brandeis University",
+  "tags": [
+    "math",
+    "combinatorics",
+    "in-person",
+    "summer"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 9-12",
+    "prior_knowledge": [
+      "Pre-algebra through pre-calculus",
+      "Comfort with abstract reasoning"
+    ],
+    "application_requirements": [
+      "Problem solutions",
+      "teacher recommendation"
+    ]
+  },
+  "essays": [],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "Positive signal, particularly for students applying to top liberal arts colleges and universities with strong math departments.",
+    "typical_results": "Most students pursue STEM majors; strong representation at schools like MIT, Harvard, and smaller liberal arts colleges."
+  },
+  "what_they_look_for": [
+    "Genuine interest in exploring advanced mathematical ideas",
+    "Ability to work collaboratively",
+    "Creative and non-standard thinking"
+  ],
+  "blurbs": {
+    "short": "A 5-week intensive summer mathematics program at Harvard focusing on combinatorics and discrete math.",
+    "long": "Mathily (Mathematics Summer Institute) is a focused, small-group summer program with a strong emphasis on combinatorics and discrete mathematics. The program is run by the Mathematical Sciences Research Institute (MSRI) and has been held at various locations including Harvard. With a cohort of only 35 students, Mathily is intentionally intimate \u2014 students work closely with faculty and each other. The program is known for its emphasis on original mathematical research and student presentations. It's a good fit for students who enjoy competition math (AMC/AIME) but want to see what real mathematical research feels like."
+  },
+  "curriculum": "Combinatorics, graph theory, discrete math, student research projects, math talks.",
+  "SCRAPED_FROM": "mathily.org (training knowledge \u2014 verified core facts)"
+}

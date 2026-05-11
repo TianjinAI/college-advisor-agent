@@ -86,7 +86,6 @@ export default function Header({
         </div>
 
         <div className="header-status">
-          {/* Identity — subtle, one line */}
           <div className="header-identity">
             {editingName ? (
               <span className="header-identity-edit">
@@ -100,26 +99,30 @@ export default function Header({
                 {displayName || 'Set name'}
               </button>
             )}
-            <span className="identity-sep" aria-hidden="true">·</span>
-            <SessionSwitcher sessions={sessions} currentSessionId={currentSessionId}
-              isLoading={isLoadingSessions} onSwitch={onSwitchSession} onCreate={onCreateSession} />
-            <span className="identity-sep" aria-hidden="true">·</span>
+
+            {!editingUserId && !editingName && (
+              <button className="identity-new-btn" onClick={() => {
+                const newId = `user-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+                onChangeUserId(newId);
+              }} onDoubleClick={() => { setDraftUserId(userId); setEditingUserId(true); }}
+                title="Create new user (double-click to switch)">
+                <span className="identity-new-icon">+</span>
+              </button>
+            )}
+
             {editingUserId ? (
               <span className="header-identity-edit">
                 <input ref={userIdInputRef} type="text" className="identity-input identity-input-id"
                   value={draftUserId} onChange={e => setDraftUserId(e.target.value)}
                   onKeyDown={e => { if (e.key === 'Enter') handleSaveUserId(); if (e.key === 'Escape') setEditingUserId(false); }}
-                  onBlur={handleSaveUserId} placeholder="User ID" maxLength={64} />
+                  onBlur={handleSaveUserId} placeholder="Enter user ID" maxLength={64} />
               </span>
             ) : (
-              <button className="identity-id" onClick={() => { setDraftUserId(userId); setEditingUserId(true); }}
-                title="Switch user">
-                {userId.length <= 10 ? userId : `${userId.slice(0, 6)}…${userId.slice(-4)}`}
-              </button>
+              <SessionSwitcher sessions={sessions} currentSessionId={currentSessionId}
+                isLoading={isLoadingSessions} onSwitch={onSwitchSession} onCreate={onCreateSession} />
             )}
           </div>
 
-          {/* KB status — one subtle line */}
           <p className="header-kb-status">49 schools · 57 insights · dossier active</p>
         </div>
       </div>

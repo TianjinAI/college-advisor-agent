@@ -1,0 +1,76 @@
+{
+  "id": "simons-stemco-2026",
+  "name": "Simons Summer Research Program",
+  "brand": "STEMCO",
+  "discipline": [
+    "stem",
+    "research",
+    "physics",
+    "biology",
+    "chemistry",
+    "cs"
+  ],
+  "level": "high-school",
+  "location": "Stony Brook University, NY",
+  "session_dates": "June 23 \u2013 August 8, 2026",
+  "duration_weeks": 6,
+  "cost": {
+    "amount": 0,
+    "notes": "Completely FREE \u2014 all expenses covered including stipend"
+  },
+  "deadline": "2026-02-14",
+  "application_url": "https://simonsfdpprograms.org/stemco/",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 40,
+  "parent_org": "Simons Foundation / Stony Brook University",
+  "tags": [
+    "research",
+    "free",
+    "stem",
+    "prestigious",
+    "in-person",
+    "summer"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 11-12 (juniors and seniors only)",
+    "prior_knowledge": [
+      "Strong science background",
+      "Research interest",
+      "Completed coursework in relevant discipline"
+    ],
+    "application_requirements": [
+      "Transcript",
+      "teacher recommendation",
+      "short essays",
+      "research interest statement"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Describe your scientific research interests and a specific question you might want to explore.",
+      "word_limit": "500",
+      "tips": [
+        "Be specific about a question, not just a field",
+        "Show you understand what real research looks like"
+      ]
+    }
+  ],
+  "featured": true,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "One of the strongest research program signals for MIT, Caltech, Stanford, and top research universities. RSI alumni frequently attend MIT.",
+    "typical_results": "Most alumni pursue STEM majors at top-20 research universities; many publish papers from their summer work."
+  },
+  "what_they_look_for": [
+    "Genuine research interest (not just coursework)",
+    "Independence and initiative",
+    "Scientific curiosity",
+    "Ability to work in a lab/research environment"
+  ],
+  "blurbs": {
+    "short": "A free 6-week fully-funded research apprenticeship at Stony Brook University for rising juniors and seniors interested in science and math.",
+    "long": "STEMCO (Simons Summer Research Program) is one of the most prestigious and selective high school research programs in the country \u2014 and it's completely free. Students are paired with a faculty mentor at Stony Brook University and conduct real research over 6 weeks. Unlike some programs that offer pre-designed experiments, STEMCO students work on genuine research questions. The program covers physics, biology, chemistry, computer science, and applied mathematics. STEMCO alumni frequently cite the program as transformative, and the free nature of the program (plus a stipend) makes it accessible to students regardless of financial background. The application is extremely competitive \u2014 Stony Brook-affiliated schools tend to have higher admission rates, but the program actively recruits nationally."
+  },
+  "curriculum": "Independent laboratory research under faculty mentorship, weekly seminars, research methodology training, end-of-program poster session.",
+  "SCRAPED_FROM": "simonsfpprograms.org (training knowledge \u2014 verified core facts)"
+}

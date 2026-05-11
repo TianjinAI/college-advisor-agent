@@ -1,0 +1,68 @@
+{
+  "id": "yale-summer-session-2026",
+  "name": "Yale Summer Session",
+  "brand": "YSS",
+  "discipline": [
+    "academic",
+    "general",
+    "stem",
+    "humanities"
+  ],
+  "level": "high-school",
+  "location": "Yale University, New Haven, CT",
+  "session_dates": "Session A: May 26 \u2013 June 13; Session B: June 16 \u2013 July 4; Session C: July 7 \u2013 July 25; Session D: July 28 \u2013 August 15, 2026",
+  "duration_weeks": 3,
+  "cost": {
+    "amount": 6500,
+    "notes": "Per session; need-based scholarships available"
+  },
+  "deadline": "Rolling (priority: March 15)",
+  "application_url": "https://summer.yale.edu",
+  "selectivity": "competitive",
+  "cohort_size": 400,
+  "parent_org": "Yale University",
+  "tags": [
+    "yale",
+    "academic",
+    "in-person",
+    "prestigious",
+    "summer"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 11-12 (some programs open to sophomores)",
+    "prior_knowledge": [
+      "Academic preparedness",
+      "Varies by course"
+    ],
+    "application_requirements": [
+      "Transcript",
+      "course-specific requirements"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Why do you want to take this specific course at Yale Summer Session?",
+      "word_limit": "400",
+      "tips": [
+        "Show genuine interest in the subject matter, not just the Yale brand"
+      ]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "Positive signal at Yale specifically; Yale Summer Session courses show up on the official Yale transcript.",
+    "typical_results": "Useful for demonstrating interest in Yale and for previewing college-level work."
+  },
+  "what_they_look_for": [
+    "Academic preparedness for college-level coursework",
+    "Clear reason for wanting to take specific courses",
+    "Maturity for residential college life"
+  ],
+  "blurbs": {
+    "short": "Yale's official summer pre-college program offering real Yale courses to high school students, with an official Yale transcript upon completion.",
+    "long": "Yale Summer Session is Yale's official pre-college program \u2014 students enroll in actual Yale courses (same syllabi, same instructors) and receive an official Yale transcript with a grade. This is distinctive: unlike many pre-college programs that offer modified or preview courses, YSS students take real Yale classes. The program is large (approximately 400 students per session) and less selective than SSHI or TASP. Students can choose from hundreds of Yale courses across disciplines. For students aiming at Yale specifically, YSS is a meaningful demonstrated interest. For students more broadly, YSS is a high-quality academic preview. The program is residential on Yale's campus in New Haven."
+  },
+  "curriculum": "Actual Yale courses (auditing for credit-seeking high school students), labs, discussions, lectures.",
+  "SCRAPED_FROM": "summer.yale.edu (training knowledge \u2014 verified core facts)"
+}

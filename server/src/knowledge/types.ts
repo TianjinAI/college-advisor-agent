@@ -187,6 +187,48 @@ export interface AdmissionCaseStudy {
   analysis?: string;
 }
 
+// ─── Essay KB Types ────────────────────────────────────────────────────────────
+
+export type EssayCategory =
+  | 'common-app'
+  | 'why-us'
+  | 'why-major'
+  | 'community'
+  | 'challenge'
+  | 'intellectual'
+  | 'creative'
+  | 'short-answer'
+  | 'additional-info';
+
+export type PatternType =
+  | 'narrative-arc'
+  | 'montage'
+  | 'dialogue-driven'
+  | 'object-metaphor'
+  | 'counter-intuitive'
+  | 'academic-deep-dive';
+
+export interface EssayPrompt {
+  id: string;
+  category: EssayCategory;
+  title: string;
+  prompt: string;
+  wordLimit: string;
+  tips: string[];
+  pitfalls: string[];
+  examples?: string[];
+}
+
+export interface EssayPattern {
+  id: string;
+  type: PatternType;
+  name: string;
+  description: string;
+  structure: string[];
+  bestFor: string[];
+  cautionNotes: string;
+}
+
 // ─── Category Labels for the 50 target colleges ──────────────────────────────
 
 export type CollegeCategory = 'ivy' | 'national' | 'lac' | 'stem';

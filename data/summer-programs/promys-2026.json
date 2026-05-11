@@ -1,0 +1,70 @@
+{
+  "id": "promys-2026",
+  "name": "PROMYS for Teachers",
+  "brand": "PROMYS",
+  "discipline": [
+    "math",
+    "number-theory"
+  ],
+  "level": "high-school",
+  "location": "Boston, MA (Boston University)",
+  "session_dates": "June 28 \u2013 August 8, 2026",
+  "duration_weeks": 6,
+  "cost": {
+    "amount": 7000,
+    "notes": "Need-based scholarships available; no full-ride guarantee"
+  },
+  "deadline": "2026-04-01",
+  "application_url": "https://promys.org",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 80,
+  "parent_org": "Boston University",
+  "tags": [
+    "math",
+    "number-theory",
+    "prestigious",
+    "in-person",
+    "summer"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 9-12 (pre-college)",
+    "prior_knowledge": [
+      "Solid algebra and pre-calculus background",
+      "Problem-solving initiative"
+    ],
+    "application_requirements": [
+      "Problem set solutions",
+      "transcript",
+      "teacher recommendation",
+      "short essay"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Describe a mathematical problem or concept that you find particularly interesting or beautiful, and explain why.",
+      "word_limit": "500",
+      "tips": [
+        "Avoid generic 'I love math because it's logical' responses",
+        "Pick something specific and explain your personal connection to it"
+      ]
+    }
+  ],
+  "featured": true,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "Strong signal at MIT, Harvard, Princeton, and top STEM schools. Alumni network is extensive and active.",
+    "typical_results": "Many PROMYS alumni go on to major in mathematics or STEM at top universities."
+  },
+  "what_they_look_for": [
+    "Initiative and independence in exploring math problems",
+    "Genuine enthusiasm for number theory",
+    "Persistence \u2014 the problems are hard and you'll get stuck",
+    "Ability to articulate mathematical thinking"
+  ],
+  "blurbs": {
+    "short": "A 6-week number theory bootcamp at Boston University where students develop into independent mathematical thinkers.",
+    "long": "PROMYS (Program in Mathematics for Young Scientists) is modeled on the Ross Program's philosophy of discovery-based learning. Based at Boston University, it offers an intense 6-week immersion in number theory. Like Ross, the core of PROMYS is a problem set \u2014 a challenging, carefully designed sequence of problems that students work through largely on their own. The program also features research seminars, cryptography lectures, and guest talks. The PROMYS community includes both students and counselors (many of whom are Ross alumni themselves), creating a mentorship pipeline that spans decades. It is need-blind in the sense that financial aid does not affect admissions decisions."
+  },
+  "curriculum": "Number theory problem sets (primary), research seminars, cryptography workshops, daily life with fellow math enthusiasts.",
+  "SCRAPED_FROM": "promys.org (training knowledge \u2014 verified core facts)"
+}

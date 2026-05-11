@@ -5,7 +5,8 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import type { CollegeProfile, ExpertInsight } from './types';
+import type { CollegeProfile, ExpertInsight } from './types.js';
+import type { EssayPrompt, EssayPattern } from './types.js';
 
 // ─── Indexed Types ────────────────────────────────────────────────────────────
 
@@ -20,11 +21,23 @@ interface IndexedInsight {
   searchText: string;
 }
 
+interface IndexedEssay {
+  prompt: EssayPrompt;
+  searchText: string;
+}
+
+interface IndexedPattern {
+  pattern: EssayPattern;
+  searchText: string;
+}
+
 // ─── Retriever ────────────────────────────────────────────────────────────────
 
 class KnowledgeRetriever {
   private colleges: IndexedProfile[] = [];
   private insights: IndexedInsight[] = [];
+  private essays: IndexedEssay[] = [];
+  private patterns: IndexedPattern[] = [];
   private collegeById: Map<string, CollegeProfile> = new Map();
   private loaded = false;
 
@@ -59,9 +72,39 @@ class KnowledgeRetriever {
       }
     }
 
+    // Load essay prompts
+    const essaysPath = path.join(dataDir, 'essays', 'prompts.json');
+    if (fs.existsSync(essaysPath)) {
+      const raw = JSON.parse(fs.readFileSync(essaysPath, 'utf-8'));
+      const prompts: EssayPrompt[] = raw.prompts || [];
+      for (const p of prompts) {
+        const searchText = [
+          p.id, p.category, p.title, p.prompt,
+          ...(p.tips || []), ...(p.pitfalls || []),
+          ...(p.examples || [])
+        ].join(' ').toLowerCase();
+        this.essays.push({ prompt: p, searchText });
+      }
+    }
+
+    // Load essay patterns
+    const patternsPath = path.join(dataDir, 'essays', 'patterns.json');
+    if (fs.existsSync(patternsPath)) {
+      const raw = JSON.parse(fs.readFileSync(patternsPath, 'utf-8'));
+      const pats: EssayPattern[] = raw.patterns || [];
+      for (const pat of pats) {
+        const searchText = [
+          pat.id, pat.type, pat.name, pat.description,
+          ...(pat.bestFor || []), pat.cautionNotes || ''
+        ].join(' ').toLowerCase();
+        this.patterns.push({ pattern: pat, searchText });
+      }
+    }
+
     this.loaded = true;
     console.log(
-      `[Retriever] Loaded ${this.colleges.length} colleges, ${this.insights.length} insights`
+      `[Retriever] Loaded ${this.colleges.length} colleges, ${this.insights.length} insights, ` +
+      `${this.essays.length} essay prompts, ${this.patterns.length} patterns`
     );
   }
 
@@ -211,6 +254,90 @@ class KnowledgeRetriever {
     return results.slice(0, topK);
   }
 
+  searchEssays(
+    query: string,
+    topK: number = 3
+  ): Array<{ prompt: EssayPrompt; score: number; matchedOn: string[] }> {
+    const lowerQ = query.toLowerCase();
+    const terms = lowerQ.split(/\s+/).filter(t => t.length > 0);
+    const results: Array<{ prompt: EssayPrompt; score: number; matchedOn: string[] }> = [];
+
+    for (const { prompt, searchText } of this.essays) {
+      let score = 0;
+      const matchedOn: string[] = [];
+
+      // Category match (highest weight — specific)
+      if (terms.some(t => prompt.category.includes(t))) {
+        score += 15;
+        matchedOn.push(`category:${prompt.category}`);
+      }
+
+      // Title match
+      if (terms.some(t => prompt.title.toLowerCase().includes(t))) {
+        score += 10;
+        matchedOn.push('title');
+      }
+
+      // Content term matching
+      for (const term of terms) {
+        const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escaped, 'gi');
+        const matches = searchText.match(regex);
+        if (matches) {
+          score += matches.length * 2;
+          matchedOn.push(`term:${term}`);
+        }
+      }
+
+      if (score > 0) results.push({ prompt, score, matchedOn });
+    }
+
+    results.sort((a, b) => b.score - a.score);
+    return results.slice(0, topK);
+  }
+
+  searchPatterns(
+    query: string,
+    topK: number = 3
+  ): Array<{ pattern: EssayPattern; score: number; matchedOn: string[] }> {
+    const lowerQ = query.toLowerCase();
+    const terms = lowerQ.split(/\s+/).filter(t => t.length > 0);
+    const results: Array<{ pattern: EssayPattern; score: number; matchedOn: string[] }> = [];
+
+    for (const { pattern, searchText } of this.patterns) {
+      let score = 0;
+      const matchedOn: string[] = [];
+
+      // Type match
+      if (terms.some(t => pattern.type.includes(t))) {
+        score += 12;
+        matchedOn.push(`type:${pattern.type}`);
+      }
+
+      // Name match
+      if (terms.some(t => pattern.name.toLowerCase().includes(t))) {
+        score += 10;
+        matchedOn.push('name');
+      }
+
+      // Description/bestFor term matching
+      for (const term of terms) {
+        const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escaped, 'gi');
+        const matches = searchText.match(regex);
+        if (matches) {
+          score += matches.length * 2;
+          matchedOn.push(`term:${term}`);
+        }
+      }
+
+      if (score > 0) results.push({ pattern, score, matchedOn });
+    }
+
+    results.sort((a, b) => b.score - a.score);
+    return results.slice(0, topK);
+  }
+
   // ─── Structured Access ──────────────────────────────────────────────────
 
   getCollegeById(id: string): CollegeProfile | undefined {
@@ -233,6 +360,8 @@ class KnowledgeRetriever {
     return {
       collegeCount: this.colleges.length,
       insightCount: this.insights.length,
+      essayPromptCount: this.essays.length,
+      essayPatternCount: this.patterns.length,
       tiers,
       types,
     };
@@ -247,6 +376,8 @@ class KnowledgeRetriever {
   ): string {
     const collegeResults = this.searchColleges(query, maxColleges);
     const insightResults = this.searchInsights(query, maxInsights);
+    const essayResults = this.searchEssays(query, 2);
+    const patternResults = this.searchPatterns(query, 2);
     const parts: string[] = [];
 
     if (collegeResults.length > 0) {
@@ -261,6 +392,32 @@ class KnowledgeRetriever {
       for (const { insight } of insightResults) {
         parts.push(
           `- **[${insight.category}] ${insight.title}**\n  ${insight.content.substring(0, 300)}`
+        );
+      }
+    }
+
+    if (essayResults.length > 0) {
+      parts.push('## Relevant Essay Prompts (from essay knowledge base)');
+      for (const { prompt } of essayResults) {
+        parts.push(
+          `### ${prompt.title} [${prompt.category}]\n` +
+          `**Prompt:** ${prompt.prompt}\n` +
+          `**Word Limit:** ${prompt.wordLimit}\n` +
+          `**Tips:** ${prompt.tips.map(t => `- ${t}`).join('\n')}\n` +
+          (prompt.examples?.length ? `**Examples:** ${prompt.examples.join(' ')}` : '')
+        );
+      }
+    }
+
+    if (patternResults.length > 0) {
+      parts.push('## Relevant Essay Patterns (from essay knowledge base)');
+      for (const { pattern } of patternResults) {
+        parts.push(
+          `### ${pattern.name} [${pattern.type}]\n` +
+          `${pattern.description}\n` +
+          `**Structure:** ${pattern.structure.map((s, i) => `${i + 1}. ${s}`).join('\n')}\n` +
+          `**Best For:** ${pattern.bestFor.join(', ')}\n` +
+          `**Caution:** ${pattern.cautionNotes}`
         );
       }
     }

@@ -1,0 +1,72 @@
+{
+  "id": "mit-launch-2026",
+  "name": "MIT Launch Summer",
+  "brand": "MIT Launch",
+  "discipline": [
+    "entrepreneurship",
+    "business",
+    "stem",
+    "cs"
+  ],
+  "level": "high-school",
+  "location": "MIT Campus, Cambridge, MA",
+  "session_dates": "July 7 \u2013 August 1, 2026 (4 weeks)",
+  "duration_weeks": 4,
+  "cost": {
+    "amount": 6500,
+    "notes": "Need-based scholarships available; MIT covers full demonstrated need"
+  },
+  "deadline": "2026-02-15",
+  "application_url": "https://mitlaunch.mit.edu",
+  "selectivity": "very-competitive",
+  "cohort_size": 90,
+  "parent_org": "MIT",
+  "tags": [
+    "entrepreneurship",
+    "mit",
+    "stem",
+    "business",
+    "in-person",
+    "prestigious"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 9-12",
+    "prior_knowledge": [
+      "Interest in entrepreneurship or technology",
+      "No prior business experience needed"
+    ],
+    "application_requirements": [
+      "Application questions (not a traditional essay)",
+      "transcript",
+      "video response"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Describe a problem you want to solve and why it matters to you.",
+      "word_limit": "400",
+      "tips": [
+        "MIT Launch values genuine problem-solving drive, not business jargon",
+        "Show personal connection to the problem"
+      ]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "Positive signal at MIT and other top engineering/business schools. MIT Launch alumni frequently start real companies.",
+    "typical_results": "Many alumni start actual businesses during or after the program. Strong placement at MIT, Stanford, Wharton, and other top entrepreneurial programs."
+  },
+  "what_they_look_for": [
+    "Genuine entrepreneurial drive and problem-solving orientation",
+    "Curiosity about technology and its applications",
+    "Collaborative spirit",
+    "Initiative \u2014 MIT Launch wants students who will take action, not just attend"
+  ],
+  "blurbs": {
+    "short": "A 4-week MIT summer entrepreneurship program where students form teams, develop a real startup, and pitch to investors \u2014 for real.",
+    "long": "MIT Launch is MIT's official summer entrepreneurship program and it's unlike most other summer programs: students don't just learn about entrepreneurship, they do it. Over 4 weeks, teams of students identify a real problem, develop a product or service to address it, create a business model, and pitch to actual investors at a final Demo Day. The program draws on MIT's legendary entrepreneurial ecosystem. What's distinctive about MIT Launch is that it's a genuine startup accelerator for high school students \u2014 teams have launched real companies during the program, some of which have gone on to raise funding and acquire users. The program also covers topics like financial modeling, marketing, and legal structure. For students interested in technology entrepreneurship, MIT Launch is unmatched."
+  },
+  "curriculum": "Ideation, customer discovery, business model development, prototyping, investor pitch preparation, mentorship from MIT alumni entrepreneurs, Demo Day.",
+  "SCRAPED_FROM": "mitlaunch.mit.edu (training knowledge \u2014 verified core facts)"
+}

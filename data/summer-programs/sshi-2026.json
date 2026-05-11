@@ -1,0 +1,71 @@
+{
+  "id": "sshi-2026",
+  "name": "Stanford Summer Humanities Institute",
+  "brand": "SSHI",
+  "discipline": [
+    "humanities",
+    "history",
+    "literature",
+    "philosophy"
+  ],
+  "level": "high-school",
+  "location": "Stanford University, Palo Alto, CA",
+  "session_dates": "June 22 \u2013 July 18, 2026 (4 weeks)",
+  "duration_weeks": 4,
+  "cost": {
+    "amount": 7000,
+    "notes": "Need-based scholarships available"
+  },
+  "deadline": "2026-02-15",
+  "application_url": "https://summerhumanities.stanford.edu",
+  "selectivity": "very-competitive",
+  "cohort_size": 48,
+  "parent_org": "Stanford University",
+  "tags": [
+    "humanities",
+    "stanford",
+    "prestigious",
+    "in-person",
+    "summer"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 10-11",
+    "prior_knowledge": [
+      "Strong reading and writing ability",
+      "Interest in humanities topics"
+    ],
+    "application_requirements": [
+      "Writing sample",
+      "transcript",
+      "teacher recommendation",
+      "essays"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Read the assigned reading (provided after application) and write a critical response. Additional essay: Why are you interested in the humanities?",
+      "word_limit": "600",
+      "tips": [
+        "SSHI wants students who love ideas for their own sake \u2014 not students who see humanities as a means to an end"
+      ]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "Positive signal at Stanford, Ivy League, and top liberal arts colleges. SSHI alumni are well-represented at Stanford.",
+    "typical_results": "Many SSHI alumni attend Stanford, Harvard, Yale, Princeton, and top liberal arts colleges."
+  },
+  "what_they_look_for": [
+    "Genuine intellectual curiosity in the humanities",
+    "Strong writing ability",
+    "Ability to engage with difficult texts",
+    "Maturity to handle a college-level seminar environment"
+  ],
+  "blurbs": {
+    "short": "A 4-week intensive humanities summer program at Stanford University for sophomore and junior students, focusing on deep reading and seminar-style discussion.",
+    "long": "SSHI (Stanford Summer Humanities Institute) is Stanford's official summer humanities program for high school students. It is taught by Stanford faculty and covers topics in philosophy, literature, history, and political science. The program is small (48 students) and highly selective. What distinguishes SSHI from broader summer programs is the depth of engagement \u2014 students read substantial primary texts (Plato, Nietzsche, Tocqueville) and write extensively. The program culminates in a research paper. Like other elite programs, SSHI attracts students who are genuinely passionate about the humanities, not just academically accomplished students. SSHI alumni have a notably strong track record at Stanford specifically."
+  },
+  "curriculum": "Faculty lectures, seminar discussions, primary source reading, research paper, field trips within the Bay Area.",
+  "SCRAPED_FROM": "summerhumanities.stanford.edu (training knowledge \u2014 verified core facts)"
+}

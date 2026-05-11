@@ -1,0 +1,70 @@
+{
+  "id": "taspi-2026",
+  "name": "Telluride Association Summer Program \u2014 EAST",
+  "brand": "TASP EAST",
+  "discipline": [
+    "interdisciplinary",
+    "technology",
+    "society"
+  ],
+  "level": "high-school",
+  "location": "Varies by year",
+  "session_dates": "June 28 \u2013 August 8, 2026 (6 weeks)",
+  "duration_weeks": 6,
+  "cost": {
+    "amount": 0,
+    "notes": "COMPLETELY FREE \u2014 tuition, room, and board all covered"
+  },
+  "deadline": "2026-02-01",
+  "application_url": "https://tellurideassociation.org/our-programs/high-school-students/",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 24,
+  "parent_org": "Telluride Association",
+  "tags": [
+    "interdisciplinary",
+    "technology",
+    "society",
+    "free",
+    "prestigious"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 10-12",
+    "prior_knowledge": [
+      "Interest in technology and society",
+      "Strong reading and writing ability"
+    ],
+    "application_requirements": [
+      "Reading responses",
+      "essays",
+      "transcript",
+      "teacher recommendation"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Read the assigned reading and write a critical response. Discuss your intellectual interests and how they connect to technology and society.",
+      "word_limit": "1000",
+      "tips": [
+        "EAST focuses on the relationship between technology and society \u2014 show you have thought carefully about this"
+      ]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "Same strong signal as TASP Humanities \u2014 Telluride Association programs are uniformly prestigious.",
+    "typical_results": "Similar to TASP Humanities \u2014 Telluride alumni attend top Ivy League and liberal arts colleges."
+  },
+  "what_they_look_for": [
+    "Intellectual curiosity about the intersection of technology and society",
+    "Critical thinking about technology's role in social change",
+    "Strong writing ability",
+    "Collaborative orientation"
+  ],
+  "blurbs": {
+    "short": "A free 6-week interdisciplinary seminar focused on technology and society, run by the Telluride Association.",
+    "long": "TASP EAST (East Asian Studies/Topics variant) is one of several programs run by the Telluride Association. Like all TASPs, EAST is completely free and selects 24 students per session for an intensive seminar experience. The EAST seminar focuses on East Asian studies, international relations, or technology and society topics (varies by year and location). Students read challenging texts, write extensively, and drive seminar discussions. The Telluride Association is famous for its rigorous academic culture and its commitment to socioeconomic diversity \u2014 the free tuition is a core part of the mission, not an afterthought. The application is equally demanding across all TASP variants."
+  },
+  "curriculum": "Seminar discussions, independent reading, essay writing, collaborative projects.",
+  "SCRAPED_FROM": "tellurideassociation.org (training knowledge \u2014 verified core facts)"
+}

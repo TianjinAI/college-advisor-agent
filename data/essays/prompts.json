@@ -1,0 +1,626 @@
+{
+  "lastUpdated": "2026-05-09",
+  "prompts": [
+    {
+      "id": "common-app-background-identity",
+      "category": "common-app",
+      "title": "Background, Identity, Interest, or Talent",
+      "prompt": "Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it. If this sounds like you, then please share your story.",
+      "wordLimit": "250-650 words",
+      "tips": [
+        "Choose a specific story or moment rather than listing qualities — show, don't tell",
+        "Focus on HOW this aspect shaped you, not just what it is",
+        "Connect your background/identity to your future goals or how you'll contribute",
+        "Avoid trauma dumping; keep emotional stakes proportionate to the space"
+      ],
+      "pitfalls": [
+        "Using the essay to list achievements instead of revealing character",
+        "Choosing an identity marker you've never reflected on before",
+        "Writing a victim narrative that leaves no agency for the applicant"
+      ],
+      "examples": [
+        "The smell of my grandmother's sofrito still transports me to her cramped kitchen in Queens, where I first understood that cooking was chemistry with soul."
+      ]
+    },
+    {
+      "id": "common-app-lessons-obstacles",
+      "category": "common-app",
+      "title": "Lessons from Obstacles",
+      "prompt": "The lessons we take from obstacles we encounter can be fundamental to later success. Recount a time when you faced a challenge, setback, or failure. How did it affect you, and what did you learn from the experience?",
+      "wordLimit": "250-650 words",
+      "tips": [
+        "Start in the middle of the action — avoid lengthy setup",
+        "Spend more space on reflection and growth than on describing the failure itself",
+        "Be specific about what you learned and how you applied it later",
+        "Show (don't tell) the change through concrete behavior, not abstract claims"
+      ],
+      "pitfalls": [
+        "Spending 80% of the essay describing the problem and only 20% on growth",
+        "Choosing a failure that's actually a humble brag in disguise",
+        "Claiming you learned something generic like 'hard work pays off'"
+      ],
+      "examples": [
+        "I stared at the red F scrawled across my organic chemistry midterm and felt my medical school dreams hemorrhage onto the page."
+      ]
+    },
+    {
+      "id": "common-app-challenge-belief",
+      "category": "common-app",
+      "title": "Challenging a Belief or Idea",
+      "prompt": "Reflect on a time when you challenged a belief or idea. What prompted you to act? Would you make the same decision again?",
+      "wordLimit": "250-650 words",
+      "tips": [
+        "Choose a belief that genuinely mattered to you or your community",
+        "Show the internal conflict before you acted — what held you back initially?",
+        "Address the counterargument honestly rather than dismissing it",
+        "Conclude with genuine reflection, including any nuance you'd add today"
+      ],
+      "pitfalls": [
+        "Picking a belief you were already confident challenging (no real stakes)",
+        "Portraying yourself as a lone crusader without acknowledging complexity",
+        "Being vague about what the belief was or why it mattered"
+      ]
+    },
+    {
+      "id": "common-app-gratitude",
+      "category": "common-app",
+      "title": "Gratitude and Inspiration",
+      "prompt": "Reflect on something that someone has done for you that has made you happy or thankful in a surprising way. How has this gratitude affected or inspired you?",
+      "wordLimit": "250-650 words",
+      "tips": [
+        "The 'surprising' element is key — choose an unexpected kindness, not a predictable one",
+        "Connect gratitude to action: how did this person change your behavior or trajectory?",
+        "Avoid sycophancy — don't just praise the person, use them as a mirror for yourself",
+        "Make sure the person you write about would recognize themselves in your essay"
+      ],
+      "pitfalls": [
+        "Writing a thank-you letter instead of a self-reflective essay",
+        "Choosing a parent or close family member (too expected, often too generic)",
+        "Over-focusing on the giver instead of your own transformation"
+      ]
+    },
+    {
+      "id": "common-app-accomplishment-growth",
+      "category": "common-app",
+      "title": "Accomplishment and Personal Growth",
+      "prompt": "Discuss an accomplishment, event, or realization that sparked a period of personal growth and a new understanding of yourself or others.",
+      "wordLimit": "250-650 words",
+      "tips": [
+        "The 'realization' pivot is crucial — what did you suddenly understand?",
+        "Show the before/after you clearly, but let the reader see the transformation",
+        "Connect personal growth to understanding OTHERS, not just yourself",
+        "Choose something genuinely meaningful, not a résumé achievement"
+      ],
+      "pitfalls": [
+        "Writing about an award or accolade without the internal shift",
+        "Being too vague about what the 'realization' actually was",
+        "Confusing external accomplishment with internal change"
+      ]
+    },
+    {
+      "id": "common-app-engaging-topic",
+      "category": "common-app",
+      "title": "Engaging Topic, Idea, or Concept",
+      "prompt": "Describe a topic, idea, or concept you find so engaging that it makes you lose track of time. Why does it captivate you? What or who do you turn to when you want to learn more?",
+      "wordLimit": "250-650 words",
+      "tips": [
+        "Show your enthusiasm through specific details, not generic excitement",
+        "Explain WHY it matters to you, not just what fascinates you",
+        "Include what you DO with this interest — reading, creating, exploring",
+        "Make it specific enough that an expert would recognize your genuine engagement"
+      ],
+      "pitfalls": [
+        "Choosing something 'impressive' you think admissions wants to see",
+        "Listing facts instead of showing genuine intellectual passion",
+        "Being so broad (e.g., 'science') that you reveal nothing unique"
+      ],
+      "examples": [
+        "I have a recurring nightmare where I'm trapped in an infinite hotel corridor. It started after I first learned about Hilbert's Hotel, and now I can't stop thinking about what happens when you try to check in an infinite number of guests."
+      ]
+    },
+    {
+      "id": "common-app-open-topic",
+      "category": "common-app",
+      "title": "Topic of Your Choice",
+      "prompt": "Share an essay on any topic you want. It can be one you already wrote, one that responds to a different prompt, or one of your own design.",
+      "wordLimit": "250-650 words",
+      "tips": [
+        "Use this freedom wisely — a random topic wastes the opportunity",
+        "The best open-topic essays reveal something the other prompts wouldn't capture",
+        "Still follow strong essay mechanics: specific story, meaningful reflection",
+        "Avoid choosing this option because you're 'not sure what else to write'"
+      ],
+      "pitfalls": [
+        "Submitting a school assignment or research paper excerpt",
+        "Using this to rehash your activities list in prose form",
+        "Being deliberately provocative for attention's sake"
+      ]
+    },
+    {
+      "id": "why-us-harvard",
+      "category": "why-us",
+      "title": "Harvard Community Contribution",
+      "prompt": "Harvard has more than 500 student organizations and groups. How will you contribute to the Harvard community? (For reference: what kind of community do you want to find, and what will you give back?)",
+      "wordLimit": "150-200 words",
+      "tips": [
+        "Name specific organizations or traditions, not just generic categories",
+        "Show what you would DO, not just who you would meet",
+        "Connect your past contributions to what you'll bring to Harvard",
+        "Be honest about what you want to find, not just what you offer"
+      ],
+      "pitfalls": [
+        "Listing a string of clubs without showing genuine connection",
+        "Saying you want to 'meet people from different backgrounds' (too generic)",
+        "Ignoring the reciprocal nature — what you'll gain AND give"
+      ]
+    },
+    {
+      "id": "why-us-stanford",
+      "category": "why-us",
+      "title": "Stanford Interests and Goals",
+      "prompt": "Why Stanford? Describe your interest in studying at Stanford and how it relates to your passions and future goals. (450 characters maximum)",
+      "wordLimit": "100-150 words",
+      "tips": [
+        "Name specific programs, professors, or courses — avoid generic praise",
+        "Connect Stanford's unique features directly to your specific academic path",
+        "Show you've done real research, not just read the homepage",
+        "Link the location/resources to your specific goals"
+      ],
+      "pitfalls": [
+        "Using the same essay for multiple schools (admissions can tell)",
+        "Vague references to 'innovation' or ' Silicon Valley proximity' without depth",
+        "Focusing only on prestige rather than fit"
+      ]
+    },
+    {
+      "id": "why-us-mit-meaningful",
+      "category": "why-us",
+      "title": "MIT Meaningful Topic",
+      "prompt": "Tell us about something that is meaningful to you, and why it is meaningful to you. (200-250 words)",
+      "wordLimit": "200-250 words",
+      "tips": [
+        "This is NOT the same as 'why MIT' — focus on meaning, not just intellectual interest",
+        "Choose something genuine to you, even if it's not academic",
+        "Use specific details to ground the abstract concept in reality",
+        "Let your values come through naturally via the story you choose"
+      ],
+      "pitfalls": [
+        "Writing this as a mini-Why MIT essay instead of a meaningful topic essay",
+        "Choosing something you think MIT wants to hear",
+        "Being so abstract that no one can picture what you mean"
+      ]
+    },
+    {
+      "id": "why-us-uchicago",
+      "category": "why-us",
+      "title": "UChicago Intellectual Curiosity",
+      "prompt": "UChicago's liberal arts approach encourages students to explore the world's problems with interdisciplinary thinking. How do you pursue your intellectual curiosity and what impact does this have on your community?",
+      "wordLimit": "250 words",
+      "tips": [
+        "Show genuine intellectual restlessness — the desire to connect disparate fields",
+        "Give concrete examples of how you've explored ideas beyond your school curriculum",
+        "Connect your thinking to real-world impact or community benefit",
+        "Let your quirky intellectual interests show — UChicago values authenticity"
+      ],
+      "pitfalls": [
+        "Listing subjects you like without showing how you connect them",
+        "Being pretentious about obscure interests",
+        "Ignoring the 'community impact' part of the question"
+      ]
+    },
+    {
+      "id": "why-us-georgetown",
+      "category": "why-us",
+      "title": "Georgetown Challenge and Course of Study",
+      "prompt": "Describe a significant challenge you have faced and/or a topic of importance to you that you feel could be addressed through your proposed course of study at Georgetown.",
+      "wordLimit": "200-250 words",
+      "tips": [
+        "Connect your personal challenge directly to Georgetown's specific academic strengths",
+        "Name specific departments, centers, or professors at Georgetown",
+        "Show how Georgetown is uniquely positioned for your solution",
+        "Make it clear this school has a distinct advantage for YOUR specific goals"
+      ],
+      "pitfalls": [
+        "Using a generic challenge that could apply to any school",
+        "Not naming anything specific about Georgetown's offerings",
+        "Confusing this with a general 'why this school' essay"
+      ]
+    },
+    {
+      "id": "why-major-stem",
+      "category": "why-major",
+      "title": "Why STEM Major",
+      "prompt": "Please describe your interest in your intended major in the School of Engineering or the sciences. What is it about studying and conducting research in your chosen field that most excites and sustains your curiosity?",
+      "wordLimit": "200-300 words",
+      "tips": [
+        "Get specific about sub-fields and research questions, not just broad STEM enthusiasm",
+        "Describe a specific moment of intellectual excitement or breakthrough",
+        "Connect your curiosity to what you want to DO with this knowledge",
+        "Show you understand the reality of research, not just the glamour"
+      ],
+      "pitfalls": [
+        "Saying you 'want to help people' without connecting to your specific scientific interest",
+        "Listing impressive-sounding fields without demonstrating real knowledge",
+        "Ignoring the 'sustains your curiosity' part — show long-term commitment"
+      ]
+    },
+    {
+      "id": "why-major-humanities",
+      "category": "why-major",
+      "title": "Why Humanities Major",
+      "prompt": "What drives your fascination with the humanities, and how do you envision your studies in this field preparing you to address real-world challenges?",
+      "wordLimit": "200-300 words",
+      "tips": [
+        "Show that you understand what humanities actually study (not just 'I like reading')",
+        "Connect humanities skills to concrete career or life goals",
+        "Give an example of how you've already applied humanistic thinking",
+        "Avoid anti-science sentiment — show genuine interdisciplinary openness"
+      ],
+      "pitfalls": [
+        "Assuming humanities means 'anything not STEM'",
+        "Dismissing career applications as beneath you",
+        "Using vague phrases like 'understanding the human condition' without specifics"
+      ]
+    },
+    {
+      "id": "why-major-business",
+      "category": "why-major",
+      "title": "Why Business Major",
+      "prompt": "Why are you drawn to studying business? Describe how you plan to use your business education to create value for your community, industry, or society.",
+      "wordLimit": "200-300 words",
+      "tips": [
+        "Get specific about WHAT kind of business — entrepreneurship, finance, social enterprise?",
+        "Show you understand business as creating and distributing value, not just making money",
+        "Connect your business interest to a genuine passion or problem you want to solve",
+        "Avoid only talking about personal success — emphasize value for others"
+      ],
+      "pitfalls": [
+        "Saying 'I've always wanted to be a CEO' without nuance",
+        "Ignoring the 'create value' part of the question",
+        "Assuming business is only about profit, not people or purpose"
+      ]
+    },
+    {
+      "id": "why-major-interdisciplinary",
+      "category": "why-major",
+      "title": "Why Interdisciplinary Studies",
+      "prompt": "Describe your interest in an interdisciplinary area of study and how your proposed program connects to your academic and career goals.",
+      "wordLimit": "200-300 words",
+      "tips": [
+        "Be specific about the two or more fields you want to combine",
+        "Explain WHY these fields need each other — what's missing in siloed study",
+        "Show you understand the intellectual challenge of interdisciplinary work",
+        "Connect to a goal that actually requires this combination, not just 'I'm interested in everything'"
+      ],
+      "pitfalls": [
+        "Picking fields randomly because you can't decide",
+        "Not showing genuine depth in at least one of the fields",
+        "Assuming interdisciplinary is easier or a fallback option"
+      ]
+    },
+    {
+      "id": "community-diversity-perspective",
+      "category": "community",
+      "title": "Community Through Diversity",
+      "prompt": "Our community is comprised of individuals from many different backgrounds, beliefs, and identities. How has your background shaped the way you engage with others, and what will you contribute to our community of scholars?",
+      "wordLimit": "200-300 words",
+      "tips": [
+        "Choose ONE specific aspect of your background rather than listing many",
+        "Show, don't tell: use a specific moment that illustrates your engagement style",
+        "Connect your background to how you'll contribute to academic dialogue",
+        "Avoid exoticizing your identity or making it the only interesting thing about you"
+      ],
+      "pitfalls": [
+        "Listing every identity category you belong to",
+        "Assuming your background is so unique no one else could understand",
+        "Writing about diversity as if you're observing it from outside, not living it"
+      ]
+    },
+    {
+      "id": "community-contribution-local",
+      "category": "community",
+      "title": "Community Contribution",
+      "prompt": "Describe the community you come from and how your background has shaped your commitment to serving others. What specific community contribution would you make as a student at our institution?",
+      "wordLimit": "200-300 words",
+      "tips": [
+        "Name the specific community (neighborhood, religious group, cultural community) not just 'my community'",
+        "Show sustained commitment, not just one-time service",
+        "Connect service to your genuine skills and interests, not charity tourism",
+        "Be realistic about what you can contribute as a student, not just as a future alumnus"
+      ],
+      "pitfalls": [
+        "Confusing charity with community change or advocacy",
+        "Writing about helping 'others' as if you're not part of any community yourself",
+        "Promising unrealistic large-scale impact while a student"
+      ]
+    },
+    {
+      "id": "community-background-perspective",
+      "category": "community",
+      "title": "Background and Perspective",
+      "prompt": "How has your background prepared you to contribute a unique perspective in your community and on our campus?",
+      "wordLimit": "200-250 words",
+      "tips": [
+        "Focus on perspective, not just background — what's the internal experience?",
+        "Show how your viewpoint creates opportunities for dialogue or collaboration",
+        "Be specific about what insight or skill you bring, not just 'diversity of thought'",
+        "Connect your perspective to genuine listening and learning, not just speaking"
+      ],
+      "pitfalls": [
+        "Treating your background as your only asset",
+        "Assuming perspective is only about identity, not experiences",
+        "Being so vague that any student could write this"
+      ]
+    },
+    {
+      "id": "community-bridge-building",
+      "category": "community",
+      "title": "Bridge Builder Between Communities",
+      "prompt": "Describe an experience that positioned you as a bridge between different communities. What did this experience teach you about yourself and your ability to bring people together?",
+      "wordLimit": "200-300 words",
+      "tips": [
+        "Pick a specific moment when you had to navigate between two groups",
+        "Show both what you learned about others AND about yourself",
+        "Avoid claiming you've 'solved' division — show genuine complexity",
+        "Let the lessons be humbler and more honest than heroic"
+      ],
+      "pitfalls": [
+        "Acting as if you're a savior between communities",
+        "Not being specific about which communities and what the friction was",
+        "Claiming you've achieved reconciliation when you only had one conversation"
+      ]
+    },
+    {
+      "id": "challenge-failure",
+      "category": "challenge",
+      "title": "Failure and Growth",
+      "prompt": "Recount a time when you failed at something. What did you learn from this failure, and how did it change you?",
+      "wordLimit": "250-400 words",
+      "tips": [
+        "Choose a genuine failure, not a 'failure' that's secretly a success in disguise",
+        "Be honest about what you did wrong without being self-pitying",
+        "Show the specific behavioral or mindset change that resulted",
+        "The best failure essays make admissions officers like you MORE, not less"
+      ],
+      "pitfalls": [
+        "Describing a near-win as a failure to seem humble",
+        "Blaming others entirely for what went wrong",
+        "Claiming you learned something so general it could apply to anyone"
+      ]
+    },
+    {
+      "id": "challenge-setback",
+      "category": "challenge",
+      "title": "Setback in Your Life",
+      "prompt": "Describe a time when you experienced a significant setback. How did you respond, and what did this reveal about your character?",
+      "wordLimit": "250-400 words",
+      "tips": [
+        "Show your process of responding, not just the setback itself",
+        "Reveal character through your choices, not through self-description",
+        "Include what you could NOT control, but focus on what you could",
+        "Show resilience not as bravado but as honest struggle"
+      ],
+      "pitfalls": [
+        "Dramatizing a minor setback to seem dramatic",
+        "Claiming you 'never gave up' when the outcome was mixed",
+        "Writing about setbacks without any emotional authenticity"
+      ]
+    },
+    {
+      "id": "challenge-obstacle",
+      "category": "challenge",
+      "title": "Overcoming an Obstacle",
+      "prompt": "Tell us about an obstacle you encountered and how you overcame it. What resources, personal qualities, or circumstances helped you persist?",
+      "wordLimit": "250-400 words",
+      "tips": [
+        "Name the specific obstacle clearly — not 'challenges' in general",
+        "Identify what actually helped you persist (be specific about resources)",
+        "Show how this experience prepared you for future challenges",
+        "Let others' support be part of the story without diminishing your agency"
+      ],
+      "pitfalls": [
+        "Making it sound like you did it all alone (ignoring support systems)",
+        "Choosing an obstacle that's too small for the space",
+        "Claiming it was all about 'mindset' when structural barriers existed"
+      ]
+    },
+    {
+      "id": "challenge-moral-dilemma",
+      "category": "challenge",
+      "title": "Moral or Ethical Dilemma",
+      "prompt": "Describe a situation in which you faced a difficult moral or ethical choice. How did you decide, and what were the consequences?",
+      "wordLimit": "250-400 words",
+      "tips": [
+        "Choose a situation with genuine moral complexity, not an obvious right/wrong",
+        "Show the competing values clearly before explaining your choice",
+        "Be honest about the imperfect nature of your decision",
+        "Include the consequences, not just the decision itself"
+      ],
+      "pitfalls": [
+        "Picking a situation where there's a clear hero/villain dynamic",
+        "Claiming you made the 'perfect' ethical choice",
+        "Being preachy about what you learned"
+      ]
+    },
+    {
+      "id": "intellectual-idea",
+      "category": "intellectual",
+      "title": "An Idea That Fascinates",
+      "prompt": "Share an idea, concept, or theory that you find genuinely fascinating. How did you encounter it, and what makes it so compelling to you?",
+      "wordLimit": "200-350 words",
+      "tips": [
+        "Get specific enough to show genuine depth of engagement",
+        "Show how you pursued this idea beyond what was required",
+        "Explain why it matters to you personally, not just intellectually",
+        "Let your excitement be contagious through specific details"
+      ],
+      "pitfalls": [
+        "Choosing an idea because it's 'smart' rather than because you love it",
+        "Being too technical for a non-specialist reader to follow",
+        "Summarizing the idea instead of showing your relationship to it"
+      ]
+    },
+    {
+      "id": "intellectual-book",
+      "category": "intellectual",
+      "title": "A Book That Changed Your Thinking",
+      "prompt": "Tell us about a book, essay, or piece of writing that has influenced how you understand the world. What changed in your thinking after reading it?",
+      "wordLimit": "200-350 words",
+      "tips": [
+        "Choose a book that genuinely shaped you, not one you think sounds impressive",
+        "Show the before/after of your thinking, not just the book's content",
+        "Be honest if the book challenged you rather than simply enlightening you",
+        "Make clear this book matters to you personally, not just academically"
+      ],
+      "pitfalls": [
+        "Choosing a book everyone reads (Harry Potter, 1984) without adding your take",
+        "Writing a book report instead of an essay about YOUR change",
+        "Pretending you understood more than you did"
+      ]
+    },
+    {
+      "id": "intellectual-curiosity",
+      "category": "intellectual",
+      "title": "Intellectual Curiosity",
+      "prompt": "What is something you are genuinely curious about, and how do you pursue that curiosity? How has this curiosity shaped your intellectual journey?",
+      "wordLimit": "200-350 words",
+      "tips": [
+        "Choose a specific curiosity, not 'everything' or 'learning'",
+        "Show your process of exploring — what do you actually DO with curiosity",
+        "Connect curiosity to your academic path honestly",
+        "Let your curiosity be quirky or unexpected, not just academically impressive"
+      ],
+      "pitfalls": [
+        "Claiming to be curious about something you can't elaborate on",
+        "Equating curiosity with good grades or test scores",
+        "Being so broad ('I'm curious about everything!') that nothing shines through"
+      ]
+    },
+    {
+      "id": "creative-unconventional-topic",
+      "category": "creative",
+      "title": "Unconventional Topic Essay",
+      "prompt": "Submit an essay on a topic of your choosing. This is your chance to be creative and share something that no other applicant will write in exactly this way.",
+      "wordLimit": "250-650 words",
+      "tips": [
+        "Choose a topic only YOU could write — your specific angle matters more than the topic itself",
+        "Use creative structure or voice intentionally, not randomly",
+        "Even unconventional essays need structure and purpose",
+        "Take a risk — the most memorable essays are often the bravest"
+      ],
+      "pitfalls": [
+        "Choosing weirdness for its own sake without substance",
+        "Forgetting that 'creative' still means clear writing",
+        "Being so experimental you lose the reader entirely"
+      ]
+    },
+    {
+      "id": "creative-unusual-angle",
+      "category": "creative",
+      "title": "Unusual Angle on a Common Experience",
+      "prompt": "Take a ordinary experience and write about it from an unexpected angle. Show us something familiar in a completely new way.",
+      "wordLimit": "250-650 words",
+      "tips": [
+        "Find the strange within the ordinary — choose a mundane topic with hidden depth",
+        "Your voice and observation skills matter more than the subject itself",
+        "Use precise, concrete details to make the familiar strange",
+        "Let the new angle reveal something meaningful, not just be clever"
+      ],
+      "pitfalls": [
+        "Choosing something so mundane you can't find the interesting angle",
+        "Forcing a metaphor or comparison that doesn't work",
+        "Being so focused on being clever you forget to mean something"
+      ]
+    },
+    {
+      "id": "short-answer-activities",
+      "category": "short-answer",
+      "title": "Yale Short Answer - Activities",
+      "prompt": "Briefly describe a short-term activity (2 weeks or less) that you've participated in recently. What made you decide to try this, and what did you get out of the experience?",
+      "wordLimit": "100-150 words",
+      "tips": [
+        "Choose something genuinely short-term that reveals something about you",
+        "Explain the decision to try it, not just what you did",
+        "Be specific about what you gained — insights, skills, perspectives",
+        "Short answers need efficient writing — every word must count"
+      ],
+      "pitfalls": [
+        "Stretching a two-week activity into something more impressive",
+        "Being vague about the activity or its impact",
+        "Using space to list rather than to reveal"
+      ]
+    },
+    {
+      "id": "short-answer-uva-why-matter",
+      "category": "short-answer",
+      "title": "UVA Short Answer - What Matters and Why",
+      "prompt": "What is it that you love to do, and why does it matter to you? Why is this interest or passion meaningful to you?",
+      "wordLimit": "50-100 words",
+      "tips": [
+        "Be extremely specific about the activity or interest",
+        "Skip the 'why it matters' introduction — get into the heart of it quickly",
+        "Use concrete language, not abstract platitudes",
+        "Contradict yourself or show complexity if honest"
+      ],
+      "pitfalls": [
+        "Saying you love 'music' or 'sports' without specificity",
+        "Using the same generic answer every applicant would give",
+        "Wasting words on setup instead of diving in"
+      ]
+    },
+    {
+      "id": "short-answer-princeton-service",
+      "category": "short-answer",
+      "title": "Princeton Short Answer - Community Service Reflection",
+      "prompt": "Princeton's motto is 'In the Nation's Service and the Service of Humanity.' How do you relate to this motto, and how might you personally contribute to it?",
+      "wordLimit": "100-150 words",
+      "tips": [
+        "Connect the motto to YOUR specific experiences and goals",
+        "Show what 'service' means to you specifically, not generically",
+        "Give a concrete example of how you've lived this motto",
+        "Avoid generic praise of service — show your personal stake"
+      ],
+      "pitfalls": [
+        "Rewording the motto without adding your own meaning",
+        "Making grandiose claims about your future service without grounding",
+        "Being so humble you don't claim any connection at all"
+      ]
+    },
+    {
+      "id": "short-answer-stanford-intellectual",
+      "category": "short-answer",
+      "title": "Stanford Short Answer - Intellectual Engagement",
+      "prompt": "The front page of your application is the first thing we will read. What five words best describe you, and why? (Note: choose five words that are not already used elsewhere in your application.)",
+      "wordLimit": "50-100 words",
+      "tips": [
+        "Choose words that are genuinely distinctive, not generic virtues",
+        "Each word needs justification through behavior or example",
+        "The 'why' is more important than the words themselves",
+        "Consider words that might seem contradictory — those can be interesting"
+      ],
+      "pitfalls": [
+        "Using adjectives any applicant might use (creative, hard-working, passionate)",
+        "Listing five words without explaining why they fit you",
+        "Using words that overlap with your activities or essays"
+      ]
+    },
+    {
+      "id": "additional-info-general",
+      "category": "additional-info",
+      "title": "Additional Information",
+      "prompt": "Please provide any additional information you would like the admissions committee to consider as they review your application. This may include explanations of circumstances or context not captured elsewhere in your application.",
+      "wordLimit": "250-300 words",
+      "tips": [
+        "Only use this space if you genuinely have information that can't go elsewhere",
+        "Address specific gaps or circumstances directly and factually",
+        "Don't repeat information already in your application",
+        "End with something positive about your fit or potential, not just explanation"
+      ],
+      "pitfalls": [
+        "Using this to write a supplemental essay about your achievements",
+        "Making excuses for bad grades without taking responsibility",
+        "Assuming the committee doesn't read this section carefully"
+      ]
+    }
+  ]
+}

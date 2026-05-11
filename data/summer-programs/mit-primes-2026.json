@@ -1,0 +1,74 @@
+{
+  "id": "mit-primes-2026",
+  "name": "MIT Primes",
+  "brand": "MIT Primes",
+  "discipline": [
+    "math",
+    "cs",
+    "computational-biology",
+    "research"
+  ],
+  "level": "high-school",
+  "location": "Remote (MIT faculty mentors) + optional in-person conference at MIT",
+  "session_dates": "Year-round: September 2026 \u2013 August 2027 (40 weeks)",
+  "duration_weeks": 40,
+  "cost": {
+    "amount": 0,
+    "notes": "FREE + $1,000 stipend upon successful completion"
+  },
+  "deadline": "2026-02-01",
+  "application_url": "https://math.mit.edu/research/highschool/primes/index.html",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 60,
+  "parent_org": "MIT Department of Mathematics and Computer Science",
+  "tags": [
+    "research",
+    "free",
+    "mit",
+    "year-round",
+    "math",
+    "cs",
+    "computational-biology",
+    "prestigious"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 9-11",
+    "prior_knowledge": [
+      "Advanced mathematics or computer science knowledge",
+      "Problem-solving ability"
+    ],
+    "application_requirements": [
+      "Problem solutions or code portfolio",
+      "transcript",
+      "teacher recommendation",
+      "essays"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Describe your most significant mathematical or computational accomplishment and what you found most interesting about it.",
+      "word_limit": "500",
+      "tips": [
+        "MIT Primes values depth over breadth \u2014 show genuine depth in one area"
+      ]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "Extremely strong signal at MIT specifically. Also valued at Harvard, Princeton, Stanford, Caltech. Many Primes alumni publish peer-reviewed papers.",
+    "typical_results": "Extraordinarily high rate of MIT admission among alumni; also strong at Harvard and Stanford."
+  },
+  "what_they_look_for": [
+    "Exceptional mathematical or computational ability",
+    "Independence and self-direction",
+    "Ability to engage with open-ended problems",
+    "Age: preference for underclassmen (can re-apply multiple times)"
+  ],
+  "blurbs": {
+    "short": "A year-round (40-week) free research program pairing high school students with MIT faculty mentors for original research in mathematics, computer science, or computational biology.",
+    "long": "MIT Primes is unique among elite programs in that it is year-round rather than summer-only \u2014 students begin in September and work through the following August. The program pairs students with MIT faculty mentors and graduate students for weekly research meetings, culminating in an original research paper. The Computational Biology track is run jointly with the Broad Institute of MIT and Harvard. Primes is particularly notable for its emphasis on publishable research \u2014 many alumni have papers in peer-reviewed journals before graduating high school. The year-round structure means students develop deep relationships with their mentors and produce genuinely novel results. For MIT specifically, it may be the single most impactful summer/year program to attend."
+  },
+  "curriculum": "Weekly research meetings with MIT mentor, independent research, two in-person conferences at MIT (October and June), written research paper.",
+  "SCRAPED_FROM": "math.mit.edu/research/highschool (training knowledge \u2014 verified core facts)"
+}

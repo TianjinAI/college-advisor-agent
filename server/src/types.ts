@@ -12,6 +12,7 @@ export interface SendMessagePayload {
   history?: Array<{ role: 'user' | 'assistant'; content: string }>;
   userId?: string;
   sessionId?: string;
+  model?: string; // client-selected model override
 }
 
 export interface UpdateProfilePayload {
@@ -53,9 +54,17 @@ export interface StudentProfile {
   target_states?: string;
   extracurriculars?: string;
   awards_honors?: string;
-  hooks?: string[];
-  school_type?: string;
-  [key: string]: unknown;
+  summer_camps?: string;
+  ethnic_group?: string;
+  sex?: string;
+  school_type?: 'Public' | 'Private' | 'Both' | '';
+  documents?: Array<{
+    id: string;
+    filename: string;
+    type: 'resume' | 'essay' | 'other';
+    uploadedAt: number;
+    size: number;
+  }>;
 }
 
 // 连接初始化

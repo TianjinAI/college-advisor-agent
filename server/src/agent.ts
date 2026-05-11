@@ -5,30 +5,36 @@ import type { StudentProfile } from './types';
 import retriever from './knowledge/retriever.js';
 import { DossierManager } from './knowledge/dossier.js';
 
-import path from 'path';
-import { fileURLToPath } from 'url';
 
-// Load env
+import path from 'path';
 import dotenv from 'dotenv';
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: path.resolve(__dirname, '../.env') });
+dotenv.config({ path: path.resolve(process.cwd(), 'server/.env') });
+import fs from 'fs';
+const DATA_DIR = path.resolve(process.cwd(), 'data');
+if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
 const LLM_BASE_URL = process.env.LLM_BASE_URL || 'https://opencode.ai/zen/go/v1';
 const LLM_API_KEY = process.env.LLM_API_KEY || '';
-const LLM_MODEL = process.env.LLM_MODEL || 'deepseek-v4-pro';
-const DOSSIER_MODEL = process.env.DOSSIER_MODEL || 'deepseek-v4-pro';
+const LLM_MODEL = process.env.LLM_MODEL || 'deepseek-v4-flash';
+const DOSSIER_MODEL = process.env.DOSSIER_MODEL || 'deepseek-v4-flash';
 const TAVILY_API_KEY = process.env.TAVILY_API_KEY || '';
+
+// In-memory caches
+const dossierCache = new Map<string, { content: string; expiry: number }>();
+const searchCache = new Map<string, { content: string; expiry: number }>();
+const CACHE_TTL_MS = 5 * 60 * 1000;   // 5 min for dossier
+const SEARCH_TTL_MS = 10 * 60 * 1000; // 10 min for web search
 
 // Init clients
 let openaiClient: OpenAI | null = null;
 let tavilyClient: TavilyClient | null = null;
 let retrieverLoaded = false;
-const dossierManager = new DossierManager(path.resolve(__dirname, '../../data/users'));
-export { dossierManager };
+const dossierManager = new DossierManager(path.resolve(process.cwd(), '../data/users'));
+export { dossierManager, ensureRetriever };
 
 async function ensureRetriever(): Promise<void> {
   if (retrieverLoaded) return;
-  const dataDir = path.resolve(__dirname, '../../data');
+  const dataDir = path.resolve(process.cwd(), './data');
   await retriever.load(dataDir);
   retrieverLoaded = true;
   console.log('[KB] Retriever loaded:', JSON.stringify(retriever.getStats()));
@@ -53,6 +59,9 @@ function getOpenAI(): OpenAI {
     openaiClient = new OpenAI({
       baseURL: LLM_BASE_URL,
       apiKey: LLM_API_KEY,
+      defaultHeaders: {
+        'User-Agent': 'OpenAI/1.0.0',
+      },
     });
   }
   return openaiClient;
@@ -86,12 +95,25 @@ const SYSTEM_PROMPT = `You are a professional US college admissions analyst. You
 - If a student's profile is not competitive for a school, say so plainly and explain why
 
 ## Key Topics You Cover
-- Admissions odds assessment based on GPA, test scores, course rigor, and hooks
+- Admissions odds assessment based on GPA, test scores, course rigor, and background
 - Academic and cultural fit analysis — does the student match what the school looks for?
 - Financial reality check — net price, debt burden, ROI by major
 - Strategic application planning: ED/EA/RD timing, demonstrated interest, essay positioning
 - Campus culture and academic environment — what the numbers don't tell you
 - Major selection and long-term career outcomes
+- Essay writing strategy: prompt selection, structural frameworks, narrative voice, revision
+
+## Essay Writing Guidance
+When students ask about essays (Common App, Why Us, supplemental, short answer):
+- Reference the Essay Prompts from the KB — use the actual prompt text, word limits, and school-specific tips
+- Reference the Essay Patterns from the KB — suggest structural frameworks appropriate to their story
+- Do NOT give generic "be yourself" advice — give specific, actionable structural guidance
+- Help students choose WHICH prompt to answer when they have a choice
+- Push them toward specific patterns based on their story type (narrative arc vs. montage vs. counter-intuitive, etc.)
+- Point out pitfalls from the KB for each specific prompt
+- For Why Us / Why Major essays: reference specific programs, professors, courses — not generic praise
+- Encourage revision: suggest they bring drafts back for feedback on structure, voice, and specificity
+- Use the "Show, Don't Tell" principle — demand concrete scenes and specific details, not abstract claims
 
 ## Critical Thinking Standards
 - Never flatter or offer empty reassurance. Be honest even when the truth is uncomfortable.
@@ -126,7 +148,8 @@ function buildPrompt(userMessage: string, profile?: StudentProfile): string {
     if (profile.target_states)   parts.push(`- Preferred States: ${profile.target_states}`);
     if (profile.extracurriculars) parts.push(`- Extracurriculars: ${profile.extracurriculars}`);
     if (profile.awards_honors)   parts.push(`- Awards & Honors: ${profile.awards_honors}`);
-    if (profile.hooks?.length)   parts.push(`- Hooks: ${profile.hooks.join(', ')}`);
+    if (profile.ethnic_group)  parts.push(`- Ethnic Group: ${profile.ethnic_group}`);
+    if (profile.sex)            parts.push(`- Sex: ${profile.sex}`);
     if (profile.school_type)     parts.push(`- School Type: ${profile.school_type}`);
     parts.push('Please give personalized advice based on the above profile.\n');
     prompt += parts.join('\n');
@@ -138,8 +161,17 @@ function buildPrompt(userMessage: string, profile?: StudentProfile): string {
 /**
  * Search the web using Tavily for latest college data
  * With timeout to prevent hanging.
+ * Results are cached for 10 minutes per query.
  */
 async function searchWeb(query: string, maxResults: number = 5): Promise<string> {
+  // Check cache first
+  const cacheKey = query.toLowerCase().slice(0, 100);
+  const cached = searchCache.get(cacheKey);
+  if (cached && cached.expiry > Date.now()) {
+    console.log(`[Tavily] Cache hit: "${query}"`);
+    return cached.content;
+  }
+
   try {
     const client = getTavily();
     console.log(`[Tavily] Searching: "${query}"`);
@@ -166,7 +198,10 @@ async function searchWeb(query: string, maxResults: number = 5): Promise<string>
       parts.push(`[${result.title}](${result.url}): ${result.content}`);
     }
 
-    return parts.length > 0 ? parts.join('\n\n') : '(No search results found)';
+    const result = parts.length > 0 ? parts.join('\n\n') : '(No search results found)';
+    // Cache the result
+    searchCache.set(cacheKey, { content: result, expiry: Date.now() + SEARCH_TTL_MS });
+    return result;
   } catch (err: any) {
     console.error('[Tavily] Search error:', err.message);
     return `[Search Error: ${err.message}]`;
@@ -197,9 +232,197 @@ function needsSearch(query: string): boolean {
   return true;
 }
 
+/**
+ * Essay review system prompt — strict structural feedback, no generic praise.
+ */
+const ESSAY_REVIEW_SYSTEM_PROMPT = `You are a professional US college admissions essay reviewer. Your job is to give rigorous, specific, and actionable feedback that helps students improve their essays.
+
+## Review Framework
+Structure every review with these sections:
+
+### 1. Overall Assessment
+2-3 sentences: what's working, what's not, whether the prompt is answered effectively.
+
+### 2. Strengths
+3-5 specific things the essay does well. Quote exact passages.
+
+### 3. Areas for Improvement
+For each issue: problem → specific quoted passage → concrete revision suggestion.
+
+### 4. Prompt Alignment
+Does the essay directly and compellingly answer the prompt? If off-target, explain how to realign.
+
+### 5. Voice & Authenticity
+Does it sound like a real teenager, or like a polished adult performing "essay voice"?
+
+### 6. Structural Feedback
+Weak hook? Muddled middle? Abrupt ending? Point to specific passages.
+
+### 7. Revision Priorities
+Top 3 changes for the next draft.
+
+## Rules
+- Be direct and specific. Quote the essay when critiquing.
+- No generic praise ("Great job!"). Be granular ("Your opening line works because it...").
+- Push for authenticity and specificity. "Show, don't tell" is not optional.
+- Do NOT rewrite the essay. Guide the writer to revise themselves.
+- Use markdown.`;
+
 export interface AgentStream {
   [Symbol.asyncIterator](): AsyncIterator<{ text: string }>;
   abort(): Promise<void>;
+}
+
+/**
+ * Create a dedicated essay review stream — no KB search, no web search,
+ * uses the essay review system prompt directly.
+ */
+const SUMMER_RECOMMEND_SYSTEM_PROMPT = `You are an expert summer program advisor for US high school students. Your job is to recommend the best-fit summer programs from the provided list based on the student's profile, interests, and application status.
+
+## Response Format
+For every program you recommend, structure your response as:
+
+### [Program Name]
+- **Signal Strength**: Strong/Positive/Neutral/Mixed — how much this helps college admissions
+- **Fit Score**: 1-5 stars — how well this fits the student's specific profile
+- **Why this program**: 2-3 sentences explaining the fit
+- **Application tip**: One specific thing to highlight in the application
+- **Realistic odds**: Your honest assessment of whether this student would get in
+
+### Programs to be cautious about
+- Explain why a program might not be the right fit
+- Flag selectivity concerns if the student's profile doesn't match
+
+## Rules
+- Be specific — reference the student's actual interests, not generic lists
+- Reference programs by their full names from the KB
+- Be honest about selectivity — don't oversell reach programs
+- Flag programs the student is already tracking (to avoid duplicates)
+- Prioritize free and prestigious programs first
+- Always mention the application deadline
+- Use markdown tables for comparisons when recommending 3+ programs`;
+
+export async function createSummerRecommendStream(
+  programsJson: string,
+  studentProfile: {
+    interests?: string[];
+    budget?: number;
+    applied_programs?: string[];
+    rejected_programs?: string[];
+    grade_level?: string;
+    academic_strength?: string;
+  },
+  model?: string,
+): Promise<AgentStream> {
+  let aborted = false;
+
+  const effectiveModel = model || LLM_MODEL;
+
+  const userContent = [
+    `## Available Summer Programs (KB)`,
+    programsJson,
+    '',
+    `## Student Profile`,
+    `- Interests: ${studentProfile.interests?.join(', ') || 'Not specified'}`,
+    `- Budget: ${studentProfile.budget === 0 ? 'Free only' : studentProfile.budget ? `Up to $${studentProfile.budget}` : 'Not specified'}`,
+    `- Grade Level: ${studentProfile.grade_level || 'Not specified'}`,
+    `- Academic Strength: ${studentProfile.academic_strength || 'Not specified'}`,
+    `- Already Applied: ${studentProfile.applied_programs?.join(', ') || 'None'}`,
+    `- Rejected/Waitlisted: ${studentProfile.rejected_programs?.join(', ') || 'None'}`,
+    '',
+    `Based on the above, recommend the best-fit programs. Group by category (Math, STEM/Research, Leadership, Writing, General Prestige). Include a shortlist of top 5 with fit scores and a broader list of good fits. Mention any upcoming deadlines.`,
+  ].join('\n');
+
+  const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
+    { role: 'system', content: SUMMER_RECOMMEND_SYSTEM_PROMPT },
+    { role: 'user', content: userContent },
+  ];
+
+  console.log(`[SummerRecommend] Calling LLM model=${effectiveModel}`);
+
+  const client = getOpenAI();
+  const stream = await client.chat.completions.create({
+    model: effectiveModel,
+    messages,
+    stream: true,
+    temperature: 0.5,
+    max_tokens: 8192,
+    max_completion_tokens: 8192,
+    // @ts-ignore
+    reasoning_effort: 'medium',
+  });
+
+  const iterator = stream[Symbol.asyncIterator]();
+
+  return {
+    [Symbol.asyncIterator]() {
+      return {
+        async next() {
+          if (aborted) return { value: undefined, done: true };
+          const result = await iterator.next();
+          if (result.done) return { value: undefined, done: true };
+          const choice = result.value.choices?.[0];
+          const delta = choice?.delta;
+          const text = delta?.content || (delta as any)?.reasoning_content || '';
+          return { value: { text }, done: false };
+        },
+      };
+    },
+    async abort() {
+      aborted = true;
+      try { await stream.controller?.abort(); } catch (_) {}
+    },
+  };
+}
+
+export async function createEssayReviewStream(
+  userContent: string,
+  model?: string,
+): Promise<AgentStream> {
+  let aborted = false;
+
+  const effectiveModel = model || LLM_MODEL;
+
+  const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
+    { role: 'system', content: ESSAY_REVIEW_SYSTEM_PROMPT },
+    { role: 'user', content: userContent },
+  ];
+
+  console.log(`[EssayReview] Calling LLM model=${effectiveModel}`);
+
+  const client = getOpenAI();
+  const stream = await client.chat.completions.create({
+    model: effectiveModel,
+    messages,
+    stream: true,
+    temperature: 0.5,
+    max_tokens: 8192,
+    max_completion_tokens: 8192,
+    // @ts-ignore
+    reasoning_effort: 'medium',
+  });
+
+  const iterator = stream[Symbol.asyncIterator]();
+
+  return {
+    [Symbol.asyncIterator]() {
+      return {
+        async next() {
+          if (aborted) return { value: undefined, done: true };
+          const result = await iterator.next();
+          if (result.done) return { value: undefined, done: true };
+          const choice = result.value.choices?.[0];
+          const delta = choice?.delta;
+          const text = delta?.content || (delta as any)?.reasoning_content || '';
+          return { value: { text }, done: false };
+        },
+      };
+    },
+    async abort() {
+      aborted = true;
+      try { await stream.controller?.abort(); } catch (_) {}
+    },
+  };
 }
 
 /**
@@ -211,8 +434,34 @@ export async function createAgentStream(
   history?: Array<{ role: 'user' | 'assistant'; content: string }>,
   userId?: string,
   sessionId?: string,
+  model?: string,
 ): Promise<AgentStream> {
-  const prompt = buildPrompt(userMessage, profile);
+  let prompt = buildPrompt(userMessage, profile);
+
+  // Inject uploaded document text into prompt
+  if (profile?.documents?.length) {
+    try {
+      const uploadsDir = path.resolve(process.cwd(), 'data/uploads');
+      const docTexts: string[] = [];
+      for (const doc of profile.documents) {
+        const files = fs.readdirSync(uploadsDir).filter(f => f.startsWith(doc.id));
+        if (files.length === 0) continue;
+        const ext = files[0].slice(files[0].lastIndexOf('.')).toLowerCase();
+        const buf = fs.readFileSync(path.join(uploadsDir, files[0]));
+        if (['.txt', '.md', '.rtf'].includes(ext)) {
+          const text = buf.toString('utf-8').slice(0, 8000); // cap at 8KB per doc
+          docTexts.push(`\n---\n[Attached: ${doc.filename} (${doc.type})]\n${text}\n---`);
+        } else {
+          docTexts.push(`\n---\n[Attached: ${doc.filename} (${doc.type}) — ${doc.type === 'resume' ? 'resume' : doc.type === 'essay' ? 'essay/writing sample' : 'document'}, uploaded ${new Date(doc.uploadedAt).toLocaleDateString()}]\n---`);
+        }
+      }
+      if (docTexts.length) {
+        prompt += '\n\n[Student Uploaded Documents]\n' + docTexts.join('\n');
+      }
+    } catch (err: any) {
+      console.error('[Agent] Failed to read uploaded docs:', err?.message || err);
+    }
+  }
   let aborted = false;
 
   // KB lookup first
@@ -234,7 +483,23 @@ export async function createAgentStream(
   }
 
   // Step 2: Build messages for LLM
-  const fullContext = userId ? await dossierManager.loadFullContext(userId) : '';
+  // Client-provided model takes priority; fall back to server default
+  const effectiveModel = model || LLM_MODEL;
+  const cacheKey = userId ? `dossier:${userId}` : '';
+  let fullContext = '';
+  if (cacheKey) {
+    const cached = dossierCache.get(cacheKey);
+    if (cached && cached.expiry > Date.now()) {
+      console.log('[Dossier] Cache hit for user:', userId);
+      fullContext = cached.content;
+    }
+  }
+  if (!fullContext && userId) {
+    fullContext = await dossierManager.loadFullContext(userId);
+    if (cacheKey) {
+      dossierCache.set(cacheKey, { content: fullContext, expiry: Date.now() + CACHE_TTL_MS });
+    }
+  }
   const storedSessionHistory = userId && sessionId
     ? await dossierManager.loadMessages(userId, sessionId)
     : [];
@@ -269,7 +534,7 @@ export async function createAgentStream(
   // Step 3: Call LLM with streaming
   const client = getOpenAI();
   const stream = await client.chat.completions.create({
-    model: LLM_MODEL,
+    model: effectiveModel,
     messages,
     stream: true,
     temperature: 0.7,
@@ -302,7 +567,7 @@ export async function createAgentStream(
           const choice = result.value.choices?.[0];
           const delta = choice?.delta;
           // DeepSeek returns reasoning_content separately — prefer content, fallback to reasoning
-          const text = delta?.content || '';
+          const text = delta?.content || (delta as any)?.reasoning_content || '';
           return { value: { text }, done: false };
         },
       };
@@ -417,7 +682,8 @@ Focus on capturing what makes this student DISTINCT — two students with identi
     if (profile?.sat_score) facts.push(`- SAT: ${profile.sat_score}`);
     if (profile?.act_score) facts.push(`- ACT: ${profile.act_score}`);
     if (profile?.intended_majors) facts.push(`- Intended Major: ${profile.intended_majors}`);
-    if (profile?.hooks?.length) facts.push(`- Hooks: ${profile.hooks.join(', ')}`);
+    if (profile?.ethnic_group) facts.push(`- Ethnic Group: ${profile.ethnic_group}`);
+    if (profile?.sex) facts.push(`- Sex: ${profile.sex}`);
     if (profile?.budget) facts.push(`- Budget: $${profile.budget}/year`);
     if (profile?.target_states) facts.push(`- Target States: ${profile.target_states}`);
     if (profile?.extracurriculars) facts.push(`- Activities: ${profile.extracurriculars}`);

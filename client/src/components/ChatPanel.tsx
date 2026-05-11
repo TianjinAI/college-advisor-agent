@@ -206,6 +206,7 @@ export default function ChatPanel({
         history,
         userId,
         sessionId,
+        model: currentModel,
       },
     });
   }, [input, isStreaming, messages, profile, send, setMessages, userId, sessionId]);

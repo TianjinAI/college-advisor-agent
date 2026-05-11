@@ -370,7 +370,7 @@ export interface ParseResult {
  */
 export function parseScorecardCSV(
   csvPath: string = '/tmp/scorecard-recent.csv',
-  outputDir: string = path.resolve(__dirname, '../../../data/colleges'),
+  outputDir: string = path.resolve(process.cwd(), '../data/colleges'),
 ): ParseResult[] {
   // Ensure output directory exists
   fs.mkdirSync(outputDir, { recursive: true });
@@ -443,7 +443,7 @@ export function parseSingleCollege(
 /** Get the cached profile for a college by id, or undefined. */
 export function getCachedProfile(
   collegeId: string,
-  outputDir: string = path.resolve(__dirname, '../../../data/colleges'),
+  outputDir: string = path.resolve(process.cwd(), '../data/colleges'),
 ): CollegeProfile | undefined {
   const jsonPath = path.join(outputDir, `${collegeId}.json`);
   if (!fs.existsSync(jsonPath)) return undefined;

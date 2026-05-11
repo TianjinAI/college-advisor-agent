@@ -1,0 +1,70 @@
+{
+  "id": "mathcamp-2026",
+  "name": "Canada/USA Mathcamp",
+  "brand": "Mathcamp",
+  "discipline": [
+    "math",
+    "pure-math"
+  ],
+  "level": "high-school",
+  "location": "Colorado School of Mines, Golden, CO",
+  "session_dates": "July 6 \u2013 August 3, 2026",
+  "duration_weeks": 5,
+  "cost": {
+    "amount": 5500,
+    "notes": "Generous need-based financial aid; full scholarships available for qualifying students"
+  },
+  "deadline": "2026-03-15",
+  "application_url": "https://mathcamp.org",
+  "selectivity": "very-competitive",
+  "cohort_size": 120,
+  "parent_org": "Canada/USA Mathcamp",
+  "tags": [
+    "math",
+    "pure-math",
+    "prestigious",
+    "in-person",
+    "summer"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 9-12 (pre-college)",
+    "prior_knowledge": [
+      "Algebra 2 or pre-calculus level math",
+      "Curiosity about college-level math"
+    ],
+    "application_requirements": [
+      "Problem set",
+      "transcript",
+      "teacher recommendation",
+      "personal statement"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Tell us about a mathematical idea, concept, or problem that excites you and why.",
+      "word_limit": "500",
+      "tips": [
+        "Be genuine \u2014 Mathcamp values authentic enthusiasm over polished prose",
+        "Specificity is rewarded; vague 'I love problem solving' is not enough"
+      ]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "Positive signal at top math and STEM programs. Mathcamp alumni often go on to major in mathematics or related fields at selective colleges.",
+    "typical_results": "Strong representation at schools like MIT, Harvard, Stanford, Princeton, and liberal arts colleges with strong math departments."
+  },
+  "what_they_look_for": [
+    "Curiosity about mathematics beyond the standard curriculum",
+    "Ability to think creatively about mathematical problems",
+    "Collaborative spirit",
+    "Diversity of mathematical interests"
+  ],
+  "blurbs": {
+    "short": "A 5-week residential summer math program in Colorado for students who want to explore university-level mathematics beyond what school offers.",
+    "long": "Mathcamp is one of the most beloved summer math programs \u2014 it's known for being slightly less intense than Ross or PROMYS while still offering deep, genuine mathematical experiences. Students at Mathcamp take courses in topics ranging from combinatorics to topology to category theory, and the curriculum changes every year. The atmosphere is famously warm and non-competitive \u2014 you're not trying to out-solve everyone else, you're exploring together. Mathcamp is also unusual in its accessibility: it offers generous financial aid and actively recruits students from underrepresented backgrounds in mathematics. The application includes a problem set but it's more about approach and curiosity than getting every answer right."
+  },
+  "curriculum": "Student-chosen courses from a menu of university-level math topics, problem sets, math talks, problem-solving sessions.",
+  "SCRAPED_FROM": "mathcamp.org (training knowledge \u2014 verified core facts)"
+}

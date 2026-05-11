@@ -1,9 +1,25 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import type { ChangeEvent } from 'react';
-import type { StudentProfile } from '../types';
+import type { StudentProfile, UploadedDocument } from '../types';
 
-const HOOK_OPTIONS = ['Legacy', 'First-Gen', 'Recruited Athlete', 'Underrepresented Minority', 'Rural'] as const;
-const SCHOOL_TYPES: StudentProfile['school_type'][] = ['Public', 'Private', 'Charter', 'Homeschool'];
+const SCHOOL_TYPES: StudentProfile['school_type'][] = ['Public', 'Private', 'Both'];
+const ETHNIC_GROUPS = [
+  'White',
+  'Black or African American',
+  'Asian',
+  'Hispanic or Latino',
+  'Native American or Alaska Native',
+  'Native Hawaiian or Pacific Islander',
+  'Two or More Races',
+  'International',
+  'Prefer not to say',
+] as const;
+const SEX_OPTIONS = ['Male', 'Female', 'Non-binary', 'Prefer not to say'] as const;
+const DOC_TYPES: { value: UploadedDocument['type']; label: string }[] = [
+  { value: 'resume', label: 'Resume / CV' },
+  { value: 'essay', label: 'Essay / Writing Sample' },
+  { value: 'other', label: 'Other Document' },
+];
 
 interface ProfileCardProps {
   profile: StudentProfile;
@@ -12,9 +28,52 @@ interface ProfileCardProps {
 
 export default function ProfileCard({ profile, onProfileChange }: ProfileCardProps) {
   const [isExpanded, setIsExpanded] = useState(true);
+  const [uploadStatus, setUploadStatus] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleChange = (field: keyof StudentProfile, value: string | string[]) => {
+  const handleChange = (field: keyof StudentProfile, value: string | string[] | UploadedDocument[]) => {
     onProfileChange({ ...profile, [field]: value });
+  };
+
+  const handleFileUpload = async (e: ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    const file = files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('docType', 'other'); // default; user can change later
+
+    setUploadStatus('Uploading…');
+    try {
+      const resp = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      if (!resp.ok) {
+        const err = await resp.json().catch(() => ({ error: 'Upload failed' }));
+        throw new Error(err.error || `Upload failed (${resp.status})`);
+      }
+      const doc: UploadedDocument = await resp.json();
+      handleChange('documents', [...(profile.documents || []), doc]);
+      setUploadStatus(null);
+    } catch (err: any) {
+      setUploadStatus(err.message || 'Upload failed');
+      setTimeout(() => setUploadStatus(null), 3000);
+    }
+    // Reset file input so same file can be re-uploaded
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
+
+  const handleRemoveDoc = (docId: string) => {
+    handleChange('documents', (profile.documents || []).filter(d => d.id !== docId));
+  };
+
+  const handleDocTypeChange = (docId: string, newType: UploadedDocument['type']) => {
+    const docs = (profile.documents || []).map(d =>
+      d.id === docId ? { ...d, type: newType } : d
+    );
+    handleChange('documents', docs);
   };
 
   return (
@@ -124,6 +183,35 @@ export default function ProfileCard({ profile, onProfileChange }: ProfileCardPro
             />
           </div>
 
+          <div className="profile-field profile-field-inline">
+            <div>
+              <label htmlFor="profile-ethnic-group">Ethnic Group</label>
+              <select
+                id="profile-ethnic-group"
+                value={profile.ethnic_group}
+                onChange={(e) => handleChange('ethnic_group', e.target.value)}
+              >
+                <option value="">Select ethnic group</option>
+                {ETHNIC_GROUPS.map((g) => (
+                  <option key={g} value={g}>{g}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="profile-sex">Sex</label>
+              <select
+                id="profile-sex"
+                value={profile.sex}
+                onChange={(e) => handleChange('sex', e.target.value)}
+              >
+                <option value="">Select sex</option>
+                {SEX_OPTIONS.map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+
           <div className="profile-field">
             <label htmlFor="profile-budget">Budget (annual)</label>
             <input
@@ -154,36 +242,10 @@ export default function ProfileCard({ profile, onProfileChange }: ProfileCardPro
               onChange={(e) => handleChange('school_type', e.target.value)}
             >
               <option value="">Select school type</option>
-              {SCHOOL_TYPES.map((schoolType) => (
-                <option key={schoolType} value={schoolType}>
-                  {schoolType}
-                </option>
+              {SCHOOL_TYPES.map((st) => (
+                <option key={st} value={st}>{st}</option>
               ))}
             </select>
-          </div>
-
-          <div className="profile-field">
-            <label>Hooks</label>
-            <div className="hook-grid">
-              {HOOK_OPTIONS.map((hook) => {
-                const checked = profile.hooks.includes(hook);
-                return (
-                  <label key={hook} className="hook-option">
-                    <input
-                      type="checkbox"
-                      checked={checked}
-                      onChange={(e) => {
-                        const nextHooks = e.target.checked
-                          ? [...profile.hooks, hook]
-                          : profile.hooks.filter((item) => item !== hook);
-                        handleChange('hooks', nextHooks);
-                      }}
-                    />
-                    <span>{hook}</span>
-                  </label>
-                );
-              })}
-            </div>
           </div>
 
           <div className="profile-field">
@@ -198,6 +260,17 @@ export default function ProfileCard({ profile, onProfileChange }: ProfileCardPro
           </div>
 
           <div className="profile-field">
+            <label htmlFor="profile-summer-camps">Summer Camps / Programs</label>
+            <textarea
+              id="profile-summer-camps"
+              value={profile.summer_camps}
+              onChange={(e) => handleChange('summer_camps', e.target.value)}
+              placeholder="e.g. MIT RSI, Yale Summer Session, Columbia Summer Pre-College"
+              rows={4}
+            />
+          </div>
+
+          <div className="profile-field">
             <label htmlFor="profile-awards-honors">Awards &amp; Honors</label>
             <textarea
               id="profile-awards-honors"
@@ -206,6 +279,57 @@ export default function ProfileCard({ profile, onProfileChange }: ProfileCardPro
               placeholder="Competitions, awards, distinctions"
               rows={4}
             />
+          </div>
+
+          {/* Document Upload */}
+          <div className="profile-field">
+            <label>Upload Resume / Essay</label>
+            <div className="upload-area">
+              <button
+                type="button"
+                className="upload-btn"
+                onClick={() => fileInputRef.current?.click()}
+                title="Upload a resume, essay, or other document to give the advisor more context"
+              >
+                <span className="upload-icon">📎</span> Attach file
+              </button>
+              {uploadStatus && <span className="upload-status">{uploadStatus}</span>}
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".pdf,.doc,.docx,.txt,.rtf,.md"
+                style={{ display: 'none' }}
+                onChange={handleFileUpload}
+              />
+            </div>
+            {(profile.documents || []).length > 0 && (
+              <div className="doc-list">
+                {(profile.documents || []).map((doc) => (
+                  <div key={doc.id} className="doc-item">
+                    <select
+                      className="doc-type-select"
+                      value={doc.type}
+                      onChange={(e) => handleDocTypeChange(doc.id, e.target.value as UploadedDocument['type'])}
+                    >
+                      {DOC_TYPES.map(dt => (
+                        <option key={dt.value} value={dt.value}>{dt.label}</option>
+                      ))}
+                    </select>
+                    <span className="doc-filename" title={doc.filename}>
+                      {doc.filename.length > 20 ? doc.filename.slice(0, 17) + '…' : doc.filename}
+                    </span>
+                    <button
+                      type="button"
+                      className="doc-remove"
+                      onClick={() => handleRemoveDoc(doc.id)}
+                      title="Remove document"
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}

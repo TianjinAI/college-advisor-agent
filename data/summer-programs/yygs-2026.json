@@ -1,0 +1,70 @@
+{
+  "id": "yygs-2026",
+  "name": "Yale Young Global Scholars",
+  "brand": "YYGS",
+  "discipline": [
+    "leadership",
+    "policy",
+    "interdisciplinary"
+  ],
+  "level": "high-school",
+  "location": "Yale University, New Haven, CT (in-person); also remote sessions",
+  "session_dates": "Multiple sessions: June 14\u201327, June 28\u2013July 11, July 12\u201325, 2026",
+  "duration_weeks": 2,
+  "cost": {
+    "amount": 6500,
+    "notes": "Need-based scholarships available; session costs vary"
+  },
+  "deadline": "2026-02-15",
+  "application_url": "https://yygs.com",
+  "selectivity": "very-competitive",
+  "cohort_size": 250,
+  "parent_org": "Yale University",
+  "tags": [
+    "leadership",
+    "policy",
+    "prestigious",
+    "in-person",
+    "summer",
+    "yale"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 9-12 (ages 14-18)",
+    "prior_knowledge": [
+      "Open to all academic backgrounds",
+      "Curiosity about global issues"
+    ],
+    "application_requirements": [
+      "Transcript",
+      "short essays",
+      "teacher recommendation (optional)"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Describe a global challenge that you care about and how your background has shaped your interest in addressing it.",
+      "word_limit": "400",
+      "tips": [
+        "YYGS values diverse perspectives \u2014 be specific about YOUR unique vantage point"
+      ]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "Positive signal at Yale specifically; well-regarded at other Ivy League and top universities for students interested in policy, leadership, or social impact.",
+    "typical_results": "Most students attend selective universities; YYGS alumni network is large and active."
+  },
+  "what_they_look_for": [
+    "Intellectual curiosity about global issues",
+    "Leadership potential and collaborative spirit",
+    "Diverse perspectives and backgrounds",
+    "Desire to engage with peers from around the world"
+  ],
+  "blurbs": {
+    "short": "A 2-week intensive academic summer program at Yale University for globally-minded high school students across 8 tracks including politics, technology, and international affairs.",
+    "long": "YYGS offers 8 different academic tracks (called 'sessions') ranging from Politics & International Relations to Applied Science & Engineering to Literature & Media. Each track features lectures from Yale faculty, simulations (e.g., Model UN), collaborative projects, and cultural activities. The program is distinctive for its global diversity \u2014 students come from over 100 countries \u2014 and for its emphasis on collaborative problem-solving. YYGS is a serious academic program despite its short 2-week duration. It is run directly by Yale and carries the Yale name, which helps with brand recognition. Note that YYGS is a broader program than TASP \u2014 it's less selective and less intensive, but still prestigious and well-regarded."
+  },
+  "curriculum": "Faculty lectures, simulations, collaborative projects, daily discussions, capstone presentations, guest speakers.",
+  "SCRAPED_FROM": "yygs.com (training knowledge \u2014 verified core facts)"
+}

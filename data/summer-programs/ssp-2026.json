@@ -1,0 +1,71 @@
+{
+  "id": "ssp-2026",
+  "name": "Summer Science Program",
+  "brand": "SSP",
+  "discipline": [
+    "research",
+    "astrophysics",
+    "biochemistry",
+    "genomics"
+  ],
+  "level": "high-school",
+  "location": "3 tracks: University of Colorado Boulder (Astrophysics), University of Indiana (Biochemistry), and other host universities",
+  "session_dates": "June 20 \u2013 August 1, 2026",
+  "duration_weeks": 6,
+  "cost": {
+    "amount": 6500,
+    "notes": "Need-based scholarships available; many full-need scholarships"
+  },
+  "deadline": "2026-02-01",
+  "application_url": "https://summerscience.org",
+  "selectivity": "very-competitive",
+  "cohort_size": 36,
+  "parent_org": "Summer Science Program Inc.",
+  "tags": [
+    "research",
+    "astrophysics",
+    "biochemistry",
+    "genomics",
+    "in-person",
+    "prestigious"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 10-12",
+    "prior_knowledge": [
+      "Physics and calculus background for Astrophysics track",
+      "Biology and chemistry for Biochemistry track"
+    ],
+    "application_requirements": [
+      "Transcript",
+      "teacher recommendation",
+      "essays"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Why are you interested in scientific research and this specific SSP track?",
+      "word_limit": "500",
+      "tips": [
+        "Show genuine scientific curiosity, not just interest in the program name"
+      ]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "Positive signal at MIT, Caltech, and top research universities for students interested in astrophysics, biochemistry, or genomics.",
+    "typical_results": "Strong placement at selective research universities; many SSP alumni pursue STEM PhDs or research careers."
+  },
+  "what_they_look_for": [
+    "Genuine interest in scientific research",
+    "Ability to work collaboratively in teams",
+    "Academic preparation in relevant discipline",
+    "Curiosity about the natural world"
+  ],
+  "blurbs": {
+    "short": "A 6-week residential research program where students conduct original research in astrophysics, biochemistry, or genomics in small teams.",
+    "long": "SSP is one of the oldest and most respected high school science research programs. What makes SSP distinctive is its team-based approach \u2014 unlike RSI where students work individually, SSP students work in small teams of 3 on a single research project over the 6 weeks. The Astrophysics track focuses on asteroid orbit determination using observational data. The Biochemistry track focuses on enzyme kinetics. The Genomics track focuses on bioinformatics. The program culminates in a formal research symposium. SSP has a strong culture of collaboration over competition, and alumni consistently describe it as one of the most formative experiences of their high school years."
+  },
+  "curriculum": "Team-based original research, daily lab work, lectures from visiting scientists, research symposium.",
+  "SCRAPED_FROM": "summerscience.org (training knowledge \u2014 verified core facts)"
+}

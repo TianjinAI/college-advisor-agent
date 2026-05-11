@@ -17,7 +17,7 @@ import { CollegeProfile } from './types';
 function parseArgs(): { csvPath: string; outputDir: string } {
   const args = process.argv.slice(2);
   let csvPath = '/tmp/scorecard-recent.csv';
-  let outputDir = path.resolve(__dirname, '../../../data/colleges');
+  let outputDir = path.resolve(process.cwd(), '../data/colleges');
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--csv' && args[i + 1]) {

@@ -154,6 +154,7 @@ college-advisor-agent/
 │   └── knowledge/
 │       ├── retriever.ts         # In-memory RAG search
 │       ├── dossier.ts           # DossierManager (wiki, conversations, sessions)
+│       ├── essayManager.ts      # EssayManager (save/load/list per user)
 │       ├── types.ts             # CollegeProfile, ExpertInsight types
 │       ├── scorecard.ts         # College Scorecard parser
 │       └── ingest.ts            # CLI ingestion tool
@@ -166,12 +167,16 @@ college-advisor-agent/
 │   │   ├── ChatPanel.tsx        # Chat with WS + session support
 │   │   ├── MessageBubble.tsx    # Markdown-rendered messages
 │   │   ├── ModelSwitcher.tsx    # LLM model selector
-│   │   └── SchoolDirectory.tsx  # Collapsible school browser
+│   │   ├── SchoolDirectory.tsx  # Collapsible school browser
+│   │   ├── EssayPanel.tsx       # Essay prompts/patterns/reference library
+│   │   └── EssayWorkspace.tsx   # Draft submission + streaming review
 │   └── styles/index.css         # Taste-skill design system
 └── scripts/                     # Data pipeline scripts
 ```
 
 ## WebSocket Protocol
+
+### Chat Messages
 
 | Direction | Type | Description |
 |-----------|------|-------------|
@@ -181,6 +186,15 @@ college-advisor-agent/
 | Server → Client | `text_start` | `{ messageId: string }` |
 | Server → Client | `text_delta` | `{ text, done, messageId, source?: 'kb'\|'web'\|'hybrid' }` |
 | Server → Client | `error` | `{ text: string }` |
+
+### Essay Review Messages
+
+| Direction | Type | Description |
+|-----------|------|-------------|
+| Client → Server | `review_essay` | `{ essayId, essayText, promptId, promptLabel, promptText, wordLimit, tips, pitfalls, userId, model }` |
+| Server → Client | `review_start` | `{ essayId: string }` |
+| Server → Client | `review_delta` | `{ text: string, done: boolean }` |
+| Server → Client | `review_error` | `{ text: string }` |
 
 ## REST API
 
@@ -193,6 +207,11 @@ college-advisor-agent/
 | GET | `/api/user/profile?userId=X` | Get display name |
 | PUT | `/api/user/profile` | Set display name `{ userId, displayName }` |
 | GET | `/api/models` | List available LLM models |
+| GET | `/api/essays/stats` | KB stats (prompt/pattern counts) |
+| GET | `/api/essays/prompts` | List all essay prompts |
+| GET | `/api/essays/patterns` | List all essay patterns |
+| GET | `/api/essays/user/:userId` | List user's essay submissions |
+| POST | `/api/essays/user/:userId` | Save essay submission |
 | GET | `/health` | Health check |
 
 ## Roadmap
@@ -208,7 +227,7 @@ college-advisor-agent/
 - [x] Model switching (14 models)
 
 ### 🔜 Phase 2 — Narrative Depth (Planned)
-- [ ] **Essay Writing & Review** — dedicated workspace for drafting, reviewing, and iterating on application essays. KB of successful essay patterns, common mistakes, prompt-specific guidance
+- [x] **Essay Writing & Review** — dedicated workspace for drafting, reviewing, and iterating on application essays. KB of 34 prompts + 15 patterns, streaming structured feedback, per-user essay history
 - [ ] **Summer Programs** — curated database of STEM/Math/AI/Coding summer camps and programs. Deadlines, selectivity, cost, application requirements. Impact analysis on college applications
 - [ ] **Competitions** — state and national-level STEM competitions database. AMC/AIME/USAMO, USACO, ISEF, Regeneron, Olympiads. How competition performance maps to admissions outcomes
 - [ ] **Application Strategy Engine** — ED/EA/RD optimization, school list balancing, demonstrated interest tracking

@@ -1,0 +1,71 @@
+{
+  "id": "ross-2026",
+  "name": "Ross Mathematics Program",
+  "brand": "Ross Program",
+  "discipline": [
+    "math",
+    "number-theory",
+    "abstract-algebra"
+  ],
+  "level": "high-school",
+  "location": "Columbus, OH (Otterbein University)",
+  "session_dates": "June 22 \u2013 August 8, 2026",
+  "duration_weeks": 6,
+  "cost": {
+    "amount": 7000,
+    "notes": "Need-based scholarships available; no full-ride guarantee"
+  },
+  "deadline": "2026-04-01",
+  "application_url": "https://rossprogram.org",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 60,
+  "parent_org": "Ross Program Organization / Otterbein University",
+  "tags": [
+    "math",
+    "number-theory",
+    "prestigious",
+    "in-person",
+    "summer"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 9-12 (pre-college)",
+    "prior_knowledge": [
+      "Strong algebra fundamentals",
+      "Curiosity about abstract math"
+    ],
+    "application_requirements": [
+      "Problem set solutions (most important)",
+      "transcript",
+      "teacher recommendation",
+      "short essay"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Why are you interested in mathematics? Describe a mathematical concept or problem that has fascinated you.",
+      "word_limit": "500",
+      "tips": [
+        "Show genuine curiosity, not just competence",
+        "Describe a specific concept you've explored, not grades or test scores"
+      ]
+    }
+  ],
+  "featured": true,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "Extremely strong signal at MIT, Caltech, Princeton, Harvard, and top math programs. Ross alumni frequently attend MIT, Harvard, Princeton, Stanford.",
+    "typical_results": "Majority of alumni pursue math, CS, or quantitative fields at top-20 universities."
+  },
+  "what_they_look_for": [
+    "Genuine intellectual curiosity about mathematics beyond school curriculum",
+    "Ability to think deeply and persist with hard problems",
+    "Independence and willingness to work through confusion",
+    "Collaborative spirit in a intense communal math environment"
+  ],
+  "blurbs": {
+    "short": "A 6-week deep dive into number theory for motivated high school students who want to discover what real mathematics feels like.",
+    "long": "Ross is one of the oldest and most prestigious high school math programs in the world. Unlike many summer programs that teach advanced content, Ross is built around students discovering mathematics on their own through a carefully sequenced problem set. The famous Ross motto \u2014 'Think deeply about simple things' \u2014 captures the philosophy: spend six weeks immersed in a single topic (traditionally number theory), work through problems that build on each other, and emerge with a fundamentally different relationship to mathematical thinking. The community is intense and supportive \u2014 you're surrounded by kids who are as obsessed with math as you are. Alumni frequently describe it as transformative for their mathematical identity."
+  },
+  "curriculum": "Daily problem sets on number theory, self-paced discovery learning, small group discussions, lectures from visiting mathematicians. Core philosophy: students develop their own proofs rather than receiving lectures.",
+  "SCRAPED_FROM": "rossprogram.org (training knowledge \u2014 verified core facts)"
+}

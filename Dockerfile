@@ -5,7 +5,7 @@ RUN corepack enable
 FROM base AS client-builder
 WORKDIR /app/client
 COPY client/package.json client/package-lock.json* ./
-RUN npm ci
+RUN npm install
 COPY client/ ./
 RUN npm run build
 
@@ -13,7 +13,8 @@ RUN npm run build
 FROM base AS server-builder
 WORKDIR /app/server
 COPY server/package.json server/package-lock.json* ./
-RUN npm ci
+RUN npm install
+RUN npm install @types/node typescript --save-dev
 COPY server/ ./
 RUN npm run build
 

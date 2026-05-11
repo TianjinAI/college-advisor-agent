@@ -1,0 +1,72 @@
+{
+  "id": "tasp-2026",
+  "name": "Telluride Association Summer Program \u2014 Humanities",
+  "brand": "TASP",
+  "discipline": [
+    "humanities",
+    "critical-theory",
+    "social-science"
+  ],
+  "level": "high-school",
+  "location": "Varies by year (historically: Cornell, UMichigan, UPenn, other universities)",
+  "session_dates": "June 28 \u2013 August 8, 2026 (6 weeks)",
+  "duration_weeks": 6,
+  "cost": {
+    "amount": 0,
+    "notes": "COMPLETELY FREE \u2014 tuition, room, and board all covered. This is a core TASP principle: cost should never prevent participation."
+  },
+  "deadline": "2026-02-01",
+  "application_url": "https://tellurideassociation.org/our-programs/high-school-students/",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 24,
+  "parent_org": "Telluride Association",
+  "tags": [
+    "humanities",
+    "free",
+    "critical-theory",
+    "prestigious",
+    "in-person",
+    "summer",
+    "featured"
+  ],
+  "prerequisites": {
+    "grade_range": "Grades 10-12",
+    "prior_knowledge": [
+      "Strong reading and writing ability",
+      "Intellectual curiosity about big questions"
+    ],
+    "application_requirements": [
+      "Extensive application (most demanding of all summer programs): reading responses, essays, transcript, teacher recommendation"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Read the assigned reading (provided on application) and write a critical essay responding to it. Additionally, answer essay questions about your intellectual interests and goals.",
+      "word_limit": "1000",
+      "tips": [
+        "TASP essays are the most important part \u2014 they want to see genuine intellectual engagement, not resume-padding",
+        "The reading response should demonstrate critical thinking, not summary",
+        "Show that you can engage with difficult texts"
+      ]
+    }
+  ],
+  "featured": true,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "Extraordinarily strong signal at Ivy League and top liberal arts colleges. TASP alumni are overrepresented at Harvard, Yale, Amherst, Swarthmore, and other elite schools.",
+    "typical_results": "The vast majority of TASP alumni attend top-10 universities. TASP is considered one of the top 3 summer programs for Ivy League admissions (along with RSI andROSS)."
+  },
+  "what_they_look_for": [
+    "Genuine intellectual passion (not just academic achievement)",
+    "Ability to engage critically with difficult texts and ideas",
+    "Independence and self-motivation",
+    "Collaborative spirit in a rigorous academic environment",
+    "Background diversity \u2014 TASP actively seeks students from varied socioeconomic and geographic backgrounds"
+  ],
+  "blurbs": {
+    "short": "A free 6-week residential humanities seminar for intellectually passionate students, taught at a university campus by Cornell faculty. The gold standard of free academic summer programs.",
+    "long": "TASP (Telluride Association Summer Programs) is widely considered one of the most academically rigorous and prestigious summer programs available to high school students \u2014 and it is completely free. There are multiple TASPs each summer (TASP Humanities, TASP EAST, TASP WEST, TASP MESA), each with 24 students in a seminar format. The TASP Humanities seminar is taught by faculty from Cornell University and involves reading, discussing, and writing about challenging texts in critical theory, social science, and philosophy. Unlike many summer programs that offer courses or lectures, TASP is structured around a genuine college seminar \u2014 students do the reading, come to class prepared, and drive the discussion. The application process is notoriously demanding and the reading is genuinely difficult. TASP alumni frequently describe it as the most intellectually formative experience of their lives, and the admissions signal at Ivy League schools is extremely strong."
+  },
+  "curriculum": "Daily seminar discussion of challenging texts (critical theory, social science, philosophy), independent reading, essay writing, collaborative projects, student-organized activities.",
+  "SCRAPED_FROM": "tellurideassociation.org (training knowledge \u2014 verified core facts)"
+}

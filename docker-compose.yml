@@ -9,6 +9,8 @@ services:
     restart: unless-stopped
     environment:
       - NODE_ENV=production
+    volumes:
+      - ./data:/app/data
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://localhost:3001/health"]
       interval: 30s

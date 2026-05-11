@@ -84,38 +84,53 @@ export class DossierManager {
     }
   }
 
-  // ─── User profile (display name) ─────────────────────────────────────
+  // ─── User profile (display name + student profile) ───────────────────
 
   private getUserProfilePath(userId: string): string {
     return path.join(this.getUserDir(userId), 'profile.json');
   }
 
-  async getDisplayName(userId: string): Promise<string> {
+  private async readUserProfile(userId: string): Promise<Record<string, unknown>> {
     try {
       const raw = await fs.readFile(this.getUserProfilePath(userId), 'utf8');
-      const profile = JSON.parse(raw) as { displayName?: string };
-      return profile.displayName || '';
+      return JSON.parse(raw) as Record<string, unknown>;
     } catch (error: any) {
-      if (error?.code === 'ENOENT') return '';
+      if (error?.code === 'ENOENT') return {};
       throw error;
     }
   }
 
-  async setDisplayName(userId: string, displayName: string): Promise<void> {
+  private async writeUserProfile(userId: string, profile: Record<string, unknown>): Promise<void> {
     const filePath = this.getUserProfilePath(userId);
     const dirPath = path.dirname(filePath);
     await fs.mkdir(dirPath, { recursive: true });
-
-    let profile: Record<string, unknown> = {};
-    try {
-      const raw = await fs.readFile(filePath, 'utf8');
-      profile = JSON.parse(raw) as Record<string, unknown>;
-    } catch (error: any) {
-      if (error?.code !== 'ENOENT') throw error;
-    }
-
-    profile.displayName = displayName.trim();
     await fs.writeFile(filePath, JSON.stringify(profile, null, 2), 'utf8');
+  }
+
+  async getUserProfile(userId: string): Promise<Record<string, unknown>> {
+    return this.readUserProfile(userId);
+  }
+
+  async getDisplayName(userId: string): Promise<string> {
+    const profile = await this.readUserProfile(userId);
+    return typeof profile.displayName === 'string' ? profile.displayName : '';
+  }
+
+  async setDisplayName(userId: string, displayName: string): Promise<void> {
+    const profile = await this.readUserProfile(userId);
+    profile.displayName = displayName.trim();
+    await this.writeUserProfile(userId, profile);
+  }
+
+  async getStudentProfile(userId: string): Promise<import('../types.js').StudentProfile> {
+    const profile = await this.readUserProfile(userId);
+    return (profile.studentProfile as import('../types.js').StudentProfile) || {};
+  }
+
+  async setStudentProfile(userId: string, studentProfile: import('../types.js').StudentProfile): Promise<void> {
+    const profile = await this.readUserProfile(userId);
+    profile.studentProfile = studentProfile;
+    await this.writeUserProfile(userId, profile);
   }
 
   // ─── Dossier (student profile Wiki page) ─────────────────────────────
