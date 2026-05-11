@@ -25,7 +25,7 @@ app.use('/api/essays', essaysRouter);
 app.use('/api/summer-programs', summerProgramsRouter);
 app.use('/api/upload', uploadRouter);
 
-// Health check (must be before static middleware + catch-all)
+// Health check (must be first, before any static middleware)
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok', service: 'college-advisor-agent', env: IS_PROD ? 'production' : 'development' });
 });
@@ -46,9 +46,9 @@ app.get('/api/models', async (_req, res) => {
   }
 });
 
-// In production, serve the client build as static files
+// Serve React static files in production (after API routes, before SPA fallback)
 if (IS_PROD) {
-  const clientDist = path.resolve(process.cwd(), './client/dist');
+  const clientDist = path.resolve(process.cwd(), '../client/dist');
   app.use(express.static(clientDist));
   // SPA fallback: serve index.html for all non-API routes
   app.get('*', (_req, res) => {
