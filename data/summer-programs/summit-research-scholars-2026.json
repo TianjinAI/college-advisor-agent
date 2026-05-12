@@ -23,6 +23,7 @@
   "cohort_size": 30,
   "parent_org": "Summit Education",
   "tags": [
+    "SRS",
     "research",
     "stem",
     "virtual",
@@ -30,7 +31,8 @@
     "python",
     "statistics",
     "high-school",
-    "capstone"
+    "capstone",
+    "summit"
   ],
   "url": "https://www.summiteducation.org/srs",
   "prerequisites": {
