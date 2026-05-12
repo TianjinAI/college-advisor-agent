@@ -1,0 +1,52 @@
+{
+  "id": "nasa-intern-2026",
+  "name": "NASA High School Internship Programs",
+  "brand": "NASA Internships",
+  "discipline": ["stem", "engineering", "cs", "physics", "aerospace", "earth-science"],
+  "level": "high-school",
+  "location": "NASA Centers (Goddard, Langley, Johnson Space Center, Jet Propulsion Laboratory, etc.)",
+  "session_dates": "Summer (typically June–August, 8-10 weeks; Fall/Spring also available)",
+  "duration_weeks": 8,
+  "cost": { "amount": 0, "notes": "PAID internship. Stipend varies by center and education level. US citizenship required." },
+  "deadline": "Rolling admissions — typically January-March for summer",
+  "application_url": "https://www.nasa.gov/learning-resources/internship-programs/",
+  "selectivity": "competitive",
+  "cohort_size": 200,
+  "parent_org": "NASA (National Aeronautics and Space Administration)",
+  "tags": ["engineering", "cs", "aerospace", "paid", "stem", "government", "us-citizenship-required", "in-person"],
+  "prerequisites": {
+    "grade_range": "High school seniors (must be 16+ by start date); also open to undergrad/grad students",
+    "prior_knowledge": ["Strong STEM background", "US citizenship required (with limited exceptions for some programs)"],
+    "application_requirements": ["NASA internships portal application", "Transcript", "Personal statement", "Recommendations"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe your interest in NASA and the space program. What specific NASA mission or research area excites you most?",
+      "word_limit": "400",
+      "tips": ["NASA mentors want students who are genuinely inspired by space exploration and can connect their specific skills/interests to NASA's work"]
+    },
+    {
+      "prompt": "What would you contribute to the NASA team if selected for this internship?",
+      "word_limit": "300",
+      "tips": ["Show that you understand NASA is a team of diverse experts — what unique perspective or skills would you bring?"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "NASA internships are highly valued by engineering, physics, and aerospace programs. The NASA name on a college application signals both technical ability and a commitment to exploration and discovery.",
+    "typical_results": "Many alumni pursue aerospace engineering, physics, or planetary science at top programs. Some go on to become NASA employees or contractors after college."
+  },
+  "what_they_look_for": [
+    "US citizenship is required for most NASA centers (JPL has some limited exceptions)",
+    "Strong STEM academic record",
+    "Specific interest in aerospace, engineering, or space science",
+    "Ability to work in a large government research environment",
+    "Age 16+ typically required"
+  ],
+  "blurbs": {
+    "short": "Paid internship opportunities at NASA research centers across the US for high school seniors (16+). Students work on real NASA missions and research projects alongside NASA scientists and engineers. Internships are available at centers including Goddard Space Flight Center, Langley Research Center, Johnson Space Center, Jet Propulsion Laboratory, and more.",
+    "long": "NASA offers paid internship programs for high school students at many of its research centers across the United States. High school seniors (typically 16+) can apply for 8-10 week summer internships through NASA's internship portal. Students work alongside NASA civil servants and contractors on active research projects spanning aerospace engineering, planetary science, Earth observation, astrophysics, computer science, robotics, and more. Internships are available year-round (Fall, Spring, and Summer terms) but the Summer term is the most competitive. NASA provides a stipend that varies by center and education level. US citizenship is required for most positions. At centers like the Jet Propulsion Laboratory (JPL), Goddard Space Flight Center, Johnson Space Center, and others, high school interns have the opportunity to contribute to real missions — some students have had their work directly incorporated into NASA projects. The application is through NASA's central portal and is competitive."
+  },
+  "curriculum": "Full-time research or engineering work at a NASA center; mentorship from NASA scientists and engineers; project-based contributions to active NASA work; professional development; final presentations. Work varies significantly by center and project."
+}

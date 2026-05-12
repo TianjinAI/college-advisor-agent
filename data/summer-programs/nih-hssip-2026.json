@@ -1,0 +1,51 @@
+{
+  "id": "nih-hssip-2026",
+  "name": "NIH High School Summer Internship Program (HS-SIP)",
+  "brand": "NIH HS-SIP",
+  "discipline": ["stem", "research", "biology", "biomedical", "public-health"],
+  "level": "high-school",
+  "location": "NIH Campuses (primarily Bethesda, MD; multiple campuses nationwide)",
+  "session_dates": "June–August (typically 8 weeks)",
+  "duration_weeks": 8,
+  "cost": { "amount": 0, "notes": "PAID internship. Stipend based on education level. Free parking at NIH campuses." },
+  "deadline": "Typically January-February",
+  "application_url": "https://www.training.nih.gov/research-training/pb/sip/",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 100,
+  "parent_org": "National Institutes of Health (NIH)",
+  "tags": ["research", "biomedical", "paid", "stem", "government", "us-citizenship-required", "in-person"],
+  "prerequisites": {
+    "grade_range": "High school seniors or graduates; must be 18 by Sept 30 (or 17 with restrictions)",
+    "prior_knowledge": ["Strong science background", "US citizenship or permanent residency required"],
+    "application_requirements": ["NIH Application Center profile", "Online application", "Transcript", "Recommendations"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe your research interests and how they align with NIH's mission.",
+      "word_limit": "400",
+      "tips": ["NIH looks for students with specific, informed research interests aligned with their intramural research program"]
+    },
+    {
+      "prompt": "Describe a scientific concept or discovery that excited you and why.",
+      "word_limit": "300",
+      "tips": ["Show genuine intellectual curiosity — NIH mentors want students who are genuinely excited by science"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "NIH HS-SIP is one of the most prestigious biomedical internships available to high school students. Alumni are strongly positioned for top pre-med and biology programs.",
+    "typical_results": "Many alumni go on to top medical schools, biology PhD programs, or careers in biomedical research. The NIH name carries enormous weight in academic medicine."
+  },
+  "what_they_look_for": [
+    "US citizenship or permanent residency (strict requirement)",
+    "Must be 18 years old by September 30 (exceptions for 17-year-olds within 40 miles of an NIH campus)",
+    "Strong academic record in science courses",
+    "Specific, informed interest in biomedical or behavioral research"
+  ],
+  "blurbs": {
+    "short": "A paid 8-week biomedical research internship at the National Institutes of Health (NIH). Students work in research labs across NIH campuses — primarily Bethesda, MD — alongside world-leading scientists. Stipend-based compensation makes this one of the few paid high school STEM research programs.",
+    "long": "The NIH High School Summer Internship Program (HS-SIP) places talented high school students in biomedical research labs within the NIH Intramural Research Program. Students work full-time for approximately 8 weeks alongside NIH scientists on real research projects spanning biology, engineering, epidemiology, psychology, mathematics, chemistry, and more. The program is paid — students receive a stipend based on their education level — and free parking is available at NIH campuses. US citizenship or permanent residency is required. Participants also have access to NIH's professional development programming, the Graduate and Professional School Fair, and Summer Poster Day. The NIH's global reputation in biomedical research makes this one of the most respected experiences a high school student can have in science."
+  },
+  "curriculum": "Full-time research internship in an NIH lab; professional development seminars; Graduate and Professional School Fair; Summer Poster Day where interns present their research to the NIH community."
+}

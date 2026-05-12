@@ -1,0 +1,51 @@
+{
+  "id": "tubers-2026",
+  "name": "Tufts University Biomedical Engineering Urban Students Summer Research (TUBERS)",
+  "brand": "TUBERS",
+  "discipline": ["stem", "engineering", "biomedical", "research", "biology"],
+  "level": "high-school",
+  "location": "Tufts University, Medford/Somerville, MA (commuter program)",
+  "session_dates": "Summer (typically July–August, 6 weeks)",
+  "duration_weeks": 6,
+  "cost": { "amount": 0, "notes": "Free to attend. Need-based transportation stipends may be available." },
+  "deadline": "Typically March",
+  "application_url": "https://www.tufts-tubers.com/",
+  "selectivity": "very-competitive",
+  "cohort_size": 15,
+  "parent_org": "Tufts University",
+  "tags": ["research", "biomedical-engineering", "engineering", "stem", "tufts", "free", "commuter"],
+  "prerequisites": {
+    "grade_range": "High school juniors and seniors (Boston-area students preferred)",
+    "prior_knowledge": ["Strong biology and/or engineering interest", "Interest in biomedical engineering and translational medicine"],
+    "application_requirements": ["Online application", "Personal statement", "Teacher recommendation", "Transcript"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe your interest in biomedical engineering and what human health challenge you would like to help solve.",
+      "word_limit": "400",
+      "tips": ["Tufts Biomedical Engineering is internationally recognized — show specific awareness of the field's frontier challenges"]
+    },
+    {
+      "prompt": "Why is TUBERS specifically a good fit for your goals?",
+      "word_limit": "300",
+      "tips": ["Show that you've done your research on Tufts BME and can articulate why this specific program matters for your development"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "TUBERS alumni are strong candidates for Tufts and other top biomedical engineering programs. The program's small cohort means each student gets deep, individualized mentorship.",
+    "typical_results": "Many alumni pursue biomedical engineering, biology, or pre-med at Tufts and other research universities."
+  },
+  "what_they_look_for": [
+    "Genuine interest in the intersection of engineering and medicine",
+    "Strong academic record in science and math",
+    "Boston-area students given preference (program is commuter-based)",
+    "Ability to work independently in a research environment"
+  ],
+  "blurbs": {
+    "short": "A free 6-week commuter research program at Tufts University's School of Engineering for Boston-area high school students interested in biomedical engineering. ~15 students conduct mentored research in Tufts BME labs, learning how engineering principles are applied to solve human health problems.",
+    "long": "TUBERS (Tufts University Biomedical Engineering Urban Students Summer Research) is a six-week free research program for approximately 15 Boston-area high school students held at Tufts University's School of Engineering. The program focuses specifically on biomedical engineering — the application of engineering principles to medicine and human health — and gives students hands-on experience in active Tufts BME research labs. Students work one-on-one with Tufts faculty and graduate students on research projects spanning areas like tissue engineering, medical devices, drug delivery, and computational biology. The program is commuter-based (not residential), making it ideal for students who live in the Boston area. TUBERS is particularly focused on students from backgrounds historically underrepresented in engineering and medicine. The program is a strong option for students interested in biomedical engineering, bioengineering, or the broader pre-med track who want to experience research at a top-tier engineering school before applying to college."
+  },
+  "curriculum": "6 weeks of mentored research in Tufts BME labs; weekly seminars from Tufts faculty on biomedical engineering frontiers; professional development; final research symposium presentation. Significant independent lab work."
+}

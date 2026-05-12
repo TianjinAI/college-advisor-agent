@@ -1,0 +1,51 @@
+{
+  "id": "broad-scholars-2026",
+  "name": "Broad Summer Scholars Program (BSSP)",
+  "brand": "Broad Scholars",
+  "discipline": ["stem", "research", "genomics", "biomedical", "computational-biology"],
+  "level": "high-school",
+  "location": "Broad Institute of MIT and Harvard, Cambridge, MA",
+  "session_dates": "June–August (6 weeks)",
+  "duration_weeks": 6,
+  "cost": { "amount": 0, "notes": "Free to attend. Students receive a stipend. Transportation assistance available." },
+  "deadline": "Typically February",
+  "application_url": "https://www.broadinstitute.org/partnerships/education/k-12-outreach/broad-summer-scholars-program",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 30,
+  "parent_org": "Broad Institute of MIT and Harvard",
+  "tags": ["research", "genomics", "computational-biology", "biomedical", "mit", "harvard", "free", "stipend"],
+  "prerequisites": {
+    "grade_range": "Grades 10-11 (rising juniors and seniors)",
+    "prior_knowledge": ["Strong biology and/or computer science background", "Interest in genomics and biomedical research"],
+    "application_requirements": ["Online application", "Transcript", "Personal statement", "Teacher recommendation", "Student essay"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe a scientific question or problem that fascinates you and why.",
+      "word_limit": "400",
+      "tips": ["Broad Institute values intellectual curiosity about how genomics and computational biology can transform our understanding of disease"]
+    },
+    {
+      "prompt": "What do you hope to contribute to the Broad Scholars community?",
+      "word_limit": "300",
+      "tips": ["Broad values collaborative, community-minded students — show both your individual passion and your commitment to contributing to a team"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "Broad Scholars alumni are extremely well-positioned for top biology, genomics, and biomedical programs. The Broad Institute's prestige in the scientific community is immense.",
+    "typical_results": "Many alumni go on to MIT, Harvard, Stanford, and Ivy League programs in biology, genetics, or computational fields. Several alumni have published research from the program."
+  },
+  "what_they_look_for": [
+    "Strong biology AND some computational/data science interest — Broad is especially at the intersection of biology and computer science",
+    "Maturity and independence for 6 weeks of lab research",
+    "Intellectual curiosity about the genetic and genomic basis of disease",
+    "Preference for Massachusetts students (Broad is based in Cambridge, MA)"
+  ],
+  "blurbs": {
+    "short": "A free 6-week genomics and biomedical research program at the Broad Institute of MIT and Harvard for Massachusetts high school students. ~30 students conduct hands-on research in world-class genomics labs alongside MIT and Harvard scientists. All participants receive a stipend.",
+    "long": "The Broad Summer Scholars Program (BSSP) at the Broad Institute of MIT and Harvard offers approximately 30 Massachusetts high school students the opportunity to conduct full-time genomics and biomedical research for six weeks each summer. The Broad Institute is one of the world's leading genomics and biomedical research centers, and its summer program gives students access to cutting-edge research facilities and mentorship from top scientists. Students work in teams on independent research projects spanning areas like cancer genomics, psychiatric genetics, infectious disease, and computational biology. The program is entirely free, participants receive a stipend, and transportation assistance is available. Massachusetts students from underrepresented or disadvantaged backgrounds are strongly encouraged to apply. Alumni frequently publish their research and go on to top biology and genomics programs at MIT, Harvard, and other elite institutions."
+  },
+  "curriculum": "6 weeks of full-time mentored research in Broad Institute labs; genomics and computational biology methods training; professional development; final research symposium presentations."
+}

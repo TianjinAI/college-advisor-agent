@@ -1,0 +1,51 @@
+{
+  "id": "girls-whocode-2026",
+  "name": "Girls Who Code Summer Immersion Program",
+  "brand": "Girls Who Code",
+  "discipline": ["cs", "stem", "software-engineering", "programming", "web-development"],
+  "level": "high-school",
+  "location": "Major tech companies and offices across US cities (varies by year)",
+  "session_dates": "Summer (typically July-August, 7 weeks)",
+  "duration_weeks": 7,
+  "cost": { "amount": 0, "notes": "Free to attend. Transportation and meals may be provided at some host sites." },
+  "deadline": "Typically March",
+  "application_url": "https://girlswhocode.com/programs/summer-immersion-program",
+  "selectivity": "competitive",
+  "cohort_size": 100,
+  "parent_org": "Girls Who Code (nonprofit)",
+  "tags": ["cs", "programming", "web-development", "free", "girls-only", "diversity", "in-person"],
+  "prerequisites": {
+    "grade_range": "Girls and non-binary students entering grades 10-12",
+    "prior_knowledge": ["No prior coding experience required — beginner-friendly program"],
+    "application_requirements": ["Online application", "Personal statement", "School transcript"]
+  },
+  "essays": [
+    {
+      "prompt": "Why do you want to learn to code, and what would you like to create?",
+      "word_limit": "400",
+      "tips": ["Girls Who Code values students who see CS as a tool for social impact — show how coding could help you address something meaningful to you"]
+    },
+    {
+      "prompt": "Describe a community or problem you care about and how technology could help address it.",
+      "word_limit": "300",
+      "tips": ["The organization is fundamentally about closing the gender gap in tech — show awareness of why representation in CS matters"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "Girls Who Code alumni are well-positioned for CS and engineering programs at top universities. The program provides a supportive community of peers and industry mentors.",
+    "typical_results": "Many alumni pursue computer science, software engineering, or related fields. The program's alumni network provides ongoing mentorship and support through college and into careers."
+  },
+  "what_they_look_for": [
+    "Girls and non-binary students (trans and gender non-conforming students welcome)",
+    "Curiosity about coding — no prior experience needed",
+    "Interest in using CS to create positive change",
+    "Commitment to closing the gender gap in technology"
+  ],
+  "blurbs": {
+    "short": "A free 7-week coding summer program for girls and non-binary high school students, hosted at major tech companies and offices across the US. Students learn HTML, CSS, JavaScript, Python, and data structures while building real-world projects. No prior coding experience required.",
+    "long": "Girls Who Code's Summer Immersion Program (SIP) is a 7-week free program that brings together high school girls and non-binary students to learn computer science skills at host companies and organizations across the US. Students attend in-person at tech company offices (recent hosts have included Amazon, JPMorgan Chase, Adobe, and others), where they receive instruction in HTML, CSS, JavaScript, Python, and data structures, and work in teams to build real-world projects. The program is beginner-friendly — no prior coding experience is required — and is designed to build both technical skills and confidence. In addition to technical instruction, students hear from women tech leaders, visit tech companies, and build a supportive community of peers. Girls Who Code has served over 500,000 girls globally and has a strong alumni network that provides ongoing mentorship through college and careers. The SIP is the organization's flagship in-person program and has a strong reputation for opening doors to CS education and careers."
+  },
+  "curriculum": "7 weeks of coding instruction in HTML, CSS, JavaScript, Python, and data structures; team-based capstone project; mentorship from women tech leaders; industry visits; career exploration sessions."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "simr-2026",
+  "name": "Stanford Institutes of Medicine Summer Research Program (SIMR)",
+  "brand": "SIMR",
+  "discipline": ["stem", "research", "biology", "medicine", "biomedical"],
+  "level": "high-school",
+  "location": "Stanford School of Medicine, Palo Alto, CA",
+  "session_dates": "June–August (8 weeks)",
+  "duration_weeks": 8,
+  "cost": { "amount": 0, "notes": "Tuition-free with a stipend. Financial aid available." },
+  "deadline": "Typically February",
+  "application_url": "https://simr.stanford.edu/",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 50,
+  "parent_org": "Stanford University",
+  "tags": ["research", "biomedicine", "stem", "biology", "stanford", "free", "stipend", "in-person"],
+  "prerequisites": {
+    "grade_range": "Grades 10-12 (juniors and seniors)",
+    "prior_knowledge": ["Strong interest in biomedical research", "Biology and life sciences background"],
+    "application_requirements": ["Online application", "Transcript", "Personal statement", "Two recommendations"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe your interest in biomedical research and what draws you to this field.",
+      "word_limit": "500",
+      "tips": ["SIMR alumni consistently say the key is showing genuine, specific curiosity about a research area — not just interest in going to Stanford"]
+    },
+    {
+      "prompt": "What do you hope to learn and contribute during your 8 weeks at SIMR?",
+      "word_limit": "300",
+      "tips": ["Show intellectual maturity and realistic expectations of what research entails"]
+    }
+  ],
+  "featured": true,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "One of the most prestigious biomedical research programs for high school students. Alumni report the experience as transformative for their understanding of medical science and their college applications.",
+    "typical_results": "Strong representation at Stanford, Harvard, MIT, and top medical/science programs. Many alumni publish research or present at national conferences."
+  },
+  "what_they_look_for": [
+    "Genuine, specific interest in biomedical research — not just medicine as a career concept",
+    "Strong biology and life sciences background",
+    "Maturity to work independently in a professional research environment",
+    "Teacher or mentor who can speak to the student's research potential"
+  ],
+  "blurbs": {
+    "short": "An 8-week free research internship at Stanford School of Medicine. ~50 students are paired with Stanford faculty mentors and conduct full-time biomedical research in fields including cancer biology, neuroscience, bioengineering, and immunology. Acceptance rate ~3%.",
+    "long": "SIMR is one of the most selective biomedical research programs for high school students in the US. Each summer, approximately 50 students are selected from over 1,500 applicants (~3% acceptance rate) to spend eight weeks at the Stanford School of Medicine conducting full-time research. Students are paired with Stanford faculty mentors and work in active research labs across fields including cancer biology, neuroscience, immunology, bioengineering, and more. The program is tuition-free and provides a stipend. SIMR alumni consistently describe it as one of the most formative experiences of their high school years — giving them real insight into what biomedical research actually looks like. The program is ideal for students seriously considering medicine, biological research, or biomedical engineering."
+  },
+  "curriculum": "8 weeks of full-time mentored research in Stanford labs; weekly seminars; professional development; final research presentations. Students experience authentic graduate-level research."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "mit-ites-2026",
+  "name": "MITES (Minority Introduction to Engineering and Science)",
+  "brand": "MITES",
+  "discipline": ["stem", "engineering", "cs", "science", "math"],
+  "level": "high-school",
+  "location": "MIT Campus, Cambridge, MA",
+  "session_dates": "Typically June–July (6 weeks, residential)",
+  "duration_weeks": 6,
+  "cost": { "amount": 0, "notes": "Free to attend. All costs covered: tuition, housing, meals, and course materials." },
+  "deadline": "Typically February",
+  "application_url": "https://mites.mit.edu/",
+  "selectivity": "very-competitive",
+  "cohort_size": 100,
+  "parent_org": "MIT",
+  "tags": ["stem", "engineering", "cs", "free", "residential", "mit", "diversity", "in-person"],
+  "prerequisites": {
+    "grade_range": "High school juniors (entering 12th grade) — preference for students from underrepresented backgrounds",
+    "prior_knowledge": ["Strong mathematics and science preparation", "Interest in engineering or science careers"],
+    "application_requirements": ["Online application", "Transcript", "Personal essay", "Teacher recommendations"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe an engineering or scientific problem in your community that you would like to solve and how STEM might help.",
+      "word_limit": "500",
+      "tips": ["MIT values students who connect STEM to real-world impact — MITES especially looks for students who see engineering as a tool for community and social good"]
+    },
+    {
+      "prompt": "What challenges have you overcome in your pursuit of STEM, and how have they shaped your commitment to the field?",
+      "word_limit": "400",
+      "tips": ["MITES specifically supports students from backgrounds underrepresented in STEM — resilience and commitment to community matter alongside academic record"]
+    }
+  ],
+  "featured": true,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "MITES alumni are extremely well-represented at MIT, but also go on to Harvard, Stanford, Caltech, and Ivy League institutions. The program has a strong track record of producing successful engineers and scientists from diverse backgrounds.",
+    "typical_results": "Approximately 80% of MITES alumni pursue STEM degrees; many enroll at MIT and other top research universities."
+  },
+  "what_they_look_for": [
+    "Strong academic record in mathematics and science",
+    "Students from backgrounds historically underrepresented in STEM (racial/ethnic minorities, first-generation college, low-income)",
+    "Genuine interest in engineering and science as a career",
+    "Potential to thrive in MIT's rigorous academic environment"
+  ],
+  "blurbs": {
+    "short": "MIT's flagship 6-week free residential summer program for underrepresented high school juniors. All costs covered — tuition, housing, meals. Students take MIT courses in engineering, science, and math, and complete a research project under MIT faculty mentorship. Established in 1975, MITES has graduated thousands of students who go on to top STEM programs.",
+    "long": "MITES (Minority Introduction to Engineering and Science) is MIT's premier residential summer program for rising high school seniors from underrepresented backgrounds. The program has been running since 1975 and has supported thousands of students in pursuing engineering and science at top universities. Each summer, approximately 100 students live on the MIT campus for six weeks, taking intensive MIT courses in subjects including calculus, physics, chemistry, computer science, and engineering design. Students also complete an independent research project under MIT faculty mentorship. The program is entirely free — tuition, housing, meals, and course materials are all covered. MITES specifically supports students who are Black, Hispanic/Latino, Native American, Pacific Islander, first-generation college, or from low-income backgrounds. Alumni are found at every major STEM research university, with MIT being the most common destination. MITES alumni frequently describe it as the experience that convinced them they belonged at a top-tier research university."
+  },
+  "curriculum": "6 weeks of MIT undergraduate courses in math, science, and engineering; mentored research project with MIT faculty; engineering design challenge; seminars with MIT researchers; residential college life on the MIT campus."
+}

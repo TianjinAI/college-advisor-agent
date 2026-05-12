@@ -1,0 +1,51 @@
+{
+  "id": "bws-2026",
+  "name": "Beaver Works Summer Institute (BWSI)",
+  "brand": "BWSI",
+  "discipline": ["stem", "cs", "engineering", "ai", "robotics", "aerospace"],
+  "level": "high-school",
+  "location": "MIT Campus, Cambridge, MA",
+  "session_dates": "July (4 weeks, dates vary by course)",
+  "duration_weeks": 4,
+  "cost": { "amount": 0, "notes": "Free to attend" },
+  "deadline": "Typically March-April",
+  "application_url": "https://bwsi.mit.edu/apply-now/",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 300,
+  "parent_org": "MIT / MIT Lincoln Laboratory",
+  "tags": ["engineering", "robotics", "ai", "autonomy", "mit", "free", "project-based", "in-person"],
+  "prerequisites": {
+    "grade_range": "Rising seniors (entering 12th grade)",
+    "prior_knowledge": ["Must complete online qualifying coursework in spring before being invited to campus"],
+    "application_requirements": ["Online application", "Spring qualifying coursework completion", "Teacher recommendation"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe a technical project you are most proud of and what you learned from it.",
+      "word_limit": "400",
+      "tips": ["BWSI looks for hands-on engineering experience — describe specific projects, not just coursework"]
+    },
+    {
+      "prompt": "Why are you interested in your chosen BWSI course topic?",
+      "word_limit": "300",
+      "tips": ["Show genuine passion for the specific technical domain — AI, robotics, aerospace, etc."]
+    }
+  ],
+  "featured": true,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "BWSI alumni are strongly represented at MIT, Caltech, Stanford, and Ivy League engineering programs. The program's project-based portfolio demonstrates genuine technical depth.",
+    "typical_results": "Many alumni go on to study computer science, electrical engineering, or mechanical engineering at top programs. BWSI projects are often featured in science fairs and engineering competitions."
+  },
+  "what_they_look_for": [
+    "Completion of spring qualifying coursework (the primary gate)",
+    "Demonstrated hands-on engineering or programming experience",
+    "Ability to work in small teams on intense project-based work",
+    "Maturity and readiness for MIT-level pace"
+  ],
+  "blurbs": {
+    "short": "A free 4-week intensive engineering and technology program at MIT. Students complete spring qualifying coursework, then tackle advanced projects like programming autonomous drones, building AI systems, or designing CubeSats in small teams mentored by MIT faculty.",
+    "long": "The MIT Beaver Works Summer Institute (BWSI) is a highly selective 4-week residential program where students work in small teams on cutting-edge engineering and technology projects. Admission requires completing online coursework in the spring — thousands start the courses but only a few hundred are invited to campus. On campus, courses change annually and have included: Autonomous UAV Racing (programming autonomous drones), Autonomous RACECAR Grand Prix (building self-driving robots), CogWorks (machine learning applications in audio, vision, and language), E-Textiles and Wearable Technology, CubeSat design, and more. The program is entirely free and is run by MIT Lincoln Laboratory. BWSI alumni frequently go on to top STEM programs and cite the program as transformative for their technical confidence and direction."
+  },
+  "curriculum": "4 weeks of intensive project-based work in small teams; mentorship from MIT faculty and engineers; final project showcase. Spring online qualifying coursework is a prerequisite for admission."
+}

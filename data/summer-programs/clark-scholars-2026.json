@@ -1,0 +1,56 @@
+{
+  "id": "clark-scholars-2026",
+  "name": "Anson L. Clark Scholars Program",
+  "brand": "Clark Scholars",
+  "discipline": ["stem", "research", "biology", "physics", "chemistry", "engineering"],
+  "level": "high-school",
+  "location": "Texas Tech University, Lubbock, TX",
+  "session_dates": "June–August (7 weeks)",
+  "duration_weeks": 7,
+  "cost": { "amount": 0, "notes": "Free to attend. Students receive a stipend." },
+  "deadline": "Typically February",
+  "application_url": "https://www.ttu.edu/",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 12,
+  "parent_org": "Texas Tech University",
+  "tags": ["research", "stem", "free", "stipend", "highly-selective", "in-person"],
+  "prerequisites": {
+    "grade_range": "High school juniors and seniors",
+    "prior_knowledge": ["Strong STEM background", "Interest in independent research"],
+    "application_requirements": ["Online application", "Transcript", "SAT/ACT (optional)", "Three short essays", "Three recommendations"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe a scientific concept or research area that you find deeply fascinating and explain why.",
+      "word_limit": "300",
+      "tips": ["Clark Scholars is one of the most selective programs in the US — show genuine intellectual depth, not just academic achievement"]
+    },
+    {
+      "prompt": "What do you hope to accomplish during your 7 weeks as a Clark Scholar?",
+      "word_limit": "250",
+      "tips": ["Emphasize your readiness for independent research — the program expects students to work self-directed on real projects"]
+    },
+    {
+      "prompt": "Describe a time you faced a significant academic challenge and how you responded.",
+      "word_limit": "250",
+      "tips": ["Resilience and intellectual curiosity matter more than perfect grades at Clark"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "Clark Scholars alumni report exceptional outcomes — the program's extremely small cohort (12 students) means every participant gets intensive faculty mentorship and a publishable research project.",
+    "typical_results": "Clark Scholars alumni go on to top research universities and frequently publish or present their work. The combination of 1-on-1 faculty mentorship and independent research is exceptionally rare at the high school level."
+  },
+  "what_they_look_for": [
+    "Extraordinary academic record — but grades alone are not enough",
+    "Genuine intellectual curiosity and self-motivation for research",
+    "Ability to work independently on open-ended problems",
+    "Maturity to engage as an equal with university faculty"
+  ],
+  "blurbs": {
+    "short": "A free 7-week research program at Texas Tech University, admitting only 12 students worldwide each summer. Scholars work one-on-one with TTU faculty across STEM disciplines on independent research projects, write research papers, and present at a closing symposium. The program includes a stipend. At ~1-3% acceptance, it is among the most selective pre-college programs in the world.",
+    "long": "The Anson L. Clark Scholars Program at Texas Tech University is one of the most exclusive and selective summer research programs available to high school students. Only 12 students are admitted each summer from worldwide applicants — an acceptance rate of approximately 1-3%, making it harder to get into than many Ivy League colleges. Over seven weeks, Clark Scholars work one-on-one with TTU faculty mentors in disciplines ranging from biology to physics, complete an independent research project, write a formal research paper, and present their findings at a closing symposium. The program is free and students receive a stipend. The combination of intensive individual mentorship, genuine research experience, and a publishable paper makes Clark uniquely powerful among pre-college programs. Students are expected to work with significant independence and intellectual maturity."
+  },
+  "curriculum": "7 weeks of one-on-one mentored research in a TTU faculty lab; weekly seminars on research methods; independent project development; research paper writing; closing symposium presentation."
+}

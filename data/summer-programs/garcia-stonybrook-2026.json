@@ -1,0 +1,51 @@
+{
+  "id": "garcia-stonybrook-2026",
+  "name": "Garcia Summer Research Program",
+  "brand": "Garcia Scholars",
+  "discipline": ["stem", "research", "chemistry", "engineering", "materials-science", "physics"],
+  "level": "high-school",
+  "location": "Stony Brook University, Stony Brook, NY",
+  "session_dates": "July–August (7 weeks)",
+  "duration_weeks": 7,
+  "cost": { "amount": 2500, "notes": "Program fee. Financial aid available. Scholarships may be available." },
+  "deadline": "Typically March",
+  "application_url": "https://www.stonybrook.edu/garcia/summer-program/",
+  "selectivity": "very-competitive",
+  "cohort_size": 50,
+  "parent_org": "Stony Brook University / Garcia Center for Polymers at Engineered Interfaces",
+  "tags": ["research", "stem", "polymer-science", "materials-science", "chemistry", "engineering", "in-person"],
+  "prerequisites": {
+    "grade_range": "Primarily students 16+ (entering 11th-12th grade)",
+    "prior_knowledge": ["Strong chemistry and/or physics background", "Interest in materials science and research"],
+    "application_requirements": ["Online application", "Transcript", "Teacher recommendation", "Personal statement"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe your interest in materials science, chemistry, or physics and what draws you to research.",
+      "word_limit": "400",
+      "tips": ["Garcia attracts students with specific intellectual interests — show genuine curiosity about the materials science domain"]
+    },
+    {
+      "prompt": "What do you hope to investigate during your 7-week research project?",
+      "word_limit": "300",
+      "tips": ["The program empowers students to design their own projects — show initiative and intellectual ambition"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "Garcia Scholars frequently publish their research or present at national science competitions (Regeneron ISEF, etc.). The program's niche focus on polymer and materials science is well-regarded by top engineering and chemistry programs.",
+    "typical_results": "Many alumni go on to study chemistry, materials science, or chemical engineering at top research universities."
+  },
+  "what_they_look_for": [
+    "Strong chemistry and/or physics background",
+    "Maturity and readiness for independent research (preference for students 16+)",
+    "Interest in hands-on laboratory work and experimental design",
+    "Intellectual initiative — the program encourages students to design their own projects"
+  ],
+  "blurbs": {
+    "short": "A 7-week residential research program at Stony Brook University focused on polymer and materials science. Students design and conduct their own research projects under the mentorship of faculty and graduate students. The Garcia Center has a strong track record of student publications and national science fair awards.",
+    "long": "The Garcia Summer Research Program at Stony Brook University offers a 7-week intensive research experience in polymer and materials science — a niche but highly respected field at the intersection of chemistry, physics, and engineering. Students are empowered to design their own research projects with guidance from Garcia Center faculty and graduate mentors, and are also supported by classroom instruction. Approximately 50 students are selected each year, with a preference for those who are 16 or older. The program has a remarkable record of student publications and presentations at national science competitions including the Regeneron International Science and Engineering Fair (ISEF). Research areas include polymer chemistry, nanotechnology, 3D printing, biomaterials, and environmental applications. The program is particularly well-suited for students interested in chemistry, materials science, or chemical engineering."
+  },
+  "curriculum": "7 weeks of independent and mentored research in polymer/materials science; research design and methodology coursework; laboratory experimentation; data analysis; final research presentation. Students work toward publishable-quality results."
+}

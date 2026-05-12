@@ -1,0 +1,51 @@
+{
+  "id": "jax-summer-2026",
+  "name": "Jackson Laboratory Summer Student Program",
+  "brand": "JAX Summer Students",
+  "discipline": ["stem", "research", "genetics", "genomics", "biology", "bioinformatics"],
+  "level": "high-school",
+  "location": "The Jackson Laboratory, Bar Harbor, ME (primary); Farmington, CT (secondary site)",
+  "session_dates": "June–August (10 weeks)",
+  "duration_weeks": 10,
+  "cost": { "amount": 0, "notes": "PAID — approximately $6,500 stipend for 10 weeks. Housing and meals may be partially supported." },
+  "deadline": "Typically February",
+  "application_url": "https://www.jax.org/education-and-learning/high-school-students-and-undergraduates/learn-earn-and-explore",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 40,
+  "parent_org": "The Jackson Laboratory (JAX)",
+  "tags": ["research", "genetics", "genomics", "bioinformatics", "paid", "stem", "me", "in-person"],
+  "prerequisites": {
+    "grade_range": "High school juniors, seniors, and recent graduates",
+    "prior_knowledge": ["Strong biology and/or computer science background", "Interest in genetics and genomics research"],
+    "application_requirements": ["Online application", "Transcript", "Personal statement", "Two recommendations"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe your interest in genetics and genomics research and what draws you to JAX.",
+      "word_limit": "400",
+      "tips": ["JAX is a world-renowned genomics research institution — show specific, informed interest in how genetics informs understanding of disease"]
+    },
+    {
+      "prompt": "What do you hope to gain from 10 weeks of full-time research experience?",
+      "word_limit": "300",
+      "tips": ["10 weeks is a significant commitment — show maturity and realistic expectations of what full-time lab research involves"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "JAX summer students frequently publish research or present at national conferences. The program's 10-week duration means students produce genuinely publishable results, which is exceptionally rare for a high school program.",
+    "typical_results": "Most alumni pursue biology, genetics, or bioinformatics at top research universities. The JAX name in a college application is immediately recognized by admissions officers in biology programs."
+  },
+  "what_they_look_for": [
+    "Genuine, informed interest in genetics, genomics, and/or bioinformatics",
+    "Strong science background (biology, chemistry, computer science)",
+    "Maturity and commitment to a 10-week full-time research program",
+    "Ability to work independently in a professional research setting"
+  ],
+  "blurbs": {
+    "short": "A paid 10-week genomics and genetics research internship at The Jackson Laboratory in Bar Harbor, Maine (with a secondary site in Farmington, CT). ~40 students work alongside world-class JAX scientists on real genomics research, earning approximately $6,500 in stipend. At 10 weeks, this is one of the longest and most intensive high school research programs available.",
+    "long": "The Jackson Laboratory (JAX) Summer Student Program is one of the oldest and most prestigious paid summer research programs for high school students in the United States. JAX is a world-renowned independent nonprofit institution focused on genomics and biomedical research, with major contributions to the understanding of cancer, diabetes, and other diseases. Each summer, approximately 40 students from across the US spend 10 weeks in JAX labs in Bar Harbor, Maine (or Farmington, CT), working alongside JAX scientists on real genomics and genetics research projects. The 10-week duration is unusually long for a high school program, giving students time to make genuine, often publishable research contributions. Participants receive a stipend of approximately $6,500. Research areas include cancer genetics, computational genomics, mouse genetics, and more. This is one of the most respected programs in the country for students interested in genetics and genomics."
+  },
+  "curriculum": "10 weeks of full-time mentored research in JAX genomics labs; experimental design; advanced molecular biology and bioinformatics techniques; data analysis; final research symposium presentation. Significant independent research responsibility."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "hk-makerlab-2026",
+  "name": "HK Maker Lab",
+  "brand": "HK Maker Lab",
+  "discipline": ["stem", "engineering", "design", "biomedical", "robotics"],
+  "level": "high-school",
+  "location": "Columbia University, New York, NY",
+  "session_dates": "July–August (3 weeks)",
+  "duration_weeks": 3,
+  "cost": { "amount": 0, "notes": "Free to attend. Need-based scholarships for transportation available." },
+  "deadline": "Typically March",
+  "application_url": "https://outreach.engineering.columbia.edu/hk-maker-lab",
+  "selectivity": "very-competitive",
+  "cohort_size": 20,
+  "parent_org": "Columbia University",
+  "tags": ["engineering", "design", "biomedical", "robotics", "free", "columbia", "nyc", "in-person"],
+  "prerequisites": {
+    "grade_range": "High school sophomores and juniors (preference for NYC-area students)",
+    "prior_knowledge": ["Interest in engineering design and hands-on problem solving", "Basic science or math background"],
+    "application_requirements": ["Online application", "Personal statement", "Teacher recommendation"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe a problem you would like to solve through engineering and why it matters to you.",
+      "word_limit": "400",
+      "tips": ["HK Maker Lab values the engineering design process — show your thinking about how problems can be solved through creative, human-centered design"]
+    },
+    {
+      "prompt": "What do you hope to learn and create during 3 weeks at HK Maker Lab?",
+      "word_limit": "300",
+      "tips": ["The program is interdisciplinary and project-based — show your range of interests and readiness for hands-on work"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "HK Maker Lab alumni are strong candidates for Columbia Engineering and other top engineering programs. The program's small cohort and intensive mentorship create lasting relationships.",
+    "typical_results": "Most alumni pursue engineering, biomedical engineering, or design at Columbia and other top programs. The program's focus on the engineering design process gives alumni a sophisticated understanding of how to approach real-world problems."
+  },
+  "what_they_look_for": [
+    "High school sophomores and juniors (NYC-area students given preference)",
+    "Genuine interest in engineering as a creative, human-centered discipline",
+    "Hands-on curiosity and willingness to try, fail, and iterate",
+    "Collaborative spirit and readiness to work in small teams"
+  ],
+  "blurbs": {
+    "short": "A free 3-week intensive engineering design program at Columbia University for New York City high school students. ~20 students work in small teams to design and build solutions to real-world problems using human-centered design methodology. No prior engineering experience required.",
+    "long": "HK Maker Lab is Columbia University's three-week summer engineering design program for approximately 20 high school students from the New York City area. The program, run by Columbia Engineering's Outreach team, uses a human-centered engineering design methodology — students identify real-world problems, research user needs, prototype solutions, and iterate based on feedback. Projects span biomedical devices, robotics, sustainability, and more. Students work in small teams under the mentorship of Columbia engineering students and faculty. The program is entirely free, with need-based scholarships for transportation available. HK Maker Lab is designed for students who are curious about engineering but may not have had access to formal engineering education — no prior coursework is required. The program takes a broad view of engineering, emphasizing the creative, collaborative, and social dimensions of the field. This is one of the most accessible and high-quality free engineering programs for NYC students."
+  },
+  "curriculum": "3 weeks of human-centered engineering design: problem identification, user research, prototyping, iteration, and final presentation. Mentorship from Columbia engineering students and faculty. Intensive team-based project work."
+}

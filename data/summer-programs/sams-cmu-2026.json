@@ -1,0 +1,51 @@
+{
+  "id": "sams-cmu-2026",
+  "name": "Summer Academy for Math and Science (SAMS)",
+  "brand": "SAMS",
+  "discipline": ["stem", "cs", "engineering", "math", "research"],
+  "level": "high-school",
+  "location": "Carnegie Mellon University, Pittsburgh, PA",
+  "session_dates": "June–August (6 weeks, residential)",
+  "duration_weeks": 6,
+  "cost": { "amount": 0, "notes": "Fully funded: tuition, housing, meals covered. Need-based scholarships available." },
+  "deadline": "Typically February-March",
+  "application_url": "https://www.cmu.edu/student-diversity/programs/SAMS/index.html",
+  "selectivity": "very-competitive",
+  "cohort_size": 90,
+  "parent_org": "Carnegie Mellon University",
+  "tags": ["research", "stem", "engineering", "cs", "math", "free", "residential", "diversity", "cmu"],
+  "prerequisites": {
+    "grade_range": "Rising seniors (entering 12th grade)",
+    "prior_knowledge": ["Strong STEM background", "Interest in engineering, CS, or math"],
+    "application_requirements": ["Online application", "High school transcript", "Personal statement", "Teacher recommendation"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe a challenge you have overcome and how it shaped your approach to learning.",
+      "word_limit": "500",
+      "tips": ["CMU values resilience and self-awareness — show how adversity strengthened your academic commitment"]
+    },
+    {
+      "prompt": "Why are you interested in STEM, and how would SAMS help you achieve your goals?",
+      "word_limit": "400",
+      "tips": ["Be specific about your STEM interests — SAMS is for students with genuine technical passion, not casual curiosity"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "SAMS alumni are strong candidates for CMU, MIT, and Ivy League programs. The program is especially valued for students from underrepresented or disadvantaged backgrounds.",
+    "typical_results": "Many alumni attend Carnegie Mellon, MIT, and other top STEM schools. Participants receive CMU credit for completed coursework."
+  },
+  "what_they_look_for": [
+    "Academic preparedness in mathematics and science",
+    "First-generation college students and underrepresented backgrounds given priority",
+    "Genuine interest in engineering, computer science, or mathematics",
+    "Potential to thrive in a rigorous college-level environment"
+  ],
+  "blurbs": {
+    "short": "A free 6-week residential program at Carnegie Mellon University for rising seniors. Students take college-level courses in mathematics, computer science, and engineering while working on group research projects. All tuition, housing, and meals are fully funded, and participants earn CMU college credit.",
+    "long": "SAMS (Summer Academy for Math and Science) at Carnegie Mellon is one of the most prestigious fully-funded STEM pre-college programs in the US. The program enrolls approximately 90-100 rising seniors each year from a pool of over 1,000 applicants. Students live on the CMU campus and take intensive coursework in mathematics, computer science, and engineering, working alongside CMU faculty and graduate students. A distinctive feature is that courses are transcribed by CMU, giving participants genuine college credit. The program has a strong focus on community and support, particularly for students from underrepresented or disadvantaged backgrounds. SAMS alumni are frequently found at CMU, MIT, Stanford, and Ivy League institutions."
+  },
+  "curriculum": "College-level courses in math, CS, and engineering; group research projects; seminars with CMU faculty; residential community life on the CMU campus."
+}

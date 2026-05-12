@@ -1,0 +1,45 @@
+{
+  "id": "csh-dna-2026",
+  "name": "Cold Spring Harbor Laboratory DNA Learning Center Summer Research",
+  "brand": "CSHL DNALC",
+  "discipline": ["stem", "research", "biology", "genetics", "molecular-biology"],
+  "level": "high-school",
+  "location": "Cold Spring Harbor Laboratory, Long Island, NY (and DNALC NYC, Sleepy Hollow, NJ campuses)",
+  "session_dates": "Summer (multi-week camps; dates vary by program)",
+  "duration_weeks": 2,
+  "cost": { "amount": 2500, "notes": "Program fees vary by length and location. Financial aid available." },
+  "deadline": "Typically March-April",
+  "application_url": "https://summercamps.dnalc.org/",
+  "selectivity": "competitive",
+  "cohort_size": 40,
+  "parent_org": "Cold Spring Harbor Laboratory",
+  "tags": ["research", "genetics", "biology", "molecular-biology", "in-person", "nyc"],
+  "prerequisites": {
+    "grade_range": "Grades 9-12",
+    "prior_knowledge": ["Interest in genetics and molecular biology", "Basic science background"],
+    "application_requirements": ["Online application", "School transcript"]
+  },
+  "essays": [
+    {
+      "prompt": "Why are you interested in genetics and molecular biology?",
+      "word_limit": "400",
+      "tips": ["CSHL DNALC attracts students who are genuinely curious about the molecular basis of life — show specific interests, not generic enthusiasm"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "Cold Spring Harbor Laboratory is world-renowned in genetics and molecular biology. Participation signals serious interest in the life sciences.",
+    "typical_results": "Many alumni pursue biology, genetics, or biochemistry at top universities. The lab's prestige in the scientific community lends credibility to applications."
+  },
+  "what_they_look_for": [
+    "Genuine interest in genetics and molecular biology",
+    "Scientific curiosity and lab-readiness",
+    "Ability to work on hands-on experiments"
+  ],
+  "blurbs": {
+    "short": "A hands-on genetics and molecular biology summer research program at Cold Spring Harbor Laboratory — one of the world's most prestigious molecular biology research institutions. Programs include DNA Science, DNA Barcoding, Genome Science, BioCoding, Synthetic Biology, and more. Students conduct real experiments in professional labs.",
+    "long": "Cold Spring Harbor Laboratory (CSHL) is a world-renowned nonprofit research institution with major contributions to genetics, molecular biology, and cancer research. Its DNA Learning Center (DNALC) offers multi-week residential and commuter summer programs for high school students across locations including Long Island, Brooklyn, and Sleepy Hollow, NY. Programs include hands-on lab courses such as DNA Science (advanced lab techniques), DNA Barcoding (genomic analysis of organisms), BioCoding (programming for biology), Synthetic Biology, and Genome Science. Students work in professional research labs and conduct real experiments — not simulations. The DNALC's close ties to CSHL's research mission mean students are learning from world-class science. Programs range from 1-3 weeks and serve students from grades 9-12."
+  },
+  "curriculum": "Hands-on laboratory work in genetics and molecular biology; experimental design; data analysis; lab techniques including PCR, gel electrophoresis, DNA sequencing; seminars from CSHL scientists."
+}

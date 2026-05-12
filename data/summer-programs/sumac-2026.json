@@ -1,0 +1,51 @@
+{
+  "id": "sumac-2026",
+  "name": "Stanford University Mathematics Camp (SUMaC)",
+  "brand": "SUMaC",
+  "discipline": ["math", "pure-math", "research"],
+  "level": "high-school",
+  "location": "Stanford University, Palo Alto, CA (Residential) or Online",
+  "session_dates": "Summer (Residential: 4 weeks / Online: 3 weeks)",
+  "duration_weeks": 4,
+  "cost": { "amount": 3250, "notes": "Residential: ~$3,250. Financial aid available. Check website for current tuition." },
+  "deadline": "Typically March",
+  "application_url": "https://sumac.spcs.stanford.edu/",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 40,
+  "parent_org": "Stanford University",
+  "tags": ["math", "pure-math", "research", "stanford", "residential", "competitive", "in-person"],
+  "prerequisites": {
+    "grade_range": "Grades 10-11 (rising juniors and seniors)",
+    "prior_knowledge": ["Advanced mathematics preparation — abstract algebra and number theory exposure recommended"],
+    "application_requirements": ["Online application", "Math coursework transcript", "Math teacher recommendation", "Problem-solving assessment"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe a mathematical concept, problem, or proof that fascinated you and why.",
+      "word_limit": "400",
+      "tips": ["SUMaC seeks students who are genuinely excited by mathematical beauty — show intellectual passion for the subject itself"]
+    },
+    {
+      "prompt": "What do you hope to gain from studying advanced mathematics at SUMaC?",
+      "word_limit": "300",
+      "tips": ["Avoid generic answers — SUMaC wants students who have already begun exploring topics beyond their school curriculum"]
+    }
+  ],
+  "featured": true,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "SUMaC is among the most respected math summer programs in the world. Alumni are strongly represented at Stanford, MIT, Harvard, and Ivy League math programs.",
+    "typical_results": "Most SUMaC alumni pursue mathematics, computer science, or related fields at top universities. Many continue to compete in math competitions."
+  },
+  "what_they_look_for": [
+    "Exceptional mathematical ability and genuine passion for pure mathematics",
+    "Exposure to proof-based mathematics (not just computational math)",
+    "Ability to engage with abstract concepts like group theory and topology",
+    "Maturity to handle a genuine college-level math workload"
+  ],
+  "blurbs": {
+    "short": "A 4-week residential mathematics program at Stanford University for exceptional high school students. SUMaC offers two advanced course tracks — one in abstract algebra/number theory and one in algebraic topology — taught by Stanford professors at a genuine undergraduate difficulty level.",
+    "long": "SUMaC is widely regarded as one of the top three math summer programs in the US, alongside PROMYS and Ross. Approximately 40 students are admitted to each cohort from hundreds of applicants, giving it a 5-7% acceptance rate. Students choose between two course tracks: Program I focuses on abstract algebra, number theory, and Galois theory; Program II covers algebraic topology. Classes are taught by Stanford faculty and graduate students and are not for credit — they exist purely for mathematical enrichment. The program attracts students who are passionate about mathematics beyond what is available in standard school curricula. SUMaC also offers a 3-week online version. Financial aid is available. Alumni frequently credit SUMaC with fundamentally changing how they understand and appreciate mathematics."
+  },
+  "curriculum": "Lectures and problem sets in abstract algebra or algebraic topology; guided research projects; group collaboration; mathematical exploration beyond the high school curriculum. Heavy workload comparable to a college course."
+}

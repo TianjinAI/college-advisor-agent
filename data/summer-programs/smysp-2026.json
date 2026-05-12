@@ -1,0 +1,51 @@
+{
+  "id": "smysp-2026",
+  "name": "Stanford Medical Youth Science Program (SMYSP)",
+  "brand": "SMYSP",
+  "discipline": ["stem", "research", "medicine", "biology", "public-health"],
+  "level": "high-school",
+  "location": "Stanford School of Medicine, Palo Alto, CA",
+  "session_dates": "June–July (5 weeks)",
+  "duration_weeks": 5,
+  "cost": { "amount": 0, "notes": "Free to attend. All program costs covered for selected students." },
+  "deadline": "Typically February",
+  "application_url": "https://med.stanford.edu/odme/high-school-students/smysp.html",
+  "selectivity": "very-competitive",
+  "cohort_size": 24,
+  "parent_org": "Stanford University School of Medicine",
+  "tags": ["research", "medicine", "biology", "stem", "free", "stanford", "diversity", "in-person"],
+  "prerequisites": {
+    "grade_range": "High school juniors (rising seniors) — must be from Northern California",
+    "prior_knowledge": ["Strong science background", "First-generation college students and students from underrepresented backgrounds given priority"],
+    "application_requirements": ["Online application", "Transcript", "Personal statement", "Teacher recommendation"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe your interest in medicine or health science and what drives your desire to pursue this path.",
+      "word_limit": "500",
+      "tips": ["SMYSP is for students with a deep, personal commitment to medicine — show your specific motivation and the community that drives your purpose"]
+    },
+    {
+      "prompt": "What do you hope to contribute to your community through a career in health science?",
+      "word_limit": "300",
+      "tips": ["SMYSP is committed to developing the next generation of health science leaders from underrepresented communities — show your commitment to serving others"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "SMYSP alumni are extremely well-represented at Stanford, UCSF, and other top medical and research universities. The program's focus on first-generation, low-income, and underrepresented students means its alumni body is unusually diverse at top medical schools.",
+    "typical_results": "Over 90% of SMYSP alumni pursue college degrees in STEM or health sciences. The program has a strong track record of producing physicians and researchers from underrepresented backgrounds."
+  },
+  "what_they_look_for": [
+    "High school juniors from Northern California (strict geographic requirement)",
+    "First-generation college students and students from underrepresented backgrounds strongly preferred",
+    "Low-income and/or educationally disadvantaged students given priority",
+    "Genuine commitment to medicine and health science as a service career"
+  ],
+  "blurbs": {
+    "short": "A free 5-week medical science research and mentorship program at Stanford School of Medicine for 24 Northern California high school juniors. SMYSP serves first-generation, low-income, and underrepresented students who are committed to pursuing medicine or health science. All program costs are covered.",
+    "long": "The Stanford Medical Youth Science Program (SMYSP) is an intensely selective five-week residential program at the Stanford School of Medicine. Only 24 students are admitted each year, all of whom must be high school juniors from Northern California. The program specifically serves students who are first-generation college-bound, from low-income families, or from backgrounds historically underrepresented in medicine and science. SMYSP provides a comprehensive introduction to the health sciences and biomedical research through hands-on laboratory experience, clinical observations, mentorship from Stanford faculty and medical students, and college preparation workshops. Students live on the Stanford campus for the duration of the program. The application process is rigorous and holistic — SMYSP looks for students with both academic potential and a deep commitment to returning to serve their communities through medicine or biomedical research. Alumni go on to some of the most competitive health science and medical programs in the country."
+  },
+  "curriculum": "5 weeks: hands-on biomedical research in Stanford labs; clinical observations; mentorship from Stanford medical students and faculty; health policy seminars; college preparation workshops; residential life on the Stanford campus."
+}

@@ -1,0 +1,52 @@
+{
+  "id": "google-cssi-2026",
+  "name": "Google Computer Science Summer Institute (CSSI)",
+  "brand": "Google CSSI",
+  "discipline": ["cs", "stem", "software-engineering", "programming"],
+  "level": "high-school",
+  "location": "Google campuses (multiple US locations; varies by year)",
+  "session_dates": "Summer (typically July, 3 weeks)",
+  "duration_weeks": 3,
+  "cost": { "amount": 0, "notes": "Free to attend. Google provides resources, instruction, and meals." },
+  "deadline": "Typically March",
+  "application_url": "https://buildyourfuture.withgoogle.com/programs/computer-science-summer-institute",
+  "selectivity": "very-competitive",
+  "cohort_size": 150,
+  "parent_org": "Google",
+  "tags": ["cs", "programming", "software-engineering", "free", "google", "in-person"],
+  "prerequisites": {
+    "grade_range": "Graduating high school seniors only (must be entering college as a freshman in fall)",
+    "prior_knowledge": ["Completion of at least one AP Computer Science or equivalent course", "Basic programming experience in any language"],
+    "application_requirements": ["Online application", "Personal statement", "Transcript", "No prior Google product experience required"]
+  },
+  "essays": [
+    {
+      "prompt": "Describe a time you used CS to solve a problem or create something meaningful.",
+      "word_limit": "500",
+      "tips": ["Google CSSI values creativity and real-world application — show how CS has genuine meaning to you beyond coursework"]
+    },
+    {
+      "prompt": "Why do you want to attend CSSI and what do you hope to do with your CS skills in the future?",
+      "word_limit": "300",
+      "tips": ["Connect your technical skills to larger goals — Google looks for students who see CS as a way to create broader impact"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "CSSI alumni often go on to study CS, software engineering, or related fields at top universities. The Google brand on an application signals both technical ability and industry awareness.",
+    "typical_results": "Many alumni pursue CS or software engineering degrees. The program also provides networking opportunities with Google engineers."
+  },
+  "what_they_look_for": [
+    "Must be a graduating high school senior (CSSI is specifically for students entering college)",
+    "Basic but genuine programming experience — not advanced skills required",
+    "Curiosity about how technology shapes society",
+    "Interest in collaborative problem-solving",
+    "Backgrounds underrepresented in CS strongly encouraged to apply"
+  ],
+  "blurbs": {
+    "short": "A free 3-week intensive computer science program for graduating high school seniors hosted at Google campuses. Students learn programming, web development, and CS career skills from Google engineers, work on team projects, and explore how technology can solve real-world problems.",
+    "long": "Google's Computer Science Summer Institute (CSSI) is a 3-week free program for graduating high school seniors who plan to study computer science in college. Students travel to Google campuses across the US to learn from Google engineers and designers, build web applications and projects, and explore CS career paths. The curriculum covers HTML/CSS, JavaScript, Python, and general software engineering principles — no prior experience with all of these is required, but at least one CS course is expected. CSSI is particularly focused on building community among students from backgrounds historically underrepresented in tech. Google provides all instruction, resources, and meals. The program is selective and competitive. CSSI alumni often report that the program clarified their interest in CS and provided valuable industry connections before college."
+  },
+  "curriculum": "3 weeks of intensive programming instruction and team projects; mentorship from Google engineers; career development sessions; collaborative web development project; final project presentations."
+}
