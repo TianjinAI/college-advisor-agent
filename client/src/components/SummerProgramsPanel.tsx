@@ -319,6 +319,7 @@ function BrowseTab({
   const [freeOnly, setFreeOnly] = useState(false);
   const [maxSelectivity, setMaxSelectivity] = useState(3); // index into SELECTIVITY_ORDER
   const [parentOrg, setParentOrg] = useState('');
+  const [signal, setSignal] = useState('');
   const [loading, setLoading] = useState(true);
 
   const debouncedSearch = useDebounce(search, 200);
@@ -364,6 +365,7 @@ function BrowseTab({
     if (freeOnly && p.cost.amount > 0) return false;
     if (SELECTIVITY_ORDER.indexOf(p.selectivity) > maxSelectivity) return false;
     if (parentOrg && p.parent_org !== parentOrg) return false;
+    if (signal && p.admissions_signal !== signal) return false;
     return true;
   });
 
@@ -412,6 +414,17 @@ function BrowseTab({
           <option value={2}>Moderately selective+</option>
           <option value={1}>Competitive+</option>
           <option value={0}>Very competitive+</option>
+        </select>
+        <select
+          className="sp-select"
+          value={signal}
+          onChange={e => setSignal(e.target.value)}
+        >
+          <option value="">All signals</option>
+          <option value="strong-positive">Strong +</option>
+          <option value="positive">Positive</option>
+          <option value="neutral">Neutral</option>
+          <option value="mixed">Mixed</option>
         </select>
       </div>
 
