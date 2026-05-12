@@ -1,0 +1,22 @@
+{
+  "displayName": "Ed",
+  "studentProfile": {
+    "gpa": "5.0/6",
+    "gpa_scale": "Weighted",
+    "ap_ib_classes": "Chem, Physics, World History, US History, English, Chinese, Calculus",
+    "sat_score": "1550",
+    "act_score": "35",
+    "class_rank": "2%",
+    "interests": "AI, STEM, Math, ",
+    "intended_majors": "STEM, CS, AI, Engineering",
+    "budget": "100000",
+    "target_states": "CA, NY, PA, IL, MA",
+    "extracurriculars": "",
+    "summer_camps": "",
+    "awards_honors": "",
+    "ethnic_group": "Asian",
+    "sex": "Male",
+    "school_type": "Both",
+    "documents": []
+  }
+}

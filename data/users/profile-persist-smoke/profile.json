@@ -1,0 +1,8 @@
+{
+  "displayName": "Test User",
+  "studentProfile": {
+    "gpa": "3.95",
+    "summer_camps": "MIT RSI",
+    "school_type": "Public"
+  }
+}

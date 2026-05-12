@@ -4,7 +4,7 @@
   "description": "美国大学选择咨询 Agent Web 应用 - 基于 CodeBuddy Agent SDK",
   "private": true,
   "devDependencies": {
-    "@types/node": "^22.0.0"
+    "concurrently": "^9.2.1"
   },
   "workspaces": [
     "server",
@@ -24,7 +24,7 @@
   ],
   "author": "",
   "license": "MIT",
-  "devDependencies": {
-    "concurrently": "^9.2.1"
+  "dependencies": {
+    "browser-use": "^0.6.1"
   }
 }

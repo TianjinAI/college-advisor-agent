@@ -279,7 +279,10 @@ export default function App() {
     };
   }, []);
 
-  // Load sessions for user
+  // Track the previous session ID to detect transitions (null → session, or session → session)
+  const prevSessionIdRef = useRef<string | null>(null);
+
+  // Load sessions for user — also triggers message load when session transitions
   useEffect(() => {
     let isMounted = true;
 
@@ -298,12 +301,15 @@ export default function App() {
 
         // Auto-select default session if none stored
         const stored = getStoredSessionId();
-        if (stored && loadedSessions.some((s) => s.id === stored)) {
-          setCurrentSessionId(stored);
-        } else if (loadedSessions.length > 0) {
-          const defaultId = loadedSessions[0].id;
-          setCurrentSessionId(defaultId);
-          storeSessionId(defaultId);
+        const targetId = (stored && loadedSessions.some((s) => s.id === stored))
+          ? stored
+          : loadedSessions.length > 0
+            ? loadedSessions[0].id
+            : null;
+
+        if (targetId) {
+          setCurrentSessionId(targetId);
+          storeSessionId(targetId);
         }
       } catch (error) {
         console.error('[Sessions] Failed to load:', error);
@@ -319,12 +325,11 @@ export default function App() {
     };
   }, [userId]);
 
-  // Load messages when session changes
+  // Load messages whenever currentSessionId transitions to a new non-null value.
+  // Using prevSessionIdRef ensures we only load on actual transitions (not stable renders).
   useEffect(() => {
-    if (!currentSessionId) {
-      setMessages([]);
-      return;
-    }
+    if (!currentSessionId || currentSessionId === prevSessionIdRef.current) return;
+    prevSessionIdRef.current = currentSessionId;
 
     let isMounted = true;
     setIsLoadingMessages(true);
