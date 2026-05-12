@@ -657,13 +657,8 @@ function FollowThruTab({ userId }: { userId: string }) {
                     </ul>
                   </>
                 )}
-                <p className="sp-ft-prep-sub">General prep to stand out:</p>
+                <p className="sp-ft-prep-sub">Before the program starts:</p>
                 <ul className="sp-ft-prep-list">
-                  <li>Review the application requirements — have transcripts, awards, and activity list ready</li>
-                  <li>Draft a rough "why this program" answer — it will sharpen your essays</li>
-                  <li>Connect the program to your academic interests — find 1–2 specific things you want to explore</li>
-                  <li>Reach out to your recommenders early if an teachers evaluation is needed</li>
-                  <li>Set calendar reminders for the deadline and any follow-up steps</li>
                   <li>After acceptance: research the faculty/instructors and the curriculum topic you'll focus on</li>
                   <li>After acceptance: prepare 2–3 thoughtful questions to ask during the program</li>
                 </ul>
