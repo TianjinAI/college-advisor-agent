@@ -1,0 +1,55 @@
+{
+  "id": "summit-research-scholars-2026",
+  "name": "Summit Research Scholars",
+  "brand": "Summit Research Scholars (SRS)",
+  "discipline": [
+    "research",
+    "stem",
+    "data-science",
+    "programming",
+    "statistics"
+  ],
+  "provider": "Summit Education",
+  "url": "https://www.summiteducation.org/srs",
+  "location": {
+    "type": "virtual",
+    "city": "",
+    "state": "",
+    "country": "US"
+  },
+  "dates": {
+    "start": "2026-07-06",
+    "end": "2026-07-24",
+    "duration_weeks": 3
+  },
+  "deadline": "2026-06-15",
+  "eligibility": {
+    "grade_min": 8,
+    "grade_max": 12,
+    "age_min": 13,
+    "notes": "Open to students in grades 8-12; rolling admissions with limited spots"
+  },
+  "cost": {
+    "amount": 2900,
+    "freepaid": "paid",
+    "notes": "$2,900 total for the 3-week virtual program; financial aid may be available"
+  },
+  "format": "Virtual",
+  "curriculum": {
+    "topics": [
+      "Research methodology",
+      "Python programming",
+      "Statistics",
+      "Data science",
+      "Research proposal writing",
+      "Capstone research project"
+    ],
+    "outcome": "Research capstone project and proposal"
+  },
+  "admissions": {
+    "type": "rolling",
+    "notes": "Rolling admissions; limited spots available"
+  },
+  "year": 2026,
+  "freepaid": "paid"
+}
