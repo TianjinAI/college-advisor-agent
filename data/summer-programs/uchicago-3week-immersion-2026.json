@@ -1,0 +1,62 @@
+{
+  "id": "uchicago-3week-immersion-2026",
+  "name": "3 Week Immersion",
+  "brand": "UChicago Pre-College",
+  "discipline": ["humanities", "stem", "research", "writing", "social-science", "interdisciplinary"],
+  "level": "high-school",
+  "location": "University of Chicago, Hyde Park, Chicago, IL",
+  "session_dates": "Summer 2026 (3 weeks, residential)",
+  "duration_weeks": 3,
+  "cost": {
+    "amount": 9300,
+    "notes": "Residential; need-based scholarships available"
+  },
+  "deadline": "Typically March–April (check website for current cycle)",
+  "application_url": "https://summer.uchicago.edu/pre-college/pre-college/3-week-immersion/",
+  "selectivity": "very-competitive",
+  "cohort_size": 200,
+  "parent_org": "University of Chicago",
+  "tags": ["uchicago", "humanities", "research", "social-science", "stem", "residential", "chicago", "prestigious"],
+  "prerequisites": {
+    "grade_range": "Grades 9-12",
+    "prior_knowledge": [
+      "Intellectual curiosity and academic preparedness",
+      "Interest in exploring topics at a college level"
+    ],
+    "application_requirements": [
+      "Online application",
+      "High school transcript",
+      "Short answer questions",
+      "One teacher recommendation"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Tell us about an idea or experience that shaped how you see the world.",
+      "word_limit": "400",
+      "tips": ["UChicago prizes intellectual honesty and original thinking — avoid clichés and show genuine curiosity"]
+    },
+    {
+      "prompt": "Why are you interested in this specific course?",
+      "word_limit": "250",
+      "tips": ["Show you have done your homework on the specific topic — UChicago takes intellectual engagement seriously"]
+    }
+  ],
+  "featured": true,
+  "admissions_signal": "positive",
+  "outcomes": {
+    "college_impact": "A strong signal for University of Chicago specifically and Ivy League/selective schools generally. The UChicago brand is widely recognized for academic rigor.",
+    "typical_results": "Many UChicago pre-college alumni apply to and attend UChicago. The program is also well-regarded at peer institutions."
+  },
+  "what_they_look_for": [
+    "Intellectual curiosity and readiness for college-level work",
+    "Ability to engage in rigorous academic discussion",
+    "Genuine interest in the specific course topic",
+    "Maturity to live independently on a college campus"
+  ],
+  "blurbs": {
+    "short": "A 3-week residential program at the University of Chicago where students take a single intensive undergraduate-level course in subjects spanning humanities, STEM, social sciences, and the arts.",
+    "long": "The UChicago 3 Week Immersion is the flagship residential pre-college program at the University of Chicago. Students select one undergraduate-level course and spend three weeks immersed in it, taught by UChicago faculty and lecturers. Courses include seminars, laboratory work, field trips, and collaborative projects. The academic intensity is genuine — students experience what real UChicago coursework feels like, complete with the reading loads and discussion-based classes the university is famous for. Hyde Park in summer is described by students as vibrant and community-oriented. The cohort size is roughly 200, creating a tight-knit group. Financial aid is available. The program attracts academically motivated students from around the world. Courses in past summers have included subjects across literature, philosophy, economics, political science, biology, physics, creative writing, and more."
+  },
+  "curriculum": "One intensive undergraduate-level course per student; daily seminars, discussions, and field trips; evening and weekend social activities; residential community on the UChicago campus."
+}

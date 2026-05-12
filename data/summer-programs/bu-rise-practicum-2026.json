@@ -1,0 +1,70 @@
+{
+  "id": "bu-rise-practicum-2026",
+  "name": "RISE Practicum Track",
+  "brand": "BU RISE",
+  "discipline": ["stem", "research", "cs", "data-science"],
+  "level": "high-school",
+  "location": "Boston University, Boston, MA",
+  "session_dates": "June 29 – August 7, 2026 (6 weeks)",
+  "duration_weeks": 6,
+  "cost": {
+    "amount": 0,
+    "notes": "Free; need-based aid available for domestic students"
+  },
+  "deadline": "2026-02-04",
+  "application_url": "https://www.bu.edu/summer/high-school-programs/rise-internship-practicum/",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 30,
+  "parent_org": "Boston University",
+  "tags": ["research", "stem", "free", "boston", "practicum", "data-science", "computational", "in-person"],
+  "prerequisites": {
+    "grade_range": "Juniors only (entering senior year fall 2026)",
+    "prior_knowledge": [
+      "Interest in Computational Neurobiology or Data Science",
+      "Comfortable with programming (laptop required — must run programming software)"
+    ],
+    "application_requirements": [
+      "Online application",
+      "High school transcript (GPA A- to A range preferred)",
+      "Three essays (why subject, academic achievements, why RISE)",
+      "One teacher/counselor recommendation",
+      "Standardized test scores (optional)",
+      "$75 application fee"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Why did you select your subject of interest?",
+      "word_limit": "300",
+      "tips": ["BU looks for students who show genuine intellectual curiosity and specific research interests"]
+    },
+    {
+      "prompt": "Describe your most significant academic achievements.",
+      "word_limit": "250",
+      "tips": ["Highlight math, coding, or research experience — these carry special weight for Practicum"]
+    },
+    {
+      "prompt": "Why do you want to attend the RISE program?",
+      "word_limit": "200",
+      "tips": ["Emphasize your readiness for a structured research environment, not just curiosity"]
+    }
+  ],
+  "featured": false,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "Same strong-positive signal as the Internship track. Practicum students who complete group research projects and present at the Poster Symposium gain a credible research credential.",
+    "typical_results": "Strong outcomes at top STEM schools. Practicum is especially well-suited for students interested in computational fields and data science."
+  },
+  "what_they_look_for": [
+    "Academic rigor in STEM, especially math and computer science",
+    "Ability to work in a structured group research environment",
+    "Comfort with programming and data analysis",
+    "GPA in the A range",
+    "Teacher recommendation from a STEM teacher"
+  ],
+  "blurbs": {
+    "short": "A free 6-week residential practicum at Boston University for high school juniors. Students do group research in Computational Neurobiology or Data Science under a BU instructor, with morning lectures and afternoon lab work.",
+    "long": "The RISE Practicum track is the structured counterpart to the RISE Internship. Students spend mornings in a two-hour lecture led by a BU instructor, followed by four hours of afternoon group research. In 2026, students choose between Computational Neurobiology and Data Science tracks. The research projects have a set syllabus with clearly outlined protocols, but the final outcome cannot be predicted in advance — giving students an authentic research experience. Practicum students present their research alongside Internship students at the concluding Poster Symposium. One day per week is shared with Internship students for professional development workshops. Weekly off-site or on-site interactions with local biotech or pharmaceutical companies are also included. Students must bring a laptop capable of running programming software. Same admissions standards as the Internship track — free for domestic students."
+  },
+  "curriculum": "Morning lectures + afternoon group research in Computational Neurobiology or Data Science; weekly workshops with Internship students; biotech/pharma industry visits; Poster Symposium at end."
+}

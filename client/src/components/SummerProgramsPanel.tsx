@@ -318,6 +318,7 @@ function BrowseTab({
   const [discipline, setDiscipline] = useState<string[]>([]);
   const [freeOnly, setFreeOnly] = useState(false);
   const [maxSelectivity, setMaxSelectivity] = useState(3); // index into SELECTIVITY_ORDER
+  const [parentOrg, setParentOrg] = useState('');
   const [loading, setLoading] = useState(true);
 
   const debouncedSearch = useDebounce(search, 200);
@@ -362,6 +363,7 @@ function BrowseTab({
     if (discipline.length > 0 && !p.discipline.some(d => discipline.includes(d))) return false;
     if (freeOnly && p.cost.amount > 0) return false;
     if (SELECTIVITY_ORDER.indexOf(p.selectivity) > maxSelectivity) return false;
+    if (parentOrg && p.parent_org !== parentOrg) return false;
     return true;
   });
 
@@ -391,6 +393,16 @@ function BrowseTab({
           <input type="checkbox" checked={freeOnly} onChange={e => setFreeOnly(e.target.checked)} />
           Free only
         </label>
+        <select
+          className="sp-select"
+          value={parentOrg}
+          onChange={e => setParentOrg(e.target.value)}
+        >
+          <option value="">All schools</option>
+          {Array.from(new Set(programs.map(p => p.parent_org))).sort().map(org => (
+            <option key={org} value={org}>{org}</option>
+          ))}
+        </select>
         <select
           className="sp-select"
           value={maxSelectivity}

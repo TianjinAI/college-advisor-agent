@@ -1,0 +1,70 @@
+{
+  "id": "bu-rise-internship-2026",
+  "name": "RISE Internship Track",
+  "brand": "BU RISE",
+  "discipline": ["stem", "research", "biology", "chemistry", "physics", "cs", "engineering"],
+  "level": "high-school",
+  "location": "Boston University, Boston, MA",
+  "session_dates": "June 28 – August 7, 2026 (6 weeks)",
+  "duration_weeks": 6,
+  "cost": {
+    "amount": 0,
+    "notes": "Free; need-based aid available for domestic students"
+  },
+  "deadline": "2026-02-04",
+  "application_url": "https://www.bu.edu/summer/high-school-programs/rise-internship-practicum/",
+  "selectivity": "extremely-competitive",
+  "cohort_size": 50,
+  "parent_org": "Boston University",
+  "tags": ["research", "stem", "free", "boston", "internship", "competitive", "in-person"],
+  "prerequisites": {
+    "grade_range": "Juniors only (entering senior year fall 2026)",
+    "prior_knowledge": [
+      "Strong interest in STEM research",
+      "Biology, chemistry, physics, CS, or engineering background"
+    ],
+    "application_requirements": [
+      "Online application",
+      "High school transcript (GPA A- to A range preferred)",
+      "Three essays (why subject, academic achievements, why RISE)",
+      "One teacher/counselor recommendation",
+      "Standardized test scores (optional)",
+      "$75 application fee"
+    ]
+  },
+  "essays": [
+    {
+      "prompt": "Why did you select your subject of interest?",
+      "word_limit": "300",
+      "tips": ["Show genuine, specific passion — BU looks for students who have already explored their field independently"]
+    },
+    {
+      "prompt": "Describe your most significant academic achievements.",
+      "word_limit": "250",
+      "tips": ["Go beyond grades — highlight research projects, competitions, or independent study"]
+    },
+    {
+      "prompt": "Why do you want to attend the RISE program?",
+      "word_limit": "200",
+      "tips": ["Be specific about what you hope to contribute and learn, not just observe"]
+    }
+  ],
+  "featured": true,
+  "admissions_signal": "strong-positive",
+  "outcomes": {
+    "college_impact": "RISE is one of the most respected free pre-college research programs in the US. Alumni regularly place at top STEM programs including MIT, Harvard, Stanford, and Ivy League schools. A strong RISE recommendation letter carries enormous weight.",
+    "typical_results": "Most RISE alumni report the program as a transformative research experience. Many publish their research or present at national conferences. Strong college admissions signal for STEM-focused applicants."
+  },
+  "what_they_look_for": [
+    "GPA in the A range, particularly in STEM subjects",
+    "Demonstrated independent interest in the chosen research area",
+    "Maturity to work in a university lab setting",
+    "Clear, realistic understanding of what research entails",
+    "Teacher who can speak to the student's research potential"
+  ],
+  "blurbs": {
+    "short": "A free 6-week residential research internship at Boston University for high school juniors. Students work 40 hrs/week in faculty labs across STEM fields and present at a final Poster Symposium.",
+    "long": "RISE (Research in Science & Engineering) is Boston University's flagship free summer research program for high school juniors. The Internship track places students in active university research labs for 40 hours per week, working on real research projects under the mentorship of BU faculty, postdocs, and graduate students. Fields include astronomy, biology, biomedical engineering, chemistry, computer science, electrical engineering, mechanical engineering, medical lab research, neuroscience, physics, psychology, and public health. In 2026, students choose between Computational Neurobiology and Data Science focus areas. One day per week is shared with Practicum students for workshops. The program concludes with a Poster Symposium where all students present their research. Cost is free for domestic students, with need-based aid available. Applications require transcript, three essays, one recommendation, and optional test scores."
+  },
+  "curriculum": "40 hours/week of lab research under faculty mentorship; weekly workshops shared with Practicum track; field trips to biotech/pharma companies; Poster Symposium at program end."
+}
