@@ -227,11 +227,13 @@ function GetRecommendationsButton({
   userId,
   interests,
   budget,
+  currentModel,
   applications,
 }: {
   userId: string;
   interests: string;
   budget: string;
+  currentModel: string;
   applications: SummerApplication[];
 }) {
   const [loading, setLoading] = useState(false);
@@ -257,6 +259,7 @@ function GetRecommendationsButton({
           interests: interests ? interests.split(',').map((s: string) => s.trim()).filter(Boolean) : [],
           budget: budget ? parseInt(budget) : undefined,
           application_status: JSON.stringify(appliedStatus),
+          model: currentModel,
         },
       }));
     };
@@ -305,11 +308,13 @@ function BrowseTab({
   userId,
   interests,
   budget,
+  currentModel,
   onSelectProgram,
 }: {
   userId: string;
   interests: string;
   budget: string;
+  currentModel: string;
   onSelectProgram: (p: SummerProgram) => void;
 }) {
   const [programs, setPrograms] = useState<SummerProgram[]>([]);
@@ -375,6 +380,7 @@ function BrowseTab({
         userId={userId}
         interests={interests}
         budget={budget}
+        currentModel={currentModel}
         applications={applications}
       />
 
@@ -636,6 +642,43 @@ function FollowThruTab({ userId }: { userId: string }) {
                 {session.phase.replace('-', ' ')}
               </span>
             </div>
+
+            {/* Pre-program prep checklist */}
+            {session.phase === 'pre-program' && (
+              <div className="sp-ft-section">
+                <p className="sp-ft-label">📋 Pre-Program Prep — What to Do Now</p>
+                {session.program && (
+                  <>
+                    <p className="sp-ft-prep-sub">What this program looks for:</p>
+                    <ul className="sp-ft-prep-list">
+                      {session.program.what_they_look_for.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+                <p className="sp-ft-prep-sub">General prep to stand out:</p>
+                <ul className="sp-ft-prep-list">
+                  <li>Review the application requirements — have transcripts, awards, and activity list ready</li>
+                  <li>Draft a rough "why this program" answer — it will sharpen your essays</li>
+                  <li>Connect the program to your academic interests — find 1–2 specific things you want to explore</li>
+                  <li>Reach out to your recommenders early if an teachers evaluation is needed</li>
+                  <li>Set calendar reminders for the deadline and any follow-up steps</li>
+                  <li>After acceptance: research the faculty/instructors and the curriculum topic you'll focus on</li>
+                  <li>After acceptance: prepare 2–3 thoughtful questions to ask during the program</li>
+                </ul>
+                {session.program && session.program.prerequisites.prior_knowledge && session.program.prerequisites.prior_knowledge.length > 0 && (
+                  <>
+                    <p className="sp-ft-prep-sub">Suggested background to review:</p>
+                    <ul className="sp-ft-prep-list">
+                      {session.program.prerequisites.prior_knowledge.map((pk, i) => (
+                        <li key={i}>{pk}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
+            )}
 
             {/* Goals */}
             {session.goals.length > 0 && (
@@ -1002,9 +1045,10 @@ interface SummerProgramsPanelProps {
   userId: string;
   interests: string;
   budget: string;
+  currentModel: string;
 }
 
-export default function SummerProgramsPanel({ userId, interests, budget }: SummerProgramsPanelProps) {
+export default function SummerProgramsPanel({ userId, interests, budget, currentModel }: SummerProgramsPanelProps) {
   const [activeTab, setActiveTab] = useState<'browse' | 'tracker' | 'followthru'>('browse');
   const [selectedProgram, setSelectedProgram] = useState<SummerProgram | null>(null);
   const [applications, setApplications] = useState<SummerApplication[]>([]);
@@ -1061,6 +1105,7 @@ export default function SummerProgramsPanel({ userId, interests, budget }: Summe
             userId={userId}
             interests={interests}
             budget={budget}
+            currentModel={currentModel}
             onSelectProgram={setSelectedProgram}
           />
         )}
