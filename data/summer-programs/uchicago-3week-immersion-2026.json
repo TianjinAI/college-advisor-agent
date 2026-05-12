@@ -1,62 +1,45 @@
 {
   "id": "uchicago-3week-immersion-2026",
-  "name": "3 Week Immersion",
-  "brand": "UChicago Pre-College",
-  "discipline": ["humanities", "stem", "research", "writing", "social-science", "interdisciplinary"],
+  "name": "UChicago 3 Week Immersion",
+  "brand": "UChicago 3-Week Immersion",
+  "discipline": ["stem", "cs", "math", "data-science", "research", "biology", "physics", "technology", "interdisciplinary"],
   "level": "high-school",
-  "location": "University of Chicago, Hyde Park, Chicago, IL",
-  "session_dates": "Summer 2026 (3 weeks, residential)",
+  "location": "University of Chicago, Chicago, IL",
+  "session_dates": "Summer (3 weeks, residential on UChicago campus)",
   "duration_weeks": 3,
-  "cost": {
-    "amount": 9300,
-    "notes": "Residential; need-based scholarships available"
-  },
-  "deadline": "Typically March–April (check website for current cycle)",
+  "cost": { "amount": 9300, "notes": "$9,300 residential. Chicagoland area commuters: $6,100. Need-based financial aid available for students with household income under $125,000." },
+  "deadline": "Priority: Feb 11, 2026 | Regular: March 12, 2026",
   "application_url": "https://summer.uchicago.edu/pre-college/pre-college/3-week-immersion/",
   "selectivity": "very-competitive",
-  "cohort_size": 200,
+  "cohort_size": 100,
   "parent_org": "University of Chicago",
-  "tags": ["uchicago", "humanities", "research", "social-science", "stem", "residential", "chicago", "prestigious"],
+  "tags": ["stem", "cs", "math", "data-science", "research", "biology", "physics", "uchicago", "residential", "interdisciplinary"],
   "prerequisites": {
-    "grade_range": "Grades 9-12",
-    "prior_knowledge": [
-      "Intellectual curiosity and academic preparedness",
-      "Interest in exploring topics at a college level"
-    ],
-    "application_requirements": [
-      "Online application",
-      "High school transcript",
-      "Short answer questions",
-      "One teacher recommendation"
-    ]
+    "grade_range": "Grades 9-11 (must be at least 14 years old)",
+    "prior_knowledge": ["Varies by course; some STEM courses have prerequisites listed in course descriptions"],
+    "application_requirements": ["Summer Session application", "Teacher recommendation", "High school transcript", "Short essay"]
   },
   "essays": [
     {
-      "prompt": "Tell us about an idea or experience that shaped how you see the world.",
+      "prompt": "Why are you interested in this particular Immersion course topic?",
       "word_limit": "400",
-      "tips": ["UChicago prizes intellectual honesty and original thinking — avoid clichés and show genuine curiosity"]
-    },
-    {
-      "prompt": "Why are you interested in this specific course?",
-      "word_limit": "250",
-      "tips": ["Show you have done your homework on the specific topic — UChicago takes intellectual engagement seriously"]
+      "tips": ["UChicago values intellectual curiosity and depth of engagement — show specific, informed interest in the subject area"]
     }
   ],
-  "featured": true,
+  "featured": false,
   "admissions_signal": "positive",
   "outcomes": {
-    "college_impact": "A strong signal for University of Chicago specifically and Ivy League/selective schools generally. The UChicago brand is widely recognized for academic rigor.",
-    "typical_results": "Many UChicago pre-college alumni apply to and attend UChicago. The program is also well-regarded at peer institutions."
+    "college_impact": "UChicago's 3 Week Immersion provides college-level credit and a taste of the UChicago academic experience. Well-regarded for students targeting top research universities.",
+    "typical_results": "Students earn 100 units of UChicago undergraduate credit. Alumni often cite the program as formative for their academic direction."
   },
   "what_they_look_for": [
-    "Intellectual curiosity and readiness for college-level work",
-    "Ability to engage in rigorous academic discussion",
-    "Genuine interest in the specific course topic",
-    "Maturity to live independently on a college campus"
+    "Academic preparedness appropriate to the specific course",
+    "Intellectual maturity and readiness for undergraduate-level coursework",
+    "Genuine interest in exploring a topic in depth"
   ],
   "blurbs": {
-    "short": "A 3-week residential program at the University of Chicago where students take a single intensive undergraduate-level course in subjects spanning humanities, STEM, social sciences, and the arts.",
-    "long": "The UChicago 3 Week Immersion is the flagship residential pre-college program at the University of Chicago. Students select one undergraduate-level course and spend three weeks immersed in it, taught by UChicago faculty and lecturers. Courses include seminars, laboratory work, field trips, and collaborative projects. The academic intensity is genuine — students experience what real UChicago coursework feels like, complete with the reading loads and discussion-based classes the university is famous for. Hyde Park in summer is described by students as vibrant and community-oriented. The cohort size is roughly 200, creating a tight-knit group. Financial aid is available. The program attracts academically motivated students from around the world. Courses in past summers have included subjects across literature, philosophy, economics, political science, biology, physics, creative writing, and more."
+    "short": "A 3-week residential undergraduate-level course at the University of Chicago for high school students in grades 9-11. STEM tracks include Computer Science/Data Science/Math/Statistics, Physical Sciences, Biological Sciences, and Technology/Molecular Engineering. Students earn 100 units of UChicago credit.",
+    "long": "The UChicago 3 Week Immersion is a rigorous 3-week residential program where high school students take a single undergraduate-level course on the UChicago campus. The program is open to students in grades 9-11 (must be at least 14 years old), and all participants live in campus housing. STEM tracks include: Computer Science, Data Science, Math, and Statistics; Biological Sciences; Physical Sciences (astronomy, physics); Technology (Computer Science, Molecular Engineering); and Psychology and Neuroscience. Courses are taught by UChicago faculty and carry 100 units of undergraduate credit (equivalent to one full quarter-long course). The program costs $9,300 residential or $6,100 for Chicagoland commuters. Need-based financial aid is available for students from households earning under $125,000. UChicago's distinctive academic approach — emphasis on intellectual rigor, inquiry, and cross-disciplinary thinking — is fully on display in these programs."
   },
-  "curriculum": "One intensive undergraduate-level course per student; daily seminars, discussions, and field trips; evening and weekend social activities; residential community on the UChicago campus."
+  "curriculum": "3 weeks of intensive undergraduate-level coursework in the chosen discipline; workshop discussions; research projects; hands-on activities; residential college life on the UChicago campus."
 }
