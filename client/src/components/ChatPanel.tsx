@@ -84,10 +84,11 @@ export default function ChatPanel({
   const setIsStreamingRef = useRef(setIsStreaming);
   setIsStreamingRef.current = setIsStreaming;
 
-  // Auto-scroll to bottom
+  // Auto-scroll to bottom — only when not streaming (avoids input bounce during streaming)
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+    if (isStreaming) return;
+    messagesEndRef.current?.scrollIntoView({ behavior: 'auto' });
+  }, [messages, isStreaming]);
 
   useEffect(() => {
     const textarea = textareaRef.current;

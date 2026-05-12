@@ -4,8 +4,8 @@ import path from 'path';
 
 const router = Router();
 
-const SPM_ROOT = path.resolve(process.cwd(), '../data/summer-programs');
-const USERS_ROOT = path.resolve(process.cwd(), '../data/users');
+const SPM_ROOT = path.resolve(process.cwd(), './data/summer-programs');
+const USERS_ROOT = path.resolve(process.cwd(), './data/users');
 const spm = new SummerProgramManager(SPM_ROOT, USERS_ROOT);
 
 // GET /api/summer-programs/stats

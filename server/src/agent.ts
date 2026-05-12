@@ -363,7 +363,7 @@ export async function createSummerRecommendStream(
           if (result.done) return { value: undefined, done: true };
           const choice = result.value.choices?.[0];
           const delta = choice?.delta;
-          const text = delta?.content || (delta as any)?.reasoning_content || '';
+          const text = delta?.content || '';
           return { value: { text }, done: false };
         },
       };
@@ -413,7 +413,7 @@ export async function createEssayReviewStream(
           if (result.done) return { value: undefined, done: true };
           const choice = result.value.choices?.[0];
           const delta = choice?.delta;
-          const text = delta?.content || (delta as any)?.reasoning_content || '';
+          const text = delta?.content || '';
           return { value: { text }, done: false };
         },
       };
@@ -567,7 +567,7 @@ export async function createAgentStream(
           const choice = result.value.choices?.[0];
           const delta = choice?.delta;
           // DeepSeek returns reasoning_content separately — prefer content, fallback to reasoning
-          const text = delta?.content || (delta as any)?.reasoning_content || '';
+          const text = delta?.content || '';
           return { value: { text }, done: false };
         },
       };
