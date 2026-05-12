@@ -9,33 +9,51 @@
     "programming",
     "statistics"
   ],
-  "provider": "Summit Education",
-  "url": "https://www.summiteducation.org/srs",
-  "location": {
-    "type": "virtual",
-    "city": "",
-    "state": "",
-    "country": "US"
-  },
-  "dates": {
-    "start": "2026-07-06",
-    "end": "2026-07-24",
-    "duration_weeks": 3
+  "level": "high-school",
+  "location": "Virtual",
+  "session_dates": "July 6–24, 2026 (3 weeks)",
+  "duration_weeks": 3,
+  "cost": {
+    "amount": 2900,
+    "freepaid": "paid",
+    "notes": "$2,900 total for the 3-week virtual program; financial aid may be available"
   },
   "deadline": "2026-06-15",
+  "selectivity": "competitive",
+  "cohort_size": 30,
+  "parent_org": "Summit Education",
+  "tags": [
+    "research",
+    "stem",
+    "virtual",
+    "data-science",
+    "python",
+    "statistics",
+    "high-school",
+    "capstone"
+  ],
+  "url": "https://www.summiteducation.org/srs",
+  "prerequisites": {
+    "grade_range": "Grades 8-12",
+    "prior_knowledge": [
+      "Basic math skills",
+      "Interest in research"
+    ],
+    "application_requirements": [
+      "Application form",
+      "Short essay",
+      "Transcript"
+    ]
+  },
   "eligibility": {
     "grade_min": 8,
     "grade_max": 12,
     "age_min": 13,
     "notes": "Open to students in grades 8-12; rolling admissions with limited spots"
   },
-  "cost": {
-    "amount": 2900,
-    "freepaid": "paid",
-    "notes": "$2,900 total for the 3-week virtual program; financial aid may be available"
-  },
   "format": "Virtual",
-  "curriculum": {
+  "curriculum": "Research methodology, Python programming, Statistics, Data science, Research proposal writing, Capstone research project.",
+  "curriculum_detail": {
     "topics": [
       "Research methodology",
       "Python programming",
@@ -49,6 +67,11 @@
   "admissions": {
     "type": "rolling",
     "notes": "Rolling admissions; limited spots available"
+  },
+  "featured": false,
+  "blurbs": {
+    "short": "A 3-week virtual research program where high school students develop a capstone research project using Python, statistics, and data science.",
+    "long": "Summit Research Scholars (SRS) is a 3-week virtual summer program for motivated middle and high school students interested in research. Students work through a structured research methodology curriculum, learn Python programming and statistical analysis, and develop an independent research capstone project. The program culminates in a research proposal and presentation. Rolling admissions with limited spots per cohort."
   },
   "year": 2026,
   "freepaid": "paid"
