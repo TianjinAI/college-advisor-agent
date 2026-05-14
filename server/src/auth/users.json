@@ -1,0 +1,14 @@
+{
+  "shaobin": {
+    "userId": "shaobin",
+    "username": "shaobin",
+    "displayName": "Shaobin",
+    "passwordHash": "$2b$10$vNw9vTU/6Y00QtG58kByZugx5e5UQ9w6XMVZuEsjZ8GqOvV2klpU."
+  },
+  "student1": {
+    "userId": "student1",
+    "username": "student1",
+    "displayName": "Student One",
+    "passwordHash": "$2b$10$vNw9vTU/6Y00QtG58kByZugx5e5UQ9w6XMVZuEsjZ8GqOvV2klpU."
+  }
+}

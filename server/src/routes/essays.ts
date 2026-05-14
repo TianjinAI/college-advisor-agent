@@ -2,6 +2,7 @@ import { Router } from 'express';
 import retriever from '../knowledge/retriever.js';
 import { EssayManager } from '../knowledge/essayManager.js';
 import path from 'path';
+import { authMiddleware } from '../auth/auth.js';
 
 const router = Router();
 
@@ -85,9 +86,9 @@ router.get('/stats', (_req, res) => {
  * GET /api/essays/user/:userId
  * List all essays for a user.
  */
-router.get('/user/:userId', (req, res) => {
+router.get('/user/:userId', authMiddleware, (req, res) => {
+  const userId = req.auth.userId;
   try {
-    const { userId } = req.params;
     const essays = essayManager.listEssays(userId);
     res.json({ essays, total: essays.length });
   } catch (err: any) {
@@ -99,9 +100,10 @@ router.get('/user/:userId', (req, res) => {
  * GET /api/essays/user/:userId/:essayId
  * Get a single essay with its review.
  */
-router.get('/user/:userId/:essayId', (req, res) => {
+router.get('/user/:userId/:essayId', authMiddleware, (req, res) => {
+  const userId = req.auth.userId;
+  const { essayId } = req.params;
   try {
-    const { userId, essayId } = req.params;
     const entry = essayManager.getEntry(essayId, userId);
     if (!entry) return res.status(404).json({ error: 'Essay not found' });
     res.json({ essay: entry });
@@ -114,32 +116,32 @@ router.get('/user/:userId/:essayId', (req, res) => {
  * POST /api/essays/user/:userId
  * Submit a new essay for review. Body: { promptId, promptLabel, draftText, revisionOf? }
  */
-router.post('/user/:userId', (req, res) => {
+router.post('/user/:userId', authMiddleware, (req, res) => {
+  const userId = req.auth.userId;
+  const { promptId, promptLabel, draftText, revisionOf } = req.body as {
+    promptId: string;
+    promptLabel: string;
+    draftText: string;
+    revisionOf?: string;
+  };
+
+  if (!promptId || !promptLabel || !draftText) {
+    return res.status(400).json({ error: 'promptId, promptLabel, and draftText are required' });
+  }
+
+  const wordCount = draftText.trim().split(/\s+/).filter(Boolean).length;
+  const essay = {
+    id: `essay_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+    userId,
+    promptId,
+    promptLabel,
+    draftText,
+    wordCount,
+    submittedAt: Date.now(),
+    revisionOf,
+  };
+
   try {
-    const { userId } = req.params;
-    const { promptId, promptLabel, draftText, revisionOf } = req.body as {
-      promptId: string;
-      promptLabel: string;
-      draftText: string;
-      revisionOf?: string;
-    };
-
-    if (!promptId || !promptLabel || !draftText) {
-      return res.status(400).json({ error: 'promptId, promptLabel, and draftText are required' });
-    }
-
-    const wordCount = draftText.trim().split(/\s+/).filter(Boolean).length;
-    const essay = {
-      id: `essay_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
-      userId,
-      promptId,
-      promptLabel,
-      draftText,
-      wordCount,
-      submittedAt: Date.now(),
-      revisionOf,
-    };
-
     essayManager.saveEssay(essay);
     res.status(201).json({ essay });
   } catch (err: any) {

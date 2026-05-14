@@ -7,6 +7,7 @@ import EssayPanel from './components/EssayPanel';
 import SummerProgramsPanel from './components/SummerProgramsPanel';
 import type { StudentProfile, ChatMessage, SchoolSelection, SessionMetadata } from './types';
 
+const JWT_STORAGE_KEY = 'college-advisor-jwt';
 const USER_ID_STORAGE_KEY = 'college-advisor-user-id';
 const SESSION_ID_STORAGE_KEY = 'college-advisor-session-id';
 const PROFILE_STORAGE_PREFIX = 'college-advisor-profile';
@@ -82,6 +83,154 @@ function storeSessionId(sessionId: string | null): void {
   }
 }
 
+function getJwt(): string | null {
+  if (typeof window === 'undefined') return null;
+  return window.localStorage.getItem(JWT_STORAGE_KEY);
+}
+
+function storeJwt(token: string): void {
+  if (typeof window === 'undefined') return;
+  window.localStorage.setItem(JWT_STORAGE_KEY, token);
+}
+
+function clearJwt(): void {
+  if (typeof window === 'undefined') return;
+  window.localStorage.removeItem(JWT_STORAGE_KEY);
+}
+
+async function authFetch(url: string, options: RequestInit = {}): Promise<Response> {
+  const token = getJwt();
+  const headers = {
+    ...(options.headers as Record<string, string> || {}),
+  };
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+  return fetch(url, { ...options, headers });
+}
+
+// ─── Login Screen ─────────────────────────────────────────────────────────────
+
+function LoginScreen({
+  onLogin,
+  error,
+}: {
+  onLogin: (username: string, password: string) => void;
+  error: string;
+}) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!username.trim() || !password) return;
+    setLoading(true);
+    onLogin(username.trim(), password);
+  };
+
+  return (
+    <div style={{
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+      fontFamily: 'system-ui, -apple-system, sans-serif',
+    }}>
+      <div style={{
+        background: 'rgba(255,255,255,0.06)',
+        border: '1px solid rgba(255,255,255,0.12)',
+        borderRadius: 16,
+        padding: '40px 48px',
+        width: 360,
+        backdropFilter: 'blur(12px)',
+        boxShadow: '0 24px 48px rgba(0,0,0,0.4)',
+      }}>
+        <div style={{ textAlign: 'center', marginBottom: 32 }}>
+          <div style={{ fontSize: 40, marginBottom: 12 }}>🎓</div>
+          <h1 style={{ color: '#fff', fontSize: 22, fontWeight: 700, margin: '0 0 6px' }}>
+            College Advisor
+          </h1>
+          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14, margin: 0 }}>
+            Sign in to access your portal
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div>
+            <label style={{ display: 'block', color: 'rgba(255,255,255,0.7)', fontSize: 13, marginBottom: 6 }}>
+              Username
+            </label>
+            <input
+              type="text"
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+              autoComplete="username"
+              required
+              style={{
+                width: '100%', boxSizing: 'border-box',
+                background: 'rgba(255,255,255,0.08)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                borderRadius: 8, padding: '10px 14px',
+                color: '#fff', fontSize: 15, outline: 'none',
+              }}
+              onFocus={e => e.target.style.borderColor = 'rgba(99,102,241,0.7)'}
+              onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.15)'}
+            />
+          </div>
+          <div>
+            <label style={{ display: 'block', color: 'rgba(255,255,255,0.7)', fontSize: 13, marginBottom: 6 }}>
+              Password
+            </label>
+            <input
+              type="password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              autoComplete="current-password"
+              required
+              style={{
+                width: '100%', boxSizing: 'border-box',
+                background: 'rgba(255,255,255,0.08)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                borderRadius: 8, padding: '10px 14px',
+                color: '#fff', fontSize: 15, outline: 'none',
+              }}
+              onFocus={e => e.target.style.borderColor = 'rgba(99,102,241,0.7)'}
+              onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.15)'}
+            />
+          </div>
+
+          {error && (
+            <div style={{
+              background: 'rgba(239,68,68,0.15)',
+              border: '1px solid rgba(239,68,68,0.3)',
+              borderRadius: 8, padding: '10px 14px',
+              color: '#fca5a5', fontSize: 14,
+            }}>
+              {error}
+            </div>
+          )}
+
+          <button
+            type="submit"
+            disabled={loading}
+            style={{
+              marginTop: 4,
+              background: loading ? 'rgba(99,102,241,0.5)' : 'rgba(99,102,241,0.9)',
+              border: 'none', borderRadius: 8,
+              padding: '12px 20px',
+              color: '#fff', fontSize: 15, fontWeight: 600,
+              cursor: loading ? 'not-allowed' : 'pointer',
+              transition: 'background 0.2s',
+            }}
+          >
+            {loading ? 'Signing in…' : 'Sign In'}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [profile, setProfile] = useState<StudentProfile>(defaultProfile);
   const profileHydratedRef = useRef(false);
@@ -94,6 +243,8 @@ export default function App() {
   const [isLoadingModels, setIsLoadingModels] = useState(true);
   const [userId, setUserId] = useState(getOrCreateUserId);
   const [displayName, setDisplayName] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(!!getJwt());
+  const [loginError, setLoginError] = useState('');
 
   // Restore profile from server on user change, with localStorage as fallback
   useEffect(() => {
@@ -102,7 +253,7 @@ export default function App() {
 
     const hydrateProfile = async () => {
       try {
-        const response = await fetch(`/api/user/profile?userId=${encodeURIComponent(userId)}`);
+        const response = await authFetch(`/api/user/profile?userId=${encodeURIComponent(userId)}`);
         if (response.ok) {
           const data = await response.json() as { displayName?: string; studentProfile?: StudentProfile };
           if (!isMounted) return;
@@ -133,7 +284,7 @@ export default function App() {
     if (!profileHydratedRef.current) return;
     storeProfile(userId, profile);
     const timeout = window.setTimeout(() => {
-      void fetch('/api/user/profile', {
+      void authFetch('/api/user/profile', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, studentProfile: profile }),
@@ -147,7 +298,7 @@ export default function App() {
     let isMounted = true;
     const fetchName = async () => {
       try {
-        const response = await fetch(`/api/user/profile?userId=${encodeURIComponent(userId)}`);
+        const response = await authFetch(`/api/user/profile?userId=${encodeURIComponent(userId)}`);
         if (response.ok) {
           const data = (await response.json()) as { displayName?: string };
           if (isMounted && data.displayName) setDisplayName(data.displayName);
@@ -173,13 +324,50 @@ export default function App() {
   const handleSetDisplayName = useCallback(async (name: string) => {
     setDisplayName(name);
     try {
-      await fetch('/api/user/profile', {
+      await authFetch('/api/user/profile', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, displayName: name }),
       });
     } catch { /* ignore */ }
   }, [userId]);
+
+  // Login handler
+  const handleLogin = useCallback(async (username: string, password: string) => {
+    setLoginError('');
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setLoginError(data.error || 'Login failed');
+        return;
+      }
+      const { token, userId: returnedUserId } = await res.json() as { token: string; userId: string };
+      storeJwt(token);
+      if (returnedUserId) {
+        window.localStorage.setItem(USER_ID_STORAGE_KEY, returnedUserId);
+        setUserId(returnedUserId);
+      }
+      setIsLoggedIn(true);
+    } catch {
+      setLoginError('Network error — please try again');
+    }
+  }, []);
+
+  // Logout handler
+  const handleLogout = useCallback(() => {
+    clearJwt();
+    setIsLoggedIn(false);
+    setUserId(getOrCreateUserId());
+    setMessages([]);
+    setSessions([]);
+    setCurrentSessionId(null);
+    setDisplayName('');
+  }, []);
 
   // Session state
   const [sessions, setSessions] = useState<SessionMetadata[]>([]);
@@ -288,7 +476,7 @@ export default function App() {
 
     const loadSessions = async () => {
       try {
-        const response = await fetch(`/api/sessions?userId=${encodeURIComponent(userId)}`);
+        const response = await authFetch(`/api/sessions?userId=${encodeURIComponent(userId)}`);
         if (!response.ok) throw new Error(`Failed to load sessions: ${response.status}`);
 
         const data = (await response.json()) as { sessions?: SessionMetadata[] };
@@ -336,7 +524,7 @@ export default function App() {
 
     const loadMessages = async () => {
       try {
-        const response = await fetch(
+        const response = await authFetch(
           `/api/sessions/${encodeURIComponent(currentSessionId)}/messages?userId=${encodeURIComponent(userId)}`
         );
         if (!response.ok) throw new Error(`Failed to load messages: ${response.status}`);
@@ -370,7 +558,7 @@ export default function App() {
   // Create session handler
   const handleCreateSession = useCallback(async (name: string, purpose?: string) => {
     try {
-      const response = await fetch('/api/sessions', {
+      const response = await authFetch('/api/sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, name, purpose }),
@@ -388,6 +576,10 @@ export default function App() {
     }
   }, [userId]);
 
+  if (!isLoggedIn) {
+    return <LoginScreen onLogin={handleLogin} error={loginError} />;
+  }
+
   return (
     <div className="app-container">
       <Header
@@ -400,6 +592,7 @@ export default function App() {
         onCreateSession={handleCreateSession}
         onChangeUserId={handleChangeUserId}
         onSetDisplayName={handleSetDisplayName}
+        onLogout={handleLogout}
       />
       {/*
         Main column is calc() so it stays at a fixed pixel size relative to the viewport.

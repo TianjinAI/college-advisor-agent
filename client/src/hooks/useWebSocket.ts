@@ -2,6 +2,8 @@ import { useEffect, useRef, useCallback, useState } from 'react';
 
 type MessageHandler = (data: Record<string, unknown>) => void;
 
+const JWT_STORAGE_KEY = 'college-advisor-jwt';
+
 export function useWebSocket(url: string) {
   const wsRef = useRef<WebSocket | null>(null);
   const [isConnected, setIsConnected] = useState(false);
@@ -12,7 +14,9 @@ export function useWebSocket(url: string) {
     if (wsRef.current?.readyState === WebSocket.OPEN) return;
 
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const wsUrl = `${protocol}//${window.location.host}${url}`;
+    const token = window.localStorage.getItem(JWT_STORAGE_KEY);
+    const fullUrl = token ? `${url}?token=${encodeURIComponent(token)}` : url;
+    const wsUrl = `${protocol}//${window.location.host}${fullUrl}`;
     const ws = new WebSocket(wsUrl);
 
     ws.onopen = () => {

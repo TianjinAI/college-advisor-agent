@@ -1,11 +1,12 @@
 import { Router } from 'express';
 import { dossierManager } from '../agent.js';
 import type { SessionChatMessage } from '../types.js';
+import { authMiddleware } from '../auth/auth.js';
 
 const router = Router();
 
-router.get('/api/sessions', async (req, res) => {
-  const userId = typeof req.query.userId === 'string' ? req.query.userId : '';
+router.get('/api/sessions', authMiddleware, async (req, res) => {
+  const userId = req.auth.userId;
   if (!userId) {
     res.status(400).json({ error: 'userId is required' });
     return;
@@ -19,10 +20,11 @@ router.get('/api/sessions', async (req, res) => {
   }
 });
 
-router.post('/api/sessions', async (req, res) => {
-  const { userId, name, purpose } = req.body as { userId?: string; name?: string; purpose?: string };
-  if (!userId || !name?.trim()) {
-    res.status(400).json({ error: 'userId and name are required' });
+router.post('/api/sessions', authMiddleware, async (req, res) => {
+  const { name, purpose } = req.body as { name?: string; purpose?: string };
+  const userId = req.auth.userId;
+  if (!name?.trim()) {
+    res.status(400).json({ error: 'name is required' });
     return;
   }
 
@@ -34,13 +36,8 @@ router.post('/api/sessions', async (req, res) => {
   }
 });
 
-router.get('/api/sessions/:id/messages', async (req, res) => {
-  const userId = typeof req.query.userId === 'string' ? req.query.userId : '';
-  if (!userId) {
-    res.status(400).json({ error: 'userId is required' });
-    return;
-  }
-
+router.get('/api/sessions/:id/messages', authMiddleware, async (req, res) => {
+  const userId = req.auth.userId;
   try {
     const messages = await dossierManager.loadMessages(userId, req.params.id);
     res.json({ messages });
@@ -49,10 +46,11 @@ router.get('/api/sessions/:id/messages', async (req, res) => {
   }
 });
 
-router.post('/api/sessions/:id/messages', async (req, res) => {
-  const { userId, messages } = req.body as { userId?: string; messages?: SessionChatMessage[] };
-  if (!userId || !Array.isArray(messages)) {
-    res.status(400).json({ error: 'userId and messages are required' });
+router.post('/api/sessions/:id/messages', authMiddleware, async (req, res) => {
+  const { messages } = req.body as { messages?: SessionChatMessage[] };
+  const userId = req.auth.userId;
+  if (!Array.isArray(messages)) {
+    res.status(400).json({ error: 'messages is required' });
     return;
   }
 
@@ -68,12 +66,8 @@ export default router;
 
 // ─── User profile routes ────────────────────────────────────────────────
 
-router.get('/api/user/profile', async (req, res) => {
-  const userId = typeof req.query.userId === 'string' ? req.query.userId : '';
-  if (!userId) {
-    res.status(400).json({ error: 'userId is required' });
-    return;
-  }
+router.get('/api/user/profile', authMiddleware, async (req, res) => {
+  const userId = req.auth.userId;
 
   try {
     const [displayName, studentProfile] = await Promise.all([
@@ -86,15 +80,15 @@ router.get('/api/user/profile', async (req, res) => {
   }
 });
 
-router.put('/api/user/profile', async (req, res) => {
-  const { userId, displayName, studentProfile } = req.body as {
-    userId?: string;
+router.put('/api/user/profile', authMiddleware, async (req, res) => {
+  const { displayName, studentProfile } = req.body as {
     displayName?: string;
     studentProfile?: import('../types.js').StudentProfile;
   };
+  const userId = req.auth.userId;
 
-  if (!userId || (!displayName?.trim() && !studentProfile)) {
-    res.status(400).json({ error: 'userId and at least one profile field are required' });
+  if (!displayName?.trim() && !studentProfile) {
+    res.status(400).json({ error: 'At least one profile field is required' });
     return;
   }
 

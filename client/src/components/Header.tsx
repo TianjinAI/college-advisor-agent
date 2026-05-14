@@ -22,6 +22,7 @@ interface HeaderProps {
   onCreateSession: (name: string, purpose?: string) => void;
   onChangeUserId: (newUserId: string) => void;
   onSetDisplayName: (name: string) => void;
+  onLogout: () => void;
 }
 
 export default function Header({
@@ -34,6 +35,7 @@ export default function Header({
   onCreateSession,
   onChangeUserId,
   onSetDisplayName,
+  onLogout,
 }: HeaderProps) {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
   const [editingName, setEditingName] = useState(false);
@@ -77,6 +79,23 @@ export default function Header({
         aria-label={`Switch to ${nextTheme} theme`}
       >
         <span aria-hidden="true">{theme === 'dark' ? '☀' : '☾'}</span>
+      </button>
+
+      <button
+        type="button"
+        onClick={onLogout}
+        aria-label="Sign out"
+        style={{
+          position: 'absolute', top: 16, left: 80,
+          background: 'none', border: 'none', cursor: 'pointer',
+          color: 'rgba(255,255,255,0.4)', fontSize: 13,
+          padding: '4px 8px', borderRadius: 6,
+          transition: 'color 0.2s',
+        }}
+        onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
+        onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+      >
+        Sign out
       </button>
 
       <div className="header-content">

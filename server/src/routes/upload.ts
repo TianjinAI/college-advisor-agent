@@ -3,6 +3,7 @@ import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
 import { v4 as uuid } from 'uuid';
+import { authMiddleware } from '../auth/auth.js';
 
 const uploadRouter = Router();
 
@@ -40,7 +41,7 @@ interface MulterRequest extends Request {
   body: Record<string, string>;
 }
 
-uploadRouter.post('/', upload.single('file'), (req: MulterRequest, res: Response) => {
+uploadRouter.post('/', authMiddleware, upload.single('file'), (req: MulterRequest, res: Response) => {
   if (!req.file) {
     res.status(400).json({ error: 'No file uploaded' });
     return;
@@ -72,7 +73,7 @@ uploadRouter.post('/', upload.single('file'), (req: MulterRequest, res: Response
 });
 
 // POST endpoint: retrieve extracted text for a list of doc IDs (used by agent)
-uploadRouter.post('/extract', (req: Request, res: Response) => {
+uploadRouter.post('/extract', authMiddleware, (req: Request, res: Response) => {
   const { docIds }: { docIds: string[] } = req.body;
   if (!Array.isArray(docIds)) {
     res.status(400).json({ error: 'docIds must be an array' });

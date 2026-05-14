@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { SummerProgramManager } from '../knowledge/summerProgramManager.js';
 import path from 'path';
+import { authMiddleware } from '../auth/auth.js';
 
 const router = Router();
 
@@ -67,9 +68,9 @@ router.get('/:id', (req, res) => {
 });
 
 // GET /api/summer-programs/user/:userId/applications
-router.get('/user/:userId/applications', (req, res) => {
+router.get('/user/:userId/applications', authMiddleware, (req, res) => {
+  const userId = req.auth.userId;
   try {
-    const { userId } = req.params;
     const applications = spm.listApplications(userId);
     // Enrich with program data
     const enriched = applications.map(app => {
@@ -84,9 +85,9 @@ router.get('/user/:userId/applications', (req, res) => {
 
 // POST /api/summer-programs/user/:userId/applications
 // Body: { programId, notes?, deadline_reminder? }
-router.post('/user/:userId/applications', (req, res) => {
+router.post('/user/:userId/applications', authMiddleware, (req, res) => {
+  const userId = req.auth.userId;
   try {
-    const { userId } = req.params;
     const { programId, notes = '', deadline_reminder = false } = req.body as {
       programId: string;
       notes?: string;
@@ -116,9 +117,9 @@ router.post('/user/:userId/applications', (req, res) => {
 
 // PATCH /api/summer-programs/user/:userId/applications/:programId
 // Body: { status?, notes?, deadline_reminder? }
-router.patch('/user/:userId/applications/:programId', (req, res) => {
+router.patch('/user/:userId/applications/:programId', authMiddleware, (req, res) => {
+  const { userId, programId } = req.params;
   try {
-    const { userId, programId } = req.params;
     const { status, notes, deadline_reminder } = req.body as {
       status?: string;
       notes?: string;
@@ -152,9 +153,9 @@ router.patch('/user/:userId/applications/:programId', (req, res) => {
 });
 
 // DELETE /api/summer-programs/user/:userId/applications/:programId
-router.delete('/user/:userId/applications/:programId', (req, res) => {
+router.delete('/user/:userId/applications/:programId', authMiddleware, (req, res) => {
+  const { userId, programId } = req.params;
   try {
-    const { userId, programId } = req.params;
     spm.removeApplication(userId, programId);
     res.json({ success: true });
   } catch (err: any) {
@@ -163,9 +164,9 @@ router.delete('/user/:userId/applications/:programId', (req, res) => {
 });
 
 // GET /api/summer-programs/user/:userId/followthru
-router.get('/user/:userId/followthru', (req, res) => {
+router.get('/user/:userId/followthru', authMiddleware, (req, res) => {
+  const userId = req.auth.userId;
   try {
-    const { userId } = req.params;
     const sessions = spm.listFollowThru(userId);
     // Enrich with program data
     const enriched = sessions.map(s => {
@@ -180,9 +181,9 @@ router.get('/user/:userId/followthru', (req, res) => {
 
 // POST /api/summer-programs/user/:userId/followthru/:programId
 // Body: { goals: string[] }
-router.post('/user/:userId/followthru/:programId', (req, res) => {
+router.post('/user/:userId/followthru/:programId', authMiddleware, (req, res) => {
+  const { userId, programId } = req.params;
   try {
-    const { userId, programId } = req.params;
     const { goals = [] } = req.body as { goals: string[] };
 
     const program = spm.getProgram(programId);
@@ -200,9 +201,9 @@ router.post('/user/:userId/followthru/:programId', (req, res) => {
 
 // POST /api/summer-programs/user/:userId/followthru/:programId/reflection
 // Body: ReflectionEntry
-router.post('/user/:userId/followthru/:programId/reflection', (req, res) => {
+router.post('/user/:userId/followthru/:programId/reflection', authMiddleware, (req, res) => {
+  const { userId, programId } = req.params;
   try {
-    const { userId, programId } = req.params;
     const entry = req.body;
     spm.addReflection(userId, programId, entry);
     const session = spm.getFollowThru(userId, programId);
@@ -215,9 +216,9 @@ router.post('/user/:userId/followthru/:programId/reflection', (req, res) => {
 
 // PATCH /api/summer-programs/user/:userId/followthru/:programId/phase
 // Body: { phase: FollowThruPhase }
-router.patch('/user/:userId/followthru/:programId/phase', (req, res) => {
+router.patch('/user/:userId/followthru/:programId/phase', authMiddleware, (req, res) => {
+  const { userId, programId } = req.params;
   try {
-    const { userId, programId } = req.params;
     const { phase } = req.body;
     spm.updatePhase(userId, programId, phase);
     const session = spm.getFollowThru(userId, programId);
@@ -230,9 +231,9 @@ router.patch('/user/:userId/followthru/:programId/phase', (req, res) => {
 
 // POST /api/summer-programs/user/:userId/followthru/:programId/recap
 // Body: CollegeRecapEntry
-router.post('/user/:userId/followthru/:programId/recap', (req, res) => {
+router.post('/user/:userId/followthru/:programId/recap', authMiddleware, (req, res) => {
+  const { userId, programId } = req.params;
   try {
-    const { userId, programId } = req.params;
     const recap = req.body;
     spm.saveCollegeRecap(userId, programId, recap);
     const session = spm.getFollowThru(userId, programId);

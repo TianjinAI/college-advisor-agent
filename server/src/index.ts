@@ -8,6 +8,8 @@ import sessionsRouter from './routes/sessions.js';
 import essaysRouter from './routes/essays.js';
 import summerProgramsRouter from './routes/summerPrograms.js';
 import uploadRouter from './routes/upload.js';
+import authRouter from './routes/auth.js';
+import { verifyToken } from './auth/auth.js';
 
 // Load env
 
@@ -24,6 +26,7 @@ app.use(sessionsRouter);
 app.use('/api/essays', essaysRouter);
 app.use('/api/summer-programs', summerProgramsRouter);
 app.use('/api/upload', uploadRouter);
+app.use('/api/auth', authRouter);
 
 // Health check (must be first, before any static middleware)
 app.get('/health', (_req, res) => {
@@ -62,7 +65,25 @@ const wss = new WebSocketServer({ server });
 // Store active streams for abort
 const activeStreams = new Map<WebSocket, { abort(): Promise<void> }>();
 
-wss.on('connection', (ws) => {
+// Authenticated WebSocket connections — map of ws → auth payload
+const wsAuth = new Map<WebSocket, { userId: string; username: string; displayName: string }>();
+
+wss.on('connection', (ws, req) => {
+  // Verify JWT from query param ?token=...
+  const url = new URL(req.url || '', `http://${req.headers.host}`);
+  const token = url.searchParams.get('token');
+  if (token) {
+    const payload = verifyToken(token);
+    if (payload) {
+      wsAuth.set(ws, payload);
+      console.log(`[WS] Authenticated: ${payload.username} (${payload.userId})`);
+    } else {
+      console.log('[WS] Invalid token, treating as unauthenticated');
+    }
+  } else {
+    console.log('[WS] No token provided');
+  }
+
   console.log(`[WS] Client connected. Total: ${wss.clients.size}`);
 
   ws.on('message', async (raw) => {
@@ -72,7 +93,10 @@ wss.on('connection', (ws) => {
 
       switch (msg.type) {
         case 'send_message': {
-          const { content, profile, history, userId, sessionId, model } = msg.payload as SendMessagePayload;
+          // Prefer authenticated userId from JWT; fall back to payload userId
+          const authPayload = wsAuth.get(ws);
+          const { content, profile, history, userId: payloadUserId, sessionId, model } = msg.payload as SendMessagePayload;
+          const userId = authPayload?.userId || payloadUserId;
           await handleAgentQuery(ws, content, profile, history, userId, sessionId, model);
           break;
         }
@@ -89,7 +113,8 @@ wss.on('connection', (ws) => {
           break;
         }
         case 'review_essay': {
-          const { essayId, essayText, promptId, promptLabel, promptText, wordLimit, tips, pitfalls, userId, model } = msg.payload as {
+          const authPayload = wsAuth.get(ws);
+          const { essayId, essayText, promptId, promptLabel, promptText, wordLimit, tips, pitfalls, userId: payloadUserId, model } = msg.payload as {
             essayId: string;
             essayText: string;
             promptId: string;
@@ -101,11 +126,13 @@ wss.on('connection', (ws) => {
             userId?: string;
             model?: string;
           };
+          const userId = authPayload?.userId || payloadUserId;
           await handleEssayReview(ws, { essayId, essayText, promptId, promptLabel, promptText, wordLimit, tips, pitfalls, userId, model });
           break;
         }
         case 'summer_recommend': {
-          const { userId, profile, interests, budget, application_status, model } = msg.payload as {
+          const authPayload = wsAuth.get(ws);
+          const { userId: payloadUserId, profile, interests, budget, application_status, model } = msg.payload as {
             userId?: string;
             profile?: StudentProfile;
             interests?: string[];
@@ -113,6 +140,7 @@ wss.on('connection', (ws) => {
             application_status?: string;
             model?: string;
           };
+          const userId = authPayload?.userId || payloadUserId;
           await handleSummerRecommend(ws, { userId, profile, interests, budget, application_status, model });
           break;
         }
@@ -129,6 +157,7 @@ wss.on('connection', (ws) => {
     console.log(`[WS] Client disconnected. Total: ${wss.clients.size - 1}`);
     const stream = activeStreams.get(ws);
     if (stream) { stream.abort().catch(() => {}); activeStreams.delete(ws); }
+    wsAuth.delete(ws);
   });
 });
 
