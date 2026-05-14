@@ -69,7 +69,7 @@ router.get('/:id', (req, res) => {
 
 // GET /api/summer-programs/user/:userId/applications
 router.get('/user/:userId/applications', authMiddleware, (req, res) => {
-  const userId = req.auth.userId;
+  const userId = req.auth!.userId;
   try {
     const applications = spm.listApplications(userId);
     // Enrich with program data
@@ -86,7 +86,7 @@ router.get('/user/:userId/applications', authMiddleware, (req, res) => {
 // POST /api/summer-programs/user/:userId/applications
 // Body: { programId, notes?, deadline_reminder? }
 router.post('/user/:userId/applications', authMiddleware, (req, res) => {
-  const userId = req.auth.userId;
+  const userId = req.auth!.userId;
   try {
     const { programId, notes = '', deadline_reminder = false } = req.body as {
       programId: string;
@@ -165,7 +165,7 @@ router.delete('/user/:userId/applications/:programId', authMiddleware, (req, res
 
 // GET /api/summer-programs/user/:userId/followthru
 router.get('/user/:userId/followthru', authMiddleware, (req, res) => {
-  const userId = req.auth.userId;
+  const userId = req.auth!.userId;
   try {
     const sessions = spm.listFollowThru(userId);
     // Enrich with program data

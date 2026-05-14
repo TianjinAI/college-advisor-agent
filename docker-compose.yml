@@ -1,6 +1,6 @@
 services:
   college-advisor:
-    build: .
+    image: college-advisor-agent:latest
     container_name: college-advisor
     ports:
       - "5181:3001"
@@ -10,7 +10,7 @@ services:
     environment:
       - NODE_ENV=production
     volumes:
-      - ./data:/app/server/data
+      - ./data:/app/server/data:ro
       - ./client/dist:/app/client/dist:ro
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://localhost:3001/health"]

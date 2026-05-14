@@ -18,7 +18,7 @@ interface UsersStore {
 }
 
 function getUsersPath(): string {
-  return path.resolve(process.cwd(), 'server/auth/users.json');
+  return path.resolve(process.cwd(), 'data/users.json');
 }
 
 function loadUsers(): UsersStore {

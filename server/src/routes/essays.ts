@@ -87,7 +87,7 @@ router.get('/stats', (_req, res) => {
  * List all essays for a user.
  */
 router.get('/user/:userId', authMiddleware, (req, res) => {
-  const userId = req.auth.userId;
+  const userId = req.auth!.userId;
   try {
     const essays = essayManager.listEssays(userId);
     res.json({ essays, total: essays.length });
@@ -101,7 +101,7 @@ router.get('/user/:userId', authMiddleware, (req, res) => {
  * Get a single essay with its review.
  */
 router.get('/user/:userId/:essayId', authMiddleware, (req, res) => {
-  const userId = req.auth.userId;
+  const userId = req.auth!.userId;
   const { essayId } = req.params;
   try {
     const entry = essayManager.getEntry(essayId, userId);
@@ -117,7 +117,7 @@ router.get('/user/:userId/:essayId', authMiddleware, (req, res) => {
  * Submit a new essay for review. Body: { promptId, promptLabel, draftText, revisionOf? }
  */
 router.post('/user/:userId', authMiddleware, (req, res) => {
-  const userId = req.auth.userId;
+  const userId = req.auth!.userId;
   const { promptId, promptLabel, draftText, revisionOf } = req.body as {
     promptId: string;
     promptLabel: string;

@@ -81,6 +81,19 @@ export interface SessionChatMessage {
   userId?: string;
 }
 
+// Extend Express Request to include auth payload from authMiddleware
+declare global {
+  namespace Express {
+    interface Request {
+      auth?: {
+        userId: string;
+        username: string;
+        displayName: string;
+      };
+    }
+  }
+}
+
 export interface SessionMetadata {
   id: string;
   name: string;

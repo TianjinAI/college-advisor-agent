@@ -6,7 +6,7 @@ import { authMiddleware } from '../auth/auth.js';
 const router = Router();
 
 router.get('/api/sessions', authMiddleware, async (req, res) => {
-  const userId = req.auth.userId;
+  const userId = req.auth!.userId;
   if (!userId) {
     res.status(400).json({ error: 'userId is required' });
     return;
@@ -22,7 +22,7 @@ router.get('/api/sessions', authMiddleware, async (req, res) => {
 
 router.post('/api/sessions', authMiddleware, async (req, res) => {
   const { name, purpose } = req.body as { name?: string; purpose?: string };
-  const userId = req.auth.userId;
+  const userId = req.auth!.userId;
   if (!name?.trim()) {
     res.status(400).json({ error: 'name is required' });
     return;
@@ -37,7 +37,7 @@ router.post('/api/sessions', authMiddleware, async (req, res) => {
 });
 
 router.get('/api/sessions/:id/messages', authMiddleware, async (req, res) => {
-  const userId = req.auth.userId;
+  const userId = req.auth!.userId;
   try {
     const messages = await dossierManager.loadMessages(userId, req.params.id);
     res.json({ messages });
@@ -48,7 +48,7 @@ router.get('/api/sessions/:id/messages', authMiddleware, async (req, res) => {
 
 router.post('/api/sessions/:id/messages', authMiddleware, async (req, res) => {
   const { messages } = req.body as { messages?: SessionChatMessage[] };
-  const userId = req.auth.userId;
+  const userId = req.auth!.userId;
   if (!Array.isArray(messages)) {
     res.status(400).json({ error: 'messages is required' });
     return;
@@ -67,7 +67,7 @@ export default router;
 // ─── User profile routes ────────────────────────────────────────────────
 
 router.get('/api/user/profile', authMiddleware, async (req, res) => {
-  const userId = req.auth.userId;
+  const userId = req.auth!.userId;
 
   try {
     const [displayName, studentProfile] = await Promise.all([
@@ -85,7 +85,7 @@ router.put('/api/user/profile', authMiddleware, async (req, res) => {
     displayName?: string;
     studentProfile?: import('../types.js').StudentProfile;
   };
-  const userId = req.auth.userId;
+  const userId = req.auth!.userId;
 
   if (!displayName?.trim() && !studentProfile) {
     res.status(400).json({ error: 'At least one profile field is required' });
