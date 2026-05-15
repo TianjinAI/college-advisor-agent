@@ -38,3 +38,6 @@ client/.codex/
 
 # Docker
 .docker/
+
+# Runtime user data (application tracking files)
+data/users/*/

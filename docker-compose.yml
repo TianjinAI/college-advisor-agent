@@ -10,7 +10,7 @@ services:
     environment:
       - NODE_ENV=production
     volumes:
-      - ./data:/app/server/data:ro
+      - ./data:/app/server/data:rw
       - ./client/dist:/app/client/dist:ro
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://localhost:3001/health"]

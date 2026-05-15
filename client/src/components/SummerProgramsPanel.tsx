@@ -7,6 +7,17 @@
  */
 import { useState, useEffect, useCallback, useRef } from 'react';
 
+// ─── Auth helper (mirrors authFetch in App.tsx) ─────────────────────────────
+
+const JWT_STORAGE_KEY = 'college-advisor-jwt';
+
+async function authFetch(url: string, options: RequestInit = {}): Promise<Response> {
+  const token = window.localStorage.getItem(JWT_STORAGE_KEY);
+  const headers = { ...(options.headers as Record<string, string> || {}) };
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+  return fetch(url, { ...options, headers });
+}
+
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 interface SummerProgram {
@@ -332,7 +343,7 @@ function BrowseTab({
   useEffect(() => {
     Promise.all([
       fetch('/api/summer-programs').then(r => r.json()).catch(() => ({ programs: [] })),
-      fetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications`).then(r => r.json()).catch(() => ({ applications: [] })),
+      authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications`).then(r => r.json()).catch(() => ({ applications: [] })),
     ]).then(([data, appData]) => {
       setPrograms(data.programs || []);
       setApplications(appData.applications || []);
@@ -344,7 +355,7 @@ function BrowseTab({
 
   const handleTrack = async (program: SummerProgram) => {
     try {
-      const r = await fetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications`, {
+      const r = await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ programId: program.id }),
@@ -463,7 +474,7 @@ function TrackerTab({ userId }: { userId: string }) {
 
   const load = useCallback(() => {
     setLoading(true);
-    fetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications`)
+    authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications`)
       .then(r => r.json())
       .then(d => { setApplications(d.applications || []); setLoading(false); })
       .catch(() => setLoading(false));
@@ -474,7 +485,7 @@ function TrackerTab({ userId }: { userId: string }) {
   const updateStatus = async (programId: string, status: ApplicationStatus) => {
     setUpdating(programId);
     try {
-      await fetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications/${programId}`, {
+      await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications/${programId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status }),
@@ -487,7 +498,7 @@ function TrackerTab({ userId }: { userId: string }) {
 
   const remove = async (programId: string) => {
     if (!confirm('Remove this program from your tracker?')) return;
-    await fetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications/${programId}`, { method: 'DELETE' });
+    await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications/${programId}`, { method: 'DELETE' });
     load();
   };
 
@@ -555,7 +566,7 @@ function FollowThruTab({ userId }: { userId: string }) {
 
   const load = useCallback(() => {
     setLoading(true);
-    fetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru`)
+    authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru`)
       .then(r => r.json())
       .then(d => { setSessions(d.sessions || []); setLoading(false); })
       .catch(() => setLoading(false));
@@ -566,7 +577,7 @@ function FollowThruTab({ userId }: { userId: string }) {
   const createSession = async (programId: string) => {
     const goalsList = goals.split('\n').map(g => g.trim()).filter(Boolean);
     if (!goalsList.length) { alert('Enter at least one goal'); return; }
-    const r = await fetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}`, {
+    const r = await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ goals: goalsList }),
@@ -576,7 +587,7 @@ function FollowThruTab({ userId }: { userId: string }) {
 
   const addReflection = async (programId: string) => {
     if (!reflectionContent.trim()) return;
-    await fetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}/reflection`, {
+    await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}/reflection`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -593,7 +604,7 @@ function FollowThruTab({ userId }: { userId: string }) {
   };
 
   const saveRecap = async (programId: string) => {
-    await fetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}/recap`, {
+    await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}/recap`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -823,7 +834,7 @@ function AcceptedProgramsWithoutFollowThru({
   const [accepted, setAccepted] = useState<SummerApplication[]>([]);
 
   useEffect(() => {
-    fetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications`)
+    authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications`)
       .then(r => r.json())
       .then(d => {
         const apps: SummerApplication[] = d.applications || [];
@@ -897,7 +908,7 @@ function ProgramDetailModal({
 
   const handleSaveNotes = async () => {
     if (!application) return;
-    await fetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications/${program.id}`, {
+    await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications/${program.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ notes }),
@@ -1051,7 +1062,7 @@ export default function SummerProgramsPanel({ userId, interests, budget, current
   const getApp = (pid: string) => applications.find(a => a.programId === pid);
 
   const handleTrack = async (program: SummerProgram) => {
-    const r = await fetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications`, {
+    const r = await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ programId: program.id }),
