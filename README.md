@@ -28,6 +28,10 @@ The dossier evolves with every conversation. The LLM reads the existing wiki pag
 ### Core Advising
 - **KB-First Smart Routing** — Answers from curated knowledge base first; web search supplements only for time-sensitive data (deadlines, rankings)
 - **Streaming Chat** — WebSocket-powered real-time responses with markdown rendering
+  - Decision logic (`needsWebSearch`):
+    - Always checks KB first — if KB has a result, no web search
+    - Only triggers Tavily if: KB is empty OR query asks for time-sensitive numbers (deadlines, tuition, acceptance rates, rankings, ED/EA/RD dates, median SAT/ACT, financial aid packages)
+    - 4-second timeout — fast-fail so slow Tavily responses do not block the answer
 - **Smart Recommendations** — Personalized school picks based on GPA, SAT/ACT, interests, budget, and target states
 - **Summer Programs Tracker** — curated database of STEM/Math/AI/Coding summer camps with deadlines, selectivity, cost, and application requirements. Follow-thru sessions connect program participation to college app narrative
 - **Structured Search** — Support for `tier:ivy`, `stem:elite`, `region:northeast` filters in KB retrieval
@@ -38,11 +42,22 @@ The dossier evolves with every conversation. The LLM reads the existing wiki pag
 - **Confidence tracking** — Every insight marked [high] [medium] [low]
 - **Frontmatter metadata** — domain, status, source_count, last_updated — tracks dossier evolution
 - **System prompt injection** — The full dossier is injected into every query so the advisor always knows who it's talking to
+  - **Enrichment pipeline** (`extractDossierFacts`):
+    - Runs after every response (if `userId` present)
+    - Loads existing dossier, reads user message + full assistant response
+    - Extracts new facts into 6 sections: Academic Snapshot, Origin & Background, What They Want, Target Schools & Strategy, Evolving Concerns, Key Advisor Insights
+    - Deduplicates against existing facts; marks confidence [high] / [medium] / [low]
+    - Writes back to `dossier.md` — the wiki grows richer with every session
 
 ### Multi-Project Sessions
 - **Project isolation** — Separate chats for "General Advising", "Essay Review", "MIT Strategy", "School Comparison"
 - **Shared dossier** — Student profile is shared across ALL projects
 - **Session persistence** — Chat history saved per-project to `data/users/{userId}/sessions/{sessionId}/chat.json`
+  - **Conversation ingestion**:
+    - On each request: loads `chat.json` from session storage as `effectiveHistory`
+    - Injects last 12 messages into the LLM context window (rolling window)
+    - Client also stores messages in `localStorage` as a safety fallback
+    - On reconnect: falls back to localStorage if server returns no messages
 - **Session switcher UI** — Dropdown in header to create and switch projects
 - **Session message persistence** — messages saved to server (per session) + localStorage fallback; survives page refresh and server restarts
 
