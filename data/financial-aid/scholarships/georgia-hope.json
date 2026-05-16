@@ -1,0 +1,41 @@
+{
+  "id": "georgia-hope",
+  "name": "Georgia HOPE Scholarship",
+  "sponsor": "Georgia Student Finance Commission",
+  "amount": "Tuition amount at GA public university; $5,000/year at eligible private GA university",
+  "amount_min": null,
+  "amount_max": null,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": 3.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or eligible non-citizen; GA resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": "GA",
+    "other_requirements": "GA resident; graduate from GA high school with 3.0 HOPE GPA; maintain 3.0 GPA in college to renew; no income limit but no minimum test score for initial HOPE eligibility"
+  },
+  "deadline": "October 1",
+  "application_url": "https://www.gsfc.org/hopeprograms",
+  "award_count_per_year": null,
+  "selectivity": "moderately-selective",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "State scholarship; can stack with federal and institutional aid. Generally no displacement risk at GA public colleges.",
+  "category": [
+    "merit",
+    "state"
+  ],
+  "tags": [
+    "georgia",
+    "tuition",
+    "gpa",
+    "renewable"
+  ],
+  "notes": "Renewal requires maintaining 3.0 college GPA \u2014 significant attrition after freshman year. Zell Miller Scholarship (higher tier) requires 3.7 HOPE GPA and 1200 SAT/26 ACT for initial eligibility. Both are GA-resident-specific."
+}

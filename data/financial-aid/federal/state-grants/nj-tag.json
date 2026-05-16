@@ -1,0 +1,19 @@
+{
+  "id": "nj-tag",
+  "name": "New Jersey TAG (Tuition Aid Grant)",
+  "type": "state-grant",
+  "administered_by": "New Jersey Higher Education Student Assistance Authority (HESAA)",
+  "description": "New Jersey's primary need-based grant program for residents attending eligible NJ colleges. TAG provides significant grant funding for students with demonstrated financial need and is one of the most generous state grant programs.",
+  "eligibility": "New Jersey resident, U.S. citizen or eligible non-citizen, enrolled at least half-time in an eligible NJ college (public, private, or technical institute), demonstrating financial need based on NJ Eligibility Index (NJEI), meeting SAP requirements.",
+  "award_amount": "Varies by sector: NJ community colleges up to $3,212/year, NJ public colleges up to $12,092/year, NJ private colleges up to $14,094/year. Awards based on NJEI and available state funding. Prorated for part-time enrollment.",
+  "application_process": "File FAFSA by September 15 for fall enrollment (priority deadline April 1 for returning students). NJ residents attending NJ colleges are automatically considered. Students at proprietary or private career schools have different rules.",
+  "timeline": "September 15 priority deadline for new applicants. Renewal students must file by April 1. Awards included in financial aid packages typically March-May. Must maintain SAP (2.0 GPA and completion rate per semester).",
+  "advisor_notes": "NJ has one of the most generous state grant programs in the country. Early filing is important as some schools have waiting lists for TAG when funds are exhausted. Community college students receive significant funding. Non-residents who married NJ residents and meet specific criteria may also qualify.",
+  "stacking_notes": "TAG stacks with Pell Grant for most NJ colleges. However, combined state and federal grants cannot exceed cost of attendance. Some colleges reduce institutional grants when TAG is awarded \u2014 review specific college packaging policies. SEOG is typically awarded before TAG in campus-based distribution.",
+  "source_urls": [
+    "https://www.hesaa.org/",
+    "https://www.hesaa.org/Pages/TuitionAidGrant.aspx"
+  ],
+  "last_verified": "2026-05-16",
+  "state": "NJ"
+}

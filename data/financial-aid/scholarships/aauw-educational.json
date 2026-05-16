@@ -1,0 +1,41 @@
+{
+  "id": "aauw-educational",
+  "name": "AAUW Educational Foundation Fellowships",
+  "sponsor": "American Association of University Women",
+  "amount": "$2,000\u2013$18,000",
+  "amount_min": 2000,
+  "amount_max": 18000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 3.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or permanent resident (domestic); international (select programs)",
+    "race_ethnicity": [],
+    "gender": "female",
+    "grade_level": "college student",
+    "state_required": null,
+    "other_requirements": "Women pursuing graduate or postdoctoral study; some undergraduate programs; career development grants available"
+  },
+  "deadline": "December 1",
+  "application_url": "https://www.aauw.org/resources/programs/fellowships-grants/",
+  "award_count_per_year": 250,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "External fellowship; generally stackable at graduate level.",
+  "category": [
+    "women",
+    "merit"
+  ],
+  "tags": [
+    "graduate",
+    "women",
+    "fellowship",
+    "career-development"
+  ],
+  "notes": "Primarily graduate/postdoctoral \u2014 limited undergraduate options. Advisors working with women continuing to grad school should flag this."
+}

@@ -1,0 +1,43 @@
+{
+  "id": "cornell-university",
+  "name": "Cornell University",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Cornell meets 100% of demonstrated financial need for domestic undergraduates. Need calculation uses CSS Profile and FAFSA. Aid policy varies slightly by college (endowed vs. contract/statutory colleges).",
+  "no_loan_policy": false,
+  "no_loan_notes": "Cornell replaced loans with grants for families earning under $60,000 (announced 2023, Cornell Commitment expanded). Students with family income $60k-$120k see reduced loans. Above $120k, loans remain part of standard packages.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 1000,
+    "band_30_48k": 6000,
+    "band_48_75k": 16000,
+    "band_75_110k": 26000,
+    "band_110k_plus": 43000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": null,
+    "sat_floor": null,
+    "act_floor": null,
+    "notes": "Cornell offers limited merit scholarships including National Merit and Cornell-sponsored awards. Most institutional aid is need-based. Some colleges within Cornell have specific merit scholarship programs."
+  },
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based aid calculations as RD applicants. Cornell is need-blind for domestic ED students. Aid offer released with admission decision.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["Cornell Commitment (enhanced aid for low-income students)", "QuestBridge National College Match", "POSSE Scholarship", "Engineering Learning Initiatives", "Robert Trent Jones Scholarship"],
+  "avg_aid_award": 46000,
+  "percent_need_met": 100,
+  "appeal_policy": "Cornell has a formal appeals process through the Office of Financial Aid and Student Employment. Students submit appeals with documentation of changed circumstances.",
+  "international_aid_available": false,
+  "source_urls": [
+    "https://finaid.cornell.edu/",
+    "https://finaid.cornell.edu/types-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

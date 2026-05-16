@@ -1,0 +1,38 @@
+{
+  "id": "bowdoin-college",
+  "name": "Bowdoin College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Bowdoin meets 100% of demonstrated financial need for all admitted domestic students.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Bowdoin eliminated loans from all financial aid packages. All aid is grant-based (no loans, no parental PLUS loan expectation built in). Work-study may be included.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 1000,
+    "band_30_48k": 5000,
+    "band_48_75k": 14000,
+    "band_75_110k": 24000,
+    "band_110k_plus": 43000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive identical need-based aid as RD. Bowdoin allows ED students to withdraw if the financial aid package is not adequate.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["QuestBridge National College Match", "POSSE Scholarship", "Bowdoin Fly-In program for low-income/first-gen students"],
+  "avg_aid_award": 55000,
+  "percent_need_met": 100,
+  "appeal_policy": "Bowdoin encourages appeals when financial circumstances change. Professional judgment applied; families submit updated documentation.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.bowdoin.edu/financial-aid/",
+    "https://www.bowdoin.edu/financial-aid/how-aid-works/index.html"
+  ],
+  "last_verified": "2026-05-16"
+}

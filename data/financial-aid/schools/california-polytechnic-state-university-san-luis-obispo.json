@@ -1,0 +1,43 @@
+{
+  "id": "california-polytechnic-state-university-san-luis-obispo",
+  "name": "California Polytechnic State University, San Luis Obispo",
+  "meets_full_need": false,
+  "meets_full_need_notes": "Cal Poly SLO does not guarantee to meet full demonstrated need. Aid is awarded based on available funds and priority filing. Many students receive partial need coverage.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Loans are a standard component of most Cal Poly financial aid packages, including subsidized/unsubsidized federal loans. No institutional no-loan policy.",
+  "need_only": false,
+  "css_profile_required": false,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 5000,
+    "band_30_48k": 8000,
+    "band_48_75k": 14000,
+    "band_75_110k": 22000,
+    "band_110k_plus": 30000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.5,
+    "sat_floor": 1200,
+    "act_floor": 26,
+    "notes": "Cal Poly SLO offers Cal Poly Scholars, departmental scholarships, and CSU system scholarships. Merit scholarships often require separate applications. Cal Grant available for CA residents meeting GPA/need thresholds."
+  },
+  "fa_priority_deadline": "2026-03-02",
+  "fa_regular_deadline": "rolling",
+  "ed_available": false,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "Cal Poly SLO does not offer ED or EA. Admission is regular decision only.",
+  "questbridge_partner": false,
+  "posse_partner": false,
+  "special_programs": ["Cal Grant (CA residents)", "Cal Poly Scholars Program", "Engineering and Computer Science scholarships", "University Honors Program scholarships"],
+  "avg_aid_award": 14000,
+  "percent_need_met": 65,
+  "appeal_policy": "Students may submit a Special Circumstance appeal for unusual financial situations. Appeals reviewed by financial aid office with supporting documentation.",
+  "international_aid_available": false,
+  "source_urls": [
+    "https://financialaid.calpoly.edu/",
+    "https://financialaid.calpoly.edu/types-of-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "colby-college",
+  "name": "Colby College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Colby meets 100% of demonstrated financial need for all admitted domestic students.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Colby eliminated loans from financial aid packages in 2014. All aid is grant-based. Colby Promise guarantees full need met with no loans for all four years.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 2000,
+    "band_30_48k": 7000,
+    "band_48_75k": 15000,
+    "band_75_110k": 25000,
+    "band_110k_plus": 43000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based aid as RD applicants. Aid offer released with admission decision. Students may withdraw if aid is insufficient.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["Colby Promise (no-loan guarantee)", "QuestBridge National College Match", "POSSE Scholarship", "Davis UWC Scholars"],
+  "avg_aid_award": 52000,
+  "percent_need_met": 100,
+  "appeal_policy": "Colby accepts appeals based on changed circumstances. Students submit documentation for professional judgment review.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.colby.edu/admission/financial-aid/",
+    "https://www.colby.edu/admission/financial-aid/colby-promise/"
+  ],
+  "last_verified": "2026-05-16"
+}

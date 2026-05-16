@@ -1,0 +1,33 @@
+{
+  "id": "thrive-scholars",
+  "name": "Thrive Scholars (formerly SEO Scholars)",
+  "sponsor": "Thrive Scholars (formerly Sponsors for Educational Opportunity)",
+  "amount": "Full college counseling, mentorship, and financial support services; monetary award varies",
+  "amount_min": null,
+  "amount_max": null,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": 3.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": 75000,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen, permanent resident, or DACA",
+    "race_ethnicity": ["African American", "Hispanic/Latino"],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must be an African American or Hispanic/Latino high school student; low-to-moderate income; must live in a Thrive Scholars program city; strong potential demonstrated through program participation"
+  },
+  "deadline": "January 15",
+  "application_url": "https://www.thrivescholars.org",
+  "award_count_per_year": null,
+  "selectivity": "very-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Thrive provides wraparound support services and some direct financial aid. Financial support stacks with institutional and federal aid. The primary value is the comprehensive college success programming, not solely cash awards.",
+  "category": ["first-gen", "minority", "need-based"],
+  "tags": ["african-american", "hispanic", "low-income", "college-access", "counseling", "mentorship", "wraparound-support"],
+  "notes": "Formerly SEO Scholars — rebranded as Thrive Scholars in 2021. Program provides 8 years of continuous support from high school through career launch. Focuses on helping high-achieving students of color gain admission to highly selective colleges and persist through graduation. The program value is substantially in non-monetary services; students get intensive coaching, summer programming, and professional network access."
+}

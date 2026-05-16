@@ -1,0 +1,43 @@
+{
+  "id": "asian-american-journalists",
+  "name": "AAJA Scholarship",
+  "sponsor": "Asian American Journalists Association",
+  "amount": "$1,500\u2013$5,000",
+  "amount_min": 1500,
+  "amount_max": 5000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 3.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or permanent resident",
+    "race_ethnicity": [
+      "Asian American",
+      "Pacific Islander"
+    ],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Pursuing journalism or media-related field; AAJA membership encouraged"
+  },
+  "deadline": "February 15",
+  "application_url": "https://www.aaja.org/scholarships/",
+  "award_count_per_year": 10,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "External award; generally stackable.",
+  "category": [
+    "minority",
+    "merit"
+  ],
+  "tags": [
+    "asian-american",
+    "journalism",
+    "media"
+  ],
+  "notes": "Niche award for AAPI students in journalism. Small applicant pool means better odds for qualified candidates."
+}

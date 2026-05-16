@@ -1,0 +1,17 @@
+{
+  "id": "federal-seog",
+  "name": "Federal Supplemental Educational Opportunity Grant (SEOG)",
+  "type": "federal-grant",
+  "administered_by": "U.S. Department of Education (administered by colleges)",
+  "description": "Campus-based grant program for undergraduate students with exceptional financial need. Priority is given to Pell Grant recipients. Unlike Pell, SEOG funding is limited per institution and distributed at the college's discretion.",
+  "eligibility": "Undergraduate students with exceptional financial need who are Pell Grant eligible. Must be enrolled at a participating college. Funds are limited and awarded on a first-come, first-served basis at many schools.",
+  "award_amount": "$100 to $4,000 per academic year. Actual amount determined by college based on need and available funds. Average award is approximately $1,000-$2,000.",
+  "application_process": "Automatic consideration through FAFSA — no separate application. Colleges allocate funds to eligible students and include SEOG in financial aid award letter.",
+  "timeline": "Awarded per academic year. Early FAFSA filers have better chance since funds are limited. Must be renewed annually.",
+  "advisor_notes": "SEOG is one of the most underutilized programs because families don't know it exists. Since colleges control distribution, early FAFSA filing is critical. Students at well-endowed schools often receive larger SEOG awards. This grant does not need to be repaid.",
+  "source_urls": [
+    "https://studentaid.gov/understand-aid/types/grants/seog",
+    "https://www2.ed.gov/programs/fseog/index.html"
+  ],
+  "last_verified": "2026-05-16"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "washington-university-in-st-louis",
+  "name": "Washington University in St. Louis",
+  "meets_full_need": true,
+  "meets_full_need_notes": "WashU meets 100% of demonstrated financial need for all admitted domestic undergraduates. Robust need-based program.",
+  "no_loan_policy": false,
+  "no_loan_notes": "WashU does not have a universal no-loan policy. Students from families earning under $75,000 typically receive no-loan packages. Others may see modest loans in their aid packages.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 3000,
+    "band_30_48k": 6000,
+    "band_48_75k": 14000,
+    "band_75_110k": 26000,
+    "band_110k_plus": 46000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.7,
+    "sat_floor": 1400,
+    "act_floor": 32,
+    "notes": "WashU offers major merit programs including the Danforth Scholars Program, Ervin Scholars Program, Rodriguez Scholars Program, and St. Louis Scholars. Merit scholarships can provide full tuition plus stipend. Some require separate applications."
+  },
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive same need-based aid methodology as RD. Merit scholarship finalists may be identified during ED. ED is binding.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": [
+    "Danforth Scholars Program",
+    "Ervin Scholars Program",
+    "Rodriguez Scholars Program",
+    "St. Louis Scholars Program (need-based aid for St. Louis region)",
+    "Prelude Scholars program for first-gen and low-income admits",
+    "QuestBridge College Match",
+    "POSSE Scholarship"
+  ],
+  "avg_aid_award": 54000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal their financial aid award through the Student Financial Services office. Appeals require documentation of special circumstances, significant changes in finances, or competing financial situations.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://financialaid.wustl.edu/",
+    "https://financialaid.wustl.edu/scholarships/",
+    "https://financialaid.wustl.edu/how-to-apply/"
+  ],
+  "last_verified": "2026-05-16"
+}

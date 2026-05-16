@@ -1,0 +1,44 @@
+{
+  "id": "university-of-pennsylvania",
+  "name": "University of Pennsylvania",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Penn meets 100% of demonstrated financial need for all admitted undergraduates and has expanded support for middle-income families.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Penn's all-grant policy means no loans in need-based aid packages for all undergraduates receiving institutional aid.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 2000,
+    "band_30_48k": 4000,
+    "band_48_75k": 9000,
+    "band_75_110k": 20000,
+    "band_110k_plus": 43000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive same need-based aid methodology as RD. ED is binding; release possible if aid package insufficient.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": [
+    "Penn Grant (all-grant aid)",
+    "QuestBridge College Match",
+    "Penn First Plus",
+    "Highly aided initiative for middle-income families"
+  ],
+  "avg_aid_award": 59000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students can request reevaluation with supporting documentation for changed income, medical expenses, or unusual circumstances.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://srfs.upenn.edu/financial-aid",
+    "https://srfs.upenn.edu/financial-aid/apply",
+    "https://srfs.upenn.edu/financial-aid/types-of-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

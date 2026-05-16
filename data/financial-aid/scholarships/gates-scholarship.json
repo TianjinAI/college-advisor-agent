@@ -1,0 +1,33 @@
+{
+  "id": "gates-scholarship",
+  "name": "Gates Scholarship",
+  "sponsor": "Bill & Melinda Gates Foundation",
+  "amount": "Up to full cost of attendance (gap funding beyond other aid)",
+  "amount_min": null,
+  "amount_max": null,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": 3.3,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": 100000,
+    "first_gen_required": false,
+    "pell_eligible_required": true,
+    "citizenship": "U.S. citizen or permanent resident or DACA",
+    "race_ethnicity": ["African American", "Hispanic American", "American Indian/Alaska Native", "Asian Pacific Islander American"],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Pell Grant eligible; minority student of color; strong leadership and community involvement"
+  },
+  "deadline": "September 15",
+  "application_url": "https://www.thegatesscholarship.org",
+  "award_count_per_year": 300,
+  "selectivity": "extremely-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Designed as a last-dollar scholarship — fills the gap after all other federal, state, and institutional aid is applied. Does not displace existing institutional grants. Renewable through undergraduate degree.",
+  "category": ["need-based", "merit", "minority", "first-gen"],
+  "tags": ["full-ride", "minority", "low-income", "pell", "renewable", "leadership"],
+  "notes": "One of the most comprehensive scholarships available — covers full unmet need through graduation. Restricted to specific minority groups with strong academic and leadership records. Only ~300 awards per year nationally, making the acceptance rate under 1% of applicants; academic excellence alone is insufficient without demonstrated leadership impact."
+}

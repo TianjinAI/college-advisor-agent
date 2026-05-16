@@ -1,0 +1,33 @@
+{
+  "id": "national-merit",
+  "name": "National Merit Scholarship",
+  "sponsor": "National Merit Scholarship Corporation",
+  "amount": "$2,500 one-time (National Merit) or renewable corporate/college-sponsored awards vary",
+  "amount_min": 2500,
+  "amount_max": null,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or permanent resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must take PSAT/NMSQT junior year and score above state Selection Index cutoff; qualify as Semifinalist then Finalist"
+  },
+  "deadline": "October 15",
+  "application_url": "https://www.nationalmerit.org",
+  "award_count_per_year": 7500,
+  "selectivity": "extremely-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "National Merit $2,500 award is stackable. However, many college-sponsored National Merit awards replace institutional merit aid dollar-for-dollar — verify with each college before assuming additive value.",
+  "category": ["merit"],
+  "tags": ["psat", "semifinalist", "finalist", "merit", "national", "test-based"],
+  "notes": "Entry point is junior-year PSAT/NMSQT; students cannot apply directly. Best for high scorers in states with lower Selection Index cutoffs (rural/less-populated states have lower thresholds). Biggest financial value often comes from college-sponsored National Merit awards at specific universities, not the $2,500 NMSC award itself — advise students to research which colleges offer large sponsored awards."
+}

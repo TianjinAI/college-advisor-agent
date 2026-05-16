@@ -1,0 +1,38 @@
+{
+  "id": "carleton-college",
+  "name": "Carleton College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Carleton meets 100% of demonstrated financial need for all admitted domestic students.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Carleton includes a modest self-help (loan + work-study) component in packages. While loans are included, Carleton has reduced loan amounts over time. No full loan-elimination policy as of 2025-26.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 3000,
+    "band_30_48k": 8000,
+    "band_48_75k": 16000,
+    "band_75_110k": 26000,
+    "band_110k_plus": 44000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "Carleton's ED applicants receive the same need-based aid as RD applicants. Students uncomfortable with the aid offer may request to be released from the ED commitment.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["QuestBridge National College Match", "POSSE Scholarship", "Carleton Diversity Scholarship", "Alumni Regional Scholarships"],
+  "avg_aid_award": 50000,
+  "percent_need_met": 100,
+  "appeal_policy": "Appeals accepted for changed financial circumstances. Contact Student Financial Services with updated documentation.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.carleton.edu/financial-aid/",
+    "https://www.carleton.edu/financial-aid/types-of-aid/"
+  ],
+  "last_verified": "2026-05-16"
+}

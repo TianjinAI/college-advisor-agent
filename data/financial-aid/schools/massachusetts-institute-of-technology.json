@@ -1,0 +1,44 @@
+{
+  "id": "massachusetts-institute-of-technology",
+  "name": "Massachusetts Institute of Technology",
+  "meets_full_need": true,
+  "meets_full_need_notes": "MIT meets 100% of demonstrated financial need for all admitted students, domestic and international. Families earning under $75,000 typically pay nothing.",
+  "no_loan_policy": true,
+  "no_loan_notes": "MIT eliminated loans from all financial aid packages. All MIT scholarships are grants. No loans in institutional packages. Families earning under $75,000 pay nothing; under $140,000 pay nothing tuition.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 0,
+    "band_30_48k": 0,
+    "band_48_75k": 5000,
+    "band_75_110k": 18000,
+    "band_110k_plus": 38000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-01-31",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": false,
+  "ea_available": true,
+  "rea_available": false,
+  "ed_aid_implications": "MIT does not offer ED. REA applicants receive same need-based financial aid as regular decision. Aid is released with REA admission decision.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": [
+    "MIT Scholarship (100% need-based, grant-only)",
+    "QuestBridge National College Match",
+    "POSSE Scholarship",
+    "MIT First-Gen Program",
+    "MIT Summer Research Programs"
+  ],
+  "avg_aid_award": 57000,
+  "percent_need_met": 100,
+  "appeal_policy": "MIT reviews appeals for changed financial circumstances through the Student Financial Services office. Professional judgment applied for significant changes in family finances.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://sfs.mit.edu/",
+    "https://sfs.mit.edu/types-of-aid/scholarships-and-grants/"
+  ],
+  "last_verified": "2026-05-16"
+}

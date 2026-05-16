@@ -1,0 +1,50 @@
+{
+  "id": "virginia-polytechnic-institute-and-state-university",
+  "name": "Virginia Polytechnic Institute and State University",
+  "meets_full_need": false,
+  "meets_full_need_notes": "Virginia Tech does not guarantee to meet full demonstrated financial need. Average need met is approximately 65-70%. Virginia Tech has one of the lowest average net prices among top public universities for low-income students.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Virginia Tech includes loans in most financial aid packages. No institutional no-loan policy. However, Virginia Tech has historically kept costs low and is known for strong value.",
+  "need_only": false,
+  "css_profile_required": false,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 13000,
+    "band_30_48k": 18000,
+    "band_48_75k": 23000,
+    "band_75_110k": 30000,
+    "band_110k_plus": 38000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.0,
+    "sat_floor": 1100,
+    "act_floor": 24,
+    "notes": "Virginia Tech offers significant merit scholarships including the President's Scholarship, Corps of Cadets scholarships, and departmental awards. Many out-of-state merit scholarships significantly reduce the higher OOS tuition rate. National Merit finalists receive full tuition scholarships."
+  },
+  "fa_priority_deadline": "2026-03-01",
+  "fa_regular_deadline": "rolling",
+  "ed_available": false,
+  "ea_available": true,
+  "rea_available": false,
+  "ed_aid_implications": "Virginia Tech does not offer ED. EA applicants receive the same aid consideration as regular decision applicants.",
+  "questbridge_partner": false,
+  "posse_partner": false,
+  "special_programs": [
+    "President's Scholarship",
+    "National Merit Finalist awards",
+    "Corps of Cadets scholarships",
+    "Hokie Scholarship (institutional aid for VA residents)",
+    "Hokie Mentorship Program"
+  ],
+  "avg_aid_award": 13000,
+  "percent_need_met": 67,
+  "appeal_policy": "Students may appeal financial aid decisions through the University Scholarships Office. Appeals should include documentation of changed family circumstances, medical expenses, or other unusual financial situations.",
+  "international_aid_available": false,
+  "source_urls": [
+    "https://www.vt.edu/admission/financial-aid.html",
+    "https://www.scholarships.vt.edu/",
+    "https://www.vt.edu/admission/types-of-aid.html"
+  ],
+  "last_verified": "2026-05-16"
+}

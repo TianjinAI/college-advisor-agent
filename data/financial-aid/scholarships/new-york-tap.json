@@ -1,0 +1,40 @@
+{
+  "id": "new-york-tap",
+  "name": "New York Tuition Assistance Program (TAP)",
+  "sponsor": "New York State Higher Education Services Corporation (HESC)",
+  "amount": "Up to $5,665 per year",
+  "amount_min": 500,
+  "amount_max": 5665,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen, permanent resident, or eligible non-citizen; NY resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": "NY",
+    "other_requirements": "Must be a New York State resident; enrolled full-time at an approved NYS postsecondary institution; income limits apply (under ~$125,000 household income for dependent students)"
+  },
+  "deadline": "June 30",
+  "application_url": "https://www.hesc.ny.gov/find-aid/nys-grants-scholarships-and-awards/tap/",
+  "award_count_per_year": null,
+  "selectivity": "moderately-selective",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "State grant; stacks with federal Pell Grant; may reduce institutional aid depending on the school.",
+  "category": [
+    "need-based",
+    "state"
+  ],
+  "tags": [
+    "new-york",
+    "tuition",
+    "state-aid"
+  ],
+  "notes": "TAP is a right for eligible NY residents \u2014 nearly automatic with FAFSA filing. Income thresholds adjusted periodically. Part of the Excelsior free-tuition promise for students at SUNY/CUNY when combined with other aid."
+}

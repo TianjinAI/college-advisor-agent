@@ -1,0 +1,39 @@
+{
+  "id": "astronaut-foundation",
+  "name": "Astronaut Scholarship Foundation",
+  "sponsor": "Astronaut Scholarship Foundation",
+  "amount": "$15,000+ per year",
+  "amount_min": 15000,
+  "amount_max": 15000,
+  "renewable": true,
+  "renewable_years": 2,
+  "eligibility": {
+    "gpa_min": 3.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "college student",
+    "state_required": null,
+    "other_requirements": "Nominated by participating university; STEM majors; junior/senior standing typical"
+  },
+  "deadline": "March 1",
+  "application_url": "https://www.astronautscholarship.org",
+  "award_count_per_year": 70,
+  "selectivity": "very-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Stackable at most schools; nomination process through campus required.",
+  "category": [
+    "stem",
+    "merit"
+  ],
+  "tags": [
+    "nomination",
+    "college-junior"
+  ],
+  "notes": "Campus nomination required. Best for top STEM undergrads at partner schools."
+}

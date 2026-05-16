@@ -1,0 +1,41 @@
+{
+  "id": "hispanic-scholarship-fund",
+  "name": "Hispanic Scholarship Fund",
+  "sponsor": "Hispanic Scholarship Fund",
+  "amount": "$500\u2013$5,000",
+  "amount_min": 500,
+  "amount_max": 5000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 3.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen, permanent resident, DACA, or eligible non-citizen",
+    "race_ethnicity": [
+      "Hispanic/Latino"
+    ],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Must be of Hispanic heritage; enroll full-time at accredited institution"
+  },
+  "deadline": "February 15",
+  "application_url": "https://www.hsf.net",
+  "award_count_per_year": 10000,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Can stack; some colleges reduce need-based grants for outside awards.",
+  "category": [
+    "minority",
+    "need-based",
+    "merit"
+  ],
+  "tags": [
+    "hispanic"
+  ],
+  "notes": "Large national pipeline program plus support services and Scholars Conference."
+}

@@ -1,0 +1,19 @@
+{
+  "id": "fl-bright-futures",
+  "name": "Florida Bright Futures Scholarship",
+  "type": "state-merit-grant",
+  "administered_by": "Florida Department of Education",
+  "description": "Florida's merit-based scholarship program for high-achieving Florida high school graduates attending eligible Florida postsecondary institutions. Includes Florida Academic Scholars (FAS), Florida Medallion Scholars (FMS), and Gold Seal Voc. Programs.",
+  "eligibility": "Florida resident, U.S. citizen, minimum GPA and SAT/ACT scores, completion of required curriculum (16 credits including specific core courses), and community service hours. Must be a Florida resident for tuition purposes.",
+  "award_amount": "FAS: 100% of tuition plus $300/semester stipend. FMS: 75% of tuition. Gold Seal Voc: varies by program and covers a portion of tuition. Amounts recalculated each year based on state funding.",
+  "application_process": "Apply during last year of high school via Florida Office of Student Financial Assistance (OSFA) website. Submit FAFSA by deadline (typically August 31) even though Bright Futures is merit-based. College will confirm enrollment and award.",
+  "timeline": "Applications open February 1 of senior year. Priority deadline varies — must apply by high school graduation year. Award amounts confirmed each fall after state budget appropriation.",
+  "advisor_notes": "Bright Futures is competitive and requires meeting initial cut scores. Students not meeting FAS can still qualify for FMS with slightly lower scores. The program covers tuition only — not fees, room, or board. Students must maintain GPA for renewal. If state funding decreases, award amounts may be reduced.",
+  "stacking_notes": "Bright Futures can be reduced if Pell Grant or other gift aid covers the same tuition costs. Florida public universities generally allow Bright Futures to stack with Pell for unmet need. Students should verify their specific institution's stacking policy. Bright Futures does NOT count against student for federal aid eligibility.",
+  "source_urls": [
+    "https://www.floridastudentfinancialaidsg04fg.cloudapps.urgent.net/MAIN/Index.aspx",
+    "https://www.fldoe.org/grants-fellowships/florida-financial-aid-programs.stml"
+  ],
+  "last_verified": "2026-05-16",
+  "state": "FL"
+}

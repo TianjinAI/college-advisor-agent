@@ -1,0 +1,50 @@
+{
+  "id": "rose-hulman-institute-of-technology",
+  "name": "Rose-Hulman Institute of Technology",
+  "meets_full_need": false,
+  "meets_full_need_notes": "Rose-Hulman does not guarantee to meet full demonstrated financial need. Average need met is approximately 60-65%. Strong merit aid program supplements need-based aid.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Loans are included in most financial aid packages at Rose-Hulman. No institutional no-loan policy.",
+  "need_only": false,
+  "css_profile_required": false,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 18000,
+    "band_30_48k": 23000,
+    "band_48_75k": 29000,
+    "band_75_110k": 36000,
+    "band_110k_plus": 48000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.0,
+    "sat_floor": 1100,
+    "act_floor": 24,
+    "notes": "Rose-Hulman offers substantial merit scholarships including the Presidential Scholarship (up to full tuition), Dean's Scholarship, and Rose-Hulman Merit Award. Most admitted students receive some merit aid. Awards are renewable with continued GPA requirements."
+  },
+  "fa_priority_deadline": "2026-03-01",
+  "fa_regular_deadline": "rolling",
+  "ed_available": false,
+  "ea_available": true,
+  "rea_available": false,
+  "ed_aid_implications": "Rose-Hulman does not offer binding ED. EA applicants receive the same merit and need-based aid consideration.",
+  "questbridge_partner": false,
+  "posse_partner": false,
+  "special_programs": [
+    "Presidential Scholarship (up to full tuition)",
+    "Dean's Scholarship",
+    "Rose-Hulman Merit Award",
+    "National Merit Scholar awards",
+    "Departmental and honors scholarships"
+  ],
+  "avg_aid_award": 28000,
+  "percent_need_met": 62,
+  "appeal_policy": "Students may request a review of their financial aid package by contacting the Office of Financial Aid with documentation of unusual or changed financial circumstances.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.rose-hulman.edu/financial-aid/",
+    "https://www.rose-hulman.edu/financial-aid/scholarships/",
+    "https://www.rose-hulman.edu/financial-aid/how-to-apply/"
+  ],
+  "last_verified": "2026-05-16"
+}

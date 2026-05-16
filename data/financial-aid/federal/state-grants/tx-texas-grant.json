@@ -1,0 +1,19 @@
+{
+  "id": "tx-texas-grant",
+  "name": "Texas TEXAS Grant",
+  "type": "state-grant",
+  "administered_by": "Texas Higher Education Coordinating Board",
+  "description": "The Texas Educational Opportunity Grant Program (TEXAS Grant) provides state financial aid to students attending public colleges in Texas. Focused on supporting students who demonstrate financial need and are on track to graduate.",
+  "eligibility": "Texas resident, demonstrated financial need (based on FAFSA), graduated from a Texas high school with at least a B average in a recommended or distinguished curriculum, enrolled at a Texas public college within 16 months of high school graduation, and meeting Satisfactory Academic Progress (SAP).",
+  "award_amount": "Varies by institution and available funding. Annual award amounts range from approximately $1,000 to $7,000 depending on school and student need. Private college awards are more limited.",
+  "application_process": "File FAFSA by priority deadline (varies by college, typically March 15 for priority consideration). Texas colleges automatically consider TEXAS Grant eligibility based on ISIR data. Some schools require separate state aid applications.",
+  "timeline": "Priority deadlines vary by institution. Students must maintain SAP (typically 2.5 GPA and completion of 67% of courses attempted). Awards can be renewed for up to 8 semesters if progress requirements are met.",
+  "advisor_notes": "TEXAS Grant is renewable but requires maintaining progress. Students who lose eligibility may regain it once GPA improves. Texas has multiple grant programs \u2014 TX B-On-time (for graduates pre-2015) and other programs may also apply. Check specific school deadlines as they can differ significantly.",
+  "stacking_notes": "TEXAS Grant generally stacks with Pell Grant without reduction. Federal loans and work-study are considered part of the self-help component. Private scholarship money can reduce TEXAS Grant at some schools \u2014 review individual school policy. TEXAS Grant cannot be combined with the Texas Workforce Investment Act grant.",
+  "source_urls": [
+    "https://www.highered.texas.gov/our-focus/access/tx-grants/",
+    "https://www.collegeforalltexans.com/index.cfm?oid=290"
+  ],
+  "last_verified": "2026-05-16",
+  "state": "TX"
+}

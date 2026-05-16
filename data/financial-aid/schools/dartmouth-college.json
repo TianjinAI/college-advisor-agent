@@ -1,0 +1,38 @@
+{
+  "id": "dartmouth-college",
+  "name": "Dartmouth College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Dartmouth meets 100% of demonstrated financial need for all admitted domestic students. Families with income under $125,000 and typical assets typically pay nothing for tuition.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Dartmouth eliminated loans from financial aid packages in 2022. All aid is grant-based (Dartmouth Scholarship). No loans included in institutional packages.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 0,
+    "band_30_48k": 2000,
+    "band_48_75k": 10000,
+    "band_75_110k": 22000,
+    "band_110k_plus": 42000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "Dartmouth's financial aid is need-blind and identical for ED and RD applicants. Aid package released with ED decision. Binding commitment may be reconsidered if aid is insufficient.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["Dartmouth Scholarship (grant-only, no-loan)", "QuestBridge National College Match", "POSSE Scholarship", "Stamps Scholarship", "First-year Fly-In program (Dimensions of Dartmouth)"],
+  "avg_aid_award": 57000,
+  "percent_need_met": 100,
+  "appeal_policy": "Dartmouth reviews appeals for changed financial circumstances. Submit Professional Judgment request to Office of Financial Aid with documentation.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://admissions.dartmouth.edu/financial-aid",
+    "https://www.dartmouth.edu/~finaid/"
+  ],
+  "last_verified": "2026-05-16"
+}

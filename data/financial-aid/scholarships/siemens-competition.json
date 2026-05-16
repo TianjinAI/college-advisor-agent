@@ -1,0 +1,39 @@
+{
+  "id": "siemens-competition",
+  "name": "Siemens Competition (legacy, now Regeneron-affiliated pathways)",
+  "sponsor": "Formerly Siemens Foundation",
+  "amount": "Historical awards up to $100,000 (program ended)",
+  "amount_min": 1000,
+  "amount_max": 100000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "N/A (program discontinued)",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Program ended in 2017; students should pursue Regeneron STS/ISEF instead"
+  },
+  "deadline": "September 30",
+  "application_url": "https://www.societyforscience.org",
+  "award_count_per_year": null,
+  "selectivity": "extremely-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Legacy record only; no current new awards.",
+  "category": [
+    "stem",
+    "merit"
+  ],
+  "tags": [
+    "discontinued",
+    "legacy"
+  ],
+  "notes": "Competition discontinued. Keep record for advising historical references only."
+}

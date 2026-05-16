@@ -1,0 +1,39 @@
+{
+  "id": "imagine-america",
+  "name": "Imagine America Foundation Scholarship",
+  "sponsor": "Imagine America Foundation",
+  "amount": "$1,000 one-time tuition discount",
+  "amount_min": 1000,
+  "amount_max": 1000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 2.5,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or permanent resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must attend participating career college and complete recommendation"
+  },
+  "deadline": "December 31",
+  "application_url": "https://www.imagine-america.org",
+  "award_count_per_year": 10000,
+  "selectivity": "moderately-selective",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Applied at participating schools; may reduce institutional grant at some campuses.",
+  "category": [
+    "merit",
+    "need-based"
+  ],
+  "tags": [
+    "career-college",
+    "trade-school"
+  ],
+  "notes": "Best for career/technical pathways, not traditional 4-year selective colleges."
+}

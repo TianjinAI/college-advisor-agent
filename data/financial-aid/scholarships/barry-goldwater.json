@@ -1,0 +1,39 @@
+{
+  "id": "barry-goldwater",
+  "name": "Barry Goldwater Scholarship",
+  "sponsor": "Barry Goldwater Scholarship and Excellence in Education Foundation",
+  "amount": "$7,500 per year",
+  "amount_min": 7500,
+  "amount_max": 7500,
+  "renewable": true,
+  "renewable_years": 2,
+  "eligibility": {
+    "gpa_min": 3.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or permanent resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "college student",
+    "state_required": null,
+    "other_requirements": "Must be sophomore or junior pursuing research career in natural sciences, math, or engineering"
+  },
+  "deadline": "January 26",
+  "application_url": "https://goldwaterscholarship.gov",
+  "award_count_per_year": 400,
+  "selectivity": "very-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Usually stackable; some institutions coordinate with internal merit awards.",
+  "category": [
+    "stem",
+    "merit"
+  ],
+  "tags": [
+    "college-junior",
+    "research"
+  ],
+  "notes": "Important gotcha: for current college sophomores/juniors only, not HS seniors."
+}

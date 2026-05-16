@@ -1,0 +1,19 @@
+{
+  "id": "nc-need-based",
+  "name": "North Carolina Need-Based Grant",
+  "type": "state-grant",
+  "administered_by": "North Carolina State Education Assistance Authority (NCSEAA)",
+  "description": "North Carolina's primary need-based state grant for residents attending eligible NC colleges. Provides direct grant funding for students with demonstrated financial need to help cover education costs.",
+  "eligibility": "North Carolina resident, U.S. citizen or eligible non-citizen, enrolled at least half-time at an eligible NC college, demonstrating significant financial need based on FAFSA, meeting satisfactory academic progress.",
+  "award_amount": "Varies by college and available funding. Annual awards typically range from $500 to $4,000 depending on institutional participation and student need. Each participating college receives a fixed allocation to distribute.",
+  "application_process": "File FAFSA by March 15 priority deadline. NC colleges automatically determine eligibility based on ISIR data. Students enrolled at participating private colleges may need to complete additional state aid applications.",
+  "timeline": "March 15 priority deadline. Awards are typically included in financial aid package by April. Must be renewed annually with satisfactory academic progress (2.0 GPA and completion of 67% of courses).",
+  "advisor_notes": "Not all NC colleges participate in the Need-Based Grant program \u2014 verify with specific schools. Students who are first-time recipients and don't meet SAP may appeal for one semester of probation. Grant is for undergraduates only. Transfer students should check new school's allocation.",
+  "stacking_notes": "NC Need-Based Grant stacks with Pell Grant for most colleges. Some private colleges may reduce institutional grants when combined state and federal grants exceed certain thresholds \u2014 review school packaging policies. Federal SEOG typically comes before NC Need-Based Grant in packaging.",
+  "source_urls": [
+    "https://www.ncseaa.edu/",
+    "https://www.ncseaa.edu/college-students/nc-need-based-grant/"
+  ],
+  "last_verified": "2026-05-16",
+  "state": "NC"
+}

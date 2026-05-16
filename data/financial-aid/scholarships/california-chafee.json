@@ -1,0 +1,40 @@
+{
+  "id": "california-chafee",
+  "name": "California Chafee Grant",
+  "sponsor": "California Department of Social Services",
+  "amount": "Up to $5,000 per year",
+  "amount_min": 500,
+  "amount_max": 5000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or eligible non-citizen",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": "CA",
+    "other_requirements": "Must be current or former California foster youth; typically emancipated between ages 16-21; enrolled in qualifying CA postsecondary program"
+  },
+  "deadline": "March 2",
+  "application_url": "https://www.csac.ca.gov/chafee-grant-program",
+  "award_count_per_year": 5000,
+  "selectivity": "moderately-selective",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "State grant; typically stacks with federal and institutional aid. No displacement expected.",
+  "category": [
+    "need-based",
+    "state"
+  ],
+  "tags": [
+    "foster-youth",
+    "california",
+    "emancipated"
+  ],
+  "notes": "Critical funding source for California foster youth. Advisors should check CSAC for updated age limits \u2014 policy has expanded. Must file FAFSA/CADAA."
+}

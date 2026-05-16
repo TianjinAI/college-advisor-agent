@@ -1,0 +1,50 @@
+{
+  "id": "wellesley-college",
+  "name": "Wellesley College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Wellesley meets 100% of demonstrated financial need for all admitted domestic and international undergraduates. Need-blind admission for domestic applicants.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Wellesley has a no-loan policy for students from families with incomes below $65,000. For students above that threshold, modest loans may appear in packages, but Wellesley has reduced loan expectations significantly. Many packages remain loan-free.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 2500,
+    "band_30_48k": 6000,
+    "band_48_75k": 12000,
+    "band_75_110k": 22000,
+    "band_110k_plus": 43000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": null,
+    "sat_floor": null,
+    "act_floor": null,
+    "notes": "Wellesley offers a small number of merit awards, including the Wellesley College Scholarship and the Bernstein Scholarship. The vast majority of aid is need-based. Merit awards are folded into need-based packages when applicable."
+  },
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based financial aid as RD applicants. Wellesley meets full need regardless of admission round.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": [
+    "Wellesley College Scholarship (need/grant)",
+    "QuestBridge College Match",
+    "POSSE Scholarship",
+    "Davis Degree Program (for nontraditional students)",
+    "Bunce/Wellesley Renewal Scholarship"
+  ],
+  "avg_aid_award": 53000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal their financial aid by contacting Student Financial Services. Appeals require written documentation of special circumstances, changes in family finances, or unusual expenses not captured in initial application.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.wellesley.edu/sfs",
+    "https://www.wellesley.edu/sfs/apply-for-aid",
+    "https://www.wellesley.edu/sfs/types-of-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

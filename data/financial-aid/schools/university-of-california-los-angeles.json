@@ -1,0 +1,51 @@
+{
+  "id": "university-of-california-los-angeles",
+  "name": "University of California, Los Angeles",
+  "meets_full_need": false,
+  "meets_full_need_notes": "UCLA, as a public university, does not guarantee to meet 100% of demonstrated financial need. Average need met is approximately 83% for domestic students. California residents receive significantly better aid via Cal Grant and Blue and Gold Opportunity Plan.",
+  "no_loan_policy": false,
+  "no_loan_notes": "UCLA does not have a no-loan policy. Loans are standard components of most aid packages. The Blue and Gold Opportunity Plan covers fees/tuition for California residents with family incomes under $80,000, but does not eliminate loans from packages entirely.",
+  "need_only": false,
+  "css_profile_required": false,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 4000,
+    "band_30_48k": 8000,
+    "band_48_75k": 14000,
+    "band_75_110k": 24000,
+    "band_110k_plus": 35000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.0,
+    "sat_floor": null,
+    "act_floor": null,
+    "notes": "UCLA offers some merit-based scholarships through departments, alumni associations, and the Regents Scholarship (highly competitive, renewable). UC Regents Scholarship is the flagship merit award. Many departmental and external scholarships are available."
+  },
+  "fa_priority_deadline": "2026-03-02",
+  "fa_regular_deadline": "2026-03-02",
+  "ed_available": false,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "UCLA does not offer ED or EA. All applicants are reviewed in the regular decision pool.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": [
+    "UC Blue and Gold Opportunity Plan (tuition/fees covered for CA residents under $80k income)",
+    "Cal Grant (California state grant program)",
+    "UC Regents Scholarship (merit)",
+    "QuestBridge College Match",
+    "POSSE Scholarship",
+    "Bruin Promise (for entering freshmen with Pell eligibility)"
+  ],
+  "avg_aid_award": 21000,
+  "percent_need_met": 83,
+  "appeal_policy": "UCLA students may appeal their financial aid package through the Financial Aid and Scholarships office by submitting a Special Circumstance Review form. Appeals are considered for significant changes in family finances, unusual expenses, or errors.",
+  "international_aid_available": false,
+  "source_urls": [
+    "https://financialaid.ucla.edu/",
+    "https://financialaid.ucla.edu/types-of-aid",
+    "https://financialaid.ucla.edu/blue-and-gold"
+  ],
+  "last_verified": "2026-05-16"
+}

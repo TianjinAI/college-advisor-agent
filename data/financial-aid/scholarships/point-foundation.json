@@ -1,0 +1,41 @@
+{
+  "id": "point-foundation",
+  "name": "Point Foundation LGBTQ+ Scholarship",
+  "sponsor": "Point Foundation",
+  "amount": "$5,000\u2013$20,000 per year",
+  "amount_min": 5000,
+  "amount_max": 20000,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": 3.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": true,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen, permanent resident, or DACA",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Must identify as LGBTQ+; demonstrated financial need; leadership and community impact; strong academic record"
+  },
+  "deadline": "January 27",
+  "application_url": "https://www.pointfoundation.org",
+  "award_count_per_year": 40,
+  "selectivity": "extremely-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Generally stackable; Point coordinates with institutional aid offices.",
+  "category": [
+    "lgbtq",
+    "need-based",
+    "merit"
+  ],
+  "tags": [
+    "lgbtq",
+    "leadership",
+    "mentorship"
+  ],
+  "notes": "Highly competitive (~40 scholars selected nationally). Provides not only funding but mentorship, leadership training, and a supportive community. Requires demonstrated LGBTQ+ community leadership, not merely identity."
+}

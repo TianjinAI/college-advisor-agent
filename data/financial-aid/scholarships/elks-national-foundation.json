@@ -1,0 +1,40 @@
+{
+  "id": "elks-national-foundation",
+  "name": "Elks National Foundation Most Valuable Student Scholarship",
+  "sponsor": "Elks National Foundation (Benevolent and Protective Order of Elks)",
+  "amount": "Up to $50,000 ($12,500/year for 4 years); $4,000 one-time awards also given",
+  "amount_min": 4000,
+  "amount_max": 50000,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must be U.S. citizen; need not be an Elks member; judged on scholarship, leadership, and financial need"
+  },
+  "deadline": "November 5",
+  "application_url": "https://www.elks.org/scholarships/mvs.cfm",
+  "award_count_per_year": 500,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "External award; generally stackable. Students should verify with specific institution how outside scholarships are treated.",
+  "category": [
+    "merit",
+    "need-based"
+  ],
+  "tags": [
+    "leadership",
+    "community-service",
+    "renewable"
+  ],
+  "notes": "The $50,000 top award is highly competitive \u2014 most scholars receive the $4,000 one-time award. The application goes through a multi-stage process (lodge, district, state, national). Advisors should note the November deadline is quite early; recommend starting application in September."
+}

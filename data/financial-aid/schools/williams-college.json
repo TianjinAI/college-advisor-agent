@@ -1,0 +1,45 @@
+{
+  "id": "williams-college",
+  "name": "Williams College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Williams meets 100% of demonstrated financial need for all admitted domestic and international undergraduates. Need-blind admission for all domestic applicants.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Williams has a comprehensive no-loan policy for all students receiving financial aid. All need-based aid is in the form of grants that never need to be repaid.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 2500,
+    "band_30_48k": 5000,
+    "band_48_75k": 11000,
+    "band_75_110k": 20000,
+    "band_110k_plus": 42000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based financial aid as RD applicants. Williams meets full need regardless of admission round.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": [
+    "Williams Scholarship (need/grant)",
+    "QuestBridge College Match",
+    "POSSE Scholarship",
+    "Williams-Exeter Programme at Oxford",
+    "Williams-Mystic Program funding"
+  ],
+  "avg_aid_award": 58000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal their financial aid package through the Office of Financial Aid. Appeals require written documentation of special circumstances, changes in family finances, or unusual expenses.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://financialaid.williams.edu/",
+    "https://financialaid.williams.edu/apply-for-aid/",
+    "https://financialaid.williams.edu/types-of-aid/"
+  ],
+  "last_verified": "2026-05-16"
+}

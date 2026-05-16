@@ -1,0 +1,45 @@
+{
+  "id": "university-of-notre-dame",
+  "name": "University of Notre Dame",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Notre Dame meets 100% of demonstrated financial need for all admitted domestic undergraduates. Aid packages include Notre Dame scholarships, federal/state grants, work-study, and sometimes loans.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Notre Dame does not have a universal no-loan policy. Loans may be included in aid packages, although need-based grants are substantial and many lower-income families receive very low net prices.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 3500,
+    "band_30_48k": 7000,
+    "band_48_75k": 13000,
+    "band_75_110k": 25000,
+    "band_110k_plus": 45000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": false,
+  "ea_available": false,
+  "rea_available": true,
+  "ed_aid_implications": "Notre Dame offers Restrictive Early Action, which is non-binding. Aid policies are the same for REA and Regular Decision applicants.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": [
+    "Notre Dame Scholarship (need-based)",
+    "QuestBridge College Match",
+    "AnBryce Scholars Program",
+    "Balfour-Hesburgh Scholars Program",
+    "Transformational Leaders Program"
+  ],
+  "avg_aid_award": 53000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may request a financial aid reconsideration from the Office of Financial Aid. Appeals require documentation of changed circumstances, special expenses, or other factors not represented on aid applications.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://financialaid.nd.edu/",
+    "https://financialaid.nd.edu/apply-for-aid/",
+    "https://financialaid.nd.edu/types-of-aid/"
+  ],
+  "last_verified": "2026-05-16"
+}

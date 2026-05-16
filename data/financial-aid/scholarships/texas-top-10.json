@@ -1,0 +1,43 @@
+{
+  "id": "texas-top-10",
+  "name": "Texas Top 10% Automatic Admission + TEXAS Grant",
+  "sponsor": "University of Texas System / Texas Higher Education Coordinating Board",
+  "amount": "TEXAS Grant: up to tuition and fees at eligible TX public universities; varies by institution",
+  "amount_min": null,
+  "amount_max": null,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen, permanent resident, or eligible non-citizen; TX resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": "TX",
+    "other_requirements": "Automatic admission: graduate in top 10% of Texas public high school class (top 6% for UT Austin). TEXAS Grant: financial need; Pell-eligible or similar income thresholds; enroll full-time at eligible TX public university"
+  },
+  "deadline": "January 15",
+  "application_url": "https://www.tuitiontexas.org",
+  "award_count_per_year": null,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Automatic admission is independent of financial aid. TEXAS Grant stacks with federal and state aid but may reduce institutional grants at some schools.",
+  "category": [
+    "need-based",
+    "state",
+    "merit"
+  ],
+  "tags": [
+    "texas",
+    "automatic-admission",
+    "top-10",
+    "state-aid",
+    "tuition"
+  ],
+  "notes": "Two distinct programs: (1) Top 10% auto-admit rule (top 6% for UT Austin). (2) TEXAS Grant is need-based state aid for Pell-eligible students at public TX universities. Advising both separately is critical \u2014 they serve different purposes."
+}

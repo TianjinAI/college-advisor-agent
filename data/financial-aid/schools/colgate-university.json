@@ -1,0 +1,43 @@
+{
+  "id": "colgate-university",
+  "name": "Colgate University",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Colgate meets 100% of demonstrated financial need for all admitted domestic students.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Colgate includes loans in financial aid packages, though loan amounts are modest. Colgate has a loan cap policy reducing loans for lower-income students. No full loan elimination as of 2025-26.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 4000,
+    "band_30_48k": 9000,
+    "band_48_75k": 18000,
+    "band_75_110k": 28000,
+    "band_110k_plus": 44000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": null,
+    "sat_floor": null,
+    "act_floor": null,
+    "notes": "Colgate offers merit scholarships including National Merit and Colgate-sponsored awards. Most prominent need-based; merit awards exist but are limited in number."
+  },
+  "fa_priority_deadline": "2026-01-15",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive same need-based aid as RD. Binding commitment may be rescinded if financial aid package is inadequate.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["QuestBridge National College Match", "POSSE Scholarship", "National Merit Scholarship", "Benton Scholars Program"],
+  "avg_aid_award": 48000,
+  "percent_need_met": 100,
+  "appeal_policy": "Colgate reviews appeals for changed financial circumstances. Contact Office of Financial Aid with documentation.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.colgate.edu/student-life/paying-college/financial-aid",
+    "https://www.colgate.edu/student-life/paying-college/financial-aid/types-financial-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

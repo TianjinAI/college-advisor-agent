@@ -1,0 +1,50 @@
+{
+  "id": "vanderbilt-university",
+  "name": "Vanderbilt University",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Vanderbilt meets 100% of demonstrated financial need for all admitted domestic undergraduates. Vanderbilt also offers significant merit aid.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Vanderbilt does not have a blanket no-loan policy. Loans may be included in need-based aid packages. However, Opportunity Vanderbilt replaced loans with grants for lower-income students.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 3000,
+    "band_30_48k": 7000,
+    "band_48_75k": 14000,
+    "band_75_110k": 26000,
+    "band_110k_plus": 48000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.7,
+    "sat_floor": 1400,
+    "act_floor": 32,
+    "notes": "Vanderbilt offers full-tuition merit scholarships including the Cornelius Vanderbilt Scholarship, Ingram Scholarship, and Chancellor's Scholarship. These are highly competitive and require separate applications."
+  },
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive same need-based aid as RD. Merit scholarship finalists are identified in the ED round. ED is binding.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": [
+    "Cornelius Vanderbilt Scholarship (full tuition)",
+    "Ingram Scholarship",
+    "Chancellor's Scholarship",
+    "Opportunity Vanderbilt (need-based)",
+    "QuestBridge College Match"
+  ],
+  "avg_aid_award": 55000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal aid packages through the Office of Student Financial Aid with documentation of changed circumstances or special situations.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.vanderbilt.edu/financialaid/",
+    "https://www.vanderbilt.edu/financialaid/types-of-aid/scholarships/",
+    "https://www.vanderbilt.edu/financialaid/applying-for-aid/"
+  ],
+  "last_verified": "2026-05-16"
+}

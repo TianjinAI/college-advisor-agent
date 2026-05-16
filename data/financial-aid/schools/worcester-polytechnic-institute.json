@@ -1,0 +1,50 @@
+{
+  "id": "worcester-polytechnic-institute",
+  "name": "Worcester Polytechnic Institute",
+  "meets_full_need": false,
+  "meets_full_need_notes": "WPI does not guarantee to meet full demonstrated financial need. Average need met is approximately 60-65%. WPI has a relatively high sticker price but offers substantial merit aid.",
+  "no_loan_policy": false,
+  "no_loan_notes": "WPI includes loans in most financial aid packages. No institutional no-loan policy.",
+  "need_only": false,
+  "css_profile_required": false,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 16000,
+    "band_30_48k": 21000,
+    "band_48_75k": 27000,
+    "band_75_110k": 35000,
+    "band_110k_plus": 50000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.0,
+    "sat_floor": 1200,
+    "act_floor": 26,
+    "notes": "WPI offers significant merit scholarships including the Founders Scholarship (full tuition), Dean's Scholarship, and numerous departmental awards. Most admitted students with strong academics receive some merit consideration. WPI's merit program is among the most substantial at private engineering schools."
+  },
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "rolling",
+  "ed_available": true,
+  "ea_available": true,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same merit and need-based aid consideration as RD applicants. ED is binding, so students should ensure the total package meets their needs before committing.",
+  "questbridge_partner": false,
+  "posse_partner": false,
+  "special_programs": [
+    "Founders Scholarship (full tuition)",
+    "Dean's Scholarship",
+    "WPI Merit Award",
+    "National Merit Finalist awards",
+    "Military Science scholarships"
+  ],
+  "avg_aid_award": 32000,
+  "percent_need_met": 62,
+  "appeal_policy": "Students may appeal their financial aid package through the Student Financial Services office. Appeals require documentation of special circumstances such as job loss, medical expenses, divorce, or other significant changes in family financial situation.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.wpi.edu/admissions/financial-aid",
+    "https://www.wpi.edu/admissions/financial-aid/types-of-aid",
+    "https://www.wpi.edu/admissions/financial-aid/scholarships"
+  ],
+  "last_verified": "2026-05-16"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "college-advising-corps",
+  "name": "College Advising Corps Scholar Award",
+  "sponsor": "College Advising Corps",
+  "amount": "Varies; typically $1,000–$5,000",
+  "amount_min": 1000,
+  "amount_max": 5000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 2.5,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": true,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or permanent resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must attend a high school served by a College Advising Corps adviser; first-generation and/or low-income student; must be applying to a four-year college"
+  },
+  "deadline": "March 1",
+  "application_url": "https://www.advisingcorps.org",
+  "award_count_per_year": null,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "External scholarship; generally stackable with institutional aid. Some colleges may reduce need-based grants for outside awards — check school policy.",
+  "category": ["first-gen", "need-based"],
+  "tags": ["first-generation", "low-income", "college-access", "adviser-connected", "high-school"],
+  "notes": "Awards are connected to schools served by College Advising Corps advisers — eligibility is geographic/program-based, not a broad open application. Students must attend a partnered high school. The primary CAC mission is providing college advising; scholar awards supplement that mission. Students at CAC-served schools should ask their on-site adviser directly about available scholarship opportunities."
+}

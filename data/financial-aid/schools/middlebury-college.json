@@ -1,0 +1,49 @@
+{
+  "id": "middlebury-college",
+  "name": "Middlebury College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Middlebury meets 100% of demonstrated financial need for all admitted domestic students.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Middlebury includes loans in aid packages. Students may borrow up to $5,500/year; loan-free packages offered for families earning under $35,000.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 6500,
+    "band_30_48k": 11000,
+    "band_48_75k": 18000,
+    "band_75_110k": 27000,
+    "band_110k_plus": 45000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": null,
+    "sat_floor": null,
+    "act_floor": null,
+    "notes": "Middlebury offers a small number of merit awards (e.g., Middlebury Achievement Awards) but the vast majority of aid is need-based. Merit awards are folded into need-based packages."
+  },
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-03-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based aid as RD applicants. Middlebury commits to meeting full need regardless of admission round.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": [
+    "Middlebury Achievement Awards (merit)",
+    "QuestBridge College Match",
+    "POSSE Scholarship",
+    "First-generation student support initiatives"
+  ],
+  "avg_aid_award": 48000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal their financial aid award by contacting the Student Financial Services office with documentation of changed circumstances or competing offers.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.middlebury.edu/student-financial-services",
+    "https://www.middlebury.edu/student-financial-services/applying-aid",
+    "https://www.middlebury.edu/student-financial-services/scholarships"
+  ],
+  "last_verified": "2026-05-16"
+}

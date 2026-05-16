@@ -1,0 +1,33 @@
+{
+  "id": "first-gen-forward",
+  "name": "First Gen Forward Scholarship",
+  "sponsor": "Various institutions and nonprofit partners",
+  "amount": "Varies by institution; typically $1,000–$5,000",
+  "amount_min": 1000,
+  "amount_max": 5000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 2.5,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": true,
+    "pell_eligible_required": false,
+    "citizenship": "Varies by sponsoring institution",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Must be a first-generation college student (neither parent holds a bachelor's degree); specific criteria vary by sponsoring organization or institution"
+  },
+  "deadline": "March 1",
+  "application_url": "https://www.firstgenerationfoundation.org",
+  "award_count_per_year": null,
+  "selectivity": "moderately-selective",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Generally stackable with institutional aid; as an external scholarship it may trigger institutional displacement at some schools — advisors should check school policy on outside awards for first-gen students.",
+  "category": ["first-gen", "need-based"],
+  "tags": ["first-generation", "first-gen", "low-income", "underrepresented"],
+  "notes": "This category refers to a range of scholarships specifically designated for first-generation college students across many different sponsoring organizations. Amounts and eligibility vary significantly by sponsor. Advisors should research institution-specific first-gen scholarships at target colleges, as many schools run robust internal first-gen programs with more funding than stand-alone external awards."
+}

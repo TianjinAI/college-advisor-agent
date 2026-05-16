@@ -1,0 +1,43 @@
+{
+  "id": "pomona-college",
+  "name": "Pomona College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Pomona meets 100% of demonstrated financial need for all admitted domestic students. One of the most generous aid programs among liberal arts colleges.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Pomona has a no-loan policy for all domestic students who qualify for financial aid. Loans are replaced entirely with grants. No income cap on this policy.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 1500,
+    "band_30_48k": 4000,
+    "band_48_75k": 9000,
+    "band_75_110k": 20000,
+    "band_110k_plus": 41000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based financial aid as RD applicants. Pomona guarantees full need will be met regardless of admission round.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": [
+    "QuestBridge College Match",
+    "Pomona College Scholarship (need-based grant)",
+    "Summer Science Research Program funding"
+  ],
+  "avg_aid_award": 55000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal their financial aid package by contacting the Financial Aid Office with documentation of extenuating circumstances or competing offers from peer institutions.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.pomona.edu/financial-aid",
+    "https://www.pomona.edu/financial-aid/how-aid-works",
+    "https://www.pomona.edu/financial-aid/applying-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

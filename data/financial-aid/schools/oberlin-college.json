@@ -1,0 +1,50 @@
+{
+  "id": "oberlin-college",
+  "name": "Oberlin College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Oberlin meets 100% of demonstrated financial need for admitted domestic students.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Oberlin includes loans in most aid packages. Loan amounts vary by family income. No blanket loan-free policy, but self-help expectations are modest for lower-income families.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 7000,
+    "band_30_48k": 13000,
+    "band_48_75k": 21000,
+    "band_75_110k": 31000,
+    "band_110k_plus": 47000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.5,
+    "sat_floor": 1300,
+    "act_floor": 29,
+    "notes": "Oberlin offers merit scholarships including the Oberlin College Scholarship and talent-based awards for music conservatory students. Merit awards are competitive and not automatic."
+  },
+  "fa_priority_deadline": "2026-01-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based aid consideration. Applying ED does not disadvantage applicants financially; full need is met regardless of round.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": [
+    "Oberlin College Scholarship (merit)",
+    "Conservatory talent awards",
+    "QuestBridge College Match",
+    "POSSE Scholarship",
+    "John F. Oberlin Scholarship"
+  ],
+  "avg_aid_award": 42000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal aid awards by submitting a formal request to the Office of Student Financial Aid with supporting documentation of changed or unusual circumstances.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.oberlin.edu/financial-aid",
+    "https://www.oberlin.edu/financial-aid/scholarships-and-grants",
+    "https://www.oberlin.edu/financial-aid/how-to-apply"
+  ],
+  "last_verified": "2026-05-16"
+}

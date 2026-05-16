@@ -1,0 +1,17 @@
+{
+  "id": "fafsa",
+  "name": "Free Application for Federal Student Aid (FAFSA)",
+  "type": "federal-application",
+  "administered_by": "U.S. Department of Education",
+  "description": "The FAFSA is the gateway application for all federal student aid, including Pell Grants, Direct Loans, and Work-Study. Most states and colleges also use FAFSA data to award their own aid.",
+  "eligibility": "U.S. citizen or eligible non-citizen with a valid Social Security number; enrolled or accepted for enrollment in an eligible degree/certificate program; demonstrates financial need (for most programs); maintains satisfactory academic progress.",
+  "award_amount": "Not an award itself — determines eligibility for federal, state, and institutional aid programs.",
+  "application_process": "Complete online at studentaid.gov/fafsa. Requires FSA ID for student and one parent (dependent students). Provide prior-prior year tax data (auto-imported via IRS DRT when available). List up to 20 colleges to receive ISIR.",
+  "timeline": "Opens October 1 each year. Priority deadline varies by state and college — many are February 1–March 1. Must be renewed annually.",
+  "advisor_notes": "File as early as possible after October 1. Some state grants are first-come, first-served. Even families who believe they won't qualify should file — many schools require FAFSA for merit aid consideration.",
+  "source_urls": [
+    "https://studentaid.gov/fafsa",
+    "https://studentaid.gov/apply-for-aid/fafsa/filling-out"
+  ],
+  "last_verified": "2026-05-16"
+}

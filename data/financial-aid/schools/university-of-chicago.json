@@ -1,0 +1,45 @@
+{
+  "id": "university-of-chicago",
+  "name": "University of Chicago",
+  "meets_full_need": true,
+  "meets_full_need_notes": "University of Chicago meets 100% of demonstrated financial need for all admitted domestic undergraduates. Families earning under $125,000 typically receive significant grant aid; families under $75,000 with typical assets often have full cost covered.",
+  "no_loan_policy": true,
+  "no_loan_notes": "UChicago has a no-loan policy for domestic students from families earning under $125,000. Institutional loans are replaced with grants. Students from families earning above $125,000 may have loans in their packages.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 1000,
+    "band_30_48k": 3000,
+    "band_48_75k": 8000,
+    "band_75_110k": 18000,
+    "band_110k_plus": 42000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based financial aid as RD applicants. UChicago meets full need regardless of admission round. ED is binding, but students can appeal aid if the package does not meet need as calculated.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": [
+    "UChicago Empower Initiative (need-based, no-loan for under $125k)",
+    "QuestBridge College Match",
+    "POSSE Scholarship",
+    "Odyssey Project (community engagement)",
+    "College Prep Scholars Program (high school outreach)"
+  ],
+  "avg_aid_award": 56000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal financial aid decisions through the Office of College Financial Aid. Appeals require documentation of unusual circumstances, errors, or significant changes in family financial situation.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://financialaid.uchicago.edu/",
+    "https://financialaid.uchicago.edu/undergraduate/types-of-aid",
+    "https://financialaid.uchicago.edu/undergraduate/applying-for-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

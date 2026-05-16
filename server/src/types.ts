@@ -101,3 +101,32 @@ export interface SessionMetadata {
   created_at: string;
   updated_at: string;
 }
+
+/**
+ * Financial Profile — in-session only.
+ * Lives in React state on the client, sent in WS payload,
+ * injected into LLM system prompt. NEVER persisted to disk.
+ */
+export interface FinancialProfile {
+  dependency_status: 'dependent' | 'independent';
+  household_size: number;
+  num_in_college: number;
+  parent_marital_status: string;
+  parent_agi: number;
+  parent_income_type: string;
+  student_income: number;
+  parent_savings: number;
+  parent_investments: number;
+  home_equity: number;
+  business_assets: number;
+  student_assets: number;
+  balance_529: number;
+  gpa: number;
+  sat: number | null;
+  act: number | null;
+  class_rank: string;
+  first_gen: boolean;
+  state_of_residency: string;
+  citizenship: string;
+  special_circumstances: string;
+}

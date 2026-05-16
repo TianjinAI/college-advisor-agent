@@ -1,0 +1,40 @@
+{
+  "id": "society-women-engineers",
+  "name": "Society of Women Engineers Scholarship",
+  "sponsor": "Society of Women Engineers",
+  "amount": "Typically $1,000\u2013$19,000",
+  "amount_min": 1000,
+  "amount_max": 19000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 3.5,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "Varies; many awards require U.S. study enrollment",
+    "race_ethnicity": [],
+    "gender": "female",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Women in ABET-accredited engineering/computing programs"
+  },
+  "deadline": "February 15",
+  "application_url": "https://swe.org/scholarships/",
+  "award_count_per_year": 300,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Usually stackable; outside scholarship may affect need-based packages.",
+  "category": [
+    "women",
+    "stem",
+    "merit"
+  ],
+  "tags": [
+    "engineering",
+    "women-in-stem"
+  ],
+  "notes": "Strong fit for women in engineering/computing, including continuing college students."
+}

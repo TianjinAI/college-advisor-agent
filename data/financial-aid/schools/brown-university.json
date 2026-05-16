@@ -1,0 +1,38 @@
+{
+  "id": "brown-university",
+  "name": "Brown University",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Brown meets 100% of demonstrated financial need for all admitted domestic students. Brown also meets full need for international students.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Brown eliminated loans from financial aid packages in 2023. All aid replaced with grants. Students from families earning under $125,000 with typical assets receive particularly generous grant packages.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 0,
+    "band_30_48k": 4000,
+    "band_48_75k": 13000,
+    "band_75_110k": 25000,
+    "band_110k_plus": 44000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based financial aid as RD applicants. Aid package released with admission decision; students may withdraw from ED if aid is insufficient.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["QuestBridge National College Match", "POSSE Scholarship", "Brown Promise (no-loan guarantee)", "First-Generation College Student programs"],
+  "avg_aid_award": 58000,
+  "percent_need_met": 100,
+  "appeal_policy": "Brown reviews appeals based on changed financial circumstances. Students submit Professional Judgment requests with documentation.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.brown.edu/admission/financial-aid/",
+    "https://www.brown.edu/admission/financial-aid/grants-and-scholarships"
+  ],
+  "last_verified": "2026-05-16"
+}

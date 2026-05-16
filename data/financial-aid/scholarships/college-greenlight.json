@@ -1,0 +1,42 @@
+{
+  "id": "college-greenlight",
+  "name": "College Greenlight / Scholarship America",
+  "sponsor": "Scholarship America",
+  "amount": "Varies by program; College Greenlight platform connects students with scholarship matches; awards vary $500\u2013$10,000+",
+  "amount_min": 500,
+  "amount_max": 10000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen, permanent resident, or DACA; eligibility varies by specific scholarship",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "College Greenlight is a platform that helps first-generation and underrepresented students identify scholarship matches; scholarship criteria vary by specific program"
+  },
+  "deadline": "Ongoing; varies by specific scholarship match",
+  "application_url": "https://www.collegegreenlight.com",
+  "award_count_per_year": null,
+  "selectivity": "moderately-selective",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "External platform-matched scholarships generally stack with institutional aid. Check each matched award individually.",
+  "category": [
+    "first-gen",
+    "need-based"
+  ],
+  "tags": [
+    "platform",
+    "scholarship-match",
+    "first-generation",
+    "low-income",
+    "underrepresented"
+  ],
+  "notes": "College Greenlight (now part of Scholarship America ecosystem) is a free platform, not a single scholarship. It helps first-gen and underrepresented students identify and track scholarships. Advisors can recommend students create profiles to get personalized scholarship matches. The value is in the matching technology and comprehensive database, not a single cash award."
+}

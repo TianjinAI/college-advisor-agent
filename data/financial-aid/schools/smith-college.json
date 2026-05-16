@@ -1,0 +1,50 @@
+{
+  "id": "smith-college",
+  "name": "Smith College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Smith meets 100% of demonstrated financial need for all admitted domestic students. Smith is a women's college with a strong commitment to access.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Smith has a no-loan policy: institutional loans are not included in financial aid packages. Federal loans (e.g., Direct Subsidized) may still be offered as an option but Smith's grants replace loan expectations in the official package.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 4000,
+    "band_30_48k": 8000,
+    "band_48_75k": 15000,
+    "band_75_110k": 25000,
+    "band_110k_plus": 42000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": null,
+    "sat_floor": null,
+    "act_floor": null,
+    "notes": "Smith offers a limited number of merit awards including the Smith Scholars Program and departmental scholarships. The vast majority of aid is need-based. Ada Comstock Scholars program for nontraditional students."
+  },
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-03-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based aid as RD applicants. Smith commits to meeting full need regardless of admission round.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": [
+    "Smith Scholars Program (merit)",
+    "QuestBridge College Match",
+    "POSSE Scholarship",
+    "Ada Comstock Scholars (for nontraditional/transfer students)",
+    "Jacobson Center support"
+  ],
+  "avg_aid_award": 46000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal their financial aid award by contacting Student Financial Services. Appeals require written documentation of special circumstances, significant changes in family finances, or unusual expenses.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.smith.edu/admission/financial-aid",
+    "https://www.smith.edu/admission/financial-aid/scholarships-grants",
+    "https://www.smith.edu/admission/financial-aid/how-to-apply"
+  ],
+  "last_verified": "2026-05-16"
+}

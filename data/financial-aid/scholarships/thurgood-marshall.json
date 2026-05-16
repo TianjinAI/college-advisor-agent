@@ -1,0 +1,41 @@
+{
+  "id": "thurgood-marshall",
+  "name": "Thurgood Marshall College Fund",
+  "sponsor": "Thurgood Marshall College Fund",
+  "amount": "Varies; commonly $1,000\u2013$12,000 per year",
+  "amount_min": 1000,
+  "amount_max": 12000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 2.75,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or legal permanent resident",
+    "race_ethnicity": [
+      "African American"
+    ],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Many awards prioritize attendance at HBCUs/PBIs; program-specific requirements"
+  },
+  "deadline": "April 30",
+  "application_url": "https://www.tmcf.org/students-alumni/scholarships/",
+  "award_count_per_year": null,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "External awards stack; HBCU packaging policies usually generous.",
+  "category": [
+    "minority",
+    "need-based",
+    "merit"
+  ],
+  "tags": [
+    "hbcu"
+  ],
+  "notes": "Many corporate-sponsored opportunities under one application ecosystem. Combined with UNCF, covers most HBCU funding."
+}

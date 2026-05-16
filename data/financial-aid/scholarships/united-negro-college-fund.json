@@ -1,0 +1,42 @@
+{
+  "id": "united-negro-college-fund",
+  "name": "UNCF Scholarships",
+  "sponsor": "United Negro College Fund",
+  "amount": "Varies by sub-program; typically $500\u2013$10,000",
+  "amount_min": 500,
+  "amount_max": 10000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 2.5,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "Varies by specific program scholarship",
+    "race_ethnicity": [
+      "African American"
+    ],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Must attend eligible institution (often HBCU); many program-specific criteria"
+  },
+  "deadline": "March 31",
+  "application_url": "https://uncf.org/scholarships",
+  "award_count_per_year": null,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Depends on fund source and institution; usually stackable.",
+  "category": [
+    "minority",
+    "need-based"
+  ],
+  "tags": [
+    "uncf",
+    "hbcu",
+    "portal"
+  ],
+  "notes": "UNCF is an umbrella portal with 100+ individual scholarship programs \u2014 students should apply broadly within the portal."
+}

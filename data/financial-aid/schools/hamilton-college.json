@@ -1,0 +1,38 @@
+{
+  "id": "hamilton-college",
+  "name": "Hamilton College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Hamilton meets 100% of demonstrated financial need for all admitted domestic students.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Hamilton includes a loan/work expectation in many aid packages. No universal no-loan policy.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 3000,
+    "band_30_48k": 8000,
+    "band_48_75k": 16000,
+    "band_75_110k": 26000,
+    "band_110k_plus": 44000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive same need-based aid as RD applicants. ED agreement can be reconsidered if aid package is insufficient.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["QuestBridge National College Match", "POSSE Scholarship", "Hamilton Opportunity Programs", "Need-based travel grants"],
+  "avg_aid_award": 51000,
+  "percent_need_met": 100,
+  "appeal_policy": "Hamilton accepts appeals when family finances change. Submit additional documents to Financial Aid Office.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.hamilton.edu/admission/financialaid",
+    "https://www.hamilton.edu/admission/financialaid/applyingforaid"
+  ],
+  "last_verified": "2026-05-16"
+}

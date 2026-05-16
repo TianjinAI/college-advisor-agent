@@ -1,0 +1,43 @@
+{
+  "id": "carnegie-mellon-university",
+  "name": "Carnegie Mellon University",
+  "meets_full_need": false,
+  "meets_full_need_notes": "CMU does not guarantee to meet 100% of demonstrated financial need. Aid is substantial but may not fully cover calculated need for all students. Institutional aid is competitive.",
+  "no_loan_policy": false,
+  "no_loan_notes": "CMU includes loans in financial aid packages. No institution-wide no-loan policy, though some programs may vary.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 8000,
+    "band_30_48k": 15000,
+    "band_48_75k": 24000,
+    "band_75_110k": 34000,
+    "band_110k_plus": 52000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.7,
+    "sat_floor": 1450,
+    "act_floor": 33,
+    "notes": "CMU offers merit scholarships including the Presidential Scholarship, Dean's Scholarship, and college-specific awards. Scholarships are awarded at admission; no separate application required for most. Amounts vary by college (SCS, CIT, Tepper, etc.)."
+  },
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "CMU's ED is binding but students may appeal the aid package. Merit scholarships are awarded the same way regardless of admission round. Need-based aid is need-blind for domestic students in ED.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": ["Presidential Scholarship", "Dean's Scholarship", "QuestBridge National College Match", "Carnegie Mellon Grant", "College-specific merit awards (SCS, Tepper, CIT, etc.)"],
+  "avg_aid_award": 40000,
+  "percent_need_met": 75,
+  "appeal_policy": "CMU has a formal appeal process. Students submit appeals to the Office of Undergraduate Financial Aid with documentation of changed circumstances.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.cmu.edu/sfs/financial-aid/",
+    "https://www.cmu.edu/sfs/financial-aid/types-of-aid/scholarships/index.html"
+  ],
+  "last_verified": "2026-05-16"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "kipp-through-college",
+  "name": "KIPP Through College Support",
+  "sponsor": "KIPP Foundation and KIPP regional networks",
+  "amount": "College advising, persistence support, and regional scholarships; cash awards vary",
+  "amount_min": null,
+  "amount_max": 10000,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "Varies by KIPP region and scholarship fund",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must be a KIPP alumnus or current KIPP student; scholarship availability and amounts vary by region; many funds prioritize low-income and first-generation students"
+  },
+  "deadline": "April 15",
+  "application_url": "https://www.kipp.org/approach/kipp-forward/",
+  "award_count_per_year": null,
+  "selectivity": "moderately-selective",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Regional KIPP scholarships generally stack with federal, state, and institutional aid. Because funds vary by region, students should ask their KIPP Forward/Through College adviser how each award is treated by their college.",
+  "category": ["first-gen", "need-based"],
+  "tags": ["kipp", "charter-school", "college-persistence", "first-generation", "low-income", "alumni-support"],
+  "notes": "KIPP Through College has been rebranded in many regions as KIPP Forward. This is not one national scholarship but a network of advising, persistence, and emergency financial support for KIPP alumni. Best for KIPP students who stay connected to their regional KIPP college counseling team; opportunities are often communicated internally rather than through public scholarship databases."
+}

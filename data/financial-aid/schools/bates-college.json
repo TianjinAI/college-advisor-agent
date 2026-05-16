@@ -1,0 +1,43 @@
+{
+  "id": "bates-college",
+  "name": "Bates College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Bates meets 100% of demonstrated financial need for all admitted domestic students.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Bates includes loans in aid packages, though the loan component is modest. Bates has not eliminated loans entirely but caps student loan expectations.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 5000,
+    "band_30_48k": 10000,
+    "band_48_75k": 18000,
+    "band_75_110k": 28000,
+    "band_110k_plus": 45000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": null,
+    "sat_floor": null,
+    "act_floor": null,
+    "notes": "Bates offers limited merit scholarships (e.g., Bobcat Scholarships) for outstanding students. Merit aid is not the primary focus; most aid is need-based."
+  },
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based aid calculations. Binding commitment expected only after reviewing aid award; students may withdraw if aid is insufficient.",
+  "questbridge_partner": false,
+  "posse_partner": true,
+  "special_programs": ["Bobcat Scholarship (merit)", "POSSE Scholarship", "Bates Alumni Scholarship"],
+  "avg_aid_award": 48000,
+  "percent_need_met": 100,
+  "appeal_policy": "Appeals accepted when family financial circumstances change. Students submit documentation to financial aid office for reconsideration.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.bates.edu/financial-aid/",
+    "https://www.bates.edu/financial-aid/types-of-aid/"
+  ],
+  "last_verified": "2026-05-16"
+}

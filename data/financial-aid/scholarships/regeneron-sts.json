@@ -1,0 +1,33 @@
+{
+  "id": "regeneron-sts",
+  "name": "Regeneron Science Talent Search",
+  "sponsor": "Society for Science / Regeneron Pharmaceuticals",
+  "amount": "Top prize $250,000; finalist awards from $25,000; semifinalist awards $2,000",
+  "amount_min": 2000,
+  "amount_max": 250000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or permanent resident; must be enrolled in a U.S. high school",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must be a high school senior; must submit an independent research project with scientific merit; project may be in any field of science, math, or engineering"
+  },
+  "deadline": "November 8",
+  "application_url": "https://www.societyforscience.org/regeneron-sts/",
+  "award_count_per_year": 300,
+  "selectivity": "extremely-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Prize money (not a traditional scholarship) — awarded as a prize for research achievement. Generally not considered institutional scholarship income; most colleges do not reduce aid for prize winnings. Verify with individual institutions.",
+  "category": ["merit", "stem"],
+  "tags": ["research", "science", "prize", "high-school", "independent-research", "prestige", "math", "engineering"],
+  "notes": "Formerly known as the Westinghouse and Intel Science Talent Search — the oldest and most prestigious pre-college science competition in the U.S. Note: this is a competition prize, not a traditional scholarship application. Semifinalists (300) each receive $2,000; 40 finalists travel to Washington D.C. and compete for awards up to $250,000. The application itself doubles as a college-level research portfolio that strengthens admissions."
+}

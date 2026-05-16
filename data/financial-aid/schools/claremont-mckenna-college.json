@@ -1,0 +1,43 @@
+{
+  "id": "claremont-mckenna-college",
+  "name": "Claremont McKenna College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "CMC meets 100% of demonstrated financial need for all admitted domestic students.",
+  "no_loan_policy": true,
+  "no_loan_notes": "CMC eliminated loans from all financial aid packages. All aid awarded as grants. Families with income under $80,000 pay no tuition; families under $150,000 receive substantial grant aid.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 0,
+    "band_30_48k": 4000,
+    "band_48_75k": 12000,
+    "band_75_110k": 22000,
+    "band_110k_plus": 42000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": null,
+    "sat_floor": null,
+    "act_floor": null,
+    "notes": "CMC offers merit scholarships including the CMC Merit Award for exceptional students. Merit consideration is built into the holistic admissions process; no separate application typically required."
+  },
+  "fa_priority_deadline": "2026-01-15",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same aid as RD. Aid package released with admission; binding commitment may be reconsidered if aid is inadequate.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": ["QuestBridge National College Match", "CMC Merit Award", "CMC Leadership Scholars", "Kravis Leadership Institute programs"],
+  "avg_aid_award": 52000,
+  "percent_need_met": 100,
+  "appeal_policy": "CMC reviews appeals for changed financial circumstances. Students contact Student Financial Services for professional judgment consideration.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.cmc.edu/financial-aid",
+    "https://www.cmc.edu/financial-aid/types-of-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

@@ -3,7 +3,10 @@ import cors from 'cors';
 import { createServer } from 'http';
 import { WebSocketServer, WebSocket } from 'ws';
 import { createAgentStream, extractDossierFacts, dossierManager, ensureRetriever, createEssayReviewStream, createSummerRecommendStream } from './agent';
-import type { SendMessagePayload, TextDeltaPayload, ErrorPayload, StudentProfile, SessionChatMessage } from './types';
+import faRouter from './routes/financialAid.js';
+import { createFAStream } from './faAgent.js';
+import faRetriever from './knowledge/faRetriever.js';
+import type { SendMessagePayload, TextDeltaPayload, ErrorPayload, StudentProfile, SessionChatMessage, FinancialProfile } from './types';
 import sessionsRouter from './routes/sessions.js';
 import essaysRouter from './routes/essays.js';
 import summerProgramsRouter from './routes/summerPrograms.js';
@@ -25,6 +28,7 @@ app.use(express.json());
 app.use(sessionsRouter);
 app.use('/api/essays', essaysRouter);
 app.use('/api/summer-programs', summerProgramsRouter);
+app.use('/api/fa', faRouter);
 app.use('/api/upload', uploadRouter);
 app.use('/api/auth', authRouter);
 
@@ -128,6 +132,21 @@ wss.on('connection', (ws, req) => {
           };
           const userId = authPayload?.userId || payloadUserId;
           await handleEssayReview(ws, { essayId, essayText, promptId, promptLabel, promptText, wordLimit, tips, pitfalls, userId, model });
+          break;
+        }
+        case 'fa_query': {
+          const authPayload = wsAuth.get(ws);
+          const { content, financialProfile, schoolList, history, userId: payloadUserId, sessionId, model } = msg.payload as {
+            content: string;
+            financialProfile?: FinancialProfile;
+            schoolList?: string[];
+            history?: Array<{ role: 'user' | 'assistant'; content: string }>;
+            userId?: string;
+            sessionId?: string;
+            model?: string;
+          };
+          const userId = authPayload?.userId || payloadUserId;
+          await handleFAQuery(ws, content, financialProfile, schoolList, history, userId, sessionId, model);
           break;
         }
         case 'summer_recommend': {
@@ -353,6 +372,123 @@ async function handleSummerRecommend(
 }
 
 ensureRetriever().catch(console.error);
+
+// Pre-warm FA retriever
+const FA_DATA_DIR = path.resolve(process.cwd(), './data/financial-aid');
+faRetriever.load(FA_DATA_DIR).catch(err =>
+  console.error('[FA-Retriever] Pre-warm failed:', err?.message || err)
+);
+
+/**
+ * Handle Financial Aid query with streaming response.
+ * Financial profile is IN-SESSION ONLY — never persisted to disk.
+ */
+async function handleFAQuery(
+  ws: WebSocket,
+  content: string,
+  financialProfile?: FinancialProfile,
+  schoolList?: string[],
+  history?: Array<{ role: 'user' | 'assistant'; content: string }>,
+  userId?: string,
+  sessionId?: string,
+  model?: string,
+): Promise<void> {
+  const messageId = `fa_${Date.now()}`;
+
+  ws.send(JSON.stringify({ type: 'fa_start', payload: { messageId } }));
+
+  try {
+    // Ensure FA KB is loaded
+    if (!faRetriever.isLoaded()) {
+      await faRetriever.load(FA_DATA_DIR);
+    }
+
+    const faStream = await createFAStream({
+      content,
+      financialProfile,
+      schoolList,
+      history,
+      userId,
+      sessionId,
+      model,
+    });
+
+    activeStreams.set(ws, { abort: () => faStream.abort() });
+
+    let fullResponse = '';
+
+    // Timeout wrapper: abort stream if no delta received within 120s
+    let timeout: NodeJS.Timeout | null = null;
+    const resetTimeout = () => {
+      if (timeout) clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        console.error(`[FA-Agent] Stream timeout after 120s, aborting`);
+        faStream.abort().catch(() => {});
+        if (timeout) clearTimeout(timeout);
+      }, 120_000);
+    };
+
+    // Set initial timeout
+    timeout = setTimeout(() => {
+      console.error(`[FA-Agent] Stream initial timeout after 120s, aborting`);
+      faStream.abort().catch(() => {});
+    }, 120_000);
+
+    for await (const message of faStream) {
+      if (timeout) clearTimeout(timeout);
+      if (ws.readyState !== WebSocket.OPEN) break;
+      if (message.text) {
+        fullResponse += message.text;
+        ws.send(JSON.stringify({
+          type: 'fa_delta',
+          payload: { text: message.text, done: false, messageId, source: 'kb' },
+        }));
+        resetTimeout();
+      }
+    }
+
+    if (timeout) clearTimeout(timeout);
+
+    ws.send(JSON.stringify({
+      type: 'fa_delta',
+      payload: { text: '', done: true, messageId, source: 'kb' },
+    }));
+
+    // Save exchange to session chat history
+    if (userId && sessionId && fullResponse) {
+      const existingMessages = await dossierManager.loadMessages(userId, sessionId);
+      const sessionMessages: SessionChatMessage[] = [
+        ...existingMessages,
+        {
+          id: `user-${messageId}`,
+          role: 'user',
+          content,
+          timestamp: Date.now(),
+          userId,
+          source: 'kb',
+        },
+        {
+          id: messageId,
+          role: 'assistant',
+          content: fullResponse,
+          timestamp: Date.now(),
+          userId,
+          source: 'kb',
+        },
+      ];
+      await dossierManager.saveMessages(userId, sessionId, sessionMessages);
+    }
+
+  } catch (err: any) {
+    console.error('[FA-Agent] Error:', err);
+    ws.send(JSON.stringify({
+      type: 'fa_error',
+      payload: { text: err.message || 'Financial aid query failed' },
+    }));
+  } finally {
+    activeStreams.delete(ws);
+  }
+}
 
 /**
  * Handle essay review — streams structured feedback back to client.

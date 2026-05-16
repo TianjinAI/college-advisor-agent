@@ -1,0 +1,43 @@
+{
+  "id": "georgetown-university",
+  "name": "Georgetown University",
+  "meets_full_need": false,
+  "meets_full_need_notes": "Georgetown does not guarantee meeting 100% of demonstrated financial need for all students, though it provides substantial need-based aid.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Loans are included in most Georgetown aid packages. No universal no-loan institutional policy.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 7000,
+    "band_30_48k": 12000,
+    "band_48_75k": 22000,
+    "band_75_110k": 33000,
+    "band_110k_plus": 50000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": null,
+    "sat_floor": null,
+    "act_floor": null,
+    "notes": "Limited merit scholarships available, including Georgetown Scholarship Program awards and school-specific awards. Most aid is need-based."
+  },
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": true,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive need-based aid using same methodology as RD. Students may request release from ED agreement if aid is insufficient.",
+  "questbridge_partner": false,
+  "posse_partner": true,
+  "special_programs": ["Georgetown Scholarship Program", "School of Foreign Service scholarships", "POSSE Scholarship"],
+  "avg_aid_award": 42000,
+  "percent_need_met": 85,
+  "appeal_policy": "Georgetown accepts appeals for changed circumstances. Students submit documentation to Office of Student Financial Services.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://finaid.georgetown.edu/",
+    "https://finaid.georgetown.edu/undergrad/"
+  ],
+  "last_verified": "2026-05-16"
+}

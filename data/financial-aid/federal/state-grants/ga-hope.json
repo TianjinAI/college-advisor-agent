@@ -1,0 +1,19 @@
+{
+  "id": "ga-hope",
+  "name": "Georgia HOPE Scholarship",
+  "type": "state-merit-grant",
+  "administered_by": "Georgia Student Finance Commission",
+  "description": "Georgia's primary state scholarship program for residents who demonstrate academic achievement. HOPE (Helping Outstanding Pupils Educationally) includes HOPE Scholarship (merit-based), HOPE Grant (for career/vocational students), and Zell Miller Scholarship (top academic performers).",
+  "eligibility": "Georgia resident, U.S. citizen or eligible non-citizen, graduated from a Georgia eligible high school with required GPA (3.0 for HOPE, 3.7 for Zell Miller), and meetingrigorous curriculum requirements. Must be enrolled at eligible Georgia public or private college.",
+  "award_amount": "HOPE Scholarship: covers a set tuition rate per credit hour at Georgia public colleges (approximately 90-100% of tuition depending on rate changes); private college award is $4,000/year. Zell Miller Scholarship: full tuition plus mandatory fees at Georgia public colleges.",
+  "application_process": "File GSFICS application online through Georgia Student Finance Commission. Georgia colleges receive data automatically for eligible students. Must be a Georgia resident for tuition purposes (one year before enrollment).",
+  "timeline": "Apply at beginning of senior year. Initial eligibility determined after high school graduation. Renewed annually based on GPA (3.0 minimum for HOPE, 3.3 for Zell Miller at 30 attempted hours).",
+  "advisor_notes": "HOPE GPA is recalculated at each academic milestone (30, 60, 90 credit hours). Students who start with 3.0 must maintain it — many lose HOPE after 30 hours. Zell Miller recipients must maintain 3.3. Check Hope GPA rules — grade forgiveness policies can help. HOPE covers tuition only at public colleges.",
+  "stacking_notes": "HOPE stacks with Pell Grant in most cases. However, some private colleges may reduce institutional aid when combined with HOPE. HOPE does not cover fees — students should budget for those separately. Zell Miller is more generous but has stricter GPA requirements. Federal SEOG may reduce the self-help portion of an aid package.",
+  "source_urls": [
+    "https://www.gafutures.org/",
+    "https://www.gafutures.org/hope-state-aid-programs/hope-scholarship/"
+  ],
+  "last_verified": "2026-05-16",
+  "state": "GA"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "north-carolina-need-based",
+  "name": "NC Need-Based Scholarship",
+  "sponsor": "North Carolina State Education Assistance Authority",
+  "amount": "Up to $3,500 per year",
+  "amount_min": 500,
+  "amount_max": 3500,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": true,
+    "citizenship": "U.S. citizen or eligible non-citizen; NC resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": "NC",
+    "other_requirements": "NC resident attending eligible NC postsecondary institution; demonstrated financial need; Pell Grant eligible"
+  },
+  "deadline": "March 15",
+  "application_url": "https://www.ncseaa.edu/nc-need-based-scholarship/",
+  "award_count_per_year": null,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "State need-based grant; generally stacks with federal aid. May reduce institutional need-based grants at some schools.",
+  "category": [
+    "need-based",
+    "state"
+  ],
+  "tags": [
+    "north-carolina",
+    "pell"
+  ],
+  "notes": "Relatively modest state need-based scholarship. Combined with the UNC Need-Based Grant for students at UNC System schools. NC has limited state financial aid compared to neighboring states \u2014 advise early filing of FAFSA."
+}

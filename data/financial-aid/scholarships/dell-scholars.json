@@ -1,0 +1,33 @@
+{
+  "id": "dell-scholars",
+  "name": "Dell Scholars Program",
+  "sponsor": "Michael & Susan Dell Foundation",
+  "amount": "$20,000 over 6 years plus laptop, textbook credits, and support resources",
+  "amount_min": 20000,
+  "amount_max": 20000,
+  "renewable": true,
+  "renewable_years": 6,
+  "eligibility": {
+    "gpa_min": 2.4,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": true,
+    "citizenship": "U.S. citizen or permanent resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must have overcome significant obstacles; Pell Grant eligible; participating in college readiness program (e.g., AVID, Upward Bound, GEAR UP); must enroll in a degree-granting institution"
+  },
+  "deadline": "December 1",
+  "application_url": "https://www.dellscholars.org",
+  "award_count_per_year": 500,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Stackable with most institutional aid. Includes non-monetary support (laptop, textbook credits, personal success coaching) that has real value beyond the cash award. Verify displacement risk at specific institutions.",
+  "category": ["need-based", "first-gen"],
+  "tags": ["low-income", "first-gen", "persistence-support", "obstacles-overcome", "laptop", "coaching"],
+  "notes": "Unusually holistic for a large program — prioritizes students who have overcome systemic barriers over pure academic achievement (minimum 2.4 GPA). The $20,000 is distributed over up to 6 years, supporting students who need extra time. Bundled support services (coaching, emergency funds) meaningfully improve graduation rates for scholars."
+}

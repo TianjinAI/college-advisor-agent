@@ -1,0 +1,33 @@
+{
+  "id": "america-needs-you",
+  "name": "America Needs You Fellows Program",
+  "sponsor": "America Needs You",
+  "amount": "Two-year intensive mentorship and career programming; limited direct scholarships vary by chapter",
+  "amount_min": null,
+  "amount_max": 2500,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 2.5,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": 60000,
+    "first_gen_required": true,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen, permanent resident, or DACA",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "First-generation college student; low-income; must be located in a program city (New York, New Jersey, Chicago, San Francisco Bay Area); must commit to two-year program participation"
+  },
+  "deadline": "December 15",
+  "application_url": "https://www.americaneedsyou.org",
+  "award_count_per_year": 250,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Any direct financial awards stack with institutional aid. Primary program value is intensive mentorship, professional development, and career services over two years — not primarily a cash scholarship.",
+  "category": ["first-gen", "need-based"],
+  "tags": ["first-generation", "mentorship", "career", "low-income", "city-based", "professional-development"],
+  "notes": "ANY is fundamentally a mentorship and career launch program for first-gen college students rather than a traditional scholarship. Fellows receive a volunteer mentor, career coaching, and professional network access over two years. Program operates in specific metro areas only — eligibility requires living near a chapter. The career preparation value often exceeds any direct cash award."
+}

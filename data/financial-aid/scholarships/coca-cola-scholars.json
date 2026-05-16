@@ -1,0 +1,33 @@
+{
+  "id": "coca-cola-scholars",
+  "name": "Coca-Cola Scholars Program",
+  "sponsor": "Coca-Cola Scholars Foundation",
+  "amount": "$20,000 one-time",
+  "amount_min": 20000,
+  "amount_max": 20000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 3.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen, permanent resident, or temporary resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must be attending high school in the U.S. and plan to pursue undergraduate degree; strong community leadership and service required"
+  },
+  "deadline": "October 31",
+  "application_url": "https://www.coca-colascholarsfoundation.org",
+  "award_count_per_year": 150,
+  "selectivity": "extremely-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Generally stackable with institutional aid; some colleges may count it as external scholarship income and reduce need-based grants accordingly — check institutional policy.",
+  "category": ["merit"],
+  "tags": ["leadership", "community-service", "national", "prestige", "high-school-senior"],
+  "notes": "Emphasizes character and leadership over pure academics — a 4.0 GPA without significant community impact rarely wins. 150 scholars selected from ~100,000+ applicants annually. The alumni network (Coca-Cola Scholars Community) provides ongoing mentorship and professional development value beyond the dollar amount."
+}

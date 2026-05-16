@@ -1,0 +1,49 @@
+{
+  "id": "georgia-institute-of-technology-main-campus",
+  "name": "Georgia Institute of Technology-Main Campus",
+  "meets_full_need": false,
+  "meets_full_need_notes": "Georgia Tech does not guarantee to meet full demonstrated financial need for all students. Need-based aid plus state/federal programs may leave unmet need.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Loans are standard components of aid packages. No institution-wide no-loan policy.",
+  "need_only": false,
+  "css_profile_required": false,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 6000,
+    "band_30_48k": 9000,
+    "band_48_75k": 14000,
+    "band_75_110k": 20000,
+    "band_110k_plus": 29000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.8,
+    "sat_floor": 1450,
+    "act_floor": 33,
+    "notes": "Major merit awards include Stamps President's Scholarship and Gold Scholarship. In-state students often leverage HOPE/Zell Miller. Merit awards highly competitive and often require separate application components."
+  },
+  "fa_priority_deadline": "2026-01-31",
+  "fa_regular_deadline": "rolling",
+  "ed_available": false,
+  "ea_available": true,
+  "rea_available": false,
+  "ed_aid_implications": "Georgia Tech does not offer ED. EA applicants considered for merit scholarships and need-based aid with same FAFSA requirements.",
+  "questbridge_partner": false,
+  "posse_partner": false,
+  "special_programs": [
+    "Stamps President's Scholarship",
+    "Gold Scholarship",
+    "HOPE Scholarship",
+    "Zell Miller Scholarship",
+    "Georgia Tech Promise Program"
+  ],
+  "avg_aid_award": 18000,
+  "percent_need_met": 70,
+  "appeal_policy": "Special Circumstance appeals accepted for significant financial changes. Submit documentation to Office of Scholarships and Financial Aid.",
+  "international_aid_available": false,
+  "source_urls": [
+    "https://finaid.gatech.edu/",
+    "https://finaid.gatech.edu/types-aid/scholarships"
+  ],
+  "last_verified": "2026-05-16"
+}

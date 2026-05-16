@@ -1,0 +1,17 @@
+{
+  "id": "student-aid-index",
+  "name": "Student Aid Index (SAI)",
+  "type": "federal-calculation",
+  "administered_by": "U.S. Department of Education",
+  "description": "The Student Aid Index is the number calculated from FAFSA data that colleges use to determine eligibility for federal student aid. Introduced with the FAFSA Simplification Act (2024-2025), it replaced the Expected Family Contribution (EFC). SAI can be as low as -1500 and has no upper cap.",
+  "eligibility": "Calculated automatically for all FAFSA filers. Lower SAI indicates higher financial need. Negative SAI (-1500) signals maximum need and may unlock additional aid at some institutions.",
+  "award_amount": "Not an award — SAI is used in the formula: Cost of Attendance - SAI = Financial Need. Colleges use this need figure to package federal, state, and institutional aid.",
+  "application_process": "Calculated automatically upon FAFSA submission. Student receives SAI on FAFSA Submission Summary (formerly Student Aid Report). Colleges receive ISIR with SAI and use it to build financial aid packages.",
+  "timeline": "Available immediately after FAFSA is processed (typically 3-5 business days). Must be recalculated annually with each new FAFSA filing.",
+  "advisor_notes": "SAI is not the amount a family is expected to pay — it's an index for aid distribution. Families with multiple children in college simultaneously no longer receive a discount under SAI (unlike EFC). Use the FAFSA Estimator at studentaid.gov to preview SAI before filing. Special circumstances (job loss, medical bills) can be appealed to financial aid offices for professional judgment adjustments.",
+  "source_urls": [
+    "https://studentaid.gov/apply-for-aid/fafsa/fafsa-simplification",
+    "https://studentaid.gov/resources/fafsa-simplification"
+  ],
+  "last_verified": "2026-05-16"
+}

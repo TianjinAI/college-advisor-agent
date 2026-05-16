@@ -1,0 +1,50 @@
+{
+  "id": "rensselaer-polytechnic-institute",
+  "name": "Rensselaer Polytechnic Institute",
+  "meets_full_need": false,
+  "meets_full_need_notes": "RPI does not guarantee to meet full demonstrated financial need. Average need met is approximately 65-70%. Aid packages combine institutional grants, loans, and work-study.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Loans are a standard component of RPI financial aid packages. No institutional no-loan policy.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 15000,
+    "band_30_48k": 20000,
+    "band_48_75k": 28000,
+    "band_75_110k": 36000,
+    "band_110k_plus": 52000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.5,
+    "sat_floor": 1300,
+    "act_floor": 29,
+    "notes": "RPI offers significant merit scholarships including the Rensselaer Medal (for top high school students, ~$60,000 over 4 years), Dean's Scholarships, and departmental awards. The Rensselaer Medal is awarded through schools; winners who are admitted receive a scholarship."
+  },
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-03-01",
+  "ed_available": true,
+  "ea_available": true,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive merit and need-based aid on the same basis as other applicants. ED is binding, so comparing aid packages from multiple schools is not possible.",
+  "questbridge_partner": false,
+  "posse_partner": false,
+  "special_programs": [
+    "Rensselaer Medal Scholarship",
+    "Dean's Scholarship",
+    "Presidential Scholarship",
+    "Trustee Scholarship",
+    "National Merit Scholar awards"
+  ],
+  "avg_aid_award": 38000,
+  "percent_need_met": 67,
+  "appeal_policy": "Students may appeal their financial aid award by contacting the Office of Financial Aid. Appeals should include documentation of changed financial circumstances or special situations not reflected in initial application.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://admissions.rpi.edu/undergraduate/financial-aid",
+    "https://sfs.rpi.edu/",
+    "https://admissions.rpi.edu/undergraduate/financial-aid/scholarships"
+  ],
+  "last_verified": "2026-05-16"
+}

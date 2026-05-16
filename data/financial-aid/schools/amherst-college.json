@@ -1,0 +1,38 @@
+{
+  "id": "amherst-college",
+  "name": "Amherst College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Amherst meets 100% of demonstrated financial need for all admitted domestic students. Need calculated using CSS Profile and FAFSA.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Amherst eliminated loans from all financial aid packages in 2007. Aid consists entirely of grants, scholarships, and work-study.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 1000,
+    "band_30_48k": 4000,
+    "band_48_75k": 12000,
+    "band_75_110k": 22000,
+    "band_110k_plus": 42000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based aid as RD applicants. Amherst explicitly states financial aid is not affected by ED commitment.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["Amherst Fund grants", "QuestBridge National College Match", "POSSE Scholarship", "Summer Science Program funding"],
+  "avg_aid_award": 60000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal aid awards if financial circumstances have changed. Appeals reviewed by financial aid office on case-by-case basis. Professional judgment applied.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.amherst.edu/offices/financial_aid",
+    "https://www.amherst.edu/offices/financial_aid/applying/checklist"
+  ],
+  "last_verified": "2026-05-16"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "swarthmore-college",
+  "name": "Swarthmore College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Swarthmore meets 100% of demonstrated financial need for all admitted domestic and international undergraduates. One of the most generous liberal arts college aid programs.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Swarthmore has a no-loan policy for all students who receive financial aid, regardless of family income. All need-based aid is in the form of grants. This applies to domestic and international students alike.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 1500,
+    "band_30_48k": 4000,
+    "band_48_75k": 10000,
+    "band_75_110k": 21000,
+    "band_110k_plus": 42000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based financial aid as RD applicants. Swarthmore meets full need regardless of admission round. Students should verify aid package before fully committing, though ED is binding.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": [
+    "Swarthmore Grant (need-based, no loans)",
+    "QuestBridge College Match",
+    "Lang Center for Civic and Social Responsibility fellowships",
+    "International student aid (full need met)"
+  ],
+  "avg_aid_award": 54000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal their financial aid package through the Office of Student Financial Services. Appeals are considered for documented changes in family circumstances, unusual expenses, or information not captured in the standard application.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.swarthmore.edu/financial-aid",
+    "https://www.swarthmore.edu/financial-aid/how-aid-works",
+    "https://www.swarthmore.edu/financial-aid/applying-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

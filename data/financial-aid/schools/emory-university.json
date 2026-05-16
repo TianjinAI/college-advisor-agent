@@ -1,0 +1,43 @@
+{
+  "id": "emory-university",
+  "name": "Emory University",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Emory meets 100% of demonstrated financial need for domestic students. The Emory Advantage program reduces or eliminates loans for families under certain income thresholds.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Emory includes loans in some aid packages but Emory Advantage reduces or replaces loans for students from families with incomes below defined thresholds. Not a universal no-loan policy.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 4000,
+    "band_30_48k": 8000,
+    "band_48_75k": 17000,
+    "band_75_110k": 28000,
+    "band_110k_plus": 44000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": null,
+    "sat_floor": null,
+    "act_floor": null,
+    "notes": "Emory offers major merit scholarships through Emory Scholars, Oxford Scholars, Goizueta Scholars, and Woodruff Scholars. Selection is holistic and highly competitive."
+  },
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based aid as RD applicants. Binding commitment may be released if aid award is insufficient.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["Emory Scholars Program", "Oxford Scholars Program", "Goizueta Scholars Program", "Woodruff Scholars Program", "Emory Advantage", "QuestBridge National College Match", "POSSE Scholarship"],
+  "avg_aid_award": 46000,
+  "percent_need_met": 100,
+  "appeal_policy": "Emory reviews special circumstance appeals through the Office of Financial Aid. Families submit documentation of income changes, medical costs, or other unusual circumstances.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://studentaid.emory.edu/",
+    "https://studentaid.emory.edu/undergraduate/types/emory-advantage.html"
+  ],
+  "last_verified": "2026-05-16"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "rice-university",
+  "name": "Rice University",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Rice meets 100% of demonstrated financial need for all admitted domestic undergraduates. Rice also has a generous no-loan program for lower-income students.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Rice eliminates loans for students from families earning under $130,000. For families earning under $65,000 (with typical assets), total cost is covered with no expected family contribution. Students from families earning $65,000-$130,000 receive loan-free packages as well.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 1000,
+    "band_30_48k": 3000,
+    "band_48_75k": 8000,
+    "band_75_110k": 18000,
+    "band_110k_plus": 38000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.7,
+    "sat_floor": 1400,
+    "act_floor": 32,
+    "notes": "Rice offers merit scholarships including the Rice Century Scholars, Trustee Distinguished Scholarships, and departmental awards. Some merit aid is stacked on top of need-based aid."
+  },
+  "fa_priority_deadline": "2026-03-01",
+  "fa_regular_deadline": "2026-03-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive the same need-based financial aid as RD applicants. Rice meets full need regardless of admission round. ED is binding, so students should ensure aid package is satisfactory upon admission.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": [
+    "Rice Investment (no-loan for families under $130k)",
+    "QuestBridge College Match",
+    "POSSE Scholarship",
+    "Rice Century Scholars",
+    "Trustee Distinguished Scholarship"
+  ],
+  "avg_aid_award": 52000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal their financial aid package by submitting a written request to the Office of Financial Aid with supporting documentation of special circumstances or significant changes in family finances.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://financialaid.rice.edu/",
+    "https://financialaid.rice.edu/the-rice-investment",
+    "https://financialaid.rice.edu/types-of-aid/scholarships"
+  ],
+  "last_verified": "2026-05-16"
+}

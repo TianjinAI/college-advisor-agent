@@ -1,0 +1,50 @@
+{
+  "id": "purdue-university-main-campus",
+  "name": "Purdue University",
+  "meets_full_need": false,
+  "meets_full_need_notes": "Purdue does not guarantee to meet full demonstrated financial need. Average need met is approximately 70-75%. Aid packages typically include a mix of grants, loans, and work-study.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Purdue includes loans in most financial aid packages. No blanket no-loan policy. Purdue has historically kept tuition frozen (since 2012) to reduce cost burden.",
+  "need_only": false,
+  "css_profile_required": false,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 8500,
+    "band_30_48k": 13000,
+    "band_48_75k": 18000,
+    "band_75_110k": 23000,
+    "band_110k_plus": 30000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": 3.0,
+    "sat_floor": 1100,
+    "act_floor": 24,
+    "notes": "Purdue offers numerous merit scholarships including the Purdue Boilermaker Scholarship (top academic achievers), Old Gold and Black scholarships, and department/college-specific awards. Most competitive merit awards for in-state and out-of-state students."
+  },
+  "fa_priority_deadline": "2026-03-01",
+  "fa_regular_deadline": "rolling",
+  "ed_available": false,
+  "ea_available": true,
+  "rea_available": false,
+  "ed_aid_implications": "Purdue does not offer ED. EA applicants receive the same aid consideration as regular applicants.",
+  "questbridge_partner": false,
+  "posse_partner": false,
+  "special_programs": [
+    "Purdue Boilermaker Scholarship",
+    "Old Gold and Black Scholarship",
+    "Purdue Promise (need-based, for low-income Indiana residents)",
+    "National Merit Scholar awards",
+    "Departmental merit scholarships"
+  ],
+  "avg_aid_award": 14000,
+  "percent_need_met": 72,
+  "appeal_policy": "Students may appeal financial aid decisions through the Office of the Bursar and Student Financial Aid. Appeals require documentation of special circumstances such as job loss, medical expenses, or family changes.",
+  "international_aid_available": false,
+  "source_urls": [
+    "https://www.purdue.edu/dfa/",
+    "https://www.purdue.edu/dfa/aid-types/scholarships/",
+    "https://www.purdue.edu/dfa/aid-types/grants/"
+  ],
+  "last_verified": "2026-05-16"
+}

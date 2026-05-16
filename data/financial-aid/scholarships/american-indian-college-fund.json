@@ -1,0 +1,44 @@
+{
+  "id": "american-indian-college-fund",
+  "name": "American Indian College Fund",
+  "sponsor": "American Indian College Fund",
+  "amount": "Varies by program; $500\u2013$20,000+",
+  "amount_min": 500,
+  "amount_max": 20000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 2.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or permanent resident; tribal enrollment or descent required",
+    "race_ethnicity": [
+      "American Indian",
+      "Alaska Native",
+      "Native Hawaiian"
+    ],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Must be an enrolled member or descendant of a federally or state-recognized tribe; must provide tribal enrollment documentation"
+  },
+  "deadline": "March 31",
+  "application_url": "https://www.collegefund.org",
+  "award_count_per_year": null,
+  "selectivity": "moderately-selective",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Generally stackable; some HBCU/Tribal college coordination.",
+  "category": [
+    "minority",
+    "need-based"
+  ],
+  "tags": [
+    "native-american",
+    "tribal",
+    "alaska-native"
+  ],
+  "notes": "Umbrella portal for 50+ scholarships \u2014 students apply through one application and get matched. Tribal enrollment documentation required."
+}

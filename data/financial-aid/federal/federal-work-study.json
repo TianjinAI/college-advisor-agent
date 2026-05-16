@@ -1,0 +1,17 @@
+{
+  "id": "federal-work-study",
+  "name": "Federal Work-Study Program",
+  "type": "federal-work-program",
+  "administered_by": "U.S. Department of Education",
+  "description": "Provides part-time jobs for undergraduate and graduate students with financial need, allowing them to earn money to help pay education expenses. Jobs may be on-campus or off-campus with approved employers.",
+  "eligibility": "Undergraduate and graduate students with financial need as determined by FAFSA. Must be enrolled at least half-time. Availability depends on college's Work-Study funding allocation.",
+  "award_amount": "Varies by school and student need. Typical awards range from $1,500 to $5,000 per academic year. Students are paid at least federal minimum wage, often higher for specialized positions.",
+  "application_process": "Indicate interest on FAFSA. College financial aid office determines eligibility and includes it in award letter. Student must find and secure a Work-Study job through the college's employment office.",
+  "timeline": "Awarded per academic year. Jobs typically posted before semester starts. Earnings are paid biweekly and not applied directly to tuition bill unless student arranges it.",
+  "advisor_notes": "Work-Study earnings are excluded from next year's FAFSA income, which is a significant advantage over regular employment. Encourage students to find jobs related to their major. Unused Work-Study awards cannot be carried over — use it or lose it.",
+  "source_urls": [
+    "https://studentaid.gov/understand-aid/types/work-study",
+    "https://www2.ed.gov/programs/fws/index.html"
+  ],
+  "last_verified": "2026-05-16"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "gates-millenium",
+  "name": "Gates Millennium Scholars (now Gates Scholarship \u2014 note consolidation)",
+  "sponsor": "Bill & Melinda Gates Foundation",
+  "amount": "Full cost of attendance (legacy); now consolidated into Gates Scholarship",
+  "amount_min": null,
+  "amount_max": null,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": 100000,
+    "first_gen_required": false,
+    "pell_eligible_required": true,
+    "citizenship": "U.S. citizen or permanent resident or DACA (Gates Scholarship)",
+    "race_ethnicity": [
+      "African American",
+      "Hispanic American",
+      "American Indian/Alaska Native",
+      "Asian Pacific Islander American"
+    ],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "NOTE: Gates Millennium Scholars Program was consolidated into The Gates Scholarship in 2018. Use gates-scholarship entry for current applications."
+  },
+  "deadline": "January 13",
+  "application_url": "https://www.thegatesscholarship.org",
+  "award_count_per_year": null,
+  "selectivity": "extremely-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Legacy GMS was last-dollar; current Gates Scholarship follows same model.",
+  "category": [
+    "minority",
+    "need-based",
+    "merit"
+  ],
+  "tags": [
+    "consolidated",
+    "legacy",
+    "gates-scholarship"
+  ],
+  "notes": "Gates Millennium Scholars Program ended in 2018 and was consolidated into The Gates Scholarship. Direct students to the current Gates Scholarship entry (gates-scholarship) for applications."
+}

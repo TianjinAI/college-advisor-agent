@@ -1,0 +1,40 @@
+{
+  "id": "intel-isef",
+  "name": "Intel ISEF Awards (now Regeneron ISEF)",
+  "sponsor": "Society for Science / Regeneron",
+  "amount": "Grand awards vary up to $75,000 plus special awards",
+  "amount_min": 500,
+  "amount_max": 75000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "Varies by affiliated fair; U.S. and international participants",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must advance through affiliated local/regional science fair"
+  },
+  "deadline": "May 15",
+  "application_url": "https://www.societyforscience.org/isef/",
+  "award_count_per_year": 1800,
+  "selectivity": "extremely-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Prize awards generally stack; institutional aid usually unaffected.",
+  "category": [
+    "stem",
+    "merit"
+  ],
+  "tags": [
+    "science-fair",
+    "research",
+    "prize"
+  ],
+  "notes": "Pipeline competition via affiliated fairs; not direct open application."
+}

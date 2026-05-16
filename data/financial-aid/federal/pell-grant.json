@@ -1,0 +1,17 @@
+{
+  "id": "pell-grant",
+  "name": "Federal Pell Grant",
+  "type": "federal-grant",
+  "administered_by": "U.S. Department of Education",
+  "description": "The largest federal need-based grant program for undergraduate students. Award amount is determined by Student Aid Index (SAI), cost of attendance, enrollment status, and program length.",
+  "eligibility": "Undergraduate students with exceptional financial need who have not earned a bachelor's or professional degree. Must file FAFSA and have SAI below the maximum threshold (typically around -1500 to 6206 for full award).",
+  "award_amount": "Up to $7,395 per academic year (2024-2025). Actual award depends on SAI, enrollment intensity, and cost of attendance. Minimum scheduled award is approximately $740.",
+  "application_process": "Automatic consideration upon filing FAFSA. No separate application required. Award letter provided by each college's financial aid office.",
+  "timeline": "Awarded per academic year. Lifetime eligibility limited to 12 semesters (or equivalent) of full-time enrollment.",
+  "advisor_notes": "Pell is foundational — maximize by ensuring accurate income reporting. Students with incarcerated parent or unusual circumstances may qualify for special calculations. Check if college participates in Year-Round Pell for summer enrollment.",
+  "source_urls": [
+    "https://studentaid.gov/understand-aid/types/grants/pell",
+    "https://fsadownload.ed.gov/2024-2025/2024-25PellGrantPaymentSchedule.pdf"
+  ],
+  "last_verified": "2026-05-16"
+}

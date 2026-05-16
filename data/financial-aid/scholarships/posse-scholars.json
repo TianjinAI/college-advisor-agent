@@ -1,0 +1,33 @@
+{
+  "id": "posse-scholars",
+  "name": "Posse Foundation Scholarship",
+  "sponsor": "Posse Foundation",
+  "amount": "Full tuition scholarship at a Posse partner institution",
+  "amount_min": null,
+  "amount_max": null,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen, permanent resident, or DACA",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must be nominated by high school or community organization; exceptional leadership potential; collaborative mindset; from a Posse city (Atlanta, Boston, Chicago, D.C., Houston, Los Angeles, Miami, New York, New Orleans, San Francisco)"
+  },
+  "deadline": "October 30",
+  "application_url": "https://www.possefoundation.org",
+  "award_count_per_year": 900,
+  "selectivity": "extremely-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Scholarship is provided by the partner institution — it replaces rather than stacks with institutional aid, covering full tuition. Students receive the Posse scholarship in lieu of standard financial aid package at partner schools.",
+  "category": ["merit", "first-gen"],
+  "tags": ["leadership", "cohort", "full-tuition", "city-based", "nomination-required", "diversity"],
+  "notes": "Students cannot apply directly — they must be nominated by their high school or a community partner organization. Posse sends cohorts of 10 scholars from each city to partner colleges, providing built-in peer support. The program prioritizes students who might be overlooked by traditional admissions but show extraordinary leadership in non-traditional ways."
+}

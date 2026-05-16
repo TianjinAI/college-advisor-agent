@@ -1,0 +1,38 @@
+{
+  "id": "columbia-university-in-the-city-of-new-york",
+  "name": "Columbia University in the City of New York",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Columbia meets 100% of demonstrated financial need for all admitted domestic students. Families earning under $150,000 typically pay no more than 10% of income; under $60,000 pay nothing.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Columbia eliminated loans from all financial aid packages in 2018. All aid is grant-based. No loans in Columbia financial aid packages; students may take outside loans separately.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 0,
+    "band_30_48k": 3000,
+    "band_48_75k": 10000,
+    "band_75_110k": 22000,
+    "band_110k_plus": 43000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "Columbia's financial aid is need-blind and identical for ED and RD applicants. Aid package released with ED decision. Binding commitment is expected but can be reconsidered if aid is insufficient.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["Columbia Scholarship Program", "QuestBridge National College Match", "POSSE Scholarship", "Davis Scholarship", "First-Generation Initiative"],
+  "avg_aid_award": 61000,
+  "percent_need_met": 100,
+  "appeal_policy": "Columbia considers appeals for changed financial circumstances. Students submit Professional Judgment requests to Student Financial Services.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://undergrad.admissions.columbia.edu/afford",
+    "https://sfs.columbia.edu/content/financial-aid-undergraduates"
+  ],
+  "last_verified": "2026-05-16"
+}

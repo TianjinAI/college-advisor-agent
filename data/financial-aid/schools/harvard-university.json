@@ -1,0 +1,44 @@
+{
+  "id": "harvard-university",
+  "name": "Harvard University",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Harvard meets 100% of demonstrated financial need for all admitted students, domestic and international. Families with income under $85,000 pay nothing; under $150,000 typically pay no more than 10% of income.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Harvard eliminated loans from all financial aid packages in 2012. All Harvard scholarships are grants. Families with income under $85,000 contribute nothing; those above contribute based on income, assets, and expenses.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 0,
+    "band_30_48k": 0,
+    "band_48_75k": 3000,
+    "band_75_110k": 12000,
+    "band_110k_plus": 35000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": false,
+  "ea_available": false,
+  "rea_available": true,
+  "ed_aid_implications": "Harvard's ED applicants receive the same need-based financial aid as RD. Aid is released with admission decision. Students may request release from ED if the aid offer is insufficient.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": [
+    "Harvard Scholarship (100% need-based)",
+    "QuestBridge National College Match",
+    "POSSE Scholarship",
+    "Harvard Financial Aid Initiative (HFAI)",
+    "Harvard First-Gen Program"
+  ],
+  "avg_aid_award": 60000,
+  "percent_need_met": 100,
+  "appeal_policy": "Harvard reviews appeals for changed financial circumstances through their financial aid office. Students may request professional judgment review if family income or assets have changed significantly.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://college.harvard.edu/financial-aid",
+    "https://college.harvard.edu/financial-aid/how-apply"
+  ],
+  "last_verified": "2026-05-16"
+}

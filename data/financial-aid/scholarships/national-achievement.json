@@ -1,0 +1,42 @@
+{
+  "id": "national-achievement",
+  "name": "National Achievement Scholarship (African American)",
+  "sponsor": "National Merit Scholarship Corporation",
+  "amount": "$2,500 one-time (National Achievement) plus corporate/college-sponsored awards",
+  "amount_min": 2500,
+  "amount_max": null,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or permanent resident",
+    "race_ethnicity": [
+      "African American"
+    ],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must take PSAT/NMSQT and qualify through the National Achievement Program; note: program was sunset after 2015"
+  },
+  "deadline": "October 15",
+  "application_url": "https://www.nationalmerit.org",
+  "award_count_per_year": 700,
+  "selectivity": "extremely-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Stackable like National Merit; college-sponsored variations apply.",
+  "category": [
+    "minority",
+    "merit"
+  ],
+  "tags": [
+    "african-american",
+    "psat",
+    "sunset"
+  ],
+  "notes": "Program was sunset after 2015 and folded into the National Merit Program. Students who identify as Black/African American now compete through the main National Merit pathway. Advisor reference only."
+}

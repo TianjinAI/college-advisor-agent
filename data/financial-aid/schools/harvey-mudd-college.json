@@ -1,0 +1,38 @@
+{
+  "id": "harvey-mudd-college",
+  "name": "Harvey Mudd College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Harvey Mudd meets 100% of demonstrated financial need for all admitted domestic students.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Harvey Mudd eliminated loans from financial aid packages. All institutional aid is grant-based. Work-study may be included but no loans.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 0,
+    "band_30_48k": 3000,
+    "band_48_75k": 10000,
+    "band_75_110k": 22000,
+    "band_110k_plus": 42000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive same need-based aid as RD. Binding commitment but may withdraw if financial aid is insufficient.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": ["QuestBridge National College Match", "Harvey Mudd Grant", "Claremont Consortium Aid", "Clinic Program funding"],
+  "avg_aid_award": 55000,
+  "percent_need_met": 100,
+  "appeal_policy": "Harvey Mudd reviews appeals for changed financial circumstances through the Office of Financial Aid.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.hmc.edu/admission/financial-aid/",
+    "https://www.hmc.edu/admission/financial-aid/types-of-aid/"
+  ],
+  "last_verified": "2026-05-16"
+}

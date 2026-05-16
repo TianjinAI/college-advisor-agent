@@ -1,0 +1,19 @@
+{
+  "id": "pa-state-grant",
+  "name": "Pennsylvania State Grant",
+  "type": "state-grant",
+  "administered_by": "Pennsylvania Higher Education Assistance Agency (PHEAA)",
+  "description": "Pennsylvania's primary state grant program for residents attending eligible Pennsylvania colleges. One of the largest state grant programs in the country with significant funding.",
+  "eligibility": "Pennsylvania resident, U.S. citizen or eligible non-citizen, enrolled at least half-time in an eligible PA degree program, demonstrating financial need based on PA State Grant means test, meeting SAP requirements, and maintaining enrollment in approved program.",
+  "award_amount": "Varies from $500 to $4,738 per year based on need, enrollment intensity, and cost of attendance. Full-time students from families with countable income up to approximately $103,000 may qualify. Part-time awards are prorated.",
+  "application_process": "File FAFSA by May 1 priority deadline. PA residents who attend PA colleges are automatically considered. Students at some out-of-state colleges may need to complete the Direct State Grant form through PHEAA.",
+  "timeline": "May 1 priority deadline. Renewal students have until August 1. Award notifications typically sent April-June. Must maintain SAP (2.0 GPA and completion of 67% of attempted credits).",
+  "advisor_notes": "PA State Grant has specific residency requirements \u2014 students must have been PA residents for 12 months before the first day of classes. The program has generous income limits compared to many states. Non-traditional students and those attending part-time have specific rules. Appeal process exists for students who lose eligibility due to SAP.",
+  "stacking_notes": "PA State Grant stacks with Pell Grant. Federal grants and state grants typically count toward meeting need. The self-help expectation (loans + work-study) is typically $3,000 for full-time students. If total gift aid (grants + scholarships) exceeds need, PA State Grant may be reduced.",
+  "source_urls": [
+    "https://www.pheaa.org/",
+    "https://www.pheaa.org/student-aid/navigation/state-grant-program.shtml"
+  ],
+  "last_verified": "2026-05-16",
+  "state": "PA"
+}

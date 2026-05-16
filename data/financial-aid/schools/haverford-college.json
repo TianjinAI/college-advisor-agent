@@ -1,0 +1,38 @@
+{
+  "id": "haverford-college",
+  "name": "Haverford College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Haverford meets 100% of demonstrated financial need for all admitted domestic students.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Haverford eliminated loans from financial aid packages in 2020. All aid is grant-based with no institutional loans. Haverford's no-loan policy applies to all four years.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 0,
+    "band_30_48k": 4000,
+    "band_48_75k": 12000,
+    "band_75_110k": 23000,
+    "band_110k_plus": 43000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive same need-based aid as RD. Binding ED commitment can be released if financial aid is insufficient.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["QuestBridge National College Match", "POSSE Scholarship", "Haverford Scholarship (need-based)", "Center for Career and Professional Advising funding"],
+  "avg_aid_award": 54000,
+  "percent_need_met": 100,
+  "appeal_policy": "Haverford accepts appeals for changed financial circumstances through the Financial Aid Office.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.haverford.edu/financial-aid",
+    "https://www.haverford.edu/financial-aid/apply"
+  ],
+  "last_verified": "2026-05-16"
+}

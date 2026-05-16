@@ -1,0 +1,19 @@
+{
+  "id": "ca-cal-grant",
+  "name": "California Cal Grant",
+  "type": "state-grant",
+  "administered_by": "California Student Aid Commission",
+  "description": "California's largest state-funded grant program for residents attending eligible California colleges. Includes Cal Grant A (for tuition), Cal Grant B (for low-income students), and Cal Grant C (for occupational/vocational students).",
+  "eligibility": "California resident, U.S. citizen or eligible non-citizen, enrolled at a California qualifying institution, meeting GPA and financial requirements. Must file FAFSA or CADAA by March 2 for entitlement awards.",
+  "award_amount": "Cal Grant A: up to $12,570 per year for tuition at UC/CSU (adjusts annually). Cal Grant B: up to $2,622 for living expenses (increases when transferred to a 4-year institution). Amounts vary by institution type and California budget.",
+  "application_process": "File FAFSA or California Dream Act Application (CADAA for AB 540 students) by March 2 deadline. Cal Grant B entitlement awards are automatic for recent high school graduates meeting GPA and income requirements. Competitive awards require additional essays.",
+  "timeline": "March 2 priority deadline for entitlement Cal Grants. Competitive Cal Grants have September 2 deadline. Must be renewed annually with satisfactory academic progress.",
+  "advisor_notes": "Cal Grant is last on the school financial aid package, meaning it stacks on top of federal and institutional aid. It does NOT reduce Pell Grant eligibility. Students at private colleges may receive less than full tuition Cal Grant \u2014 check school-specific amounts. Dream Act students are eligible for Cal Grant B only.",
+  "stacking_notes": "Cal Grant is treated as grant aid and can reduce the student's self-help contribution (work-study + loans). Some schools count Cal Grant as part of the student's package, potentially reducing institutional grants \u2014 verify school's Cal Grant policy. Cal Grant A typically covers UC/CSU tuition but private school awards may be lower.",
+  "source_urls": [
+    "https://www.csac.ca.gov/cal-grants",
+    "https://www.csac.ca.gov/post/cal-grant-amounts"
+  ],
+  "last_verified": "2026-05-16",
+  "state": "CA"
+}

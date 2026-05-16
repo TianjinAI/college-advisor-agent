@@ -1,0 +1,41 @@
+{
+  "id": "florida-bright-futures",
+  "name": "Florida Bright Futures Scholarship",
+  "sponsor": "Florida Department of Education / Office of Student Financial Assistance",
+  "amount": "Florida Academic Scholars: full tuition + $300/semester at FL public university; Florida Medallion: 75% of tuition",
+  "amount_min": null,
+  "amount_max": null,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": 3.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or eligible non-citizen; FL resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": "FL",
+    "other_requirements": "FL resident; graduate from FL high school; minimum GPA and test score requirements (Academic: 3.5 + 29 ACT/1330 SAT; Medallion: 3.0 + 25 ACT/1210 SAT); minimum community service hours"
+  },
+  "deadline": "August 1",
+  "application_url": "https://www.floridastudentfinancialaidsg.org/SFABrightFutures/",
+  "award_count_per_year": null,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "State scholarship; stacks with institutional merit awards. No displacement at public FL institutions. Private colleges may have different policies.",
+  "category": [
+    "merit",
+    "state"
+  ],
+  "tags": [
+    "florida",
+    "tuition",
+    "community-service",
+    "gpa"
+  ],
+  "notes": "Two tiers: Florida Academic Scholars (more generous) and Medallion Scholars. Community service hours required (100 hours for Academic, 75 for Medallion). GPA is weighted for eligibility. Test score requirements may change \u2014 verify annually."
+}

@@ -1,0 +1,42 @@
+{
+  "id": "soroptimist-live-dream",
+  "name": "Soroptimist Live Your Dream Award",
+  "sponsor": "Soroptimist International",
+  "amount": "Up to $16,000 ($10,000 national; additional local/regional awards up to $6,000)",
+  "amount_min": 1000,
+  "amount_max": 16000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen, permanent resident, or eligible non-citizen; female",
+    "race_ethnicity": [],
+    "gender": "female",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Must be a woman with primary financial responsibility for dependents; head of household; enrolled in or accepted to undergraduate/vocational program; demonstrating financial need"
+  },
+  "deadline": "November 15",
+  "application_url": "https://www.soroptimist.org/our-dream/live-your-dream-award",
+  "award_count_per_year": 1500,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "External award; generally stackable with institutional aid.",
+  "category": [
+    "need-based",
+    "women"
+  ],
+  "tags": [
+    "women",
+    "single-parent",
+    "dependents",
+    "non-traditional",
+    "reentry"
+  ],
+  "notes": "Targets women who are the primary financial support for their families \u2014 non-traditional students, single mothers, survivors of domestic violence. Less competitive than prestige awards; strong fit for adult learners re-entering education. Awards are progressive (local to region to national)."
+}

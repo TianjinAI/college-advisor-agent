@@ -1,0 +1,33 @@
+{
+  "id": "raise-me",
+  "name": "RaiseMe Micro-Scholarships",
+  "sponsor": "RaiseMe (platform connecting students with college micro-scholarships)",
+  "amount": "Varies; micro-scholarships of $500–$2,500+ accumulated during high school",
+  "amount_min": 100,
+  "amount_max": 24000,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "Varies by partner college",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must create a RaiseMe profile as early as 9th grade; earn micro-scholarships from partner colleges for GPA, courses, extracurriculars, community service, and other achievements; must enroll at a RaiseMe partner institution"
+  },
+  "deadline": "Ongoing; must enroll at partner college",
+  "application_url": "https://www.raise.me",
+  "award_count_per_year": null,
+  "selectivity": "moderately-selective",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Micro-scholarship amounts are pledged by the partner college and applied to tuition upon enrollment. They are institutionally granted — check if they stack with or replace other institutional merit awards at each specific partner school.",
+  "category": ["merit", "first-gen"],
+  "tags": ["micro-scholarship", "platform", "ongoing", "cumulative", "high-school", "gpa", "extracurriculars"],
+  "notes": "RaiseMe is a technology platform, not a single scholarship — it connects students with 400+ colleges that pledge micro-scholarships based on high school achievements logged on the platform. Students earn small amounts for grades, activities, and service that accumulate over time. Best used starting 9th grade; the total amount varies widely based on which colleges are on the student's portfolio and which ultimately grants them a micro-scholarship upon enrollment."
+}

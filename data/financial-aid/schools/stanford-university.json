@@ -1,0 +1,45 @@
+{
+  "id": "stanford-university",
+  "name": "Stanford University",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Stanford meets 100% of demonstrated financial need for all admitted domestic and international undergraduates. Families earning under $75,000 pay nothing. Families earning $75,000-$150,000 typically pay 10% or less of income.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Stanford has a no-loan policy for all undergraduates who qualify for need-based financial aid. All need-based aid is in the form of grants that do not need to be repaid. This applies to domestic and international students.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 0,
+    "band_30_48k": 0,
+    "band_48_75k": 3000,
+    "band_75_110k": 15000,
+    "band_110k_plus": 38000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": false,
+  "ea_available": false,
+  "rea_available": true,
+  "ed_aid_implications": "Stanford offers Restrictive Early Action (REA), which is non-binding. Aid is identical under REA and Regular Decision. Applying REA does not affect financial aid generosity.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": [
+    "Stanford Financial Aid (need-based grants, no loans)",
+    "QuestBridge College Match",
+    "Knight-Hennessy Scholars (graduate-level, not UG merit)",
+    "Free tuition for families under $75,000 (zero parental contribution)",
+    "Bing Overseas Studies Program financial aid compatibility"
+  ],
+  "avg_aid_award": 60000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may request a review of their financial aid package through the Office of Financial Aid. Stanford encourages students to reach out if family financial circumstances have changed or if there are special situations not captured in standard forms.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://financialaid.stanford.edu/",
+    "https://financialaid.stanford.edu/undergrad/how/parent/index.html",
+    "https://financialaid.stanford.edu/undergrad/apply/index.html"
+  ],
+  "last_verified": "2026-05-16"
+}

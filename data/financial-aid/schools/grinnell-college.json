@@ -1,0 +1,38 @@
+{
+  "id": "grinnell-college",
+  "name": "Grinnell College",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Grinnell meets 100% of demonstrated financial need for all admitted students, including international students.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Grinnell includes loans in aid packages for many students, though loan levels are moderate and grants are substantial. No universal no-loan policy.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 3000,
+    "band_30_48k": 7000,
+    "band_48_75k": 15000,
+    "band_75_110k": 25000,
+    "band_110k_plus": 43000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive same need-based aid evaluation as RD applicants. Aid package provided with admission decision.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": ["QuestBridge National College Match", "Grinnell Grant", "Grinnell Science Project funding", "First-generation support grants"],
+  "avg_aid_award": 50000,
+  "percent_need_met": 100,
+  "appeal_policy": "Appeals reviewed for changed financial circumstances through Office of Student Financial Aid.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.grinnell.edu/admission/financial-aid",
+    "https://www.grinnell.edu/offices-services/financial-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

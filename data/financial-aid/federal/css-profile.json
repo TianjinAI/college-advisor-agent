@@ -1,0 +1,17 @@
+{
+  "id": "css-profile",
+  "name": "CSS Profile",
+  "type": "institutional-application",
+  "administered_by": "College Board",
+  "description": "The CSS Profile is an additional financial aid application used by approximately 250 private colleges and scholarship programs to award institutional aid. It collects more detailed financial information than the FAFSA, including home equity, medical expenses, and non-custodial parent data.",
+  "eligibility": "Required by participating colleges and scholarship programs. Students applying to schools that use the CSS Profile must complete it regardless of income level.",
+  "award_amount": "Not an award itself — determines eligibility for institutional need-based grants, which can range from a few thousand dollars to full cost of attendance at no-loan schools.",
+  "application_process": "Complete online at cssprofile.collegeboard.org. Requires College Board account. Fee is $25 for initial application and $16 per additional college (fee waivers available for low-income families). Non-custodial parent form may be required separately.",
+  "timeline": "Opens October 1 each year. Deadlines vary by college — often November 1 for Early Decision/Early Action and February 1 for Regular Decision. Must be renewed annually.",
+  "advisor_notes": "CSS Profile schools often provide more generous aid than FAFSA-only schools, but the application is more invasive. Home equity and business values can significantly impact institutional aid. Request fee waiver if family income is under $100,000. Some schools allow CSS Profile waiver appeals for non-custodial parent situations.",
+  "source_urls": [
+    "https://cssprofile.collegeboard.org/",
+    "https://bigfuture.collegeboard.org/pay-for-college/financial-aid-101/css-profile"
+  ],
+  "last_verified": "2026-05-16"
+}

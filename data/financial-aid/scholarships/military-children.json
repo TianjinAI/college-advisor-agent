@@ -1,0 +1,40 @@
+{
+  "id": "military-children",
+  "name": "Children of Fallen Patriots Scholarship",
+  "sponsor": "Children of Fallen Patriots Foundation",
+  "amount": "Full tuition or up to $6,250 per year",
+  "amount_min": 500,
+  "amount_max": 6250,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": 2.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Child of a service member who died in the line of duty or as a result of a combat-related disability; attend any accredited postsecondary institution"
+  },
+  "deadline": "April 15",
+  "application_url": "https://www.fallenpatriots.org",
+  "award_count_per_year": null,
+  "selectivity": "moderately-selective",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Stackable with all other military and government benefits (GI Bill, DEA, etc.). Foundation aims to cover remaining unmet need.",
+  "category": [
+    "need-based",
+    "military"
+  ],
+  "tags": [
+    "gold-star",
+    "military-family",
+    "tuition"
+  ],
+  "notes": "Designed specifically for Gold Star families (children of fallen service members). Does not replace existing military benefits \u2014 fills the gap. Foundation provides personal guidance through the financial aid process. Critical resource for a small but significant population."
+}

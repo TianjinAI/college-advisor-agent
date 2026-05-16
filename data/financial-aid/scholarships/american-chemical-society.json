@@ -1,0 +1,44 @@
+{
+  "id": "american-chemical-society",
+  "name": "ACS Scholars Program",
+  "sponsor": "American Chemical Society",
+  "amount": "Up to $5,000 per year",
+  "amount_min": 1000,
+  "amount_max": 5000,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": 3.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": 60000,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or permanent resident",
+    "race_ethnicity": [
+      "African American",
+      "Hispanic/Latino",
+      "American Indian"
+    ],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Chemistry-related major; underrepresented minority in chemical sciences"
+  },
+  "deadline": "March 1",
+  "application_url": "https://www.acs.org/education/acs-scholars.html",
+  "award_count_per_year": 350,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "External aid may shift need-based grants; generally stackable.",
+  "category": [
+    "stem",
+    "minority",
+    "need-based"
+  ],
+  "tags": [
+    "chemistry",
+    "urm"
+  ],
+  "notes": "Excellent for chemistry/biochemistry tracks; supports persistence through degree."
+}

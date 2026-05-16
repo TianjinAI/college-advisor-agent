@@ -1,0 +1,45 @@
+{
+  "id": "yale-university",
+  "name": "Yale University",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Yale meets 100% of demonstrated financial need for all admitted domestic and international undergraduates. Families earning under $75,000 typically pay nothing. Families earning under $200,000 typically pay less than $25,000/year.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Yale has a no-loan policy for all undergraduates who qualify for need-based financial aid. All need-based aid is in the form of grants. This applies to domestic and international students alike.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 0,
+    "band_30_48k": 0,
+    "band_48_75k": 2000,
+    "band_75_110k": 12000,
+    "band_110k_plus": 36000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": false,
+  "ea_available": false,
+  "rea_available": true,
+  "ed_aid_implications": "Yale offers Restrictive Early Action (REA), which is non-binding. Aid policies are identical under REA and Regular Decision. Applying REA does not affect financial aid generosity.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": [
+    "Yale Financial Aid (all-grant, no-loan)",
+    "QuestBridge College Match",
+    "Yale Young Global Leaders (pre-college outreach)",
+    "Summer programs financial support",
+    "International student need-based aid (full need met)"
+  ],
+  "avg_aid_award": 61000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may appeal their financial aid award through the Office of Undergraduate Financial Aid. Appeals require documentation of special circumstances, significant changes in family financial situation, or unusual expenses not captured in the initial application.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://financialaid.yale.edu/",
+    "https://financialaid.yale.edu/how-apply",
+    "https://financialaid.yale.edu/types-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

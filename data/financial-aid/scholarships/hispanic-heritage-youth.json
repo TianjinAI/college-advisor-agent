@@ -1,0 +1,41 @@
+{
+  "id": "hispanic-heritage-youth",
+  "name": "Hispanic Heritage Youth Awards",
+  "sponsor": "Hispanic Heritage Foundation",
+  "amount": "$1,000\u2013$4,000",
+  "amount_min": 1000,
+  "amount_max": 4000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 3.0,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen, permanent resident, or DACA",
+    "race_ethnicity": [
+      "Hispanic/Latino"
+    ],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Hispanic heritage; community service and leadership required"
+  },
+  "deadline": "November 13",
+  "application_url": "https://hhfawards.hispanicheritage.org",
+  "award_count_per_year": 180,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Usually stackable with school aid.",
+  "category": [
+    "minority",
+    "merit"
+  ],
+  "tags": [
+    "hispanic",
+    "youth-awards"
+  ],
+  "notes": "Category-based awards (STEM, business, community, etc.). Strong career networking at award events."
+}

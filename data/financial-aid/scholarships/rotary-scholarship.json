@@ -1,0 +1,41 @@
+{
+  "id": "rotary-scholarship",
+  "name": "Rotary Foundation Scholarship (District/Global)",
+  "sponsor": "Rotary International / Rotary Foundation",
+  "amount": "Varies widely; Global Grant scholarship minimum $30,000; local awards $1,000\u2013$5,000+",
+  "amount_min": 500,
+  "amount_max": 30000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "Varies by program; must reside in or near a Rotary district",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Must be sponsored by a local Rotary Club; for graduate-level Global Grants: studying in Rotary-defined area of focus; local awards vary by district"
+  },
+  "deadline": "Varies by district; typically January 15 or March 1",
+  "application_url": "https://www.rotary.org/en/our-programs/scholarships",
+  "award_count_per_year": null,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "External awards; generally stackable. Grad students should note: Global Grants are competitive and require Rotary club sponsorship.",
+  "category": [
+    "merit",
+    "need-based"
+  ],
+  "tags": [
+    "graduate",
+    "vocational",
+    "rotary",
+    "club-sponsored"
+  ],
+  "notes": "This is an umbrella category \u2014 dozens of distinct programs exist at local, district, and international levels. The Global Grant Scholarships ($30,000+ minimum) fund graduate study in Rotary Areas of Focus (peace, disease prevention, water, education). Student must first contact local Rotary club for sponsorship."
+}

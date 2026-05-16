@@ -1,0 +1,17 @@
+{
+  "id": "parent-plus-loans",
+  "name": "Parent PLUS Loans",
+  "type": "federal-loan",
+  "administered_by": "U.S. Department of Education",
+  "description": "Federal loans available to parents of dependent undergraduate students to help pay for education expenses not covered by other financial aid. Credit check required, but approval standards are less strict than private loans.",
+  "eligibility": "Biological, adoptive, or step-parents of dependent undergraduate students enrolled at least half-time. Must be U.S. citizen or eligible non-citizen. Credit check required — cannot have adverse credit history (recent bankruptcy, foreclosure, tax lien, or delinquency over 90 days).",
+  "award_amount": "Up to cost of attendance minus other financial aid received. No aggregate limit. Current fixed interest rate is approximately 8.05% with a 4.228% origination fee (2023-2024 rates; check current year).",
+  "application_process": "Parent applies at studentaid.gov using their own FSA ID. Credit check performed instantly. If denied, student may be eligible for additional Unsubsidized Direct Loan funds ($4,000-$5,000 additional per year). Sign Master Promissory Note if approved.",
+  "timeline": "Apply annually. Funds disbursed directly to school. Repayment begins immediately unless parent requests deferment while student is in school.",
+  "advisor_notes": "PLUS loans have higher interest rates than student Direct Loans and origination fees. Parent is solely responsible for repayment — not transferable to student. Consider whether family can afford payments before accepting. If parent is denied, student gains access to additional unsubsidized loan funds, which may be preferable to private loans.",
+  "source_urls": [
+    "https://studentaid.gov/understand-aid/types/loans/plus",
+    "https://studentaid.gov/apply-for-aid/fafsa/filling-out/parent-info"
+  ],
+  "last_verified": "2026-05-16"
+}

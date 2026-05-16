@@ -1,0 +1,45 @@
+{
+  "id": "princeton-university",
+  "name": "Princeton University",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Princeton meets 100% of demonstrated financial need for all admitted domestic and international undergraduates. Among the most generous financial aid programs in the country. Families earning under $100,000 typically pay nothing; families under $65,000 have been paying nothing since 2023.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Princeton has a comprehensive no-loan policy for all undergraduates — domestic and international — regardless of income. All aid is provided as grants that never need to be repaid.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 0,
+    "band_30_48k": 0,
+    "band_48_75k": 2000,
+    "band_75_110k": 12000,
+    "band_110k_plus": 35000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": false,
+  "ea_available": false,
+  "rea_available": true,
+  "ed_aid_implications": "Princeton offers Restrictive Early Action (REA), not binding ED. Aid is identical under REA and Regular Decision. Applying early does not affect financial aid generosity.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": [
+    "Princeton Financial Aid (need-based grants, no loans ever)",
+    "QuestBridge College Match",
+    "Princeton Internship in Civic Service (PICS)",
+    "Aid for families earning under $100k — often full cost covered",
+    "International student aid (full need met)"
+  ],
+  "avg_aid_award": 62000,
+  "percent_need_met": 100,
+  "appeal_policy": "Students may request reconsideration of their financial aid award through the Office of Financial Aid. Appeals are reviewed based on special circumstances, changes in family finances, or errors in the initial assessment.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://financialaid.princeton.edu/",
+    "https://financialaid.princeton.edu/how-princeton-aid-works/grant-program",
+    "https://financialaid.princeton.edu/cost-aid/estimate-your-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

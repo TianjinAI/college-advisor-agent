@@ -1,0 +1,43 @@
+{
+  "id": "johns-hopkins-university",
+  "name": "Johns Hopkins University",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Johns Hopkins meets 100% of demonstrated financial need for all admitted domestic students. The Hopkins Financial Aid program provides substantial grant aid.",
+  "no_loan_policy": false,
+  "no_loan_notes": "JHU includes loans in financial aid packages, though amounts are capped. JHU's loan cap policy reduces loans for students with demonstrated need. Not a full no-loan institution.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 4000,
+    "band_30_48k": 10000,
+    "band_48_75k": 18000,
+    "band_75_110k": 28000,
+    "band_110k_plus": 45000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": null,
+    "sat_floor": null,
+    "act_floor": null,
+    "notes": "JHU offers prestigious merit scholarships including the Hodson Trust Scholarship, National Merit Scholarships, and school-specific awards. Most merit awards are full-ride or near-full-ride for exceptional candidates. Selection is holistic."
+  },
+  "fa_priority_deadline": "2026-02-15",
+  "fa_regular_deadline": "2026-02-15",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "ED applicants receive same need-based aid as RD. Binding commitment can be released if financial aid offer is insufficient.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": ["Hodson Trust Scholarship", "National Merit Scholarships", "QuestBridge National College Match", "School of Engineering merit awards", "School of Medicine awards"],
+  "avg_aid_award": 48000,
+  "percent_need_met": 100,
+  "appeal_policy": "JHU reviews appeals for changed financial circumstances through the Office of Student Financial Services.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://finaid.jhu.edu/",
+    "https://studentfinancialservices.jhu.edu/"
+  ],
+  "last_verified": "2026-05-16"
+}

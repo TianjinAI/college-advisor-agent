@@ -1,0 +1,38 @@
+{
+  "id": "california-institute-of-technology",
+  "name": "California Institute of Technology",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Caltech meets 100% of demonstrated financial need for all admitted domestic students. Families earning under $60,000 typically pay nothing; under $217,000 may qualify for aid.",
+  "no_loan_policy": true,
+  "no_loan_notes": "Caltech eliminated loans from all financial aid packages. All institutional aid is grant-based. Students from families under $60k pay nothing; under $217k with typical assets receive grant aid.",
+  "need_only": true,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 0,
+    "band_30_48k": 2000,
+    "band_48_75k": 8000,
+    "band_75_110k": 20000,
+    "band_110k_plus": 38000
+  },
+  "merit_aid_available": false,
+  "merit_thresholds": null,
+  "fa_priority_deadline": "2026-01-03",
+  "fa_regular_deadline": "2026-01-03",
+  "ed_available": false,
+  "ea_available": false,
+  "rea_available": true,
+  "ed_aid_implications": "Caltech does not have ED. REA applicants receive same need-based aid as regular decision.",
+  "questbridge_partner": true,
+  "posse_partner": false,
+  "special_programs": ["QuestBridge National College Match", "Caltech Scholarship (grant-only)", "Summer Undergraduate Research Fellowships (SURF)"],
+  "avg_aid_award": 56000,
+  "percent_need_met": 100,
+  "appeal_policy": "Appeals reviewed for changed financial circumstances. Students contact Student Financial Services for professional judgment review.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://www.admissions.caltech.edu/financial-aid",
+    "https://www.finaid.caltech.edu/"
+  ],
+  "last_verified": "2026-05-16"
+}

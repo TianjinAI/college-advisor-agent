@@ -1,0 +1,33 @@
+{
+  "id": "questbridge-match",
+  "name": "QuestBridge National Match Scholarship",
+  "sponsor": "QuestBridge",
+  "amount": "Full four-year scholarship (tuition, room, board, fees) at matched college",
+  "amount_min": null,
+  "amount_max": null,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": 3.5,
+    "sat_min": 1310,
+    "act_min": 28,
+    "income_max": 65000,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen, permanent resident, or undocumented (DACA and non-DACA)",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Must be a high school senior; strong academic record; demonstrated financial need; typically household income under $65,000 (some flexibility to ~$100,000)"
+  },
+  "deadline": "September 26",
+  "application_url": "https://www.questbridge.org/college-prep-scholars/national-college-match",
+  "award_count_per_year": 5000,
+  "selectivity": "extremely-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "The scholarship IS the institutional aid package — it is provided by the partner college, not stacked on top. Students matched to a college receive the partner institution's full-ride commitment. No stacking concern since it replaces need-based institutional aid comprehensively.",
+  "category": ["need-based", "merit", "first-gen"],
+  "tags": ["full-ride", "low-income", "match-process", "partner-colleges", "high-achieving"],
+  "notes": "QuestBridge is not a traditional scholarship — it is a matching process connecting low-income high-achievers with ~50 elite partner colleges that commit to full funding. Students rank up to 12 colleges and are 'matched' via a binding process similar to Early Decision. Undocumented students are eligible at many partner schools, making this one of few national programs with that feature."
+}

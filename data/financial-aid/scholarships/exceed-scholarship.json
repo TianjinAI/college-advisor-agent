@@ -1,0 +1,39 @@
+{
+  "id": "exceed-scholarship",
+  "name": "ExceEd Scholarship",
+  "sponsor": "ExceEd Program Partners",
+  "amount": "Varies; typically $1,000\u2013$5,000",
+  "amount_min": 1000,
+  "amount_max": 5000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": 2.5,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "Varies by sponsor",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": null,
+    "other_requirements": "Program-specific criteria for first-generation or underrepresented students"
+  },
+  "deadline": "March 15",
+  "application_url": "https://www.exceedprogram.org",
+  "award_count_per_year": null,
+  "selectivity": "competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Usually stackable; verify outside scholarship displacement policy.",
+  "category": [
+    "first-gen",
+    "need-based"
+  ],
+  "tags": [
+    "first-gen",
+    "college-access"
+  ],
+  "notes": "Regional/partner scholarship umbrella. Advisor check local ExceEd partner rules."
+}

@@ -1,0 +1,19 @@
+{
+  "id": "ny-tap",
+  "name": "New York Tuition Assistance Program (TAP)",
+  "type": "state-grant",
+  "administered_by": "New York State Higher Education Services Corporation (HESC)",
+  "description": "New York's primary state grant program providing need-based tuition assistance to eligible residents attending in-state colleges. One of the largest state grant programs in the nation.",
+  "eligibility": "New York State resident, U.S. citizen or eligible non-citizen, enrolled full-time in an approved NYS degree program, meeting income thresholds. Must be in-state student for at least 12 months before applying.",
+  "award_amount": "Varies from $500 to $5,665 per year based on NYS taxable income, family size, and type of institution (public vs private). Full-time students from families with incomes up to $80,000 may qualify.",
+  "application_process": "Apply via FAFSA by May 1 deadline. NYS processes ISIR data and sends eligibility notice. Students must confirm college enrollment to receive award. Separate TAP application is no longer required if using FAFSA.",
+  "timeline": "May 1 priority deadline. Awards processed in June-July. Must be renewed annually with satisfactory academic progress (minimum 12 credits per semester toward degree completion).",
+  "advisor_notes": "TAP is tied to tuition only \u2014 it does not cover fees, room, or board. Undergraduate students can receive TAP for up to 8 semesters (4 years full-time or 6 years part-time). Income thresholds are generous compared to other states. Part-time students may receive reduced TAP.",
+  "stacking_notes": "TAP generally stacks with Pell Grant. However, the combination of TAP and other tuition-specific aid cannot exceed tuition and fee costs. Some colleges reduce institutional grants when TAP is received \u2014 review school policy. TAP does not typically affect SEOG or Work-Study eligibility.",
+  "source_urls": [
+    "https://www.hesc.ny.gov/pay-for-college/financial-aid/types-of-aid/tuition-assistance-program-tap.html",
+    "https://www.hesc.ny.gov/advisory-pages/tap-award-chart"
+  ],
+  "last_verified": "2026-05-16",
+  "state": "NY"
+}

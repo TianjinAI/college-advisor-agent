@@ -1,0 +1,19 @@
+{
+  "id": "ma-massgrant",
+  "name": "Massachusetts MassGrant",
+  "type": "state-grant",
+  "administered_by": "Massachusetts Department of Higher Education",
+  "description": "Massachusetts' primary need-based state grant program for residents attending eligible Massachusetts colleges and universities. Part of the MassGrant program which includes need-based MassGrant, MassGrant Plus (for additional need), and other financial aid programs.",
+  "eligibility": "Massachusetts resident, U.S. citizen or eligible non-citizen, enrolled at least half-time in an eligible MA degree program at a participating institution, demonstrating significant financial need based on EFC/SAI and state criteria, meeting SAP requirements.",
+  "award_amount": "Varies by institution and available funding. Annual awards typically range from $500 to $4,000 depending on need, enrollment intensity, and annual state appropriation. Part-time awards are prorated.",
+  "application_process": "File FAFSA by May 1 priority deadline. Students at MA public colleges are automatically considered. Some private colleges may have earlier deadlines or require additional applications.",
+  "timeline": "May 1 priority deadline. Renewal students should file by April 1. Awards typically included in financial aid packages April-June. Must maintain satisfactory academic progress (varies by institution).",
+  "advisor_notes": "MassGrant funding can be limited \u2014 file as early as possible. Some MA colleges supplement MassGrant with their own funds (MassGrant Plus). Students at private colleges may need to complete the CSS Profile if the college requires it. MA residents attending the 15 public colleges/universities have specific additional benefits through the MassTransfer program.",
+  "stacking_notes": "MassGrant generally stacks with Pell Grant. However, if total gift aid (federal + state + institutional grants) exceeds the cost of attendance, awards may be reduced. Some MA colleges have the MassGrant Plus supplement that may reduce need-based self-help (loans/work-study). SEOG typically precedes MassGrant in campus-based ordering.",
+  "source_urls": [
+    "https://www.mass.edu/massgrant/home",
+    "https://www.mass.edu/fin-aid/home"
+  ],
+  "last_verified": "2026-05-16",
+  "state": "MA"
+}

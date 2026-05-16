@@ -1,0 +1,33 @@
+{
+  "id": "jack-kent-cooke",
+  "name": "Jack Kent Cooke Foundation College Scholarship",
+  "sponsor": "Jack Kent Cooke Foundation",
+  "amount": "Up to $55,000 per year",
+  "amount_min": null,
+  "amount_max": 55000,
+  "renewable": true,
+  "renewable_years": 4,
+  "eligibility": {
+    "gpa_min": 3.5,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": 95000,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or permanent resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "High financial need; exceptional academic ability; must apply through high school; high school seniors only (separate program for community college transfer students)"
+  },
+  "deadline": "September 25",
+  "application_url": "https://www.jkcf.org/our-scholarships/college-scholarship/",
+  "award_count_per_year": 65,
+  "selectivity": "extremely-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "JKC is a last-dollar scholarship — coordinates with institutional and federal aid to cover remaining unmet need up to the cap. Many schools specifically partner with JKC to ensure additive benefit; verify with individual institutions.",
+  "category": ["need-based", "merit"],
+  "tags": ["low-income", "high-achieving", "renewable", "full-ride-potential", "prestige"],
+  "notes": "Targets 'high-achieving, low-income' students specifically — the foundation defines this as students with exceptional academic records who have been held back by financial circumstances. ~65 awards annually from thousands of applicants. Also offers a separate Young Scholars Program for 7th graders and a Community College Transfer Scholarship."
+}

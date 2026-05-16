@@ -1,0 +1,43 @@
+{
+  "id": "duke-university",
+  "name": "Duke University",
+  "meets_full_need": true,
+  "meets_full_need_notes": "Duke meets 100% of demonstrated financial need for all admitted domestic students. Families with income under $65,000 typically pay nothing; under $150,000 receive substantial grant aid.",
+  "no_loan_policy": false,
+  "no_loan_notes": "Duke includes a modest loan component in financial aid packages. Duke Knight-Hennessy Scholars and some specific programs may be loan-free. General undergraduate aid still includes loans, though amounts are reduced for lower-income families.",
+  "need_only": false,
+  "css_profile_required": true,
+  "fafsa_required": true,
+  "net_price_by_income": {
+    "band_0_30k": 2000,
+    "band_30_48k": 7000,
+    "band_48_75k": 16000,
+    "band_75_110k": 26000,
+    "band_110k_plus": 43000
+  },
+  "merit_aid_available": true,
+  "merit_thresholds": {
+    "gpa_floor": null,
+    "sat_floor": null,
+    "act_floor": null,
+    "notes": "Duke offers prestigious merit scholarships including the Angier B. Duke Memorial Scholarship and A.B. Duke Scholarship. These are competitive, separately applied for, full-ride or near-full-ride awards. General admission does not carry automatic merit aid."
+  },
+  "fa_priority_deadline": "2026-02-01",
+  "fa_regular_deadline": "2026-02-01",
+  "ed_available": true,
+  "ea_available": false,
+  "rea_available": false,
+  "ed_aid_implications": "Duke financial aid is need-blind for domestic ED applicants. Same need-based calculation applies to ED and RD students. Aid package released with ED decision.",
+  "questbridge_partner": true,
+  "posse_partner": true,
+  "special_programs": ["Angier B. Duke Memorial Scholarship (full merit)", "A.B. Duke Scholars Program", "QuestBridge National College Match", "POSSE Scholarship", "Duke Endowment Scholarships"],
+  "avg_aid_award": 51000,
+  "percent_need_met": 100,
+  "appeal_policy": "Duke considers appeals for changed financial circumstances. Students contact Office of Undergraduate Financial Aid to initiate the Special Circumstances review.",
+  "international_aid_available": true,
+  "source_urls": [
+    "https://financialaid.duke.edu/",
+    "https://financialaid.duke.edu/types-aid"
+  ],
+  "last_verified": "2026-05-16"
+}

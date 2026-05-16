@@ -1,0 +1,17 @@
+{
+  "id": "federal-direct-loans",
+  "name": "Federal Direct Loans",
+  "type": "federal-loan",
+  "administered_by": "U.S. Department of Education",
+  "description": "Low-interest loans for students and parents to help pay for college. Direct Subsidized Loans are need-based (government pays interest while in school). Direct Unsubsidized Loans are non-need-based (interest accrues immediately).",
+  "eligibility": "U.S. citizen or eligible non-citizen enrolled at least half-time in an eligible program. Must file FAFSA. Subsidized loans require demonstrated financial need. Credit check not required for student borrowers.",
+  "award_amount": "Annual limits: Dependent undergraduates — $5,500 freshman, $6,500 sophomore, $7,500 junior/senior. Independent undergraduates and dependent students whose parents cannot get PLUS loans — higher limits ($9,500-$12,500). Aggregate limit: $31,000 for dependent undergraduates, $57,500 for independent.",
+  "application_process": "Accept loan offer through college financial aid portal. Complete Entrance Counseling at studentaid.gov. Sign Master Promissory Note (MPN). Funds disbursed directly to school.",
+  "timeline": "Apply annually via FAFSA. Disbursed in at least two installments per academic year. Six-month grace period after graduation or dropping below half-time before repayment begins.",
+  "advisor_notes": "Subsidized loans are the best student loan option — interest-free while in school. Always max out federal loans before considering private loans. Current interest rates are fixed and typically lower than private alternatives. Be aware of aggregate limits if student plans to attend graduate school.",
+  "source_urls": [
+    "https://studentaid.gov/understand-aid/types/loans/subsidized-unsubsidized",
+    "https://studentaid.gov/understand-aid/types/loans/interest-rates"
+  ],
+  "last_verified": "2026-05-16"
+}

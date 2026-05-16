@@ -1,0 +1,19 @@
+{
+  "id": "il-map",
+  "name": "Illinois Monetary Award Program (MAP)",
+  "type": "state-grant",
+  "administered_by": "Illinois Student Assistance Commission (ISAC)",
+  "description": "Illinois' primary need-based grant program for residents attending eligible Illinois colleges and universities. Provides direct grant funding that does not need to be repaid.",
+  "eligibility": "Illinois resident, U.S. citizen or eligible non-citizen, enrolled at least half-time in an eligible Illinois degree/certificate program, demonstrating financial need based on FAFSA, and meeting satisfactory academic progress.",
+  "award_amount": "Maximum award varies by year based on state funding and student need (typically up to $5,340/year). Actual award depends on enrollment intensity, cost of attendance, and number of eligible applicants. Awards are prorated for part-time students.",
+  "application_process": "File FAFSA by date specified by your college (priority deadlines typically March 1 for many schools). Illinois colleges receive ISIR data and automatically determine MAP eligibility. Award included in financial aid package.",
+  "timeline": "Priority deadline varies by institution. MAP funds are limited \u2014 early filers have priority. Once state appropriation is exhausted, no additional awards are made for the year. Must be renewed annually with SAP.",
+  "advisor_notes": "MAP funds are limited and can run out early in the year \u2014 file FAFSA as soon as possible in October. Unlike some state programs, MAP typically stacks with Pell Grant. If MAP is awarded, colleges usually reduce self-help (loans/work-study) before reducing other grants. MAP cannot be used for remedial coursework.",
+  "stacking_notes": "MAP is grant aid and generally stacks fully with Pell Grant. Colleges typically package MAP first, then use Pell for remaining need. Students may see loans reduced when MAP is awarded rather than institutional grants reduced. MAP does not reduce eligibility for work-study or SEOG.",
+  "source_urls": [
+    "https://www.isac.org/students-and-parents/types-of-aid/illinois-financial-aid/map.html",
+    "https://www.isac.org/students-and-parents/types-of-aid/illinois-financial-aid/map-award-amounts.html"
+  ],
+  "last_verified": "2026-05-16",
+  "state": "IL"
+}

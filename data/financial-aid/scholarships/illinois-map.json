@@ -1,0 +1,40 @@
+{
+  "id": "illinois-map",
+  "name": "Illinois Monetary Award Program (MAP)",
+  "sponsor": "Illinois Student Assistance Commission (ISAC)",
+  "amount": "Up to $8,128 per year (2024-25)",
+  "amount_min": 500,
+  "amount_max": 8128,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen or eligible non-citizen; IL resident",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "both",
+    "state_required": "IL",
+    "other_requirements": "IL resident attending eligible IL postsecondary institution; demonstrated financial need; early FAFSA filing is critical due to first-come-first-served funding"
+  },
+  "deadline": "As soon as possible after Oct 1 FAFSA opening (funding runs out)",
+  "application_url": "https://www.isac.org/financial-aid/monetary-award-program/",
+  "award_count_per_year": null,
+  "selectivity": "moderately-selective",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "State grant; stacks with federal Pell Grant. MAP is first-come-first-served and frequently runs out mid-year \u2014 file FAFSA immediately when available.",
+  "category": [
+    "need-based",
+    "state"
+  ],
+  "tags": [
+    "illinois",
+    "first-come-first-served",
+    "pell"
+  ],
+  "notes": "MAP is NOT guaranteed \u2014 funding is limited and exhausted mid-year frequently. File FAFSA as soon as possible after October 1. Students at private IL colleges can receive higher MAP amounts than at public institutions."
+}

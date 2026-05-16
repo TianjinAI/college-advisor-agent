@@ -1,0 +1,39 @@
+{
+  "id": "national-space-club",
+  "name": "National Space Club Scholarship",
+  "sponsor": "National Space Club and Foundation",
+  "amount": "$15,000 one-time",
+  "amount_min": 15000,
+  "amount_max": 15000,
+  "renewable": false,
+  "renewable_years": null,
+  "eligibility": {
+    "gpa_min": null,
+    "sat_min": null,
+    "act_min": null,
+    "income_max": null,
+    "first_gen_required": false,
+    "pell_eligible_required": false,
+    "citizenship": "U.S. citizen",
+    "race_ethnicity": [],
+    "gender": "any",
+    "grade_level": "high school senior",
+    "state_required": null,
+    "other_requirements": "Intent to pursue STEM career with space interest"
+  },
+  "deadline": "November 1",
+  "application_url": "https://spaceclub.org/scholarship/",
+  "award_count_per_year": 1,
+  "selectivity": "very-competitive",
+  "compatible_with_institutional_aid": true,
+  "stackable_notes": "Usually stackable.",
+  "category": [
+    "stem",
+    "merit"
+  ],
+  "tags": [
+    "space",
+    "aerospace"
+  ],
+  "notes": "Single-award national competition; narrative fit with space field matters."
+}
