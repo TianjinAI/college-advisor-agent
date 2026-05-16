@@ -1,7 +1,11 @@
-import React, { type Dispatch, type SetStateAction } from 'react';
+import React, { type Dispatch, type SetStateAction, useState } from 'react';
 import FAProfilePanel from './FAProfilePanel';
 import FAChatPanel from './FAChatPanel';
+import FASchoolsPanel from './FASchoolsPanel';
+import FAScholarshipsPanel from './FAScholarshipsPanel';
 import type { FinancialProfile } from '../types';
+
+type RightTab = 'schools' | 'scholarships';
 
 interface FinancialAidWorkspaceProps {
   financialProfile: FinancialProfile;
@@ -34,6 +38,8 @@ export default function FinancialAidWorkspace({
   isLoadingModels,
   onResizeHandleDrag,
 }: FinancialAidWorkspaceProps): JSX.Element[] {
+  const [rightTab, setRightTab] = useState<RightTab>('schools');
+
   return [
     <aside className="sidebar" key="sidebar">
       <div className="sidebar-copy">
@@ -78,16 +84,23 @@ export default function FinancialAidWorkspace({
     />,
 
     <div className="right-panel-wrapper" key="right-panel">
-      {/* Placeholder shell for Sprint 1.4 — Schools + Scholarships tabs */}
       <div className="right-view-switcher" role="group" aria-label="Right panel view">
-        <button type="button" className="right-view-btn active" disabled title="Coming in Sprint 1.4">
+        <button
+          type="button"
+          className={`right-view-btn${rightTab === 'schools' ? ' active' : ''}`}
+          onClick={() => setRightTab('schools')}
+        >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
             <polyline points="9 22 9 12 15 12 15 22"/>
           </svg>
           Schools
         </button>
-        <button type="button" className="right-view-btn" disabled title="Coming in Sprint 1.4">
+        <button
+          type="button"
+          className={`right-view-btn${rightTab === 'scholarships' ? ' active' : ''}`}
+          onClick={() => setRightTab('scholarships')}
+        >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <circle cx="12" cy="8" r="6"/>
             <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
@@ -96,15 +109,8 @@ export default function FinancialAidWorkspace({
         </button>
       </div>
 
-      <div className="fa-right-placeholder">
-        <div className="fa-right-placeholder-inner">
-          <div className="fa-right-placeholder-icon" aria-hidden="true">🏫</div>
-          <p className="fa-right-placeholder-title">School &amp; Scholarship Matching</p>
-          <p className="fa-right-placeholder-body">
-            Matching your financial profile against school net price calculators and scholarship
-            databases will appear here in Sprint 1.4.
-          </p>
-        </div>
+      <div className="fa-right-panel-content">
+        {rightTab === 'schools' ? <FASchoolsPanel /> : <FAScholarshipsPanel />}
       </div>
     </div>,
   ];

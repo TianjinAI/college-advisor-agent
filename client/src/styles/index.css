@@ -3227,3 +3227,15 @@ summary:focus-visible {
   background: transparent;
   color: var(--text-dim);
 }
+
+/* === FA Right Panel Content Shell === */
+.fa-right-panel-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+/* FA school / scholarship scroll containers reuse the right-panel-wrapper */
+.fa-right-panel-content > div {
+  min-height: 100%;
+}

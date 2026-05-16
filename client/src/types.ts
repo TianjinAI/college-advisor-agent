@@ -103,3 +103,86 @@ export interface FinancialProfile {
   citizenship: string;
   special_circumstances: string;
 }
+
+// --- Sprint 1.4: FA Schools & Scholarships ---
+
+// Financial Aid — School record shape (matches GET /api/fa/schools → { schools, total })
+// Aligned with server/src/knowledge/financialAidManager.ts: SchoolFA
+export interface FASchool {
+  id: string;
+  name: string;
+  meets_full_need: boolean;
+  meets_full_need_notes: string;
+  no_loan_policy: boolean;
+  no_loan_notes: string;
+  need_only: boolean;
+  css_profile_required: boolean;
+  fafsa_required: boolean;
+  net_price_by_income: {
+    band_0_30k: number;
+    band_30_48k: number;
+    band_48_75k: number;
+    band_75_110k: number;
+    band_110k_plus: number;
+  } | null;
+  merit_aid_available: boolean;
+  merit_thresholds: {
+    gpa_floor: number;
+    sat_floor: number | null;
+    act_floor: number | null;
+    notes: string;
+  } | null;
+  fa_priority_deadline: string;
+  fa_regular_deadline: string;
+  ed_available: boolean;
+  ea_available: boolean;
+  rea_available: boolean;
+  ed_aid_implications: string;
+  questbridge_partner: boolean;
+  posse_partner: boolean;
+  special_programs: string[];
+  avg_aid_award: number;
+  percent_need_met: number;
+  appeal_policy: string;
+  international_aid_available: boolean;
+  source_urls: string[];
+  last_verified: string;
+}
+
+// Financial Aid — Scholarship record shape (matches GET /api/fa/scholarships → { scholarships, total })
+// Aligned with server/src/knowledge/financialAidManager.ts: Scholarship
+export interface FAScholarshipEligibility {
+  gpa_min: number | null;
+  sat_min: number | null;
+  act_min: number | null;
+  income_max: number | null;
+  first_gen_required: boolean;
+  pell_eligible_required: boolean;
+  citizenship: string;
+  race_ethnicity: string[];
+  gender: string;
+  grade_level: string;
+  state_required: string | null;
+  other_requirements: string;
+}
+
+export interface FAScholarship {
+  id: string;
+  name: string;
+  sponsor: string;
+  amount: string;              // e.g. "5000" or "10000–20000", NOT a number
+  amount_min: number | null;
+  amount_max: number | null;
+  renewable: boolean;
+  renewable_years: number | null;
+  eligibility: FAScholarshipEligibility;
+  deadline: string;
+  application_url: string;
+  award_count_per_year: number | null;
+  selectivity: string;
+  compatible_with_institutional_aid: boolean;
+  stacking_notes: string;
+  category: string[];          // array, not string
+  tags: string[];
+  notes: string;
+}
