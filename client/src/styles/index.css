@@ -318,6 +318,48 @@ summary:focus-visible {
   box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
 }
 
+/* ─── Mode Toggle ─────────────────────────────────────────── */
+
+.mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.mode-toggle-btn {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  background: transparent;
+  transition: all 150ms var(--ease-out-expo);
+  white-space: nowrap;
+}
+
+.mode-toggle-btn:hover {
+  color: var(--text);
+  background: var(--surface-3);
+}
+
+.mode-toggle-btn.active {
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.mode-toggle-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+}
+
 .app-body {
   display: grid;
   /* grid-template-columns: sidebar(px) | handle(8px) | main(calc) | handle(8px) | right(px) */
@@ -497,6 +539,50 @@ summary:focus-visible {
 .profile-field textarea {
   resize: vertical;
   min-height: 108px;
+}
+
+/* ─── FA Profile Panel ─────────────────────────────────── */
+
+.fa-privacy-notice {
+  margin-bottom: 10px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  border: 1px solid rgba(52, 211, 153, 0.22);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.fa-section-title {
+  padding: 2px 0 2px;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2px;
+}
+
+/* checkbox row — label sits inline with the control */
+.fa-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-transform: none;
+  letter-spacing: normal;
+  margin-bottom: 0;
+}
+
+.fa-checkbox-label input[type='checkbox'] {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
 }
 
 /* ─── Document Upload ─── */
@@ -3095,4 +3181,49 @@ summary:focus-visible {
   .school-dir-body {
     grid-template-columns: 1fr;
   }
+}
+
+/* ─── FA Right Panel Placeholder ─────────────────────────── */
+
+.fa-right-placeholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+}
+
+.fa-right-placeholder-inner {
+  text-align: center;
+  max-width: 260px;
+}
+
+.fa-right-placeholder-icon {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+.fa-right-placeholder-title {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.fa-right-placeholder-body {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.right-view-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.right-view-btn:disabled:hover {
+  background: transparent;
+  color: var(--text-dim);
 }

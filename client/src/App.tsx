@@ -5,7 +5,9 @@ import ChatPanel from './components/ChatPanel';
 import SchoolDirectory from './components/SchoolDirectory';
 import EssayPanel from './components/EssayPanel';
 import SummerProgramsPanel from './components/SummerProgramsPanel';
-import type { StudentProfile, ChatMessage, SchoolSelection, SessionMetadata } from './types';
+import type { StudentProfile, ChatMessage, SchoolSelection, SessionMetadata, AppMode, FinancialProfile } from './types';
+import { DEFAULT_FINANCIAL_PROFILE } from './components/FAProfilePanel';
+import FinancialAidWorkspace from './components/FinancialAidWorkspace';
 
 const JWT_STORAGE_KEY = 'college-advisor-jwt';
 const USER_ID_STORAGE_KEY = 'college-advisor-user-id';
@@ -254,6 +256,8 @@ function LoginScreen({
 export default function App() {
   const [profile, setProfile] = useState<StudentProfile>(defaultProfile);
   const profileHydratedRef = useRef(false);
+  const [mode, setMode] = useState<AppMode>('college');
+  const [financialProfile, setFinancialProfile] = useState<FinancialProfile>(DEFAULT_FINANCIAL_PROFILE);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [rightView, setRightView] = useState<'schools' | 'essays' | 'summer'>('schools');
   const [isStreaming, setIsStreaming] = useState(false);
@@ -637,124 +641,138 @@ export default function App() {
         onChangeUserId={handleChangeUserId}
         onSetDisplayName={handleSetDisplayName}
         onLogout={handleLogout}
+        mode={mode}
+        onModeChange={setMode}
       />
-      {/*
-        Main column is calc() so it stays at a fixed pixel size relative to the viewport.
-        The sidebar (left) is rock-solid; only the right edge of the main col moves.
-      */}
+      {/* Grid layout shared across both modes; content panes differ */}
       <div
         className="app-body"
         style={{
-          // left | handle | main (fixed calc) | handle | right
-          // main = 100vw - sidebar - right-panel - 2×resize-handle
-          // This keeps sidebar rock-solid; only the right-edge of main shifts
           gridTemplateColumns: `${leftPanelWidth}px 8px calc(100vw - ${leftPanelWidth}px - ${rightPanelWidth}px - 16px) 8px ${rightPanelWidth}px`,
         }}
       >
-        <aside className="sidebar">
-          <div className="sidebar-copy">
-            <p className="eyebrow">Student Snapshot</p>
-            <h2>Give the advisor enough context to filter for fit, affordability, and admissions odds.</h2>
-            <p>
-              Keep this lightweight. Even partial inputs help the recommendations lean on the loaded school
-              profiles and admissions insights.
-            </p>
-          </div>
-          <ProfileCard profile={profile} onProfileChange={setProfile} />
-        </aside>
-
-        {/* Left resize handle — between sidebar and main */}
-        <div
-          className="resize-handle"
-          onMouseDown={(e) => handleDragStart('left', e)}
-          aria-label="Resize sidebar"
-          role="separator"
-        />
-
-        <main className="main-content">
-          <ChatPanel
-            messages={messages}
-            setMessages={setMessages}
-            profile={profile}
+        {mode === 'fa' ? (
+          <FinancialAidWorkspace
+            financialProfile={financialProfile}
+            onFinancialProfileChange={setFinancialProfile}
             userId={userId}
             sessionId={currentSessionId}
             isStreaming={isStreaming}
             setIsStreaming={setIsStreaming}
-            selectedSchool={selectedSchool}
             availableModels={availableModels}
             currentModel={currentModel}
             onModelChange={setCurrentModel}
             isLoadingModels={isLoadingModels}
-            isLoadingMessages={isLoadingMessages}
+            onResizeHandleDrag={handleDragStart}
           />
-        </main>
+        ) : (
+          <>
+            <aside className="sidebar">
+              <div className="sidebar-copy">
+                <p className="eyebrow">Student Snapshot</p>
+                <h2>Give the advisor enough context to filter for fit, affordability, and admissions odds.</h2>
+                <p>
+                  Keep this lightweight. Even partial inputs help the recommendations lean on the loaded school
+                  profiles and admissions insights.
+                </p>
+              </div>
+              <ProfileCard profile={profile} onProfileChange={setProfile} />
+            </aside>
 
-        {/* Right resize handle — between main and right panel */}
-        <div
-          className="resize-handle"
-          onMouseDown={(e) => handleDragStart('right', e)}
-          aria-label="Resize right panel"
-          role="separator"
-        />
-
-        <div className="right-panel-wrapper">
-          {/* Horizontal tab bar — primary visible switcher inside the panel */}
-          <div className="right-view-switcher" role="group" aria-label="Right panel view">
-            <button
-              type="button"
-              className={`right-view-btn ${rightView === 'schools' ? 'active' : ''}`}
-              onClick={() => setRightView('schools')}
-              title="School Directory"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-              Schools
-            </button>
-            <button
-              type="button"
-              className={`right-view-btn ${rightView === 'essays' ? 'active' : ''}`}
-              onClick={() => setRightView('essays')}
-              title="Essay Writing"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M12 20h9"/>
-                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-              </svg>
-              Essays
-            </button>
-            <button
-              type="button"
-              className={`right-view-btn ${rightView === 'summer' ? 'active' : ''}`}
-              onClick={() => setRightView('summer')}
-              title="Summer Programs"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="5"/>
-                <line x1="12" y1="1" x2="12" y2="3"/>
-                <line x1="12" y1="21" x2="12" y2="23"/>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                <line x1="1" y1="12" x2="3" y2="12"/>
-                <line x1="21" y1="12" x2="23" y2="12"/>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-              </svg>
-              Summer
-            </button>
-          </div>
-
-          {rightView === 'schools' ? (
-            <SchoolDirectory
-              onSelectSchool={(name) => setSelectedSchool({ name, nonce: Date.now() })}
+            {/* Left resize handle — between sidebar and main */}
+            <div
+              className="resize-handle"
+              onMouseDown={(e) => handleDragStart('left', e)}
+              aria-label="Resize sidebar"
+              role="separator"
             />
-          ) : rightView === 'essays' ? (
-            <EssayPanel userId={userId} currentModel={currentModel} />
-          ) : (
-            <SummerProgramsPanel userId={userId} interests={profile.interests} budget={profile.budget} currentModel={currentModel} />
-          )}
-        </div>
+
+            <main className="main-content">
+              <ChatPanel
+                messages={messages}
+                setMessages={setMessages}
+                profile={profile}
+                userId={userId}
+                sessionId={currentSessionId}
+                isStreaming={isStreaming}
+                setIsStreaming={setIsStreaming}
+                selectedSchool={selectedSchool}
+                availableModels={availableModels}
+                currentModel={currentModel}
+                onModelChange={setCurrentModel}
+                isLoadingModels={isLoadingModels}
+                isLoadingMessages={isLoadingMessages}
+              />
+            </main>
+
+            {/* Right resize handle — between main and right panel */}
+            <div
+              className="resize-handle"
+              onMouseDown={(e) => handleDragStart('right', e)}
+              aria-label="Resize right panel"
+              role="separator"
+            />
+
+            <div className="right-panel-wrapper">
+              {/* Horizontal tab bar — primary visible switcher inside the panel */}
+              <div className="right-view-switcher" role="group" aria-label="Right panel view">
+                <button
+                  type="button"
+                  className={`right-view-btn ${rightView === 'schools' ? 'active' : ''}`}
+                  onClick={() => setRightView('schools')}
+                  title="School Directory"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                  </svg>
+                  Schools
+                </button>
+                <button
+                  type="button"
+                  className={`right-view-btn ${rightView === 'essays' ? 'active' : ''}`}
+                  onClick={() => setRightView('essays')}
+                  title="Essay Writing"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M12 20h9"/>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                  </svg>
+                  Essays
+                </button>
+                <button
+                  type="button"
+                  className={`right-view-btn ${rightView === 'summer' ? 'active' : ''}`}
+                  onClick={() => setRightView('summer')}
+                  title="Summer Programs"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                  </svg>
+                  Summer
+                </button>
+              </div>
+
+              {rightView === 'schools' ? (
+                <SchoolDirectory
+                  onSelectSchool={(name) => setSelectedSchool({ name, nonce: Date.now() })}
+                />
+              ) : rightView === 'essays' ? (
+                <EssayPanel userId={userId} currentModel={currentModel} />
+              ) : (
+                <SummerProgramsPanel userId={userId} interests={profile.interests} budget={profile.budget} currentModel={currentModel} />
+              )}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

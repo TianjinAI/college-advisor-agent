@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import SessionSwitcher from './SessionSwitcher';
-import type { SessionMetadata } from '../types';
+import type { SessionMetadata, AppMode } from '../types';
 
 type Theme = 'dark' | 'light';
 
@@ -23,6 +23,8 @@ interface HeaderProps {
   onChangeUserId: (newUserId: string) => void;
   onSetDisplayName: (name: string) => void;
   onLogout: () => void;
+  mode: AppMode;
+  onModeChange: (mode: AppMode) => void;
 }
 
 export default function Header({
@@ -36,6 +38,8 @@ export default function Header({
   onChangeUserId,
   onSetDisplayName,
   onLogout,
+  mode,
+  onModeChange,
 }: HeaderProps) {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
   const [editingName, setEditingName] = useState(false);
@@ -100,8 +104,27 @@ export default function Header({
 
       <div className="header-content">
         <div className="header-title-group">
-          <p className="eyebrow">College Advisor</p>
-          <h1 className="header-title">Your admissions&nbsp;counselor</h1>
+          <p className="eyebrow">{mode === 'college' ? 'College Advisor' : 'Financial Aid'}</p>
+          <h1 className="header-title">{mode === 'college' ? 'Your admissions counselor' : 'Maximize need + merit aid'}</h1>
+        </div>
+
+        <div className="mode-toggle" role="group" aria-label="Switch app mode">
+          <button
+            type="button"
+            className={`mode-toggle-btn${mode === 'college' ? ' active' : ''}`}
+            onClick={() => onModeChange('college')}
+            aria-pressed={mode === 'college'}
+          >
+            College Advisor
+          </button>
+          <button
+            type="button"
+            className={`mode-toggle-btn${mode === 'fa' ? ' active' : ''}`}
+            onClick={() => onModeChange('fa')}
+            aria-pressed={mode === 'fa'}
+          >
+            Financial Aid
+          </button>
         </div>
 
         <div className="header-status">
