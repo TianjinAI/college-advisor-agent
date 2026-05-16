@@ -176,14 +176,14 @@ async function searchWeb(query: string, maxResults: number = 5): Promise<string>
     const client = getTavily();
     console.log(`[Tavily] Searching: "${query}"`);
 
-    // Add timeout wrapper (8 seconds)
     const searchPromise = client.search(query, {
       maxResults,
       includeAnswer: true,
       includeRawContent: false,
     });
+    // Add timeout wrapper (4 seconds — fast fail to avoid blocking response)
     const timeoutPromise = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error('Tavily search timeout (8s)')), 8000)
+      setTimeout(() => reject(new Error('Tavily search timeout (4s)')), 4000)
     );
 
     const response = await Promise.race([searchPromise, timeoutPromise]);
@@ -209,27 +209,19 @@ async function searchWeb(query: string, maxResults: number = 5): Promise<string>
 }
 
 /**
- * Determine if a query needs web search
+ * Determine if a query needs web search.
+ * Call AFTER KB search — kbContext tells us whether KB already answered it.
+ * Only search web if KB is empty OR query asks for specific current data.
  */
-function needsSearch(query: string): boolean {
-  const searchKeywords = [
-    'ranking', 'rank', 'acceptance rate', 'admission rate',
-    'tuition', 'scholarship', 'deadline',
-    'SAT', 'ACT', 'latest', '2025', '2026',
-    'compare', 'recommend',
-    'GPA', 'average',
-  ];
-  const lower = query.toLowerCase();
-  if (!searchKeywords.some(kw => lower.includes(kw))) {
-    return false;
-  }
+function needsWebSearch(query: string, kbContext: string): boolean {
+  if (!kbContext) return true; // KB empty → need web
 
-  // If KB is loaded and found results, skip web search unless time-sensitive
-  if (retrieverLoaded && searchKB(query).length > 0) {
-    const timeKws = ['deadline', 'ranking', '2025', '2026', 'latest', 'new', 'updated', 'announced'];
-    if (!timeKws.some(kw => lower.includes(kw))) return false;
-  }
-  return true;
+  // Query specifically asking for time-sensitive/current numbers
+  const needsCurrent = /^(what is|what's|what're|tell me the|current|latest)[\s]/i.test(query)
+    || /\b(deadline|ea ed rd|early action|regular decision|tuition|cost to attend|room board|financial aid package|acceptance rate|admission rate|median sat|median act)\b/i.test(query)
+    || /\b(20[2-9][0-9]\/|class of 202[5-9]|for 202[5-9]|ranking [#0-9]+|ranked [#0-9]+)\b/i.test(query);
+
+  return needsCurrent;
 }
 
 /**
@@ -346,10 +338,10 @@ export async function createSummerRecommendStream(
     messages,
     stream: true,
     temperature: 0.5,
-    max_tokens: 8192,
-    max_completion_tokens: 8192,
+    max_tokens: 16384,
+    max_completion_tokens: 16384,
     // @ts-ignore
-    reasoning_effort: 'medium',
+    reasoning_effort: 'low',
   });
 
   const iterator = stream[Symbol.asyncIterator]();
@@ -396,10 +388,10 @@ export async function createEssayReviewStream(
     messages,
     stream: true,
     temperature: 0.5,
-    max_tokens: 8192,
-    max_completion_tokens: 8192,
+    max_tokens: 16384,
+    max_completion_tokens: 16384,
     // @ts-ignore
-    reasoning_effort: 'medium',
+    reasoning_effort: 'low',
   });
 
   const iterator = stream[Symbol.asyncIterator]();
@@ -464,16 +456,13 @@ export async function createAgentStream(
   }
   let aborted = false;
 
-  // KB lookup first
+  // Step 1: Always search KB first — this is our primary source
   await ensureRetriever();
   const kbContext = searchKB(userMessage);
-  
-  // If KB has strong matches, reduce reliance on web search
-  const hasTimeKeywords = /\b(deadline|ranking|2025|2026|latest|new|updated|tuition 202|announced)\b/i.test(userMessage);
 
-  // Step 1: Web search if needed
+  // Step 2: Only web search if KB is empty OR query specifically asks for current numbers
   let searchContext = '';
-  if (needsSearch(userMessage) && (!kbContext || hasTimeKeywords)) {
+  if (needsWebSearch(userMessage, kbContext)) {
     const searchQuery = userMessage
       .replace(/推荐|recommend/gi, 'best')
       .replace(/对比|compare/gi, 'compare')
@@ -537,11 +526,11 @@ export async function createAgentStream(
     model: effectiveModel,
     messages,
     stream: true,
-    temperature: 0.7,
-    max_tokens: 8192,
-    max_completion_tokens: 8192,
-    // @ts-ignore — DeepSeek-specific: prevent all tokens going to reasoning
-    reasoning_effort: 'medium',
+    temperature: 0.5,
+    max_tokens: 16384,
+    max_completion_tokens: 16384,
+    // @ts-ignore — reasoning_effort: 'low' maximizes content output vs internal thinking
+    reasoning_effort: 'low',
   });
 
   console.log(`[Agent] LLM stream created, starting iteration...`);

@@ -10,6 +10,7 @@ import type { StudentProfile, ChatMessage, SchoolSelection, SessionMetadata } fr
 const JWT_STORAGE_KEY = 'college-advisor-jwt';
 const USER_ID_STORAGE_KEY = 'college-advisor-user-id';
 const SESSION_ID_STORAGE_KEY = 'college-advisor-session-id';
+const SESSION_MESSAGES_STORAGE_KEY = 'college-advisor-session-messages';
 const PROFILE_STORAGE_PREFIX = 'college-advisor-profile';
 
 const defaultProfile: StudentProfile = {
@@ -81,6 +82,25 @@ function storeSessionId(sessionId: string | null): void {
   } else {
     window.localStorage.removeItem(SESSION_ID_STORAGE_KEY);
   }
+}
+
+function getStoredMessagesMap(): Record<string, ChatMessage[]> {
+  if (typeof window === 'undefined') return {};
+  try {
+    const raw = window.localStorage.getItem(SESSION_MESSAGES_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch { return {}; }
+}
+
+function storeSessionMessages(sessionId: string, messages: ChatMessage[]): void {
+  if (typeof window === 'undefined' || !sessionId) return;
+  const all = getStoredMessagesMap();
+  all[sessionId] = messages.slice(-200);
+  window.localStorage.setItem(SESSION_MESSAGES_STORAGE_KEY, JSON.stringify(all));
+}
+
+function getSessionMessages(sessionId: string): ChatMessage[] {
+  return getStoredMessagesMap()[sessionId] || [];
 }
 
 function getJwt(): string | null {
@@ -353,6 +373,21 @@ export default function App() {
         setUserId(returnedUserId);
       }
       setIsLoggedIn(true);
+
+      // Create default session immediately so user has one ready
+      try {
+        const sessRes = await authFetch('/api/sessions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId: returnedUserId, name: 'General Advising' }),
+        });
+        if (sessRes.ok) {
+          const { session } = await sessRes.json() as { session?: { id: string } };
+          if (session?.id) {
+            window.localStorage.setItem('college-advisor-session-id', session.id);
+          }
+        }
+      } catch { /* non-fatal */ }
     } catch {
       setLoginError('Network error — please try again');
     }
@@ -533,11 +568,14 @@ export default function App() {
         if (!isMounted) return;
 
         setMessages(data.messages || []);
+        if (data.messages?.length) storeSessionMessages(currentSessionId, data.messages);
+        if (data.messages?.length) storeSessionMessages(currentSessionId, data.messages);
         setIsLoadingMessages(false);
       } catch (error) {
         console.error('[Messages] Failed to load:', error);
         if (!isMounted) return;
-        setMessages([]);
+        const local = getSessionMessages(currentSessionId);
+        setMessages(local.length > 0 ? local : []);
         setIsLoadingMessages(false);
       }
     };
@@ -554,6 +592,12 @@ export default function App() {
     setCurrentSessionId(sessionId);
     storeSessionId(sessionId);
   }, []);
+
+  // Persist messages to localStorage whenever they change — safety net for server failures
+  useEffect(() => {
+    if (!currentSessionId || messages.length === 0) return;
+    storeSessionMessages(currentSessionId, messages);
+  }, [messages, currentSessionId]);
 
   // Create session handler
   const handleCreateSession = useCallback(async (name: string, purpose?: string) => {

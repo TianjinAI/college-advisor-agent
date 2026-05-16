@@ -485,11 +485,16 @@ function TrackerTab({ userId }: { userId: string }) {
   const updateStatus = async (programId: string, status: ApplicationStatus) => {
     setUpdating(programId);
     try {
-      await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications/${programId}`, {
+      const r = await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications/${programId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status }),
       });
+      if (!r.ok) {
+        const err = await r.json().catch(() => ({ error: 'Unknown error' }));
+        alert(`Failed to update status: ${err.error}`);
+        return;
+      }
       load();
     } finally {
       setUpdating(null);
@@ -498,7 +503,12 @@ function TrackerTab({ userId }: { userId: string }) {
 
   const remove = async (programId: string) => {
     if (!confirm('Remove this program from your tracker?')) return;
-    await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications/${programId}`, { method: 'DELETE' });
+    const r = await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications/${programId}`, { method: 'DELETE' });
+    if (!r.ok) {
+      const err = await r.json().catch(() => ({ error: 'Unknown error' }));
+      alert(`Failed to remove: ${err.error}`);
+      return;
+    }
     load();
   };
 

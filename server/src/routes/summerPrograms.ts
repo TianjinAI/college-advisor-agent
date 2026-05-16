@@ -118,7 +118,8 @@ router.post('/user/:userId/applications', authMiddleware, (req, res) => {
 // PATCH /api/summer-programs/user/:userId/applications/:programId
 // Body: { status?, notes?, deadline_reminder? }
 router.patch('/user/:userId/applications/:programId', authMiddleware, (req, res) => {
-  const { userId, programId } = req.params;
+  const authUserId = req.auth!.userId;
+  const { programId } = req.params;
   try {
     const { status, notes, deadline_reminder } = req.body as {
       status?: string;
@@ -126,7 +127,7 @@ router.patch('/user/:userId/applications/:programId', authMiddleware, (req, res)
       deadline_reminder?: boolean;
     };
 
-    const existing = spm.getApplication(userId, programId);
+    const existing = spm.getApplication(authUserId, programId);
     if (!existing) return res.status(404).json({ error: 'Application not found' });
 
     if (status) {
@@ -144,7 +145,7 @@ router.patch('/user/:userId/applications/:programId', authMiddleware, (req, res)
     if (notes !== undefined) existing.notes = notes;
     if (deadline_reminder !== undefined) existing.deadline_reminder = deadline_reminder;
 
-    spm.saveApplication(userId, existing);
+    spm.saveApplication(authUserId, existing);
     const program = spm.getProgram(programId);
     res.json({ application: { ...existing, program } });
   } catch (err: any) {
@@ -154,9 +155,10 @@ router.patch('/user/:userId/applications/:programId', authMiddleware, (req, res)
 
 // DELETE /api/summer-programs/user/:userId/applications/:programId
 router.delete('/user/:userId/applications/:programId', authMiddleware, (req, res) => {
-  const { userId, programId } = req.params;
+  const authUserId = req.auth!.userId;
+  const { programId } = req.params;
   try {
-    spm.removeApplication(userId, programId);
+    spm.removeApplication(authUserId, programId);
     res.json({ success: true });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
