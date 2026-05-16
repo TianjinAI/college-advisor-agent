@@ -7,7 +7,7 @@ An AI-powered college admissions advisor that builds a lasting relationship with
 Two students with identical 1520 SAT scores can have completely different profiles. One might be a first-gen student from a rural school with 4 APs total; the other might come from a prep school with 15 APs and legacy at three Ivies. This advisor captures that context — not just stats.
 
 Built with **React + TypeScript** frontend, **Express + WebSocket** backend, a **curated knowledge base** (49 elite colleges + 57 expert insights), **KB-first RAG routing**, and an **OpenAI-compatible LLM** (DeepSeek via OpenCode Zen) with Tavily web search fallback.
-
+Built with **React + TypeScript** frontend, **Express + WebSocket** backend, a **curated knowledge base** (49 elite colleges + 57 expert insights), **KB-first RAG routing**, and an **OpenAI-compatible LLM** (MiniMax-M2.7 via 9Router / Best_China model) with Tavily web search fallback.
 ## Philosophy
 
 Traditional college advising tools are passive dictionaries — you ask a question, they spit out a stat. This advisor is different:
@@ -29,6 +29,7 @@ The dossier evolves with every conversation. The LLM reads the existing wiki pag
 - **KB-First Smart Routing** — Answers from curated knowledge base first; web search supplements only for time-sensitive data (deadlines, rankings)
 - **Streaming Chat** — WebSocket-powered real-time responses with markdown rendering
 - **Smart Recommendations** — Personalized school picks based on GPA, SAT/ACT, interests, budget, and target states
+- **Summer Programs Tracker** — curated database of STEM/Math/AI/Coding summer camps with deadlines, selectivity, cost, and application requirements. Follow-thru sessions connect program participation to college app narrative
 - **Structured Search** — Support for `tier:ivy`, `stem:elite`, `region:northeast` filters in KB retrieval
 
 ### Persistent Student Profile (Dossier Wiki)
@@ -43,6 +44,7 @@ The dossier evolves with every conversation. The LLM reads the existing wiki pag
 - **Shared dossier** — Student profile is shared across ALL projects
 - **Session persistence** — Chat history saved per-project to `data/users/{userId}/sessions/{sessionId}/chat.json`
 - **Session switcher UI** — Dropdown in header to create and switch projects
+- **Session message persistence** — messages saved to server (per session) + localStorage fallback; survives page refresh and server restarts
 
 ### User Identity
 - **Display name** — Set your name ("Shaobin") instead of seeing a raw UUID
@@ -80,7 +82,7 @@ Browser (React)  ──── WebSocket ────►  Express Server
      │                         └───────────┬───────────┘
      │                                     ▼
      │                              LLM API (OpenCode Zen)
-     │                                     │
+     │                              LLM API (9Router / Best_China)
      │                         ┌───────────┴───────────┐
      │                         ▼                       ▼
      │                   Dossier Wiki           Conversation Log
@@ -97,8 +99,8 @@ Browser (React)  ──── WebSocket ────►  Express Server
 | Layer | Technology |
 |-------|-----------|
 | LLM | OpenAI-compatible API (default: DeepSeek V4 Pro via OpenCode Zen) |
-| Dossier Extraction | DeepSeek V4 Pro (reasoning_effort: low, max_tokens: 2000) |
-| Knowledge Base | In-memory retriever with keyword + structured filter search |
+| LLM | OpenAI-compatible API (MiniMax-M2.7 via 9Router / Best_China model) |
+| Dossier Extraction | MiniMax-M2.7 (reasoning_effort: low, max_tokens: 2000) |
 | Search | Tavily API (web fallback for time-sensitive queries) |
 | Backend | Express + WebSocket (`ws`) + TypeScript |
 | Frontend | React 18 + Vite + TypeScript |
@@ -226,10 +228,8 @@ college-advisor-agent/
 - [x] User identity system (display names, cross-device user ID)
 - [x] Model switching (14 models)
 
-### 🔜 Phase 2 — Narrative Depth (Planned)
-- [x] **Essay Writing & Review** — dedicated workspace for drafting, reviewing, and iterating on application essays. KB of 34 prompts + 15 patterns, streaming structured feedback, per-user essay history
-- [ ] **Summer Programs** — curated database of STEM/Math/AI/Coding summer camps and programs. Deadlines, selectivity, cost, application requirements. Impact analysis on college applications
-- [ ] **Competitions** — state and national-level STEM competitions database. AMC/AIME/USAMO, USACO, ISEF, Regeneron, Olympiads. How competition performance maps to admissions outcomes
+### 🔜 Phase 2 — Narrative Depth
+- [x] **Summer Programs** — curated database of STEM/Math/AI/Coding summer camps and programs. Deadlines, selectivity, cost, application requirements. Tracker with follow-thru sessions for post-acceptance lifecycle. Impact analysis on college applications
 - [ ] **Application Strategy Engine** — ED/EA/RD optimization, school list balancing, demonstrated interest tracking
 
 ### 🔮 Phase 3 — Scale & Polish
