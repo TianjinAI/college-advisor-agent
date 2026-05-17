@@ -6,7 +6,6 @@ An AI-powered college admissions advisor that builds a lasting relationship with
 
 Two students with identical 1520 SAT scores can have completely different profiles. One might be a first-gen student from a rural school with 4 APs total; the other might come from a prep school with 15 APs and legacy at three Ivies. This advisor captures that context — not just stats.
 
-Built with **React + TypeScript** frontend, **Express + WebSocket** backend, a **curated knowledge base** (49 elite colleges + 57 expert insights), **KB-first RAG routing**, and an **OpenAI-compatible LLM** (DeepSeek via OpenCode Zen) with Tavily web search fallback.
 Built with **React + TypeScript** frontend, **Express + WebSocket** backend, a **curated knowledge base** (49 elite colleges + 57 expert insights), **KB-first RAG routing**, and an **OpenAI-compatible LLM** (MiniMax-M2.7 via 9Router / Best_China model) with Tavily web search fallback.
 ## Philosophy
 
@@ -34,7 +33,17 @@ The dossier evolves with every conversation. The LLM reads the existing wiki pag
     - 4-second timeout — fast-fail so slow Tavily responses do not block the answer
 - **Smart Recommendations** — Personalized school picks based on GPA, SAT/ACT, interests, budget, and target states
 - **Summer Programs Tracker** — curated database of STEM/Math/AI/Coding summer camps with deadlines, selectivity, cost, and application requirements. Follow-thru sessions connect program participation to college app narrative
+- **My College List** — formal target-school workspace inside College Advisor; bridge between chat brainstorming and downstream work such as Financial Aid, essays, and recommendation-letter planning
 - **Structured Search** — Support for `tier:ivy`, `stem:elite`, `region:northeast` filters in KB retrieval
+
+### Financial Aid Mode
+- **Mode switcher** — College Advisor and Financial Aid run as distinct modes with clear visual separation
+  - College Advisor: white background + blue `#3B82F6` action color
+  - Financial Aid: light blue `#EFF6FF` background + softer blue buttons `#93C5FD` / `#60A5FA`
+- **FA profile panel** — household, student, residency, income, assets, and special-circumstance fields kept in-session for planning
+- **Schools tab** — imports schools from My College List and filters aid comparisons around family target schools
+- **Scholarships tab** — searchable scholarship cards with category, state, grade, GPA, first-generation, and Pell-style filters
+- **Plain-English labels** — financial-aid jargon uses everyday explanations instead of assuming expert knowledge
 
 ### Persistent Student Profile (Dossier Wiki)
 - **Auto-extracting wiki page** — After every conversation, the LLM reads the existing dossier, extracts new facts (academic stats, origin story, target schools, evolving concerns, advisor insights), and rewrites the full page
@@ -53,6 +62,9 @@ The dossier evolves with every conversation. The LLM reads the existing wiki pag
 - **Project isolation** — Separate chats for "General Advising", "Essay Review", "MIT Strategy", "School Comparison"
 - **Shared dossier** — Student profile is shared across ALL projects
 - **Session persistence** — Chat history saved per-project to `data/users/{userId}/sessions/{sessionId}/chat.json`
+  - **My College List data flow**:
+    - Target schools captured in College Advisor feed downstream into Financial Aid Schools tab
+    - College Advisor owns fit/scope; Financial Aid uses that list to maximize affordability planning
   - **Conversation ingestion**:
     - On each request: loads `chat.json` from session storage as `effectiveHistory`
     - Injects last 12 messages into the LLM context window (rolling window)
@@ -96,7 +108,6 @@ Browser (React)  ──── WebSocket ────►  Express Server
      │                         │                       │
      │                         └───────────┬───────────┘
      │                                     ▼
-     │                              LLM API (OpenCode Zen)
      │                              LLM API (9Router / Best_China)
      │                         ┌───────────┴───────────┐
      │                         ▼                       ▼
@@ -113,7 +124,6 @@ Browser (React)  ──── WebSocket ────►  Express Server
 
 | Layer | Technology |
 |-------|-----------|
-| LLM | OpenAI-compatible API (default: DeepSeek V4 Pro via OpenCode Zen) |
 | LLM | OpenAI-compatible API (MiniMax-M2.7 via 9Router / Best_China model) |
 | Dossier Extraction | MiniMax-M2.7 (reasoning_effort: low, max_tokens: 2000) |
 | Search | Tavily API (web fallback for time-sensitive queries) |

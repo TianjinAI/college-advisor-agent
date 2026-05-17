@@ -92,8 +92,22 @@ export default function FAProfilePanel({ profile, onProfileChange, collegeProfil
         <div style={{ marginTop: 8 }}>
           <button
             type="button"
-            className="secondary-btn"
-            style={{ width: '100%' }}
+            style={{
+              width: '100%',
+              padding: '9px 14px',
+              background: '#93C5FD',
+              color: '#1E3A8A',
+              border: '1px solid #60A5FA',
+              borderRadius: 8,
+              fontSize: '0.85rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 6,
+              letterSpacing: '0.01em',
+            }}
             onClick={() => {
               if (!collegeProfile) return;
               let count = 0;
@@ -116,9 +130,13 @@ export default function FAProfilePanel({ profile, onProfileChange, collegeProfil
               {importToast}
             </div>
           )}
-          {(collegeProfile.targetSchools?.length ?? 0) > 0 && (
-            <div style={{ marginTop: 6, fontSize: 12, color: 'var(--text)', background: 'rgba(245,158,11,0.08)', border: '1px solid var(--accent)', borderRadius: 6, padding: 6 }}>
-              📋 {collegeProfile.targetSchools!.length} schools from your College List are available in the Schools tab
+          {(collegeProfile.targetSchools?.length ?? 0) > 0 ? (
+            <div style={{ marginTop: 6, fontSize: 12, color: 'var(--text)', background: 'rgba(245,158,11,0.08)', border: '1px solid var(--accent)', borderRadius: 6, padding: '6px 8px', lineHeight: 1.4 }}>
+              📋 <strong>{collegeProfile.targetSchools!.length} schools</strong> from your College List ready in the Schools tab
+            </div>
+          ) : (
+            <div style={{ marginTop: 6, fontSize: 12, color: 'var(--text-dim)', background: 'var(--bg-soft)', border: '1px solid var(--border)', borderRadius: 6, padding: '6px 8px', lineHeight: 1.4 }}>
+              💡 Add target schools in <strong>College Advisor → My College List</strong> to auto-filter the Schools tab here
             </div>
           )}
         </div>

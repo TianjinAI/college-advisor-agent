@@ -89,6 +89,42 @@ body::before {
   mix-blend-mode: normal;
 }
 
+/* ─── Mode-scoped accent tokens ─────────────────────────────── */
+
+/* College Advisor mode — blue accent */
+[data-app-mode="college"] {
+  --accent: #3B82F6;
+  --accent-strong: #2563EB;
+  --accent-soft: rgba(59, 130, 246, 0.14);
+  --shadow-accent: 0 0 0 1px rgba(59, 130, 246, 0.12);
+}
+
+/* Financial Aid mode — amber accent + warm dark tint */
+[data-app-mode="fa"] {
+  --accent: #F59E0B;
+  --accent-strong: #D97706;
+  --accent-soft: rgba(245, 158, 11, 0.14);
+  --shadow-accent: 0 0 0 1px rgba(245, 158, 11, 0.12);
+}
+
+/* Whole-page light blue tint for Financial Aid mode */
+[data-app-mode="fa"] body {
+  background: #EFF6FF;
+}
+[data-app-mode="fa"] .app-body {
+  background: #EFF6FF;
+}
+
+/* ─── Eyebrow label (header + welcome screens) ─────────────── */
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
 button,
 input,
 textarea,
@@ -3239,3 +3275,130 @@ summary:focus-visible {
 .fa-right-panel-content > div {
   min-height: 100%;
 }
+
+/* ─── Mode-specific component overrides ─────────────────────── */
+
+/* College mode: blue send-button + suggestion-chip */
+[data-app-mode="college"] .send-button {
+  color: #fff;
+  background: linear-gradient(180deg, #60a5fa, #3B82F6);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 16px 44px rgba(37, 99, 235, 0.28);
+}
+
+[data-app-mode="college"] .send-button:hover:not(:disabled) {
+  background: linear-gradient(180deg, #93c5fd, #3B82F6);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26), 0 20px 52px rgba(37, 99, 235, 0.34);
+}
+
+[data-app-mode="college"] .suggestion-chip:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  background: var(--bg-soft);
+  box-shadow: inset 0 1px 0 var(--inner-highlight), var(--shadow-accent);
+}
+
+/* FA mode: darker blue buttons/chips */
+[data-app-mode="fa"] .send-button {
+  color: #1E3A8A;
+  background: linear-gradient(180deg, #93C5FD, #60A5FA);
+  border: 1px solid #60A5FA;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 12px 30px rgba(59, 130, 246, 0.24);
+}
+
+[data-app-mode="fa"] .send-button:hover:not(:disabled) {
+  background: linear-gradient(180deg, #60A5FA, #3B82F6);
+  color: #ffffff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26), 0 16px 36px rgba(37, 99, 235, 0.32);
+}
+
+[data-app-mode="fa"] .suggestion-chip:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  background: #DBEAFE;
+  box-shadow: inset 0 1px 0 var(--inner-highlight), 0 0 0 1px rgba(59, 130, 246, 0.12);
+} 
+
+[data-app-mode="fa"] .right-view-btn,
+[data-app-mode="fa"] .profile-header,
+[data-app-mode="fa"] .export-button,
+[data-app-mode="fa"] .upload-btn {
+  background: #DBEAFE;
+  border-color: #93C5FD;
+  color: #1E3A8A;
+}
+
+[data-app-mode="fa"] .right-view-btn:hover,
+[data-app-mode="fa"] .profile-header:hover,
+[data-app-mode="fa"] .export-button:hover:not(:disabled),
+[data-app-mode="fa"] .upload-btn:hover {
+  background: #BFDBFE;
+  border-color: #60A5FA;
+  color: #1E40AF;
+}
+
+[data-app-mode="fa"] .right-view-btn.active {
+  background: #60A5FA;
+  border-color: #3B82F6;
+  color: #ffffff;
+} 
+
+/* FA header: blue tint */
+[data-app-mode="fa"] .app-header {
+  background: #DBEAFE;
+}
+
+/* FA mode: sidebar — use var(--surface) so it respects theme */
+[data-app-mode="fa"] .sidebar {
+  background: #EFF6FF;
+}
+
+[data-app-mode="fa"] .main-content {
+  background: #EFF6FF;
+}
+
+[data-app-mode="fa"] .right-panel-wrapper {
+  background: #EFF6FF;
+}
+
+/* FA profile form: smaller text + tighter aligned fields */
+[data-app-mode="fa"] .profile-form {
+  gap: 10px;
+}
+
+[data-app-mode="fa"] .profile-field-inline {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+}
+
+[data-app-mode="fa"] .profile-field label {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 5px;
+}
+
+[data-app-mode="fa"] .profile-field input,
+[data-app-mode="fa"] .profile-field select,
+[data-app-mode="fa"] .profile-field textarea {
+  font-size: 0.84rem;
+  line-height: 1.2;
+  padding: 9px 10px;
+  border-radius: 10px;
+}
+
+[data-app-mode="fa"] .fa-section-title {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+}
+
+/* College mode: sidebar — use var(--surface) so it respects theme */
+[data-app-mode="college"] .sidebar {
+  background: var(--surface);
+}
+
+/* Mode toggle active: tinted per mode */
+[data-app-mode="college"] .mode-toggle-btn.active {
+  color: #3B82F6;
+}
+
+[data-app-mode="fa"] .mode-toggle-btn.active {
+  color: #3B82F6;
+}
+

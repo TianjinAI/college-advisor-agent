@@ -53,7 +53,7 @@ const ScholarshipCard: React.FC<ScholarshipCardProps> = ({ s }) => {
   return (
     <div style={{
       padding:'14px 16px', borderRadius:14, border:'1px solid var(--border)',
-      background:'linear-gradient(180deg,rgba(13,18,18,.96),rgba(10,14,14,.96))',
+      background:'var(--surface)',
       boxShadow:'inset 0 1px 0 var(--inner-highlight)', marginBottom:10, transition:'all 150ms',
     }}>
       {/* Header row */}
@@ -88,7 +88,7 @@ const ScholarshipCard: React.FC<ScholarshipCardProps> = ({ s }) => {
           <span key={c} style={badgeStyle('rgba(52,211,153,.14)')}>{c}</span>
         ))}
         {tags.slice(0, 3).map(t => (
-          <span key={t} style={badgeStyle('rgba(255,255,255,.06)')}>{t}</span>
+          <span key={t} style={badgeStyle('rgba(0,0,0,.06)')}>{t}</span>
         ))}
       </div>
 
@@ -104,8 +104,8 @@ const ScholarshipCard: React.FC<ScholarshipCardProps> = ({ s }) => {
         {gpaMin != null && gpaMin > 0 && <span style={{ fontSize:'0.65rem', padding:'1px 5px', borderRadius:4, background:'rgba(59,130,246,.12)', color:'#60a5fa' }}>GPA ≥ {gpaMin.toFixed(1)}</span>}
         {firstGenReq && <span style={{ fontSize:'0.65rem', padding:'1px 5px', borderRadius:4, background:'rgba(167,139,250,.12)', color:'#a78bfa' }}>1st Gen</span>}
         {pellReq && <span style={{ fontSize:'0.65rem', padding:'1px 5px', borderRadius:4, background:'rgba(251,191,36,.12)', color:'#fbbf24' }}>Pell</span>}
-        {stateReq && <span style={{ fontSize:'0.65rem', padding:'1px 5px', borderRadius:4, background:'rgba(255,255,255,.06)', color:'var(--text-muted)' }}>{stateReq}</span>}
-        {gradeLevel && <span style={{ fontSize:'0.65rem', padding:'1px 5px', borderRadius:4, background:'rgba(255,255,255,.06)', color:'var(--text-muted)' }}>{gradeLevel}</span>}
+        {stateReq && <span style={{ fontSize:'0.65rem', padding:'1px 5px', borderRadius:4, background:'rgba(0,0,0,.06)', color:'var(--text-muted)' }}>{stateReq}</span>}
+        {gradeLevel && <span style={{ fontSize:'0.65rem', padding:'1px 5px', borderRadius:4, background:'rgba(0,0,0,.06)', color:'var(--text-muted)' }}>{gradeLevel}</span>}
       </div>
 
       {/* Application link */}
@@ -208,12 +208,12 @@ export default function FAScholarshipsPanel(): JSX.Element {
   }, [scholarships, search, category, stateFilter, gradeLevel, gpaThreshold, incomeThreshold, firstGenOnly, pellOnly]);
 
   const selectStyle: React.CSSProperties = {
-    padding:'6px 8px', background:'rgba(14,22,21,.9)', border:'1px solid var(--border)',
+    padding:'6px 8px', background:'rgba(0,0,0,.03)', border:'1px solid var(--border)',
     borderRadius:8, color:'var(--text)', fontSize:'0.75rem',
   };
 
   const inputStyle: React.CSSProperties = {
-    padding:'6px 10px', background:'rgba(14,22,21,.9)', border:'1px solid var(--border)',
+    padding:'6px 10px', background:'rgba(0,0,0,.03)', border:'1px solid var(--border)',
     borderRadius:8, color:'var(--text)', fontSize:'0.78rem', width:'100%', boxSizing:'border-box',
   };
 
@@ -222,7 +222,7 @@ export default function FAScholarshipsPanel(): JSX.Element {
     border:'1px solid', transition:'all 120ms',
     ...(active
       ? { background:'var(--accent-soft)', borderColor:'rgba(52,211,153,.3)', color:'var(--accent)' }
-      : { background:'rgba(255,255,255,.04)', borderColor:'var(--border)', color:'var(--text-muted)' }
+      : { background:'rgba(0,0,0,.04)', borderColor:'var(--border)', color:'var(--text-muted)' }
     ),
   });
 

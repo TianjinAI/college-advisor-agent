@@ -55,6 +55,10 @@ export default function Header({
   }, [theme]);
 
   useEffect(() => {
+    document.documentElement.dataset.appMode = mode;
+  }, [mode]);
+
+  useEffect(() => {
     if (editingName && nameInputRef.current) { nameInputRef.current.focus(); nameInputRef.current.select(); }
   }, [editingName]);
   useEffect(() => {
