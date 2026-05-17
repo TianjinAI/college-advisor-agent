@@ -1,11 +1,12 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import Header from './components/Header';
 import ProfileCard from './components/ProfileCard';
+import CollegeListPanel from './components/CollegeListPanel';
 import ChatPanel from './components/ChatPanel';
 import SchoolDirectory from './components/SchoolDirectory';
 import EssayPanel from './components/EssayPanel';
 import SummerProgramsPanel from './components/SummerProgramsPanel';
-import type { StudentProfile, ChatMessage, SchoolSelection, SessionMetadata, AppMode, FinancialProfile } from './types';
+import type { StudentProfile, ChatMessage, SchoolSelection, SessionMetadata, AppMode, FinancialProfile, TargetSchool } from './types';
 import { DEFAULT_FINANCIAL_PROFILE } from './components/FAProfilePanel';
 import FinancialAidWorkspace from './components/FinancialAidWorkspace';
 
@@ -33,6 +34,7 @@ const defaultProfile: StudentProfile = {
   sex: '',
   school_type: '',
   documents: [],
+  targetSchools: [],
 };
 
 function getOrCreateUserId(): string {
@@ -269,6 +271,7 @@ export default function App() {
   const [displayName, setDisplayName] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(!!getJwt());
   const [loginError, setLoginError] = useState('');
+  const [isCollegeListLocked, setIsCollegeListLocked] = useState(false);
 
   // Restore profile from server on user change, with localStorage as fallback
   useEffect(() => {
@@ -654,6 +657,7 @@ export default function App() {
         {mode === 'fa' ? (
           <FinancialAidWorkspace
             financialProfile={financialProfile}
+            collegeProfile={profile}
             onFinancialProfileChange={setFinancialProfile}
             userId={userId}
             sessionId={currentSessionId}
@@ -677,6 +681,13 @@ export default function App() {
                 </p>
               </div>
               <ProfileCard profile={profile} onProfileChange={setProfile} />
+              <CollegeListPanel
+                targetSchools={profile.targetSchools ?? []}
+                onUpdate={(schools: TargetSchool[]) => setProfile(p => ({ ...p, targetSchools: schools }))}
+                messages={messages}
+                isLocked={isCollegeListLocked}
+                onToggleLock={() => setIsCollegeListLocked(l => !l)}
+              />
             </aside>
 
             {/* Left resize handle — between sidebar and main */}

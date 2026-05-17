@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
-import type { FinancialProfile } from '../types';
+import type { FinancialProfile, StudentProfile } from '../types';
 
 const US_STATES = [
   'Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut',
@@ -52,10 +52,12 @@ export const DEFAULT_FINANCIAL_PROFILE: FinancialProfile = {
 interface FAProfilePanelProps {
   profile: FinancialProfile;
   onProfileChange: (profile: FinancialProfile) => void;
+  collegeProfile?: StudentProfile;
 }
 
-export default function FAProfilePanel({ profile, onProfileChange }: FAProfilePanelProps) {
+export default function FAProfilePanel({ profile, onProfileChange, collegeProfile }: FAProfilePanelProps) {
   const [isExpanded, setIsExpanded] = useState(true);
+  const [importToast, setImportToast] = useState<string | null>(null);
 
   const update = <K extends keyof FinancialProfile>(field: K, value: FinancialProfile[K]) => {
     onProfileChange({ ...profile, [field]: value });
@@ -84,6 +86,43 @@ export default function FAProfilePanel({ profile, onProfileChange }: FAProfilePa
       <div className="fa-privacy-notice">
         ⚠️ Financial data stays in this session only. Nothing is saved to disk.
       </div>
+
+      {/* Import from College Profile */}
+      {collegeProfile && (
+        <div style={{ marginTop: 8 }}>
+          <button
+            type="button"
+            className="secondary-btn"
+            style={{ width: '100%' }}
+            onClick={() => {
+              if (!collegeProfile) return;
+              let count = 0;
+              const next = { ...profile };
+              if (!next.gpa && collegeProfile.gpa) { next.gpa = parseFloat(collegeProfile.gpa) || 0; count++; }
+              if (!next.sat && collegeProfile.sat_score) { const v = parseInt(collegeProfile.sat_score, 10); if (!isNaN(v)) { next.sat = v; count++; } }
+              if (!next.act && collegeProfile.act_score) { const v = parseInt(collegeProfile.act_score, 10); if (!isNaN(v)) { next.act = v; count++; } }
+              if (!next.class_rank && collegeProfile.class_rank) { next.class_rank = collegeProfile.class_rank; count++; }
+              if (!next.state_of_residency && collegeProfile.target_states) { next.state_of_residency = collegeProfile.target_states; count++; }
+              if (next.gpa === 0 && collegeProfile.gpa) { next.gpa = parseFloat(collegeProfile.gpa) || 0; }
+              onProfileChange(next);
+              setImportToast(`Imported ${count} fields from College Profile`);
+              setTimeout(() => setImportToast(null), 3000);
+            }}
+          >
+            Import from College Profile
+          </button>
+          {importToast && (
+            <div style={{ marginTop: 6, fontSize: 12, color: 'var(--text)', background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.3)', borderRadius: 6, padding: 6 }}>
+              {importToast}
+            </div>
+          )}
+          {(collegeProfile.targetSchools?.length ?? 0) > 0 && (
+            <div style={{ marginTop: 6, fontSize: 12, color: 'var(--text)', background: 'rgba(245,158,11,0.08)', border: '1px solid var(--accent)', borderRadius: 6, padding: 6 }}>
+              📋 {collegeProfile.targetSchools!.length} schools from your College List are available in the Schools tab
+            </div>
+          )}
+        </div>
+      )}
 
       <button
         type="button"

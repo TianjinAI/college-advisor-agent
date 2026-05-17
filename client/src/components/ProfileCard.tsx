@@ -27,7 +27,7 @@ interface ProfileCardProps {
 }
 
 export default function ProfileCard({ profile, onProfileChange }: ProfileCardProps) {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [uploadStatus, setUploadStatus] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 

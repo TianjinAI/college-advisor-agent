@@ -16,6 +16,7 @@ export interface StudentProfile {
   sex: string;
   school_type: 'Public' | 'Private' | 'Both' | '';
   documents: UploadedDocument[];
+  targetSchools?: TargetSchool[];
   userId?: string;
 }
 
@@ -25,6 +26,21 @@ export interface UploadedDocument {
   type: 'resume' | 'essay' | 'other';
   uploadedAt: number;
   size: number;
+}
+
+export type AdmissionStrategy = 'ED' | 'EA' | 'REA' | 'RD' | '';
+export type SchoolStatus = 'Reach' | 'Match' | 'Safety' | '';
+
+export interface TargetSchool {
+  id: string;                   // uuid
+  name: string;
+  intendedMajor: string;
+  status: SchoolStatus;
+  strategy: AdmissionStrategy;
+  notes: string;
+  locked: boolean;
+  addedAt: number;              // Date.now()
+  sourceSessions: string[];     // session ids where school was mentioned
 }
 
 export interface ChatMessage {

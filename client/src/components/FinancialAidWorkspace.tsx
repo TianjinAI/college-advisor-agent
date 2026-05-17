@@ -3,13 +3,15 @@ import FAProfilePanel from './FAProfilePanel';
 import FAChatPanel from './FAChatPanel';
 import FASchoolsPanel from './FASchoolsPanel';
 import FAScholarshipsPanel from './FAScholarshipsPanel';
-import type { FinancialProfile } from '../types';
+import FAVocabulary from './FAVocabulary';
+import type { FinancialProfile, StudentProfile } from '../types';
 
-type RightTab = 'schools' | 'scholarships';
+type RightTab = 'schools' | 'scholarships' | 'vocab';
 
 interface FinancialAidWorkspaceProps {
   financialProfile: FinancialProfile;
   onFinancialProfileChange: (profile: FinancialProfile) => void;
+  collegeProfile?: StudentProfile;
   userId: string;
   sessionId: string | null;
   isStreaming: boolean;
@@ -28,6 +30,7 @@ interface FinancialAidWorkspaceProps {
 export default function FinancialAidWorkspace({
   financialProfile,
   onFinancialProfileChange,
+  collegeProfile,
   userId,
   sessionId,
   isStreaming,
@@ -50,7 +53,7 @@ export default function FinancialAidWorkspace({
           FAFSA, CSS Profile, and scholarship deadlines.
         </p>
       </div>
-      <FAProfilePanel profile={financialProfile} onProfileChange={onFinancialProfileChange} />
+      <FAProfilePanel profile={financialProfile} onProfileChange={onFinancialProfileChange} collegeProfile={collegeProfile} />
     </aside>,
 
     <div
@@ -107,10 +110,21 @@ export default function FinancialAidWorkspace({
           </svg>
           Scholarships
         </button>
+        <button
+          type="button"
+          className={`right-view-btn${rightTab === 'vocab' ? ' active' : ''}`}
+          onClick={() => setRightTab('vocab')}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+          Vocabulary
+        </button>
       </div>
 
       <div className="fa-right-panel-content">
-        {rightTab === 'schools' ? <FASchoolsPanel /> : <FAScholarshipsPanel />}
+        {rightTab === 'schools' ? <FASchoolsPanel /> : rightTab === 'scholarships' ? <FAScholarshipsPanel /> : <FAVocabulary />}
       </div>
     </div>,
   ];

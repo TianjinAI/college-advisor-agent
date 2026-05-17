@@ -3,18 +3,18 @@
     "userId": "shaobin",
     "username": "shaobin",
     "displayName": "Shaobin",
-    "passwordHash": "$2b$10$2VePhkKWlD75eYl4nS15.eZAPrEEDbQhIxzJnCi7MJgPT6MGuH5US"
+    "passwordHash": "$2b$10$m/VmjRiKGY1Jbv5LQjm.V./lOY2rrbR2dFNlCuKWWHGtvIvKcx7lm"
   },
   "max": {
     "userId": "max",
     "username": "max",
     "displayName": "Max",
-    "passwordHash": "$2b$10$gZRTHWTmSMioDzej7oP4z.Z/Tq.0mguoBzoWjRNGH6fza.YL7W.Sm"
+    "passwordHash": "$2b$10$MD4k3wSJNSiRPUY7Yc.OWOdymEq6YJI3oLtgVQgIbV0IhzKkyLLF."
   },
   "wynston": {
     "userId": "wynston",
     "username": "wynston",
     "displayName": "Wynston",
-    "passwordHash": "$2b$10$VANtHej04LT4eO2aAOjVZuIkKd6OJchDrP8vXthptPa0dm9VWD6dy"
+    "passwordHash": "$2b$10$9ZAcfsK75GE/tJs.Vjf1H.cXtHDXGLXMNU5EpfCCylRyqmJalv1oq"
   }
 }
