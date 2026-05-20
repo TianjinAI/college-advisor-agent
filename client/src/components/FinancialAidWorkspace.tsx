@@ -124,7 +124,7 @@ export default function FinancialAidWorkspace({
       </div>
 
       <div className="fa-right-panel-content">
-        {rightTab === 'schools' ? <FASchoolsPanel /> : rightTab === 'scholarships' ? <FAScholarshipsPanel /> : <FAVocabulary />}
+        {rightTab === 'schools' ? <FASchoolsPanel userSchools={collegeProfile?.targetSchools} /> : rightTab === 'scholarships' ? <FAScholarshipsPanel /> : <FAVocabulary />}
       </div>
     </div>,
   ];

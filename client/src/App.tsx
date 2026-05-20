@@ -272,6 +272,7 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!getJwt());
   const [loginError, setLoginError] = useState('');
   const [isCollegeListLocked, setIsCollegeListLocked] = useState(false);
+  const [collegeListLoaded, setCollegeListLoaded] = useState(false);
 
   // Restore profile from server on user change, with localStorage as fallback
   useEffect(() => {
@@ -303,6 +304,21 @@ export default function App() {
 
     hydrateProfile();
 
+    // Hydrate college list from dedicated endpoint
+    const hydrateCollegeList = async () => {
+      try {
+        const resp = await authFetch(`/api/user/college-list?userId=${encodeURIComponent(userId)}`);
+        if (resp.ok) {
+          const data = await resp.json() as { targetSchools?: TargetSchool[] };
+          if (data.targetSchools?.length) {
+            setProfile(p => ({ ...p, targetSchools: data.targetSchools! }));
+          }
+        }
+      } catch { /* non-fatal */ }
+      finally { setCollegeListLoaded(true); }
+    };
+    hydrateCollegeList();
+
     return () => { isMounted = false; };
   }, [userId]);
 
@@ -319,6 +335,20 @@ export default function App() {
     }, 150);
     return () => window.clearTimeout(timeout);
   }, [profile, userId]);
+
+  // Persist college list separately — saves to data/users/{userId}/college-list.json
+  useEffect(() => {
+    if (!collegeListLoaded) return;
+    const schools = profile.targetSchools ?? [];
+    const timeout = window.setTimeout(() => {
+      void authFetch('/api/user/college-list', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ targetSchools: schools }),
+      }).catch(() => {});
+    }, 300);
+    return () => window.clearTimeout(timeout);
+  }, [profile.targetSchools, collegeListLoaded, userId]);
 
   // Fetch display name on mount / userId change
   useEffect(() => {
@@ -373,20 +403,26 @@ export default function App() {
         setLoginError(data.error || 'Login failed');
         return;
       }
-      const { token, userId: returnedUserId } = await res.json() as { token: string; userId: string };
+      const { token, user } = await res.json() as { token: string; user: { userId: string; username: string; displayName: string } };
       storeJwt(token);
-      if (returnedUserId) {
-        window.localStorage.setItem(USER_ID_STORAGE_KEY, returnedUserId);
-        setUserId(returnedUserId);
+      if (user?.userId) {
+        window.localStorage.setItem(USER_ID_STORAGE_KEY, user.userId);
+        setUserId(user.userId);
       }
       setIsLoggedIn(true);
+
+      // Clear stale session so session loader creates fresh list for this user
+      window.localStorage.removeItem(SESSION_ID_STORAGE_KEY);
+      setCurrentSessionId(null);
+      setSessions([]);
+      setMessages([]);
 
       // Create default session immediately so user has one ready
       try {
         const sessRes = await authFetch('/api/sessions', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId: returnedUserId, name: 'General Advising' }),
+          body: JSON.stringify({ userId: user.userId, name: 'General Advising' }),
         });
         if (sessRes.ok) {
           const { session } = await sessRes.json() as { session?: { id: string } };
@@ -687,6 +723,7 @@ export default function App() {
                 messages={messages}
                 isLocked={isCollegeListLocked}
                 onToggleLock={() => setIsCollegeListLocked(l => !l)}
+                profile={profile}
               />
             </aside>
 

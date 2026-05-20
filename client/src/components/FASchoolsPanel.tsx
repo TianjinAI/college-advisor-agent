@@ -1,5 +1,72 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import type { FASchool } from '../types';
+import type { FASchool, TargetSchool } from '../types';
+
+/* ─── CA display name → FA KB canonical name ───────── */
+const CA_TO_FA: Record<string, string> = {
+  'Amherst College': 'Amherst College',
+  'Bates College': 'Bates College',
+  'Boston College': 'Boston College',
+  'Bowdoin College': 'Bowdoin College',
+  'Brown': 'Brown University',
+  'Caltech': 'California Institute of Technology',
+  'Cal Poly SLO': 'California Polytechnic State University, San Luis Obispo',
+  'Carleton College': 'Carleton College',
+  'Carnegie Mellon': 'Carnegie Mellon University',
+  'Claremont McKenna College': 'Claremont McKenna College',
+  'Colby College': 'Colby College',
+  'Colgate University': 'Colgate University',
+  'Columbia': 'Columbia University in the City of New York',
+  'Cornell': 'Cornell University',
+  'Dartmouth': 'Dartmouth College',
+  'Duke': 'Duke University',
+  'Emory': 'Emory University',
+  'Georgetown': 'Georgetown University',
+  'Georgia Tech': 'Georgia Institute of Technology-Main Campus',
+  'Grinnell College': 'Grinnell College',
+  'Hamilton College': 'Hamilton College',
+  'Harvard': 'Harvard University',
+  'Harvey Mudd College': 'Harvey Mudd College',
+  'Haverford College': 'Haverford College',
+  'Johns Hopkins': 'Johns Hopkins University',
+  'MIT': 'Massachusetts Institute of Technology',
+  'Middlebury College': 'Middlebury College',
+  'NYU': 'New York University',
+  'Northeastern': 'Northeastern University',
+  'Northwestern': 'Northwestern University',
+  'Oberlin College': 'Oberlin College',
+  'Pomona College': 'Pomona College',
+  'Princeton': 'Princeton University',
+  'Purdue': 'Purdue University',
+  'RPI': 'Rensselaer Polytechnic Institute',
+  'Rice': 'Rice University',
+  'Rose-Hulman': 'Rose-Hulman Institute of Technology',
+  'Smith College': 'Smith College',
+  'Stanford': 'Stanford University',
+  'Swarthmore College': 'Swarthmore College',
+  'Tufts': 'Tufts University',
+  'UC Berkeley': 'University of California, Berkeley',
+  'UCLA': 'University of California, Los Angeles',
+  'UChicago': 'University of Chicago',
+  'Michigan': 'University of Michigan',
+  'Notre Dame': 'University of Notre Dame',
+  'Penn': 'University of Pennsylvania',
+  'USC': 'University of Southern California',
+  'Vanderbilt': 'Vanderbilt University',
+  'Vassar College': 'Vassar College',
+  'Virginia Tech': 'Virginia Polytechnic Institute and State University',
+  'WashU': 'Washington University in St. Louis',
+  'Wellesley College': 'Wellesley College',
+  'Williams College': 'Williams College',
+  'WPI': 'Worcester Polytechnic Institute',
+  'Yale': 'Yale University',
+};
+
+/* ─── Exact or explicit alias match only. No substring bleed. ─── */
+function isMatch(userName: string, faName: string): boolean {
+  const faCanonical = faName.toLowerCase().trim();
+  const userCanonical = (CA_TO_FA[userName] ?? userName).toLowerCase().trim();
+  return faCanonical === userCanonical;
+}
 
 /* ─── Badge ────────────────────────────────────────── */
 interface BadgeProps { label: string; variant?: 'green' | 'blue' | 'amber' | 'purple' | 'red'; }
@@ -235,7 +302,7 @@ interface SchoolsResponse {
   total: number;
 }
 
-export default function FASchoolsPanel(): JSX.Element {
+export default function FASchoolsPanel({ userSchools }: { userSchools?: TargetSchool[] }): JSX.Element {
   const [schools, setSchools] = useState<FASchool[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -243,6 +310,7 @@ export default function FASchoolsPanel(): JSX.Element {
   const [filterMeetsFullNeed, setFilterMeetsFullNeed] = useState(false);
   const [filterNoLoan, setFilterNoLoan] = useState(false);
   const [filterNeedOnly, setFilterNeedOnly] = useState(false);
+  const [showOnlyUserSchools, setShowOnlyUserSchools] = useState(true);
 
   useEffect(() => {
     let cancelled = false;
@@ -268,17 +336,25 @@ export default function FASchoolsPanel(): JSX.Element {
     return () => { cancelled = true; ctrl.abort(); };
   }, []);
 
+  const matchedSchools = useMemo(() => {
+    if (!userSchools?.length || !schools.length) return [];
+    return schools.filter(s => userSchools.some(us => isMatch(us.name, s.name)));
+  }, [schools, userSchools]);
+
+  const hasMatches = matchedSchools.length > 0;
+
   const filtered = useMemo(() => {
     if (!Array.isArray(schools)) return [];
+    const source = showOnlyUserSchools && hasMatches ? matchedSchools : schools;
     const q = search.toLowerCase().trim();
-    return schools.filter(s => {
+    return source.filter(s => {
       if (q && !s.name.toLowerCase().includes(q)) return false;
       if (filterMeetsFullNeed && !s.meets_full_need) return false;
       if (filterNoLoan && !s.no_loan_policy) return false;
       if (filterNeedOnly && !s.need_only) return false;
       return true;
     });
-  }, [schools, search, filterMeetsFullNeed, filterNoLoan, filterNeedOnly]);
+  }, [schools, matchedSchools, showOnlyUserSchools, hasMatches, search, filterMeetsFullNeed, filterNoLoan, filterNeedOnly]);
 
   return (
     <div style={{ padding: '12px 12px 0', display: 'flex', flexDirection: 'column', gap: 10, height: '100%' }}>
@@ -327,9 +403,32 @@ export default function FASchoolsPanel(): JSX.Element {
         ))}
       </div>
 
+      {/* User-schools toggle */}
+      {hasMatches && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button
+            onClick={() => setShowOnlyUserSchools(v => !v)}
+            style={{
+              fontSize: '0.72rem', fontWeight: 500, cursor: 'pointer',
+              padding: '3px 10px', borderRadius: 20, border: '1px solid var(--border)',
+              background: showOnlyUserSchools ? 'var(--accent-soft)' : 'rgba(0,0,0,.04)',
+              color: showOnlyUserSchools ? 'var(--accent)' : 'var(--text-muted)',
+            }}
+          >
+            {showOnlyUserSchools ? 'Show all KB schools' : 'Show only my colleges'}
+          </button>
+          <span style={{ fontSize: '0.68rem', color: 'var(--text-dim)' }}>
+            {matchedSchools.length} match{matchedSchools.length !== 1 ? 'es' : ''} from your list
+          </span>
+        </div>
+      )}
+
       {/* Result count */}
       <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>
         {loading ? 'Loading…' : `${filtered.length} of ${schools.length} schools`}
+        {!loading && showOnlyUserSchools && hasMatches && (
+          <span style={{ marginLeft: 6, opacity: 0.7 }}>(viewing matched subset)</span>
+        )}
       </div>
 
       {/* Body */}
@@ -347,7 +446,11 @@ export default function FASchoolsPanel(): JSX.Element {
         {!loading && !error && filtered.map(s => <SchoolCard key={s.id} school={s} />)}
         {!loading && !error && filtered.length === 0 && (
           <div style={{ textAlign: 'center', padding: '40px 0', color: 'var(--text-dim)', fontSize: '0.82rem' }}>
-            No schools match your filters.
+            {showOnlyUserSchools && hasMatches
+              ? 'No matched schools fit the current filters.'
+              : showOnlyUserSchools && !hasMatches
+                ? 'Your college list has no matches in the FA knowledge base yet.'
+                : 'No schools match your filters.'}
           </div>
         )}
       </div>

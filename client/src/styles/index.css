@@ -1307,12 +1307,19 @@ summary:focus-visible {
   padding: 0 12px 12px;
 }
 
+.school-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px;
+}
+
 .school-tag {
   display: inline-flex;
   align-items: center;
   gap: 4px;
   padding: 4px 10px;
-  margin: 2px;
+  margin: 0;
   border-radius: 6px;
   font-size: 14px;
   background: var(--surface-2);
@@ -1320,6 +1327,27 @@ summary:focus-visible {
   cursor: pointer;
   border: 1px solid var(--border);
   transition: all 150ms;
+}
+
+.school-add-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms;
+}
+
+.school-add-btn:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
 }
 
 .school-mascot {
