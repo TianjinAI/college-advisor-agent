@@ -1,0 +1,42 @@
+{
+    "id": "boston-college",
+    "name": "Boston College",
+    "meets_full_need": true,
+    "meets_full_need_notes": "Boston College meets 100% of demonstrated financial need for all admitted domestic undergraduates. The university has a strong commitment to affordability for middle-income families.",
+    "no_loan_policy": false,
+    "no_loan_notes": "Boston College does not have a no-loan policy. Federal loans are included in most aid packages, though the university has reduced loan burdens for low-income students.",
+    "need_only": true,
+    "css_profile_required": true,
+    "fafsa_required": true,
+    "net_price_by_income": {
+        "band_0_30k": 8000,
+        "band_30_48k": 12000,
+        "band_48_75k": 18000,
+        "band_75_110k": 28000,
+        "band_110k_plus": 42000
+    },
+    "merit_aid_available": false,
+    "merit_thresholds": null,
+    "fa_priority_deadline": "2026-02-01",
+    "fa_regular_deadline": "2026-02-01",
+    "ed_available": true,
+    "ea_available": true,
+    "rea_available": false,
+    "ed_aid_implications": "Boston College offers both Early Decision (binding) and Early Action (non-binding). Financial aid packages are identical regardless of application plan. Students should run the Net Price Calculator before applying ED.",
+    "questbridge_partner": true,
+    "posse_partner": false,
+    "special_programs": [
+        "Boston College Financial Aid Initiative (need-based grants)",
+        "QuestBridge College Match",
+        "Full Tuition Scholarships (highly competitive, full-need based)"
+    ],
+    "avg_aid_award": 45000,
+    "percent_need_met": 100,
+    "appeal_policy": "Boston College students may appeal their financial aid package through the Office of Student Services by submitting a Special Circumstances Appeal with supporting documentation.",
+    "international_aid_available": true,
+    "source_urls": [
+        "https://www.bc.edu/content/bc-web/schools/mcas/undergraduate/financial-aid.html",
+        "https://www.bc.edu/bc-web/offices/student-services/financial-aid.html"
+    ],
+    "last_verified": "2026-05-20"
+}

@@ -1,0 +1,50 @@
+{
+    "id": "university-of-michigan",
+    "name": "University of Michigan",
+    "meets_full_need": false,
+    "meets_full_need_notes": "The University of Michigan, as a public university, does not guarantee to meet 100% of demonstrated financial need. Average need met is approximately 80% for domestic students. Michigan residents receive significantly better aid through the Go Blue Guarantee.",
+    "no_loan_policy": false,
+    "no_loan_notes": "The University of Michigan does not have a no-loan policy. Loans are standard components of most aid packages. The Go Blue Guarantee covers full tuition for Michigan residents with family incomes under $65,000.",
+    "need_only": false,
+    "css_profile_required": false,
+    "fafsa_required": true,
+    "net_price_by_income": {
+        "band_0_30k": 5000,
+        "band_30_48k": 10000,
+        "band_48_75k": 18000,
+        "band_75_110k": 28000,
+        "band_110k_plus": 42000
+    },
+    "merit_aid_available": true,
+    "merit_thresholds": {
+        "gpa_floor": 3.5,
+        "sat_floor": 1400,
+        "act_floor": 32,
+        "notes": "University of Michigan offers several competitive merit scholarships: the Stamps Scholarship (full-ride), Hail Scholarship (full tuition), and LSA Merit Scholarships. The Stamps Scholarship is the flagship award, covering all costs for four years."
+    },
+    "fa_priority_deadline": "2026-04-30",
+    "fa_regular_deadline": "2026-04-30",
+    "ed_available": false,
+    "ea_available": true,
+    "rea_available": false,
+    "ed_aid_implications": "University of Michigan offers Early Action (non-binding). Applying EA does not affect financial aid awards. All students are considered for merit scholarships regardless of application plan.",
+    "questbridge_partner": true,
+    "posse_partner": false,
+    "special_programs": [
+        "Go Blue Guarantee (full tuition for MI residents under $65k income)",
+        "Stamps Scholarship (full-ride merit)",
+        "Hail Scholarship (full-tuition merit)",
+        "LSA Merit Scholarships",
+        "QuestBridge College Match"
+    ],
+    "avg_aid_award": 22000,
+    "percent_need_met": 80,
+    "appeal_policy": "University of Michigan students may appeal their financial aid package through the Office of Financial Aid by submitting a Special Circumstances Appeal form with supporting documentation.",
+    "international_aid_available": false,
+    "source_urls": [
+        "https://finaid.umich.edu/",
+        "https://admissions.umich.edu/costs-aid/financial-aid",
+        "https://finaid.umich.edu/go-blue-guarantee"
+    ],
+    "last_verified": "2026-05-20"
+}

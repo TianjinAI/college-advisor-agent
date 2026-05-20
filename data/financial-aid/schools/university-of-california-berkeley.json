@@ -1,0 +1,49 @@
+{
+    "id": "university-of-california-berkeley",
+    "name": "University of California, Berkeley",
+    "meets_full_need": false,
+    "meets_full_need_notes": "UC Berkeley, as a public university, does not guarantee to meet 100% of demonstrated financial need. Average need met is approximately 83% for domestic students. California residents receive significantly better aid via Cal Grant and Blue and Gold Opportunity Plan.",
+    "no_loan_policy": false,
+    "no_loan_notes": "UC Berkeley does not have a no-loan policy. Loans are standard components of most aid packages. The Blue and Gold Opportunity Plan covers fees/tuition for California residents with family incomes under $80,000, but does not eliminate loans from packages entirely.",
+    "need_only": false,
+    "css_profile_required": false,
+    "fafsa_required": true,
+    "net_price_by_income": {
+        "band_0_30k": 5000,
+        "band_30_48k": 9000,
+        "band_48_75k": 15000,
+        "band_75_110k": 26000,
+        "band_110k_plus": 38000
+    },
+    "merit_aid_available": true,
+    "merit_thresholds": {
+        "gpa_floor": 3.0,
+        "sat_floor": null,
+        "act_floor": null,
+        "notes": "UC Berkeley offers Regents' and Chancellor's Scholarships (highly competitive, renewable). Most merit aid comes from departmental and external scholarships rather than central institutional grants."
+    },
+    "fa_priority_deadline": "2026-03-02",
+    "fa_regular_deadline": "2026-03-02",
+    "ed_available": false,
+    "ea_available": false,
+    "rea_available": false,
+    "ed_aid_implications": "UC Berkeley does not offer ED or EA. All applicants are reviewed in the regular decision pool.",
+    "questbridge_partner": false,
+    "posse_partner": false,
+    "special_programs": [
+        "UC Blue and Gold Opportunity Plan (tuition/fees covered for CA residents under $80k income)",
+        "Cal Grant (California state grant program)",
+        "Regents' and Chancellor's Scholarship (merit)",
+        "Middle Class Scholarship (CA residents)"
+    ],
+    "avg_aid_award": 20000,
+    "percent_need_met": 83,
+    "appeal_policy": "UC Berkeley students may appeal their financial aid package through the Financial Aid and Scholarships Office by submitting a Special Circumstances Appeal form. Appeals are considered for significant changes in family finances, unusual medical expenses, or data errors.",
+    "international_aid_available": false,
+    "source_urls": [
+        "https://financialaid.berkeley.edu/",
+        "https://financialaid.berkeley.edu/types-of-aid",
+        "https://admissions.berkeley.edu/blue-and-gold"
+    ],
+    "last_verified": "2026-05-20"
+}

@@ -1,0 +1,42 @@
+{
+    "id": "tufts-university",
+    "name": "Tufts University",
+    "meets_full_need": true,
+    "meets_full_need_notes": "Tufts meets 100% of demonstrated financial need for all admitted domestic undergraduates. The university is committed to affordability, with significant increases in need-based aid over the past decade.",
+    "no_loan_policy": false,
+    "no_loan_notes": "Tufts does not have a no-loan policy. Federal loans are included in most aid packages. However, Tufts has reduced loan expectations for low-income families and replaced some loan components with grants.",
+    "need_only": true,
+    "css_profile_required": true,
+    "fafsa_required": true,
+    "net_price_by_income": {
+        "band_0_30k": 8000,
+        "band_30_48k": 12000,
+        "band_48_75k": 18000,
+        "band_75_110k": 28000,
+        "band_110k_plus": 42000
+    },
+    "merit_aid_available": false,
+    "merit_thresholds": null,
+    "fa_priority_deadline": "2026-02-15",
+    "fa_regular_deadline": "2026-02-15",
+    "ed_available": true,
+    "ea_available": false,
+    "rea_available": false,
+    "ed_aid_implications": "Tufts offers Early Decision (binding). Aid packages are identical under ED and Regular Decision. Students should run the Net Price Calculator before applying ED to estimate their award.",
+    "questbridge_partner": true,
+    "posse_partner": false,
+    "special_programs": [
+        "Tufts Financial Aid Initiative (need-based grants)",
+        "QuestBridge College Match",
+        "Tufts Legacy Scholarship (for children of alumni with financial need)"
+    ],
+    "avg_aid_award": 48000,
+    "percent_need_met": 100,
+    "appeal_policy": "Tufts students may appeal their financial aid package through the Financial Aid Office by submitting a Special Circumstances Appeal form with supporting documentation.",
+    "international_aid_available": true,
+    "source_urls": [
+        "https://financialaid.tufts.edu/",
+        "https://admissions.tufts.edu/apply/financial-aid/"
+    ],
+    "last_verified": "2026-05-20"
+}

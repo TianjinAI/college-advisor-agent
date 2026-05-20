@@ -1,0 +1,51 @@
+{
+    "id": "university-of-southern-california",
+    "name": "University of Southern California",
+    "meets_full_need": true,
+    "meets_full_need_notes": "USC meets 100% of demonstrated financial need for all admitted domestic undergraduates. The university has committed to an aggressive affordability initiative, capping tuition increases and expanding need-based aid significantly since 2020.",
+    "no_loan_policy": true,
+    "no_loan_notes": "USC has eliminated loans from need-based financial aid packages for families earning under $80,000. For families above this threshold, need-based aid is primarily grant-based with minimal or no loan components for most students.",
+    "need_only": true,
+    "css_profile_required": true,
+    "fafsa_required": true,
+    "net_price_by_income": {
+        "band_0_30k": 2000,
+        "band_30_48k": 6000,
+        "band_48_75k": 15000,
+        "band_75_110k": 28000,
+        "band_110k_plus": 42000
+    },
+    "merit_aid_available": true,
+    "merit_thresholds": {
+        "gpa_floor": 3.5,
+        "sat_floor": 1400,
+        "act_floor": 32,
+        "notes": "USC offers major merit scholarships: Trustee Scholarship (full tuition), Presidential Scholarship (half tuition), and Dean's Scholarship (quarter tuition). These are highly competitive and awarded to top applicants regardless of financial need. Also offers specialty scholarships (musicians, engineers, etc.)."
+    },
+    "fa_priority_deadline": "2026-02-15",
+    "fa_regular_deadline": "2026-03-01",
+    "ed_available": false,
+    "ea_available": true,
+    "rea_available": false,
+    "ed_aid_implications": "USC offers Early Action (non-binding). Applying EA does not affect financial aid awards. Merit scholarship consideration requires application by Dec 1 deadline.",
+    "questbridge_partner": true,
+    "posse_partner": false,
+    "special_programs": [
+        "USC Affordability Initiative (free tuition for families under $80k)",
+        "Trustee Scholarship (full-tuition merit)",
+        "Presidential Scholarship (half-tuition merit)",
+        "Dean's Scholarship (quarter-tuition merit)",
+        "Norman Topping Student Aid Fund (for local LA students)",
+        "QuestBridge College Match"
+    ],
+    "avg_aid_award": 45000,
+    "percent_need_met": 100,
+    "appeal_policy": "USC students may submit a Special Circumstance Appeal to the Financial Aid Office if their family's financial situation has changed significantly since filing FAFSA/CSS Profile. Documentation of the change is required.",
+    "international_aid_available": true,
+    "source_urls": [
+        "https://financialaid.usc.edu/",
+        "https://admission.usc.edu/scholarships",
+        "https://financialaid.usc.edu/prospective-students/"
+    ],
+    "last_verified": "2026-05-20"
+}

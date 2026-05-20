@@ -1,0 +1,50 @@
+{
+    "id": "new-york-university",
+    "name": "New York University",
+    "meets_full_need": true,
+    "meets_full_need_notes": "NYU meets 100% of demonstrated financial need for all admitted domestic undergraduates. Since 2024, NYU has guaranteed free tuition for families earning under $100,000. The university has made affordability a major priority.",
+    "no_loan_policy": true,
+    "no_loan_notes": "NYU has eliminated loans from need-based financial aid packages. All need-based aid is in the form of grants and scholarships that do not need to be repaid.",
+    "need_only": true,
+    "css_profile_required": true,
+    "fafsa_required": true,
+    "net_price_by_income": {
+        "band_0_30k": 3000,
+        "band_30_48k": 8000,
+        "band_48_75k": 18000,
+        "band_75_110k": 32000,
+        "band_110k_plus": 48000
+    },
+    "merit_aid_available": true,
+    "merit_thresholds": {
+        "gpa_floor": 3.5,
+        "sat_floor": 1400,
+        "act_floor": 32,
+        "notes": "NYU offers several competitive merit scholarships: the NYU Trustee Scholarship (full-ride), the Dean's Merit Scholarship, and program-specific awards. The AnBryce Scholarship supports first-generation college students."
+    },
+    "fa_priority_deadline": "2026-02-15",
+    "fa_regular_deadline": "2026-02-15",
+    "ed_available": true,
+    "ea_available": true,
+    "rea_available": false,
+    "ed_aid_implications": "NYU offers Early Decision I and II (binding) and Early Action (non-binding). Financial aid packages are identical regardless of application plan. Students should run the Net Price Calculator before applying ED.",
+    "questbridge_partner": true,
+    "posse_partner": false,
+    "special_programs": [
+        "NYU Promise (free tuition for families under $100k, no loans)",
+        "Trustee Scholarship (full-ride merit)",
+        "AnBryce Scholarship (first-generation, full-need)",
+        "Dean's Merit Scholarship",
+        "QuestBridge College Match"
+    ],
+    "avg_aid_award": 50000,
+    "percent_need_met": 100,
+    "appeal_policy": "NYU students may appeal their financial aid package through the Office of Financial Aid by submitting a Special Circumstances Review form with supporting documentation of changed circumstances.",
+    "international_aid_available": true,
+    "source_urls": [
+        "https://www.nyu.edu/admissions/financial-aid-and-scholarships.html",
+        "https://finaid.nyu.edu/",
+        "https://www.nyu.edu/admissions/financial-aid-and-scholarships/promise.html"
+    ],
+    "last_verified": "2026-05-20"
+}

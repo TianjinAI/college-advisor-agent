@@ -1,0 +1,48 @@
+{
+    "id": "northeastern-university",
+    "name": "Northeastern University",
+    "meets_full_need": true,
+    "meets_full_need_notes": "Northeastern meets 100% of demonstrated financial need for all admitted domestic undergraduates. The university has significantly expanded its financial aid budget in recent years.",
+    "no_loan_policy": false,
+    "no_loan_notes": "Northeastern does not have a no-loan policy. Federal loans are included in most aid packages, though the university has reduced loan burdens for lower-income students.",
+    "need_only": true,
+    "css_profile_required": true,
+    "fafsa_required": true,
+    "net_price_by_income": {
+        "band_0_30k": 10000,
+        "band_30_48k": 15000,
+        "band_48_75k": 22000,
+        "band_75_110k": 32000,
+        "band_110k_plus": 45000
+    },
+    "merit_aid_available": true,
+    "merit_thresholds": {
+        "gpa_floor": 3.5,
+        "sat_floor": 1350,
+        "act_floor": 30,
+        "notes": "Northeastern offers a range of merit scholarships: Dean's Scholarships, Global Scholars Awards, and the Torch Scholars Program for first-generation students. Most are competitive and require strong academic credentials."
+    },
+    "fa_priority_deadline": "2026-02-15",
+    "fa_regular_deadline": "2026-02-15",
+    "ed_available": true,
+    "ea_available": true,
+    "rea_available": false,
+    "ed_aid_implications": "Northeastern offers both Early Decision (binding) and Early Action (non-binding). Financial aid packages are identical regardless of application plan.",
+    "questbridge_partner": true,
+    "posse_partner": false,
+    "special_programs": [
+        "Northeastern Promise (meets full need)",
+        "Torch Scholars Program (first-generation, full-need)",
+        "Global Scholars Awards (merit for international students)",
+        "QuestBridge College Match"
+    ],
+    "avg_aid_award": 35000,
+    "percent_need_met": 100,
+    "appeal_policy": "Northeastern students may appeal their financial aid package through the Office of Student Financial Services by submitting a Special Circumstances Appeal with documentation.",
+    "international_aid_available": true,
+    "source_urls": [
+        "https://studentfinance.northeastern.edu/",
+        "https://admissions.northeastern.edu/apply/financial-aid/"
+    ],
+    "last_verified": "2026-05-20"
+}
