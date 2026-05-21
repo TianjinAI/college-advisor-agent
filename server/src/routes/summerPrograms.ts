@@ -201,6 +201,18 @@ router.post('/user/:userId/followthru/:programId', authMiddleware, (req, res) =>
   }
 });
 
+// DELETE /api/summer-programs/user/:userId/followthru/:programId
+router.delete('/user/:userId/followthru/:programId', authMiddleware, (req, res) => {
+  const authUserId = req.auth!.userId;
+  const { programId } = req.params;
+  try {
+    spm.deleteFollowThru(authUserId, programId);
+    res.json({ success: true });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // POST /api/summer-programs/user/:userId/followthru/:programId/reflection
 // Body: ReflectionEntry
 router.post('/user/:userId/followthru/:programId/reflection', authMiddleware, (req, res) => {
@@ -241,6 +253,68 @@ router.post('/user/:userId/followthru/:programId/recap', authMiddleware, (req, r
     const session = spm.getFollowThru(userId, programId);
     const program = spm.getProgram(programId);
     res.json({ session: { ...session, program } });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// PATCH /api/summer-programs/user/:userId/followthru/:programId/school
+// Body: { schoolId: string; schoolName: string }
+router.patch('/user/:userId/followthru/:programId/school', authMiddleware, (req, res) => {
+  const authUserId = req.auth!.userId;
+  const { programId } = req.params;
+  try {
+    const { schoolId, schoolName } = req.body as { schoolId: string; schoolName: string };
+    if (!schoolId || !schoolName) return res.status(400).json({ error: 'schoolId and schoolName are required' });
+    spm.updateFollowThruSession(authUserId, programId, {
+      related_target_school_id: schoolId,
+      related_target_school_name: schoolName,
+    });
+    const session = spm.getFollowThru(authUserId, programId);
+    const program = spm.getProgram(programId);
+    res.json({ session: { ...session, program } });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// PATCH /api/summer-programs/user/:userId/followthru/:programId/reminders
+// Body: { action: 'add'|'toggle'|'delete'; reminder?: { id: string; text: string }; reminderId?: string }
+router.patch('/user/:userId/followthru/:programId/reminders', authMiddleware, (req, res) => {
+  const authUserId = req.auth!.userId;
+  const { programId } = req.params;
+  try {
+    const { action, reminder, reminderId } = req.body as {
+      action: string;
+      reminder?: { id: string; text: string };
+      reminderId?: string;
+    };
+
+    const session = spm.getFollowThru(authUserId, programId);
+    if (!session) return res.status(404).json({ error: 'Follow-thru session not found' });
+
+    const reminders = [...(session.reminders || [])];
+
+    if (action === 'add') {
+      if (!reminder) return res.status(400).json({ error: 'reminder is required for add action' });
+      reminders.push({ id: reminder.id, text: reminder.text, completed: false, created_at: Date.now() });
+    } else if (action === 'toggle') {
+      if (!reminderId) return res.status(400).json({ error: 'reminderId is required for toggle action' });
+      spm.toggleReminder(authUserId, programId, reminderId);
+    } else if (action === 'delete') {
+      if (!reminderId) return res.status(400).json({ error: 'reminderId is required for delete action' });
+      spm.updateFollowThruSession(authUserId, programId, {
+        reminders: reminders.filter(r => r.id !== reminderId),
+      });
+      const updated = spm.getFollowThru(authUserId, programId);
+      const program = spm.getProgram(programId);
+      return res.json({ session: { ...updated, program } });
+    }
+
+    spm.updateFollowThruSession(authUserId, programId, { reminders });
+    const updated = spm.getFollowThru(authUserId, programId);
+    const program = spm.getProgram(programId);
+    res.json({ session: { ...updated, program } });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }

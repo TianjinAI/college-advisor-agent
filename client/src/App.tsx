@@ -816,7 +816,7 @@ export default function App() {
               ) : rightView === 'essays' ? (
                 <EssayPanel userId={userId} currentModel={currentModel} />
               ) : (
-                <SummerProgramsPanel userId={userId} interests={profile.interests} budget={profile.budget} currentModel={currentModel} />
+                <SummerProgramsPanel userId={userId} interests={profile.interests} budget={profile.budget} currentModel={currentModel} targetSchools={profile.targetSchools ?? []} />
               )}
             </div>
           </>

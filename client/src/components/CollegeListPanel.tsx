@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { ChangeEvent } from 'react';
 import type { AdmissionStrategy, ChatMessage, SchoolStatus, StudentProfile, TargetSchool } from '../types';
+import CollegeListExport from './CollegeListExport';
 
 const SCHOOL_NAMES = [
   'Amherst College', 'Bates College', 'Boston College', 'Bowdoin College', 'Brown',
@@ -140,6 +141,8 @@ const createSchool = (name: string, sourceSessions: string[] = [], profile?: Stu
   locked: false,
   addedAt: Date.now(),
   sourceSessions,
+  appNarrative: '',
+  recommendedSuggesters: [],
 });
 
 const statusColor = (status: SchoolStatus): string => {
@@ -163,6 +166,7 @@ export default function CollegeListPanel({
   const [selectedFound, setSelectedFound] = useState<Set<string>>(new Set());
   const [showFoundModal, setShowFoundModal] = useState(false);
   const [expandedNotes, setExpandedNotes] = useState<Set<string>>(new Set());
+  const [showExport, setShowExport] = useState(false);
 
   const existingNames = useMemo(
     () => new Set(targetSchools.map((school) => school.name.toLowerCase())),
@@ -231,6 +235,16 @@ export default function CollegeListPanel({
           >
             {isLocked ? 'Unlock' : 'Lock'}
           </button>
+          {targetSchools.length > 0 && (
+            <button
+              type="button"
+              className="secondary-btn"
+              onClick={() => setShowExport(true)}
+              title="Export / Print college list"
+            >
+              📄 Export / Print
+            </button>
+          )}
         </div>
         {isLocked && (
           <div style={{ marginTop: 8, fontSize: 12, color: 'var(--text)', background: 'rgba(245,158,11,0.08)', border: '1px solid var(--accent)', borderRadius: 8, padding: 8 }}>
@@ -293,16 +307,58 @@ export default function CollegeListPanel({
                   </select>
                 </div>
                 <button type="button" className="secondary-btn" onClick={() => setExpandedNotes((current) => { const next = new Set(current); if (next.has(school.id)) next.delete(school.id); else next.add(school.id); return next; })} style={{ marginTop: 6, fontSize: 12 }}>
-                  {expandedNotes.has(school.id) ? 'Hide notes' : 'Notes'}
+                  {expandedNotes.has(school.id) ? 'Hide details ▲' : 'More details ▼'}
                 </button>
                 {expandedNotes.has(school.id) && (
-                  <input type="text" value={school.notes} onChange={(e) => updateSchool(school.id, 'notes', e.target.value)} placeholder="Notes" disabled={isLocked} style={{ marginTop: 6 }} />
+                  <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                    <input
+                      type="text"
+                      value={school.notes}
+                      onChange={(e) => updateSchool(school.id, 'notes', e.target.value)}
+                      placeholder="Notes"
+                      disabled={isLocked}
+                    />
+                    <div>
+                      <label style={{ fontSize: 12, color: 'var(--text-dim)', display: 'block', marginBottom: 4 }}>
+                        Application Narrative
+                        <span style={{ fontWeight: 400, marginLeft: 4 }}>— how will you tell this school's story in your essays?</span>
+                      </label>
+                      <textarea
+                        value={school.appNarrative ?? ''}
+                        onChange={(e) => updateSchool(school.id, 'appNarrative', e.target.value)}
+                        placeholder="How will you tell this school's story in your essays?"
+                        disabled={isLocked}
+                        rows={3}
+                        style={{ width: '100%', resize: 'vertical', boxSizing: 'border-box' }}
+                      />
+                    </div>
+                    <div>
+                      <label style={{ fontSize: 12, color: 'var(--text-dim)', display: 'block', marginBottom: 4 }}>
+                        Recommendation Letter Suggesters
+                        <span style={{ fontWeight: 400, marginLeft: 4 }}>— who could write strong letters for this school?</span>
+                      </label>
+                      <input
+                        type="text"
+                        value={(school.recommendedSuggesters ?? []).join(', ')}
+                        onChange={(e) => updateSchool(school.id, 'recommendedSuggesters', e.target.value.split(',').map(s => s.trim()).filter(Boolean))}
+                        placeholder="e.g. Math teacher, Research mentor"
+                        disabled={isLocked}
+                      />
+                    </div>
+                  </div>
                 )}
               </div>
             ))}
           </div>
         )}
       </div>
+
+      {showExport && (
+        <CollegeListExport
+          schools={targetSchools}
+          onClose={() => setShowExport(false)}
+        />
+      )}
 
       {showFoundModal && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(15,23,42,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 50 }}>

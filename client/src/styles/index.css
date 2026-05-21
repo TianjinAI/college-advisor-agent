@@ -3391,6 +3391,201 @@ summary:focus-visible {
   gap: 10px;
 }
 
+/* ─── College List Export Modal ────────────────────────────────── */
+
+.college-export-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.college-export-modal {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 760px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.college-export-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  z-index: 1;
+}
+
+/* ─── Printable Sheet ──────────────────────────────────────────── */
+
+.college-export-sheet {
+  padding: 28px 36px 36px;
+}
+
+.college-export-sheet h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin: 0 0 4px;
+  color: var(--text);
+}
+
+.college-export-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin: 0 0 18px;
+}
+
+.college-export-footnotes {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+}
+
+.college-export-footnotes p {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin: 0 0 4px;
+  line-height: 1.4;
+}
+
+.college-export-footnotes p:last-child {
+  margin-bottom: 0;
+}
+
+.college-export-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.college-export-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  background: var(--bg-soft);
+}
+
+.college-export-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.college-export-head h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--text);
+}
+
+.college-status-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 9px;
+  border-radius: 100px;
+  border: 1.5px solid;
+  flex-shrink: 0;
+}
+
+.status-reach    { color: #ef4444; border-color: #ef4444; background: rgba(239,68,68,0.06); }
+.status-match   { color: #f59e0b; border-color: #f59e0b; background: rgba(245,158,11,0.06); }
+.status-safety  { color: #22c55e; border-color: #22c55e; background: rgba(34,197,94,0.06); }
+.status-none    { color: var(--text-dim); border-color: var(--border-strong); background: transparent; }
+
+.college-export-card p {
+  font-size: 0.8rem;
+  margin: 0 0 5px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.college-export-card p strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ─── Print Styles ─────────────────────────────────────────────── */
+
+@media print {
+  /* Hide everything except the print area */
+  .no-print,
+  .college-export-overlay {
+    display: none !important;
+  }
+
+  .college-export-modal {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    max-height: none;
+    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .college-export-sheet {
+    padding: 0;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .college-export-card {
+    background: #ffffff;
+    border-color: #d1d5db;
+    break-inside: avoid;
+    margin-bottom: 12px;
+    padding: 12px 16px;
+  }
+
+  .college-export-card p,
+  .college-export-card strong,
+  .college-export-head h2 {
+    color: #000000 !important;
+  }
+
+  .college-export-footnotes {
+    background: #f9fafb;
+    border-color: #d1d5db;
+  }
+
+  .college-export-footnotes p {
+    color: #374151 !important;
+  }
+
+  .college-status-badge {
+    /* Keep colored badges readable in print */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .status-reach  { color: #dc2626 !important; border-color: #dc2626 !important; background: rgba(220,38,38,0.08) !important; }
+  .status-match  { color: #d97706 !important; border-color: #d97706 !important; background: rgba(217,119,6,0.08) !important; }
+  .status-safety { color: #16a34a !important; border-color: #16a34a !important; background: rgba(22,163,74,0.08) !important; }
+}
+
 [data-app-mode="fa"] .profile-field-inline {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 10px;
@@ -3430,3 +3625,92 @@ summary:focus-visible {
   color: #3B82F6;
 }
 
+
+/* ── Follow-Thru UI: school selector, reminders, enrich ── */
+.sp-select-small {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1.5px solid #d1d5db;
+  font-size: 0.84rem;
+  background: #fff;
+  cursor: pointer;
+  min-width: 200px;
+}
+.sp-select-small:focus {
+  outline: none;
+  border-color: #3B82F6;
+}
+
+.sp-ft-hint-inline {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  font-weight: normal;
+  margin-left: 4px;
+}
+
+.sp-ft-school-badge {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.sp-ft-reminder-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.sp-ft-reminder-input .sp-input {
+  flex: 1;
+  padding: 7px 10px;
+  font-size: 0.84rem;
+}
+
+.sp-ft-reminder {
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 4px;
+  font-size: 0.84rem;
+  color: #374151;
+}
+.sp-ft-reminder-done {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.sp-enrich-btn {
+  background: #3B82F6;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 18px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s;
+  margin-bottom: 6px;
+}
+.sp-enrich-btn:hover {
+  background: #2563eb;
+}
+.sp-inline-error {
+  margin: 8px 0 0;
+  color: #dc2626;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.sp-empty-wrap {
+  padding: 4px 2px 10px;
+}
+
+.sp-empty-sub {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  color: #6b7280;
+  line-height: 1.35;
+}

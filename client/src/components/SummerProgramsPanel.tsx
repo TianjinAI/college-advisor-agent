@@ -89,6 +89,9 @@ interface SummerFollowThruSession {
   goals: string[];
   reflection_log: ReflectionEntry[];
   college_recap?: CollegeRecapEntry;
+  related_target_school_id?: string;
+  related_target_school_name?: string;
+  reminders?: Array<{ id: string; text: string; completed: boolean; created_at: number }>;
   created_at?: number;
   updated_at?: number;
   program?: SummerProgram;
@@ -562,7 +565,33 @@ function TrackerTab({ userId }: { userId: string }) {
 
 // ─── Follow-thru Tab ─────────────────────────────────────────────────────────
 
-function FollowThruTab({ userId }: { userId: string }) {
+function ReminderInput({ onAdd }: { onAdd: (text: string) => void }) {
+  const [text, setText] = useState('');
+  return (
+    <div className="sp-ft-reminder-input">
+      <input
+        className="sp-input"
+        value={text}
+        onChange={e => setText(e.target.value)}
+        placeholder="Add reminder, e.g. Email mentor for recommendation quote"
+      />
+      <button
+        type="button"
+        className="sp-save-btn"
+        onClick={() => {
+          const trimmed = text.trim();
+          if (!trimmed) return;
+          onAdd(trimmed);
+          setText('');
+        }}
+      >
+        Add
+      </button>
+    </div>
+  );
+}
+
+function FollowThruTab({ userId, targetSchools }: { userId: string; targetSchools: import('../types').TargetSchool[] }) {
   const [sessions, setSessions] = useState<SummerFollowThruSession[]>([]);
   const [loading, setLoading] = useState(true);
   const [activePhase, setActivePhase] = useState<FollowThruPhase>('pre-program');
@@ -584,15 +613,67 @@ function FollowThruTab({ userId }: { userId: string }) {
 
   useEffect(() => { load(); }, [load]);
 
+  const [createError, setCreateError] = useState<string | null>(null);
+  const [creating, setCreating] = useState(false);
+
   const createSession = async (programId: string) => {
     const goalsList = goals.split('\n').map(g => g.trim()).filter(Boolean);
-    if (!goalsList.length) { alert('Enter at least one goal'); return; }
-    const r = await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}`, {
+    if (!goalsList.length) { setCreateError('Enter at least one goal before creating.'); return; }
+    setCreateError(null);
+    setCreating(true);
+    try {
+      const r = await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ goals: goalsList }),
+      });
+      if (r.status === 409) {
+        // Session already exists — just load and show it
+        setShowCreateForm(null);
+        setGoals('');
+        setCreateError(null);
+        setCreating(false);
+        load();
+        return;
+      }
+      if (r.ok) { setShowCreateForm(null); setGoals(''); setCreating(false); load(); }
+      else {
+        const body = await r.json().catch(() => ({}));
+        setCreateError(body.error || `Server error (${r.status}). Try again.`);
+        setCreating(false);
+      }
+    } catch {
+      setCreateError('Network error — check connection and try again.');
+      setCreating(false);
+    }
+  };
+
+  const linkSchool = async (programId: string, schoolId: string, schoolName: string) => {
+    await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}/school`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ schoolId, schoolName }),
+    });
+    load();
+  };
+
+  const addReminder = async (programId: string, text: string) => {
+    await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}/reminders`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'add', reminder: { id: Date.now().toString(), text } }),
+    });
+    load();
+  };
+
+  const enrichDossier = async (programId: string, content: string) => {
+    const session = sessions.find(s => s.programId === programId);
+    await authFetch('/api/user/dossier/enrich', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ goals: goalsList }),
+      body: JSON.stringify({ content, section: 'Summer Program Experience', programName: session?.program?.name }),
     });
-    if (r.ok) { setShowCreateForm(null); setGoals(''); load(); }
+    alert('Dossier enriched ✓');
   };
 
   const addReflection = async (programId: string) => {
@@ -645,12 +726,17 @@ function FollowThruTab({ userId }: { userId: string }) {
         goals={goals}
         setGoals={setGoals}
         createSession={createSession}
+        createError={createError}
+        creating={creating}
       />
 
       {sessions.length === 0 && !loading && (
-        <p className="sp-empty">
-          Track programs and mark them as "Accepted" to start a follow-thru session.
-        </p>
+        <div className="sp-empty-wrap">
+          <p className="sp-empty">
+            Track programs and mark them as "Accepted" to start a follow-thru session.
+          </p>
+          <p className="sp-empty-sub">Path: Browse → Track program → Tracker tab → change status to Accepted → Follow-thru tab.</p>
+        </div>
       )}
 
       {sessions.map(session => {
@@ -819,6 +905,56 @@ function FollowThruTab({ userId }: { userId: string }) {
                 </button>
               </div>
             )}
+
+            {/* Linked target school */}
+            <div className="sp-ft-section">
+              <p className="sp-ft-label">🎯 Linked Target School <span className="sp-ft-hint-inline">(connect this program to a school in your college list)</span></p>
+              {targetSchools.length === 0 ? (
+                <p className="sp-ft-hint">Add schools to your College List first to link one here.</p>
+              ) : (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                  <select
+                    className="sp-select-small"
+                    value={session.related_target_school_id || ''}
+                    onChange={async (e) => {
+                      const school = targetSchools.find(s => s.id === e.target.value);
+                      if (school) await linkSchool(session.programId, school.id, school.name);
+                    }}
+                  >
+                    <option value="">— Link a school —</option>
+                    {targetSchools.map(s => <option key={s.id} value={s.id}>{s.name}{s.status ? ` (${s.status})` : ''}</option>)}
+                  </select>
+                  {session.related_target_school_name && (
+                    <span className="sp-ft-school-badge">✓ {session.related_target_school_name}</span>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {/* Reminders */}
+            <div className="sp-ft-section">
+              <p className="sp-ft-label">✅ Reminders <span className="sp-ft-hint-inline">(action items for your application — e.g. "Draft essay about program for MIT")</span></p>
+              {(session.reminders || []).map((rem) => (
+                <div key={rem.id} className="sp-ft-reminder">
+                  <span className={rem.completed ? 'sp-ft-reminder-done' : ''}>{rem.text}</span>
+                </div>
+              ))}
+              <ReminderInput onAdd={(text) => addReminder(session.programId, text)} />
+            </div>
+
+            {/* Enrich dossier — only visible once college recap saved */}
+            {session.college_recap?.how_it_affected && (
+              <div className="sp-ft-section">
+                <button
+                  type="button"
+                  className="sp-enrich-btn"
+                  onClick={() => enrichDossier(session.programId, session.college_recap!.how_it_affected)}
+                >
+                  ✨ Enrich My Dossier
+                </button>
+                <p className="sp-ft-hint">Saves your program experience to your advisory profile so future conversations remember it automatically.</p>
+              </div>
+            )}
           </div>
         );
       })}
@@ -833,6 +969,8 @@ function AcceptedProgramsWithoutFollowThru({
   goals,
   setGoals,
   createSession,
+  createError,
+  creating,
 }: {
   userId: string;
   onCreateClick: (pid: string) => void;
@@ -840,6 +978,8 @@ function AcceptedProgramsWithoutFollowThru({
   goals: string;
   setGoals: (v: string) => void;
   createSession: (pid: string) => void;
+  createError: string | null;
+  creating: boolean;
 }) {
   const [accepted, setAccepted] = useState<SummerApplication[]>([]);
 
@@ -879,9 +1019,10 @@ function AcceptedProgramsWithoutFollowThru({
                   onChange={e => setGoals(e.target.value)}
                   rows={4}
                 />
+                {createError && <p className="sp-inline-error">{createError}</p>}
                 <div className="sp-ft-create-actions">
-                  <button type="button" className="sp-save-btn" onClick={() => createSession(app.programId)}>
-                    Create Follow-thru Session
+                  <button type="button" className="sp-save-btn" onClick={() => createSession(app.programId)} disabled={creating}>
+                    {creating ? 'Creating…' : 'Create Follow-thru Session'}
                   </button>
                   <button type="button" className="sp-cancel-btn" onClick={() => onCreateClick('' as any)}>
                     Cancel
@@ -1062,9 +1203,10 @@ interface SummerProgramsPanelProps {
   interests: string;
   budget: string;
   currentModel: string;
+  targetSchools?: import('../types').TargetSchool[];
 }
 
-export default function SummerProgramsPanel({ userId, interests, budget, currentModel }: SummerProgramsPanelProps) {
+export default function SummerProgramsPanel({ userId, interests, budget, currentModel, targetSchools = [] }: SummerProgramsPanelProps) {
   const [activeTab, setActiveTab] = useState<'browse' | 'tracker' | 'followthru'>('browse');
   const [selectedProgram, setSelectedProgram] = useState<SummerProgram | null>(null);
   const [applications, setApplications] = useState<SummerApplication[]>([]);
@@ -1126,7 +1268,7 @@ export default function SummerProgramsPanel({ userId, interests, budget, current
           />
         )}
         {activeTab === 'tracker' && <TrackerTab userId={userId} />}
-        {activeTab === 'followthru' && <FollowThruTab userId={userId} />}
+        {activeTab === 'followthru' && <FollowThruTab userId={userId} targetSchools={targetSchools} />}
       </div>
 
       {selectedProgram && (

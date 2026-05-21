@@ -40,6 +40,22 @@ export interface ResultPayload {
   result?: string;
 }
 
+// College list
+export type AdmissionStrategy = 'ED' | 'EA' | 'REA' | 'RD' | '';
+export type SchoolStatus = 'Reach' | 'Match' | 'Safety' | '';
+
+export interface TargetSchool {
+  id: string;
+  name: string;
+  intendedMajor: string;
+  status: SchoolStatus;
+  strategy: AdmissionStrategy;
+  notes: string;
+  locked: boolean;
+  addedAt: number;
+  sourceSessions: string[];
+}
+
 // 学生 Profile
 export interface StudentProfile {
   gpa?: string;
@@ -65,6 +81,7 @@ export interface StudentProfile {
     uploadedAt: number;
     size: number;
   }>;
+  targetSchools?: TargetSchool[];
 }
 
 // 连接初始化

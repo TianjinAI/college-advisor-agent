@@ -95,6 +95,9 @@ export interface SummerFollowThruSession {
   goals: string[];
   reflection_log: ReflectionEntry[];
   college_recap?: CollegeRecapEntry;
+  related_target_school_id?: string;
+  related_target_school_name?: string;
+  reminders?: Array<{ id: string; text: string; completed: boolean; created_at: number }>;
   created_at: number;
   updated_at: number;
 }
@@ -284,6 +287,7 @@ export class SummerProgramManager {
       phase: 'pre-program',
       goals,
       reflection_log: [],
+      reminders: [],
       created_at: Date.now(),
       updated_at: Date.now(),
     };
@@ -320,6 +324,35 @@ export class SummerProgramManager {
     session.college_recap = recap;
     session.updated_at = Date.now();
     fs.writeFileSync(this.getFollowThruFile(userId, programId), JSON.stringify(session, null, 2), 'utf-8');
+  }
+
+  /** Update follow-thru session fields (e.g. school association, reminders) */
+  updateFollowThruSession(userId: string, programId: string, updates: Partial<SummerFollowThruSession>): void {
+    const session = this.getFollowThru(userId, programId);
+    if (!session) throw new Error(`No follow-thru session found for ${programId}`);
+    const merged: SummerFollowThruSession = {
+      ...session,
+      ...updates,
+      updated_at: Date.now(),
+    };
+    fs.writeFileSync(this.getFollowThruFile(userId, programId), JSON.stringify(merged, null, 2), 'utf-8');
+  }
+
+  /** Toggle reminder completed */
+  toggleReminder(userId: string, programId: string, reminderId: string): void {
+    const session = this.getFollowThru(userId, programId);
+    if (!session || !session.reminders) return;
+    session.reminders = session.reminders.map(r =>
+      r.id === reminderId ? { ...r, completed: !r.completed } : r
+    );
+    session.updated_at = Date.now();
+    fs.writeFileSync(this.getFollowThruFile(userId, programId), JSON.stringify(session, null, 2), 'utf-8');
+  }
+
+  /** Delete a follow-thru session */
+  deleteFollowThru(userId: string, programId: string): void {
+    const file = this.getFollowThruFile(userId, programId);
+    if (fs.existsSync(file)) fs.unlinkSync(file);
   }
 
   /** Get KB stats */

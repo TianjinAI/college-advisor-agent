@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { dossierManager } from '../agent.js';
-import type { SessionChatMessage } from '../types.js';
+import type { SessionChatMessage, TargetSchool } from '../types.js';
+import type { StudentProfile } from '../types.js';
 import { authMiddleware } from '../auth/auth.js';
 
 const router = Router();
@@ -62,8 +63,6 @@ router.post('/api/sessions/:id/messages', authMiddleware, async (req, res) => {
   }
 });
 
-export default router;
-
 // ─── User profile routes ────────────────────────────────────────────────
 
 router.get('/api/user/profile', authMiddleware, async (req, res) => {
@@ -83,7 +82,7 @@ router.get('/api/user/profile', authMiddleware, async (req, res) => {
 router.put('/api/user/profile', authMiddleware, async (req, res) => {
   const { displayName, studentProfile } = req.body as {
     displayName?: string;
-    studentProfile?: import('../types.js').StudentProfile;
+    studentProfile?: StudentProfile;
   };
   const userId = req.auth!.userId;
 
@@ -108,3 +107,49 @@ router.put('/api/user/profile', authMiddleware, async (req, res) => {
     res.status(500).json({ error: error?.message || 'Failed to save profile' });
   }
 });
+
+router.get('/api/user/college-list', authMiddleware, async (req, res) => {
+  const userId = req.auth!.userId;
+  try {
+    const list = await dossierManager.getCollegeList(userId);
+    res.json(list);
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+router.put('/api/user/college-list', authMiddleware, async (req, res) => {
+  const userId = req.auth!.userId;
+  const { targetSchools } = req.body as { targetSchools?: TargetSchool[] };
+  try {
+    await dossierManager.saveCollegeList(userId, { targetSchools: targetSchools ?? [], updatedAt: Date.now() });
+    res.json({ ok: true });
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ─── Dossier enrichment ────────────────────────────────────────────────────
+
+router.post('/api/user/dossier/enrich', authMiddleware, async (req, res) => {
+  const userId = req.auth!.userId;
+  const { content, programName, section } = req.body as {
+    content?: string;
+    programName?: string;
+    section?: string;
+  };
+
+  if (!content?.trim()) {
+    res.status(400).json({ error: 'content is required' });
+    return;
+  }
+
+  try {
+    await dossierManager.enrichDossier(userId, content.trim(), programName, section);
+    res.json({ ok: true });
+  } catch (e: any) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+export default router;

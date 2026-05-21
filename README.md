@@ -253,15 +253,18 @@ college-advisor-agent/
 - [x] User identity system (display names, cross-device user ID)
 - [x] Model switching (14 models)
 
-### 🔜 Phase 2 — Narrative Depth
-- [x] **Summer Programs** — curated database of STEM/Math/AI/Coding summer camps and programs. Deadlines, selectivity, cost, application requirements. Tracker with follow-thru sessions for post-acceptance lifecycle. Impact analysis on college applications
+### 🔜 Phase 2 — Narrative Depth (In Progress)
+- [x] **Essay Writing & Review** — dedicated workspace with prompt library, tips, pitfalls, and AI-powered review
+- [x] **Summer Programs** — curated database of STEM/Math/AI/Coding summer camps. Tracker with follow-thru sessions for post-acceptance lifecycle
+- [ ] **#1: College List Formal Output** — printable document with school status, strategy (ED/EA/RD), intended major, essay hooks, and recommendation-letter contacts per school
+- [ ] **#2: Summer Programs Follow-Thru Enhancement** — auto-tie to CA target schools, milestone reminders, dossier narrative enrichment from program experience
+- [ ] **Admissions Case Studies DB** — expert/consultant/counselor discussions, strategy deep-dives, real outcome analysis. Covers both CA (fit & scope) and FA (aid maximization)
 - [ ] **Application Strategy Engine** — ED/EA/RD optimization, school list balancing, demonstrated interest tracking
 
 ### 🔮 Phase 3 — Scale & Polish
-- [ ] Multi-user authentication
+- [x] Multi-user authentication (shaobin, max, wynston)
 - [ ] College comparison tool with data visualization
 - [ ] Application timeline / deadline tracker
-- [ ] Admissions case studies database
 - [ ] Parent dashboard view
 
 ## Development Methodology

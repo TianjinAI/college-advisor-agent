@@ -41,6 +41,8 @@ export interface TargetSchool {
   locked: boolean;
   addedAt: number;              // Date.now()
   sourceSessions: string[];     // session ids where school was mentioned
+  appNarrative: string;         // how student will tell this school's story in essays
+  recommendedSuggesters: string[]; // people who could write recommendation letters
 }
 
 export interface ChatMessage {
@@ -201,4 +203,13 @@ export interface FAScholarship {
   category: string[];          // array, not string
   tags: string[];
   notes: string;
+}
+
+// ─── Summer Programs Follow-Thru Extensions ─────────────────────────────────
+
+export interface Reminder {
+  id: string;
+  text: string;
+  completed: boolean;
+  created_at: number;
 }

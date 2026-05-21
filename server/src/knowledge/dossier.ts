@@ -133,6 +133,22 @@ export class DossierManager {
     await this.writeUserProfile(userId, profile);
   }
 
+  // ─── College list ─────────────────────────────────────────────────────
+
+  private getCollegeListPath(userId: string): string {
+    return path.join(this.getUserDir(userId), 'college-list.json');
+  }
+
+  async getCollegeList(userId: string): Promise<{ targetSchools: import('../types.js').TargetSchool[]; updatedAt: number }> {
+    return this.readJsonFile(this.getCollegeListPath(userId), { targetSchools: [], updatedAt: 0 });
+  }
+
+  async saveCollegeList(userId: string, data: { targetSchools: import('../types.js').TargetSchool[]; updatedAt: number }): Promise<void> {
+    const filePath = this.getCollegeListPath(userId);
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+  }
+
   // ─── Dossier (student profile Wiki page) ─────────────────────────────
 
   async loadDossier(userId: string): Promise<string> {
@@ -154,6 +170,58 @@ export class DossierManager {
       if (error?.code === 'ENOENT') return '';
       throw error;
     }
+  }
+
+  async enrichDossier(userId: string, content: string, programName?: string, section = 'Summer Program Experience'): Promise<void> {
+    const cleanContent = content.trim();
+    if (!cleanContent) return;
+
+    const filePath = this.getDossierPath(userId);
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
+
+    const existing = await this.loadDossierRaw(userId);
+    const now = new Date().toISOString();
+    const dateStr = now.split('T')[0];
+    const heading = `## ${section}`;
+    const entryTitle = programName?.trim() ? `### ${programName.trim()} — ${dateStr}` : `### Summer program reflection — ${dateStr}`;
+    const entry = `${entryTitle}\n\n${cleanContent}\n`;
+
+    if (!existing.trim()) {
+      const initial = [
+        '---',
+        'domain: College-Advisor',
+        'status: draft',
+        `created: ${dateStr}`,
+        `updated: ${dateStr}`,
+        'source_count: 1',
+        'last_source: "Summer program follow-thru recap"',
+        '---',
+        '',
+        '# Student Dossier',
+        '',
+        heading,
+        '',
+        entry,
+      ].join('\n');
+      await fs.writeFile(filePath, initial.trimEnd() + '\n', 'utf8');
+      return;
+    }
+
+    const updatedFrontmatter = existing
+      .replace(/updated:\s*.*$/m, `updated: ${dateStr}`)
+      .replace(/source_count:\s*(\d+)/m, (_m, n) => `source_count: ${Number(n) + 1}`)
+      .replace(/last_source:\s*.*$/m, 'last_source: "Summer program follow-thru recap"');
+
+    const base = updatedFrontmatter === existing && !existing.includes('updated:')
+      ? existing.trimEnd()
+      : updatedFrontmatter.trimEnd();
+
+    if (base.includes(heading)) {
+      await fs.writeFile(filePath, base + '\n\n' + entry, 'utf8');
+      return;
+    }
+
+    await fs.writeFile(filePath, base + '\n\n' + heading + '\n\n' + entry, 'utf8');
   }
 
   /**
