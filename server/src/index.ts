@@ -10,6 +10,7 @@ import type { SendMessagePayload, TextDeltaPayload, ErrorPayload, StudentProfile
 import sessionsRouter from './routes/sessions.js';
 import essaysRouter from './routes/essays.js';
 import summerProgramsRouter from './routes/summerPrograms.js';
+import advisingIngestionRouter from './routes/advisingIngestion.js';
 import uploadRouter from './routes/upload.js';
 import authRouter from './routes/auth.js';
 import { verifyToken } from './auth/auth.js';
@@ -28,6 +29,7 @@ app.use(express.json());
 app.use(sessionsRouter);
 app.use('/api/essays', essaysRouter);
 app.use('/api/summer-programs', summerProgramsRouter);
+app.use('/api/advising-ingestion', advisingIngestionRouter);
 app.use('/api/fa', faRouter);
 app.use('/api/upload', uploadRouter);
 app.use('/api/auth', authRouter);

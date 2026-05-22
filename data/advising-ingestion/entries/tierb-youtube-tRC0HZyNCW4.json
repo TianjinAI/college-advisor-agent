@@ -1,0 +1,31 @@
+{
+  "id": "tierb-youtube-tRC0HZyNCW4",
+  "topic": "What admissions readers look for in a college essay",
+  "student_profile": "General high school applicant writing Common App or supplemental essays. No individual student profile — public advising content.",
+  "problem": "Students write essays that show off grades and activities rather than revealing personality, resilience, and authentic voice.",
+  "advice_given": [
+    "Admissions readers look for writing ability, resilience, love of learning, intellectual curiosity, and fit — not just stats.",
+    "Essay must reveal who the student is beyond the transcript.",
+    "Use the essay to show character dimensions that numbers cannot capture.",
+    "Strong personal narrative beats impressive-sounding but generic achievement stories.",
+    "Authenticity and specificity matter more than impressive topic selection."
+  ],
+  "reasoning": "Admissions readers explicitly use essays to assess resilience and intellectual curiosity — qualities GPA cannot show. A generic essay wasted the one space to reveal true character.",
+  "action_plan": [
+    "Identify a moment or pattern that reveals a core personal quality (not just an achievement).",
+    "Ask: what does this essay tell the reader about who I am that my GPA and activities cannot?",
+    "Cut any sentences that could have been written by any other student.",
+    "Check: does this show resilience, intellectual curiosity, or love of learning in a concrete scene?"
+  ],
+  "risks": [
+    "Equating \"strong essay\" with impressive topic — wrong direction.",
+    "Focusing on event description rather than inner growth or perspective."
+  ],
+  "source_url": "https://www.youtube.com/watch?v=tRC0HZyNCW4",
+  "source_type": "youtube_transcript",
+  "creator": "YouTube: Writing a strong college admissions essay",
+  "captured_at": "2026-05-22",
+  "confidence": "high",
+  "notebooklm_source_id": "39403c50-8b80-4a4d-a699-2240d70a7219",
+  "transcript_path": "data/advising-ingestion/transcripts/tRC0HZyNCW4.txt"
+}

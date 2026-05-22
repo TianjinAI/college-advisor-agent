@@ -403,6 +403,18 @@ summary:focus-visible {
   min-height: 0;
 }
 
+.app-body-ingestion {
+  width: 100vw;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.app-body-ingestion .ingestion-workspace {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+}
+
 .sidebar {
   position: sticky;
   top: 0;
@@ -3713,4 +3725,22 @@ summary:focus-visible {
   font-size: 0.82rem;
   color: #6b7280;
   line-height: 1.35;
+}
+
+/* Follow-thru delete button */
+.sp-ft-delete-btn {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1;
+  transition: color 0.15s, background 0.15s;
+}
+.sp-ft-delete-btn:hover {
+  color: #ef4444;
+  background: #fee2e2;
 }

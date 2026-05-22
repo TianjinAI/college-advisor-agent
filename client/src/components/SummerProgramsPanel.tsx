@@ -657,6 +657,14 @@ function FollowThruTab({ userId, targetSchools }: { userId: string; targetSchool
     load();
   };
 
+  const deleteSession = async (programId: string) => {
+    if (!confirm('Delete this follow-thru session? This cannot be undone.')) return;
+    await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}`, {
+      method: 'DELETE',
+    });
+    load();
+  };
+
   const addReminder = async (programId: string, text: string) => {
     await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}/reminders`, {
       method: 'PATCH',
@@ -728,6 +736,7 @@ function FollowThruTab({ userId, targetSchools }: { userId: string; targetSchool
         createSession={createSession}
         createError={createError}
         creating={creating}
+        existingSessionIds={sessions.map(s => s.programId)}
       />
 
       {sessions.length === 0 && !loading && (
@@ -748,6 +757,12 @@ function FollowThruTab({ userId, targetSchools }: { userId: string; targetSchool
               <span className="sp-ft-phase" style={{ background: phaseColor + '22', color: phaseColor }}>
                 {session.phase.replace('-', ' ')}
               </span>
+              <button
+                type="button"
+                className="sp-ft-delete-btn"
+                title="Delete this follow-thru session"
+                onClick={() => deleteSession(session.programId)}
+              >✕</button>
             </div>
 
             {/* Pre-program prep checklist */}
@@ -971,6 +986,7 @@ function AcceptedProgramsWithoutFollowThru({
   createSession,
   createError,
   creating,
+  existingSessionIds,
 }: {
   userId: string;
   onCreateClick: (pid: string) => void;
@@ -980,6 +996,7 @@ function AcceptedProgramsWithoutFollowThru({
   createSession: (pid: string) => void;
   createError: string | null;
   creating: boolean;
+  existingSessionIds: string[];
 }) {
   const [accepted, setAccepted] = useState<SummerApplication[]>([]);
 
@@ -992,12 +1009,14 @@ function AcceptedProgramsWithoutFollowThru({
       });
   }, [userId]);
 
-  if (accepted.length === 0) return null;
+  const pending = accepted.filter(a => !existingSessionIds.includes(a.programId));
+
+  if (pending.length === 0) return null;
 
   return (
     <div className="sp-accepted-prompt">
       <p className="sp-accepted-title">🎉 Accepted Programs</p>
-      {accepted.map(app => {
+      {pending.map(app => {
         const isOpen = showCreateForm === app.programId;
         return (
           <div key={app.programId} className="sp-accepted-item">

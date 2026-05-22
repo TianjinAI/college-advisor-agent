@@ -1,0 +1,11 @@
+# Source Note: The Best Way to Start & End a College Essay! | Tips for Common App and Supplementals
+
+- source_type: youtube_transcript
+- source_url: https://youtu.be/E5SmMV9-UbM
+- notebooklm_source_id: 2c38b337-4f56-4842-9f1a-a837aae9aa7e
+- transcript_path: data/advising-ingestion/transcripts/E5SmMV9-UbM.txt
+- char_count: 7063
+
+## Transcript excerpt
+
+every year two of the biggest issues that I see in college essays are weak Hooks and poor conclusions what really breaks my heart is not just the fact that these two issues are so prevalent I mean more than half of the essays that we read and edited had these problems it's also the fact that when the hook or conclusion is done poorly it's just done really really poorly like will kill your chances of getting admitted poorly that's the bad news the good news is that Bad Endings and bad hooks are actually pretty easy to fix before we begin I'd like to introduce myself I'm Kevin Zen Yale estation studies grad and co-founder of the elevated school and here at elevated we really focus on writing this includes creative writing for middle schoolers analytical writing for high schoolers college essays and more that being said we also help with applying to college so if you're looking for feedback and help on your resume interviews transfer application strategy summer programs You Name It We got you covered visit our website and shoot us a message I promise we don't bite let's begin let's start with hooks why are they important they're important because College admission officers spend no more than 15 minutes on your entire application which translates to around just five or six minutes on all of your essays if you don't capture their attention or at the very least Peak their curiosity chances are they're gonna skim through your application file even faster now one of my favorite ways to grab a reader's attention in any story is by starting with conflict conflict conflict conflict conflict conflicts are natural hooks I'm going to give you guys a few examples of a conflict hook Each of which gets better and better as I list them out I want you guys to consider why they're improving example number one when I ran for student council president my sister laughed at me and told me I had no shot example number two my dad calls it the deep fryer I call it the singer example number th

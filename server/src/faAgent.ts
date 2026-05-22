@@ -88,21 +88,22 @@ function buildFAPrompt(
 ): string {
   let fpBlock = '(not provided)';
   if (financialProfile) {
+    const money = (value?: number | null) => typeof value === 'number' ? `$${value.toLocaleString()}` : 'N/A';
     const parts: string[] = [];
-    parts.push(`Dependency Status: ${financialProfile.dependency_status}`);
-    parts.push(`Household Size: ${financialProfile.household_size}`);
-    parts.push(`In College: ${financialProfile.num_in_college}`);
-    parts.push(`Parent Marital Status: ${financialProfile.parent_marital_status}`);
-    parts.push(`Parent AGI: $${financialProfile.parent_agi.toLocaleString()}`);
-    parts.push(`Parent Income Type: ${financialProfile.parent_income_type}`);
-    parts.push(`Student Income: $${financialProfile.student_income.toLocaleString()}`);
-    parts.push(`Parent Savings: $${financialProfile.parent_savings.toLocaleString()}`);
-    parts.push(`Parent Investments: $${financialProfile.parent_investments.toLocaleString()}`);
-    parts.push(`Home Equity: $${financialProfile.home_equity.toLocaleString()}`);
-    parts.push(`Business Assets: $${financialProfile.business_assets.toLocaleString()}`);
-    parts.push(`Student Assets: $${financialProfile.student_assets.toLocaleString()}`);
-    parts.push(`529 Balance: $${financialProfile.balance_529.toLocaleString()}`);
-    parts.push(`GPA: ${financialProfile.gpa}`);
+    parts.push(`Dependency Status: ${financialProfile.dependency_status || 'N/A'}`);
+    parts.push(`Household Size: ${financialProfile.household_size ?? 'N/A'}`);
+    parts.push(`In College: ${financialProfile.num_in_college ?? 'N/A'}`);
+    parts.push(`Parent Marital Status: ${financialProfile.parent_marital_status || 'N/A'}`);
+    parts.push(`Parent AGI: ${money(financialProfile.parent_agi)}`);
+    parts.push(`Parent Income Type: ${financialProfile.parent_income_type || 'N/A'}`);
+    parts.push(`Student Income: ${money(financialProfile.student_income)}`);
+    parts.push(`Parent Savings: ${money(financialProfile.parent_savings)}`);
+    parts.push(`Parent Investments: ${money(financialProfile.parent_investments)}`);
+    parts.push(`Home Equity: ${money(financialProfile.home_equity)}`);
+    parts.push(`Business Assets: ${money(financialProfile.business_assets)}`);
+    parts.push(`Student Assets: ${money(financialProfile.student_assets)}`);
+    parts.push(`529 Balance: ${money(financialProfile.balance_529)}`);
+    parts.push(`GPA: ${financialProfile.gpa ?? 'N/A'}`);
     if (financialProfile.sat != null) parts.push(`SAT: ${financialProfile.sat}`);
     if (financialProfile.act != null) parts.push(`ACT: ${financialProfile.act}`);
     parts.push(`Class Rank: ${financialProfile.class_rank || 'N/A'}`);

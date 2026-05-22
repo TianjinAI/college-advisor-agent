@@ -1,0 +1,43 @@
+{
+  "id": "tierb-youtube-E5SmMV9-UbM",
+  "topic": "College essay hooks and conclusions",
+  "student_profile": "High school applicant writing Common App or supplemental college essays; no individual student profile in source.",
+  "problem": "Essay openings and endings often weaken otherwise good essays: generic hooks, forced setup, conclusions that summarize instead of adding value.",
+  "advice_given": [
+    "Avoid broad, generic opening lines that could fit any student.",
+    "Start with a specific scene, detail, tension, or voice-driven moment that pulls reader into the student’s actual story.",
+    "Make opening earn attention without gimmicks; hook should connect to essay’s deeper point.",
+    "Do not end by repeating lesson in obvious summary form.",
+    "Use conclusion to show forward movement, changed perspective, or a final image that leaves reader with meaning."
+  ],
+  "reasoning": "Transcript says weak hooks and poor conclusions are common and can seriously hurt essays. Strong openings make admissions readers want to continue; strong endings leave memorable meaning instead of flattening essay into cliché explanation.",
+  "action_plan": [
+    "Review first 2-3 sentences and ask: could any applicant write this? If yes, replace with concrete detail.",
+    "Identify essay’s core tension or change, then open close to that tension instead of background summary.",
+    "Cut “this taught me...” style ending unless it adds new insight.",
+    "End with action, image, or changed lens that proves growth rather than announces it.",
+    "Check hook and conclusion together: ending should make opening feel more meaningful."
+  ],
+  "risks": [
+    "A flashy hook can feel manipulative if disconnected from essay substance.",
+    "A moralizing conclusion can make authentic growth sound generic.",
+    "Advice is general essay craft, not school-specific admissions policy."
+  ],
+  "source_url": "https://youtu.be/E5SmMV9-UbM",
+  "source_type": "youtube_transcript",
+  "creator": "College Essay Guy / YouTube source title: The Best Way to Start & End a College Essay! | Tips for Common App and Supplementals",
+  "captured_at": "2026-05-22",
+  "confidence": "high",
+  "notebooklm_source_id": "2c38b337-4f56-4842-9f1a-a837aae9aa7e",
+  "transcript_path": "data/advising-ingestion/transcripts/E5SmMV9-UbM.txt",
+  "review": {
+    "status": "indexed",
+    "kb_targets": [
+      "college_advisor",
+      "financial_aid"
+    ],
+    "approved_at": "2026-05-22T16:15:33.508Z",
+    "approved_by": "shaobin",
+    "indexed_at": "2026-05-22T16:15:33.508Z"
+  }
+}

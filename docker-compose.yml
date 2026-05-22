@@ -2,13 +2,13 @@ services:
   college-advisor:
     image: college-advisor-agent:latest
     container_name: college-advisor
-    ports:
-      - "5181:3001"
+    network_mode: host
     env_file:
       - server/.env
-    restart: unless-stopped
     environment:
       - NODE_ENV=production
+      - PORT=3001
+      - LLM_BASE_URL=http://127.0.0.1:20128/v1
     volumes:
       - ./data:/app/server/data:rw
       - ./client/dist:/app/client/dist:ro

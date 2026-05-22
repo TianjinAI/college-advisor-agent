@@ -108,8 +108,16 @@ export default function Header({
 
       <div className="header-content">
         <div className="header-title-group">
-          <p className="eyebrow">{mode === 'college' ? 'College Advisor' : 'Financial Aid'}</p>
-          <h1 className="header-title">{mode === 'college' ? 'Your admissions counselor' : 'Maximize need + merit aid'}</h1>
+          <p className="eyebrow">
+            {mode === 'college' ? 'College Advisor' : mode === 'fa' ? 'Financial Aid' : 'Ingestion'}
+          </p>
+          <h1 className="header-title">
+            {mode === 'college'
+              ? 'Your admissions counselor'
+              : mode === 'fa'
+                ? 'Maximize need + merit aid'
+                : 'Knowledge Workspace'}
+          </h1>
         </div>
 
         <div className="mode-toggle" role="group" aria-label="Switch app mode">
@@ -128,6 +136,14 @@ export default function Header({
             aria-pressed={mode === 'fa'}
           >
             Financial Aid
+          </button>
+          <button
+            type="button"
+            className={`mode-toggle-btn${mode === 'ingestion' ? ' active' : ''}`}
+            onClick={() => onModeChange('ingestion')}
+            aria-pressed={mode === 'ingestion'}
+          >
+            Ingestion
           </button>
         </div>
 

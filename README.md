@@ -177,14 +177,19 @@ college-advisor-agent/
 │   ├── index.ts                 # Express + WebSocket server
 │   ├── agent.ts                 # LLM streaming + KB routing + dossier extraction
 │   ├── types.ts                 # Shared types (SessionMetadata, StudentProfile, etc.)
-│   ├── routes/sessions.ts       # Session CRUD + user profile API
-│   └── knowledge/
-│       ├── retriever.ts         # In-memory RAG search
-│       ├── dossier.ts           # DossierManager (wiki, conversations, sessions)
-│       ├── essayManager.ts      # EssayManager (save/load/list per user)
-│       ├── types.ts             # CollegeProfile, ExpertInsight types
-│       ├── scorecard.ts         # College Scorecard parser
-│       └── ingest.ts            # CLI ingestion tool
+|   ├── routes/sessions.ts       # Session CRUD + user profile API |
+|   ├── routes/essays.ts         # Essay prompts, patterns, user submissions |
+|   ├── routes/summerPrograms.ts # Summer programs KB + user applications |
+|   ├── routes/advisingIngestion.ts # Tier B ingestion entry REST API |
+|   └── knowledge/
+|       ├── retriever.ts         # In-memory RAG search (colleges, essays, ingestion)
+|       ├── dossier.ts           # DossierManager (wiki, conversations, sessions)
+|       ├── essayManager.ts      # EssayManager (save/load/list per user)
+|       ├── advisingIngestionManager.ts # Ingestion entry manager (stats, list, search, reload)
+|       ├── summerProgramManager.ts    # Summer programs manager (KB, applications, follow-thru)
+|       ├── types.ts             # CollegeProfile, ExpertInsight, AdvisingIngestionEntry types
+|       ├── scorecard.ts         # College Scorecard parser
+|       └── ingest.ts            # CLI ingestion tool
 ├── client/src/
 │   ├── App.tsx                  # Root layout + session state management
 │   ├── components/
@@ -239,6 +244,10 @@ college-advisor-agent/
 | GET | `/api/essays/patterns` | List all essay patterns |
 | GET | `/api/essays/user/:userId` | List user's essay submissions |
 | POST | `/api/essays/user/:userId` | Save essay submission |
+| GET | `/api/advising-ingestion/stats` | Ingestion KB stats |
+| POST | `/api/advising-ingestion/reload` | Hot-reload ingestion entries |
+| GET | `/api/advising-ingestion?q=&limit=` | Search ingestion entries |
+| GET | `/api/advising-ingestion/:id` | Get single entry detail |
 | GET | `/health` | Health check |
 
 ## Roadmap
@@ -256,10 +265,20 @@ college-advisor-agent/
 ### 🔜 Phase 2 — Narrative Depth (In Progress)
 - [x] **Essay Writing & Review** — dedicated workspace with prompt library, tips, pitfalls, and AI-powered review
 - [x] **Summer Programs** — curated database of STEM/Math/AI/Coding summer camps. Tracker with follow-thru sessions for post-acceptance lifecycle
+
+#### Phase 2 Feature #3: Advising Ingestion (Data Ingestion)
+> "Ingest public advising content (expert YouTube videos, articles, podcasts) as structured knowledge entries the advisor can reference in conversations."
+
+Structure: **#3a source capture → #3b template mapping → #3c retrieval + governance gate**
+
+- [x] **#3a: Source Capture** — import web links, upload `.txt` / `.md` / `.csv` / `.json`, or paste raw text. Raw source files are saved under `data/advising-ingestion/sources/`; existing transcript fixtures remain under `data/advising-ingestion/transcripts/`.
+- [x] **#3b: Template Mapping** — convert raw source into structured draft entries in `data/advising-ingestion/entries/` with `topic`, `student_profile`, `problem`, `advice_given`, `reasoning`, `action_plan`, `risks`, `source_url`, confidence, and review metadata.
+- [x] **#3c: Retrieval + Governance Gate** — entries move through `draft` / `needs_review` / `approved` / `indexed` / `rejected`. Only indexed entries enter shared retrieval. Approval runs a conflict gate against indexed external notes, core College Advisor KB, and Financial Aid KB evidence.
+- [x] **Infrastructure** — `AdvisingIngestionManager` module, REST API, full-page Knowledge Workspace UI, visible pipeline metrics, approve/index flow, hot reload, and search wired into Express + RAG retrieval.
+- [x] **Safety loophole fix** — Financial Aid profile prompt builder now tolerates incomplete numeric fields instead of crashing on `.toLocaleString()`.
+**What stays in roadmap (Phase 2 remaining):**
 - [ ] **#1: College List Formal Output** — printable document with school status, strategy (ED/EA/RD), intended major, essay hooks, and recommendation-letter contacts per school
 - [ ] **#2: Summer Programs Follow-Thru Enhancement** — auto-tie to CA target schools, milestone reminders, dossier narrative enrichment from program experience
-- [ ] **Admissions Case Studies DB** — expert/consultant/counselor discussions, strategy deep-dives, real outcome analysis. Covers both CA (fit & scope) and FA (aid maximization)
-- [ ] **Application Strategy Engine** — ED/EA/RD optimization, school list balancing, demonstrated interest tracking
 
 ### 🔮 Phase 3 — Scale & Polish
 - [x] Multi-user authentication (shaobin, max, wynston)

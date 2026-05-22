@@ -1,0 +1,34 @@
+{
+  "id": "tierb-youtube-i38hpvPp62I",
+  "topic": "Why most college essays fail and what actually makes students stand out",
+  "student_profile": "General high school applicant writing Common App or supplemental essays. No individual student profile — public advising content.",
+  "problem": "Most essays sound the same: students think they need a dramatic story (surviving cancer, losing a loved one) to stand out, but generic dramatic stories actually blend together.",
+  "advice_given": [
+    "Colleges do not admit students because of what happened to them — they admit students because of how they think and who they are.",
+    "Extraordinary events written generically lose impact. Ordinary events written with genuine insight can be extraordinary.",
+    "Avoid \"this experience taught me\" summary endings — they flatten the essay.",
+    "Specific, concrete details beat dramatic events every time.",
+    "The best essays show a distinctive way of seeing the world, not just a touching story.",
+    "Readers can spot essays written to impress rather than to reveal."
+  ],
+  "reasoning": "After reading 100 essays, pattern is clear: topic matters far less than voice, specificity, and insight. Students selecting big dramatic topics often produce the most formulaic essays because they rely on event weight instead of perspective.",
+  "action_plan": [
+    "Pick a topic you can write about with genuine specificity — not the most impressive topic.",
+    "Write a draft, then highlight every sentence that could have been written by any other student. Delete or rewrite all of them.",
+    "Replace summary statements with concrete scenes, details, sensory description.",
+    "Ask a reader: after this essay, what do you know about me that you didn't before? If answer is vague, revise.",
+    "Test ending: does it add meaning or just re-state the lesson already shown?"
+  ],
+  "risks": [
+    "Avoiding dramatic topics is not the goal — avoiding generic treatment is.",
+    "Over-correcting toward \"ordinary topic\" without strong voice still produces weak essays.",
+    "Advice is craft-level; does not address school-specific supplemental strategy."
+  ],
+  "source_url": "https://www.youtube.com/watch?v=i38hpvPp62I",
+  "source_type": "youtube_transcript",
+  "creator": "YouTube: What 100 college essays taught me about who gets rejected",
+  "captured_at": "2026-05-22",
+  "confidence": "high",
+  "notebooklm_source_id": "9fd4175e-ff85-4e17-b575-77822f556892",
+  "transcript_path": "data/advising-ingestion/transcripts/i38hpvPp62I.txt"
+}

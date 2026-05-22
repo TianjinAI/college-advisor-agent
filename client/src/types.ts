@@ -95,7 +95,7 @@ export interface EssayEntry extends EssaySubmission {
   review?: EssayReview;
 }
 
-export type AppMode = 'college' | 'fa';
+export type AppMode = 'college' | 'fa' | 'ingestion';
 
 // Financial Aid profile — matches server/src/types.ts FinancialProfile exactly
 export interface FinancialProfile {

@@ -229,6 +229,39 @@ export interface EssayPattern {
   cautionNotes: string;
 }
 
+// ─── Advising Ingestion (Tier B) ─────────────────────────────────────────────
+
+export type IngestionConfidence = 'low' | 'med' | 'medium' | 'high';
+export type IngestionSourceType = 'youtube_transcript' | 'youtube_title_heuristic' | 'web_article' | 'book_excerpt' | 'expert_interview' | 'direct_observation';
+export type IngestionStatus = 'draft' | 'needs_review' | 'approved' | 'indexed' | 'rejected';
+export type IngestionKbTarget = 'college_advisor' | 'financial_aid';
+
+export interface IngestionReviewState {
+  status: IngestionStatus;
+  approved_at?: string;
+  approved_by?: string;
+  indexed_at?: string;
+  kb_targets?: IngestionKbTarget[];
+  ingestion_notes?: string;
+}
+
+export interface AdvisingIngestionEntry {
+  id: string;
+  topic: string;
+  student_profile: string;
+  problem: string;
+  advice_given: string[];
+  reasoning: string;
+  action_plan: string[];
+  risks: string[];
+  source_url: string;
+  source_type: IngestionSourceType;
+  creator?: string;
+  captured_at: string;
+  confidence: IngestionConfidence;
+  review?: IngestionReviewState;
+}
+
 // ─── Category Labels for the 50 target colleges ──────────────────────────────
 
 export type CollegeCategory = 'ivy' | 'national' | 'lac' | 'stem';

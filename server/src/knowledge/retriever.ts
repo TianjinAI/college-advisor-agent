@@ -5,7 +5,7 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import type { CollegeProfile, ExpertInsight } from './types.js';
+import type { CollegeProfile, ExpertInsight, AdvisingIngestionEntry } from './types.js';
 import type { EssayPrompt, EssayPattern } from './types.js';
 
 // ─── Indexed Types ────────────────────────────────────────────────────────────
@@ -31,6 +31,11 @@ interface IndexedPattern {
   searchText: string;
 }
 
+interface IndexedIngestion {
+  entry: AdvisingIngestionEntry;
+  searchText: string;
+}
+
 // ─── Retriever ────────────────────────────────────────────────────────────────
 
 class KnowledgeRetriever {
@@ -38,6 +43,7 @@ class KnowledgeRetriever {
   private insights: IndexedInsight[] = [];
   private essays: IndexedEssay[] = [];
   private patterns: IndexedPattern[] = [];
+  private ingestions: IndexedIngestion[] = [];
   private collegeById: Map<string, CollegeProfile> = new Map();
   private loaded = false;
 
@@ -101,10 +107,29 @@ class KnowledgeRetriever {
       }
     }
 
+    // Load advising ingestion entries (Tier B)
+    const ingestionDir = path.join(dataDir, 'advising-ingestion', 'entries');
+    if (fs.existsSync(ingestionDir)) {
+      const ingFiles = fs.readdirSync(ingestionDir).filter(f => f.endsWith('.json'));
+      for (const file of ingFiles) {
+        const raw = fs.readFileSync(path.join(ingestionDir, file), 'utf-8');
+        const entry: AdvisingIngestionEntry = JSON.parse(raw);
+        if (entry.review?.status !== 'indexed') continue;
+        const searchText = [
+          entry.topic, entry.problem, entry.student_profile,
+          entry.reasoning, ...(entry.advice_given || []),
+          ...(entry.action_plan || []), ...(entry.risks || []),
+          entry.source_url, entry.source_type, entry.confidence, entry.creator || ''
+        ].join(' ').toLowerCase();
+        this.ingestions.push({ entry, searchText });
+      }
+    }
+
     this.loaded = true;
     console.log(
       `[Retriever] Loaded ${this.colleges.length} colleges, ${this.insights.length} insights, ` +
-      `${this.essays.length} essay prompts, ${this.patterns.length} patterns`
+      `${this.essays.length} essay prompts, ${this.patterns.length} patterns, ` +
+      `${this.ingestions.length} ingestion entries`
     );
   }
 
@@ -338,6 +363,69 @@ class KnowledgeRetriever {
     return results.slice(0, topK);
   }
 
+  searchCoreKnowledge(query: string, topK: number = 8): Array<{ source_type: string; title: string; content: string; score: number; matchedOn: string[] }> {
+    const results: Array<{ source_type: string; title: string; content: string; score: number; matchedOn: string[] }> = [];
+    for (const r of this.searchColleges(query, 2)) {
+      results.push({ source_type: 'core_college_profile', title: r.profile.name, content: this.buildCollegeSearchText(r.profile).slice(0, 1800), score: r.score, matchedOn: r.matchedOn });
+    }
+    for (const r of this.searchInsights(query, 3)) {
+      results.push({ source_type: 'core_expert_insight', title: r.insight.title, content: [r.insight.category, r.insight.content, r.insight.source || ''].join('\n').slice(0, 1800), score: r.score, matchedOn: r.matchedOn });
+    }
+    for (const r of this.searchEssays(query, 3)) {
+      results.push({ source_type: 'core_essay_prompt', title: r.prompt.title, content: [r.prompt.category, r.prompt.prompt, ...(r.prompt.tips || []), ...(r.prompt.pitfalls || [])].join('\n').slice(0, 1800), score: r.score, matchedOn: r.matchedOn });
+    }
+    for (const r of this.searchPatterns(query, 3)) {
+      results.push({ source_type: 'core_essay_pattern', title: r.pattern.name, content: [r.pattern.type, r.pattern.description, ...(r.pattern.bestFor || []), r.pattern.cautionNotes || ''].join('\n').slice(0, 1800), score: r.score, matchedOn: r.matchedOn });
+    }
+    return results.sort((a, b) => b.score - a.score).slice(0, topK);
+  }
+
+  searchAdvising(
+    query: string,
+    topK: number = 5
+  ): Array<{ entry: AdvisingIngestionEntry; score: number; matchedOn: string[] }> {
+    const lowerQ = query.toLowerCase();
+    const terms = lowerQ.split(/\s+/).filter(t => t.length > 0);
+    const results: Array<{ entry: AdvisingIngestionEntry; score: number; matchedOn: string[] }> = [];
+
+    for (const { entry, searchText } of this.ingestions) {
+      let score = 0;
+      const matchedOn: string[] = [];
+
+      // Topic match
+      if (terms.some(t => entry.topic.toLowerCase().includes(t))) {
+        score += 12;
+        matchedOn.push('topic');
+      }
+
+      // Problem match
+      if (terms.some(t => entry.problem.toLowerCase().includes(t))) {
+        score += 10;
+        matchedOn.push('problem');
+      }
+
+      // Confidence bonus
+      if (entry.confidence === 'high') score += 5;
+      else if (entry.confidence === 'med') score += 2;
+
+      // Content term matching
+      for (const term of terms) {
+        const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escaped, 'gi');
+        const matches = searchText.match(regex);
+        if (matches) {
+          score += matches.length * 3;
+          matchedOn.push(`term:${term}`);
+        }
+      }
+
+      if (score > 0) results.push({ entry, score, matchedOn });
+    }
+
+    results.sort((a, b) => b.score - a.score);
+    return results.slice(0, topK);
+  }
+
   // ─── Structured Access ──────────────────────────────────────────────────
 
   getCollegeById(id: string): CollegeProfile | undefined {
@@ -362,6 +450,7 @@ class KnowledgeRetriever {
       insightCount: this.insights.length,
       essayPromptCount: this.essays.length,
       essayPatternCount: this.patterns.length,
+      advisingIngestionCount: this.ingestions.length,
       tiers,
       types,
     };
@@ -418,6 +507,25 @@ class KnowledgeRetriever {
           `**Structure:** ${pattern.structure.map((s, i) => `${i + 1}. ${s}`).join('\n')}\n` +
           `**Best For:** ${pattern.bestFor.join(', ')}\n` +
           `**Caution:** ${pattern.cautionNotes}`
+        );
+      }
+    }
+
+    const advisingResults = this.searchAdvising(query, 2);
+    if (advisingResults.length > 0) {
+      parts.push('## Relevant Advising Ingestion (from public sources)');
+      for (const { entry, score, matchedOn } of advisingResults) {
+        const confLabel = entry.confidence === 'low' ? '⚠️ LOW CONFIDENCE (heuristic, verify source)' : `confidence: ${entry.confidence}`;
+        parts.push(
+          `### ${entry.topic}\n` +
+          `**Student profile:** ${entry.student_profile}\n` +
+          `**Problem:** ${entry.problem}\n` +
+          `**Advice:** ${entry.advice_given.map(a => `- ${a}`).join('\n')}\n` +
+          `**Action plan:** ${entry.action_plan.map(a => `- ${a}`).join('\n')}\n` +
+          `**Risks:** ${entry.risks.map(r => `- ${r}`).join('\n')}\n` +
+          `**Source:** ${entry.source_url} (${entry.source_type})\n` +
+          `**Captured:** ${entry.captured_at}\n` +
+          `**${confLabel}** | Match: ${matchedOn.join(', ')} (score: ${score})`
         );
       }
     }

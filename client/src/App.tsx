@@ -6,6 +6,7 @@ import ChatPanel from './components/ChatPanel';
 import SchoolDirectory from './components/SchoolDirectory';
 import EssayPanel from './components/EssayPanel';
 import SummerProgramsPanel from './components/SummerProgramsPanel';
+import IngestionWorkspace from './components/IngestionWorkspace';
 import type { StudentProfile, ChatMessage, SchoolSelection, SessionMetadata, AppMode, FinancialProfile, TargetSchool } from './types';
 import { DEFAULT_FINANCIAL_PROFILE } from './components/FAProfilePanel';
 import FinancialAidWorkspace from './components/FinancialAidWorkspace';
@@ -685,12 +686,15 @@ export default function App() {
       />
       {/* Grid layout shared across both modes; content panes differ */}
       <div
-        className="app-body"
-        style={{
-          gridTemplateColumns: `${leftPanelWidth}px 8px calc(100vw - ${leftPanelWidth}px - ${rightPanelWidth}px - 16px) 8px ${rightPanelWidth}px`,
-        }}
+        className={`app-body ${mode === 'ingestion' ? 'app-body-ingestion' : ''}`}
+        style={mode === 'ingestion'
+          ? { gridTemplateColumns: 'minmax(0, 1fr)' }
+          : { gridTemplateColumns: `${leftPanelWidth}px 8px calc(100vw - ${leftPanelWidth}px - ${rightPanelWidth}px - 16px) 8px ${rightPanelWidth}px` }
+        }
       >
-        {mode === 'fa' ? (
+        {mode === 'ingestion' ? (
+          <IngestionWorkspace />
+        ) : mode === 'fa' ? (
           <FinancialAidWorkspace
             financialProfile={financialProfile}
             collegeProfile={profile}
