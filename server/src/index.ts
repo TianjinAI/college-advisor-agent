@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { createServer } from 'http';
 import { WebSocketServer, WebSocket } from 'ws';
-import { createAgentStream, extractDossierFacts, dossierManager, ensureRetriever, createEssayReviewStream, createSummerRecommendStream } from './agent';
+import { createAgentStream, extractDossierFacts, dossierManager, ensureRetriever, createEssayReviewStream, createSummerRecommendStream, createSummerNarrativeSuggestStream } from './agent';
 import faRouter from './routes/financialAid.js';
 import { createFAStream } from './faAgent.js';
 import faRetriever from './knowledge/faRetriever.js';
@@ -52,6 +52,25 @@ app.get('/api/models', async (_req, res) => {
     res.json({ models, default: process.env.LLM_MODEL || 'deepseek-v4-flash' });
   } catch (e: any) {
     res.json({ models: ['deepseek-v4-flash'], default: 'deepseek-v4-flash', error: e.message });
+  }
+});
+
+// POST /api/user/dossier/enrich
+// Body: { userId: string; content: string; programName?: string }
+// Enriches the user's dossier with summer program experience content
+app.post('/api/user/dossier/enrich', (req, res) => {
+  try {
+    const { userId, content, programName } = req.body as { userId: string; content: string; programName?: string };
+    if (!userId || !content) {
+      return res.status(400).json({ error: 'userId and content are required' });
+    }
+    dossierManager.enrichDossier(userId, content, programName).then(() => {
+      res.json({ success: true });
+    }).catch((err: any) => {
+      res.status(500).json({ error: err.message });
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
   }
 });
 
@@ -163,6 +182,18 @@ wss.on('connection', (ws, req) => {
           };
           const userId = authPayload?.userId || payloadUserId;
           await handleSummerRecommend(ws, { userId, profile, interests, budget, application_status, model });
+          break;
+        }
+        case 'summer_narrative_suggest': {
+          const authPayload = wsAuth.get(ws);
+          const { userId: payloadUserId, programId, sessionId, model } = msg.payload as {
+            userId?: string;
+            programId?: string;
+            sessionId?: string;
+            model?: string;
+          };
+          const userId = authPayload?.userId || payloadUserId;
+          await handleSummerNarrativeSuggest(ws, { userId, programId, sessionId, model });
           break;
         }
         default:
@@ -367,6 +398,114 @@ async function handleSummerRecommend(
     ws.send(JSON.stringify({
       type: 'summer_recommend_error',
       payload: { text: err.message || 'Recommendation failed' },
+    }));
+  } finally {
+    activeStreams.delete(ws);
+  }
+}
+
+/**
+ * Handle summer program narrative suggestion — streams AI-generated talking points
+ * and essay suggestions for a summer program experience.
+ */
+async function handleSummerNarrativeSuggest(
+  ws: WebSocket,
+  opts: {
+    userId?: string;
+    programId?: string;
+    sessionId?: string;
+    model?: string;
+  },
+): Promise<void> {
+  const messageId = `narrative_${Date.now()}`;
+  const { userId, programId, sessionId, model } = opts;
+
+  ws.send(JSON.stringify({ type: 'summer_narrative_suggest_start', payload: { messageId } }));
+
+  try {
+    const { SummerProgramManager } = await import('./knowledge/summerProgramManager.js');
+    const SPM_ROOT = path.resolve(process.cwd(), '../data/summer-programs');
+    const USERS_ROOT = path.resolve(process.cwd(), '../data/users');
+    const spm = new SummerProgramManager(SPM_ROOT, USERS_ROOT);
+
+    if (!programId || !userId) {
+      ws.send(JSON.stringify({
+        type: 'summer_narrative_suggest_error',
+        payload: { text: 'programId and userId are required' },
+      }));
+      return;
+    }
+
+    const program = spm.getProgram(programId);
+    const followThru = spm.getFollowThru(userId, programId);
+    const applications = spm.listApplications(userId);
+    const application = applications.find(a => a.programId === programId);
+
+    // Load student dossier for narrative context
+    const dossier = userId ? await dossierManager.loadDossier(userId) : '';
+    const sessionMessages = userId && sessionId ? await dossierManager.loadMessages(userId, sessionId) : [];
+
+    const narrativeStream = await createSummerNarrativeSuggestStream(
+      {
+        programName: program?.name || programId,
+        programDiscipline: (program?.discipline || []).join(', '),
+        programOutcomes: (() => {
+          const po = followThru?.program_outcomes;
+          if (!po) return undefined;
+          return [...po.key_learnings, ...po.skills_developed, ...po.project_outcomes, ...po.narrative_tags];
+        })(),
+        collegeRecap: followThru?.college_recap
+          ? [followThru.college_recap.how_it_affected, ...(followThru.college_recap.talking_points || [])]
+          : undefined,
+        reflections: followThru?.reflection_log
+          ? followThru.reflection_log.map(r => `[${r.phase}] ${r.content}${r.key_takeaway ? ' — ' + r.key_takeaway : ''}`)
+          : undefined,
+        applicationStatus: application?.status as string | undefined,
+        enrollmentDecision: followThru?.enrollment_decision as 'enrolled' | 'declined_enrollment' | 'pending' | undefined,
+        programAdmissionsSignal: program?.admissions_signal as 'strong-positive' | 'positive' | 'neutral' | 'mixed' | undefined,
+        whatTheyLookFor: program?.what_they_look_for?.join('; '),
+        existingDossier: dossier || undefined,
+        sessionHistory: sessionMessages as Array<{ role: string; content: string }>,
+      },
+      model,
+    );
+    activeStreams.set(ws, { abort: () => narrativeStream.abort() });
+
+    let fullResponse = '';
+
+    for await (const message of narrativeStream) {
+      if (ws.readyState !== WebSocket.OPEN) break;
+      if (message.text) {
+        fullResponse += message.text;
+        ws.send(JSON.stringify({
+          type: 'summer_narrative_suggest_delta',
+          payload: { text: message.text, done: false, messageId },
+        }));
+      }
+    }
+
+    ws.send(JSON.stringify({
+      type: 'summer_narrative_suggest_delta',
+      payload: { text: '', done: true, messageId },
+    }));
+
+    // Auto-save narrative suggestions to dossier
+    if (userId && fullResponse) {
+      dossierManager.enrichDossier(
+        userId,
+        `## AI Narrative Suggestions for ${program?.name || programId}\n\n${fullResponse}`,
+        `${program?.name || programId} — AI Narrative Suggestions`,
+        'Summer Program Narrative Suggestions',
+      ).catch(err => {
+        console.error('[SummerNarrative] Dossier enrichment failed:', err?.message || err);
+      });
+    }
+
+  } catch (err: any) {
+    console.error('[SummerNarrative] Error:', err);
+    ws.send(JSON.stringify({
+      type: 'summer_narrative_suggest_error',
+      payload: { text: err.message || 'Narrative suggestion failed' },
     }));
   } finally {
     activeStreams.delete(ws);

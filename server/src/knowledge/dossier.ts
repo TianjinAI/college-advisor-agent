@@ -65,7 +65,6 @@ export class DossierManager {
 
   private async listExistingSessions(userId: string): Promise<SessionMetadata[]> {
     const sessionsDir = this.getSessionsDir(userId);
-
     try {
       const entries = await fs.readdir(sessionsDir, { withFileTypes: true });
       const sessions = await Promise.all(entries
@@ -74,7 +73,6 @@ export class DossierManager {
           const metadataPath = path.join(sessionsDir, entry.name, 'metadata.json');
           return this.readJsonFile<SessionMetadata | null>(metadataPath, null);
         }));
-
       return sessions
         .filter((session): session is SessionMetadata => Boolean(session))
         .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
@@ -84,7 +82,7 @@ export class DossierManager {
     }
   }
 
-  // ─── User profile (display name + student profile) ───────────────────
+  // ─── User profile ────────────────────────────────────────────────────
 
   private getUserProfilePath(userId: string): string {
     return path.join(this.getUserDir(userId), 'profile.json');
@@ -102,8 +100,7 @@ export class DossierManager {
 
   private async writeUserProfile(userId: string, profile: Record<string, unknown>): Promise<void> {
     const filePath = this.getUserProfilePath(userId);
-    const dirPath = path.dirname(filePath);
-    await fs.mkdir(dirPath, { recursive: true });
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
     await fs.writeFile(filePath, JSON.stringify(profile, null, 2), 'utf8');
   }
 
@@ -133,17 +130,31 @@ export class DossierManager {
     await this.writeUserProfile(userId, profile);
   }
 
-  // ─── College list ─────────────────────────────────────────────────────
+  // ─── College list (p2-4 expanded payload with locked state) ──────────
 
   private getCollegeListPath(userId: string): string {
     return path.join(this.getUserDir(userId), 'college-list.json');
   }
 
-  async getCollegeList(userId: string): Promise<{ targetSchools: import('../types.js').TargetSchool[]; updatedAt: number }> {
-    return this.readJsonFile(this.getCollegeListPath(userId), { targetSchools: [], updatedAt: 0 });
+  // p2-4: expanded return type includes locked + lockedAt, backward compat
+  async getCollegeList(userId: string): Promise<{ targetSchools: import('../types.js').TargetSchool[]; updatedAt: number; locked: boolean; lockedAt?: number }> {
+    const fallback = { targetSchools: [], updatedAt: 0, locked: false };
+    const data = await this.readJsonFile<{
+      targetSchools?: import('../types.js').TargetSchool[];
+      updatedAt?: number;
+      locked?: boolean;
+      lockedAt?: number;
+    }>(this.getCollegeListPath(userId), fallback);
+    return {
+      targetSchools: data.targetSchools ?? [],
+      updatedAt: data.updatedAt ?? 0,
+      locked: data.locked ?? false,
+      lockedAt: data.lockedAt,
+    };
   }
 
-  async saveCollegeList(userId: string, data: { targetSchools: import('../types.js').TargetSchool[]; updatedAt: number }): Promise<void> {
+  // p2-4: expanded save — accepts locked + lockedAt
+  async saveCollegeList(userId: string, data: { targetSchools: import('../types.js').TargetSchool[]; updatedAt: number; locked: boolean; lockedAt?: number }): Promise<void> {
     const filePath = this.getCollegeListPath(userId);
     await fs.mkdir(path.dirname(filePath), { recursive: true });
     await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
@@ -154,7 +165,6 @@ export class DossierManager {
   async loadDossier(userId: string): Promise<string> {
     try {
       const raw = await fs.readFile(this.getDossierPath(userId), 'utf8');
-      // Strip frontmatter for system prompt injection (keep body only)
       const bodyMatch = raw.match(/^---[\s\S]*?---\n*/);
       return bodyMatch ? raw.slice(bodyMatch[0].length).trim() : raw.trim();
     } catch (error: any) {
@@ -224,22 +234,16 @@ export class DossierManager {
     await fs.writeFile(filePath, base + '\n\n' + heading + '\n\n' + entry, 'utf8');
   }
 
-  /**
-   * Save the full dossier Wiki page (replaces, doesn't append).
-   * The LLM returns a complete updated page; we add frontmatter.
-   */
   async saveDossier(userId: string, wikiContent: string, sourceSummary?: string): Promise<void> {
     const cleanContent = wikiContent.trim();
     if (!cleanContent || cleanContent === 'NO_NEW_FACTS') return;
 
     const filePath = this.getDossierPath(userId);
-    const dirPath = path.dirname(filePath);
-    await fs.mkdir(dirPath, { recursive: true });
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
 
     const now = new Date().toISOString();
     const dateStr = now.split('T')[0];
 
-    // Build frontmatter
     const existing = await this.loadDossierRaw(userId);
     let sourceCount = 1;
     if (existing) {
@@ -262,7 +266,7 @@ export class DossierManager {
     await fs.writeFile(filePath, frontmatter + cleanContent + '\n', 'utf8');
   }
 
-  // ─── Conversations (Q&A log) ───────────────────────────────────────────
+  // ─── Conversations ───────────────────────────────────────────────────
 
   async loadConversations(userId: string): Promise<string> {
     try {
@@ -279,24 +283,11 @@ export class DossierManager {
     responseSummary: string,
   ): Promise<void> {
     const filePath = this.getConversationPath(userId);
-    const dirPath = path.dirname(filePath);
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
     const timestamp = new Date().toISOString();
     const date = timestamp.split('T')[0];
-
-    await fs.mkdir(dirPath, { recursive: true });
-
-    const existing = await this.loadConversations(userId);
-    
-    // Truncate user message for readability
-    const truncatedMsg = userMessage.length > 200 
-      ? userMessage.substring(0, 200) + '...' 
-      : userMessage;
-    
-    // Truncate response summary
-    const truncatedSummary = responseSummary.length > 300
-      ? responseSummary.substring(0, 300) + '...'
-      : responseSummary;
-
+    const truncatedMsg = userMessage.length > 200 ? userMessage.substring(0, 200) + '...' : userMessage;
+    const truncatedSummary = responseSummary.length > 300 ? responseSummary.substring(0, 300) + '...' : responseSummary;
     const entry = [
       `### ${timestamp}`,
       `**Q**: ${truncatedMsg}`,
@@ -304,46 +295,28 @@ export class DossierManager {
       '',
     ].join('\n');
 
+    const existing = await this.loadConversations(userId);
     if (!existing) {
-      const initial = [
-        '# Conversation History',
-        `**Last session**: ${timestamp}`,
-        '',
-        '---',
-        '',
-        entry,
-      ].join('\n');
-      await fs.writeFile(filePath, initial, 'utf8');
+      await fs.writeFile(filePath, ['# Conversation History', `**Last session**: ${timestamp}`, '', '---', '', entry].join('\n'), 'utf8');
       return;
     }
-
-    // Update last session timestamp and append
     const updated = existing
       .replace(/^\*\*Last session\*\*: .*$/m, `**Last session**: ${timestamp}`)
       .trimEnd();
-
     await fs.writeFile(filePath, updated + '\n\n' + entry, 'utf8');
   }
 
-  // ─── Combined context for LLM injection ────────────────────────────────
-
   async loadFullContext(userId: string): Promise<string> {
     const parts: string[] = [];
-    
     const dossier = await this.loadDossier(userId);
-    if (dossier) {
-      parts.push('## Student Dossier (Persistent Profile)\n' + dossier);
-    }
-
+    if (dossier) parts.push('## Student Dossier (Persistent Profile)\n' + dossier);
     const conversations = await this.loadConversations(userId);
     if (conversations) {
-      // Only include last ~3000 chars of conversations to stay within context
       const trimmed = conversations.length > 4000
         ? '...(earlier conversations omitted)\n\n' + conversations.slice(-4000)
         : conversations;
       parts.push('## Previous Conversations\n' + trimmed);
     }
-
     return parts.join('\n\n---\n\n');
   }
 
@@ -362,12 +335,10 @@ export class DossierManager {
       created_at: now,
       updated_at: now,
     };
-
     const sessionDir = this.getSessionDir(userId, sessionId);
     await fs.mkdir(sessionDir, { recursive: true });
     await fs.writeFile(this.getSessionMetadataPath(userId, sessionId), JSON.stringify(metadata, null, 2), 'utf8');
     await fs.writeFile(this.getSessionChatPath(userId, sessionId), '[]', 'utf8');
-
     return metadata;
   }
 

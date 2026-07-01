@@ -63,6 +63,9 @@ interface SummerApplication {
   created_at?: number;
   updated_at?: number;
   program?: SummerProgram;
+  enrollment_decision?: 'attending' | 'declined';
+  deposit_deadline?: string;
+  deposit_paid?: boolean;
 }
 
 type FollowThruPhase = 'pre-program' | 'during' | 'post-program' | 'college-recap';
@@ -95,6 +98,12 @@ interface SummerFollowThruSession {
   created_at?: number;
   updated_at?: number;
   program?: SummerProgram;
+}
+
+interface NarrativeSuggestion {
+  essay_angles: string[];
+  interview_points: string[];
+  narrative_blurb: string;
 }
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
@@ -563,6 +572,256 @@ function TrackerTab({ userId }: { userId: string }) {
   );
 }
 
+// ─── Enrollment Decision Form (Phase 2 #5) ─────────────────────────────────
+
+function EnrollmentDecisionForm({
+  userId,
+  programId,
+  application,
+  onSaved,
+}: {
+  userId: string;
+  programId: string;
+  application?: SummerApplication;
+  onSaved: () => void;
+}) {
+  const [enrollmentDecision, setEnrollmentDecision] = useState<'attending' | 'declined' | ''>(
+    application?.enrollment_decision || ''
+  );
+  const [depositDeadline, setDepositDeadline] = useState(application?.deposit_deadline || '');
+  const [depositPaid, setDepositPaid] = useState(application?.deposit_paid || false);
+  const [saving, setSaving] = useState(false);
+  const [saveMsg, setSaveMsg] = useState<string | null>(null);
+
+  const handleSave = async () => {
+    setSaving(true);
+    setSaveMsg(null);
+    try {
+      const body: Record<string, any> = {};
+      if (enrollmentDecision) body.enrollment_decision = enrollmentDecision;
+      if (enrollmentDecision === 'attending') {
+        body.deposit_deadline = depositDeadline || undefined;
+        body.deposit_paid = depositPaid;
+      }
+      const r = await authFetch(
+        `/api/summer-programs/user/${encodeURIComponent(userId)}/applications/${programId}`,
+        {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        }
+      );
+      if (r.ok) {
+        setSaveMsg('Saved ✓');
+        onSaved();
+      } else {
+        const err = await r.json().catch(() => ({ error: 'Save failed' }));
+        setSaveMsg(`Error: ${err.error}`);
+      }
+    } catch {
+      setSaveMsg('Network error');
+    } finally {
+      setSaving(false);
+      setTimeout(() => setSaveMsg(null), 3000);
+    }
+  };
+
+  return (
+    <div className="sp-ft-section">
+      <p className="sp-ft-label">📝 Enrollment Decision</p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        <div style={{ display: 'flex', gap: '16px' }}>
+          <label className="sp-chip-checkbox" style={{ fontWeight: 'normal' }}>
+            <input
+              type="radio"
+              name={`enroll-${programId}`}
+              checked={enrollmentDecision === 'attending'}
+              onChange={() => setEnrollmentDecision('attending')}
+            />
+            {' '}Planning to attend
+          </label>
+          <label className="sp-chip-checkbox" style={{ fontWeight: 'normal' }}>
+            <input
+              type="radio"
+              name={`enroll-${programId}`}
+              checked={enrollmentDecision === 'declined'}
+              onChange={() => setEnrollmentDecision('declined')}
+            />
+            {' '}Declined offer
+          </label>
+        </div>
+
+        {enrollmentDecision === 'attending' && (
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9em' }}>
+              Deposit deadline:
+              <input
+                type="date"
+                className="sp-input"
+                style={{ width: 'auto', padding: '4px 8px' }}
+                value={depositDeadline}
+                onChange={e => setDepositDeadline(e.target.value)}
+              />
+            </label>
+            <label className="sp-chip-checkbox" style={{ fontWeight: 'normal', fontSize: '0.9em' }}>
+              <input
+                type="checkbox"
+                checked={depositPaid}
+                onChange={e => setDepositPaid(e.target.checked)}
+              />
+              {' '}Deposit paid
+            </label>
+          </div>
+        )}
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <button type="button" className="sp-save-btn" onClick={handleSave} disabled={saving}>
+            {saving ? 'Saving…' : 'Save Decision'}
+          </button>
+          {saveMsg && (
+            <span style={{ fontSize: '0.85em', color: saveMsg.startsWith('Error') ? '#ef4444' : '#10b981' }}>
+              {saveMsg}
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Narrative Suggestion Section (Phase 2 #5) ──────────────────────────────
+
+function NarrativeSuggestionSection({
+  userId,
+  programId,
+  onEnrichDossier,
+}: {
+  userId: string;
+  programId: string;
+  onEnrichDossier: (programId: string, narrativeBlurb: string) => void;
+}) {
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState<NarrativeSuggestion | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchNarrative = async () => {
+    setLoading(true);
+    setError(null);
+    setResult(null);
+    try {
+      const r = await authFetch(
+        `/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}/narrative`,
+        { method: 'POST' }
+      );
+      if (r.ok) {
+        const data = await r.json();
+        setResult({
+          essay_angles: data.essay_angles || [],
+          interview_points: data.interview_points || [],
+          narrative_blurb: data.narrative_blurb || '',
+        });
+      } else {
+        const err = await r.json().catch(() => ({ error: 'Failed to generate narrative' }));
+        setError(err.error || 'Failed to generate narrative');
+      }
+    } catch {
+      setError('Network error');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleEnrich = () => {
+    if (result?.narrative_blurb) {
+      onEnrichDossier(programId, result.narrative_blurb);
+    }
+  };
+
+  return (
+    <div className="sp-ft-section">
+      <p className="sp-ft-label">🤖 AI Narrative Suggestion</p>
+      {!loading && !result && !error && (
+        <button type="button" className="sp-ai-btn" onClick={fetchNarrative}>
+          ✨ Generate Narrative Suggestion
+        </button>
+      )}
+
+      {loading && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 0' }}>
+          <span className="sp-spinner" style={{
+            display: 'inline-block',
+            width: '16px',
+            height: '16px',
+            border: '2px solid #e5e7eb',
+            borderTopColor: '#3b82f6',
+            borderRadius: '50%',
+            animation: 'sp-spin 0.6s linear infinite',
+          }} />
+          <span style={{ fontSize: '0.9em', color: '#6b7280' }}>Generating narrative suggestion…</span>
+        </div>
+      )}
+
+      {error && (
+        <div>
+          <p style={{ color: '#ef4444', fontSize: '0.9em', marginBottom: '6px' }}>{error}</p>
+          <button type="button" className="sp-ai-btn" onClick={fetchNarrative}>
+            Retry
+          </button>
+        </div>
+      )}
+
+      {result && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          {result.essay_angles.length > 0 && (
+            <div>
+              <p className="sp-ft-label" style={{ fontSize: '0.95em', marginBottom: '4px' }}>Essay Angles</p>
+              <ul className="sp-ft-talking-points">
+                {result.essay_angles.map((angle, i) => (
+                  <li key={i}>{angle}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {result.interview_points.length > 0 && (
+            <div>
+              <p className="sp-ft-label" style={{ fontSize: '0.95em', marginBottom: '4px' }}>Interview Talking Points</p>
+              <ul className="sp-ft-talking-points">
+                {result.interview_points.map((pt, i) => (
+                  <li key={i}>{pt}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {result.narrative_blurb && (
+            <div>
+              <p className="sp-ft-label" style={{ fontSize: '0.95em', marginBottom: '4px' }}>Narrative Blurb</p>
+              <p style={{
+                background: '#f0fdf4',
+                borderLeft: '3px solid #10b981',
+                padding: '8px 12px',
+                borderRadius: '4px',
+                fontSize: '0.9em',
+                lineHeight: '1.5',
+              }}>
+                {result.narrative_blurb}
+              </p>
+            </div>
+          )}
+
+          <div>
+            <button type="button" className="sp-enrich-btn" onClick={handleEnrich}>
+              ✨ Auto-Enrich Dossier
+            </button>
+            <p className="sp-ft-hint">Saves this narrative to your advisory profile so future conversations remember it automatically.</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── Follow-thru Tab ─────────────────────────────────────────────────────────
 
 function ReminderInput({ onAdd }: { onAdd: (text: string) => void }) {
@@ -593,6 +852,7 @@ function ReminderInput({ onAdd }: { onAdd: (text: string) => void }) {
 
 function FollowThruTab({ userId, targetSchools }: { userId: string; targetSchools: import('../types').TargetSchool[] }) {
   const [sessions, setSessions] = useState<SummerFollowThruSession[]>([]);
+  const [applications, setApplications] = useState<SummerApplication[]>([]);
   const [loading, setLoading] = useState(true);
   const [activePhase, setActivePhase] = useState<FollowThruPhase>('pre-program');
   const [goals, setGoals] = useState('');
@@ -605,13 +865,25 @@ function FollowThruTab({ userId, targetSchools }: { userId: string; targetSchool
 
   const load = useCallback(() => {
     setLoading(true);
-    authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru`)
-      .then(r => r.json())
-      .then(d => { setSessions(d.sessions || []); setLoading(false); })
+    Promise.all([
+      authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru`)
+        .then(r => r.json())
+        .then(d => d.sessions || []),
+      authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/applications`)
+        .then(r => r.json())
+        .then(d => d.applications || []),
+    ])
+      .then(([sessionsData, appsData]) => {
+        setSessions(sessionsData);
+        setApplications(appsData);
+        setLoading(false);
+      })
       .catch(() => setLoading(false));
   }, [userId]);
 
   useEffect(() => { load(); }, [load]);
+
+  const getApplication = (programId: string) => applications.find(a => a.programId === programId);
 
   const [createError, setCreateError] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);
@@ -684,6 +956,20 @@ function FollowThruTab({ userId, targetSchools }: { userId: string; targetSchool
     alert('Dossier enriched ✓');
   };
 
+  const enrichDossierNarrative = async (programId: string, narrativeBlurb: string) => {
+    const session = sessions.find(s => s.programId === programId);
+    await authFetch('/api/user/dossier/enrich', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userId,
+        source: 'summer_program_followthru',
+        content: { programId, narrative_blurb: narrativeBlurb },
+      }),
+    });
+    alert('Dossier enriched ✓');
+  };
+
   const addReflection = async (programId: string) => {
     if (!reflectionContent.trim()) return;
     await authFetch(`/api/summer-programs/user/${encodeURIComponent(userId)}/followthru/${programId}/reflection`, {
@@ -750,6 +1036,7 @@ function FollowThruTab({ userId, targetSchools }: { userId: string; targetSchool
 
       {sessions.map(session => {
         const phaseColor = PHASE_COLORS[session.phase] || '#6b7280';
+        const application = getApplication(session.programId);
         return (
           <div key={session.programId} className="sp-ft-session">
             <div className="sp-ft-header">
@@ -805,6 +1092,16 @@ function FollowThruTab({ userId, targetSchools }: { userId: string; targetSchool
                   {session.goals.map((g, i) => <li key={i}>{g}</li>)}
                 </ul>
               </div>
+            )}
+
+            {/* Enrollment Decision Form - for accepted programs */}
+            {application && application.status === 'accepted' && (
+              <EnrollmentDecisionForm
+                userId={userId}
+                programId={session.programId}
+                application={application}
+                onSaved={load}
+              />
             )}
 
             {/* Reflections */}
@@ -921,6 +1218,13 @@ function FollowThruTab({ userId, targetSchools }: { userId: string; targetSchool
               </div>
             )}
 
+            {/* Narrative Suggestion Section */}
+            <NarrativeSuggestionSection
+              userId={userId}
+              programId={session.programId}
+              onEnrichDossier={enrichDossierNarrative}
+            />
+
             {/* Linked target school */}
             <div className="sp-ft-section">
               <p className="sp-ft-label">🎯 Linked Target School <span className="sp-ft-hint-inline">(connect this program to a school in your college list)</span></p>
@@ -1033,7 +1337,7 @@ function AcceptedProgramsWithoutFollowThru({
                 <p className="sp-ft-label">What do you want to get out of this program? (one goal per line)</p>
                 <textarea
                   className="sp-textarea"
-                  placeholder="e.g. Build deep friendships with math enthusiasts&#10;Learn number theory fundamentals&#10;Strengthen college narrative around intellectual curiosity"
+                  placeholder={`e.g. Build deep friendships with math enthusiasts\nLearn number theory fundamentals\nStrengthen college narrative around intellectual curiosity`}
                   value={goals}
                   onChange={e => setGoals(e.target.value)}
                   rows={4}

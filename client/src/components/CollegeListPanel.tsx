@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import type { ChangeEvent } from 'react';
-import type { AdmissionStrategy, ChatMessage, SchoolStatus, StudentProfile, TargetSchool } from '../types';
+import type { AdmissionStrategy, ApplicationPortal, DeadlineType, TestPolicy, PriorityLevel, OwnerType, ChatMessage, SchoolStatus, StudentProfile, TargetSchool } from '../types';
 import CollegeListExport from './CollegeListExport';
 
 const SCHOOL_NAMES = [
@@ -20,11 +20,11 @@ const SCHOOL_NAMES = [
 
 /* ─── School stats for semi-auto status ─── */
 interface SchoolStat {
-  admit: number;        // admit rate 0–100
-  sat25: number;        // 25th percentile SAT (1600 scale)
-  sat75: number;        // 75th percentile SAT
-  act25: number;       // 25th percentile ACT
-  act75: number;       // 75th percentile ACT
+  admit: number;
+  sat25: number;
+  sat75: number;
+  act25: number;
+  act75: number;
 }
 
 const SCHOOL_STATS: Record<string, SchoolStat> = {
@@ -60,10 +60,18 @@ const SCHOOL_STATS: Record<string, SchoolStat> = {
   'NYU':              { admit: 12, sat25: 1370, sat75: 1520, act25: 31, act75: 34 },
 };
 
-const STATUSES: SchoolStatus[] = ['Reach', 'Match', 'Safety'];
 const STRATEGIES: AdmissionStrategy[] = ['ED', 'EA', 'REA', 'RD', ''];
 
-/** Suggest Reach/Match/Safety based on student scores vs school stats */
+/* ─── Group labels ─── */
+const GROUP_META: Record<string, { label: string; color: string; bg: string }> = {
+  Reach:     { label: 'Reach',     color: '#ef4444', bg: 'rgba(239,68,68,0.08)' },
+  Match:     { label: 'Match',     color: '#f59e0b', bg: 'rgba(245,158,11,0.08)' },
+  Safety:    { label: 'Safety',    color: '#22c55e', bg: 'rgba(34,197,94,0.08)' },
+  Unassigned:{ label: 'Unassigned',color: '#6b7280', bg: 'rgba(107,114,128,0.06)' },
+};
+
+/* ─── Helpers ─── */
+
 function suggestStatus(schoolName: string, profile?: StudentProfile): '' | SchoolStatus {
   if (!profile) return '';
   const stats = SCHOOL_STATS[schoolName];
@@ -72,18 +80,12 @@ function suggestStatus(schoolName: string, profile?: StudentProfile): '' | Schoo
   const studentStr = profile.sat_score?.trim();
   const studentAct = profile.act_score?.trim();
 
-  // Need at least one test score to suggest
   let studentNum: number | null = null;
-  if (studentStr) {
-    studentNum = parseInt(studentStr, 10);
-  }
+  if (studentStr) studentNum = parseInt(studentStr, 10);
   let studentActNum: number | null = null;
-  if (studentAct) {
-    studentActNum = parseInt(studentAct, 10);
-  }
+  if (studentAct) studentActNum = parseInt(studentAct, 10);
   if (studentNum == null && studentActNum == null) return '';
 
-  // Use SAT if available, else ACT
   let below25 = false;
   let belowMid = false;
   let above75 = false;
@@ -99,35 +101,105 @@ function suggestStatus(schoolName: string, profile?: StudentProfile): '' | Schoo
     else if (studentActNum < (stats.act25 + stats.act75) / 2) belowMid = true;
   }
 
-  // Ultra-low admit rate overrides
   if (stats.admit <= 6 && !above75) return 'Reach';
-
   if (below25) return 'Reach';
-  if (above75) {
-    // Score above 75th percentile — could be Safety for mid-tier schools
-    return stats.admit <= 15 ? 'Match' : 'Safety';
-  }
+  if (above75) return stats.admit <= 15 ? 'Match' : 'Safety';
   if (belowMid) return 'Reach';
-  // Between midpoint and 75th
   return stats.admit <= 10 ? 'Reach' : 'Match';
 }
 
-function statusTag(schoolName: string, profile?: StudentProfile): '' | string {
-  const s = suggestStatus(schoolName, profile);
-  if (!s) return '';
-  if (s === 'Reach') return 'Reach — below school avg';
-  if (s === 'Match') return 'Match — near school avg';
-  return 'Safety — above school avg';
+type ReadinessLevel = 'ready' | 'needs-strategy' | 'needs-deadline' | 'incomplete' | 'needs-work';
+
+function getReadinessStatus(school: TargetSchool): ReadinessLevel {
+  const hasStatus = school.status !== '';
+  const hasStrategy = school.strategy !== '';
+  const hasDeadline = !!school.applicationDeadline;
+  const hasMajor = !!school.intendedMajor;
+
+  if (!hasStrategy && !hasDeadline) return 'incomplete';
+  if (!hasStrategy) return 'needs-strategy';
+  if (!hasDeadline) return 'needs-deadline';
+
+  if (!(hasStatus && hasMajor)) return 'incomplete';
+
+  const missingOptional = !school.supplementalEssayCount
+    || !school.recommendedSuggesters?.length
+    || !school.nextAction;
+
+  if (missingOptional) return 'needs-work';
+  return 'ready';
 }
 
-interface CollegeListPanelProps {
-  targetSchools: TargetSchool[];
-  onUpdate: (schools: TargetSchool[]) => void;
-  messages: ChatMessage[];
-  isLocked: boolean;
-  onToggleLock: () => void;
-  profile?: StudentProfile;
+const READINESS_CONFIG: Record<ReadinessLevel, { label: string; icon: string; color: string }> = {
+  'ready':          { label: 'Ready',        icon: '✅', color: '#22c55e' },
+  'needs-strategy': { label: 'Need strategy',icon: '⚠️', color: '#f59e0b' },
+  'needs-deadline': { label: 'Need deadline',icon: '⚠️', color: '#f59e0b' },
+  'incomplete':     { label: 'Incomplete',   icon: '⚠️', color: '#ef4444' },
+  'needs-work':     { label: 'Needs work',   icon: '🔄', color: '#f59e0b' },
+};
+
+interface GroupedSchools {
+  group: string;
+  schools: TargetSchool[];
 }
+
+function sortByDeadline(schools: TargetSchool[]): TargetSchool[] {
+  return [...schools].sort((a, b) => {
+    if (a.applicationDeadline && b.applicationDeadline) {
+      return a.applicationDeadline.localeCompare(b.applicationDeadline);
+    }
+    if (a.applicationDeadline) return -1;
+    if (b.applicationDeadline) return 1;
+    return 0;
+  });
+}
+
+function groupSchoolsByStatus(schools: TargetSchool[]): GroupedSchools[] {
+  const groups: Record<string, TargetSchool[]> = { Reach: [], Match: [], Safety: [], Unassigned: [] };
+  for (const s of schools) {
+    const key = s.status && GROUP_META[s.status] ? s.status : 'Unassigned';
+    groups[key].push(s);
+  }
+  return [
+    { group: 'Reach', schools: sortByDeadline(groups.Reach) },
+    { group: 'Match', schools: sortByDeadline(groups.Match) },
+    { group: 'Safety', schools: sortByDeadline(groups.Safety) },
+    { group: 'Unassigned', schools: sortByDeadline(groups.Unassigned) },
+  ].filter(g => g.schools.length > 0);
+}
+
+function getWarnings(schools: TargetSchool[], groups: GroupedSchools[]): string[] {
+  const warnings: string[] = [];
+  const total = schools.length;
+  if (total === 0) return warnings;
+
+  const reachCount = groups.find(g => g.group === 'Reach')?.schools.length ?? 0;
+  const matchCount = groups.find(g => g.group === 'Match')?.schools.length ?? 0;
+  const safetyCount = groups.find(g => g.group === 'Safety')?.schools.length ?? 0;
+
+  if (reachCount > 0 && reachCount / total > 0.5) {
+    warnings.push(`⚠️ Your list leans heavy on reaches — try to keep reaches under half your total.`);
+  }
+  if (matchCount + safetyCount < 2) {
+    warnings.push(`⚠️ Consider adding 2-3 Match/Safety schools to build a balanced list.`);
+  }
+  const noStrategy = schools.filter(s => !s.strategy).length;
+  if (noStrategy > 0) {
+    warnings.push(`⚠️ ${noStrategy} school${noStrategy > 1 ? 's' : ''} missing an application strategy. Pick ED/EA/RD for each.`);
+  }
+  const noDeadline = schools.filter(s => !s.applicationDeadline).length;
+  if (noDeadline > 0) {
+    warnings.push(`⚠️ ${noDeadline} school${noDeadline > 1 ? 's' : ''} have no deadline set.`);
+  }
+  const cssSchools = schools.filter(s => s.cssProfileRequired).map(s => s.name);
+  if (cssSchools.length > 0) {
+    const names = cssSchools.length <= 3 ? cssSchools.join(', ') : `${cssSchools.length} schools`;
+    warnings.push(`⚠️ ${names} require${cssSchools.length === 1 ? 's' : ''} CSS Profile — check FA deadlines.`);
+  }
+  return warnings;
+}
+
+/* ─── Create school ─── */
 
 const createSchool = (name: string, sourceSessions: string[] = [], profile?: StudentProfile): TargetSchool => ({
   id: typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
@@ -152,26 +224,59 @@ const statusColor = (status: SchoolStatus): string => {
   return 'var(--text-dim)';
 };
 
+/* ─── Detail field renderers ─── */
+
+function DetailField({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div style={{ marginBottom: 8 }}>
+      <label style={{ fontSize: 11, color: 'var(--text-dim)', display: 'block', marginBottom: 2, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+        {label}
+      </label>
+      <div style={{ fontSize: 13, color: 'var(--text)' }}>{children}</div>
+    </div>
+  );
+}
+
+/* ─── Props ─── */
+
+interface CollegeListPanelProps {
+  targetSchools: TargetSchool[];
+  onUpdate: (schools: TargetSchool[]) => void;
+  messages: ChatMessage[];
+  isLocked: boolean;
+  onToggleLock: () => void;
+  lockedAt: number;
+  profile?: StudentProfile;
+  displayName?: string;
+}
+
+/* ─── Main Component ─── */
+
 export default function CollegeListPanel({
   targetSchools,
   onUpdate,
   messages,
   isLocked,
+  lockedAt,
   onToggleLock,
   profile,
+  displayName,
 }: CollegeListPanelProps) {
   const [manualQuery, setManualQuery] = useState('');
   const [manualMatches, setManualMatches] = useState<string[]>([]);
   const [foundSchools, setFoundSchools] = useState<string[]>([]);
   const [selectedFound, setSelectedFound] = useState<Set<string>>(new Set());
   const [showFoundModal, setShowFoundModal] = useState(false);
-  const [expandedNotes, setExpandedNotes] = useState<Set<string>>(new Set());
+  const [expandedDetails, setExpandedDetails] = useState<Set<string>>(new Set());
   const [showExport, setShowExport] = useState(false);
 
   const existingNames = useMemo(
     () => new Set(targetSchools.map((school) => school.name.toLowerCase())),
     [targetSchools],
   );
+
+  const grouped = useMemo(() => groupSchoolsByStatus(targetSchools), [targetSchools]);
+  const warnings = useMemo(() => getWarnings(targetSchools, grouped), [targetSchools, grouped]);
 
   const addSchools = (names: string[], sourceSessions: string[] = []) => {
     const uniqueNames = names.filter((name) => !existingNames.has(name.toLowerCase()));
@@ -219,23 +324,47 @@ export default function CollegeListPanel({
     });
   };
 
+  const toggleDetails = (id: string) => {
+    setExpandedDetails((current) => {
+      const next = new Set(current);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
   const sourceSessions = Array.from(new Set(messages.map((message) => message.id)));
+
+  const total = targetSchools.length;
+  const readyCount = targetSchools.filter(s => getReadinessStatus(s) === 'ready').length;
+
+  /* ─── Lock timestamp formatting ─── */
+  const lockTs = useMemo(() => {
+    // lockedAt > 0 means we have a real server-persisted timestamp
+    if (isLocked && lockedAt > 0) {
+      return new Date(lockedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+    return '';
+  }, [isLocked, lockedAt]);
 
   return (
     <div className="profile-card" style={{ marginTop: 12 }}>
+      {/* ─── Header toolbar ─── */}
       <div style={{ padding: '14px 14px 10px', borderBottom: '1px solid var(--border)' }}>
         <p className="profile-kicker">My College List</p>
-        <h3 style={{ margin: '2px 0 10px', color: 'var(--text)' }}>Target schools</h3>
+        <h3 style={{ margin: '2px 0 10px', color: 'var(--text)' }}>
+          Target schools {total > 0 && <span style={{ fontWeight: 400, fontSize: 13, color: 'var(--text-dim)' }}>— {total} total</span>}
+        </h3>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           <button type="button" className="secondary-btn" onClick={handleScan} disabled={isLocked}>Scan chat</button>
           <button
             type="button"
             onClick={onToggleLock}
-            style={{ background: 'var(--accent)', color: '#111827', border: 'none', borderRadius: 8, padding: '8px 10px', fontWeight: 700, cursor: 'pointer' }}
+            style={{ background: isLocked ? 'rgba(245,158,11,0.15)' : 'var(--accent)', color: isLocked ? '#f59e0b' : '#111827', border: isLocked ? '1px solid rgba(245,158,11,0.3)' : 'none', borderRadius: 8, padding: '8px 10px', fontWeight: 700, cursor: 'pointer' }}
           >
-            {isLocked ? 'Unlock' : 'Lock'}
+            {isLocked ? '🔒 Unlock' : 'Lock list'}
           </button>
-          {targetSchools.length > 0 && (
+          {total > 0 && (
             <button
               type="button"
               className="secondary-btn"
@@ -247,13 +376,22 @@ export default function CollegeListPanel({
           )}
         </div>
         {isLocked && (
-          <div style={{ marginTop: 8, fontSize: 12, color: 'var(--text)', background: 'rgba(245,158,11,0.08)', border: '1px solid var(--accent)', borderRadius: 8, padding: 8 }}>
-            🔒 Locked — shared with FA
+          <div style={{ marginTop: 8, fontSize: 12, color: 'var(--text)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span style={{ background: 'rgba(245,158,11,0.08)', border: '1px solid var(--accent)', borderRadius: 8, padding: '6px 10px', display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+              🔒 Locked — ready for FA review
+              {lockTs && <span style={{ color: 'var(--text-dim)', marginLeft: 4 }}>· {lockTs}</span>}
+            </span>
+          </div>
+        )}
+        {total > 0 && (
+          <div style={{ marginTop: 6, fontSize: 12, color: 'var(--text-dim)' }}>
+            {readyCount}/{total} schools complete
           </div>
         )}
       </div>
 
       <div className="profile-form" style={{ paddingTop: 12 }}>
+        {/* ─── Add manually ─── */}
         <div className="profile-field">
           <label htmlFor="college-list-manual">Add manually</label>
           <div style={{ display: 'flex', gap: 6 }}>
@@ -277,78 +415,427 @@ export default function CollegeListPanel({
           )}
         </div>
 
+        {/* ─── Empty state ─── */}
         {targetSchools.length === 0 ? (
           <div style={{ color: 'var(--text-dim)', fontSize: 13, padding: '10px 0' }}>
             No schools yet. Click Scan or Add to build your list.
           </div>
         ) : (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            {targetSchools.map((school) => (
-              <div key={school.id} style={{ background: 'var(--bg-soft)', border: '1px solid var(--border)', borderRadius: 10, padding: 10 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'center' }}>
-                  <strong style={{ color: 'var(--text)' }}>{school.name}</strong>
-                  <button type="button" onClick={() => removeSchool(school.id)} disabled={isLocked} aria-label={`Remove ${school.name}`} style={{ border: 'none', background: 'transparent', color: 'var(--text-dim)', fontSize: 20, cursor: isLocked ? 'not-allowed' : 'pointer' }}>×</button>
-                </div>
-                <input type="text" value={school.intendedMajor} onChange={(e) => updateSchool(school.id, 'intendedMajor', e.target.value)} placeholder="Intended major" disabled={isLocked} style={{ marginTop: 6 }} />
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginTop: 6 }}>
-                  <div>
-                    <select value={school.status} onChange={(e) => updateSchool(school.id, 'status', e.target.value as SchoolStatus)} disabled={isLocked} style={{ color: statusColor(school.status), fontWeight: 700, width: '100%' }}>
-                      <option value="">Status</option>
-                      {STATUSES.map((status) => <option key={status} value={status}>{status}</option>)}
-                    </select>
-                    {school.status && (
-                      <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 2, lineHeight: 1.3 }}>
-                        {statusTag(school.name, profile)}
-                      </div>
-                    )}
+          <div>
+            {/* ─── Balance warnings ─── */}
+            {warnings.length > 0 && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginBottom: 12 }}>
+                {warnings.map((w, i) => (
+                  <div key={i} style={{
+                    fontSize: 12, lineHeight: 1.4, color: '#92400e',
+                    background: '#fffbeb', border: '1px solid #fde68a',
+                    borderRadius: 8, padding: '6px 10px',
+                  }}>
+                    {w}
                   </div>
-                  <select value={school.strategy} onChange={(e) => updateSchool(school.id, 'strategy', e.target.value as AdmissionStrategy)} disabled={isLocked} style={{ width: '100%' }}>
-                    {STRATEGIES.map((strategy) => <option key={strategy || 'none'} value={strategy}>{strategy || '—'}</option>)}
-                  </select>
-                </div>
-                <button type="button" className="secondary-btn" onClick={() => setExpandedNotes((current) => { const next = new Set(current); if (next.has(school.id)) next.delete(school.id); else next.add(school.id); return next; })} style={{ marginTop: 6, fontSize: 12 }}>
-                  {expandedNotes.has(school.id) ? 'Hide details ▲' : 'More details ▼'}
-                </button>
-                {expandedNotes.has(school.id) && (
-                  <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                    <input
-                      type="text"
-                      value={school.notes}
-                      onChange={(e) => updateSchool(school.id, 'notes', e.target.value)}
-                      placeholder="Notes"
-                      disabled={isLocked}
-                    />
-                    <div>
-                      <label style={{ fontSize: 12, color: 'var(--text-dim)', display: 'block', marginBottom: 4 }}>
-                        Application Narrative
-                        <span style={{ fontWeight: 400, marginLeft: 4 }}>— how will you tell this school's story in your essays?</span>
-                      </label>
-                      <textarea
-                        value={school.appNarrative ?? ''}
-                        onChange={(e) => updateSchool(school.id, 'appNarrative', e.target.value)}
-                        placeholder="How will you tell this school's story in your essays?"
-                        disabled={isLocked}
-                        rows={3}
-                        style={{ width: '100%', resize: 'vertical', boxSizing: 'border-box' }}
-                      />
-                    </div>
-                    <div>
-                      <label style={{ fontSize: 12, color: 'var(--text-dim)', display: 'block', marginBottom: 4 }}>
-                        Recommendation Letter Suggesters
-                        <span style={{ fontWeight: 400, marginLeft: 4 }}>— who could write strong letters for this school?</span>
-                      </label>
-                      <input
-                        type="text"
-                        value={(school.recommendedSuggesters ?? []).join(', ')}
-                        onChange={(e) => updateSchool(school.id, 'recommendedSuggesters', e.target.value.split(',').map(s => s.trim()).filter(Boolean))}
-                        placeholder="e.g. Math teacher, Research mentor"
-                        disabled={isLocked}
-                      />
-                    </div>
-                  </div>
-                )}
+                ))}
               </div>
-            ))}
+            )}
+
+            {/* ─── Grouped sections ─── */}
+            {grouped.map(({ group, schools: groupSchools }) => {
+              const meta = GROUP_META[group] || GROUP_META.Unassigned;
+              return (
+                <div key={group} style={{ marginBottom: 16 }}>
+                  {/* Group header */}
+                  <div style={{
+                    display: 'flex', alignItems: 'center', gap: 8,
+                    padding: '6px 10px', marginBottom: 8,
+                    background: meta.bg, borderRadius: 8,
+                  }}>
+                    <span style={{ fontWeight: 700, fontSize: 14, color: meta.color }}>
+                      {meta.label}
+                    </span>
+                    <span style={{
+                      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                      background: meta.color, color: '#fff', borderRadius: 10,
+                      minWidth: 20, height: 20, fontSize: 11, fontWeight: 700, padding: '0 6px',
+                    }}>
+                      {groupSchools.length}
+                    </span>
+                  </div>
+
+                  {/* School cards */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                    {groupSchools.map((school) => {
+                      const readiness = getReadinessStatus(school);
+                      const rc = READINESS_CONFIG[readiness];
+                      const isExpanded = expandedDetails.has(school.id);
+                      const editable = !isLocked;
+                      return (
+                        <div key={school.id} style={{
+                          background: 'var(--bg-soft)', border: '1px solid var(--border)',
+                          borderRadius: 10, padding: 10,
+                        }}>
+                          {/* ── Row 1: Name + status + readiness + remove ── */}
+                          <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'flex-start', marginBottom: 4 }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap', flex: 1, minWidth: 0 }}>
+                              <strong style={{ color: 'var(--text)', fontSize: 14 }}>{school.name}</strong>
+                              {school.status && (
+                                <span style={{
+                                  display: 'inline-block', fontSize: 10, fontWeight: 700,
+                                  color: statusColor(school.status), background: `${statusColor(school.status)}18`,
+                                  padding: '2px 6px', borderRadius: 4, lineHeight: 1.4,
+                                }}>
+                                  {school.status}
+                                </span>
+                              )}
+                              <span style={{
+                                display: 'inline-flex', alignItems: 'center', gap: 3,
+                                fontSize: 11, fontWeight: 600, color: rc.color, lineHeight: 1.4,
+                              }}>
+                                {rc.icon} {rc.label}
+                              </span>
+                            </div>
+                            <button type="button" onClick={() => removeSchool(school.id)} disabled={isLocked}
+                              aria-label={`Remove ${school.name}`}
+                              style={{ border: 'none', background: 'transparent', color: 'var(--text-dim)', fontSize: 20, cursor: isLocked ? 'not-allowed' : 'pointer', lineHeight: 1, padding: 0 }}
+                            >×</button>
+                          </div>
+
+                          {/* ── Row 2: Major, Strategy, Deadline ── */}
+                          <div style={{ display: 'flex', gap: 6, marginTop: 6, flexWrap: 'wrap' }}>
+                            {editable ? (
+                              <input type="text" value={school.intendedMajor}
+                                onChange={(e) => updateSchool(school.id, 'intendedMajor', e.target.value)}
+                                placeholder="Major" disabled={isLocked}
+                                style={{ flex: 1, minWidth: 120, fontSize: 12 }}
+                              />
+                            ) : school.intendedMajor ? (
+                              <span style={{ fontSize: 12, color: 'var(--text-dim)', flex: 1, minWidth: 120 }}>
+                                Major: {school.intendedMajor}
+                              </span>
+                            ) : null}
+
+                            {editable ? (
+                              <select value={school.strategy}
+                                onChange={(e) => updateSchool(school.id, 'strategy', e.target.value as AdmissionStrategy)}
+                                disabled={isLocked} style={{ width: 80, fontSize: 12 }}
+                              >
+                                {STRATEGIES.map((strategy) => (
+                                  <option key={strategy || 'none'} value={strategy}>{strategy || '—'}</option>
+                                ))}
+                              </select>
+                            ) : school.strategy ? (
+                              <span style={{ fontSize: 12, color: 'var(--text-dim)' }}>{school.strategy}</span>
+                            ) : null}
+
+                            {editable ? (
+                              <input type="text" value={school.applicationDeadline ?? ''}
+                                onChange={(e) => updateSchool(school.id, 'applicationDeadline', e.target.value)}
+                                placeholder="Deadline" disabled={isLocked}
+                                style={{ width: 100, fontSize: 12 }}
+                              />
+                            ) : school.applicationDeadline ? (
+                              <span style={{ fontSize: 12, color: 'var(--text-dim)' }}>
+                                Deadline: {school.applicationDeadline}
+                              </span>
+                            ) : null}
+                          </div>
+
+                          {/* ── Row 3: More details toggle ── */}
+                          <button type="button" className="secondary-btn"
+                            onClick={() => toggleDetails(school.id)}
+                            style={{ marginTop: 8, fontSize: 12 }}
+                          >
+                            {isExpanded ? 'Hide details ▲' : 'More details ▼'}
+                          </button>
+
+                          {/* ── Details drawer ── */}
+                          {isExpanded && (
+                            <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 8, borderTop: '1px solid var(--border)', paddingTop: 10 }}>
+                              {/* Notes */}
+                              <div>
+                                <label style={{ fontSize: 11, color: 'var(--text-dim)', display: 'block', marginBottom: 2, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Notes</label>
+                                {editable ? (
+                                  <input type="text" value={school.notes} onChange={(e) => updateSchool(school.id, 'notes', e.target.value)} placeholder="General notes" disabled={isLocked} style={{ width: '100%', fontSize: 12 }} />
+                                ) : (
+                                  <div style={{ fontSize: 12, color: 'var(--text)' }}>{school.notes || '—'}</div>
+                                )}
+                              </div>
+
+                              {/* Application Narrative */}
+                              <div>
+                                <label style={{ fontSize: 11, color: 'var(--text-dim)', display: 'block', marginBottom: 2, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                                  Application Narrative <span style={{ fontWeight: 400, textTransform: 'none' }}>— how will you tell this school's story?</span>
+                                </label>
+                                {editable ? (
+                                  <textarea value={school.appNarrative ?? ''}
+                                    onChange={(e) => updateSchool(school.id, 'appNarrative', e.target.value)}
+                                    placeholder="How will you tell this school's story in your essays?"
+                                    disabled={isLocked} rows={3}
+                                    style={{ width: '100%', resize: 'vertical', boxSizing: 'border-box', fontSize: 12 }}
+                                  />
+                                ) : (
+                                  <div style={{ fontSize: 12, color: 'var(--text)' }}>{school.appNarrative || '—'}</div>
+                                )}
+                              </div>
+
+                              {/* Recommenders */}
+                              <div>
+                                <label style={{ fontSize: 11, color: 'var(--text-dim)', display: 'block', marginBottom: 2, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                                  Recommend Letter Suggesters <span style={{ fontWeight: 400, textTransform: 'none' }}>— who could write strong letters?</span>
+                                </label>
+                                {editable ? (
+                                  <input type="text" value={(school.recommendedSuggesters ?? []).join(', ')}
+                                    onChange={(e) => updateSchool(school.id, 'recommendedSuggesters', e.target.value.split(',').map(s => s.trim()).filter(Boolean))}
+                                    placeholder="e.g. Math teacher, Research mentor" disabled={isLocked}
+                                    style={{ width: '100%', fontSize: 12 }}
+                                  />
+                                ) : (
+                                  <div style={{ fontSize: 12, color: 'var(--text)' }}>{(school.recommendedSuggesters ?? []).join(', ') || '—'}</div>
+                                )}
+                              </div>
+
+                              {/* ── Application details ── */}
+                              <div style={{ borderTop: '1px solid var(--border)', paddingTop: 8 }}>
+                                <label style={{ fontSize: 11, color: 'var(--text-dim)', display: 'block', marginBottom: 6, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Application Details</label>
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                                  <div>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>Portal</label>
+                                    {editable ? (
+                                      <select value={school.applicationPortal ?? ''}
+                                        onChange={(e) => updateSchool(school.id, 'applicationPortal', e.target.value as ApplicationPortal)}
+                                        disabled={isLocked} style={{ width: '100%', fontSize: 12 }}
+                                      >
+                                        <option value="">—</option>
+                                        <option value="Common App">Common App</option>
+                                        <option value="Coalition">Coalition</option>
+                                        <option value="UC">UC</option>
+                                        <option value="School Portal">School Portal</option>
+                                        <option value="Other">Other</option>
+                                      </select>
+                                    ) : (
+                                      <div style={{ fontSize: 12, color: 'var(--text)' }}>{school.applicationPortal || '—'}</div>
+                                    )}
+                                  </div>
+                                  <div>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>Deadline Type</label>
+                                    {editable ? (
+                                      <select value={school.deadlineType ?? ''}
+                                        onChange={(e) => updateSchool(school.id, 'deadlineType', e.target.value as DeadlineType)}
+                                        disabled={isLocked} style={{ width: '100%', fontSize: 12 }}
+                                      >
+                                        <option value="">—</option>
+                                        <option value="ED">ED</option>
+                                        <option value="EA">EA</option>
+                                        <option value="REA">REA</option>
+                                        <option value="RD">RD</option>
+                                        <option value="Rolling">Rolling</option>
+                                        <option value="Priority">Priority</option>
+                                      </select>
+                                    ) : (
+                                      <div style={{ fontSize: 12, color: 'var(--text)' }}>{school.deadlineType || '—'}</div>
+                                    )}
+                                  </div>
+                                  <div>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>Test Policy</label>
+                                    {editable ? (
+                                      <select value={school.testPolicy ?? ''}
+                                        onChange={(e) => updateSchool(school.id, 'testPolicy', e.target.value as TestPolicy)}
+                                        disabled={isLocked} style={{ width: '100%', fontSize: 12 }}
+                                      >
+                                        <option value="">—</option>
+                                        <option value="Required">Required</option>
+                                        <option value="Optional">Optional</option>
+                                        <option value="Blind">Blind</option>
+                                        <option value="Flexible">Flexible</option>
+                                        <option value="Unknown">Unknown</option>
+                                      </select>
+                                    ) : (
+                                      <div style={{ fontSize: 12, color: 'var(--text)' }}>{school.testPolicy || '—'}</div>
+                                    )}
+                                  </div>
+                                  <div>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>Portfolio</label>
+                                    {editable ? (
+                                      <select value={school.portfolioRequired ? 'yes' : school.portfolioRequired === false ? 'no' : ''}
+                                        onChange={(e) => updateSchool(school.id, 'portfolioRequired', e.target.value === 'yes' ? true : e.target.value === 'no' ? false : undefined)}
+                                        disabled={isLocked} style={{ width: '100%', fontSize: 12 }}
+                                      >
+                                        <option value="">—</option>
+                                        <option value="yes">Required</option>
+                                        <option value="no">Not required</option>
+                                      </select>
+                                    ) : (
+                                      <div style={{ fontSize: 12, color: 'var(--text)' }}>{school.portfolioRequired === true ? 'Required' : school.portfolioRequired === false ? 'Not required' : '—'}</div>
+                                    )}
+                                  </div>
+                                  <div style={{ gridColumn: '1 / -1' }}>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>Supplemental Essays</label>
+                                    {editable ? (
+                                      <div style={{ display: 'flex', gap: 6 }}>
+                                        <input type="text" value={school.supplementalEssayCount ?? ''}
+                                          onChange={(e) => updateSchool(school.id, 'supplementalEssayCount', e.target.value)}
+                                          placeholder="Count" disabled={isLocked}
+                                          style={{ width: 60, fontSize: 12 }}
+                                        />
+                                        <input type="text" value={school.supplementalEssayNotes ?? ''}
+                                          onChange={(e) => updateSchool(school.id, 'supplementalEssayNotes', e.target.value)}
+                                          placeholder="Notes / prompts" disabled={isLocked}
+                                          style={{ flex: 1, fontSize: 12 }}
+                                        />
+                                      </div>
+                                    ) : (
+                                      <div style={{ fontSize: 12, color: 'var(--text)' }}>
+                                        {school.supplementalEssayCount ? `${school.supplementalEssayCount} essay${school.supplementalEssayCount !== '1' ? 's' : ''}` : ''}
+                                        {school.supplementalEssayCount && school.supplementalEssayNotes ? ' — ' : ''}
+                                        {school.supplementalEssayNotes || '—'}
+                                      </div>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* ── Priority & Ownership ── */}
+                              <div style={{ borderTop: '1px solid var(--border)', paddingTop: 8 }}>
+                                <label style={{ fontSize: 11, color: 'var(--text-dim)', display: 'block', marginBottom: 6, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Priority & Ownership</label>
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                                  <div>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>Priority</label>
+                                    {editable ? (
+                                      <select value={school.priority ?? ''}
+                                        onChange={(e) => updateSchool(school.id, 'priority', e.target.value as PriorityLevel)}
+                                        disabled={isLocked} style={{ width: '100%', fontSize: 12 }}
+                                      >
+                                        <option value="">—</option>
+                                        <option value="High">High</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Low">Low</option>
+                                      </select>
+                                    ) : (
+                                      <div style={{ fontSize: 12, color: 'var(--text)' }}>{school.priority || '—'}</div>
+                                    )}
+                                  </div>
+                                  <div>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>Owner</label>
+                                    {editable ? (
+                                      <select value={school.owner ?? ''}
+                                        onChange={(e) => updateSchool(school.id, 'owner', e.target.value as OwnerType)}
+                                        disabled={isLocked} style={{ width: '100%', fontSize: 12 }}
+                                      >
+                                        <option value="">—</option>
+                                        <option value="Student">Student</option>
+                                        <option value="Parent">Parent</option>
+                                        <option value="Counselor">Counselor</option>
+                                        <option value="Recommender">Recommender</option>
+                                      </select>
+                                    ) : (
+                                      <div style={{ fontSize: 12, color: 'var(--text)' }}>{school.owner || '—'}</div>
+                                    )}
+                                  </div>
+                                </div>
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginTop: 8 }}>
+                                  <div>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>Next Action</label>
+                                    {editable ? (
+                                      <input type="text" value={school.nextAction ?? ''}
+                                        onChange={(e) => updateSchool(school.id, 'nextAction', e.target.value)}
+                                        placeholder="e.g. Request transcript" disabled={isLocked}
+                                        style={{ width: '100%', fontSize: 12 }}
+                                      />
+                                    ) : (
+                                      <div style={{ fontSize: 12, color: 'var(--text)' }}>{school.nextAction || '—'}</div>
+                                    )}
+                                  </div>
+                                  <div>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>Due Date</label>
+                                    {editable ? (
+                                      <input type="text" value={school.nextActionDueDate ?? ''}
+                                        onChange={(e) => updateSchool(school.id, 'nextActionDueDate', e.target.value)}
+                                        placeholder="e.g. Oct 15" disabled={isLocked}
+                                        style={{ width: '100%', fontSize: 12 }}
+                                      />
+                                    ) : (
+                                      <div style={{ fontSize: 12, color: 'var(--text)' }}>{school.nextActionDueDate || '—'}</div>
+                                    )}
+                                  </div>
+                                </div>
+                                <div style={{ marginTop: 6 }}>
+                                  <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>Last Reviewed</label>
+                                  <div style={{ fontSize: 12, color: 'var(--text)' }}>
+                                    {school.lastReviewedAt ? new Date(school.lastReviewedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Never'}
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* ── Financial Aid Bridge ── */}
+                              <div style={{ borderTop: '1px solid var(--border)', paddingTop: 8, background: 'rgba(59,130,246,0.04)', borderRadius: 8, padding: '8px 10px' }}>
+                                <label style={{ fontSize: 11, color: '#2563eb', display: 'block', marginBottom: 6, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                                  💰 Financial Aid
+                                </label>
+                                {!school.estimatedNetPrice && school.cssProfileRequired === undefined && school.fafsaRequired === undefined && school.meetsFullNeed === undefined && school.noLoanPolicy === undefined && (
+                                  <div style={{ fontSize: 12, color: 'var(--text-dim)', fontStyle: 'italic', marginBottom: 8 }}>
+                                    FA data not yet synced. Lock your list to pull affordability info from the Financial Aid knowledge base.
+                                  </div>
+                                )}
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                                  <DetailField label="Est. Net Price">{school.estimatedNetPrice || '—'}</DetailField>
+                                  <DetailField label="Aid Strategy">{school.aidStrategy || '—'}</DetailField>
+                                  <div>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>CSS Profile</label>
+                                    <div style={{ fontSize: 12, color: 'var(--text)' }}>
+                                      {school.cssProfileRequired === true ? 'Required' : school.cssProfileRequired === false ? 'Not required' : '—'}
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>FAFSA</label>
+                                    <div style={{ fontSize: 12, color: 'var(--text)' }}>
+                                      {school.fafsaRequired === true ? 'Required' : school.fafsaRequired === false ? 'Not required' : '—'}
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>Meets Full Need</label>
+                                    <div style={{ fontSize: 12, color: 'var(--text)' }}>
+                                      {school.meetsFullNeed === true ? 'Yes' : school.meetsFullNeed === false ? 'No' : '—'}
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>No-Loan Policy</label>
+                                    <div style={{ fontSize: 12, color: 'var(--text)' }}>
+                                      {school.noLoanPolicy === true ? 'Yes' : school.noLoanPolicy === false ? 'No' : '—'}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div style={{ marginTop: 6 }}>
+                                  <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>FA Priority Deadline</label>
+                                  <div style={{ fontSize: 12, color: 'var(--text)' }}>{school.faPriorityDeadline || '—'}</div>
+                                </div>
+                                <div style={{ marginTop: 4 }}>
+                                  <label style={{ fontSize: 10, color: 'var(--text-dim)', display: 'block', marginBottom: 2, textTransform: 'uppercase' }}>FA Fit Notes</label>
+                                  {editable ? (
+                                    <textarea value={school.financialFitNotes ?? ''}
+                                      onChange={(e) => updateSchool(school.id, 'financialFitNotes', e.target.value)}
+                                      placeholder="Notes about affordability fit" disabled={isLocked}
+                                      rows={2} style={{ width: '100%', resize: 'vertical', boxSizing: 'border-box', fontSize: 12 }}
+                                    />
+                                  ) : (
+                                    <div style={{ fontSize: 12, color: 'var(--text)' }}>{school.financialFitNotes || '—'}</div>
+                                  )}
+                                </div>
+                              </div>
+
+                              {/* ── Update last reviewed ── */}
+                              {!isLocked && (
+                                <button type="button" className="secondary-btn" style={{ fontSize: 11 }}
+                                  onClick={() => updateSchool(school.id, 'lastReviewedAt', Date.now())}>
+                                  Mark reviewed now
+                                </button>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         )}
       </div>
@@ -357,6 +844,7 @@ export default function CollegeListPanel({
         <CollegeListExport
           schools={targetSchools}
           onClose={() => setShowExport(false)}
+          displayName={displayName}
         />
       )}
 
@@ -374,9 +862,7 @@ export default function CollegeListPanel({
                   onClick={() => addSchools([name], sourceSessions)}
                   aria-label={`Add ${name} to list`}
                   title="Add to list"
-                >
-                  +
-                </button>
+                >+</button>
               </div>
             ))}
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8, marginTop: 12 }}>

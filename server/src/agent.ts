@@ -367,6 +367,107 @@ export async function createSummerRecommendStream(
   };
 }
 
+const SUMMER_NARRATIVE_SYSTEM_PROMPT = `You are an expert college admissions advisor helping high school students craft compelling application narratives around summer program experiences.
+
+## Your job
+Given a student's summer program background, generate concrete talking points, essay angles, and interview highlights they can use in their college applications.
+
+## Response Format
+Respond with three clearly labeled sections:
+
+### 1. Application Talking Points
+3-5 specific things this student can mention in applications. Be concrete — name specific projects, research topics, skills, or outcomes from the program.
+
+### 2. Essay Angles
+2-3 distinct essay story angles this program enables. For each, briefly describe the narrative arc (opening hook → body → reflection) so the student has a clear starting point. Do NOT write the essay — just sketch the angle.
+
+### 3. Interview Highlights
+3-5 specific anecdotes or facts the student can bring up in college interviews. Each should be one or two sentences — concrete and memorable. Mention what the student actually did, not just what they learned.
+
+## Rules
+- Reference specific program details (project names, research topics, mentors, outcomes) when available
+- Ground talking points in what the student actually did, not generic program descriptions
+- Flag any admissions-signal implications (e.g., "elite research program," "selective summer immersion")
+- Prioritize narratives that connect summer program to intended major or academic interests
+- Use markdown formatting`;
+
+export async function createSummerNarrativeSuggestStream(
+  opts: {
+    programName: string;
+    programDiscipline?: string;
+    programOutcomes?: string[];
+    collegeRecap?: string[];
+    reflections?: string[];
+    applicationStatus?: string;
+    enrollmentDecision?: 'enrolled' | 'declined_enrollment' | 'pending';
+    programAdmissionsSignal?: 'strong-positive' | 'positive' | 'neutral' | 'mixed';
+    whatTheyLookFor?: string;
+    existingDossier?: string;
+    sessionHistory?: Array<{ role: string; content: string }>;
+  },
+  model?: string,
+): Promise<AgentStream> {
+  let aborted = false;
+
+  const effectiveModel = model || LLM_MODEL;
+
+  const userContent = [
+    `## Program: ${opts.programName}`,
+    opts.programDiscipline ? `Discipline: ${opts.programDiscipline}` : '',
+    opts.programAdmissionsSignal ? `Admissions Signal: ${opts.programAdmissionsSignal}` : '',
+    opts.whatTheyLookFor ? `What They Look For: ${opts.whatTheyLookFor}` : '',
+    '',
+    opts.applicationStatus ? `Application Status: ${opts.applicationStatus}` : '',
+    opts.enrollmentDecision ? `Enrollment Decision: ${opts.enrollmentDecision}` : '',
+    '',
+    opts.programOutcomes?.length ? `## Program Outcomes\n${opts.programOutcomes.join('\n')}` : '',
+    opts.collegeRecap?.length ? `## College Recap\n${opts.collegeRecap.join('\n')}` : '',
+    opts.reflections?.length ? `## Reflections\n${opts.reflections.join('\n')}` : '',
+    opts.existingDossier ? `## Student Dossier (existing)\n${opts.existingDossier}` : '',
+  ].filter(Boolean).join('\n');
+
+  const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
+    { role: 'system', content: SUMMER_NARRATIVE_SYSTEM_PROMPT },
+    { role: 'user', content: userContent },
+  ];
+
+  console.log(`[SummerNarrative] model=${effectiveModel} program=${opts.programName}`);
+
+  const client = getOpenAI();
+  const stream = await client.chat.completions.create({
+    model: effectiveModel,
+    messages,
+    stream: true,
+    temperature: 0.6,
+    max_tokens: 16384,
+    max_completion_tokens: 16384,
+    // @ts-ignore
+    reasoning_effort: 'low',
+  });
+
+  const iterator = stream[Symbol.asyncIterator]();
+
+  return {
+    [Symbol.asyncIterator]() {
+      return {
+        async next() {
+          if (aborted) return { value: undefined, done: true };
+          const result = await iterator.next();
+          if (result.done) return { value: undefined, done: true };
+          const choice = result.value.choices?.[0];
+          const delta = choice?.delta;
+          const text = delta?.content || '';
+          return { value: { text }, done: false };
+        },
+      };
+    },
+    async abort() {
+      aborted = true;
+      try { await stream.controller?.abort(); } catch (_) {}
+    },
+  };
+}
+
 export async function createEssayReviewStream(
   userContent: string,
   model?: string,

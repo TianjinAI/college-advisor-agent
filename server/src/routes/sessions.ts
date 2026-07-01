@@ -118,11 +118,23 @@ router.get('/api/user/college-list', authMiddleware, async (req, res) => {
   }
 });
 
+// Accept expanded p2-4 payload: { targetSchools, locked, lockedAt, updatedAt }
+// Backward compatible: old clients send only { targetSchools }
 router.put('/api/user/college-list', authMiddleware, async (req, res) => {
   const userId = req.auth!.userId;
-  const { targetSchools } = req.body as { targetSchools?: TargetSchool[] };
+  const { targetSchools, locked, lockedAt } = req.body as {
+    targetSchools?: TargetSchool[];
+    locked?: boolean;
+    lockedAt?: number;
+  };
   try {
-    await dossierManager.saveCollegeList(userId, { targetSchools: targetSchools ?? [], updatedAt: Date.now() });
+    await dossierManager.saveCollegeList(userId, {
+      targetSchools: targetSchools ?? [],
+      locked: locked ?? false,
+      // Treat lockedAt: 0 (sent on unlock) as intentional clear
+      lockedAt: lockedAt === 0 ? undefined : (locked ? (lockedAt ?? Date.now()) : undefined),
+      updatedAt: Date.now(),
+    });
     res.json({ ok: true });
   } catch (e: any) {
     res.status(500).json({ error: e.message });

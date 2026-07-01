@@ -6,6 +6,7 @@
 
 import { Router } from 'express';
 import faRetriever from '../knowledge/faRetriever.js';
+import type { SchoolFA } from '../knowledge/financialAidManager.js';
 import path from 'path';
 
 const router = Router();
@@ -29,13 +30,80 @@ router.get('/schools', async (_req, res) => {
   }
 });
 
-// GET /api/fa/schools/:slug — single school by slug
-router.get('/schools/:slug', async (req, res) => {
+// ─── Income band helper ────────────────────────────────────────────
+
+function getIncomeBand(income: number): string {
+  if (income <= 30000) return 'band_0_30k';
+  if (income <= 48000) return 'band_30_48k';
+  if (income <= 75000) return 'band_48_75k';
+  if (income <= 110000) return 'band_75_110k';
+  return 'band_110k_plus';
+}
+
+// ─── Name normalizer ───────────────────────────────────────────────
+// Normalize school names for fuzzy matching between college KB and FA KB
+// (handles comma-vs-hyphen differences, e.g. "University of California-Los Angeles" vs "University of California, Los Angeles")
+function normalizeName(name: string): string {
+  return name.toLowerCase().replace(/[.,/#!$%^&*;:{}=`~()]/g, '').replace(/[-]+/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+// Fuzzy school name match: exact → normalized exact → substring containment
+function findSchool(allSchools: SchoolFA[], query: string) {
+  // 1. Exact
+  let school = allSchools.find(s => s.name === query);
+  if (school) return school;
+  const normQ = normalizeName(query);
+  // 2. Normalized exact
+  school = allSchools.find(s => normalizeName(s.name) === normQ);
+  if (school) return school;
+  // 3. Substring: query is a prefix/suffix of FA name or vice versa
+  school = allSchools.find(s => {
+    const normS = normalizeName(s.name);
+    return normS.startsWith(normQ) || normQ.startsWith(normS) || normS.includes(normQ) || normQ.includes(normS);
+  });
+  return school ?? null;
+}
+
+// GET /api/fa/schools/export-data — export FA data for selected schools by display name
+// Query: ?schools=SchoolA,SchoolB&income=75000 (income is optional parent_agi for net price band matching)
+// IMPORTANT: must be BEFORE /schools/:slug so "export-data" doesn't match as slug
+router.get('/schools/export-data', async (req, res) => {
   try {
     await ensureFALoaded();
-    const school = faRetriever.getManager().getSchool(req.params.slug);
-    if (!school) return res.status(404).json({ error: 'School not found' });
-    res.json({ school });
+    const schoolNames = ((req.query.schools as string) || '').split(',').map(s => s.trim()).filter(Boolean);
+    const income = req.query.income ? parseInt(req.query.income as string, 10) : null;
+    const allSchools = faRetriever.getManager().getSchools();
+
+    const result: Record<string, any> = {};
+    for (const name of schoolNames) {
+      // Try fuzzy school name match (exact → normalized → substring)
+      const school = findSchool(allSchools, name);
+      if (!school) continue;
+
+      let netPrice: string;
+      const np = school.net_price_by_income;
+      if (np && income !== null && !isNaN(income)) {
+        const band = getIncomeBand(income) as keyof typeof np;
+        const val = np[band];
+        netPrice = val != null ? `~$${val.toLocaleString()}` : 'Contact school for estimate';
+      } else if (np) {
+        // Default to median band when no income provided
+        netPrice = `~$${np.band_48_75k?.toLocaleString() ?? 'Contact school for estimate'}`;
+      } else {
+        netPrice = 'Estimated net price available once FA profile complete.';
+      }
+
+      result[name] = {
+        estimatedNetPrice: netPrice,
+        cssProfileRequired: school.css_profile_required,
+        fafsaRequired: school.fafsa_required,
+        meetsFullNeed: school.meets_full_need,
+        noLoanPolicy: school.no_loan_policy,
+        faPriorityDeadline: school.fa_priority_deadline,
+      };
+    }
+
+    res.json({ schools: result });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }

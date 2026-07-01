@@ -40,9 +40,16 @@ export interface ResultPayload {
   result?: string;
 }
 
-// College list
+// ─── College List Types (p2-4) ─────────────────────────────────────────────
+
 export type AdmissionStrategy = 'ED' | 'EA' | 'REA' | 'RD' | '';
 export type SchoolStatus = 'Reach' | 'Match' | 'Safety' | '';
+export type DeadlineType = 'ED' | 'EA' | 'REA' | 'RD' | 'Rolling' | 'Priority' | '';
+export type ApplicationPortal = 'Common App' | 'Coalition' | 'UC' | 'School Portal' | 'Other' | '';
+export type TestPolicy = 'Required' | 'Optional' | 'Blind' | 'Flexible' | 'Unknown' | '';
+export type PriorityLevel = 'High' | 'Medium' | 'Low' | '';
+export type OwnerType = 'Student' | 'Parent' | 'Counselor' | 'Recommender' | '';
+export type AidStrategyType = 'need-based only' | 'merit only' | 'both' | 'none' | '';
 
 export interface TargetSchool {
   id: string;
@@ -54,9 +61,55 @@ export interface TargetSchool {
   locked: boolean;
   addedAt: number;
   sourceSessions: string[];
+  appNarrative: string;
+  recommendedSuggesters: string[];
+
+  // ─── Application operations ───
+  applicationDeadline?: string;
+  applicationPortal?: ApplicationPortal;
+  deadlineType?: DeadlineType;
+  supplementalEssayCount?: string;
+  supplementalEssayNotes?: string;
+  portfolioRequired?: boolean;
+  testPolicy?: TestPolicy;
+
+  // ─── Priority & ownership ───
+  priority?: PriorityLevel;
+  owner?: OwnerType;
+  lastReviewedAt?: number;
+
+  // ─── Next actions ───
+  nextAction?: string;
+  nextActionDueDate?: string;
+
+  // ─── Financial Aid bridge ───
+  financialFitNotes?: string;
+  estimatedNetPrice?: string;
+  aidStrategy?: AidStrategyType;
+  cssProfileRequired?: boolean;
+  fafsaRequired?: boolean;
+  faPriorityDeadline?: string;
+  meetsFullNeed?: boolean;
+  noLoanPolicy?: boolean;
 }
 
-// 学生 Profile
+export interface CollegeListPayload {
+  targetSchools: TargetSchool[];
+  locked: boolean;
+  lockedAt?: number;
+  updatedAt: number;
+}
+
+export interface SessionMetadata {
+  id: string;
+  name: string;
+  purpose?: string;
+  created_at: string;
+  updated_at: string;
+}
+
+// ─── Student Profile ─────────────────────────────────────────────────────────
+
 export interface StudentProfile {
   gpa?: string;
   gpa_scale?: 'Weighted' | 'Unweighted';
@@ -111,13 +164,7 @@ declare global {
   }
 }
 
-export interface SessionMetadata {
-  id: string;
-  name: string;
-  purpose?: string;
-  created_at: string;
-  updated_at: string;
-}
+// ─── Financial Aid Payload types ─────────────────────────────────────────────
 
 /**
  * Financial Profile — in-session only.

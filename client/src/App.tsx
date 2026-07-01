@@ -6,6 +6,7 @@ import ChatPanel from './components/ChatPanel';
 import SchoolDirectory from './components/SchoolDirectory';
 import EssayPanel from './components/EssayPanel';
 import SummerProgramsPanel from './components/SummerProgramsPanel';
+
 import IngestionWorkspace from './components/IngestionWorkspace';
 import type { StudentProfile, ChatMessage, SchoolSelection, SessionMetadata, AppMode, FinancialProfile, TargetSchool } from './types';
 import { DEFAULT_FINANCIAL_PROFILE } from './components/FAProfilePanel';
@@ -36,6 +37,7 @@ const defaultProfile: StudentProfile = {
   school_type: '',
   documents: [],
   targetSchools: [],
+  displayName: '',
 };
 
 function getOrCreateUserId(): string {
@@ -273,7 +275,9 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!getJwt());
   const [loginError, setLoginError] = useState('');
   const [isCollegeListLocked, setIsCollegeListLocked] = useState(false);
+  const [collegeListLockedAt, setCollegeListLockedAt] = useState(0);
   const [collegeListLoaded, setCollegeListLoaded] = useState(false);
+
 
   // Restore profile from server on user change, with localStorage as fallback
   useEffect(() => {
@@ -310,13 +314,19 @@ export default function App() {
       try {
         const resp = await authFetch(`/api/user/college-list?userId=${encodeURIComponent(userId)}`);
         if (resp.ok) {
-          const data = await resp.json() as { targetSchools?: TargetSchool[] };
-          if (data.targetSchools?.length) {
-            setProfile(p => ({ ...p, targetSchools: data.targetSchools! }));
+          const data = await resp.json() as { targetSchools?: TargetSchool[]; locked?: boolean; lockedAt?: number };
+          if (isMounted) {
+            if (data.targetSchools?.length) {
+              setProfile(p => ({ ...p, targetSchools: data.targetSchools! }));
+            }
+            if (data.locked) {
+              setIsCollegeListLocked(true);
+              if (data.lockedAt) setCollegeListLockedAt(data.lockedAt);
+            }
           }
         }
       } catch { /* non-fatal */ }
-      finally { setCollegeListLoaded(true); }
+      finally { if (isMounted) setCollegeListLoaded(true); }
     };
     hydrateCollegeList();
 
@@ -345,11 +355,16 @@ export default function App() {
       void authFetch('/api/user/college-list', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ targetSchools: schools }),
+        body: JSON.stringify({
+          targetSchools: schools,
+          locked: isCollegeListLocked,
+          lockedAt: isCollegeListLocked ? Date.now() : 0,
+          updatedAt: Date.now(),
+        }),
       }).catch(() => {});
     }, 300);
     return () => window.clearTimeout(timeout);
-  }, [profile.targetSchools, collegeListLoaded, userId]);
+  }, [profile.targetSchools, isCollegeListLocked, collegeListLoaded, userId]);
 
   // Fetch display name on mount / userId change
   useEffect(() => {
@@ -446,6 +461,7 @@ export default function App() {
     setSessions([]);
     setCurrentSessionId(null);
     setDisplayName('');
+
   }, []);
 
   // Session state
@@ -664,6 +680,7 @@ export default function App() {
     }
   }, [userId]);
 
+
   if (!isLoggedIn) {
     return <LoginScreen onLogin={handleLogin} error={loginError} />;
   }
@@ -726,7 +743,61 @@ export default function App() {
                 onUpdate={(schools: TargetSchool[]) => setProfile(p => ({ ...p, targetSchools: schools }))}
                 messages={messages}
                 isLocked={isCollegeListLocked}
-                onToggleLock={() => setIsCollegeListLocked(l => !l)}
+                lockedAt={collegeListLockedAt}
+                displayName={displayName}
+                onToggleLock={async () => {
+                  const wasLocked = isCollegeListLocked;
+                  if (!wasLocked) {
+                    // ── Locking: instant UI response + background FA sync ──
+                    setIsCollegeListLocked(true);
+                    setCollegeListLockedAt(Date.now());
+                    // Fire-and-forget FA data fetch — merge when available
+                    const schools = profile.targetSchools ?? [];
+                    if (schools.length > 0) {
+                      const schoolNames = schools.map(s => s.name).join(',');
+                      const incomeParam = financialProfile.parent_agi
+                        ? `&income=${financialProfile.parent_agi}`
+                        : '';
+                      try {
+                        const resp = await authFetch(
+                          `/api/fa/schools/export-data?schools=${encodeURIComponent(schoolNames)}${incomeParam}`
+                        );
+                        if (resp.ok) {
+                          const data = await resp.json() as { schools?: Record<string, {
+                            estimatedNetPrice?: string;
+                            cssProfileRequired?: boolean;
+                            fafsaRequired?: boolean;
+                            meetsFullNeed?: boolean;
+                            noLoanPolicy?: boolean;
+                            faPriorityDeadline?: string;
+                          }> };
+                          if (data.schools) {
+                            setProfile(p => ({
+                              ...p,
+                              targetSchools: p.targetSchools?.map(school => {
+                                const fa = data.schools![school.name];
+                                if (!fa) return school;
+                                return {
+                                  ...school,
+                                  estimatedNetPrice: fa.estimatedNetPrice ?? school.estimatedNetPrice,
+                                  cssProfileRequired: fa.cssProfileRequired ?? school.cssProfileRequired,
+                                  fafsaRequired: fa.fafsaRequired ?? school.fafsaRequired,
+                                  meetsFullNeed: fa.meetsFullNeed ?? school.meetsFullNeed,
+                                  noLoanPolicy: fa.noLoanPolicy ?? school.noLoanPolicy,
+                                  faPriorityDeadline: fa.faPriorityDeadline ?? school.faPriorityDeadline,
+                                };
+                              }) ?? [],
+                            }));
+                          }
+                        }
+                      } catch { /* non-fatal — lock without FA data */ }
+                    }
+                  } else {
+                    // ── Unlocking ──
+                    setIsCollegeListLocked(false);
+                    setCollegeListLockedAt(0);
+                  }
+                }}
                 profile={profile}
               />
             </aside>
@@ -811,6 +882,7 @@ export default function App() {
                   </svg>
                   Summer
                 </button>
+
               </div>
 
               {rightView === 'schools' ? (
@@ -819,6 +891,8 @@ export default function App() {
                 />
               ) : rightView === 'essays' ? (
                 <EssayPanel userId={userId} currentModel={currentModel} />
+              ) : rightView === 'summer' ? (
+                <SummerProgramsPanel userId={userId} interests={profile.interests} budget={profile.budget} currentModel={currentModel} targetSchools={profile.targetSchools ?? []} />
               ) : (
                 <SummerProgramsPanel userId={userId} interests={profile.interests} budget={profile.budget} currentModel={currentModel} targetSchools={profile.targetSchools ?? []} />
               )}

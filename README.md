@@ -276,9 +276,23 @@ Structure: **#3a source capture → #3b template mapping → #3c retrieval + gov
 - [x] **#3c: Retrieval + Governance Gate** — entries move through `draft` / `needs_review` / `approved` / `indexed` / `rejected`. Only indexed entries enter shared retrieval. Approval runs a conflict gate against indexed external notes, core College Advisor KB, and Financial Aid KB evidence.
 - [x] **Infrastructure** — `AdvisingIngestionManager` module, REST API, full-page Knowledge Workspace UI, visible pipeline metrics, approve/index flow, hot reload, and search wired into Express + RAG retrieval.
 - [x] **Safety loophole fix** — Financial Aid profile prompt builder now tolerates incomplete numeric fields instead of crashing on `.toLocaleString()`.
-**What stays in roadmap (Phase 2 remaining):**
-- [ ] **#1: College List Formal Output** — printable document with school status, strategy (ED/EA/RD), intended major, essay hooks, and recommendation-letter contacts per school
-- [ ] **#2: Summer Programs Follow-Thru Enhancement** — auto-tie to CA target schools, milestone reminders, dossier narrative enrichment from program experience
+<br>
+
+#### Phase 2 Feature #4: College List Strategy & Export (In Progress)
+> "Transform My College List from scratchpad into family-ready application strategy plan that accounts for both admissions odds and financial reality.
+
+> **CA + FA integration:** College list becomes the single shared planning artifact — CA owns fit/scope/strategy, FA bridges affordability data (net price, CSS Profile, full-need status) into the same record."
+
+- [ ] **#4a: Data Model** — expand `TargetSchool` with deadline, portal, test policy, priority, owner, next action fields plus FA bridge fields (estimated net price, aid strategy, CSS/FAFSA flags, full-need/no-loan). Server payload extended to include `locked` / `lockedAt` state.
+- [ ] **#4b: Grouped List View** — schools grouped by Reach / Match / Safety with balance warnings (plain English), readiness badges per school (✅ Ready / ⚠️ Incomplete), and details drawer with all new fields.
+- [ ] **#4c: Lock Persistence** — lock state sync'd to server, survives page refresh. Locked timestamp shown. Lock triggers FA data sync from Financial Aid Schools tab.
+- [ ] **#4d: Export Redesign** — structured booklet with summary dashboard, schools by group, Financial Aid overview, deadline timeline, next actions list, CSV download. Print CSS with section page breaks.
+- [ ] **#4e: FA Bridge** — `GET /api/fa/schools/export-data` endpoint. On lock, populates estimated net price, CSS Profile requirement, full-need/no-loan badges per school from FA KB. Graceful skip if FA data unavailable.
+- [ ] **#4f: CSS Polish + Verification** — group header styles, warning banners, FA field tinting, print layout. Build, deploy, browser test, screenshot evidence.
+
+#### Phase 2 #5: Summer Programs Follow-Thru Enhancement (Pending)
+- [ ] Auto-tie summer program participation to college application narrative
+- [ ] Milestone reminders and dossier enrichment from program experience
 
 ### 🔮 Phase 3 — Scale & Polish
 - [x] Multi-user authentication (shaobin, max, wynston)
