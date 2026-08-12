@@ -1,0 +1,113 @@
+{
+  "admin": {
+    "disabled": true
+  },
+  "logging": {
+    "logs": {
+      "default": {
+        "level": "INFO",
+        "writer": {
+          "output": "file",
+          "filename": "/var/log/caddy/access.json",
+          "roll": true,
+          "roll_size_mb": 100,
+          "roll_keep": 5
+        },
+        "encoder": {
+          "format": "json"
+        },
+        "include": ["http.log.access"]
+      }
+    }
+  },
+  "apps": {
+    "http": {
+      "servers": {
+        "srv0": {
+          "listen": [":80"],
+          "routes": [
+            {
+              "match": [{"host": ["hummingbirdai.net"]}],
+              "handle": [
+                {
+                  "handler": "static_response",
+                  "headers": {
+                    "Location": ["https://www.hummingbirdai.net{http.request.uri}"]
+                  },
+                  "status_code": 301
+                }
+              ]
+            },
+            {
+              "match": [{"host": ["www.hummingbirdai.net"]}],
+              "handle": [
+                {
+                  "handler": "static_response",
+                  "headers": {
+                    "Location": ["https://www.hummingbirdai.net{http.request.uri}"]
+                  },
+                  "status_code": 301
+                }
+              ]
+            }
+          ]
+        },
+        "srv1": {
+          "listen": [":443"],
+          "routes": [
+            {
+              "match": [{"host": ["hummingbirdai.net"]}],
+              "handle": [
+                {
+                  "handler": "static_response",
+                  "headers": {
+                    "Location": ["https://www.hummingbirdai.net{http.request.uri}"]
+                  },
+                  "status_code": 301
+                }
+              ]
+            },
+            {
+              "match": [{"host": ["www.hummingbirdai.net"], "path": ["/robots.txt"]}],
+              "handle": [
+                {
+                  "handler": "file_server",
+                  "root": "/var/www/caddy/robots",
+                  "hide": [".*"]
+                }
+              ]
+            },
+            {
+              "match": [{"host": ["www.hummingbirdai.net"]}],
+              "handle": [
+                {
+                  "handler": "headers",
+                  "response": {
+                    "set": {
+                      "X-Robots-Tag": ["noindex,nofollow"],
+                      "Strict-Transport-Security": ["max-age=31536000; includeSubDomains; preload"],
+                      "X-Content-Type-Options": ["nosniff"],
+                      "Referrer-Policy": ["no-referrer"]
+                    }
+                  }
+                },
+                {
+                  "handler": "reverse_proxy",
+                  "upstreams": [
+                    {"dial": "127.0.0.1:3001"}
+                  ]
+                }
+              ]
+            }
+          ],
+          "automatic_https": {
+            "disable": false
+          },
+          "logs": {
+            "default_logger_name": "default"
+          }
+        }
+      }
+    }
+  }
+}

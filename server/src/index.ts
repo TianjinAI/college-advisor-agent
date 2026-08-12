@@ -757,7 +757,7 @@ List the top 3 changes the student should make before the next draft.
   }
 }
 
-server.listen(PORT, () => {
+server.listen(PORT, '127.0.0.1', () => {
   console.log(`
 ========================================
   College Advisor Agent - Backend

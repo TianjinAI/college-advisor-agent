@@ -2,6 +2,8 @@ services:
   college-advisor:
     image: college-advisor-agent:latest
     container_name: college-advisor
+    # Host networking keeps LLM_BASE_URL=http://127.0.0.1:20128/v1 reachable.
+    # App process binds 127.0.0.1:3001, so Caddy is the only public entry point.
     network_mode: host
     env_file:
       - server/.env
